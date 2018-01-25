@@ -1,0 +1,72 @@
+
+/* css1 style sheet by randall pruim */
+/* style sheet for small index (used in frames) -- july 1999 */
+
+body, td {
+	background: #fff;
+	color: #906; 
+	font-family: sans-serif, arial, helvetica, verdana;
+	font-size: x-small;
+	}
+
+ul {	/* text-indent: 0; */
+	margin: 0ex 0ex 1em 1em;
+	padding: 1ex; 
+	/* border: thin solid blue; */
+}
+
+li {	
+	/* text-indent: 0; */
+	/* list-style-position: outside; 
+	list-style-type: disk; 
+	margin: 0em 0em 1em 1em;
+	padding: 0em 0em 0em 1ex; */
+	/* border: none; */
+}
+
+hr { 	color: #906;
+	background: #fff;
+}
+
+h1 {	font-size: medium;
+	color: #906;
+	background: #fff;
+	margin: 1ex 0 1em 0;
+}
+
+h2 {	font-size: small; 
+	font-style: normal;
+	color: #906;
+	font-size: small;
+	background: #fff;
+	margin: 1em 0 0 0;
+	padding: 0;
+
+}
+
+h3 { 	font-size: small;
+	font-style: italic;
+	color: #906;
+	background: #fff;
+	margin: 1em 0 0 0;
+	padding 0;
+} 
+
+
+a:link {color: #906;
+	background: #fff;
+	text-decoration: none;
+
+}
+
+a:visited { 
+	color: #906;
+	background: #fff;
+	text-decoration: none;
+}
+
+strong {
+	color: #906;
+	background: #fff;
+}	
+	

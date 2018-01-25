@@ -1,0 +1,132 @@
+/* css1 style sheet by randall pruim */
+/* first attempt at a style sheet -- july 1999 */
+
+span.headerColor {
+	color: #906;
+	background: #fcc;
+}
+
+span.bigger {font-size: larger;}
+span.smaller {font-size: smaller;}
+
+span.sidebar,
+td span.sidebar,
+td span.sidebar strong,
+td span.sidebar ul li a:link,
+td span.sidebar ol li a:link,
+td span.sidebar li a:link,
+td span.sidebar ul li a:visited,
+td span.sidebar ol li a:visited,
+td span.sidebar li a:visited,
+td span.sidebar ul li,
+td span.sidebar ol li,
+td span.sidebar li,
+td span.sidebar a:visited,
+td span.sidebar a:link,
+td span.sidebar h1,
+td span.sidebar h2,
+td span.sidebar h3,
+td span.sidebar h1 a:link,
+td span.sidebar h2 a:link,
+td span.sidebar h3 a:link
+td span.sidebar h1 a:visited,
+td span.sidebar h2 a:visited,
+td span.sidebar h3 a:visited
+{
+        color: #36c;
+        /*background: #00c;*/ 
+}
+
+td span.sidebar 
+{
+        color: #fcc;
+        /* background: #00c; */
+}
+
+body{
+	color: #000; 
+	background: #fcc;
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+td{
+	color: #000; 
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+/*hr {text-align: center; margin-left: 25%; width: 50%; margin-right: 25%}*/
+
+hr { 	color: #906;
+}
+
+
+h1, h2, h3, h4{
+	color: #906;
+}
+
+
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited {
+	color: #36c;
+}
+
+h1 {	 font-size: x-large;
+}
+
+h1 span.smaller{
+	color: #000;
+	font-size: large;
+}
+
+h1 span.smallest{
+	color: #000;
+	font-size: medium;
+}
+
+h2 {	font-size: large; 
+	font-style: normal;
+}
+
+h2 span.smaller, h2 span.smallest{
+	color: #000;
+	font-size: medium;
+}
+
+h3 { 	font-size: medium;
+	font-style: normal;
+} 
+
+h3 span.smaller, h3 span.smallest{
+	color: #000;
+}
+
+h4 { 	font-size: medium;
+	font-style: italic;
+} 
+
+
+a:link {color: #36c;	/* #06c */
+
+}
+
+a:visited { 
+	/*color: #09c; color: #96c; #936 ; #939
+	background: #fcc;*/
+	color: #969;
+}
+
+strong {
+	color: #906;
+}	
+	
+pre{
+	font-family: fixed;
+}
+
+pre.homework{
+	font-family: fixed;
+/* 	font-size: larger; */
+}
+
+code{
+	color: green;
+}
