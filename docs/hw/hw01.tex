@@ -1,0 +1,503 @@
+
+
+
+\documentclass{scrartcl}
+\usepackage[margin=.5in,top=.5in,bottom=.3in,includehead,includefoot]{geometry}
+\renewcommand{\arraystretch}{1.5}
+
+%\parindent=0pt
+\parskip=3pt
+
+
+%\usepackage{mathpple}
+%\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{sfsect}
+\usepackage{longtable}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+
+\def\WW#1{\href{http://mathwebwork.cs.calvin.edu/webwork2/Math252-S16-Pruim/#1}{WW#1}}
+
+\newif\ifanswers
+\answerstrue
+\answersfalse
+
+\def\blank#1{%
+\ifanswers
+\underline{{\large \sc #1}}
+\else
+\underline{\phantom{\Large \ \ \ \sc #1 \ \ \ }}
+\fi
+}
+
+\def\dd#1{\medskip\noindent\textbf{\large #1}}
+\def\be{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+
+\def\hwn#1{\relax}
+\def\hwn#1{\ {\tiny (#1)}}
+\def\hwn#1{$_{\mbox{\ \tiny #1}}$}
+\def\hwn#1{~{\tiny #1}}
+
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage[colorlinks = true, urlcolor = blue]{hyperref}
+\include{myabbrev}
+
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}}}
+\newcommand{\myunderline}[1]{\uline{\phantom{Ay}#1\phantom{Ay}}}
+
+\newcommand{\helper}[2][\relax]{(#2)\hwn{#1}}
+\newcommand{\extra}[2][\relax]{[#2]\hwn{#1}}
+\newcommand{\opt}[2][\relax]{\{#2\}\hwn{#1}}
+\newcommand{\mand}[2][\relax]{{\bf \large #2}\hwn{#1}}
+
+\begin{document}
+
+
+\pagestyle{fancy}
+
+\chead{}
+\lhead{Math 252 -- Spring 2018}
+\rhead{\thepage/\pageref{end}}
+\lfoot{}
+\cfoot{Created \today\ --- See web site for most current version.}
+\rfoot{}
+
+\begin{center}
+  \large
+%  Mathematics \& Statistics 156
+%
+%  Fall 2016
+%
+\subsection*{Problem Sets Between Test 1 and Test 2}
+
+\end{center}
+
+
+\textit{Only turn in problems that are \textbf{not} bracketed.}
+Bracketed problems are additional problems you can look at.
+Round brackets indicate problems that may help you with problems that
+are assigned; square brackets are additional problems on material
+that you should know, but you are not required to write up solutions;
+curly brackets are truly optional and may contain extra nuggets that you
+will not be required to know but may be interested in.
+
+Additional assignments will be filled in over time.
+
+\bigskip
+
+\begin{center}
+
+\iftrue
+
+\begin{longtable}{|c|l|}
+  \hline
+  notation & meaning \\
+  \hline
+  unbracketed & assigned problem -- turn these in for grading \\
+  $()$ & helper/warm-up problem  \\
+  $[]$ & additional problems (you are responsible for content, but don't turn them in) \\
+  \{\} & covers optional material \\
+  \hline
+\end{longtable}
+\fi
+
+\bigskip
+
+
+\begin{longtable}{|c|c|c|p{4.3in}|}
+  \hline
+  Due & Task & Source & Problems \\
+  \hline\hline
+  \endhead
+  	 PS 1 & Wed 2/1 & Rosen 9.1 &
+	 \helper{1}
+	 \helper[types of graph]{3,5,7,9}
+	 \mand[types of graph]{4}
+	 \mand[types of graph]{8}
+	 \mand[graphs and relations]{11}
+	 \mand[intersection graph]{13}
+	 \mand[Fred]{18}
+	 \mand[precedence graph]{31}
+	 \\
+	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+	  & & Rosen 3.3 &
+	 \helper{1}
+	 \mand{2}
+	 \mand[polynomials]{13--14}
+	 \extra[largest size]{15}
+	 \mand[largest size]{16a--f}
+	 \\
+	 \hline
+	 13 & Fri 10/21 & Rosen 9.3 &
+	 \helper{1}
+	 \mand[matrix rep]{2}
+	 \extra[matrix rep]{3}
+	 \mand[matrix rep]{4ac}
+	 \helper[properties]{5--7}
+	 \mand[properties]{8}
+
+	 \mand[operations]{14a--d}
+	 \mand[digraphs]{18}
+	 \extra[digraphs]{19}
+	 \mand[digraphs]{20}
+	 \extra[digraphs]{21}
+
+	 \mand[set from graph]{26}
+	 \mand[properties from digraphs]{32}
+	 \\
+	 & & Rosen 2.6 &
+	 \helper{1,3}
+	 \mand[addition]{2a}
+	 \mand[mutliplication]{4ac}
+	 \mand[sizes of products]{10abc}
+	 \mand{26}
+	 \extra{27}
+	 \mand{28}
+	 \mand{29}
+	 \\
+	 \hline
+	 14 & Fri 10/28 & Rosen 9.4 &
+	 \helper{1}
+	 \helper[reflexive closure]{5,7}
+	 \mand[reflexive closure]{6}
+	 \mand[paths]{16}
+	 \mand[paths]{18acegi}
+
+	 \mand[$R^k$]{19}
+	 \mand[$R^k$]{20}
+	 \helper[trans closure]{25}
+	 \mand[trans closure]{26ac}
+	 \helper[Warshall's algorithm]{27}
+
+	 \mand[Warshall's algorithm]{28ac}
+	 \mand[path lengths]{32}
+	 \\
+	 && Rosen 9.5 &
+	 \helper[eq relation?]{1}
+	 \mand[eq relation?]{2--3}
+	 \mand[logical equivalence]{7}
+	 \mand[products]{16}
+	 \mand[graphs]{21--22}
+	 \mand[matrices]{24}
+	 \mand[eq classes]{40}
+	 \mand[bit Theta]{60a}
+	 \mand[closures]{63--64}
+	 \\
+	 \hline
+
+ Tue 10/11 & \WW{12} & Rosen 5.1 & counting problems
+	 \\
+	 \hline
+ Wed 10/12 & \WW{13} & Rosen 5.1-5.2 & counting problems and pigeon hole principle
+		 \\
+   \hline
+ Fri 10/14 & PS 6 & Rosen 5.1 &
+   \mand[license plates]{26}
+   \mand[photos]{40}
+   \mand[students]{46}
+   \mand[truth tables]{58}
+
+   \extra[license plates]{27--29}
+   \extra[strings]{30--31}
+   \extra[photos]{41}
+   \extra[C variables]{50}
+  \\
+  & & Rosen 5.2 &
+    \mand[balls]{4}
+    \mand[numbers]{5}
+    \mand[party]{36}
+  \\
+  & & Rosen 5.3 &
+    \mand[list]{1}
+    \mand[list]{4}
+    \mand[coins]{18}
+ \\
+	 \hline
+   Tue 10/18 & \WW{14} & Rosen 6 & Note:  $A^c = \overline{A}$
+ \\
+	 \hline
+   Fri 10/21 & \WW{15} & Rosen 6 & conditional probability and Bayes Rule
+ \\
+	 \hline
+   Mon 10/24 & \WW{16} & Rosen 6 & random variables
+   \\
+	 \hline
+   Fri 10/30 & PS 7 & Rosen 6.1 &
+   \mand[ace]{13}
+   \mand[five kinds]{14}
+   \mand[lottery]{24a}
+   \mand[superlottery]{28}
+   \mand[deMere's question]{41}
+   \\
+   & &
+   Rosen 6.2 &
+   \mand[loaded die]{2}
+   \mand[permutatinos]{7}
+   \mand[odd one out]{29}
+   \mand[Bernoulli trials]{34}
+   \\
+   & & Rosen 6.3 &
+   \mand[commute]{16}
+   \\
+   & & Rosen 6.4 &
+   \extra[expected heads]{1, 2, 4}
+   \mand[expected 6s]{3}
+   \mand[lottery]{6}
+   \mand[test score]{7}
+   \mand[runs]{21}
+ \\
+	 \hline
+   Tue 11/01 & \WW{17} &  & properties of relations
+ \\
+	 \hline
+   Fri 11/04 & \WW{18} &  & matrices and relations
+ \\
+	 \hline
+   Tue 11/08 & \WW{19} &  & closures and equivalence relations
+   \\
+   & PS 8 &  Rosen 8.4 &
+   \mand[closure]{5--7}
+   \mand[closure]{9}
+   \extra{12--13}
+   \mand[paths]{16}
+   \mand[$R^k$]{19}
+   \\
+   \hline
+\newpage
+	 \hline
+   Extra  & (never) & Rosen 3.8 &
+   \extra{1--4}
+   \extra{10}
+   \extra{15}
+   \extra{28}
+   \extra{29}
+   \extra{31}
+   \\
+   & & Rosen 5.RQ &
+   \extra{1--3}
+   \extra{6--9}
+   \extra{13}
+   \\
+   & & Rosen 5.SE &
+   \extra[choosing]{1--2}
+   \extra[test questions]{3}
+   \extra[phone nums]{6}
+   \extra[fortunes]{11}
+   \extra[seats]{34}
+   \extra[advising]{35}
+   \extra[PEPPERCORN]{38}
+   \extra[plates]{40}
+   \\
+   & & Rosen 6.RQ &
+   \extra{1}
+   \extra{3--9}
+   \\
+   & & Rosen 6.SE &
+   \extra{1--3}
+   \extra{5}
+   \extra{8}
+   \extra{21}
+   \\
+   & & Rosen 8.RQ &
+   \extra{1--4}
+   \extra{6--12}
+   \\
+   & & Rosen 8.SE &
+   \extra{1}
+   \extra{2}
+   \extra{5}
+   \extra{6}
+   \extra{7}
+   \extra{8}
+   \\
+   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+
+	 \hline
+
+	 10 & Tue 10/11 & Rosen 3.1 &
+	 \mand[greedy algorithms]{52}
+	 \mand[greedy algorithms]{54}
+	 \mand[greedy algorithms]{56}
+	 \\
+	 \hline
+	 11 & Fri 10/14 & Rosen 3.2 &
+	 \mand{1ace}
+	 \mand{2}
+	 \helper{5}
+	 \mand{6}
+	 \helper{7}
+	 \mand{8}
+	 \extra{9}
+	 \extra{11}
+	 \mand{12}
+	 \mand[exponential]{19}
+	 \mand[logarithms]{20}
+	 \helper[order]{21}
+	 \mand[order]{22}
+	 \helper{25}
+	 \mand{26}
+	 \helper{27}
+	 \mand{28}
+	 \mand{30}
+	 \\
+	 &&& Note directions (especially for 1--14).
+	 \\
+	 \hline
+	 12 & Tue 10/18 & Rosen 9.1 &
+	 \helper{1}
+	 \helper[properties]{3,5,7}
+	 \mand[properties]{4}
+	 \mand[properties]{6dfh}
+
+	 \mand[anti-symmetric]{10}
+	 \helper[irreflexive]{11,13}
+	 \mand[irreflexive]{12}
+
+	 \mand[operations]{30}
+	 \mand[composition]{32}
+	 \mand[composition]{33}
+	 \helper{35,37}
+	 \mand[counting]{47a}
+	 \mand{50ab}
+	 \\
+	  & & Rosen 3.3 &
+	 \helper{1}
+	 \mand{2}
+	 \mand[polynomials]{13--14}
+	 \extra[largest size]{15}
+	 \mand[largest size]{16a--f}
+	 \\
+	 \hline
+	 13 & Fri 10/21 & Rosen 9.3 &
+	 \helper{1}
+	 \mand[matrix rep]{2}
+	 \extra[matrix rep]{3}
+	 \mand[matrix rep]{4ac}
+	 \helper[properties]{5--7}
+	 \mand[properties]{8}
+
+	 \mand[operations]{14a--d}
+	 \mand[digraphs]{18}
+	 \extra[digraphs]{19}
+	 \mand[digraphs]{20}
+	 \extra[digraphs]{21}
+
+	 \mand[set from graph]{26}
+	 \mand[properties from digraphs]{32}
+	 \\
+	 & & Rosen 2.6 &
+	 \helper{1,3}
+	 \mand[addition]{2a}
+	 \mand[mutliplication]{4ac}
+	 \mand[sizes of products]{10abc}
+	 \mand{26}
+	 \extra{27}
+	 \mand{28}
+	 \mand{29}
+	 \\
+	 \hline
+	 14 & Fri 10/28 & Rosen 9.4 &
+	 \helper{1}
+	 \helper[reflexive closure]{5,7}
+	 \mand[reflexive closure]{6}
+	 \mand[paths]{16}
+	 \mand[paths]{18acegi}
+
+	 \mand[$R^k$]{19}
+	 \mand[$R^k$]{20}
+	 \helper[trans closure]{25}
+	 \mand[trans closure]{26ac}
+	 \helper[Warshall's algorithm]{27}
+
+	 \mand[Warshall's algorithm]{28ac}
+	 \mand[path lengths]{32}
+	 \\
+	 && Rosen 9.5 &
+	 \helper[eq relation?]{1}
+	 \mand[eq relation?]{2--3}
+	 \mand[logical equivalence]{7}
+	 \mand[products]{16}
+	 \mand[graphs]{21--22}
+	 \mand[matrices]{24}
+	 \mand[eq classes]{40}
+	 \mand[bit Theta]{60a}
+	 \mand[closures]{63--64}
+	 \\
+	 \hline
+	 15 & Tue 11/1 & Rosen 8.1 &
+	 \mand[stamps]{3}
+	 \mand[stairs]{12}
+	 \\
+	 && Rosen 8.2 &
+	 \helper[identify]{1}
+	 \mand[identify]{2}
+	 \helper[solve]{3}
+	 \mand[solve]{4}
+	 \\
+	 \hline
+	 \newpage
+	 * & *
+	 & Rosen 2.RQ &
+	 \extra{13}
+	 \extra{14}
+	 \extra{17}
+	 \\
+	 && Rosen 2.SE &
+	 \extra{37}
+	 \extra{41}
+	 \\
+	 && Rosen 3.RQ &
+	 \extra{1--5}
+	 \extra{7--10}
+	 \\
+	 && Rosen 3.SE &
+	 \extra{3--4}
+	 \extra{11--19}
+	 \extra{21--22}
+	 \extra{29--30}
+	 \opt{31--34}
+	 \\
+	 && Rosen 8.RQ &
+	 \extra{1--2}
+	 \extra{6--7}
+	 \\
+	 && Rosen 8.SE &
+	 \extra{2}
+	 \extra{4}
+	 \extra{6}
+	 \
+	 \\
+	 && Rosen 9.RQ &
+	 \extra{1--4}
+	 \extra{6--10}
+	 \extra{12a}
+	 \extra{13}
+	 \\
+	 && Rosen 9.SE &
+	\extra{1--5}
+	\extra{7--10}
+	\extra{20}
+	 \\
+	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
