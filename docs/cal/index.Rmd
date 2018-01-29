@@ -1,0 +1,81 @@
+---
+title: "Calendar -- Fall 2017"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../styles/rpruim2017.css
+---
+
+
+## Make a Course Calendar
+
+<form method="post"
+	action="http://www.calvin.edu/academic/math/cgi-bin/calendar/d2h.php">
+
+<input type="hidden" name ="topFile"
+value="http://rpruim.github.io/m252s18/cal/caltop.html">
+
+<input type="hidden" name ="bottomFile"
+value="http://rpruim.github.io/m252s18/cal/calbottom.html">
+
+<input type="hidden" name ="dailyFile"
+value="http://rpruim.github.io/m252s18/cal/daily.txt">
+
+<input type="hidden" name ="daysToShow" value="MTWRF">
+
+<input type="hidden" name ="debug">
+
+
+Items to display:
+<menu>
+<input type="checkbox" name="displayItem[]" value="Topic" checked>
+Topic
+<input type="checkbox" name="displayItem[]" value="Read" checked>
+Readings
+<input type="checkbox" name="displayItem[]" value="Note" checked>
+Notes
+<input type="checkbox" name="displayItem[]" value="Vocab">
+Vocab
+<input type="checkbox" name="displayItem[]" value="Due" checked>
+Deadlines
+</menu>
+<br>
+
+
+Starting Date:
+<select name=startDate size=1>
+<option selected>01/29/2018</option>
+<option>03/01/2018</option>
+<option>04/01/2018</option>
+<option>05/01/2018</option>
+</select>
+
+
+Number of Weeks to Display:
+<select name=weeksToShow size=1>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option selected>16</option>
+</select>
+<p>
+<input type="submit" value="Get Calendar">
+</form>
+
+
+
