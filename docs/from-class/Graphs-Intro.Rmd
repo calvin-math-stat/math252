@@ -3,8 +3,8 @@ title: "Introduction to Graphs"
 author: "Math 252"
 date: "1/29/2018"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
