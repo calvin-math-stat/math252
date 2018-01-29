@@ -1,0 +1,24 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../styles/rpruim2017.css
+---
+
+
+## Worksheets/Handouts from class
+
+Date  | Handout
+----- | ---------------------------------------------------
+01/29 | [Intro to Graphs](Graphs-Intro.pdf)
+
+
+## Other Resources
+
+Date  | Resource
+----- | ---------------------------------------------------
+
