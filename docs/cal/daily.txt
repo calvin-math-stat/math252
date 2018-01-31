@@ -175,23 +175,31 @@ modeling situations
 Topic:: Graphs
 Read:: Rosen 9.1-9.2
 
+Graphs02 worksheet
 
-graph application example
+  degree, adjacent, path, subgraph, etc.
+
 	NFL example
 		NFL example: 13+13 teams, 11+3 games
 			motivate: degree, subgraph, bipartite graph
+			intra-conference issue:
+			  * each node has degree 11
+			  * so total edges is 13 * 11 / 2 = not an integer
 
 		Handshaking Thm: 2e = sum of degrees
 			even number of nodes with odd degree
 			directed graph version: e = sum out-degree = sum in-degree
 
-special graphs
-	K_n: complete (skipped?)
-	C_n: cycle
-	W_n: wheel
-	Q_n: cube
+  special graphs
+  	K_n: complete (skipped?)
+  	C_n: cycle
+  	W_n: wheel
+  	Q_n: cube
 
-subgraphs (done above with NFL)
+Notes:
+  * had rotating secretaries for the three groups of questions
+  * collected one version from each group at end of hour
+  * perfect length worksheet; went really well in the groups
 
 ===
 Topic:: Graph Representations
