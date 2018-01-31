@@ -11,7 +11,7 @@ output:
 
 ____
 <p align = "center">
-[[Webwork](http://webwork.cs.calvin.edu/webwork2/m252s18-Pruim/)]
+[[Webwork](https://mathwebwork.cs.calvin.edu/webwork2/Math252-S18-Pruim)]
 [[From Class](from-class/)]
 [[Calendar](cal/)]
 [[Test Info](test-info/)]
