@@ -3,8 +3,8 @@ title: "Introduction to Graphs"
 author: "Math 252"
 date: "1/29/2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -134,3 +134,5 @@ $A_1, A_2, \dots, A_{13}$ and the teams in the National Football Conference (NFC
 $N_1, N_2, \dots, N_{13}$.
 
 <!-- motivate: degree, subgraph, bipartite graph -->
+
+\newpage

@@ -15,10 +15,10 @@ output:
 Date  | Handout
 ----- | ---------------------------------------------------
 01/29 | [Intro to Graphs](Graphs-Intro.pdf)
-
+01/31 | [More Graphs](Graphs02.pdf)
 
 ## Other Resources
 
 Date  | Resource
 ----- | ---------------------------------------------------
-
+01/31 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)
