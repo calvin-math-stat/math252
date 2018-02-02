@@ -17,14 +17,18 @@ Vocab;  t;      color=purple;   V:
 
 Test blackout requests
 
+
+
 02/19  Nate Herder
 02/20  Nate Herder
 02/22 Sarah Samuel        Performance for Rangeela
 02/23 Sarah Samuel        Performance for Rangeela
+02/28 Catherine DeJager   Psych 212 test
 03/02 Justin B            Operating Systems Test
-03/09 Justin B            Programming Language Concepts Test
+03/09 Justin B, CDJ       Programming Language Concepts Test
 03/28 Justin B            Operating Systems Test 2 (Tentative but 75% sure)
-05/09 Justin B            Programming Language Concepts Test 2
+04/11 Catherine DeJager   Psych 212 test
+05/09 Justin B, CDJ       Programming Language Concepts Test 2
 
 ===03/19/2018
 Note:: Spring Break
