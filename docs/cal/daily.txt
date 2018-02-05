@@ -283,7 +283,7 @@ Euler and Hamilton paths/cycles
 		TSP -- visit all vertices with least cost
 
 
-===
+===endofcal
 Topic:: Paths in Graphs
 Read:: Rosen 9.4-5
 
@@ -541,8 +541,6 @@ Thm (Euler). For any connected planer graph, r - e + v = 2
 
 	Proof: Build up G: G1, G2, ... Ge adding one edge at a time
 		either add one edge and one vertex or one edge and one region
-
-Tests back
 
 ===
 Topic:: Planer Graphs
