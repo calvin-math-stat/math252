@@ -25,6 +25,7 @@ Test blackout requests
 02/23 Sarah Samuel        Performance for Rangeela
 02/28 Catherine DeJager   Psych 212 test
 03/02 Justin B            Operating Systems Test
+03/06 Hannah VanZanten    Test in Adv. Linear Algebra
 03/09 Justin B, CDJ       Programming Language Concepts Test
 03/28 Justin B            Operating Systems Test 2 (Tentative but 75% sure)
 04/11 Catherine DeJager   Psych 212 test
