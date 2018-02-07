@@ -25,7 +25,7 @@ Test blackout requests
 02/23 Sarah Samuel        Performance for Rangeela
 02/28 Catherine DeJager   Psych 212 test
 03/02 Justin B            Operating Systems Test
-03/06 Hannah VanZanten    Test in Adv. Linear Algebra
+
 03/09 Justin B, CDJ       Programming Language Concepts Test
 03/28 Justin B            Operating Systems Test 2 (Tentative but 75% sure)
 04/11 Catherine DeJager   Psych 212 test
@@ -284,21 +284,58 @@ Euler and Hamilton paths/cycles
 		TSP -- visit all vertices with least cost
 
 
-===endofcal
-Topic:: Paths in Graphs
+===
+Topic:: Euler Paths and Cycles
+Topic:: Euler's Formula
 Read:: Rosen 9.4-5
 
 questions on homework
+  * simplest view of graph for farmer, wolf, goat, cabbage
 
-develop defs of Euler and Hamilton paths
+Euler degrees
+  * If there is an Euler path, graph must be connected
+  * If there is an Euler cycle, all degrees must be even
+  * If there is an Euler path that is not a cycle, there must be exactly 2 odd vertices
+  * In a directed graph, if there is an E cycle,
+      in degrees must match out degrees at each vertex
+  * If there is a path that is not a cycle, then
+      start must have one extra out degree,
+      end vertex must have one extra in degree,
+      all other must be balanced
 
-develop algorithm for Euler cycle determination
+Other direction: If graph is connected and all degrees are even, must there be an E cycle?
+  * If so, how do we find it?
 
-===
-Topic:: Paths in Graphs
-Topic:: Review
+  * Basic Idea:
+      * find any cycle (follow any edge)
+      * if it isn't complete, insert cycle from left over graph
 
-Analysis of Complexity of Euler Path/Circuit Algorithms
+Euler paths?
+  * Add one edge connecting to vertices of odd degree, make cycle, delete the edge
+
+Euler formula:  In a connected, planar graph, V - E + R = 2 [so R = 2 + E - V]
+
+  * Proof by induction on edges
+  * What if graph is not connected?
+
+Planar graphs
+
+  * K5 is not planar
+    * use R <= 2 * E / 3
+
+  * K3,3 [define] is not planar
+    * use R <= 2 * E / 4
+    * regions must be bounded by at least 4 eges because no 3-cycles
+
+  * Kuratowksi's Thm: planar iff no subgraph homeomorphic to K5 or K3,3
+    * homeomorphic:
+        allowed to replace edge (u, v) with new vertex a and two edges(u, a) and (a, v)
+
+===endofcal
+
+Topic:: Graph Algorithms
+
+Analysis of Complexity of Euler Path/Circuit Detection Algorithms
 	1) checking that G is connected
 		a) M \/ M^2 \/ M^3 ... \/ M^|V|
 			uses matrix representation
@@ -322,6 +359,10 @@ Analysis of Complexity of Euler Path/Circuit Algorithms
 		Inc Matrix: O(|V|*|E|)  [more than previous if G is connected]
 		Adj List:   O(|E|) = O(|V|*|V|)
 			better in sparser graphs
+
+===endofcal
+Topic:: Hamilton Path
+Topic:: Graph Coloring
 
 Hamilton circuits (paths)
 	definition
