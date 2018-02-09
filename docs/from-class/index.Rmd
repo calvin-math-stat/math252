@@ -14,10 +14,11 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
-01/29 | [Intro to Graphs](Graphs-Intro.pdf)
-01/31 | [More Graphs](Graphs02.pdf)
-02/02 | [Graph Representations, Graph Isomorphism](Graphs03.pdf)
+02/09 | [Bipartite and Planar Graphs](Bipartite-Planar.pdf)
 02/05 | [Paths in Graphs](Graphs-Paths.pdf)
+02/02 | [Graph Representations, Graph Isomorphism](Graphs03.pdf)
+01/31 | [More Graphs](Graphs02.pdf)
+01/29 | [Intro to Graphs](Graphs-Intro.pdf)
 
 ## Other Resources
 
