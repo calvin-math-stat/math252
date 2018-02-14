@@ -9,9 +9,14 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
+long = FALSE
 ```
 
-```{python, include = FALSE}
+```{r, include = long, results = 'asis', echo = FALSE}
+cat("### A Simple Graph Class\n\n")
+```
+
+```{python, include = long}
 from collections import defaultdict
 
 # Graph class based on edgelist rep
