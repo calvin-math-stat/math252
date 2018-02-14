@@ -124,6 +124,43 @@ $(document).ready(function () {
 </div>
 
 
+<div id="a-simple-graph-class" class="section level3">
+<h3>A Simple Graph Class</h3>
+<pre class="python"><code>from collections import defaultdict
+# Graph class based on edgelist rep
+class Graph:
+  def __init__(self, E):
+    self.edge_list = E
+  def show(self):
+    print self.edge_list
+  
+  def degrees(self):
+    degrees = defaultdict(int)
+    for e in self.edge_list:
+      degrees[e[0]] = degrees[e[0]] + 1
+      degrees[e[1]] = degrees[e[1]] + 1
+    return degrees
+      
+  def num_edges(self):
+    return len(self.edge_list)
+    
+  def some_vertex(self):
+    return self.edge_list[0][0]  # return first verex on first edge
+    
+  def adjacent_vertex(self, x):
+    for (u, v) in self.edge_list:
+      if u == x:
+        return(v)
+      if v == x:
+        return(u)
+    return(None)
+      
+  def delete_edge(self, edge):
+    if edge in self.edge_list:
+      self.edge_list.remove(edge)
+    if edge[::-1] in self.edge_list:
+      self.edge_list.remove(edge[::-1])</code></pre>
+</div>
 <div id="an-euler-path-algorithm" class="section level2">
 <h2>An Euler Path Algorithm</h2>
 <p>Here is python code for an Euler path algorithm.</p>
@@ -158,15 +195,59 @@ def euler_path(graph, verbose = False):
 
 <div id="examples" class="section level3">
 <h3>Examples</h3>
-<pre class="python"><code>verbose = False
+<pre class="python"><code>verbose = True
 G1 = Graph([(1,2), (1,3), (1,4), (1,5), (2,3), (2,5), 
             (2,6), (3,4), (3,5), (4,5), (4,6)])
 print euler_path(G1, verbose = verbose)</code></pre>
-<pre><code>[1, 5, 4, 6, 2, 5, 3, 4, 1, 3, 2, 1]</code></pre>
+<pre><code>stack = [1]  path = []
+stack = [1, 2]  path = []
+stack = [1, 2, 3]  path = []
+stack = [1, 2, 3, 1]  path = []
+stack = [1, 2, 3, 1, 4]  path = []
+stack = [1, 2, 3, 1, 4, 3]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 1]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5]  path = [1]
+stack = [1, 2, 3, 1, 4, 3, 5, 2]  path = [1]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6]  path = [1]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4]  path = [1]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4, 5]  path = [1]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4]  path = [1, 5]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6]  path = [1, 5, 4]
+stack = [1, 2, 3, 1, 4, 3, 5, 2]  path = [1, 5, 4, 6]
+stack = [1, 2, 3, 1, 4, 3, 5]  path = [1, 5, 4, 6, 2]
+stack = [1, 2, 3, 1, 4, 3]  path = [1, 5, 4, 6, 2, 5]
+stack = [1, 2, 3, 1, 4]  path = [1, 5, 4, 6, 2, 5, 3]
+stack = [1, 2, 3, 1]  path = [1, 5, 4, 6, 2, 5, 3, 4]
+stack = [1, 2, 3]  path = [1, 5, 4, 6, 2, 5, 3, 4, 1]
+stack = [1, 2]  path = [1, 5, 4, 6, 2, 5, 3, 4, 1, 3]
+stack = [1]  path = [1, 5, 4, 6, 2, 5, 3, 4, 1, 3, 2]
+[1, 5, 4, 6, 2, 5, 3, 4, 1, 3, 2, 1]</code></pre>
 <pre class="python"><code>G2 = Graph([(1,2), (1,3), (1,4), (2,3), (2,5), 
             (2,6), (3,4), (3,5), (4,5), (4,6)])
 print euler_path(G2, verbose = verbose)</code></pre>
-<pre><code>[5, 4, 6, 2, 5, 3, 4, 1, 3, 2, 1]</code></pre>
+<pre><code>stack = [1]  path = []
+stack = [1, 2]  path = []
+stack = [1, 2, 3]  path = []
+stack = [1, 2, 3, 1]  path = []
+stack = [1, 2, 3, 1, 4]  path = []
+stack = [1, 2, 3, 1, 4, 3]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 2]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4, 5]  path = []
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6, 4]  path = [5]
+stack = [1, 2, 3, 1, 4, 3, 5, 2, 6]  path = [5, 4]
+stack = [1, 2, 3, 1, 4, 3, 5, 2]  path = [5, 4, 6]
+stack = [1, 2, 3, 1, 4, 3, 5]  path = [5, 4, 6, 2]
+stack = [1, 2, 3, 1, 4, 3]  path = [5, 4, 6, 2, 5]
+stack = [1, 2, 3, 1, 4]  path = [5, 4, 6, 2, 5, 3]
+stack = [1, 2, 3, 1]  path = [5, 4, 6, 2, 5, 3, 4]
+stack = [1, 2, 3]  path = [5, 4, 6, 2, 5, 3, 4, 1]
+stack = [1, 2]  path = [5, 4, 6, 2, 5, 3, 4, 1, 3]
+stack = [1]  path = [5, 4, 6, 2, 5, 3, 4, 1, 3, 2]
+[5, 4, 6, 2, 5, 3, 4, 1, 3, 2, 1]</code></pre>
 <pre class="python"><code>G3 = Graph([(1,2), (1,3), (1,4), (2,3), (2,5), (2,6), 
             (3,4), (3,5), (4,5), (4,6), (5,6), (3,7)])
 print euler_path(G3, verbose = verbose)</code></pre>
