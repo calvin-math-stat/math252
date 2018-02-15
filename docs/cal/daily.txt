@@ -329,6 +329,17 @@ Planar graphs
     * homeomorphic:
         allowed to replace edge (u, v) with new vertex a and two edges(u, a) and (a, v)
 
+===
+Topic:: Graphs Wrap-Up
+
+Tracing through algorithm for Euler paths/cycles
+
+Efficiency of graph algorithms (emphasized edge list rep)
+
+Question board
+  * Kuratowski's Thm and planarity
+  * How to test graph isomorphism
+
 ===endofcal
 
 Topic:: Graph Algorithms
