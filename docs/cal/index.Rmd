@@ -16,13 +16,13 @@ output:
 	action="http://www.calvin.edu/academic/math/cgi-bin/calendar/d2h.php">
 
 <input type="hidden" name ="topFile"
-value="http://rpruim.github.io/m252s18/cal/caltop.html">
+value="https://rpruim.github.io/m252s18/cal/caltop.html">
 
 <input type="hidden" name ="bottomFile"
-value="http://rpruim.github.io/m252s18/cal/calbottom.html">
+value="https://rpruim.github.io/m252s18/cal/calbottom.html">
 
 <input type="hidden" name ="dailyFile"
-value="http://rpruim.github.io/m252s18/cal/daily.txt">
+value="https://rpruim.github.io/m252s18/cal/daily.txt">
 
 <input type="hidden" name ="daysToShow" value="MTWRF">
 
