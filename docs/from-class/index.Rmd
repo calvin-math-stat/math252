@@ -12,6 +12,15 @@ output:
 
 ## Worksheets/Handouts from class
 
+### Counting and Probability
+
+Date  | Handout
+----- | ---------------------------------------------------
+02/16 | [Counting Problems](Basic-Counting.pdf)
+
+
+### Graphs
+
 Date  | Handout
 ----- | ---------------------------------------------------
 02/12 | Euler Paths: [[worksheet]](Euler-Paths.pdf) [[long version]](Euler-Paths.html)
