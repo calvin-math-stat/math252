@@ -3,8 +3,8 @@ title: "Counting Problems"
 author: "Math 252"
 date: ""
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -85,12 +85,12 @@ of Valentine hearts he picked up cheap on February 15.
   
 \newpage
 
-13. Below is a description of IPv4 addresses.
+<!-- 13. Below is a description of IPv4 addresses. -->
 
-```{r, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("images/ipv4-prob.png")
-knitr::include_graphics("images/ipv4.png")
-```
+<!-- ```{r, echo = FALSE, fig.align = "center"} -->
+<!-- knitr::include_graphics("images/ipv4-prob.png") -->
+<!-- knitr::include_graphics("images/ipv4.png") -->
+<!-- ``` -->
 
 
 ### Answers/Solutions
@@ -127,5 +127,5 @@ knitr::include_graphics("images/ipv4.png")
     b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
     `r 1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1`
  
- 13. See book.
+ <!-- 13. See book. -->
  
