@@ -32,3 +32,11 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 .Rproj.user
+
+# LaTeX stuff
+*.log
+*_latexmk
+*.fls
+*.sol
+*.aux
+*.synctex.gz
