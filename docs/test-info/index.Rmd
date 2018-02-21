@@ -1,0 +1,45 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../styles/rpruim2017.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Test Information
+
+### Test 1 
+
+**Date:** Wed, February 28
+
+**Material Covered**: Graphs (Rosen chapter 9.1-9.5, 9.7) and Counting (Rosen 5.1-5.4)
+
+#### Topics
+
+**Graphs:** 
+modeling with graphs (what do edges and vertices represent?);
+types of graphs(directed, undirected, self-loops, etc., etc.);
+graph terminology (examples: vertex, edge, adjacent, degree, bipartite, path, connected);
+graph representations (adjacency matrix, incidence matrix, edge list, adjacency list);
+graph isomorphism; graph invariants;
+Euler paths and circuits; Hamilton paths and circuits; 
+planar graphs; Euler's formula; Kuratowski's Theorem
+
+**Counting:** 
+bijection principle; multiplication principle; 
+addition principle;  division principle; 
+inclusion-exclusion; pigeonhole principle; 
+permutations and combinations; binomial coefficients.
+
+
+
+
+
+
