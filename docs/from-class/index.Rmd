@@ -16,6 +16,8 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+02/23 | [Counting Donuts](Counting-Donut.pdf)
+02/21 | [Division Principe](Counting-Division.pdf)
 02/19 | [Pigeonhole Principle](Pigeonhole-Principle.pdf)
 02/16 | [Counting Problems](Basic-Counting.pdf)
 
