@@ -340,9 +340,8 @@ Question board
   * Kuratowski's Thm and planarity
   * How to test graph isomorphism
 
-===endofcal
 
-Topic:: Graph Algorithms
+ -- didn't do below --
 
 Analysis of Complexity of Euler Path/Circuit Detection Algorithms
 	1) checking that G is connected
@@ -369,7 +368,8 @@ Analysis of Complexity of Euler Path/Circuit Detection Algorithms
 		Adj List:   O(|E|) = O(|V|*|V|)
 			better in sparser graphs
 
-===endofcal
+===skip  # come back during models of comp if time
+
 Topic:: Hamilton Path
 Topic:: Graph Coloring
 
@@ -684,221 +684,7 @@ Graph Coloring
 	chromatic number of C_n [depends on parity]
 		wheels?
 
-
-
-===skip
-Topic:: Trees
-Read:: Rosen 10.1
-
-chromatic number examples
-	cycles (based on parity)
-	Qn (can be done with two colors)
-		note: two-colorable = bipartite
-		what are the "parts" of Qn?  (even number of 0's vs odd number of 0's)
-	wheels (left for an assignment)
-
-Applications of graph coloring
-	coloring maps
-		reason for name
-		was known for a long time that all planer graphs can be 5-colored
-		conjectured that all could be 4-colored
-		4-color theorem proved in 1970's using a computer to automate
-			checking many cases
-
-	scheduling exams
-	assigning tv frequencies
-
-Def of tree: an undirected, connected graph with no cylces
-	includes no loops, no multiple edges, so trees are simple graphs
-
-	identify trees in problems 1 and 2 on page 641, 642
-
-Thm: an undirected graph is a tree iff
-		between any pair of vertices there is exactly one simple path
-
-	Pf: =>: there will be a path because of connected
-		    shortest path will be simple
-		    if there were two paths, there would be a cycle
-
-		<=: existence of paths implies connected
-			a cycle would imply two paths (split cycle in half)
-			a loop implies two paths from x to y where y has loop
-
-Rooted trees
-	if we pick one vertex and call it the root, we have a rooted tree
-	since there is a unique simple path from root to any other vertex, we
-		can use this to assign directions to each edge
-
-	do a couple of examples (pick different roots from same graph
-
-	intro to tree terminology
-
-===skip
-Topic:: Tree Applications
-Read:: Rosen 10.2
-
-tree terminology
-	parent, child, sibling, anscestor, descendant
-	leaf (=childless), internal vertex (=parent)
-	subtree: vertex together with all descendants (and edges incident to them)
-
-	m-ary: at most m children
-	full m-ary: all internal vertices have exactly m children
-
-	ordered rooted tree: children of each internal node have order
-		left and right children if tree is binary
-		gives rise to left and right subtrees
-
-	check terminology using problem 9.1.3 on page 642
-
-
-example applications
-	file systems
-	saturated hydrocarbons:
-		4 C each with degree 4; H each have degree 1
-			how many H's?  how many edges?
-				edges: 4(4) - double counting = 16 - 3 = 13
-				1 - 13 + v = 2, so v = 14
-
-			C4H10 (butane)
-				make at least two possible graphs
-
-		in general if there are k C's, then e = 4k - (k-1) = 3k+1
-			v = 2 + e - r = 2 + 3k + 1 - 1 = 3k + 2
-			3k+2 - k = 2k+2 H's
-
-		different tree structures lead to different isomers of the hydrocarbon
-			only two for C4H10
-
-
-Thm: a tree with n vertices has n-1 edges
-
-	Pf: euler characteristic with r = 1
-
-Thm: a full m-ary tree with i internal vertices has mi+1 vertices
-
-	Pf: mi children, plus 1 root
-
-Cor: in a full m-ary tree v = mi+1 = i + l, so if we know any two
-		of v, m, i, l we can solve for the other two
-
-Cor: in a full binary tree v = 2i+1 = i + l, so l = i + 1
-
-Example: Chain letter; each person sends to four people or none.
-			When 100 people have received a letter but not sent one,
-			how many people have received a letter?
-
-
-More definitions
-	level: length of path from root
-	height: max level
-	balanced: all leaves at one of two levels (h or h-1 where h is the height)
-
-
-===skip
-Topic:: More Tree Examples
-Read:: Rosen 10.2
-
-Thm: at most m^h leaves in an m-ary tree of height h
-
-	Pf: induction (delete root and look at subtrees)
-
-Cor: h > log_m l
-
-Binary Search Trees
-	example
-
-	adding dummy nodes to make tree full adds at most 1 to the height
-
-	h > log_2 l, so worst case will take at least log(n) to insert or
-		remove from tree
-
-	if unbalanced, the height might be much worse
-
-	BSTs should be "balanced as we go" to improve the efficiency
-
-weighing 8 coins to find one that is light
-	3-ary tree
-	leaves = know which coin is light
-	must have at least 7 leaves
-	so height must be at least log_3(8) = 2
-
-	start with 3 v 3 and make decision tree
-
-	can we do 9 coins?
-		yes, small modification of previous example
-
-	10 coins must require at least 3 weighings
-
-===skip
-Topic:: Sorting, Prfeix Codes, Spanning Trees
-Read:: Rosen 10.3, 10.4
-
-Sorting algorithms
-	can represent as a binary decision tree
-	each of the n! orders must appear as a leaf of the tree
-	so height of tree is at least log(n!) = Theta(n log n)
-
-	same holds for average case, since more than half of leaves are in
-		higher levels of the tree
-
-Prefix Codes
-	self-termination idea
-		ascii is self-terminating because we know the number of bits used for
-			each character
-		could perhaps do better if we recoded things
-			letters that occur frequently should have short codes
-		need to be able to parse: self-termination
-			if we use both 0 and 1 we can only code two characters
-			in fact if we use 0 as a code, all other codes are "unary plus 1"
-		prefex-free might be a better name: no code string is the
-			prefix of another code string
-
-	examples: 01, 10, 001 is ok.
-			  00, 10, 11, 010 is ok.
-
-	good codes can be represented as desicion trees
-
-Huffman codes
-	want to make a prefix code that will result in an encoding
-	of a file that is as short as possible (data compression)
-
-	idea: build the decision tree with less frequent characters
-		at higher levels
-
-	can be improved if we encode not just individual characters but blocks of
-	characters.
-
-Spanning Trees = subgraphs that are trees and contain all vertices
-	n vertices, n-1 edges
-
-	depth-first and breadth-first search each produce a spanning tree
-
-===skip
-Topic:: Minimum Spanning Trees
-Read:: Rosen 10.5
-
-Defs
-	weighted edges
-	minimum spanning tree
-
-get student ideas about how to find it
-	interesting feature: 3 different greedy algorithms all work
-
-
-Prim's algorithm
-	keep adding min weight edge that is
-		- connected
-		- doesn't create a cycle
-
-Kruskall's algorithm
-	keep adding min weight edge that is
-		- doesn't create a cycle
-
-Sollin's algorithm [homework problems]
-
-
-===endofcal
+===
 Topic:: Basic Counting
 Read:: Rosen 5.1
 #Vocab:: Sum Rule, Product Rule, bijection principle
@@ -1367,366 +1153,6 @@ Yahtzee
 
 Lottery
 	Daily 3 / Daily 4
-
-===10/28/2016
-Topic:: Relations
-Read:: Rosen 8.1--2
-
-Questions on probability PS, if any
-
-relations
-	definition(s): subset of a cross-product
-		n-ary -- relational databases
-		binary relations
-		on a set -- many important examples
-
-	notation
-		set notation
-		infix notation
-			examples: =, <, >, subset, etc.
-
-	kinds: symmetric, reflexive, transitive, equivalence
-		equivalence ~ "essentially" the same
-			essentially ~ up to what matters (in context)
-
-examples
-	student x in course A
-	city in state
-	mention data-base-like apps
-
-	relations on {1,2,3,4}
-
-		R1 = {(1,1),(1,2),(2,1),(2,2),(3,4),(4,1),(4,4)}
-		R2 = {(1,1),(1,2),(2,1)}
-		R3 = {(1,1),(1,2),(1,4),(2,1),(2,2),(3,3),(4,1),(4,4)}
-		R4 = {(2,1),(3,1),(3,2),(4,1),(4,2),(4,3)}
-				this is >
-		R5 = {(1,1),(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,3),(3,4),(4,4)}
-				this is <=
-		R6 = {(3,4)}
-
-	relations on integers:
-		R7: <=
-		R8: >
-		R9 = {(a,b) | a=b or a=-b} = {(a,b) : |a| = |b|}
-		R10: =
-		R11: a=b+1
-		R12: a+b <= 3
-
-
-properties of relations on a set
-	reflexive:  a R a for all a
-	symmetric   a R b <-> b R a
-
-	anti-symmetric: aRb and bRa -> a=b
-		same as aRb -> (b not R a or a=b)
-		use propositional logic to show they are the same
-			write both using and, or, not
-				both same as !aRb | !bRa | a=b
-			mention truth tables
-
-	transitive:  a R b and b R c -> a R c
-
-def of eq. relation (sym., refl., trans)
-
-all functions are relations
-	relations where for each a in A there is exactly 1 b in B
-
-how many relations from A to B if A and B are finite?
-	2^{|A|x|B|} = number of subsets
-
-examples [didn't do these]:
-	equality
-	[ a = b (mod n) ]
-	a and b had same score on SAT
-	a - b is integer (on reals or rationals)
-	a - b is rational
-	a and b are similar triangles
-
-===
-Topic:: Representing Relations
-Read:: Rosen 8.3
-
-Operations on relations
-	since they are sets, set ops apply [inheritance analogy]
-		union, intersection, complement, difference
-
-	polymorhpism and representations of mathematical objects
-		you don't really understand until you understand in more than one way
-		digraphs and relations are the same thing
-			other kinds of graphs are various restrictions or extensions of
-				digraphs/relations
-
-	a relation is a set, so we should be able to perform set operations
-		look at matrix representations of the operations
-			R \union S
-			R \intersect S
-			R compliment
-			R \compose S
-
-	can also talk about subsets of relations [a relation on relations]
-
-	inverse relation
-
-	composition of relations
-		between sets
-		on a set
-		iteration of composition
-
-Composition and transitivity
-	a relation is transitive iff R^n subset R for all n
-
-		<=  Then R^2 subset R, which is basically def of transitive
-
-		=>  use induction
-
-Review digraph representation
-
-	note: if relation is symmetric, we can use undirected graphs
-		so digraphs = relations
-		and undirected graphs = symmetric relations
-
-Representing relations using matrices (arrays)
-	recall bitstring reps for sets
-	matrix rep -- basically a bitstring rep for the set arranged in a different shape
-
-	operations: union, intersection, difference, etc.
-		just like bit ops on bitstrings for sets
-
-	matrix rep of inverse
-		transpose of matrix
-
-	how to check for relation properties by looking at the matrix
-		reflex, sym, anit-sym all easy
-		transitivity is not as obvious
-			use transitivity lemma above
-
-So how do we get a matrix for R^2?
-	motivate matrix operations
-
-Intro to matrix operations
-	add, subtract, multiply (powers)
-	matrices over Z, R, {0,1}
-		different notation for ops over {0,1}
-
-===
-Topic:: Matrix Operations
-Read:: Rosen 3.8
-
-products of matrices of graphs
-
-R^2 and transitivity
-
-complexity of matrix multiplication (n by n)
-	each location of product requires n products and n-1 additions
-	so O(n^3) multiplications and additions
-	there are other algorithms that require fewer multiplications
-
-preview ideas of transitive closure
-
-
-===
-Topic:: Closures of Relations
-Read:: Rosen 8.4
-
-review of matrix ops and relations
-
-  and/or
-
-    and for intersection, or for union
-
-  products
-
-    M is matrix for R
-
-    M^2 = M * M = # of paths of length 2
-
-    M^k = M * M * ... M = # of paths of length k
-
-    M \circdot M = exists a path of length 2
-
-    M^[k] = M \circdot M \circdot M ... \circdot M = exists path of length k
-
-reflexive, symmetric and transitive closure
-	defined
-    S is the P-closure of R if
-      S contains R
-      S has property P
-      if Q has property P and contains R, then S \subseteq Q
-
-      i.e., S is the smallest relation containng R with property P
-
-      note: closure might not exist
-        * might not be a larger relation with property P
-        * might not be a "smallest" one
-
-	matrix reps for refl and sym
-    reflex: add 1 on diagonal where they are missing
-    sym: if there is a 1 on one side of diagonal, add one on other side if missing
-
-      M or M^t
-
-      transpose
-
-	example showing iterative nature of trans closure
-
-paths in a graph/relation
-	(to be connected to trans. closure)
-	define carefully
-		length = number of edges
-
-Defns
-	path in a graph/relation
-		sequence of vertices, each connected to its successor by an edge
-		x_0, x_1, ... x_n such that (x_i, x_{i+1}) is an edge (i.e. x_i R x_{i+1})
-			length is n (n edges, n+1 verices)
-
-	reminders:
-		composition
-			(x,y) in R^2 iff there is a u (x,u) in R and (u,y) in R
-			(x,y) in R^{n+1} iff there is a u
-					(x,u) in R (u,y) in R^n
-
-===
-Topic:: Transitive Closure
-
-Quick review
-  reflexive closure: M and I
-  symmetric closure: M and M^t
-  transitive closure: ??
-
-Connectivity relation
-
-		R^* = \union R^[k] = \union_{k=1}^{n} R^[k]
-
-    so a R^* b iff there is a path from a to b (of any length)
-
-
-Lemmas
-	1. R^n = {(x,y) | there is a path of length n from x to y}
-		mentioned (at least informally already)
-	2. R is transitive iff R^2 subset of R
-		did before
-		R^2 might not be = R (states and borders example)
-	3. R is transitive iff R^n subset R for all n
-		did last time
-	4. if R is transitive then R^n is transitive
-		give proof now: (a,b) in R^n and (b,c) in R^n and R trans implies
-			(a,b) in R and (b,c) is in R^(n-1) so (a,c) in R^n
-
-
-Thm: R^* is the transitive closure of R
-
-	R* is transitive [direct from definition]
-
-	if R subset S and S is transitive, then R* subset S* = S
-
-naive algorithm R^* = R | R^2 | R^3 ...
-
-	if R is a relation on a set A with |A| = n, then R* = R | R^2 | ...  R^(n)
-		cycle-deletion argument
-
-	in fact, we may stop of we ever fail to get something new
-
-	complexity:	n matrix multiplications, n-1 matrix or's
-		so O(n^4) ops using naive algorithms for matrix multiplication
-			O(n^1+sqrt{7}) with better multiplication algorithm
-
-Warshall algorithm can do better (next time)
-
-===
-Topic:: Warshall's Algorithm
-Topic:: Equivalence Relations
-Read:: Rosen 8.5
-
-Review Trans Closure algorithm from last time
-	R, R^2, R^3
-	M, M^[2], M^[3]
-
-	can use either boolean or high school algebra
-		boolean gives exactly transitive closure
-		high school algorithm will count the paths.
-	revisit time analysis
-
-Warshall's Algorithm
-	first algorithm partitioned paths into components based on length
-	Warshall partitions into different components
-		based on set of internal vertices
-
-Analysis of Warshall's algorithm:
-	updating a bit of W
-	algorithm
-	clearly O(n^3)
-
-Generalization of Warshall's Algorithm [come back to later]
-	All pairs shortest paths
-		Keep track of lengths -- yields length of shortest paths
-		Keep track of a path -- yields a shortest path
-
-Generalization of matrix product
-
-Using Mathematica to do matrix products
-
-===skip
-Another example application [didn't do]
-	precedence graphs (concurrent processing)
-		a = 0;
-		b = 1;
-		c = a + 1;
-		d = b + a;
-		e = d + 1;
-		e = c + d;
-
-		similar for other scheduling tasks
-
-		goal: schedule tasks on n processors so order is ok.
-			one processor: topological sort
-
-		note: cyles would be bad
-			accyclic graphs: DAGs
-
-	trees
-		connected, undirected, acylclic graph
-
-===
-Topic:: Equivalence Relations
-Read:: Rosen 8.5
-
-Begin with example handout for graphs and relations (including Warshall's algorithm)
-
-Equivalence Classes
-	[a] = { b | a R b }
-	list classes for some of the relations above
-
-Equivalence Thm: The following are equivalent if R is eq. rel.
-	1) a R b
-	2) [a] = [b]
-	3) [a] \int [b] is not empty
-
-So equivalence relations partition the set A.
-
-Pf: 1 -> 2 -> 3 -> 1	[underline uses of each property in colors]
-
-	1 -> 2:
-		spse x in [a], show x in [b]
-		x R a  and a R b -> x R b -> b R x
-
-	2-> 3:
-		[a] = [b] -> [a] int [b] = [a] which contains a
-
-	3 -> 1:
-		Spse x in [a] and x in [b]
-		then x R a and x R b
-		so   a R x and x R b
-		so   a R b
-
-===11/10/2016
-
-Note:: Review Session 5 - 6:25pm
-
-===11/11/2016
-Topic:: Test 2
-
 
 ===
 Topic:: Grammars and Languages
@@ -2415,4 +1841,578 @@ final example: anagram program (word length w, dictionary size d)
 
 
 
+
+
+===skip
+Topic:: Trees
+Read:: Rosen 10.1
+
+chromatic number examples
+	cycles (based on parity)
+	Qn (can be done with two colors)
+		note: two-colorable = bipartite
+		what are the "parts" of Qn?  (even number of 0's vs odd number of 0's)
+	wheels (left for an assignment)
+
+Applications of graph coloring
+	coloring maps
+		reason for name
+		was known for a long time that all planer graphs can be 5-colored
+		conjectured that all could be 4-colored
+		4-color theorem proved in 1970's using a computer to automate
+			checking many cases
+
+	scheduling exams
+	assigning tv frequencies
+
+Def of tree: an undirected, connected graph with no cylces
+	includes no loops, no multiple edges, so trees are simple graphs
+
+	identify trees in problems 1 and 2 on page 641, 642
+
+Thm: an undirected graph is a tree iff
+		between any pair of vertices there is exactly one simple path
+
+	Pf: =>: there will be a path because of connected
+		    shortest path will be simple
+		    if there were two paths, there would be a cycle
+
+		<=: existence of paths implies connected
+			a cycle would imply two paths (split cycle in half)
+			a loop implies two paths from x to y where y has loop
+
+Rooted trees
+	if we pick one vertex and call it the root, we have a rooted tree
+	since there is a unique simple path from root to any other vertex, we
+		can use this to assign directions to each edge
+
+	do a couple of examples (pick different roots from same graph
+
+	intro to tree terminology
+
+===skip
+Topic:: Tree Applications
+Read:: Rosen 10.2
+
+tree terminology
+	parent, child, sibling, anscestor, descendant
+	leaf (=childless), internal vertex (=parent)
+	subtree: vertex together with all descendants (and edges incident to them)
+
+	m-ary: at most m children
+	full m-ary: all internal vertices have exactly m children
+
+	ordered rooted tree: children of each internal node have order
+		left and right children if tree is binary
+		gives rise to left and right subtrees
+
+	check terminology using problem 9.1.3 on page 642
+
+
+example applications
+	file systems
+	saturated hydrocarbons:
+		4 C each with degree 4; H each have degree 1
+			how many H's?  how many edges?
+				edges: 4(4) - double counting = 16 - 3 = 13
+				1 - 13 + v = 2, so v = 14
+
+			C4H10 (butane)
+				make at least two possible graphs
+
+		in general if there are k C's, then e = 4k - (k-1) = 3k+1
+			v = 2 + e - r = 2 + 3k + 1 - 1 = 3k + 2
+			3k+2 - k = 2k+2 H's
+
+		different tree structures lead to different isomers of the hydrocarbon
+			only two for C4H10
+
+
+Thm: a tree with n vertices has n-1 edges
+
+	Pf: euler characteristic with r = 1
+
+Thm: a full m-ary tree with i internal vertices has mi+1 vertices
+
+	Pf: mi children, plus 1 root
+
+Cor: in a full m-ary tree v = mi+1 = i + l, so if we know any two
+		of v, m, i, l we can solve for the other two
+
+Cor: in a full binary tree v = 2i+1 = i + l, so l = i + 1
+
+Example: Chain letter; each person sends to four people or none.
+			When 100 people have received a letter but not sent one,
+			how many people have received a letter?
+
+
+More definitions
+	level: length of path from root
+	height: max level
+	balanced: all leaves at one of two levels (h or h-1 where h is the height)
+
+
+===skip
+Topic:: More Tree Examples
+Read:: Rosen 10.2
+
+Thm: at most m^h leaves in an m-ary tree of height h
+
+	Pf: induction (delete root and look at subtrees)
+
+Cor: h > log_m l
+
+Binary Search Trees
+	example
+
+	adding dummy nodes to make tree full adds at most 1 to the height
+
+	h > log_2 l, so worst case will take at least log(n) to insert or
+		remove from tree
+
+	if unbalanced, the height might be much worse
+
+	BSTs should be "balanced as we go" to improve the efficiency
+
+weighing 8 coins to find one that is light
+	3-ary tree
+	leaves = know which coin is light
+	must have at least 7 leaves
+	so height must be at least log_3(8) = 2
+
+	start with 3 v 3 and make decision tree
+
+	can we do 9 coins?
+		yes, small modification of previous example
+
+	10 coins must require at least 3 weighings
+
+===skip
+Topic:: Sorting, Prfeix Codes, Spanning Trees
+Read:: Rosen 10.3, 10.4
+
+Sorting algorithms
+	can represent as a binary decision tree
+	each of the n! orders must appear as a leaf of the tree
+	so height of tree is at least log(n!) = Theta(n log n)
+
+	same holds for average case, since more than half of leaves are in
+		higher levels of the tree
+
+Prefix Codes
+	self-termination idea
+		ascii is self-terminating because we know the number of bits used for
+			each character
+		could perhaps do better if we recoded things
+			letters that occur frequently should have short codes
+		need to be able to parse: self-termination
+			if we use both 0 and 1 we can only code two characters
+			in fact if we use 0 as a code, all other codes are "unary plus 1"
+		prefex-free might be a better name: no code string is the
+			prefix of another code string
+
+	examples: 01, 10, 001 is ok.
+			  00, 10, 11, 010 is ok.
+
+	good codes can be represented as desicion trees
+
+Huffman codes
+	want to make a prefix code that will result in an encoding
+	of a file that is as short as possible (data compression)
+
+	idea: build the decision tree with less frequent characters
+		at higher levels
+
+	can be improved if we encode not just individual characters but blocks of
+	characters.
+
+Spanning Trees = subgraphs that are trees and contain all vertices
+	n vertices, n-1 edges
+
+	depth-first and breadth-first search each produce a spanning tree
+
+===skip
+Topic:: Minimum Spanning Trees
+Read:: Rosen 10.5
+
+Defs
+	weighted edges
+	minimum spanning tree
+
+get student ideas about how to find it
+	interesting feature: 3 different greedy algorithms all work
+
+
+Prim's algorithm
+	keep adding min weight edge that is
+		- connected
+		- doesn't create a cycle
+
+Kruskall's algorithm
+	keep adding min weight edge that is
+		- doesn't create a cycle
+
+Sollin's algorithm [homework problems]
+
+
+===endofcal
+
+===10/28/2016
+Topic:: Relations
+Read:: Rosen 8.1--2
+
+Questions on probability PS, if any
+
+relations
+	definition(s): subset of a cross-product
+		n-ary -- relational databases
+		binary relations
+		on a set -- many important examples
+
+	notation
+		set notation
+		infix notation
+			examples: =, <, >, subset, etc.
+
+	kinds: symmetric, reflexive, transitive, equivalence
+		equivalence ~ "essentially" the same
+			essentially ~ up to what matters (in context)
+
+examples
+	student x in course A
+	city in state
+	mention data-base-like apps
+
+	relations on {1,2,3,4}
+
+		R1 = {(1,1),(1,2),(2,1),(2,2),(3,4),(4,1),(4,4)}
+		R2 = {(1,1),(1,2),(2,1)}
+		R3 = {(1,1),(1,2),(1,4),(2,1),(2,2),(3,3),(4,1),(4,4)}
+		R4 = {(2,1),(3,1),(3,2),(4,1),(4,2),(4,3)}
+				this is >
+		R5 = {(1,1),(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,3),(3,4),(4,4)}
+				this is <=
+		R6 = {(3,4)}
+
+	relations on integers:
+		R7: <=
+		R8: >
+		R9 = {(a,b) | a=b or a=-b} = {(a,b) : |a| = |b|}
+		R10: =
+		R11: a=b+1
+		R12: a+b <= 3
+
+
+properties of relations on a set
+	reflexive:  a R a for all a
+	symmetric   a R b <-> b R a
+
+	anti-symmetric: aRb and bRa -> a=b
+		same as aRb -> (b not R a or a=b)
+		use propositional logic to show they are the same
+			write both using and, or, not
+				both same as !aRb | !bRa | a=b
+			mention truth tables
+
+	transitive:  a R b and b R c -> a R c
+
+def of eq. relation (sym., refl., trans)
+
+all functions are relations
+	relations where for each a in A there is exactly 1 b in B
+
+how many relations from A to B if A and B are finite?
+	2^{|A|x|B|} = number of subsets
+
+examples [didn't do these]:
+	equality
+	[ a = b (mod n) ]
+	a and b had same score on SAT
+	a - b is integer (on reals or rationals)
+	a - b is rational
+	a and b are similar triangles
+
+===
+Topic:: Representing Relations
+Read:: Rosen 8.3
+
+Operations on relations
+	since they are sets, set ops apply [inheritance analogy]
+		union, intersection, complement, difference
+
+	polymorhpism and representations of mathematical objects
+		you don't really understand until you understand in more than one way
+		digraphs and relations are the same thing
+			other kinds of graphs are various restrictions or extensions of
+				digraphs/relations
+
+	a relation is a set, so we should be able to perform set operations
+		look at matrix representations of the operations
+			R \union S
+			R \intersect S
+			R compliment
+			R \compose S
+
+	can also talk about subsets of relations [a relation on relations]
+
+	inverse relation
+
+	composition of relations
+		between sets
+		on a set
+		iteration of composition
+
+Composition and transitivity
+	a relation is transitive iff R^n subset R for all n
+
+		<=  Then R^2 subset R, which is basically def of transitive
+
+		=>  use induction
+
+Review digraph representation
+
+	note: if relation is symmetric, we can use undirected graphs
+		so digraphs = relations
+		and undirected graphs = symmetric relations
+
+Representing relations using matrices (arrays)
+	recall bitstring reps for sets
+	matrix rep -- basically a bitstring rep for the set arranged in a different shape
+
+	operations: union, intersection, difference, etc.
+		just like bit ops on bitstrings for sets
+
+	matrix rep of inverse
+		transpose of matrix
+
+	how to check for relation properties by looking at the matrix
+		reflex, sym, anit-sym all easy
+		transitivity is not as obvious
+			use transitivity lemma above
+
+So how do we get a matrix for R^2?
+	motivate matrix operations
+
+Intro to matrix operations
+	add, subtract, multiply (powers)
+	matrices over Z, R, {0,1}
+		different notation for ops over {0,1}
+
+===
+Topic:: Matrix Operations
+Read:: Rosen 3.8
+
+products of matrices of graphs
+
+R^2 and transitivity
+
+complexity of matrix multiplication (n by n)
+	each location of product requires n products and n-1 additions
+	so O(n^3) multiplications and additions
+	there are other algorithms that require fewer multiplications
+
+preview ideas of transitive closure
+
+
+===
+Topic:: Closures of Relations
+Read:: Rosen 8.4
+
+review of matrix ops and relations
+
+  and/or
+
+    and for intersection, or for union
+
+  products
+
+    M is matrix for R
+
+    M^2 = M * M = # of paths of length 2
+
+    M^k = M * M * ... M = # of paths of length k
+
+    M \circdot M = exists a path of length 2
+
+    M^[k] = M \circdot M \circdot M ... \circdot M = exists path of length k
+
+reflexive, symmetric and transitive closure
+	defined
+    S is the P-closure of R if
+      S contains R
+      S has property P
+      if Q has property P and contains R, then S \subseteq Q
+
+      i.e., S is the smallest relation containng R with property P
+
+      note: closure might not exist
+        * might not be a larger relation with property P
+        * might not be a "smallest" one
+
+	matrix reps for refl and sym
+    reflex: add 1 on diagonal where they are missing
+    sym: if there is a 1 on one side of diagonal, add one on other side if missing
+
+      M or M^t
+
+      transpose
+
+	example showing iterative nature of trans closure
+
+paths in a graph/relation
+	(to be connected to trans. closure)
+	define carefully
+		length = number of edges
+
+Defns
+	path in a graph/relation
+		sequence of vertices, each connected to its successor by an edge
+		x_0, x_1, ... x_n such that (x_i, x_{i+1}) is an edge (i.e. x_i R x_{i+1})
+			length is n (n edges, n+1 verices)
+
+	reminders:
+		composition
+			(x,y) in R^2 iff there is a u (x,u) in R and (u,y) in R
+			(x,y) in R^{n+1} iff there is a u
+					(x,u) in R (u,y) in R^n
+
+===
+Topic:: Transitive Closure
+
+Quick review
+  reflexive closure: M and I
+  symmetric closure: M and M^t
+  transitive closure: ??
+
+Connectivity relation
+
+		R^* = \union R^[k] = \union_{k=1}^{n} R^[k]
+
+    so a R^* b iff there is a path from a to b (of any length)
+
+
+Lemmas
+	1. R^n = {(x,y) | there is a path of length n from x to y}
+		mentioned (at least informally already)
+	2. R is transitive iff R^2 subset of R
+		did before
+		R^2 might not be = R (states and borders example)
+	3. R is transitive iff R^n subset R for all n
+		did last time
+	4. if R is transitive then R^n is transitive
+		give proof now: (a,b) in R^n and (b,c) in R^n and R trans implies
+			(a,b) in R and (b,c) is in R^(n-1) so (a,c) in R^n
+
+
+Thm: R^* is the transitive closure of R
+
+	R* is transitive [direct from definition]
+
+	if R subset S and S is transitive, then R* subset S* = S
+
+naive algorithm R^* = R | R^2 | R^3 ...
+
+	if R is a relation on a set A with |A| = n, then R* = R | R^2 | ...  R^(n)
+		cycle-deletion argument
+
+	in fact, we may stop of we ever fail to get something new
+
+	complexity:	n matrix multiplications, n-1 matrix or's
+		so O(n^4) ops using naive algorithms for matrix multiplication
+			O(n^1+sqrt{7}) with better multiplication algorithm
+
+Warshall algorithm can do better (next time)
+
+===
+Topic:: Warshall's Algorithm
+Topic:: Equivalence Relations
+Read:: Rosen 8.5
+
+Review Trans Closure algorithm from last time
+	R, R^2, R^3
+	M, M^[2], M^[3]
+
+	can use either boolean or high school algebra
+		boolean gives exactly transitive closure
+		high school algorithm will count the paths.
+	revisit time analysis
+
+Warshall's Algorithm
+	first algorithm partitioned paths into components based on length
+	Warshall partitions into different components
+		based on set of internal vertices
+
+Analysis of Warshall's algorithm:
+	updating a bit of W
+	algorithm
+	clearly O(n^3)
+
+Generalization of Warshall's Algorithm [come back to later]
+	All pairs shortest paths
+		Keep track of lengths -- yields length of shortest paths
+		Keep track of a path -- yields a shortest path
+
+Generalization of matrix product
+
+Using Mathematica to do matrix products
+
+===skip
+Another example application [didn't do]
+	precedence graphs (concurrent processing)
+		a = 0;
+		b = 1;
+		c = a + 1;
+		d = b + a;
+		e = d + 1;
+		e = c + d;
+
+		similar for other scheduling tasks
+
+		goal: schedule tasks on n processors so order is ok.
+			one processor: topological sort
+
+		note: cyles would be bad
+			accyclic graphs: DAGs
+
+	trees
+		connected, undirected, acylclic graph
+
+===
+Topic:: Equivalence Relations
+Read:: Rosen 8.5
+
+Begin with example handout for graphs and relations (including Warshall's algorithm)
+
+Equivalence Classes
+	[a] = { b | a R b }
+	list classes for some of the relations above
+
+Equivalence Thm: The following are equivalent if R is eq. rel.
+	1) a R b
+	2) [a] = [b]
+	3) [a] \int [b] is not empty
+
+So equivalence relations partition the set A.
+
+Pf: 1 -> 2 -> 3 -> 1	[underline uses of each property in colors]
+
+	1 -> 2:
+		spse x in [a], show x in [b]
+		x R a  and a R b -> x R b -> b R x
+
+	2-> 3:
+		[a] = [b] -> [a] int [b] = [a] which contains a
+
+	3 -> 1:
+		Spse x in [a] and x in [b]
+		then x R a and x R b
+		so   a R x and x R b
+		so   a R b
+
+===11/10/2016
+
+Note:: Review Session 5 - 6:25pm
+
+===11/11/2016
+Topic:: Test 2
 
