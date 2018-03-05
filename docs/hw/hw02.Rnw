@@ -123,7 +123,7 @@ Additional assignments will be filled in over time.
    \mand[at least one ace]{13}
    \mand[flush]{16}
    \mand[straight]{17}
-   \mand[lottery]{48d}
+   \mand[lottery]{24d}
    \mand[lottery]{26b}
    \mand[roulette]{35}
 	 \\
