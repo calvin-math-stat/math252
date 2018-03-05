@@ -75,7 +75,7 @@
 %
 %  Fall 2016
 %
-\subsection*{Problem Sets Before Test 1}
+\subsection*{Problem Sets Between Test 1 and Test 2}
 
 \end{center}
 
@@ -116,152 +116,16 @@ Additional assignments will be filled in over time.
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-  	 Wed 2/1 & PS 1 & Rosen 9.1 &
-	 \helper{1}
-	 \helper[types of graph]{3,5,7,9}
-	 \mand[types of graph]{4}
-	 \mand[types of graph]{8}
-	 \mand[graphs and relations]{11}
-	 \mand[intersection graph]{13}
-	 \mand[Fred]{18}
-	 \mand[precedence graph]{31}
-	 \\
-	 \hline
-	 Fri 2/2 & \WW{01} & Rosen 9.2 &
-	 \\
-	 \hline
-	 Mon 2/6 & \WW{02} & Rosen 9.3 &
-	 \\
-	 \hline
-	 Wed 2/8 & PS 2 & Rosen 9.4 &
-	 \mand[paths]{2}
-	 \mand[components]{6}
-	 \mand[strong/weak connectivity]{12}
-
-	 \mand[isomorphic?]{18}
-	 \mand[isomorphic?]{20}
-	 \mand[farmer puzzle]{54}
-
-	 \extra[paths]{1}
-	 \extra{3--5}
-	 \extra[strong/weak connectivity]{11}
-	 \extra[isomorphic?]{19, 21}
-	 \\
-	 & & Rosen 9.5 &
-	 \mand[Euler paths/circuits]{2--8 even}
-	 \mand[bridges]{10}
-
-	 \mand[directed Euler]{18}
-	 \mand[directed Euler]{20}
-	 \mand[which have Euler circuits?]{26}
-
-	 \extra[Euler paths/circuits]{1--7 odd}
-	 \extra[directed Euler]{19, 21}
-	 \\
-	 &&& Note: Your answers to homework in this class
-	 should typically include some sort of explanation.
-	 Answers like ``Yes", ``No", and ``17", are rarely sufficient.
-	 \\
-	 \hline
-	 Fri 2/9 & PS 3 & Rosen 9.7 &
-	 \mand[planar]{2--4}
-	 \mand[regions]{12}
-	 \extra[regions]{13}
-	 \mand[vertices]{14}
-	 \\
-	 \hline
-	 Mon 2/12 & PS 4 & Rosen 9.RQ &
-	 \mand[degree]{3}
-	 \\
-	 && Rosen 9.SE &
-	 \mand[isomorphic?]{3--5}
-	 \\
-	 \hline
-	 Wed 2/14 & PS 5 & Rosen 9.7 &
-	 \mand[planar]{6--8}
-	 \mand[Kuratowski]{23--25}
-	 \\
-	 \hline
-	 Fri 2/16 & PS 6 & Rosen 9.5 &
-	 \mand[directed Euler]{22--23}
-	 \mand[Hamilton]{32--40 even}
-	 \\
-	 &  & Rosen 9.7 &
-	 \mand[bipartite, planar]{16}
-	 \\
-	 \hline
-	 Mon 2/19 & \WW{03} & Rosen 5.1 &
-	 \\
-	 \hline
-	 Wed 2/21 & \WW{04} & Rosen 5.1 -- 5.2 &
-	 \\
-	 \hline
-	 \newpage
-	 Fri 2/23 & PS 6 & Rosen 5.2 &
-	   \mand[bowl]{4}
-	   \mand[students]{18}
-	   \mand[initials]{29}
-	   \mand[houses]{40}
-	   \\
-	   & & Rosen 5.3 &
-	   \mand[permunations]{1}
-	   \mand[race]{8}
-	   \extra[bits]{11}
-	   \mand[bits]{12}
-	   \extra[letters]{15}
-	   \mand[coins]{18}
-	   \extra[coins]{19}
-	   \mand[line up]{23}
-	   \extra[line up]{24}
-	   \mand[committee]{30}
-	   \\
-	   \hline
-	 Mon 2/26 & \WW{05} & Rosen 5.1--5.4 &
-	   \\
-	   \hline
-	 Wed 2/28 & & Rosen 5.RQ &
-	 \extra[counting principles]{1--3}
-	 \extra[]{5}
-	 \extra[pigeonhole principle]{6--7}
-	 \extra[combinations and permutations]{8}
-	 \extra[counting problem schemas]{13}
-	 \extra[scrambling letters]{15}
-	 \\
-	 & & Rosen 5.SE &
-	 \extra[selecting items]{1-2}
-	 \extra[T/F]{3}
-	 \extra[bitstrings]{4}
-	 \extra[phone numbers]{6}
-	 \extra[ice cream]{7}
-	 \extra[zodiac]{12}
-	 \extra[cards]{15}
-	 \extra[donuts]{21}
-	 \extra[permuations]{22}
-	 \extra[combinations]{23}
-	 \extra[round table]{34}
-	 \extra[advising]{35}
-	 \extra[PEPPERCORN]{38}
-	 \extra[license plates]{40}
-	   \\
-	 & & Rosen 9.RQ &
-	 \extra[types of graph]{1}
-	 \extra[models]{2}
-	 \extra[degree]{3--5}
-	 \extra[graph examples]{6--7}
-	 \extra[bipartite]{8}
-	 \extra[graph representation]{9}
-	 \extra[isomorphism]{10}
-	 \extra[connected]{11}
-	 \extra[checking isomorphism]{12}
-	 \extra[Euler paths]{13}
-	 \extra[Hamilton paths]{14a}
-	 \extra[planar graph]{17}
-	 \extra[Euler's formula]{18}
-	 \extra[Kuratowski's Theorem]{19}
-	 \\
-	 & & Rosen 9.SE &
-	 \extra[isomorphic?]{3--5}
-	 \extra[invariants]{21}
+   Wed 3/7 & PS 7 & Rosen 6.1 &
+   \mand[ace or heart]{6}
+   \mand[ace of hearts]{8}
+   \mand[two cards in hand]{10}
+   \mand[at least one ace]{13}
+   \mand[flush]{16}
+   \mand[straight]{17}
+   \mand[lottery]{48d}
+   \mand[lottery]{26b}
+   \mand[roulette]{35}
 	 \\
 	   \hline
 \end{longtable}
