@@ -128,6 +128,9 @@ Additional assignments will be filled in over time.
    \mand[roulette]{35}
 	 \\
 	   \hline
+	 Fri 3/9 & \WW{06} &
+	 \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
