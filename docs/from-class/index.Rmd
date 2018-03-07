@@ -16,18 +16,20 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+03/07 | [Conditional Probaility](Probability-Conditional.pdf)
+03/05 | [Probaility Basics](Probability.pdf)
 02/23 | [Counting Donuts](Counting-Donut.pdf)
 02/21 | [Division Principe](Counting-Division.pdf)
-02/19 | [Pigeonhole Principle](Pigeonhole-Principle.pdf)
-02/16 | [Counting Problems](Basic-Counting.pdf)
+02/19 | [Pigeonhole Principle](Counting-Pigeonhole.pdf)
+02/16 | [Counting Problems](Counting-Basic.pdf)
 
 
 ### Graphs
 
 Date  | Handout
 ----- | ---------------------------------------------------
-02/12 | Euler Paths: [[worksheet]](Euler-Paths.pdf) [[long version]](Euler-Paths.html)
-02/09 | [Bipartite and Planar Graphs](Bipartite-Planar.pdf)
+02/12 | Euler Paths: [[worksheet]](Graphs-Euler.pdf) [[long version]](Graphs-Euler.html)
+02/09 | [Bipartite and Planar Graphs](Graphs-Bipartite-Planar.pdf)
 02/05 | [Paths in Graphs](Graphs-Paths.pdf)
 02/02 | [Graph Representations, Graph Isomorphism](Graphs03.pdf)
 01/31 | [More Graphs](Graphs02.pdf)
