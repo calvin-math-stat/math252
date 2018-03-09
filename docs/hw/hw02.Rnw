@@ -128,13 +128,29 @@ Additional assignments will be filled in over time.
    \mand[roulette]{35}
 	 \\
 	   \hline
-	 Fri 3/9 & \WW{06} &
+	 Fri 3/9 & \WW{06} & Rosen 6 & Probability
+	 \\
+	   \hline
+	 Mon 3/12 & \WW{07} & Rosen 6 & Conditional Probability and Bayes
 	 \\
 	   \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
+
+	  & PS 8 & Rosen 6.2 &
+	 \mand[bitstrings]{25--26}
+	 \mand[odd one out]{29}
+	 \\
+	 && Rosen 6.3 &
+	 \mand[boxes and balls]{3--4}
+	 \mand[steroids]{6}
+	 \mand[late Ramesh]{16}
+	 \\
+	   \hline
+
+
 
 	  & & Rosen 3.3 &
 	 \helper{1}
