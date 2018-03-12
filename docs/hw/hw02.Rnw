@@ -134,6 +134,9 @@ Additional assignments will be filled in over time.
 	 Mon 3/12 & \WW{07} & Rosen 6 & Conditional Probability and Bayes
 	 \\
 	   \hline
+	 Wed 3/14 & \WW{08} & Rosen 6 & Random Variables
+	 \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
