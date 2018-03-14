@@ -16,6 +16,9 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+03/14 | [Expected Value](Probability-Expected-Value.pdf)
+03/12 | [Random Variables](Probability-Random-Variables.pdf)
+03/10 | [More Probability](Probability-Bayes.pdf)
 03/07 | [Conditional Probaility](Probability-Conditional.pdf)
 03/05 | [Probaility Basics](Probability.pdf)
 02/23 | [Counting Donuts](Counting-Donut.pdf)
