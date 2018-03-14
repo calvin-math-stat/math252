@@ -137,6 +137,9 @@ Additional assignments will be filled in over time.
 	 Wed 3/14 & \WW{08} & Rosen 6 & Random Variables
 	 \\
 	   \hline
+	 Fri 3/16 & \WW{09} & Rosen 6 & Random Variables
+	 \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
