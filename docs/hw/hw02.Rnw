@@ -140,10 +140,14 @@ Additional assignments will be filled in over time.
 	 Fri 3/16 & \WW{09} & Rosen 6 & Random Variables
 	 \\
 	   \hline
-	 Wed 3/26 & \WW{10} & Rosen 6 & Random Variables
+	 Wed 3/26 & Review & Rosen 5 and 6 & Look over the review problems below and the handouts we have had since the last
+	                       test and come prepared to ask questions.
+	 \\
+	 \hline
+	 Thu 3/27 & \WW{10} & Rosen 6 & Random Variables
 	 \\
 	   \hline
-	 never & extra & Rosen 6.2 &
+	 never & Review & Rosen 6.2 &
    \extra[loaded die]{2}
    \extra[permutatinos]{7}
 	 \extra[bitstrings]{25--26}
