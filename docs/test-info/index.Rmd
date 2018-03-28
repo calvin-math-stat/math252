@@ -47,7 +47,6 @@ permutations and combinations; binomial coefficients.
 
 #### Topics
 
-
 **Counting:** 
 Bijection principle (no double counting, no skipping);
 multiplication principle; 
