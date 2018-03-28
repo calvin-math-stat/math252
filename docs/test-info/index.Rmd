@@ -39,7 +39,35 @@ inclusion-exclusion; pigeonhole principle;
 permutations and combinations; binomial coefficients.
 
 
+### Test 2 
+
+**Date:** Wed, April 4
+
+**Material Covered**: Counting and Probability (Rosen 5 and 6)
+
+#### Topics
 
 
+**Counting:** 
+Bijection principle (no double counting, no skipping);
+multiplication principle; 
+addition principle;  division principle; 
+inclusion-exclusion; pigeonhole principle; 
+permutations and combinations; binomial coefficients.
+Table 1 on page 375;
+inclusion-exclusion.
 
-
+**Probability:**
+Definition of finite probability and applications involving counting problems; 
+empirical vs theoretical probability;
+3 probability axioms;
+complement rule; 
+equally likely rule;
+union rule;
+conditional probability;
+indepedence; 
+Bayes probability (e.g., false positives and false negatives);
+probability trees;
+random variables;
+expected value of a random variable;
+variance of a random variable.
