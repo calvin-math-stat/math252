@@ -16,6 +16,7 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+03/25 | [Variance](Probability-Variance.pdf)
 03/16 | [Linearity of Expected Value](Probability-E-is-Linear.pdf)
 03/14 | [Expected Value](Probability-Expected-Value.pdf)
 03/12 | [Random Variables](Probability-Random-Variables.pdf)
