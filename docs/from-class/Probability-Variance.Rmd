@@ -1,0 +1,122 @@
+---
+title: "Variance"
+author: "Math 252"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- Some macros to make mathematics easier -->
+
+<!-- \newcommand{\Prob}{{p}} -->
+\newcommand{\Prob}{\operatorname{P}}
+\newcommand{\intersect}{\;\cap\;}
+\newcommand{\union}{\operatorname{\cup}}
+\newcommand{\E}{\operatorname{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\SD}{\operatorname{SD}}
+\newcommand{\Binom}{\operatorname{Binom}}
+
+## Warm-up: Expected Value
+
+1. Consider the random variable described below.
+
+value       |  0    |   1    |   5     |  50  
+----------: | :---: | :----: | :-----: | :----: 
+probability |  ???  | 10/100 | 5/100   | 1/100  
+
+  a. Fill in the missing probability.
+  b. Compute the expected value.
+  c. Suppose these are the values and probabilities of prizes given out in a raffle.  If the 
+    people running the raffle charge $1 per ticket, how much do they expect to make if they sell
+    1000 tickets?
+   
+2. What does $\E(X)$ tell us about $X$?
+
+## Variance
+
+Variance is a measure of how variable or how "spread out" a random variable is.  We will determine the 
+variance by looking at the difference between $X$ and $\E(X)$.  If this difference tends to be large, then
+there is more variability.  If it tends to be small, there is less.
+
+Here's how not to do this:
+
+3. Let $X$ be a any random variable.  What can you say about $\E(X - \E(X))$?  [Hint: use facts about expected 
+value to keep this simple.]
+
+### Definition
+
+To fix this problem, we need to do something the differences $X - \E(X)$.  We could take absolute values, but
+it works better to square the differences.  So here is our definition of variance.
+
+$$
+\Var(X) = \E((X - \mu_X)^2) = \E((X - \E(X))^2)
+$$
+
+4. Use this definition to compute the variance of the random variable in problem 1.
+
+5. Compute the variance of a $\Binom(1, p)$ random variable.
+
+6. Compute the variance of a $\Binom(2, 1/2)$ random variable.
+
+7. Compute the variance of a $\Binom(2, 1/4)$ random variable.
+
+### Alternate notation
+
+Just like we can denote $\E(X)$ with $\mu_X$, we have another notation for variance as well: $\sigma_X^2$.
+The square root of the varaince, denoted $\SD(X)$ or $\sigma_X$, is called the **standard deviation**.
+
+
+### Handy short cut
+
+$$
+\Var(X) = \E(X^2) - \E(X)^2
+$$
+
+8. Use the short-cut to compute the variance of the random variable in problem 1.
+
+9. Use the short-cut to compute the variance of the random variable in problem 5.
+
+10. Use the short-cut to compute the variance of the random variable in problem 6.
+
+### Linear Transformations
+
+9. Prove the following handy rules for variance.
+
+    a.  $\Var(a X) = a^2 \Var(X)$
+
+    b.  $\Var(X + b) = \Var(X)$
+  
+10. What are the equivalent rules for standard deviation?
+
+11. If $\E(X) = 10$ and $\Var(X) = 2$, what are the mean and variance of $2X - 3$?
+
+
+### Sums and Variance
+
+There is a sum rule for variance, but it only applies if the random variables are **independent**.  
+
+Two random variables are **independent** if and only if
+
+$$
+\Prob(X = a \land Y = b) = \Prob(X = a) \cdot \Prob(Y = b) \mbox{ for every } a \mbox{ and } b.
+$$
+
+If $X$ and $Y$ are independent, then 
+
+$$
+\Var(X + Y) = \Var(X) + \Var(Y)
+$$
+
+12. If $X$ and $Y$ are independent, $\E(X) = 10$, $\Var(X) = 4$, $\E(Y) = 20$, and $\Var(Y) = 9$,
+what are the mean and variance of $X + Y$ and $X - Y$?
+
+13. Use the sum rule for variances to compute the variance of a $\Binom(2, p)$ random variable.
+
+14. Use the sum rule for variances to compute the variance of a $\Binom(n, p)$ random variable.
+
+15. What is the sum rule for standard deviation?
