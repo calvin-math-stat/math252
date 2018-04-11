@@ -16,6 +16,7 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+04/11 | [Automata](Automata.pdf)
 04/09 | [Automata](Automata.pdf)
 04/06 | [Grammars](Grammars.pdf)
 
