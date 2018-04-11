@@ -12,6 +12,13 @@ output:
 
 ## Worksheets/Handouts from class
 
+### Langauges, Grammars, Machines
+
+Date  | Handout
+----- | ---------------------------------------------------
+04/09 | [Automata](Automata.pdf)
+04/06 | [Grammars](Grammars.pdf)
+
 ### Counting and Probability
 
 Date  | Handout
