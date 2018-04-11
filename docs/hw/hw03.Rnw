@@ -116,7 +116,7 @@ Additional assignments will be filled in over time.
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-  Wed 4/11 & & Rosen 12.1 &
+  Wed 4/11 & PS 9 & Rosen 12.1 &
    \mand[sentences]{1ad}
 	 \extra{2}
 	 \helper{3}
@@ -138,7 +138,7 @@ Additional assignments will be filled in over time.
 	 \mand[EBNF]{34}
    \\
 	   \hline
-	   Fri 4/13 & & Rosen 12.3 &
+	   Fri 4/13 & PS 10 & Rosen 12.3 &
 	   \mand[testing strings]{12}
 	   \mand[what langauge?]{16--17}
 	   \mand[create DFA]{25--26}
