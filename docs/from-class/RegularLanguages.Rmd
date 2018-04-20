@@ -135,4 +135,25 @@ The langauges represented by regular expressions are called **regular languages*
 6. What would we need to do to show that every regualar language can be recognized by an NFA?
 Give it a try and see how far you get.  Which parts are easy? Which are trickier? Why?
 
+\newpage
+
+1. Show that empty language ($\emptyset$) is recognized by an NFA.
+
+2. Show that the language $\{\lambda\}$ is recognized by an NFA.
+
+3. Show that if $i \in I$, then the langauge $\{i \}$ is recognized by an NFA.
+
+4. Show that if $A$ and $B$ are each recognized by an NFA, then $AB$ is, too.
+
+5. Show that if $A$ and $B$ are each recognized by an NFA, then $A \cup B$ is, too.
+
+6. Show that if $A$ is recognized by an NFA, then $A^*$ is, too.
+
+7. Use the results above to show that every regular language is recognized by an NFA.
+
+8. Show that if $A$ is recognized by an NFA, then $\overline{A} = A^C$ is too.
+[Hint: there is an easy way and a hard way -- use the easy way.]
+
+
+
 
