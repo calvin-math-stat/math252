@@ -113,10 +113,10 @@ Each regular expression represents a language as follows.
 * $\bm{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
 * For each $x \in I$, $\bm{x}$ represents the language containing only $x$: $\{x \}$
 * If $\bm{A}$ and $\bm{B}$ are regular expressions representing languages $A$ and $B$, then
-    * $(\bm{AB})$ encodes $AB$
-    * $(\bm{A \cup B})$ encodes $A \cup B$ \hfill 
+    * $(\bm{AB})$ represents $AB$
+    * $(\bm{A \cup B})$ represents $A \cup B$ \hfill 
     [Note: This is often written `(A|B)` in programming languages.]
-    * $\bm{A}^*$ encodes $A^*$  \hfill 
+    * $\bm{A}^*$ represents $A^*$  \hfill 
     [Note: This is often written as `A*` in programming languages.]
     
 The langauges represented by regular expressions are called **regular languages** (how creative).
@@ -137,22 +137,57 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 
 \newpage
 
-1. Show that empty language ($\emptyset$) is recognized by an NFA.
+## Recognizing Regular Languages with NFAs
+
+1. Show that the empty language ($\emptyset$) is recognized by an NFA.
 
 2. Show that the language $\{\lambda\}$ is recognized by an NFA.
 
-3. Show that if $i \in I$, then the langauge $\{i \}$ is recognized by an NFA.
+3. Show that if $a \in I$, then the langauge $\{a \}$ is recognized by an NFA.
 
 4. Show that if $A$ and $B$ are each recognized by an NFA, then $AB$ is, too.
 
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
+    build a new NFA that recognizes $AB$?]
+
 5. Show that if $A$ and $B$ are each recognized by an NFA, then $A \cup B$ is, too.
 
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
+    build a new NFA that recognizes $A \cup B$?]
+    
 6. Show that if $A$ is recognized by an NFA, then $A^*$ is, too.
 
-7. Use the results above to show that every regular language is recognized by an NFA.
+    [Hint: Let $N_A$ be the NFA that recognizes $A$ How can you use it to
+    build a new NFA that recognizes $A \cup B$?]
+    
+7. Explain how 1--6 above show that every regular language is recognized by an NFA.
 
-8. Show that if $A$ is recognized by an NFA, then $\overline{A} = A^C$ is too.
-[Hint: there is an easy way and a hard way -- use the easy way.]
+8. Explain how 7 implies that every regular language is recognized by a DFA.
+
+9. The method just outlined is automatic (you could fairly easily write a
+computer program to do the translation from regular expression to NFA), and it
+provides a proof that all regular languages can be recognized by an NFA. But it
+might produce an NFA with more states than is minimally required. Create an NFA
+that recognizes $\bm{1}^* \cup \bm{01}$.  Do this two ways:
+  
+    a. Following the steps outlined in 1--6.
+    b. Any way you like, but using fewer states than in part a.  
+    c. What is the smallest (fewest states) NFA you can find that recognizes $\bm{1}^* \cup \bm{01}$?
+
+10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^C$) 
+is too.
+
+    [Hint: There is an easy way and a hard way -- use the easy way.]
+
+\newpage
+
+### Solution to problem 9 on previous page
+
+```{r, echo = FALSE, out.width = "60%", fig.align = "center"}
+knitr::include_graphics("images/NFA-Fig-12-4-3.png")
+```
+
+<!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
 
 
 

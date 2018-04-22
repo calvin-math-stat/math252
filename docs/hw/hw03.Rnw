@@ -155,7 +155,15 @@ Additional assignments will be filled in over time.
 	   \mand[NFA to DFA]{52--54}
    \\
 	   \hline
-
+	   Wed 4/25 & PS 13 & Rosen 12.4 &
+	   \extra{1}
+	   \mand{2}
+	   \mand[regex]{6}
+	   \extra[regex]{7}
+	   \mand[Kleene's Thm]{12}
+	   \mand[$\to$ grammar]{15--16}
+   \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
