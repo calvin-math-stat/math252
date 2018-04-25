@@ -16,6 +16,9 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+04/25 | [Regular Languages Wrap-Up](Regular-WrapUp.pdf)
+04/23 | [Regular Grammars](Regular-Grammars.pdf)
+04/19 | [Regular Languages](RegularLanguages.pdf)
 04/14 | [Regular Languages](RegularLanguages.pdf)
 04/11 | [Automata](Automata.pdf)
 04/09 | [Automata](Automata.pdf)
