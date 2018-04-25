@@ -164,6 +164,11 @@ Additional assignments will be filled in over time.
 	   \mand[$\to$ grammar]{15--16}
    \\
 	   \hline
+	   Fri 4/27 & PS 14 & Rosen 12.4 &
+	   \mand[lonely start]{20}
+	   \mand[pumping lemma]{22, 24, 25}
+	   \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
