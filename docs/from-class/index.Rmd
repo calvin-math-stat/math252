@@ -16,7 +16,8 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
-04/27 | [DFA to regex conversion](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf)
+04/27 | [DFA to regex conversion worksheet](DFA-to-regex.pdf)
+04/27 | [DFA to regex conversion notes](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf)
 04/25 | [Regular Languages Wrap-Up](Regular-WrapUp.pdf)
 04/23 | [Regular Grammars](Regular-Grammars.pdf)
 04/19 | [Regular Languages](RegularLanguages.pdf)
