@@ -87,7 +87,8 @@ grammars (regular, context sensitive, context free).
 
 **Automata:** components of an automaton (input alphabet, states, start state,
 final states, transition funciton), DFA, NFA, GNFA, language recognized by 
-an automaton.
+an automaton, building up a complex automaton from component
+automata.
 
 **Regular expressions:** notation, 3 base cases and three operations, language
 represented by a regular expression.
