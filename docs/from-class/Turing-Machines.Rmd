@@ -1,0 +1,272 @@
+---
+title: "Turing Machines"
+author: "Math 252"
+output:
+  pdf_document: default
+  html_document: default
+header-includes: \usepackage{bm}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## The Turing Machine Model
+
+### Motivation
+
+The Turing machine model pre-dates electronic computers and comes from the 
+work of Hilbert (early 1900's) and Turing and Church (1930)'s.
+
+* Not trying to model (electronic) computers, but computation or algorithm
+* Identified three essential ingredients: ______________, _____________, __________________
+    * implicitly there is a fourth ingredient: ___________________
+    
+<!-- Read, Write, Remember -->
+    
+<!-- Read, Write, Remember, Move/Locate -->
+
+* The Turing machine is a specific formalization of these basic ingredients
+  
+
+### Definition of a 1-tape Turing Machine
+
+A Turing machine consists of the following:
+
+* input alphabet: A finite set $\Sigma$ that does not include the "blank symbol"
+* tape alphabet:  A finite set $\Gamma$ with  $\Sigma \subsetneq \Gamma$; 
+$\Gamma$ includes the "blank symbol"
+* states: A finite set $Q$
+* initial state: $q_0 \in Q$
+* final states: a subset of $Q$
+* program: A partial function
+$\delta: \Gamma \times Q \to \Gamma \times Q \times \{L,R,S\}$.  
+
+    * A partial funciton is not required to have a value for every input. 
+    You could think of this as a function
+    $\delta: \Gamma \times Q \to (\Gamma \times Q \times \{L,R,S\}) \cup \mbox{null})$,
+    where null is some symbol not in $\Gamma \times Q \times \{L,R,S\}$.
+    * A partial function can be represented as a subset of
+    $\Gamma \times Q \times \Gamma \times Q \times \{L,R,S\}$
+    (This is how we will formalize it below.)
+
+### Execution of a Turing Machine program
+
+
+Imagine a machine with a 2-way infinite tape divided into cells.
+Each cell contains exactly one symbol from the tape alphabet.
+At the start of the execution, the input is written on the tape,
+the read/write head is located at the left most symbol of the input,
+and all cells that don't contain part of the input contain the blank sybmol.
+
+```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
+knitr::include_graphics("images/TM-Fig-12-5-1.png")
+```
+
+At each step in the execution of a Turing machine program, the 
+read/write head is located at one cell of the tape. The program
+uses the current state and contents of the tape at that position
+to determine its action:
+  
+* write a symbol in the current cell (overwriting what was there before),
+* move the head left or right (or stay put)
+* update the state
+
+This is repeated until one of two things happens:
+
+* there is no instruction to execute, or
+* the state is a final state
+
+When either of these two things happens, the machine **halts**. 
+
+### An ASCII Representation of a Turing Machine
+
+We will be working with a particular ASCII representation of a Turing machine.
+
+The format for a Turing machine file is the following. The first line
+indicates that this is A Turing machine file. The file format allows for 
+several variations on the basic 1-tape Turing machine, but for now we will
+focus on the basic version.
+
+There should be no blank lines in the file
+
+```
+Line 1: ATM. 
+Line 2: Name/description of the machine.
+Line 3: all characters in the input alphabet, separated by spaces 
+Line 4: all characters in the tape alphabet, separated by spaces 
+Line 5: the number of tapes (N). Use 1 for a 1-tape TM.
+Line 6: the number of tracks on tape 0. Use 1.
+Line 8: 1 or 2, indicating tape 0 is 1-way or 2-way infinite tape
+Line 9: the initial state of the Turing machine 
+Line 10: all the final states separated by spaces 
+Line 11: first of a list of transitions (see below) 
+Line 12: another transition 
+...
+2nd last line: last of the list of transitions 
+Last line: end  // You must type the word "end" but it can be upper or lower case
+```
+
+The format of a transition is:
+
+```
+<state> <content of tape> <next state> <next content of tape> <head-move direction>
+```
+
+where 
+
+* the `<state>` and `<next state>` are the names of states and can be any strings.
+
+<!-- When the state has multiple fields such as `[q0,a,b]`, there can be no spaces. This -->
+<!-- compound state is handled in the simulator as a single string, without spaces. -->
+
+* the `<content of tape>` and `<next content of tape>` are symbols from the 
+tape alphabet.
+
+* the `<head-move direction>` is one of R, L, or S,
+indicating a right or left movement or staying stationary.
+
+* The **blank symbol** is denoted by `B` and
+this symbol must not be used as part of the input alphabet. 
+
+* comments can be added with `//`
+
+\newpage
+
+### Example 1
+
+<!-- Example 12.5.1 from Rosen6 -->
+
+```
+ATM
+Example Turing Machine
+0 1 // input alphabet, note such comments are permitted at the end of the line 
+0 1 B // tape alphabet 
+1 // number of tapes 
+1 // number of tracks on tape  
+2 // tape is 2-way infinite 
+s0 // the initial state 
+s3 // final state
+s0 0 s0 0 R 
+s0 1 s1 1 R 
+s0 B s3 B R 
+s1 0 s0 0 R 
+s1 1 s2 1 L 
+s1 B s3 B R 
+s2 1 s3 0 R 
+end // required
+```
+
+1. For each input string below, determine the configuration
+(tape contents, location of read-write head, and state)
+of the Turing machine when it halts.
+
+    a. $\lambda$
+    b. 01
+    b. 0101
+    b. 010110
+    b. 001
+    
+### Example 2
+
+```
+ATM
+Example Turing Machine
+0 1 // input alphabet, note such comments are permitted at the end of the line 
+0 1 B // tape alphabet 
+1 // number of tapes 
+1 // number of tracks tape 
+2 // tape is 2-way infinite 
+[init] // the initial state 
+[final] // final state
+[init] 0 [10] 0 R 
+[init] 1 [01] 0 R 
+[init] B [final] B S 
+[00] 0 [10] 0 R
+[00] 1 [01] 1 R
+[00] B [final] B S
+[01] 0 [11] 0 R
+[01] 1 [00] 1 R
+[01] B [01] B R
+[10] 0 [00] 0 R
+[10] 1 [01] 1 R
+[11] 0 [01] 0 R
+[11] 1 [10] 1 R
+end // required
+```
+
+2. For each input string below, determine the configuration
+(tape contents, location of read-write head, and state)
+of the Turing machine when it halts.
+
+    a. $\lambda$
+    b. 0110
+    c. 01111
+    d. 01110
+
+
+### The language recognized by a Turing Machine
+
+We will say that a Turing machine $M$ accepts a string $x$ (by state) if 
+on input $x$ it halts in a final state.  The language of a 
+Turing machine is 
+
+$$
+L(M) = \{x \mid M \mbox{ accepts } x\}
+$$
+
+3. What langauges do the previous two machines accept?
+
+### Designing a Turing Machine
+
+4. Design a Turing machine that recognizes 
+$(\bm{0} \cup \bm{1})\bm{1}(\bm{0} \cup \bm{1})^*$
+
+5. Design a Turing machine that recognizes
+$\{0^n1^n \mid n \ge 0\}$.  This shows that Turing machines
+can recognize languages that are not regular.
+
+Turing machines can also compute functions.  The output of a Turing
+machine is the tape contents when it halts.
+
+6. Design a Turing machine that adds in unary. Use the input alphabet
+$\{1,+\}$.
+
+    In unary, a non-negative integer $n$ is represented by $n+1$ 1's.
+    
+    Example: Our machine should convert `111+1111` into ______________.
+    
+A Turing machine computes **neatly** if when it halts (a) the read/write head
+is on the left-most non-blank tape symbol (or any blank symbol if the tape is
+all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
+are contiguous on the tape).
+
+7. Modify your previous machine so that it computes neatly.
+    
+    
+<!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt)  -->
+<!-- modified to also accept empty string -->
+<!-- ``` -->
+<!-- ATM -->
+<!-- Example Turing Machine -->
+<!-- 0 1 // input alphabet, note such comments are permitted at the end of the line  -->
+<!-- 0 1 X Y B // tape alphabet  -->
+<!-- 1 // number of tapes  -->
+<!-- 1 // number of tracks on tape 0  -->
+<!-- 2 // tape 0 is 2-way infinite  -->
+<!-- q0 // the initial state  -->
+<!-- q4 // final state -->
+<!-- q0 B q4 B S  -->
+<!-- q0 0 q1 X R  -->
+<!-- q0 Y q3 Y R  -->
+<!-- q1 0 q1 0 R  -->
+<!-- q1 1 q2 Y L  -->
+<!-- q1 Y q1 Y R  -->
+<!-- q2 0 q2 0 L  -->
+<!-- q2 X q0 X R  -->
+<!-- q2 Y q2 Y L  -->
+<!-- q3 Y q3 Y R  -->
+<!-- q3 B q4 B R  -->
+<!-- end // required -->
+<!-- ``` -->
