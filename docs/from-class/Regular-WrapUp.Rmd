@@ -1,5 +1,5 @@
 ---
-title: "Regular Langauge Wrap-UP"
+title: "Regular Language Wrap-UP"
 author: "Math 252"
 output:
   pdf_document: default
