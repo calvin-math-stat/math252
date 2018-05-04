@@ -243,8 +243,88 @@ all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
 are contiguous on the tape).
 
 7. Modify your previous machine so that it computes neatly.
+
+\newpage
+
+## Variations on the Turing Machine
+
+There are many variations on the Turing machine.  Here are some
+examples.
+
+* Instead of having a single tape, a Turing machine can have multiple tapes.
+
+* Instead of being 2-way infinite, the tape(s) can have a left end.
+These are called 1-way infinite tapes.  (Attemping to move left
+from the left-most cell causes the machine to halt.)
+
+* Turing machines may be required to move the head at each step (so "stay" is
+not an option).
+
+* Multi-track tapes aren't really a variation, but a handy way of thinking about
+a tape alphabet.  (Our simulator makes this easy to do.)  Since the tape alphabet
+may be anything, if we want to simulate writing two symbols from $A$, we can use a 
+tape alphabet of $A \times A$ or even $A \cup (A \times A)$. 
+One element of $A \times A$ represents two elements 
+from $A$ (one on the "top track" and one on the "bottom track").
+
+* Instead of having a 1-diminsional tape, a tape can be a
+2-dimensional grid of cells.  The read/write head can move up
+and down in addition to left and right.
+
+See the Turing machine specification for our simulator to learn how to write 
+Turing machine programs that take advantage of these additional features.
+
+Each of these variations is equivalent to the standard Turing 
+machine with one 2-way infinite tape.  So are many other models of 
+computation.  This has led to the so-called **Church-Turing Thesis**.
+Here is one statement of that thesis:
+
+> A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.
+
+
+8. Give a high level description of how to convert a Turing 
+machine with 2-way infinite tape into a Turing machine with a 
+1-way infinite tape.
+
+9. Give a high level description of how to convert a 2-tape 
+machine into a 1-tape machine.
+
+10. **Nested Parens** 
+Write a Turing machine recognizes all strings that use the 
+input alphabet $\{(, ), *\}$ and the parentheses are properly
+nested.  (The asterisks may be anywhere.)
+
+    a. First try this with a two-tape machine.
+    b. Then try this with one two-track tape.
+    c. For an extra challenge, try doing it with a one-tape machine
+    with tape alphabet $\{(, ), *, \# \}$
     
-    
+
+## Running time of a Turing machine
+
+The running time of a Turing machine on input $x$ is the number 
+of steps before it halts. The conversions above typically change 
+the running time, but machines that run in polynomial time are 
+converted into machines that run in polynomial time (typically 
+with a different degree polynomial).
+
+### P and NP
+
+This provides a formal definition of the famous set $P$. $P$ is the 
+set of all languages that can be recognized by a Turing machine
+in polynomial time.
+
+A **non-deterministic Turing machine** can have multiple transitions
+from the same state/tape contents configuration.  A non-deterministic
+TM accepts an input $x$ if there is a way of choosing transitions
+that causes the machine to halt in a final state.  (This is similar 
+to how non-detrministic automata were defined).  $NP$ is the set of 
+all languages that can be recognized by a non-detrministic
+Turing machine.
+
+The "$P$ vs. $NP$ question" is whether $P$ and $NP$ are the same
+or different.  To date, this question is unresolved.
+
 <!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt)  -->
 <!-- modified to also accept empty string -->
 <!-- ``` -->
