@@ -143,7 +143,7 @@ You could, of course, fancy this up in many ways, including adding in substituti
 <li><p>No space directly before a comma. Always a space after a comma.</p></li>
 <li><p>There should be no spaces immediately following <code>(</code> or immediately preceeding <code>)</code>.</p></li>
 <li><p>There should not be a space before an open paren [<code>(</code>] unless the previous word is <code>if</code>, <code>for</code>, or <code>while</code>.</p></li>
-<li><p>If the flag <code>--python</code> is specified, for a more pythonic approach, convert things like <code>while (i &lt; 3):</code> into <code>while i &lt; 3:</code> since those parens are not required. Do the same for <code>for</code> and <code>if</code>. You should be handle nested parentheses to some degree.</p></li>
+<li><p>If the flag <code>--python</code> is specified, for a more pythonic approach, convert things like <code>while (i &lt; 3):</code> into <code>while i &lt; 3:</code> since those parens are not required. Do the same for <code>if</code>. You should handle nested parentheses to some degree. (Recall that arbirarily deep nested parens cannot be handled by pure regex.)</p></li>
 </ol>
 <div id="bonus-features" class="section level3">
 <h3>Bonus features</h3>
@@ -163,7 +163,7 @@ You could, of course, fancy this up in many ways, including adding in substituti
 <div id="additional-specifications" class="section level2">
 <h2>Additional specifications</h2>
 <ol style="list-style-type: decimal">
-<li><p>You program file should comply with the tidy rules above.</p></li>
+<li><p>Your program file should comply with the tidy rules above.</p></li>
 <li><p><code>tidy --help</code> should print useful help information.</p></li>
 <li><p>Your program should be executable from the command line and called <code>tidy</code>.</p></li>
 <li><p>The following syntax should tidy the file <code>foo.py</code> and print the results on stdout.</p></li>

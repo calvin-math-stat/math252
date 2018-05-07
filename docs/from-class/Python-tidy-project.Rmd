@@ -52,8 +52,9 @@ preceeding `)`.
 
 1. If the flag `--python` is specified, for a more pythonic approach, 
 convert things like `while (i < 3):` into `while i < 3:` since those 
-parens are not required.  Do the same for `for` and `if`.  You should 
-be handle nested parentheses to some degree.
+parens are not required.  Do the same for `if`.  You should 
+handle nested parentheses to some degree.  (Recall that arbirarily deep
+nested parens cannot be handled by pure regex.)
 
 
 ### Bonus features
@@ -74,7 +75,7 @@ a style guide like PEP8 to get some ideas. Be sure to document them.
 
 ## Additional specifications
 
-1. You program file should comply with the tidy rules above.
+1. Your program file should comply with the tidy rules above.
 
 2. `tidy --help` should print useful help information.
 
