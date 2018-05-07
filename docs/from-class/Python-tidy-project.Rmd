@@ -13,22 +13,28 @@ knitr::opts_chunk$set(echo = TRUE)
 Writing code that adheres to a style guide makes code maintenance easier
 and is required by many companies and open source projects. Unfortunately,
 people are not particularly good at following the rules.
-Your task is to write a python [^1] program to do some code tidying.
 
-[^1] If you want to use some other programming language, clear that with me 
-first.
+Your task is to write a python program to do some code tidying.
+(If you want to use some other programming language, clear that with me 
+first.) This will be a purely syntactic tidying and is (mostly)
+language agnostic (since most of the elements are a good idea in many
+programming languages).  
+You could, of course, fancy this up in many ways, including adding in
+substitutions tailored for specific languages and auto-detecting
+the langauge.
 
 ## Things to tidy
 
-Here is a list of tasks for your tidyer.  Your job is to implement
-as many as you can using regular expressions.
+Here is a list of tasks for your `tidy` program. 
+Your job is to implement as many as you can using regular expressions.
 
 1. No trailing spaces at the ends of lines.
 
 1. Tab characters at the beginning of a line should be replaced by (default 4) spaces.  Use `-t` to choose a different number.
 
-1. Except at the beginning of a line (for indentation purposes), there should
-be no double spaces.
+1. Except at the beginning of a line (for indentation purposes), there should be no double spaces.  (In practice, this is probably too strict --
+sometimes the use of space to align code makes it more readable.  Add
+a flag to turn this off if you like, but leave it on by default.)
 
 1. Comment characters should be followed by a space. [Watch out for 
 escaped symbols and string constants in quotes.]
@@ -37,7 +43,7 @@ escaped symbols and string constants in quotes.]
 
 1. All operators should be surrounded by spaces.  [Note: some operators like `==`, `>=`, etc. use more than one character.]
 
-1. No space directly before a comma (`,`). Always a space after a comma.
+1. No space directly before a comma. Always a space after a comma.
 
 1. There should be no spaces immediately following `(` or immediately 
 preceeding `)`.
@@ -45,7 +51,9 @@ preceeding `)`.
 1. There should not be a space before an open paren [`(`] unless the previous word is `if`, `for`, or `while`.
 
 1. If the flag `--python` is specified, for a more pythonic approach, 
-convert `while (i < 3):` into `while i < 3:` since those parens are not required.  Do the same for `for` and `if`.
+convert things like `while (i < 3):` into `while i < 3:` since those 
+parens are not required.  Do the same for `for` and `if`.  You should 
+be handle nested parentheses to some degree.
 
 
 ### Bonus features
@@ -61,18 +69,24 @@ Each offending line should be printed preceded by the line number.
 
     * double bonus: report the problem(s) as well as the line number
 
+1. Add additional code tidying features if you like. You might consult
+a style guide like PEP8 to get some ideas. Be sure to document them.
 
 ## Additional specifications
 
-1. You program should comply with the tidy rules above.
+1. You program file should comply with the tidy rules above.
 
-2. Your program should executable at the command line and called `tidy`.
+2. `tidy --help` should print useful help information.
 
-3. The following syntax should tidy the file `foo.py` and print the results 
+3. Your program should be executable from the command line 
+and called `tidy`.
+
+4. The following syntax should tidy the file `foo.py` and print the results 
 on stdout.
 
 ```
 tidy -f foo.py
+tidy -f foo.py --python   # with python bonus
 ```
 
 4. If you add in extra features, use `-x` or `--extra` to turn them on.
@@ -80,6 +94,13 @@ tidy -f foo.py
 ```
 tidy -f foo.py -x
 ```
+
+5. You may create additional command line arguments as you see fit.
+
+## Submission
+
+Submit your program (named `tidy`) and any additional files 
+to your `math252/regex` folder (just like you do for CS courses).
 
 ## A stub
 

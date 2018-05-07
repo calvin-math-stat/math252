@@ -16,6 +16,7 @@ output:
 
 Date  | Handout
 ----- | ---------------------------------------------------
+05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing)
 05/04 | [Turing Machine specification](http://www.calvin.edu/~rpruim/courses/m156/F16/TM/tmdoc.shtml)
 04/30 | [Turing Machine Simulator](http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/)
 04/30 | [Turing Machines worksheet](Turing-Machines.pdf)

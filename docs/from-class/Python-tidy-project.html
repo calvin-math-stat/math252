@@ -125,24 +125,25 @@ $(document).ready(function () {
 </div>
 
 
-<p>Writing code that adheres to a style guide makes code maintenance easier and is required by many companies and open source projects. Unfortunately, people are not particularly good at following the rules. Your task is to write a python [^1] program to do some code tidying.</p>
-<p>[^1] If you want to use some other programming language, clear that with me first.</p>
+<p>Writing code that adheres to a style guide makes code maintenance easier and is required by many companies and open source projects. Unfortunately, people are not particularly good at following the rules.</p>
+<p>Your task is to write a python program to do some code tidying. (If you want to use some other programming language, clear that with me first.) This will be a purely syntactic tidying and is (mostly) language agnostic (since most of the elements are a good idea in many programming languages).<br />
+You could, of course, fancy this up in many ways, including adding in substitutions tailored for specific languages and auto-detecting the langauge.</p>
 <div id="things-to-tidy" class="section level2">
 <h2>Things to tidy</h2>
-<p>Here is a list of tasks for your tidyer. Your job is to implement as many as you can using regular expressions.</p>
+<p>Here is a list of tasks for your <code>tidy</code> program. Your job is to implement as many as you can using regular expressions.</p>
 <ol style="list-style-type: decimal">
 <li><p>No trailing spaces at the ends of lines.</p></li>
 <li><p>Tab characters at the beginning of a line should be replaced by (default 4) spaces. Use <code>-t</code> to choose a different number.</p></li>
-<li><p>Except at the beginning of a line (for indentation purposes), there should be no double spaces.</p></li>
+<li><p>Except at the beginning of a line (for indentation purposes), there should be no double spaces. (In practice, this is probably too strict – sometimes the use of space to align code makes it more readable. Add a flag to turn this off if you like, but leave it on by default.)</p></li>
 <li><p>Comment characters should be followed by a space. [Watch out for escaped symbols and string constants in quotes.]</p>
 <ul>
 <li>Use <code>-c</code> or <code>--comment</code> to specify the comment characters.</li>
 </ul></li>
 <li><p>All operators should be surrounded by spaces. [Note: some operators like <code>==</code>, <code>&gt;=</code>, etc. use more than one character.]</p></li>
-<li><p>No space directly before a comma (<code>,</code>). Always a space after a comma.</p></li>
+<li><p>No space directly before a comma. Always a space after a comma.</p></li>
 <li><p>There should be no spaces immediately following <code>(</code> or immediately preceeding <code>)</code>.</p></li>
 <li><p>There should not be a space before an open paren [<code>(</code>] unless the previous word is <code>if</code>, <code>for</code>, or <code>while</code>.</p></li>
-<li><p>If the flag <code>--python</code> is specified, for a more pythonic approach, convert <code>while (i &lt; 3):</code> into <code>while i &lt; 3:</code> since those parens are not required. Do the same for <code>for</code> and <code>if</code>.</p></li>
+<li><p>If the flag <code>--python</code> is specified, for a more pythonic approach, convert things like <code>while (i &lt; 3):</code> into <code>while i &lt; 3:</code> since those parens are not required. Do the same for <code>for</code> and <code>if</code>. You should be handle nested parentheses to some degree.</p></li>
 </ol>
 <div id="bonus-features" class="section level3">
 <h3>Bonus features</h3>
@@ -155,21 +156,31 @@ $(document).ready(function () {
 <ul>
 <li>double bonus: report the problem(s) as well as the line number</li>
 </ul></li>
+<li><p>Add additional code tidying features if you like. You might consult a style guide like PEP8 to get some ideas. Be sure to document them.</p></li>
 </ol>
 </div>
 </div>
 <div id="additional-specifications" class="section level2">
 <h2>Additional specifications</h2>
 <ol style="list-style-type: decimal">
-<li><p>You program should comply with the tidy rules above.</p></li>
-<li><p>Your program should executable at the command line and called <code>tidy</code>.</p></li>
+<li><p>You program file should comply with the tidy rules above.</p></li>
+<li><p><code>tidy --help</code> should print useful help information.</p></li>
+<li><p>Your program should be executable from the command line and called <code>tidy</code>.</p></li>
 <li><p>The following syntax should tidy the file <code>foo.py</code> and print the results on stdout.</p></li>
 </ol>
-<pre><code>tidy -f foo.py</code></pre>
+<pre><code>tidy -f foo.py
+tidy -f foo.py --python   # with python bonus</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>If you add in extra features, use <code>-x</code> or <code>--extra</code> to turn them on.</li>
 </ol>
 <pre><code>tidy -f foo.py -x</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>You may create additional command line arguments as you see fit.</li>
+</ol>
+</div>
+<div id="submission" class="section level2">
+<h2>Submission</h2>
+<p>Submit your program (named <code>tidy</code>) and any additional files to your <code>math252/regex</code> folder (just like you do for CS courses).</p>
 </div>
 <div id="a-stub" class="section level2">
 <h2>A stub</h2>
@@ -206,11 +217,17 @@ parser.add_argument(
   help = 'strings to be interpreted as starting coded comments'
   )
 
-# boolean arguments
+# boolean arguments, aka flags
 parser.add_argument(
   '-p', '--python',
   dest = 'python', action = &quot;store_true&quot;,
   help = 'Tidy with python rules')
+
+parser.add_argument(
+  '-r', '--report',
+  dest = 'report', action = &quot;store_true&quot;,
+  help = 'Instead of fixing the file, generate a report listing issues.')
+
 parser.add_argument(
   '-x', '--extra',
   dest = 'extra', action = &quot;store_true&quot;,
@@ -220,6 +237,9 @@ args = parser.parse_args()
 print(args)
 comment_chars = args.comment_chars.split(&quot;,&quot;)
 print(comment_chars)
+
+# This reads the entire file all at once.
+# You could also read it line by line.
 
 f = open(args.file)
 contents = f.read()
