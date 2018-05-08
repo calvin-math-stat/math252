@@ -4,12 +4,12 @@ import re
 import argparse
 
 # Create an argument parser and tell it about arguments
-parser = argparse.ArgumentParser(description='Make code tidier.')
+parser = argparse.ArgumentParser(description = 'Make code tidier.')
 
 # positional argument for input file
 parser.add_argument(
   '-f', '--file', metavar = "<file name>",
-  help = 'name of input file',)
+  help = 'name of input file')
 
 # named argument for output file
 parser.add_argument(
