@@ -165,7 +165,12 @@ You could, of course, fancy this up in many ways, including adding in substituti
 <ol style="list-style-type: decimal">
 <li><p>Your program file should comply with the tidy rules above.</p></li>
 <li><p><code>tidy --help</code> should print useful help information.</p></li>
-<li><p>Your program should be executable from the command line and called <code>tidy</code>.</p></li>
+<li><p>Your program should be executable from the command line and called <code>tidy</code>. If you don’t know how to do that, here are some minimal instructions.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Name the file <code>tidy</code> (no extension)</p></li>
+<li><p>The first line (the shbang line) is where you declare it to be a python program. See the example file. (If <code>python3</code> isn’t your default python, you can edit that line to something like <code>#! /usr/bin/env python3.5</code>.)</p></li>
+<li><p>Execute <code>chmod a+rx tidy</code> at the command line to make the file executable for everyone.</p></li>
+</ol></li>
 <li><p>The following syntax should tidy the file <code>foo.py</code> and print the results on stdout.</p></li>
 </ol>
 <pre><code>tidy -f foo.py

@@ -80,8 +80,16 @@ a style guide like PEP8 to get some ideas. Be sure to document them.
 2. `tidy --help` should print useful help information.
 
 3. Your program should be executable from the command line 
-and called `tidy`.
+and called `tidy`.  If you don't know how to do that, here are some minimal
+instructions.
 
+    a. Name the file `tidy` (no extension)
+    
+    b. The first line (the shbang line) is where you declare it to be a python program.  See the example file.  (If `python3` isn't your default python, you can edit that line
+    to something like `#! /usr/bin/env python3.5`.)
+    
+    c. Execute `chmod a+rx tidy` at the command line to make the file executable for everyone.
+    
 4. The following syntax should tidy the file `foo.py` and print the results 
 on stdout.
 
