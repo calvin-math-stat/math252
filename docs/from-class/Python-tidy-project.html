@@ -185,18 +185,20 @@ tidy -f foo.py --python   # with python bonus</code></pre>
 <div id="a-stub" class="section level2">
 <h2>A stub</h2>
 <p><a href="Python/tidy-template.py">Here</a> is a stub you can start from.</p>
-<pre><code>#! /usr/local/bin/python
+<pre><code>#! /usr/bin/env python
+
+# previous line was /usr/local/bin/python, but that might not be where your python lives.
 
 import re
 import argparse
 
 # Create an argument parser and tell it about arguments
-parser = argparse.ArgumentParser(description='Make code tidier.')
+parser = argparse.ArgumentParser(description = 'Make code tidier.')
 
 # positional argument for input file
 parser.add_argument(
   '-f', '--file', metavar = &quot;&lt;file name&gt;&quot;,
-  help = 'name of input file',)
+  help = 'name of input file')
 
 # named argument for output file
 parser.add_argument(

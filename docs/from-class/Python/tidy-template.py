@@ -1,4 +1,6 @@
-#! /usr/local/bin/python
+#! /usr/bin/env python
+
+# previous line was /usr/local/bin/python, but that might not be where your python lives.
 
 import re
 import argparse
