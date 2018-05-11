@@ -139,7 +139,13 @@ You could, of course, fancy this up in many ways, including adding in substituti
 <ul>
 <li>Use <code>-c</code> or <code>--comment</code> to specify the comment characters.</li>
 </ul></li>
-<li><p>All operators should be surrounded by spaces. [Note: some operators like <code>==</code>, <code>&gt;=</code>, etc. use more than one character.]</p></li>
+<li><p>All operators should be surrounded by spaces. [Note: some operators like <code>==</code>, <code>&gt;=</code>, etc. use more than one character.]</p>
+<p>Here is a list of operators you can use.</p></li>
+</ol>
+<pre class="python"><code>import re
+print(re.findall(r'\S+', '+ * - / // &amp; ^ ~ | ** &lt;&lt; &gt;&gt; = == &gt; &gt;= &lt; &lt;= %'))</code></pre>
+<pre><code>['+', '*', '-', '/', '//', '&amp;', '^', '~', '|', '**', '&lt;&lt;', '&gt;&gt;', '=', '==', '&gt;', '&gt;=', '&lt;', '&lt;=', '%']</code></pre>
+<ol start="6" style="list-style-type: decimal">
 <li><p>No space directly before a comma. Always a space after a comma.</p></li>
 <li><p>There should be no spaces immediately following <code>(</code> or immediately preceeding <code>)</code>.</p></li>
 <li><p>There should not be a space before an open paren [<code>(</code>] unless the previous word is <code>if</code>, <code>for</code>, or <code>while</code>.</p></li>
@@ -175,11 +181,11 @@ You could, of course, fancy this up in many ways, including adding in substituti
 </ol>
 <pre><code>tidy -f foo.py
 tidy -f foo.py --python   # with python bonus</code></pre>
-<ol start="4" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>If you add in extra features, use <code>-x</code> or <code>--extra</code> to turn them on.</li>
 </ol>
 <pre><code>tidy -f foo.py -x</code></pre>
-<ol start="5" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li>You may create additional command line arguments as you see fit.</li>
 </ol>
 </div>

@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
 ```
 
 
@@ -43,7 +43,14 @@ escaped symbols and string constants in quotes.]
 
 1. All operators should be surrounded by spaces.  [Note: some operators like `==`, `>=`, etc. use more than one character.]
 
-1. No space directly before a comma. Always a space after a comma.
+    Here is a list of operators you can use.
+    
+```{python, results = "show", include = TRUE}
+import re
+print(re.findall(r'\S+', '+ * - / // & ^ ~ | ** << >> = == > >= < <= %'))
+```
+
+6. No space directly before a comma. Always a space after a comma.
 
 1. There should be no spaces immediately following `(` or immediately 
 preceeding `)`.
@@ -98,13 +105,13 @@ tidy -f foo.py
 tidy -f foo.py --python   # with python bonus
 ```
 
-4. If you add in extra features, use `-x` or `--extra` to turn them on.
+5. If you add in extra features, use `-x` or `--extra` to turn them on.
 
 ```
 tidy -f foo.py -x
 ```
 
-5. You may create additional command line arguments as you see fit.
+6. You may create additional command line arguments as you see fit.
 
 ## Submission
 
