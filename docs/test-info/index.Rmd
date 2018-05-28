@@ -11,9 +11,34 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+require(dplyr)
+require(tidyr)
+t1bks <- c(20, 43, 54, 65, 76, 88) %>% rev()
+t2bks <- c(30, 55, 65, 75, 85, 96) %>% rev()
+t3bks <- c(15, 36, 44, 52, 61, 72)   %>% rev()
+fbks  <- c(25, 74, 96, 118, 140, 165)  %>% rev()
+GS <- 
+  data_frame(
+    Grade = LETTERS[1:4],
+    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
+    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
+    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
+    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
+  ) %>% 
+  arrange(Grade)
 ```
 
 ## Test Information
+
+
+
+### Grading Scales
+
+Here are the grading scales used for each of our tests and the final.
+
+```{r, echo = FALSE}
+knitr::kable(GS)
+```
 
 ### Test 1 
 
