@@ -1,0 +1,161 @@
+#! /usr/bin/env python
+
+# previous line was /usr/local/bin/python, but that might not be where your python lives.
+
+import re
+import argparse
+
+# Create an argument parser and tell it about arguments
+parser = argparse.ArgumentParser(description = 'Make code tidier.')
+
+# positional argument for input file
+parser.add_argument(
+  '-f', '--file', metavar = "<file name>",
+  help = 'name of input file')
+
+# named argument for output file
+parser.add_argument(
+  '-o', '--out', dest = 'out_file', default = None,
+  metavar = "<file name>",
+  help = 'name of output file (default: use stdout)')
+
+# spaces per tab; defaults to 4; must be an integer
+parser.add_argument(
+  '-t', '--tab-spaces', dest = 'tab_spaces', default = 4,
+  type = int, metavar = "<integer>",
+  help = 'number of spaces to use for each tab at the start of a line')
+
+# comment characters
+parser.add_argument(
+  '-c', '--comment', dest = 'comment_chars', default = "#,//",
+  metavar = "<comma separated list of comment characters>",
+  help = 'strings to be interpreted as starting coded comments'
+  )
+
+# boolean arguments, aka flags
+parser.add_argument(
+  '-p', '--python',
+  dest = 'python', action = "store_true",
+  help = 'Tidy with python rules')
+
+parser.add_argument(
+  '-r', '--report',
+  dest = 'report', action = "store_true",
+  help = 'Instead of fixing the file, generate a report listing issues.')
+
+parser.add_argument(
+  '-x', '--extra',
+  dest = 'extra', action = "store_true",
+  help = 'Use extra features')
+
+args = parser.parse_args()
+comment_chars = args.comment_chars.split(",")
+
+# This reads the entire file all at once.
+# You could also read it line by line.
+
+if args.file:
+  f = open(args.file)
+  contents = f.read()
+else:
+  print("*** Error: No file specified.  Did you forget -f?")
+  exit(1)
+
+modified_contents = contents
+
+
+# 1. No trailing spaces at the ends of lines.
+
+modified_contents = re.sub(r' +$', r'', modified_contents)
+modified_contents = re.sub(r'\t +$', r'', modified_contents)
+
+# 2. Tab characters at the beginning of a line should be replaced by (default 4) spaces.
+# Use `-t` to choose a different number.
+
+some_spaces = " " * args.tab_spaces
+while re.search(r'^\t', modified_contents):
+  modified_contents = re.sub(r'^\t', args.tab_spaces, modified_contents)
+
+# 3. Except at the beginning of a line (for indentation purposes), there should be no double spaces.
+# (In practice, this is probably too strict -- sometimes the use of space to align code makes it
+# more readable.  Add a flag to turn this off if you like, but leave it on by default.)
+
+if True:
+  while re.search(r'  ', modified_contents):
+    modified_contents = re.sub(r'  ', r'@DBL-SPACE@', modified_contents)
+
+  while re.search(r'^@DBL-SPACE@', modified_contents, flags = re.MULTILINE):
+    modified_contents = re.sub(r'^((@DBL-SPACE@)*)@DBL-SPACE@', r'\1  ', modified_contents,
+    flags = re.MULTILINE)
+
+  modified_contents = re.sub(r'@DBL-SPACE@ ', r'@DBL-SPACE@', modified_contents)
+  modified_contents = re.sub(r'(@DBL-SPACE@)+', r' ', modified_contents)
+
+
+# 4. Comment characters should be followed by a space.
+# [Watch out for escaped symbols and string constants in quotes.]
+#     * Use `-c` or `--comment` to specify the comment characters.
+
+for c in comment_chars:
+  regex_string = "(" + c + r")([^ ])"
+  modified_contents = re.sub(regex_string, r'\1 \2', modified_contents)
+
+# 5. All operators should be surrounded by spaces.
+# [Note: some operators like `==`, `>=`, etc. use more than one character.]
+#     Here is a list of operators you can use.
+#
+# import re
+# print(re.findall(r'\S+', '+ * - / // & ^ ~ | ** << >> = == > >= < <= %'))
+
+# operators = re.findall(r'\S+', '+ * - / // & ^ ~ | ** << >> = == > >= < <= %')
+
+modified_contents = re.sub(
+  r'([^ /*>=])(\+|\*|-|/|//|&|\^|~|\||\*\*|<<|>>|=|==|>|>=|<|<=|%)',
+  r'\1@SPACE@\2', modified_contents)
+
+modified_contents = re.sub(
+  r'(\+|\*|-|/|//|&|\^|~|\||\*\*|<<|>>|=|==|>|>=|<|<=|%)([^ /*>=])',
+  r'\1@SPACE@\2', modified_contents)
+
+modified_contents = re.sub(r'@SPACE@/', r'/', modified_contents)
+modified_contents = re.sub(r'\*@SPACE@\*', r'**', modified_contents)
+modified_contents = re.sub(r'<@SPACE@<', r'<<', modified_contents)
+modified_contents = re.sub(r'>@SPACE@>', r'>>', modified_contents)
+modified_contents = re.sub(r'=@SPACE@=', r'==', modified_contents)
+modified_contents = re.sub(r'<@SPACE@=', r'<=', modified_contents)
+modified_contents = re.sub(r'>@SPACE@=', r'>=', modified_contents)
+modified_contents = re.sub(r'@SPACE@', r' ', modified_contents)
+
+
+# 6. No space directly before a comma. Always a space after a comma.
+
+modified_contents = re.sub(r' ,', ',', modified_contents)
+modified_contents = re.sub(r',(\S)', r', \1', modified_contents)
+
+# 7. There should be no spaces immediately following `(` or immediately preceeding `)`.
+
+modified_contents = re.sub(r' +\)', ')', modified_contents)
+modified_contents = re.sub(r'\( +', '(', modified_contents)
+
+# 8. There should not be a space before an open paren [`(`]
+#    unless the previous word is `if`, `for`, or `while`.
+
+modified_contents = re.sub(r'\s+\(', '(', modified_contents)
+modified_contents = re.sub(r'((if|for|while))\(', r'\1 (', modified_contents)
+
+# 9. If the flag `--python` is specified, for a more pythonic approach, convert things like
+#    `while (i < 3):` into `while i < 3:` since those parens are not required.  Do the same
+#    for `if`.  You should handle nested parentheses to some degree.  (Recall that arbirarily
+#    deep nested parens cannot be handled by pure regex.)
+
+if args.python:
+  modified_contents = re.sub(r'while \((.*)\)', r'while \1', modified_contents)
+  modified_contents = re.sub(r'if \((.*)\)', r'if \1', modified_contents)
+
+
+if args.out_file:
+  outf = open(args.out_file, "w")
+  outf.write(modified_contents)
+else:
+  print(modified_contents)
+
