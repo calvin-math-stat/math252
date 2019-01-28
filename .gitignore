@@ -40,3 +40,4 @@ vignettes/*.pdf
 *.sol
 *.aux
 *.synctex.gz
+*-concordance.tex

@@ -1,0 +1,18 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../styles/rpruim2017.css
+---
+
+
+
+Information about problem sets will be posted here as it become available.
+ 
+ * [Problem Sets due before Test 1](hw01.pdf)
+ * [Problem Sets due between Test 1 and Test 2](hw02.pdf)
+ * [Problem Sets due between Test 2 and Test 3](hw03.pdf)

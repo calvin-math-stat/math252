@@ -1,0 +1,31 @@
+---
+title: "Calendar -- Spring 2019"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+---
+
+```{r, setup, include = FALSE}
+library(rjp)
+library(magrittr)
+```
+
+```{r, results = 'asis', echo = FALSE}
+calendar_css() %>% cat()
+Cal <-
+  calendar("daily.txt", mask = c(2, 4, 6),
+         start = lubridate::mdy("1/28/2019")) 
+Cal %>% 
+  html_calendar(show = 2:6, items = c("Topic", "Read", "R", "Due", "Note")) %>%
+  cat()
+```
+
+
+```{r, fig.width = 10, fig.height = 10, eval = FALSE, include = FALSE}
+calendar("daily.txt", mask = c(2,3,5,6),
+         start = lubridate::mdy("1/28/2019")) %>%
+  gg_calendar(show = 2:6) 
+```
