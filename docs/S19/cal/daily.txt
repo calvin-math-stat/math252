@@ -81,13 +81,22 @@ Topic:: 9am
 Note:: Snow Day
 Note:: No Class
 
+===01/30/2019
+
+Note:: Snow Day
+Note:: No Class
+
 ===
 Topic:: Graphs and Models
 Read:: Rosen 10.1-10.2
 
 Welcome Back
 
-Overview of course
+Info Sheet
+
+Graph sheet #1
+
+Overview of course [didn't do]
 
   * Graphs and graph algorithms (1/5)
   * Counting and Probability (2/5)
@@ -99,8 +108,6 @@ Home Page
   * calendar
   * textbook
 
-Info form
-Photos with 8.5 x 11
 
 Graphs consist of edges (E) and vertices (V)
 
