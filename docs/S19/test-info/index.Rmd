@@ -32,6 +32,11 @@ GS <-
 
 Information about tests will be posted here shortly before each test.
 
+### Black out date requests
+
+You can request that we not have a test on a particular day by filling out 
+[this form](https://goo.gl/forms/tspWxJSW0K9Qa4gv1). I can't promise to 
+meet all requests, but I'll do what I can to work with the data.
 
 <!-- ### Grading Scales -->
 
