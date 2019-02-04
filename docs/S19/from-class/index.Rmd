@@ -14,8 +14,8 @@ output:
 
 ### Graphs
 
- * [PDF](Graphs/Graph-worksheets.pdf)
- * [HTML](Graphs/)
+ * [PDF](graphs/Graph-worksheets.pdf)
+ * [HTML](graphs/)
 
 ### Counting and Probability
 
