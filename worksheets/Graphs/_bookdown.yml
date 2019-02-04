@@ -1,0 +1,9 @@
+---
+book_filename: "Graph-worksheets"
+output_dir: "../../docs/S19/from-class/graphs"
+site: bookdown::bookdown_site
+language:
+  ui:
+    chapter_name: ""
+delete_merged_file: true
+---

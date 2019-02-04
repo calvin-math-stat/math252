@@ -1,0 +1,152 @@
+---
+title: "Conditional Probability"
+author: "Math 252"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<!-- Some macros to make mathematics easier -->
+
+<!-- \newcommand{\Prob}{\mathrm{p}} -->
+\newcommand{\Prob}{{p}}
+\newcommand{\intersect}{\;\cap\;}
+\newcommand{\union}{\operatorname{\cup}}
+\newcommand{\E}{\operatorname{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\SD}{\operatorname{SD}}
+
+## Conditional Probability 
+
+$\Prob(A \mid B)$ answers the question: Of the times that $B$ happens, how often does $A$ also happen?
+Common ways this is expressed include
+
+ * The probability of  $A$ given $B$
+ * The probability of  $A$ conditional on $B$
+ * The probability of $A$ if $B$ 
+ * The probability that $A$ happens when $B$ happens
+
+When $\Prob(B) \neq 0$, then
+$$
+\Prob(A \mid B) = \frac{\Prob(A \intersect B)}{\Prob(B)}
+$$
+
+**Note:** Usually, $\Prob(A \mid B)$, $\Prob(B \mid A)$ and $\Prob(A \intersect B)$ are all 
+different.  It is critical to know which of these three applies in a given situation and to use
+the notation correctly.
+
+## Exercises
+
+A number of school children, some boys and some girls, are asked about their favorite color.
+The resuls are in the table below.
+
+\        | Blue | Other 
+-------- | :--: | :----:
+Boy      | 18   | 7
+Girl     | 12   | 8
+
+Suppose we put the names of all the children into a hat and selection one randomly.
+Consider the following events.
+
+ * $G$: The selected child is a girl.
+ * $L$: The selected child's favorite color is blue.
+ 
+For each of the following, (a) express the probability in words, (b) determine the probability.
+For conditional probabilities, compute the probabilities two different ways.
+
+1. $\Prob(L)$
+\vfill
+2. $\Prob(\overline{L})$
+\vfill
+3. $\Prob(G)$
+\vfill
+4. $\Prob(\overline{G})$
+\vfill
+5. $\Prob(L \intersect G)$
+\vfill
+6. $\Prob(L \mid G)$
+\vfill
+7. $\Prob(G \mid L)$
+\vfill
+8. $\Prob(G \mid \overline{L})$
+\vfill
+9. $\Prob(\overline{G} \mid L)$
+
+\newpage
+
+## Product Rule 
+
+Applying a little algebra, we get the following product rule:
+
+$$
+\Prob(A \intersect B) = \Prob(A) \cdot \Prob(B \mid A)
+$$
+
+## Independence
+
+If $\Prob(A) \neq 0$ and $\Prob(B) \neq 0$ and $\Prob(B \mid A) = \Prob(B)$, then
+we say that $A$ and $B$ are **independent events**.
+
+## Exercises
+
+ 10. Show that if $\Prob(B \mid A) = \Prob(B)$, then $\Prob(A \mid B) = \Prob(A)$.
+ 
+ \vfill
+ 
+ 11. The product rule is even simpler when $A$ and $B$ are independent.  What is it?
+ 
+\vfill
+\vfill
+\vfill
+ 
+ 12. Show that 
+ $\Prob(A \intersect B \intersect C) = \Prob(A) \cdot \Prob(B \mid A) \cdot \Prob(C \mid A \intersect B)$.
+ 
+\vfill
+\vfill
+\vfill
+ 
+ 13. Analogous rules hold for intersections of more events as well.  Write down the rule for 
+ the intersection of 4 events.
+ 
+\vfill
+\vfill
+\vfill
+
+ 14. What is the probability of rolling doubles (two numbers that match) with standard dice?
+ Do this two ways: (a) using the Equally Likely Rule and (b) using the Product Rule.
+ 
+\vfill
+
+
+ 15. What is the probability of a five-card flush (all cards the same suit)?
+ Do this two ways: (a) using the Equally Likely Rule and (b) using the Product Rule.
+ 
+\vfill
+
+ 16. How many people are in this room? 
+ What is the probability that two people in this room have the same birthday (month and day)?
+ (Hint: Use the Complement Rule.)
+ 
+    What assumption must we make to do this calculation?
+ 
+\vfill
+ 
+ 17. If two 6-sided dice are rolled and the first one is a 5, what is the probability
+ that the sum is 10?
+ 
+\vfill
+ 
+ 18. If two 6-sided dice are rolled and at least one of them is a 5, what is the probability
+ that the sum is 10?
+ 
+\vfill
+ 
+ 19. If two 6-sided dice are rolled and the sum is 10, what is the probability that at least 
+ one of them is a 5? 
+ 

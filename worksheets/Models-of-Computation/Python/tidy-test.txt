@@ -1,0 +1,64 @@
+#1. No spaces at end of line
+This line has trailing spaces
+This line has trailing tabs
+
+#2. Convert leading tabs to spaces
+Here are some
+  lines with
+    more and more
+      tabs
+
+#3. Remove double spaces
+      Double  spaces  aren't  necessary.
+      This  is   a spacy     sentence.
+
+#4. Spaces after comment chars
+//This line has no space after a comment
+#Ditto.
+But watch out for "#things like this"
+
+#5. Surround ops with spaces
+// This is not an op
+1+2
+1*2
+1**2
+1/2
+1|2
+1>2
+1>>2
+1<2
+1<<2
+1<=2
+1>=2
+1&2
+1^2
+1%2
+1 + 2
+1 * 2
+1 >> 2
+
+#6. No spaces direction before a comma; always space after comma
+This is bad ,very ,very bad.
+foo(x,y,z)  #more ugly code
+
+#7. There should be no spaces immediately following `(` or immediately preceeding `)`.
+( this is not a good idea )
+(  more spaces doesn't make it better   )
+( this is worse -- it uses tabs rather than spaces )
+(   this is still worse -- it uses multiple tabs  )
+
+#8. There should not be a space before an open paren [`(`]
+#    unless the previous word is `if`, `for`, or `while`.
+
+for( i in I ):
+  print ( i )
+
+#9. If the flag `--python` is specified, for a more pythonic approach, convert things like
+#    `while (i < 3):` into `while i < 3:` since those parens are not required.  Do the same
+#    for `if`.
+
+if(   1<2   ):
+  bar(1,2,x,y)
+
+while( 1 < 2 ):
+  foo( x,y )
