@@ -12,7 +12,7 @@ output:
 
 ## Worksheets/Handouts
 
-* [Graphs](bookdown/Graph-worksheets.pdf)
+* [Graphs](Graphs/bookdown/Graph-worksheets.pdf)
 
 <!-- ### Langauges, Grammars, Machines -->
 
