@@ -17,6 +17,10 @@ output:
  * [PDF](Graphs/Graph-worksheets.pdf)
  * [HTML](Graphs/)
 
+### Counting and Probability
+
+### Models of Computation
+
 <!-- ### Langauges, Grammars, Machines -->
 
 <!-- Date  | Handout -->
@@ -63,6 +67,11 @@ output:
 <!-- 02/06 | [Paths in Graphs](Graphs-Paths.pdf) -->
 <!-- 02/08 | [Bipartite and Planar Graphs](Graphs-Bipartite-Planar.pdf) -->
 <!-- 02/11 | Euler Paths: [[worksheet]](Graphs-Euler.pdf) [[long version]](Graphs-Euler.html) -->
+
+<br>
+
+------------
+
 
 ## Other Resources
 
