@@ -16,10 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
     A **path** of **length** $n$ from vertex $v_0$ to vertex $v_{n}$ in $G$ 
     is a sequence of $n$ edges $e_1 , \dots , e_n$ of $G$ such that 
     when $1 \le i \le n$, then
-
-    * $e_i = \{v_{i-1}, v_i\}$ [$e_i = \langle v_{i-1}, v_i \rangle$]
+    $e_i = \{v_{i-1}, v_i\}$ [$e_i = \langle v_{i-1}, v_i \rangle$]
     
-  * A path is a **circuit** if it begins and ends at the same vertex and has length $\ge 1$.
+  * A path is a **circuit** (also called a **cycle**) if it begins and ends at 
+  the same vertex and has length $\ge 1$.
   
   * A path or circuit is **simple** if it does not include the same edge more than once.
   
@@ -39,30 +39,16 @@ If $f : G \to H$ is an isomorphism, then $f$ maps paths in $G$ to paths in $H$. 
 This can be useful for finding and isomorphism between $G$ and $H$ or for showing that there
 is no isomorphism.
 
-4. Answer some questions about the two graphs below.
+4. Answer some questions about the pairs of graphs below.
  
     a. Compute the degreee sequences for each graph.
     
-    b. Find the shortest and longest simple paths from $u_1$ to $u_4$.
+    b. Find the shortest and longest simple paths from $v_1$ to $v_4$.
     
     c. Are the graphs isomorphic?  Explain.
     
-```{r, echo = FALSE, fig.align = "center", out.width = "40%"}
+```{r, echo = FALSE, fig.align = "center", out.width = "38%"}
 knitr::include_graphics("../images/GraphFig9-4-6.png")
-```
-
-\newpage
-
-5. Answer some questions about the two graphs below.
- 
-    a. Compute the degreee sequences for each graph.
-    
-    b. Find the shortest and longest simple paths from $u_1$ to $u_2$.
-    
-    c. Are the graphs isomorphic?  Explain.
-    
- 
-```{r, echo = FALSE, fig.align = "center", out.width = "60%"}
 knitr::include_graphics("../images/GraphFig9-4-7.png")
 ```
  
@@ -79,9 +65,9 @@ knitr::include_graphics("../images/GraphFig9-4-7.png")
    That is, $H$ must be a subgraph of $G$, $H$ be connected, but $H$ cannot be a subgraph 
    of a larger connected subgraph of $G$.
  
- 6. Draw a directed graph with 6 vertices that is weakly connected but not strongly connected.
+ 5. Draw a directed graph with 6 vertices that is weakly connected but not strongly connected.
  
- 7. Draw an undirected graph with two connected components.
+ 6. Draw an undirected graph with two connected components.
  
 ## Euler and Hamilton Paths
 
@@ -93,80 +79,45 @@ Euler paths are named after Leonid Euler who posed the following famous problem 
 bridges in Königsberg.
 
 
-
-
-\newpage
-
-### Königsberg Bridge Problem
-
-One of the founders of graph theory was Leonid Euler (one of the greatest 
-mathematicians who ever lived).  At the time he was alive, the city of Königsberg had seven bridges connecting the two banks of the river flowing 
-through downtown and two islands in that river.  Here are a couple maps
-of downtown Königsberg at the time.  One is a bit stylized.
-
-
-```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
-knitr::include_graphics("../images/Konigsberg-bridges-two.png")
-```
-
-<!-- \begin{center} -->
-<!-- \includegraphics[width=3in]{../images/KonigsbergBridges03} -->
-<!-- \hfill -->
-<!-- \includegraphics[width=3in]{../images/KonigsbergBridges02} -->
-<!-- \end{center} -->
-
-As the story goes, the residents of Königsberg enjoyed walking the bridges.
-The question is this:  How can someone take a Sunday afternoon walk that 
-starts and ends in the same place and crosses each bridge exactly once?
-(Leaving the map, renting hot air balloons, swimming, etc. are not allowed.)
-
-We'll return to this problem in just a moment.  But first, a different sort of puzzle.
-
 ### Can you trace it?
 
 Perhaps you have seen the following type of ``puzzle''. 
 The goal is to trace the figures without lifting your pencil from 
-the paper and without repeating anything.
+the paper and without retracing any of the lines.
 
- 8. Which kind of path is this puzzle asking for?
+ 7. Which kind of path is this puzzle asking for?
 
- 9. Which of these can you trace in this manner?
+ 8. Which of these can you trace in this manner?
 
 
 ```{r, echo = FALSE, fig.align = "center", out.width = "70%"}
 knitr::include_graphics("../images/Can-you-trace.png")
 ```
 
- 10. Create a graph that represents the Königsberg Bridge Puzzle (so it can be traced 
- in this manner, if and only if the Königsberg Bridge Puzzle has a solution).  What
- are the vertices?  What are the edges? What type of graph is it?
 
-\vfill
-
- 11. Can you trace the Königsberg Bridge graph?
-
-\vfill
 
 ## Relationships in Graphs
 
 
-A **planar graph** is a graph that it can be drawn in 
+A **planar graph** is a graph that *can be* drawn in 
 the plane without any edges crossing.
 
- 12. Show that $K_4$ and $Q_3$ are both planar graphs.
- 
+ 9. Show that $K_4$ and $Q_3$ are both planar graphs.
+
 \newpage
 
-Here are some graphs.
+Here are some graphs that are missing their vertices.
 
-```{r, echo = FALSE, fig.align = "center", out.width = "90%"}
+```{r, echo = FALSE, fig.align = "center", out.width = "85%"}
 knitr::include_graphics("../images/Nine-Graphs.png")
 ```
 
  
- 13. Add dots showing vertices so that each graph is a planar graph.
+ 10. Add dots showing vertices so that each graph is a planar graph.
+ 
+<!-- Do this adding *as few vertices as possible* (but no fewer). -->
 
- 14. Fill in the table below for the graphs above.
+ 11. Fill in the table below for the graphs above.
 Do you notice any patterns?
 Can you make any conjectures?
 Can you prove any of the conjectures?
@@ -195,9 +146,45 @@ Graph | number of even verticies | number of odd vertices | total degree | numbe
 9        |          |        |           |           |            |       |           
          |          |        |           |           |            |       |           
 
-\newpage
 
-## Meanwhile, Back in Königsberg
+## Königsberg Bridge Problem
+
+### Original Version
+
+One of the founders of graph theory was Leonid Euler (one of the greatest 
+mathematicians who ever lived).  At the time he was alive, the city of Königsberg had seven bridges connecting the two banks of the river flowing 
+through downtown and two islands in that river.  Here are a couple maps
+of downtown Königsberg at the time.  One is a bit stylized.
+
+
+```{r, echo = FALSE, fig.align = "center", out.width = "60%"}
+knitr::include_graphics("../images/Konigsberg-bridges-two.png")
+```
+
+<!-- \begin{center} -->
+<!-- \includegraphics[width=3in]{../images/KonigsbergBridges03} -->
+<!-- \hfill -->
+<!-- \includegraphics[width=3in]{../images/KonigsbergBridges02} -->
+<!-- \end{center} -->
+
+As the story goes, the residents of Königsberg enjoyed walking the bridges.
+The question is this:  How can someone take a Sunday afternoon walk that 
+starts and ends in the same place and crosses each bridge exactly once?
+(Leaving the map, renting hot air balloons, swimming, etc. are not allowed.)
+
+We'll return to this problem in just a moment.  But first, a different sort of puzzle.
+
+ 12. Create a graph that represents the Königsberg Bridge Puzzle (so it can be traced 
+ in this manner, if and only if the Königsberg Bridge Puzzle has a solution).  What
+ are the vertices?  What are the edges? What type of graph is it?
+
+\vfill
+
+ 13. Can you trace the Königsberg Bridge graph?
+
+\vfill
+
+### Extentions to the Königsberg bridge problem
 
 Here are some extensions to the Königsberg Bridge problem.
 First, we embelish the map a bit:
@@ -223,7 +210,7 @@ to have walked each bridge exactly once.
 However, none have been able to repeat the feat by the light of day.
 
 
-15. **The Blue Prince's eighth bridge.**
+14. **The Blue Prince's eighth bridge.**
 The Blue Prince, having analyzed the town's bridge system by means of graph
 theory, concludes that the bridges cannot be walked. He contrives a stealthy
 plan to build an eighth bridge so that he can begin in the evening at his
@@ -247,7 +234,7 @@ the Blue Prince build the eighth bridge?
 
 \vfill
 
-16. **The Red Prince's ninth bridge.**
+15. **The Red Prince's ninth bridge.**
 The Red Prince, infuriated by his brother's solution to the problem,
 wants to build a ninth bridge, enabling him to begin at his castle, walk the
 bridges, and end at the Gasthaus to rub dirt in his brother's face. 
@@ -270,7 +257,7 @@ Where does the Red Prince build the ninth bridge?
 
 \vfill
 
-17. **The Bishop's tength bridge.**
+16. **The Bishop's tength bridge.**
 The Bishop has watched this furious bridge-building with dismay. It upsets the
 townspeople and, worse, contributes to excessive drunkenness. He
 wants to build a tenth bridge that allows all the inhabitants to walk the
