@@ -81,8 +81,8 @@ out that all nonplanar graphs contain a "homeomorphic copy" of either $K_{5}$ or
 A graph $G$ is nonplanar if and only if it contains a subgraph $H$ 
 that is homeomorphic to either $K_5$ or $K_{3,3}$.
 
-  * two graphs are **homeomorphic** if the can be obtained from the same graph by
-  a sequence of elementary subdivisions.
+  * two graphs are **homeomorphic** if they can each be obtained from the 
+  same graph by a sequence of elementary subdivisions.
   
   * an **elementary subdivision** of a graph $G$ removes one edge $(u, v)$ and 
   adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$.
