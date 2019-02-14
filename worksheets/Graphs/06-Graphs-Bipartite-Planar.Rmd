@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 A simple graph $G$ is **biparatite** if its vertices can be partitioned into two disjoint
 subsets $V_1$ and $V_2$ and every edge connects a vertex in $V_1$ with a vertex in $V_2$.
-The pair $\langle<V_1, V_2\rangle$ is called a **bipartition** of $G$.
+The pair $\langle V_1, V_2 \rangle$ is called a **bipartition** of $G$.
 
 ## Examples
 
@@ -41,6 +41,8 @@ Here are some examples.
 ```{r, echo = FALSE, fig.align = "center", out.width = "50%"}
 knitr::include_graphics("../images/bipartite-graphs.png")
 ```
+
+5. Draw the following graphs:  $K_{2,2}$, $K_{4,2}$, $K_{4,3}$
 
 \newpage
 
