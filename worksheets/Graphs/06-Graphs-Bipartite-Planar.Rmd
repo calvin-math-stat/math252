@@ -90,7 +90,6 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
  4. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
  subdivisions on your graph.
  
- 
  5. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
 
  6. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
