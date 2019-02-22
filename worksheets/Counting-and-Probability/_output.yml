@@ -1,0 +1,17 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: chapter
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">Counting and Probability</a></li>
+  download: ["pdf", "epub"]
+bookdown::pdf_book:
+  keep_tex: true
+  includes:
+    in_header: preamble.tex
+    before_body: before_body.tex
+  citation_package: natbib
+  toc_depth: 2
+  toc_unnumbered: true

@@ -14,10 +14,16 @@ output:
 
 ### Graphs
 
- * [PDF](graphs/Graph-worksheets.pdf)
- * [HTML](graphs/)
+ * Worksheets: 
+ [PDF](graphs/Graph-worksheets.pdf) 
+ [HTML](graphs/)
+ * [Notes from Professor Scofield](ScofieldPlanarityNotes.pdf)
 
 ### Counting and Probability
+
+  * Worksheets: 
+  [PDF](counting-and-probability/Counting-and-Probability.pdf)
+  [HTML](counting-and-probability/)
 
 ### Models of Computation
 
