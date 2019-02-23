@@ -6,4 +6,8 @@ language:
   ui:
     chapter_name: ""
 delete_merged_file: true
+rmd_files: ["index.Rmd",
+      "01-Counting-Basic.Rmd",
+      "02-Counting-Pigeonhole.Rmd",
+      ]
 ---

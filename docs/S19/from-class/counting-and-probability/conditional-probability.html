@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="conditional-probability" class="section level1">
 <h1><span class="header-section-number">6</span> Conditional Probability</h1>
-<p><span class="math inline">\(operatorname{p}(A \mid B)\)</span> answers the question: Of the times that <span class="math inline">\(B\)</span> happens, how often does <span class="math inline">\(A\)</span> also happen?
+<p><span class="math inline">\(\operatorname{p}(A \mid B)\)</span> answers the question: Of the times that <span class="math inline">\(B\)</span> happens, how often does <span class="math inline">\(A\)</span> also happen?
 Common ways this is expressed include</p>
 <ul>
 <li>The probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span></li>
@@ -208,11 +208,11 @@ Common ways this is expressed include</p>
 <li>The probability of <span class="math inline">\(A\)</span> if <span class="math inline">\(B\)</span></li>
 <li>The probability that <span class="math inline">\(A\)</span> happens when <span class="math inline">\(B\)</span> happens</li>
 </ul>
-<p>When <span class="math inline">\(operatorname{p}(B) \neq 0\)</span>, then
+<p>When <span class="math inline">\(\operatorname{p}(B) \neq 0\)</span>, then
 <span class="math display">\[
-operatorname{p}(A \mid B) = \frac{operatorname{p}(A \;\cap\;B)}{operatorname{p}(B)}
+\operatorname{p}(A \mid B) = \frac{\operatorname{p}(A \;\cap\;B)}{\operatorname{p}(B)}
 \]</span></p>
-<p><strong>Note:</strong> Usually, <span class="math inline">\(operatorname{p}(A \mid B)\)</span>, <span class="math inline">\(operatorname{p}(B \mid A)\)</span> and <span class="math inline">\(operatorname{p}(A \;\cap\;B)\)</span> are all
+<p><strong>Note:</strong> Usually, <span class="math inline">\(\operatorname{p}(A \mid B)\)</span>, <span class="math inline">\(\operatorname{p}(B \mid A)\)</span> and <span class="math inline">\(\operatorname{p}(A \;\cap\;B)\)</span> are all
 different. It is critical to know which of these three applies in a given situation and to use
 the notation correctly.</p>
 <div id="exercises-1" class="section level2">
@@ -249,23 +249,23 @@ Consider the following events.</p>
 <p>For each of the following, (a) express the probability in words, (b) determine the probability.
 For conditional probabilities, compute the probabilities two different ways.</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(operatorname{p}(L)\)</span>
+<li><span class="math inline">\(\operatorname{p}(L)\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(\overline{L})\)</span>
+<li><span class="math inline">\(\operatorname{p}(\overline{L})\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(G)\)</span>
+<li><span class="math inline">\(\operatorname{p}(G)\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(\overline{G})\)</span>
+<li><span class="math inline">\(\operatorname{p}(\overline{G})\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(L \;\cap\;G)\)</span>
+<li><span class="math inline">\(\operatorname{p}(L \;\cap\;G)\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(L \mid G)\)</span>
+<li><span class="math inline">\(\operatorname{p}(L \mid G)\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(G \mid L)\)</span>
+<li><span class="math inline">\(\operatorname{p}(G \mid L)\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(G \mid \overline{L})\)</span>
+<li><span class="math inline">\(\operatorname{p}(G \mid \overline{L})\)</span>
 </li>
-<li><span class="math inline">\(operatorname{p}(\overline{G} \mid L)\)</span></li>
+<li><span class="math inline">\(\operatorname{p}(\overline{G} \mid L)\)</span></li>
 </ol>
 
 </div>
@@ -273,18 +273,18 @@ For conditional probabilities, compute the probabilities two different ways.</p>
 <h2><span class="header-section-number">6.2</span> Product Rule</h2>
 <p>Applying a little algebra, we get the following product rule:</p>
 <p><span class="math display">\[
-operatorname{p}(A \;\cap\;B) = operatorname{p}(A) \cdot operatorname{p}(B \mid A)
+\operatorname{p}(A \;\cap\;B) = \operatorname{p}(A) \cdot \operatorname{p}(B \mid A)
 \]</span></p>
 </div>
 <div id="independence" class="section level2">
 <h2><span class="header-section-number">6.3</span> Independence</h2>
-<p>If <span class="math inline">\(operatorname{p}(A) \neq 0\)</span> and <span class="math inline">\(operatorname{p}(B) \neq 0\)</span> and <span class="math inline">\(operatorname{p}(B \mid A) = operatorname{p}(B)\)</span>, then
+<p>If <span class="math inline">\(\operatorname{p}(A) \neq 0\)</span> and <span class="math inline">\(\operatorname{p}(B) \neq 0\)</span> and <span class="math inline">\(\operatorname{p}(B \mid A) = \operatorname{p}(B)\)</span>, then
 we say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent events</strong>.</p>
 </div>
 <div id="exercises-2" class="section level2">
 <h2><span class="header-section-number">6.4</span> Exercises</h2>
 <ol start="10" style="list-style-type: decimal">
-<li>Show that if <span class="math inline">\(operatorname{p}(B \mid A) = operatorname{p}(B)\)</span>, then <span class="math inline">\(operatorname{p}(A \mid B) = operatorname{p}(A)\)</span>.</li>
+<li>Show that if <span class="math inline">\(\operatorname{p}(B \mid A) = \operatorname{p}(B)\)</span>, then <span class="math inline">\(\operatorname{p}(A \mid B) = \operatorname{p}(A)\)</span>.</li>
 </ol>
 <p></p>
 <ol start="11" style="list-style-type: decimal">
@@ -293,7 +293,7 @@ we say that <span class="math inline">\(A\)</span> and <span class="math inline"
 
 <ol start="12" style="list-style-type: decimal">
 <li>Show that
-<span class="math inline">\(operatorname{p}(A \;\cap\;B \;\cap\;C) = operatorname{p}(A) \cdot operatorname{p}(B \mid A) \cdot operatorname{p}(C \mid A \;\cap\;B)\)</span>.</li>
+<span class="math inline">\(\operatorname{p}(A \;\cap\;B \;\cap\;C) = \operatorname{p}(A) \cdot \operatorname{p}(B \mid A) \cdot \operatorname{p}(C \mid A \;\cap\;B)\)</span>.</li>
 </ol>
 
 <ol start="13" style="list-style-type: decimal">

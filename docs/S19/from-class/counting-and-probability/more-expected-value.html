@@ -207,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If <span class="math inline">\(X\)</span> is a random variable and <span class="math inline">\(f\)</span> is a function, then <span class="math inline">\(f(X)\)</span> is a new random variable
 such that</p>
 <p><span class="math display">\[
-operatorname{p}(f(X) = b) = \sum_{\{a \mid f(a) = b\}} operatorname{p}(X = a)
+\operatorname{p}(f(X) = b) = \sum_{\{a \mid f(a) = b\}} \operatorname{p}(X = a)
 \]</span></p>
 <p>This is actually much simpler than it looks. Basically, we just transform each possible value
 <span class="math inline">\(k\)</span> that <span class="math inline">\(X\)</span> can take into <span class="math inline">\(f(k)\)</span> and then collapse any cells in the probability table that end
@@ -286,7 +286,7 @@ up having the same value.</p>
 red die and a blue die. The number on the red die is one numerical result, the
 number on the blue die is a second numerical result.) We can represent</p>
 <p><span class="math display">\[
-operatorname{p}(X = a \land Y = b)
+\operatorname{p}(X = a \land Y = b)
 \]</span></p>
 <p>with a function of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> or with a two-way table like this one:</p>
 <table>
@@ -321,8 +321,8 @@ operatorname{p}(X = a \land Y = b)
 </table>
 <p>Use the table above to answer the following questions.</p>
 <ol start="4" style="list-style-type: decimal">
-<li><p>What is <span class="math inline">\(operatorname{p}(X = 3 \land Y = 2)\)</span>? What is <span class="math inline">\(operatorname{p}(X = 3)\)</span>? What is <span class="math inline">\(operatorname{p}(Y = 2)\)</span>?</p></li>
-<li><p>What is <span class="math inline">\(operatorname{p}(X = Y)\)</span>? What is <span class="math inline">\(operatorname{p}(X &gt; Y)\)</span>?</p></li>
+<li><p>What is <span class="math inline">\(\operatorname{p}(X = 3 \land Y = 2)\)</span>? What is <span class="math inline">\(\operatorname{p}(X = 3)\)</span>? What is <span class="math inline">\(\operatorname{p}(Y = 2)\)</span>?</p></li>
+<li><p>What is <span class="math inline">\(\operatorname{p}(X = Y)\)</span>? What is <span class="math inline">\(\operatorname{p}(X &gt; Y)\)</span>?</p></li>
 <li><p>Create three probability tables, one for
 <span class="math inline">\(X\)</span>, one for <span class="math inline">\(Y\)</span>, and one for <span class="math inline">\(X + Y\)</span>. [Hint: Start by determining the possible values.]</p></li>
 <li><p>Now compute <span class="math inline">\(\operatorname{E}(X)\)</span>, <span class="math inline">\(\operatorname{E}(Y)\)</span>, and <span class="math inline">\(\operatorname{E}(X + Y)\)</span>.</p></li>

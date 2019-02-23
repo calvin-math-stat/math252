@@ -6,11 +6,7 @@ site: bookdown::bookdown_site
 output: 
   bookdown::pdf_book: default
   bookdown::gitbook: default
-rmd_files: ['index.Rmd',
-      "01-Counting-Basic.Rmd",
-      "02-Counting-Pigeonhole.Rmd",
-      "03-Counting-Division.Rmd",
-      "04-Counting-Donuts.Rmd"]
+
 ---
 
 ```{r skip, eval = FALSE, include = FALSE}
@@ -39,7 +35,7 @@ at Calvin College.
 
 <!-- Some macros to make mathematics easier -->
 
-\newcommand{\Prob}{operatorname{p}}
+\newcommand{\Prob}{\operatorname{p}}
 \newcommand{\intersect}{\;\cap\;}
 \newcommand{\union}{\operatorname{\cup}}
 \newcommand{\E}{\operatorname{E}}
