@@ -80,7 +80,7 @@ carefully.
  
 \vfill
 
-6. For his birthday, Joe received a gift of 8 of red socks
+6. For his birthday, Joe received a gift of 8 red socks
  (4 pairs, and he hasn't lost any yet). 
  Now how many socks must Joe grab to be sure that he has a matching pair?
  
@@ -138,13 +138,15 @@ connections at a time.
     how many connections is that?
     
     b. Show that 60 connections suffice make it possible to use any set of 10
-    workstations simultaneously.  (No matter what we do, we won't able to connect
+    workstations simultaneously. 
+    (No matter what we do, we won't be able to connect
     11 workstations to servers since there are only 10 servers.)
     
-    c. Show that 59 connections is not enough.  That is, no matter how you do the 
-    connecting, there will always be a combination of 10 workstations that cannot
-    simultaneously connect to servers.  (Hint: on average, how many connections are 
-    there per server?)
+    c. Show that 59 connections is not enough.  
+    That is, no matter how you do the connecting, 
+    there will always be a combination of 10 workstations that cannot
+    simultaneously connect to servers. 
+    (Hint: on average, how many connections are there per server?)
  
 \vfill
 
