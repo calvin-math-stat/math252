@@ -1,5 +1,10 @@
 
-# Donut problems
+# Counting Problems
+
+## Donut problems
+
+The problems below all involved donuts and that numbers 3 and 12.
+But you will need to know more than that to answer them.
 
  1. Danielle's Donuts sells 12 kinds of donuts.  This week they are offering a 
  special: The Mighty Mixer.  You get three donuts of three different kinds for $1.99.
@@ -26,9 +31,57 @@
  
  <!-- w/ replacement, order doesn't matter -->
  
- 4. What are the key features that make these situations different from each other?
- Can you work out a general formula for each of the situations?
+4. What are the key features that make these situations different from each other?
+Can you work out a general formula for each of the situations?
 
- 5. Write an additional problem of each type (and work out the answer).  Do not use 
- the numbers 3 or 12 in your problems.  Do not use donuts.
- 
+5. Write an additional problem of each type (and work out the answer).  Do not
+use the numbers 3 or 12 in your problems.  Do not use donuts.
+
+## More Problems
+
+As you do these problems, identify where you are using our counting principles:
+Multiplication Principle,
+Addition Principle,
+Subtraction Principle,
+Division Principle,
+Inclusion-Exclusion Principle,
+Pigeonhole Principle.
+For problems in the "Donut Family", identify which of the four situations the problem
+represents.
+
+6. How many bit strings of length eight either start with a 1 bit or end with
+the two bits 00?
+
+7. How many different ways are there to seat four people around a circular
+table, where two seatings are considered the same when each person has the same
+left neighbor and the same right neighbor?
+
+8. A computer company receives 350 applications from computer graduates for a
+job planning a line of new Web servers. Suppose that 220 of these applicants
+majored in computer science, 147 majored in business, and 51 majored both in
+computer science and in business. How many of these applicants majored neither
+in computer science nor in business?
+
+9. These questions involve a standard deck of cards (52 cards, 13 each are hearts,
+diamonds, clubs, and spades).
+
+    a. How many cards must be selected to guarantee that at least three of the cards 
+    are the same suit?
+    
+    b. How many must be selected to guarantee that at least three hearts are selected?
+    
+10. What is the least number of area codes needed to guarantee that the 25 million 
+phones in a state can be assigned distinct 10-digit telephone numbers? 
+How many additional phones can be accommodated before needing to add another area code?
+(Assume that telephone numbers are of the form NXX-NXX-XXXX, where the first three digits 
+form the area code, N represents a digit from 2 to 9 inclusive, and X represents any digit.)
+
+11. Assume that in a group of six people, each pair of individuals consists of
+two friends or two enemies. Show that there are either three mutual friends or
+three mutual enemies in the group.
+
+12. Suppose that there are 9 faculty members in the mathematics department and
+11 in the computer science department. How many ways are there to select a
+committee to develop a discrete mathematics course at a school if the committee
+is to consist of three faculty members from the mathematics department and four
+from the computer science department?

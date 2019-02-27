@@ -7,8 +7,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## A problem about cookies
 
- 1. Suppose 100 cookies are distributed equally to a group of kids.  Each kid receives
- 4 cookies.  How many kids are there?
+1. Suppose 100 cookies are distributed equally to a group of kids.
+Each kid receives 4 cookies. How many kids are there?
  
 ## The Division Principle
 
@@ -18,7 +18,7 @@ number of times each item is counted to get the number of items.
 
 We have actually seen this before:
 
-  2. If the total degree of a graph is 58, how many edges does it have?
+2. If the total degree of a graph is 58, how many edges does it have?
   
 When we count the degrees, we count each edge twice, so there are $\frac{58}{2} = 29$ 
 edges in the graph.
@@ -28,7 +28,7 @@ edges in the graph.
 Here are some additional problems that involve our counting principles, including the 
 division principle.
 
-  3. An NBA basketball team has 12 players.  
+3. An NBA basketball team has 12 players.  
   
     a. How many ways can the coach select the five players to start the game?  (Positions
     don't matter.)
@@ -36,20 +36,20 @@ division principle.
     b. How many ways can the coach select one center, two forwards, and two guards?  (That is, the positions matter.)
     
     
-  3. How many 5-card poker hands can be dealt from a standard 52-card deck?
+4. How many 5-card poker hands can be dealt from a standard 52-card deck?
   
-  4. A class of 36 gets into groups of 4 to work on some problems. 
+5. A class of 36 gets into groups of 4 to work on some problems. 
   
     a. How many such groups of 4 are there?
   
     b. You get to work with 3 other people. How many such groups of 3 are there?
  
-  5. How many bitstrings of length 8 have exactly three 1's?
+6. How many bit strings of length 8 have exactly three 1's?
   
-  6. How many "words" can you make with the letters in MISSISSIPPI?  (The "words" 
+7. How many "words" can you make with the letters in MISSISSIPPI?  (The "words" 
   do not need to be real words.)
   
-  
+\newpage  
   
   
   
