@@ -85,3 +85,6 @@ three mutual enemies in the group.
 committee to develop a discrete mathematics course at a school if the committee
 is to consist of three faculty members from the mathematics department and four
 from the computer science department?
+
+13. How many bit strings of length 10 contain either five consecutive 0s or 
+five consecutive 1s?
