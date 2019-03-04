@@ -10,6 +10,7 @@ rmd_files: ["index.Rmd",
       "01-Counting-Basic.Rmd",
       "02-Counting-Pigeonhole.Rmd",
       "03-Counting-Division.Rmd",
-      "04-Counting-Donuts.Rmd"
+      "04-Counting-Donuts.Rmd",
+      "05-Probability.Rmd",
       ]
 ---

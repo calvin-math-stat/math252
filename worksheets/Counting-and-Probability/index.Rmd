@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r skip, eval = FALSE, include = FALSE}
-      "05-Probability.Rmd",
+
       "06-Probability-Conditional.Rmd",
       "07-Probability-Conditional2.Rmd",
       "08-Probability-Bayes.Rmd",
@@ -35,7 +35,7 @@ at Calvin College.
 
 <!-- Some macros to make mathematics easier -->
 
-\newcommand{\Prob}{\operatorname{p}}
+\newcommand{\Prob}{p}
 \newcommand{\intersect}{\;\cap\;}
 \newcommand{\union}{\operatorname{\cup}}
 \newcommand{\E}{\operatorname{E}}

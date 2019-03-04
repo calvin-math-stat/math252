@@ -88,3 +88,5 @@ from the computer science department?
 
 13. How many bit strings of length 10 contain either five consecutive 0s or 
 five consecutive 1s?
+
+\newpage
