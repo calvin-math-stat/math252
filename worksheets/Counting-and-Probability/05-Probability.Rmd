@@ -116,5 +116,6 @@ be rolled as any other number.
     b. exactly 1 of the 6 match.
     b. none of the 6 match.
     
- 
+
+\newpage 
  

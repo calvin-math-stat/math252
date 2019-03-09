@@ -108,9 +108,9 @@ we say that $A$ and $B$ are **independent events**.
  
 \vfill
 
- 16. How many people are in this room? 
- What is the probability that two people in this room have the same birthday (month and day)?
- (Hint: Use the Complement Rule.)
+16. How many people are in this room? 
+What is the probability that two people in this room have the same birthday (month and day)?
+(Hint: Use the Complement Rule.)
  
     What assumption must we make to do this calculation?
  

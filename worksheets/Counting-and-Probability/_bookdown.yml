@@ -12,5 +12,6 @@ rmd_files: ["index.Rmd",
       "03-Counting-Division.Rmd",
       "04-Counting-Donuts.Rmd",
       "05-Probability.Rmd",
+      "06-Probability-Conditional.Rmd"
       ]
 ---
