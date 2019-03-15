@@ -25,7 +25,7 @@
 <meta name="author" content="R Pruim">
 
 
-<meta name="date" content="2019-02-22">
+<meta name="date" content="2019-03-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="conditional-probability.html">
-<link rel="next" href="more-probability.html">
+<link rel="next" href="random-variables.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,12 +136,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="division-principle.html"><a href="division-principle.html#the-division-principle"><i class="fa fa-check"></i><b>3.2</b> The Division Principle</a></li>
 <li class="chapter" data-level="3.3" data-path="division-principle.html"><a href="division-principle.html#more-counting-problems"><i class="fa fa-check"></i><b>3.3</b> More Counting Problems</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="donut-problems.html"><a href="donut-problems.html"><i class="fa fa-check"></i><b>4</b> Donut problems</a></li>
+<li class="chapter" data-level="4" data-path="counting-problems.html"><a href="counting-problems.html"><i class="fa fa-check"></i><b>4</b> Counting Problems</a><ul>
+<li class="chapter" data-level="4.1" data-path="counting-problems.html"><a href="counting-problems.html#donut-problems"><i class="fa fa-check"></i><b>4.1</b> Donut problems</a></li>
+<li class="chapter" data-level="4.2" data-path="counting-problems.html"><a href="counting-problems.html#more-problems"><i class="fa fa-check"></i><b>4.2</b> More Problems</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Probability</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="probability.html"><a href="probability.html#notation-note"><i class="fa fa-check"></i><b>5.0.1</b> Notation Note</a></li>
-<li class="chapter" data-level="5.0.2" data-path="probability.html"><a href="probability.html#probability-axioms"><i class="fa fa-check"></i><b>5.0.2</b> Probability Axioms</a></li>
-<li class="chapter" data-level="5.0.3" data-path="probability.html"><a href="probability.html#some-additional-probability-rules"><i class="fa fa-check"></i><b>5.0.3</b> Some Additional Probability Rules</a></li>
-<li class="chapter" data-level="5.0.4" data-path="probability.html"><a href="probability.html#exercises"><i class="fa fa-check"></i><b>5.0.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#notation-note"><i class="fa fa-check"></i><b>5.1</b> Notation Note</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#probability-axioms"><i class="fa fa-check"></i><b>5.2</b> Probability Axioms</a></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#some-additional-probability-rules"><i class="fa fa-check"></i><b>5.3</b> Some Additional Probability Rules</a></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#exercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>6</b> Conditional Probability</a><ul>
 <li class="chapter" data-level="6.1" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-1"><i class="fa fa-check"></i><b>6.1</b> Exercises</a></li>
@@ -149,37 +152,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="conditional-probability.html"><a href="conditional-probability.html#independence"><i class="fa fa-check"></i><b>6.3</b> Independence</a></li>
 <li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a></li>
-<li class="chapter" data-level="8" data-path="more-probability.html"><a href="more-probability.html"><i class="fa fa-check"></i><b>8</b> More Probability</a></li>
-<li class="chapter" data-level="9" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>9</b> Random Variables</a><ul>
-<li class="chapter" data-level="9.1" data-path="random-variables.html"><a href="random-variables.html#describing-random-variables"><i class="fa fa-check"></i><b>9.1</b> Describing Random Variables</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="random-variables.html"><a href="random-variables.html#probability-tables"><i class="fa fa-check"></i><b>9.1.1</b> Probability Tables</a></li>
-<li class="chapter" data-level="9.1.2" data-path="random-variables.html"><a href="random-variables.html#probability-functions"><i class="fa fa-check"></i><b>9.1.2</b> Probability Functions</a></li>
-<li class="chapter" data-level="9.1.3" data-path="random-variables.html"><a href="random-variables.html#binomial-distributions"><i class="fa fa-check"></i><b>9.1.3</b> Binomial Distributions</a></li>
+<li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a><ul>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.1</b> Random Primality Testing</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.2</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.3</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.4</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a><ul>
+<li class="chapter" data-level="8.1" data-path="random-variables.html"><a href="random-variables.html#describing-random-variables"><i class="fa fa-check"></i><b>8.1</b> Describing Random Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="random-variables.html"><a href="random-variables.html#probability-tables"><i class="fa fa-check"></i><b>8.2</b> Probability Tables</a><ul>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#first-example"><i class="fa fa-check"></i>First example</a></li>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#creating-a-probability-table"><i class="fa fa-check"></i>Creating a probability table</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="expected-value.html"><a href="expected-value.html"><i class="fa fa-check"></i><b>10</b> Expected Value</a><ul>
-<li class="chapter" data-level="10.1" data-path="expected-value.html"><a href="expected-value.html#an-example-gpa"><i class="fa fa-check"></i><b>10.1</b> An Example: GPA</a></li>
-<li class="chapter" data-level="10.2" data-path="expected-value.html"><a href="expected-value.html#generalizing"><i class="fa fa-check"></i><b>10.2</b> Generalizing</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="more-expected-value.html"><a href="more-expected-value.html"><i class="fa fa-check"></i><b>11</b> More Expected Value</a><ul>
-<li class="chapter" data-level="11.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations-and-sums"><i class="fa fa-check"></i><b>11.1</b> Transformations and Sums</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations"><i class="fa fa-check"></i><b>11.1.1</b> Transformations</a></li>
-<li class="chapter" data-level="11.1.2" data-path="more-expected-value.html"><a href="more-expected-value.html#sums"><i class="fa fa-check"></i><b>11.1.2</b> Sums</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="more-expected-value.html"><a href="more-expected-value.html#linearity-of-expected-value"><i class="fa fa-check"></i><b>11.2</b> Linearity of Expected Value</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="more-expected-value.html"><a href="more-expected-value.html#exercises-3"><i class="fa fa-check"></i><b>11.2.1</b> Exercises</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="variance.html"><a href="variance.html"><i class="fa fa-check"></i><b>12</b> Variance</a><ul>
-<li class="chapter" data-level="12.1" data-path="variance.html"><a href="variance.html#warm-up-expected-value"><i class="fa fa-check"></i><b>12.1</b> Warm-up: Expected Value</a></li>
-<li class="chapter" data-level="12.2" data-path="variance.html"><a href="variance.html#variance-1"><i class="fa fa-check"></i><b>12.2</b> Variance</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="variance.html"><a href="variance.html#definition"><i class="fa fa-check"></i><b>12.2.1</b> Definition</a></li>
-<li class="chapter" data-level="12.2.2" data-path="variance.html"><a href="variance.html#alternate-notation"><i class="fa fa-check"></i><b>12.2.2</b> Alternate notation</a></li>
-<li class="chapter" data-level="12.2.3" data-path="variance.html"><a href="variance.html#handy-short-cut"><i class="fa fa-check"></i><b>12.2.3</b> Handy short cut</a></li>
-<li class="chapter" data-level="12.2.4" data-path="variance.html"><a href="variance.html#linear-transformations"><i class="fa fa-check"></i><b>12.2.4</b> Linear Transformations</a></li>
-<li class="chapter" data-level="12.2.5" data-path="variance.html"><a href="variance.html#sums-and-variance"><i class="fa fa-check"></i><b>12.2.5</b> Sums and Variance</a></li>
-</ul></li>
+<li class="chapter" data-level="8.3" data-path="random-variables.html"><a href="random-variables.html#probability-functions"><i class="fa fa-check"></i><b>8.3</b> Probability Functions</a></li>
+<li class="chapter" data-level="8.4" data-path="random-variables.html"><a href="random-variables.html#binomial-distributions"><i class="fa fa-check"></i><b>8.4</b> Binomial Distributions</a></li>
 </ul></li>
 </ul>
 
@@ -200,13 +187,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="probability-trees-and-bayes" class="section level1">
 <h1><span class="header-section-number">7</span> Probability Trees and Bayes</h1>
-<ol style="list-style-type: decimal">
-<li><strong>Random Primality Testing.</strong> Miller’s test for primality of a number <span class="math inline">\(n\)</span> uses arithmetic
+<div id="random-primality-testing" class="section level2">
+<h2><span class="header-section-number">7.1</span> Random Primality Testing</h2>
+<p>Miller’s test for primality of a number <span class="math inline">\(n\)</span> uses arithmetic
 mod <span class="math inline">\(n\)</span> and a base <span class="math inline">\(b\)</span> with <span class="math inline">\(1 &lt; b &lt; n\)</span>. For a given <span class="math inline">\(b\)</span>, the test either determines that
 <span class="math inline">\(n\)</span> is composite or it is inconclusive. It can be shown that for any composite number, the
 test is conclusive and correct for at least 3/4 of the possible values of <span class="math inline">\(b\)</span>. For a prime
-nubmer, the test is always inconclusive. This leads to an interesting randomized test:</li>
-</ol>
+number, the test is always inconclusive. This leads to an interesting randomized test:</p>
 <pre class="sourceCode cpp"><code class="sourceCode cpp"> string PrimeTest(n, attempts) {
    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; attempts; i++) {
      select b at random with <span class="dv">1</span> &lt; b &lt; n
@@ -226,24 +213,97 @@ returns <code>&quot;prime (well, probably)&quot;</code>?</p></li>
 <li><p>If <span class="math inline">\(n\)</span> is composite, what is the probability that <code>PrimeTest(n, 20)</code>
 returns <code>&quot;prime (well, probably)&quot;</code>?</p></li>
 </ol>
-<pre><code>Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
-and decoding a message.  If a composite number sneaks through the randomized test,
-decoding won&#39;t work and we can try again with a different pair of probably prime
-numbers.</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li><p><strong>Hashing.</strong> A hash function <span class="math inline">\(h\)</span> assigns one of <span class="math inline">\(m\)</span> storage locations (an
-index in an array, for example) to each key <span class="math inline">\(k\)</span>. Typically
-there are many more keys than storage locations, but only a much smaller number of keys will occur
-in a particular application. For example, if the keys are social security numbers, then there
-are approximately 350 active social security numbers (keys), but a give application may have data
-on only a very small fraction of these people. If <span class="math inline">\(h(k_1) = h(k_2)\)</span>, then we say there is a
-collision (because we would like to put both keys into the same storage location and have to figure
-out some work-around).</p>
-<p>Good hash functions have the property that if a key is selected at random, then the
-probability of being mapped to a specified storage location is approximately <span class="math inline">\(1/m\)</span>, where
-<span class="math inline">\(m\)</span> is the number of storage locations. (So each storage location is roughly equally likely
-to be selected.) For the questions below, assume that the probability is exactly <span class="math inline">\(1/m\)</span>.
-That should be a good approximation for good hash functions.</p>
+<p>Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
+and decoding a message. If a composite number sneaks through the randomized test,
+decoding won’t work and we can try again with a different pair of probably prime
+numbers.</p>
+</div>
+<div id="bobs-beautiful-boxes" class="section level2">
+<h2><span class="header-section-number">7.2</span> Bob’s Beautiful Boxes</h2>
+<p>Bob has two beautiful boxes of balls. Box A contains 2 green balls and 7 red balls.
+Box B contains 4 green balls and 3 red balls. Bob flips a coin to randomly select
+a box. Then he randomly selects one ball from that box. If the selected ball is red, what
+is the probability that it was chosen from Box A?</p>
+<p>Let’s build up to this step by step.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Is every ball equally likely to be seleced? If not, which are more likely and which less
+likely?</p></li>
+<li><p>Let’s define some events.</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: Bob selects Box A</li>
+<li><span class="math inline">\(B\)</span>: Bob selects Box B</li>
+<li><span class="math inline">\(R\)</span>: Bob selects a red ball</li>
+</ul></li>
+<li><p>Let’s do some inventory. Which of these probabilities can we easily determine? Which is our main question? How can you use the items on the list that you know to figure out the values you don’t know? (Feel free to add additional probabilities to the inventory if that is helpful.)</p></li>
+</ol>
+<p><span class="math display">\[
+p(A) \qquad
+p(B) \qquad
+p(R)
+\]</span></p>
+<p><span class="math display">\[
+p(A \;\cap\;B) \qquad
+p(A \operatorname{\cup}B) \qquad
+p(A \;\cap\;R) \qquad
+p(B \;\cap\;R)
+\]</span></p>
+<p><span class="math display">\[
+p(A \mid R) \qquad
+p(R \mid A) \qquad
+p(B \mid R) \qquad
+p(R \mid B) \qquad
+p(R \mid A)
+\]</span></p>
+</div>
+<div id="breast-cancer-screening" class="section level2">
+<h2><span class="header-section-number">7.3</span> Breast cancer screening</h2>
+<p>Here is some information about breast cancer screening.
+(Note: These percentages are approximate, and very difficult to estimate.)</p>
+<ul>
+<li><p>American Cancer Society estimates that about 1.7% of women have breast cancer.
+<a href="http://www.cancer.org/cancer/cancerbasics/cancer-prevalence" class="uri">http://www.cancer.org/cancer/cancerbasics/cancer-prevalence</a></p></li>
+<li><p>Susan G. Komen For The Cure Foundation states that mammography correctly
+identifies about 78% of women who truly have breast cancer.
+<a href="http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html" class="uri">http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html</a></p></li>
+<li><p>An article published in 2003 suggests that up to 10% of all mammograms are
+false positive. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940" class="uri">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940</a></p></li>
+</ul>
+<p>If a mammogram yields a positive result,
+what is the probability that patient has cancer?</p>
+</div>
+<div id="disease-testing" class="section level2">
+<h2><span class="header-section-number">7.4</span> Disease Testing</h2>
+<p>A test for a rare medical condition that affects 1 person in 10,000 has the following
+properties: If a person is healthy, it correctly diagnoses this 98% of the time.
+If a person is diseased, it correctly diagnoses this 99% of the time.
+If you take the test and it comes back positive (ie, the test says you have the disease),
+what is the probability that you have the disease?</p>
+<p>Hint: Use the inventory method. Useful events include</p>
+<ul>
+<li><span class="math inline">\(H\)</span>: person is healthy</li>
+<li><span class="math inline">\(D\)</span>: person is diseased</li>
+<li><span class="math inline">\(P\)</span>: test is positive (indicates disease)</li>
+<li><span class="math inline">\(N\)</span>: test is negative (indicates healthy)</li>
+</ul>
+
+</div>
+<div id="hashing" class="section level2">
+<h2><span class="header-section-number">7.5</span> Hashing</h2>
+<p>A hash function <span class="math inline">\(h\)</span> assigns one of <span class="math inline">\(m\)</span> storage locations (an
+index in an array, for example) to each key <span class="math inline">\(k\)</span>. Typically there are many more
+keys than storage locations, but only a much smaller number of keys will occur
+in a particular application. For example, if the keys are social security
+numbers, then there are approximately 350 active social security numbers
+(keys), but a give application may have data on only a very small fraction of
+these people. If <span class="math inline">\(h(k_1) = h(k_2)\)</span>, then we say there is a collision (because
+we would like to put both keys into the same storage location and have to
+figure out some work-around).</p>
+<p>Good hash functions have the property that if a key is selected at random, then
+the probability of being mapped to a specified storage location is approximately
+<span class="math inline">\(1/m\)</span>, where <span class="math inline">\(m\)</span> is the number of storage locations. (So each storage location
+is roughly equally likely to be selected.) For the questions below, assume that
+the probability is exactly <span class="math inline">\(1/m\)</span>. That should be a good approximation for good
+hash functions.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>If a hash function is mapping to 20 storage locations, what is the
 probability that we can place 4 keys without any colisions? (That is,
@@ -261,57 +321,10 @@ locations and a different number of keys to place.</p></li>
 the probability of placing 1178 keys without any collisions is <span class="math inline">\(\approx 1/2\)</span>.</p></li>
 <li><p>Explain why these results indicate that hash tables will need to deal with colisions
 if they are going to be memory efficient.</p></li>
-</ol></li>
-<li><p>Bob has two beautiful boxes of balls. The first contains 2 green balls and 7 red balls.
-The second contains 4 green balls and 3 red balls. Bob flips a coin to randomly select
-a box. Then he randomly selects one ball from that box. If the selected ball is red, what
-is the probability that it was chosen from the first box?</p>
-<p>Let’s build up to this step by step.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Is every ball equally likely to be seleced? If not, which are more likely and which less
-likely?</p></li>
-<li><p>Let’s define some events.</p>
-<ul>
-<li><span class="math inline">\(A\)</span>: Bob selects box 1</li>
-<li><span class="math inline">\(B\)</span>: Bob selects box 2</li>
-<li><span class="math inline">\(R\)</span>: Bob selects a red ball</li>
-</ul></li>
-<li><p>Let’s do some inventory. Which of these probabilities can we easily determine? Which is our main question? How can you use the items on the list that you know to figure out the values you don’t know? (Feel free to add additional probabilities to the inventory if that is helpful.)</p></li>
-</ol></li>
-</ol>
-<p><span class="math display">\[
-\operatorname{p}(A) \qquad
-\operatorname{p}(B) \qquad
-\operatorname{p}(R)
-\]</span></p>
-<p><span class="math display">\[
-\operatorname{p}(A \;\cap\;B) \qquad
-\operatorname{p}(A \operatorname{\cup}B) \qquad
-\operatorname{p}(A \;\cap\;R) \qquad
-\operatorname{p}(B \;\cap\;R)
-\]</span>
-<span class="math display">\[
-\operatorname{p}(A \mid R) \qquad
-\operatorname{p}(R \mid A) \qquad
-\operatorname{p}(B \mid R) \qquad
-\operatorname{p}(R \mid B) \qquad
-\operatorname{p}(R \mid A)
-\]</span></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>A test for a rare medical condition that affects 1 person in 10,000 has the following
-properties: If a person is healthy, it correctly diagnoses this 98% of the time.
-If a person is diseased, it correctly diagnoses this 99% of the time.
-If you take the test and it comes back positive (ie, the test says you have the disease),
-what is the probability that you have the disease?</p>
-<p>Hint: Use the inventory method. Useful events include</p>
-<ul>
-<li><span class="math inline">\(H\)</span>: person is healthy</li>
-<li><span class="math inline">\(D\)</span>: person is diseased</li>
-<li><span class="math inline">\(P\)</span>: test is positive (indicates disease)</li>
-<li><span class="math inline">\(N\)</span>: test is negative (indicates healthy)</li>
-</ul></li>
 </ol>
 
+
+</div>
 </div>
             </section>
 
@@ -319,7 +332,7 @@ what is the probability that you have the disease?</p>
         </div>
       </div>
 <a href="conditional-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="more-probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

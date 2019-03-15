@@ -1,4 +1,6 @@
 
+\newpage
+
 # Random Variables
  
 ## Describing Random Variables
@@ -25,9 +27,9 @@ A **random variable** is a random process that produces a number.
   values and probabilities, or (b) a formula that tells how to compute the
   probability for any specified value.
   
-### Probability Tables
+## Probability Tables
 
-#### First example
+### First example {-}
 
 Here is an example probability table for a random variable we'll call $X$.
 
@@ -43,7 +45,7 @@ probability | 0.4  |  0.3  | 0.2  | 0.1
 
 4. What is $\Prob(X \mbox{ is even})$?
 
-#### Creating a probability table
+### Creating a probability table {-}
 
 5. Create a probability table for the random variable $H$, where $H$ is the number 
 of heads observed when flipping 4 fair coins.  Start by determining all the possible values.
@@ -59,7 +61,9 @@ Create a probability table for $X$.  (What are the possible values?)
     
     b. What is the most likely number of diamonds in such a hand?
 
-### Probability Functions
+\newpage
+
+## Probability Functions
 
 We can also describe random variables with formulas.
 
@@ -101,7 +105,7 @@ Let $X$ be the number of heads in $n$ flips.
   
     b. Determine a general formula for $\Prob(X = x)$ in terms of $n$ and $p$.
   
-### Binomial Distributions
+## Binomial Distributions
 
 The previous example illustrates a scenario that arises in many applications:
 
