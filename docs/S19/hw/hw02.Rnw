@@ -122,6 +122,9 @@ Additional assignments will be filled in over time.
 	 Thu 3/14 & \WW{07} & Rosen 7 & Probability
 	 \\
 	   \hline
+	 Thu 3/25 & \WW{08} & Rosen 7 & Probability
+	 \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
