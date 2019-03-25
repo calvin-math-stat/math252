@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>10 Expected Value | Counting and Probability</title>
-  <meta name="description" content="10 Expected Value | Counting and Probability">
+  <title>9 Expected Value | Counting and Probability</title>
+  <meta name="description" content="9 Expected Value | Counting and Probability">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="10 Expected Value | Counting and Probability" />
+  <meta property="og:title" content="9 Expected Value | Counting and Probability" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Expected Value | Counting and Probability" />
+  <meta name="twitter:title" content="9 Expected Value | Counting and Probability" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="R Pruim">
 
 
-<meta name="date" content="2019-02-22">
+<meta name="date" content="2019-03-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="random-variables.html">
-<link rel="next" href="more-expected-value.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,12 +136,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="division-principle.html"><a href="division-principle.html#the-division-principle"><i class="fa fa-check"></i><b>3.2</b> The Division Principle</a></li>
 <li class="chapter" data-level="3.3" data-path="division-principle.html"><a href="division-principle.html#more-counting-problems"><i class="fa fa-check"></i><b>3.3</b> More Counting Problems</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="donut-problems.html"><a href="donut-problems.html"><i class="fa fa-check"></i><b>4</b> Donut problems</a></li>
+<li class="chapter" data-level="4" data-path="counting-problems.html"><a href="counting-problems.html"><i class="fa fa-check"></i><b>4</b> Counting Problems</a><ul>
+<li class="chapter" data-level="4.1" data-path="counting-problems.html"><a href="counting-problems.html#donut-problems"><i class="fa fa-check"></i><b>4.1</b> Donut problems</a></li>
+<li class="chapter" data-level="4.2" data-path="counting-problems.html"><a href="counting-problems.html#more-problems"><i class="fa fa-check"></i><b>4.2</b> More Problems</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Probability</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="probability.html"><a href="probability.html#notation-note"><i class="fa fa-check"></i><b>5.0.1</b> Notation Note</a></li>
-<li class="chapter" data-level="5.0.2" data-path="probability.html"><a href="probability.html#probability-axioms"><i class="fa fa-check"></i><b>5.0.2</b> Probability Axioms</a></li>
-<li class="chapter" data-level="5.0.3" data-path="probability.html"><a href="probability.html#some-additional-probability-rules"><i class="fa fa-check"></i><b>5.0.3</b> Some Additional Probability Rules</a></li>
-<li class="chapter" data-level="5.0.4" data-path="probability.html"><a href="probability.html#exercises"><i class="fa fa-check"></i><b>5.0.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#notation-note"><i class="fa fa-check"></i><b>5.1</b> Notation Note</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#probability-axioms"><i class="fa fa-check"></i><b>5.2</b> Probability Axioms</a></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#some-additional-probability-rules"><i class="fa fa-check"></i><b>5.3</b> Some Additional Probability Rules</a></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#exercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>6</b> Conditional Probability</a><ul>
 <li class="chapter" data-level="6.1" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-1"><i class="fa fa-check"></i><b>6.1</b> Exercises</a></li>
@@ -149,37 +152,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="conditional-probability.html"><a href="conditional-probability.html#independence"><i class="fa fa-check"></i><b>6.3</b> Independence</a></li>
 <li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a></li>
-<li class="chapter" data-level="8" data-path="more-probability.html"><a href="more-probability.html"><i class="fa fa-check"></i><b>8</b> More Probability</a></li>
-<li class="chapter" data-level="9" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>9</b> Random Variables</a><ul>
-<li class="chapter" data-level="9.1" data-path="random-variables.html"><a href="random-variables.html#describing-random-variables"><i class="fa fa-check"></i><b>9.1</b> Describing Random Variables</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="random-variables.html"><a href="random-variables.html#probability-tables"><i class="fa fa-check"></i><b>9.1.1</b> Probability Tables</a></li>
-<li class="chapter" data-level="9.1.2" data-path="random-variables.html"><a href="random-variables.html#probability-functions"><i class="fa fa-check"></i><b>9.1.2</b> Probability Functions</a></li>
-<li class="chapter" data-level="9.1.3" data-path="random-variables.html"><a href="random-variables.html#binomial-distributions"><i class="fa fa-check"></i><b>9.1.3</b> Binomial Distributions</a></li>
+<li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a><ul>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.1</b> Random Primality Testing</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.2</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.3</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.4</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a><ul>
+<li class="chapter" data-level="8.1" data-path="random-variables.html"><a href="random-variables.html#describing-random-variables"><i class="fa fa-check"></i><b>8.1</b> Describing Random Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="random-variables.html"><a href="random-variables.html#probability-tables"><i class="fa fa-check"></i><b>8.2</b> Probability Tables</a><ul>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#first-example"><i class="fa fa-check"></i>First example</a></li>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#creating-a-probability-table"><i class="fa fa-check"></i>Creating a probability table</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="expected-value.html"><a href="expected-value.html"><i class="fa fa-check"></i><b>10</b> Expected Value</a><ul>
-<li class="chapter" data-level="10.1" data-path="expected-value.html"><a href="expected-value.html#an-example-gpa"><i class="fa fa-check"></i><b>10.1</b> An Example: GPA</a></li>
-<li class="chapter" data-level="10.2" data-path="expected-value.html"><a href="expected-value.html#generalizing"><i class="fa fa-check"></i><b>10.2</b> Generalizing</a></li>
+<li class="chapter" data-level="8.3" data-path="random-variables.html"><a href="random-variables.html#probability-functions"><i class="fa fa-check"></i><b>8.3</b> Probability Functions</a></li>
+<li class="chapter" data-level="8.4" data-path="random-variables.html"><a href="random-variables.html#binomial-distributions"><i class="fa fa-check"></i><b>8.4</b> Binomial Distributions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="more-expected-value.html"><a href="more-expected-value.html"><i class="fa fa-check"></i><b>11</b> More Expected Value</a><ul>
-<li class="chapter" data-level="11.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations-and-sums"><i class="fa fa-check"></i><b>11.1</b> Transformations and Sums</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations"><i class="fa fa-check"></i><b>11.1.1</b> Transformations</a></li>
-<li class="chapter" data-level="11.1.2" data-path="more-expected-value.html"><a href="more-expected-value.html#sums"><i class="fa fa-check"></i><b>11.1.2</b> Sums</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="more-expected-value.html"><a href="more-expected-value.html#linearity-of-expected-value"><i class="fa fa-check"></i><b>11.2</b> Linearity of Expected Value</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="more-expected-value.html"><a href="more-expected-value.html#exercises-3"><i class="fa fa-check"></i><b>11.2.1</b> Exercises</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="variance.html"><a href="variance.html"><i class="fa fa-check"></i><b>12</b> Variance</a><ul>
-<li class="chapter" data-level="12.1" data-path="variance.html"><a href="variance.html#warm-up-expected-value"><i class="fa fa-check"></i><b>12.1</b> Warm-up: Expected Value</a></li>
-<li class="chapter" data-level="12.2" data-path="variance.html"><a href="variance.html#variance-1"><i class="fa fa-check"></i><b>12.2</b> Variance</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="variance.html"><a href="variance.html#definition"><i class="fa fa-check"></i><b>12.2.1</b> Definition</a></li>
-<li class="chapter" data-level="12.2.2" data-path="variance.html"><a href="variance.html#alternate-notation"><i class="fa fa-check"></i><b>12.2.2</b> Alternate notation</a></li>
-<li class="chapter" data-level="12.2.3" data-path="variance.html"><a href="variance.html#handy-short-cut"><i class="fa fa-check"></i><b>12.2.3</b> Handy short cut</a></li>
-<li class="chapter" data-level="12.2.4" data-path="variance.html"><a href="variance.html#linear-transformations"><i class="fa fa-check"></i><b>12.2.4</b> Linear Transformations</a></li>
-<li class="chapter" data-level="12.2.5" data-path="variance.html"><a href="variance.html#sums-and-variance"><i class="fa fa-check"></i><b>12.2.5</b> Sums and Variance</a></li>
-</ul></li>
+<li class="chapter" data-level="9" data-path="expected-value.html"><a href="expected-value.html"><i class="fa fa-check"></i><b>9</b> Expected Value</a><ul>
+<li class="chapter" data-level="9.1" data-path="expected-value.html"><a href="expected-value.html#an-example-gpa"><i class="fa fa-check"></i><b>9.1</b> An Example: GPA</a></li>
+<li class="chapter" data-level="9.2" data-path="expected-value.html"><a href="expected-value.html#generalizing"><i class="fa fa-check"></i><b>9.2</b> Generalizing</a></li>
 </ul></li>
 </ul>
 
@@ -199,9 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="expected-value" class="section level1">
-<h1><span class="header-section-number">10</span> Expected Value</h1>
+<h1><span class="header-section-number">9</span> Expected Value</h1>
 <div id="an-example-gpa" class="section level2">
-<h2><span class="header-section-number">10.1</span> An Example: GPA</h2>
+<h2><span class="header-section-number">9.1</span> An Example: GPA</h2>
 <p>Question: If a student receives 5 A’s, 4 B’s, and 1 C, what is the student’s GPA?
 (Assume all courses are equally weighted and that an A is worth 4, a B with 3, and a C worth 2.)</p>
 <ol style="list-style-type: decimal">
@@ -220,7 +211,7 @@ probability table?</p></li>
 </ol>
 </div>
 <div id="generalizing" class="section level2">
-<h2><span class="header-section-number">10.2</span> Generalizing</h2>
+<h2><span class="header-section-number">9.2</span> Generalizing</h2>
 <p>We can generalize this idea to compute the <strong>mean</strong> (more commonly called <strong>expected value</strong>)
 of any random variable <span class="math inline">\(X\)</span>. This is denoted either <span class="math inline">\(\operatorname{E}(X)\)</span> or <span class="math inline">\(\mu_X\)</span>.</p>
 <ol start="6" style="list-style-type: decimal">
@@ -255,7 +246,7 @@ of any random variable <span class="math inline">\(X\)</span>. This is denoted e
 <li><p>Use good mathematical notation to write down the definition:</p></li>
 </ol>
 <p><span class="math display">\[
-\operatorname{E}(X) =  \phantom{\sum k \operatorname{p}(X = k)}
+\operatorname{E}(X) =  \phantom{\sum k p(X = k)}
 \]</span></p>
 
 <ol start="9" style="list-style-type: decimal">
@@ -273,9 +264,9 @@ raffle ticket.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Create a probability table for <span class="math inline">\(D\)</span>.</li>
 <li>Compute <span class="math inline">\(\operatorname{E}(D)\)</span>.</li>
-<li>What is <span class="math inline">\(\operatorname{p}(D = \operatorname{E}(D))\)</span>?</li>
-<li>What is <span class="math inline">\(\operatorname{p}(D &lt; \operatorname{E}(D))\)</span>?</li>
-<li>What is <span class="math inline">\(\operatorname{p}(D &gt; \operatorname{E}(D))\)</span>?</li>
+<li>What is <span class="math inline">\(p(D = \operatorname{E}(D))\)</span>?</li>
+<li>What is <span class="math inline">\(p(D &lt; \operatorname{E}(D))\)</span>?</li>
+<li>What is <span class="math inline">\(p(D &gt; \operatorname{E}(D))\)</span>?</li>
 </ol></li>
 </ol>
 
@@ -299,8 +290,8 @@ raffle ticket.</p>
           </div>
         </div>
       </div>
-<a href="random-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="more-expected-value.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

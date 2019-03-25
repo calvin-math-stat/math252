@@ -14,6 +14,7 @@ rmd_files: ["index.Rmd",
       "05-Probability.Rmd",
       "06-Probability-Conditional.Rmd",
       "07-Probability-Conditional2.Rmd",
-      "09-Random-Variables.Rmd"
+      "09-Random-Variables.Rmd",
+      "10-Expected-Value.Rmd"
       ]
 ---
