@@ -938,13 +938,8 @@ example: like above but with only 6 players
 example: 8 players, 4O, 4D
 	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
 
-===3/6/2019
-Topic:: Test 1
-
-===endofcal
-
 ===
-Topic:: Discrete Probability
+Topic:: Intro to Probability
 Read:: Rosen 7.1, 7.2
 
 Homework questions
@@ -979,6 +974,11 @@ Probability Axioms
 	2) P(S) = 1
 	3) additivity of disjoint unions
 
+===
+Topic:: Using Probability Rules
+
+===3/6/2019
+Topic:: Test 1
 
 ===
 Topic:: More Probability
@@ -1057,45 +1057,28 @@ Example: probability of matching birthmonths/days (complement, independence)
 Topic:: Bayes Theorem
 Read:: Rosen 7.3
 
-Inclusion-Exclusion
-	primes < 100
-	onto functions size 6 -> size 3
-		could also do 1-1 functions size 3 -> size 6
-
-	christmas exchange with 5 siblings
-
-HIV testing example
-
-	P(H) = .15
-	P(not H) = .85
-	P(Pos|H) = .95
-	P(Pos|not H) = .02
-
-	What is P(H | Pos)?
-
-		P(H Pos) = .15 * .95 = .1425
-		P(H Neg) = .15 * .05 = .0075
-		P(not H Pos) = .85 * .02 = 0.017
-		P(not H Neg) = .85 * .98 = 0.833
-
-					 P(H Pos)       .1425
-		P(H | Pos) = -------- = ------------- = 0.893
-					  P(Pos)     .1425 + .017
-
-Binomial variables
-	n trials, p = prob of success
-
-	P(X=k) C(n,k) p^k q^(n-k)
+Bob's Boxes
 
 
 ===
-Topic:: Expected Value of a Random Variable
+Topic:: Conditional Probability
+Topic:: Random Variables
+
+Breast Cancer Screening
+
+
+=== 03/25/2019
+Topic:: Random Variables
+Topic:: Binomial Distributions
+
+===
+Topic:: Expected Value
 Read:: Rosen 7.4
 
 
 Binomial Dists
 
-Expected Value and Variance
+Expected Value
 
 
 Coin Flipping Example
@@ -1109,15 +1092,7 @@ Coin Flipping Example
 Daily 4 grand prize
   E(X) and Var(X)
 
-===
-Topic:: Counting and Probability Examples
-Read:: Rosen 6-7
-
-Did several homework examples involving conditional probability and balls in boxes.
-
-Linearity of Expected Value
-
-===
+===skip
 Topic:: Counting and Probability Examples
 Read:: Rosen 6-7
 
@@ -1263,10 +1238,16 @@ BNF
 Topic:: NFA and DFA
 
 ===
+Topic:: Test 2
+
+===
 Topic:: NFA and DFA
 
 ===
 Topic:: Regular Langauges
+
+===
+Advising
 
 ===
 Topic:: Regular Languages
@@ -1279,7 +1260,8 @@ Topic:: A language that isn't regular
 
 # Note:: Review Session @ 4:30
 
-===
+===04/24/2019
+
 Topic:: Turing Machines
 
 Motivation for TM model
@@ -1555,28 +1537,6 @@ sketch of 2-way tapes equivalent to 1-way
 
 sketch of 2 tapes equiv to 1 tape
 
-
-
-===
-Topic:: Test 3
-
-===
-Topic:: Turing Machines
-
-
-===
-Topic:: Modeling Computation
-Topic:: Turing Machines
-
-Summary of Divide and Conquer Recurrences
-
-Fast Multiplication of Matrices (recurrence only)
-
-Modeling Computation
-
-Historical context: Hilbert's program
-
-Informal Computability
 
 
 ===
