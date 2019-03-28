@@ -53,7 +53,7 @@ $$
 
 \newpage
 
-9. A raffle has 1000 tickets. Hodlers of 4 of the tickets get a prize.  The other 996 are worth nothing.  The four prizes are worth $500, $200, $50, and $50.  Let $V$ be the value of a random
+9. A raffle has 1000 tickets. Holders of 4 of the tickets get a prize.  The other 996 are worth nothing.  The four prizes are worth $500, $200, $50, and $50.  Let $V$ be the value of a random
 raffle ticket.
 
     a. Create a probabilty table for $V$.
@@ -73,7 +73,8 @@ raffle ticket.
 
 \vfill
 
-We can do these already now, but we will learn an easier way next time.
+We can do these already now, but there are easier ways that take advantage
+of properties of expected value that we haven't learned yet.
 
 11. In a hand of 5 cards from a standard deck, what is the expected number of diamonds?
 
