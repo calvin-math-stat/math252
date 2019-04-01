@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>1 Alphabets, Languages, and Grammars | Modeling Computation</title>
+  <meta name="description" content="1 Alphabets, Languages, and Grammars | Modeling Computation">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="1 Alphabets, Languages, and Grammars | Modeling Computation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Alphabets, Languages, and Grammars | Modeling Computation" />
+  
+  
+  
+
+<meta name="author" content="R Pruim">
+
+
+<meta name="date" content="2019-03-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html"><i class="fa fa-check"></i><b>1</b> Alphabets, Languages, and Grammars</a><ul>
+<li class="chapter" data-level="1.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#terminology"><i class="fa fa-check"></i><b>1.1</b> Terminology</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#phrase-structure-grammars"><i class="fa fa-check"></i><b>1.2</b> (Phrase-Structure) Grammars</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="1.2.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#derivations-and-languages"><i class="fa fa-check"></i><b>1.2.1</b> Derivations and Languages</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling Computation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="alphabets-languages-and-grammars" class="section level1">
+<h1><span class="header-section-number">1</span> Alphabets, Languages, and Grammars</h1>
+
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">1.1</span> Terminology</h2>
+<ul>
+<li>An <strong>alphabet</strong> (or <strong>vocabulary</strong>) is just a finite, non-empty set.
+It’s elements are called <strong>letters</strong> or <strong>symbols</strong>.</li>
+<li>A <strong>word</strong> (or <strong>string</strong>) is a finite sequence of symbols.</li>
+<li>A word consisting of no symbols is called the <strong>empty word</strong> and denoted <span class="math inline">\(\lambda\)</span>.
+(Think <code>&quot;&quot;</code>.)</li>
+<li>The set of all words using exactly <span class="math inline">\(n\)</span> symbols from <span class="math inline">\(V\)</span> (repetition allowed) is denoted <span class="math inline">\(V^n\)</span>.</li>
+<li>The set of all words using symbols in alphabet <span class="math inline">\(V\)</span> is denoted <span class="math inline">\(V^*\)</span>.
+(So <span class="math inline">\(V^* = V^0 \cup V^1 \cup V^2 \cdots\)</span>.)</li>
+<li>A <strong>language</strong> over <span class="math inline">\(V\)</span> is a subset of <span class="math inline">\(V^*\)</span>.</li>
+</ul>
+<div id="exercises" class="section level3 unnumbered">
+<h3>Exercises</h3>
+<!-- Let's see how well you understand those definitions. -->
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(V = \{0, 1\}\)</span>.
+What is <span class="math inline">\(V^0\)</span>? What is <span class="math inline">\(V^2\)</span>? What is <span class="math inline">\(V^*\)</span>?</p></li>
+<li><p>Let <span class="math inline">\(V = \{2\}\)</span>.
+What is <span class="math inline">\(V^0\)</span>? What is <span class="math inline">\(V^2\)</span>? What is <span class="math inline">\(V^*\)</span>?</p></li>
+<li><p>Can <span class="math inline">\(\emptyset\)</span> (empty set) be a letter? an alphabet? a word? a language?</p></li>
+</ol>
+</div>
+</div>
+<div id="phrase-structure-grammars" class="section level2">
+<h2><span class="header-section-number">1.2</span> (Phrase-Structure) Grammars</h2>
+<p>A phase-structure grammar consists of</p>
+<ul>
+<li><strong>alphabet</strong>: <span class="math inline">\(V\)</span></li>
+<li><strong>start symbol</strong>: <span class="math inline">\(S \in V\)</span></li>
+<li><strong>terminal symbols</strong>: <span class="math inline">\(T \subset V\)</span>
+<ul>
+<li><span class="math inline">\(N = V - T\)</span> is the set of <strong>nonterminal symbols</strong></li>
+</ul></li>
+<li><strong>production rules</strong>: <span class="math inline">\(P \subseteq (V^*-N^*) \times V^*\)</span>
+<ul>
+<li>usually write elements of <span class="math inline">\(P\)</span> as <span class="math inline">\(u \to v\)</span> rather than <span class="math inline">\((u, v)\)</span>.</li>
+<li><span class="math inline">\(V^*-N^*\)</span> says that <span class="math inline">\(u\)</span> must contain at least on nonterminal.</li>
+<li><span class="math inline">\(v\)</span> can be any combinaton of terminals and nonterminals (including the empty string).</li>
+</ul></li>
+</ul>
+<div id="examples" class="section level3 unnumbered">
+<h3>Examples</h3>
+<p>Note: in each of these examples, capital letters are used for nonterminals and
+lower case letters or digits for terminals. That makes it easy to remember, but
+it is not a requirement of the definition of a grammar.</p>
+<p><strong>Grammar 1</strong> (<span class="math inline">\(G_1\)</span>):
+alphabet: <span class="math inline">\(\{a, b, A, B, S\}\)</span>,
+terminals: <span class="math inline">\(\{a, b\}\)</span>,
+start symbol: <span class="math inline">\(S\)</span>,
+production rules:</p>
+<ul>
+<li><span class="math inline">\(S \to ABa\)</span></li>
+<li><span class="math inline">\(A \to BB\)</span></li>
+<li><span class="math inline">\(B \to ab\)</span></li>
+<li><span class="math inline">\(AB \to b\)</span></li>
+</ul>
+<p><strong>Grammar 2</strong> (<span class="math inline">\(G_2\)</span>):
+alphabet: <span class="math inline">\(\{S, A, a, b\}\)</span>,
+terminals: <span class="math inline">\(\{a,b\}\)</span>,
+start symbol: <span class="math inline">\(S\)</span>,
+production rules:</p>
+<ul>
+<li><span class="math inline">\(S \to aA\)</span></li>
+<li><span class="math inline">\(S \to b\)</span></li>
+<li><span class="math inline">\(A \to aa\)</span></li>
+</ul>
+<p><strong>Grammar 3</strong> (<span class="math inline">\(G_3\)</span>):
+alphabet: <span class="math inline">\(\{S, 0, 1\}\)</span>,
+terminals: <span class="math inline">\(\{0,1\}\)</span>,
+start symbol: <span class="math inline">\(S\)</span>,
+production rules:</p>
+<ul>
+<li><span class="math inline">\(S \to 11S\)</span></li>
+<li><span class="math inline">\(S \to 0\)</span></li>
+</ul>
+<p><strong>Grammar 4</strong> (<span class="math inline">\(G_4\)</span>):
+alphabet: <span class="math inline">\(\{S, A, B, C, a, b, c\}\)</span>,
+terminals: <span class="math inline">\(\{a, b, c\}\)</span>,
+start symbol: <span class="math inline">\(S\)</span>,
+production rules:</p>
+<ul>
+<li><span class="math inline">\(S \to AB\)</span></li>
+<li><span class="math inline">\(A \to Ca\)</span></li>
+<li><span class="math inline">\(B \to Ba\)</span></li>
+<li><span class="math inline">\(B \to Cb\)</span></li>
+<li><span class="math inline">\(B \to b\)</span></li>
+<li><span class="math inline">\(C \to cb\)</span></li>
+<li><span class="math inline">\(C \to b\)</span></li>
+</ul>
+</div>
+<div id="derivations-and-languages" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Derivations and Languages</h3>
+<p>The rules of a grammar are used to derive strings of terminals (elements of <span class="math inline">\(T^*\)</span>)
+as follows.</p>
+<ul>
+<li>If <span class="math inline">\(w_0 \to w_1\)</span> is a rule, then <span class="math inline">\(lw_0r \Rightarrow lw_1r\)</span> for any strings <span class="math inline">\(l\)</span> and <span class="math inline">\(r\)</span>.</li>
+<li><span class="math inline">\(a \stackrel{*}{\Rightarrow}b\)</span> is defined recursively. <span class="math inline">\(a \stackrel{*}{\Rightarrow}b\)</span> if either
+<ul>
+<li><span class="math inline">\(a \Rightarrow b\)</span>, or</li>
+<li><span class="math inline">\(\exists c \; (a \Rightarrow c \land c \stackrel{*}{\Rightarrow}b)\)</span></li>
+</ul></li>
+</ul>
+<p>Basically the production rules are “rewrite rules” that allow us to replace
+the left side of the rule with the right side. A derivation is a sequence
+of rewrites.</p>
+<p>The language of a grammar <span class="math inline">\(G\)</span> is denoted <span class="math inline">\(L(G)\)</span> and contains all strings of
+terminals that can be derived from the start symbol:</p>
+<p><span class="math display">\[L(G) = \{w \in T^* \mid S \stackrel{*}{\Rightarrow}w\}\]</span></p>
+<div id="exercises-1" class="section level4 unnumbered">
+<h4>Exercises</h4>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Show that using Grammar 1, <span class="math inline">\(ABa \stackrel{*}{\Rightarrow}abababa\)</span>.</p></li>
+<li><p>Is <span class="math inline">\(abababa \in L(G_1)\)</span>, the language generated by Grammar 1?</p></li>
+<li><p>What is <span class="math inline">\(L(G_2)\)</span>?</p></li>
+<li><p>What is <span class="math inline">\(L(G_3)\)</span>?</p></li>
+<li><p>Generate several words using <span class="math inline">\(G_4\)</span>.</p></li>
+<li><p>Create a grammar <span class="math inline">\(G_5\)</span> such that <span class="math inline">\(L(G_5) = \{ 0^n1^n \mid n = 0, 1, 2, ... \}\)</span></p></li>
+<li><p>Create a grammar <span class="math inline">\(G_6\)</span> such that <span class="math inline">\(L(G_6) = \{ 0^n1^n \mid n \in \mathbb{Z}^+ \}\)</span></p></li>
+<li><p>Create a grammar <span class="math inline">\(G_7\)</span> such that <span class="math inline">\(L(G_7) = \{ 0^m1^n \mid m, n \in \mathbb{N} \}\)</span></p></li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Models-of_Computation.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

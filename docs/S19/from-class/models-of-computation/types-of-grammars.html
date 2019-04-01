@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 Types of Grammars | Modeling Computation</title>
+  <meta name="description" content="2 Types of Grammars | Modeling Computation">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 Types of Grammars | Modeling Computation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Types of Grammars | Modeling Computation" />
+  
+  
+  
+
+<meta name="author" content="R Pruim">
+
+
+<meta name="date" content="2019-03-29">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="alphabets-languages-and-grammars.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html"><i class="fa fa-check"></i><b>1</b> Alphabets, Languages, and Grammars</a><ul>
+<li class="chapter" data-level="1.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#terminology"><i class="fa fa-check"></i><b>1.1</b> Terminology</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#phrase-structure-grammars"><i class="fa fa-check"></i><b>1.2</b> (Phrase-Structure) Grammars</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="1.2.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#derivations-and-languages"><i class="fa fa-check"></i><b>1.2.1</b> Derivations and Languages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="types-of-grammars.html"><a href="types-of-grammars.html"><i class="fa fa-check"></i><b>2</b> Types of Grammars</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.0.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling Computation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="types-of-grammars" class="section level1">
+<h1><span class="header-section-number">2</span> Types of Grammars</h1>
+<p><strong>Type 0</strong>: no restrictions</p>
+<p><strong>Type 1 (context sensitive)</strong>: only two types of rules allowed</p>
+<ul>
+<li><span class="math inline">\(S \to \lambda\)</span>
+<ul>
+<li>shorthand: <code>[start]</code> <span class="math inline">\(\to\)</span> <code>[empty string]</code></li>
+</ul></li>
+<li><p><span class="math inline">\(lAr \to lwr\)</span> where</p>
+<ul>
+<li><span class="math inline">\(l, r \in V^*\)</span></li>
+<li><span class="math inline">\(A \in N\)</span></li>
+<li><span class="math inline">\(w \in (V - \{S\})^+\)</span> [That is, <span class="math inline">\(w \neq \lambda\)</span> and <span class="math inline">\(w\)</span> doesn’t use the start symbol.]</li>
+<li>shorthand: <code>[left][nonterminal][right]</code> <span class="math inline">\(\to\)</span> <code>[left][non-empty without start symbol][right]</code></li>
+</ul></li>
+</ul>
+<p><strong>Type 2 (context free)</strong>: only one type of rule allowed</p>
+<ul>
+<li><p><span class="math inline">\(A \to w\)</span> where</p>
+<ul>
+<li><span class="math inline">\(A\)</span> is a single nonterminal symbol</li>
+<li><span class="math inline">\(w \in V\)</span> (so no restriction here)</li>
+</ul></li>
+<li><p>shorthand: <code>[nonterminal]</code> <span class="math inline">\(\to\)</span> <code>[anything]</code></p></li>
+</ul>
+<!-- BNF -->
+<p><strong>Type 3 (regular)</strong>: Three types of rules allowed</p>
+<ul>
+<li><code>[nonterminal]</code> <span class="math inline">\(\to\)</span> <code>[terminal]</code> <code>[non terminal]</code> (Example: <span class="math inline">\(A \to bC\)</span>)</li>
+<li><code>[nonterminal]</code> <span class="math inline">\(\to\)</span> <code>[terminal]</code> (Example: <span class="math inline">\(A \to b\)</span>)</li>
+<li><code>[start]</code> <span class="math inline">\(\to\)</span> <code>[empty string]</code> (Example: <span class="math inline">\(S \to \lambda\)</span>)</li>
+</ul>
+<!-- Non-contracting: -->
+<!--    left not longer than right -->
+<!--    type 1 almost same as non-contracting (need to add lambda) -->
+<p>A regular/context free/context sensitive language is a language that
+can be generated by a regular/context free/context sensitive grammar.</p>
+<ol start="10" style="list-style-type: decimal">
+<li><p>For each grammar we have seen so far, determine whether it is
+regular, context free, context sensitive. (Some grammars will be
+more than one. All grammars are type 0.)</p></li>
+<li><p>True or false: Every grammar of type <span class="math inline">\(n\)</span> is a grammar of type <span class="math inline">\(n-1\)</span>.</p></li>
+</ol>
+<div id="backus-naur-form-bnf-for-context-free-grammars" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> Backus-Naur Form (BNF) for Context Free Grammars</h3>
+<p>Shorthand notation for type 2 grammars.</p>
+<ul>
+<li>nonterminals denoted with <span class="math inline">\(\langle \rangle\)</span>.</li>
+<li><span class="math inline">\(\to\)</span> written as <code>::=</code></li>
+<li>All rules with same nonterminal on left written
+together with the list of possible right sides
+separated by <code>|</code>.</li>
+</ul>
+<p><strong>Example:</strong> If we have production rules
+<span class="math inline">\(A \to Aa\)</span>, <span class="math inline">\(A \to a\)</span>, and <span class="math inline">\(A \to AB\)</span>, we will write</p>
+<pre><code>&lt;A&gt; ::= &lt;A&gt;a | a | &lt;A&gt;&lt;B&gt;</code></pre>
+<div id="bnf-for-algol-60-identifier" class="section level4 unnumbered">
+<h4>BNF for ALGOL 60 identifier</h4>
+<pre><code>&lt;identifier&gt; ::= &lt;letter&gt; | &lt;identifier&gt;&lt;letter&gt; | &lt;identifier&gt;&lt;digit&gt;
+&lt;letter&gt; ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+&lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
+</div>
+<div id="bnf-for-signed-integer" class="section level4 unnumbered">
+<h4>BNF for signed integer</h4>
+<pre><code>&lt;signed integer&gt; ::= &lt;sign&gt;&lt;integer&gt;
+&lt;sign&gt; ::= + | - 
+&lt;integer&gt; ::= &lt;digit&gt; | &lt;digit&gt;&lt;integer&gt;
+&lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
+</div>
+<div id="bnf-specification-for-java" class="section level4 unnumbered">
+<h4>BNF specification for Java</h4>
+<p>You can find BNF for various programming languages online. For example:
+<a href="https://users-cs.au.dk/amoeller/RegAut/JavaBNF.html" class="uri">https://users-cs.au.dk/amoeller/RegAut/JavaBNF.html</a> has a BNF specification
+for Java.</p>
+</div>
+<div id="exercises-2" class="section level4 unnumbered">
+<h4>Exercises</h4>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Why does BNF notation only work for context free grammars?</p></li>
+<li><p>For each context free grammar we have seen, give its BNF representation.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="alphabets-languages-and-grammars.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Models-of_Computation.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
