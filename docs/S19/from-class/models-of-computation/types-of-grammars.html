@@ -25,7 +25,7 @@
 <meta name="author" content="R Pruim">
 
 
-<meta name="date" content="2019-03-29">
+<meta name="date" content="2019-04-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="alphabets-languages-and-grammars.html">
-
+<link rel="next" href="finite-state-automata.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -74,7 +74,19 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="types-of-grammars.html"><a href="types-of-grammars.html"><i class="fa fa-check"></i><b>2</b> Types of Grammars</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.0.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a></li>
+<li class="chapter" data-level="2.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a><ul>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-algol-60-identifier"><i class="fa fa-check"></i>BNF for ALGOL 60 identifier</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-signed-integer"><i class="fa fa-check"></i>BNF for signed integer</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-specification-for-java"><i class="fa fa-check"></i>BNF specification for Java</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="finite-state-automata.html"><a href="finite-state-automata.html"><i class="fa fa-check"></i><b>3</b> Finite State Automata</a><ul>
+<li class="chapter" data-level="3.1" data-path="finite-state-automata.html"><a href="finite-state-automata.html#graph-representation"><i class="fa fa-check"></i><b>3.1</b> Graph Representation</a></li>
+<li class="chapter" data-level="3.2" data-path="finite-state-automata.html"><a href="finite-state-automata.html#extended-transition-function"><i class="fa fa-check"></i><b>3.2</b> Extended transition function</a></li>
+<li class="chapter" data-level="3.3" data-path="finite-state-automata.html"><a href="finite-state-automata.html#language-recognition"><i class="fa fa-check"></i><b>3.3</b> Language Recognition</a></li>
+<li class="chapter" data-level="3.4" data-path="finite-state-automata.html"><a href="finite-state-automata.html#equivalent-automata-and-grammars"><i class="fa fa-check"></i><b>3.4</b> Equivalent Automata and Grammars</a></li>
+<li class="chapter" data-level="3.5" data-path="finite-state-automata.html"><a href="finite-state-automata.html#nondeterministic-automata"><i class="fa fa-check"></i><b>3.5</b> Nondeterministic Automata</a></li>
 </ul></li>
 </ul>
 
@@ -98,16 +110,19 @@
 <p><strong>Type 0</strong>: no restrictions</p>
 <p><strong>Type 1 (context sensitive)</strong>: only two types of rules allowed</p>
 <ul>
-<li><span class="math inline">\(S \to \lambda\)</span>
-<ul>
-<li>shorthand: <code>[start]</code> <span class="math inline">\(\to\)</span> <code>[empty string]</code></li>
-</ul></li>
 <li><p><span class="math inline">\(lAr \to lwr\)</span> where</p>
 <ul>
 <li><span class="math inline">\(l, r \in V^*\)</span></li>
 <li><span class="math inline">\(A \in N\)</span></li>
-<li><span class="math inline">\(w \in (V - \{S\})^+\)</span> [That is, <span class="math inline">\(w \neq \lambda\)</span> and <span class="math inline">\(w\)</span> doesn’t use the start symbol.]</li>
-<li>shorthand: <code>[left][nonterminal][right]</code> <span class="math inline">\(\to\)</span> <code>[left][non-empty without start symbol][right]</code></li>
+<li><span class="math inline">\(w \in V^+\)</span> [That is, <span class="math inline">\(w \neq \lambda\)</span>.]</li>
+<li>shorthand: <code>[left][nonterminal][right]</code> <span class="math inline">\(\to\)</span> <code>[left][non-empty][right]</code></li>
+</ul></li>
+<li><span class="math inline">\(S \to \lambda\)</span>
+<ul>
+<li>shorthand: <code>[start]</code> <span class="math inline">\(\to\)</span> <code>[empty string]</code></li>
+<li>If the rule is used, the the start symbol may not appear on
+the right side of any rule, so other rules become
+<code>[left][non-empty without start symbol][right]</code>.</li>
 </ul></li>
 </ul>
 <p><strong>Type 2 (context free)</strong>: only one type of rule allowed</p>
@@ -115,9 +130,9 @@
 <li><p><span class="math inline">\(A \to w\)</span> where</p>
 <ul>
 <li><span class="math inline">\(A\)</span> is a single nonterminal symbol</li>
-<li><span class="math inline">\(w \in V\)</span> (so no restriction here)</li>
+<li><span class="math inline">\(w \in V^*\)</span> (so no restriction here)</li>
 </ul></li>
-<li><p>shorthand: <code>[nonterminal]</code> <span class="math inline">\(\to\)</span> <code>[anything]</code></p></li>
+<li><p>shorthand: <code>[nonterminal]</code> <span class="math inline">\(\to\)</span> <code>[any string]</code></p></li>
 </ul>
 <!-- BNF -->
 <p><strong>Type 3 (regular)</strong>: Three types of rules allowed</p>
@@ -131,14 +146,14 @@
 <!--    type 1 almost same as non-contracting (need to add lambda) -->
 <p>A regular/context free/context sensitive language is a language that
 can be generated by a regular/context free/context sensitive grammar.</p>
-<ol start="10" style="list-style-type: decimal">
+<ol style="list-style-type: decimal">
 <li><p>For each grammar we have seen so far, determine whether it is
 regular, context free, context sensitive. (Some grammars will be
 more than one. All grammars are type 0.)</p></li>
 <li><p>True or false: Every grammar of type <span class="math inline">\(n\)</span> is a grammar of type <span class="math inline">\(n-1\)</span>.</p></li>
 </ol>
-<div id="backus-naur-form-bnf-for-context-free-grammars" class="section level3">
-<h3><span class="header-section-number">2.0.1</span> Backus-Naur Form (BNF) for Context Free Grammars</h3>
+<div id="backus-naur-form-bnf-for-context-free-grammars" class="section level2">
+<h2><span class="header-section-number">2.1</span> Backus-Naur Form (BNF) for Context Free Grammars</h2>
 <p>Shorthand notation for type 2 grammars.</p>
 <ul>
 <li>nonterminals denoted with <span class="math inline">\(\langle \rangle\)</span>.</li>
@@ -150,31 +165,32 @@ separated by <code>|</code>.</li>
 <p><strong>Example:</strong> If we have production rules
 <span class="math inline">\(A \to Aa\)</span>, <span class="math inline">\(A \to a\)</span>, and <span class="math inline">\(A \to AB\)</span>, we will write</p>
 <pre><code>&lt;A&gt; ::= &lt;A&gt;a | a | &lt;A&gt;&lt;B&gt;</code></pre>
-<div id="bnf-for-algol-60-identifier" class="section level4 unnumbered">
-<h4>BNF for ALGOL 60 identifier</h4>
+<div id="bnf-for-algol-60-identifier" class="section level3 unnumbered">
+<h3>BNF for ALGOL 60 identifier</h3>
 <pre><code>&lt;identifier&gt; ::= &lt;letter&gt; | &lt;identifier&gt;&lt;letter&gt; | &lt;identifier&gt;&lt;digit&gt;
 &lt;letter&gt; ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
 &lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
 </div>
-<div id="bnf-for-signed-integer" class="section level4 unnumbered">
-<h4>BNF for signed integer</h4>
+<div id="bnf-for-signed-integer" class="section level3 unnumbered">
+<h3>BNF for signed integer</h3>
 <pre><code>&lt;signed integer&gt; ::= &lt;sign&gt;&lt;integer&gt;
 &lt;sign&gt; ::= + | - 
 &lt;integer&gt; ::= &lt;digit&gt; | &lt;digit&gt;&lt;integer&gt;
 &lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
 </div>
-<div id="bnf-specification-for-java" class="section level4 unnumbered">
-<h4>BNF specification for Java</h4>
+<div id="bnf-specification-for-java" class="section level3 unnumbered">
+<h3>BNF specification for Java</h3>
 <p>You can find BNF for various programming languages online. For example:
 <a href="https://users-cs.au.dk/amoeller/RegAut/JavaBNF.html" class="uri">https://users-cs.au.dk/amoeller/RegAut/JavaBNF.html</a> has a BNF specification
 for Java.</p>
 </div>
-<div id="exercises-2" class="section level4 unnumbered">
-<h4>Exercises</h4>
-<ol start="12" style="list-style-type: decimal">
+<div id="exercises-2" class="section level3 unnumbered">
+<h3>Exercises</h3>
+<ol start="3" style="list-style-type: decimal">
 <li><p>Why does BNF notation only work for context free grammars?</p></li>
 <li><p>For each context free grammar we have seen, give its BNF representation.</p></li>
 </ol>
+
 
 </div>
 </div>
@@ -184,8 +200,8 @@ for Java.</p>
           </div>
         </div>
       </div>
-<a href="alphabets-languages-and-grammars.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="alphabets-languages-and-grammars.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="finite-state-automata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

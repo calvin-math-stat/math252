@@ -1,21 +1,11 @@
----
-title: "Finite State Automata"
-author: "Math 252"
-output:
-  pdf_document: default
-  html_document: default
----
+\newpage
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## Finite State Automata
+# Finite State Automata
 
 A **finite state automaton** consists of the following:
 
 * a finite set of **states**: $S$
-* a finite **input alhpabet**: $I$
+* a finite **input alphabet**: $I$
 * a **start state**: $s_0 \in S$.
 * a set of **final states**: $F \subseteq S$
 * a **transition function**: $f : S \times I \to S$
@@ -31,19 +21,19 @@ state   | A | A | B | B | C | C | D | D
 letter  | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1
 $f$     | A | B | A | C | A | A | C | B
 
-### Graph Representation
+## Graph Representation
 
 1. It is often easier to visualize what is going on if we represent an automaton
 with a graph.  Create a labeled, directed graph with the following properties:
 
     * There is a vertex for each state, labeled with the state. 
-      (Draw this as a circle with the state inside the cirlce.
+      (Draw this as a circle with the state inside the circle.
     * There is an edge from state $s$ to state $t$ labeled with letter $x$ if and only if $f(s, x) = t$
     * Final states are circled a second time.  (We could use shape or color or something else to make it clear which states are final states, but double circling is easy.)
     * An extra arrow (not coming from any state) points to the start state.  This 
     isn't really an edge in the graph, just an extra bit of labeling.
    
-### Extended transition function 
+## Extended transition function 
 
 We can extend the transition function to $f^*: S \times I^* \to S$ with the following
 recursive definition:
@@ -61,11 +51,11 @@ recursive definition:
 
 \newpage
 
-### Language Recognition
+## Language Recognition
 
 For any automaton $M$ 
 with transition function $f$, start state $s$ and final states $F$,
-the langauge recognized by $M$ (written $L(M)$) is defined as follows:
+the language recognized by $M$ (written $L(M)$) is defined as follows:
 
 $$
 x \in L(M) \iff f^*(s, x) \in F
@@ -74,21 +64,29 @@ $$
 3. For each string $x$ below, compute $f^*(A, x)$. 
 Which of these strings are in $L(M_0)$?  
 (We will say that such strings are **accepted by $M_0$**.)
-Do this both from the table and from the graph.  (You should get the same result either way.)
+<!-- Do this both from the table and from the graph.  (You should get the same result either way.) -->
 
     a. $\lambda$
     a. $0$
     a. $1$
     a. $010$
     a. $1011$
+   
+Here are three automata:
+
+4. For each of the machines $M_1, M_2, M_3$, compute
+
+    a. $f^*(s_0, 10)$
+    a. $f^*(s_0, 1011)$
+    a. $f^*(s_1, 1011)$
     
-4. For each of the automata represented below, determine the language recognized.
+5. For each of the machines $M_1, M_2, M_3$, determine the language recognized.
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
-knitr::include_graphics("images/DFA-Fig-12-3-2.png")
+knitr::include_graphics("../images/DFA-Fig-12-3-2.png")
 ```
 
-5. Create automata that recognize each of the following languages.
+6. Create automata that recognize each of the following languages.
 
     a. The set of bitstrings that begin with two 0's
     b. The set of bitstrings that contain exactly two 0's
@@ -97,15 +95,9 @@ knitr::include_graphics("images/DFA-Fig-12-3-2.png")
     d. The set of bitstrings that do not contain two consecutive 0's anywhere
     d. The set of bitstrings that end with two 0's
 
-\newpage
 
-6. For each of the machines $M_1, M_2, M_3$ compute
 
-    a. $f^*(s_0, 10)$
-    a. $f^*(s_0, 1011)$
-    a. $f^*(s_1, 1011)$
-
-### Equivalent Automata and Grammars
+## Equivalent Automata and Grammars
 
 We will say that two automata $M$ and $N$ are equivalent if $L(M) = L(N)$, that is, if they recognize 
 the same language.  Similarly, two grammars are equivalent if they generate the same language.
@@ -118,19 +110,20 @@ the same language.  Similarly, two grammars are equivalent if they generate the 
 
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
-knitr::include_graphics("images/DFA-Fig-12-3-5.png")
+knitr::include_graphics("../images/DFA-Fig-12-3-5.png")
 ```
 
-### Nondeterministic Automota
+
+## Nondeterministic Automata
 
 The finite state automata we have seen so far are often called **deterministic finite-state automata** or 
 DFAs.  There is a generalization called a **non-deterministic finite-state automaton** or NFA.  The only 
 difference is how the transition function is specified.  For an NFA, the transition function has the form
 
-$$ f^*: S \times I^* \to P(S)$$
+$$ f: S \times I^* \to P(S)$$
 
-where $S$ is the set of states, $I$ is the input alphabet, and $P(S)$ is the powerset of $S$.
-
+where $S$ is the set of states, $I$ is the input alphabet, and $P(S)$ is the powerset of $S$.  (The powerset of $S$ is the set of all subsets of $S$.
+So the transition function for an NFA returns a *set* of states.)
 
 Here is a tabular description of the transition function for an NFA $N_0$ with
 start state A and final states C and D.  
@@ -158,10 +151,10 @@ How will the graph of an NFA differ from the graph for a DFA?
 Here is the graph of an NFA $N_1$.
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
-knitr::include_graphics("images/DFA-Fig-12-3-7.png")
+knitr::include_graphics("../images/DFA-Fig-12-3-7.png")
 ```
 
-13. Make a table showing the transition funtion for $N_1$.
+13. Make a table showing the transition function for $N_1$.
 
 14. Which of the following strings are accepted by $N_1$?
 
@@ -176,7 +169,7 @@ knitr::include_graphics("images/DFA-Fig-12-3-7.png")
 
 16. Create a DFA that recognizes $L(N_1)$.
 
-17. Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes the same langauge?  If so,
+17. Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes the same language?  If so,
 explain how.  If not, provide an example $N$ and explain why $L(N)$ cannot be recognized by a DFA.
 
 

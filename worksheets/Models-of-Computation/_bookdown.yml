@@ -1,0 +1,14 @@
+---
+book_filename: "Models-of_Computation"
+output_dir: "../../docs/S19/from-class/models-of-computation"
+site: bookdown::bookdown_site
+language:
+  ui:
+    chapter_name: ""
+delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "01-Grammars.Rmd",
+            "02-Grammars-Types.Rmd",
+            "03-Automata.Rmd"
+      ]
+---

@@ -1,0 +1,38 @@
+---
+title: "Modeling Computation"
+author: "R Pruim"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::pdf_book: default
+  bookdown::gitbook: default
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+```
+
+\newpage
+
+# Preface {-}
+
+These exercises were assembled to accompany a Discrete Mathematics course
+at Calvin College. 
+
+
+<!-- Some macros to make mathematics easier -->
+
+\newcommand{\Prob}{p}
+\newcommand{\intersect}{\;\cap\;}
+\newcommand{\union}{\operatorname{\cup}}
+\newcommand{\E}{\operatorname{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\SD}{\operatorname{SD}}
+\newcommand{\Binom}{\textsf{Binom}}
+
+
+\newpage
+
