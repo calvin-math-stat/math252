@@ -137,7 +137,6 @@ Additional assignments will be filled in over time.
 	 % \mand[BNF]{31ab}
 	 % \mand[EBNF]{34}
    \\
-	   \hline
 	   & & Rosen 13.3 &
 	   \helper[testing strings]{11}
 	   \mand[testing strings]{12}
