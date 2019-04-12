@@ -144,23 +144,19 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA]{25--26}
    \\
    \hline
+	   Mon 4/15 & PS 10 & Rosen 13.3 &
+	   \mand[what langauge?]{19--20}
+	   \mand[create DFA]{32}
+	   \mand[create DFA]{34}
+	   \mand[what langauge?]{45--46}
+	   \mand[NFA to DFA]{52--54}
+   \\
+	   \hline
    \end{longtable}
    \end{center}
    \end{document}
 
 
-	   \hline
-	   Mon 4/16 & PS 11 & Rosen 13.3 &
-	   \mand[what langauge?]{19--20}
-	   \mand[create DFA]{32}
-	   \mand[create DFA]{34}
-	   \mand[what langauge?]{45--46}
-   \\
-	   \hline
-	   Fri 4/20 & PS 12 & Rosen 12.3 &
-	   \mand[NFA to DFA]{52--54}
-   \\
-	   \hline
 	   Wed 4/25 & PS 13 & Rosen 12.4 &
 	   \extra{1}
 	   \mand{2}
