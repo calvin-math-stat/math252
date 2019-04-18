@@ -5,7 +5,7 @@ bookdown::gitbook:
     toc:
       collapse: subsection
       before: |
-        <li><a href="./">Models of Computation</a></li>
+        <li><a href="./">Modeling Computation</a></li>
   download: ["pdf", "epub"]
 bookdown::pdf_book:
   keep_tex: true

@@ -9,6 +9,8 @@ delete_merged_file: true
 rmd_files: ["index.Rmd",
             "01-Grammars.Rmd",
             "02-Grammars-Types.Rmd",
-            "03-Automata.Rmd"
+            "03-Automata.Rmd",
+            "04-Regex.Rmd",
+            "05-Regular-Grammars.Rmd"
       ]
 ---
