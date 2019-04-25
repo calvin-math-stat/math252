@@ -1,16 +1,12 @@
----
-title: "DFA to Regular Expression"
-author: "Math 252"
-output:
-  pdf_document: default
-  html_document: default
----
 
+\newpage
+
+# DFA to Regular Expression
 
 1. Systematically convert this DFA into an equivalent regular expression.
 
 ```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
-knitr::include_graphics("images/DFA-regex-example.png")
+knitr::include_graphics("../images/DFA-regex-example.png")
 ```
 
 \vfill
@@ -18,7 +14,7 @@ knitr::include_graphics("images/DFA-regex-example.png")
 2. Systematically convert this DFA into an equivalent regular expression.
 
 ```{r, echo = FALSE, out.width = "60%", fig.align = "center"}
-knitr::include_graphics("images/DFA-regex-2.png")
+knitr::include_graphics("../images/DFA-regex-2.png")
 ```
 
 \vfill
@@ -26,6 +22,6 @@ knitr::include_graphics("images/DFA-regex-2.png")
 3. Systematically convert this DFA into an equivalent regular expression.
 
 ```{r, echo = FALSE, out.width = "30%", fig.align = "center"}
-knitr::include_graphics("images/DFA-Fig-12-4-5.png")
+knitr::include_graphics("../images/DFA-Fig-12-4-5.png")
 ```
 

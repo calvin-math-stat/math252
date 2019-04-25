@@ -1,17 +1,9 @@
----
-title: "Regular Language Wrap-UP"
-author: "Math 252"
-output:
-  pdf_document: default
-  html_document: default
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+\newpage
 
+# Regular Langauges
 
-## Regular Langauges
+## Equivalent Definitions
 
 We have been working toward a result that says the following are 
 all equivalent.
@@ -35,7 +27,9 @@ Still missing from our list is
 
 f. $2 \Rightarrow 1$
 
-### Your Mission (You must choose to accept it)
+Once we have that, we will see that all 4 definitions are equivalent.
+
+### Your Mission (You must choose to accept it) {-}
 
 For each conversion a -- e, write a brief description of the algorithm.  Your
 description should include the most important "big idea" and also any potential
@@ -78,7 +72,7 @@ anything important?  Do the solutions below leave out anything important?
     * keep all states and transitions from $N_1$ and $N_2$
     
     * add one new start state $S$; $S$ is final if either 
-      start state of $N_1$ or start state of $S_2$ is final
+      start state of $N_1$ or start state of $N_2$ is final
       
     * add some additional transitions
         * if $S_1 \stackrel{x}{\to} A$, add $S \stackrel{x}{\to} A$
@@ -117,8 +111,7 @@ anything important?  Do the solutions below leave out anything important?
 
 * A is final in DFA if A contains a final state of NFA 
 
-* If there is no transition for a state/symbol combo in NFA, then
-    the transition is to state ${}$ in DFA
+* Remember that $\{ \}$ may be needed as one of the states in the DFA
     
 1d. DFA (or NFA) $\to$ reg grammar
 
@@ -128,7 +121,7 @@ anything important?  Do the solutions below leave out anything important?
     
     * also $A \to x$  if B is final state
     
-* If S is final in DFA, then add $S \to \lambda$
+* If S is final in NFA/DFA, then add $S \to \lambda$
     
 * Number of rules = number of transitions + number of transitions to final states +
     1 more if the start state is final
@@ -136,12 +129,12 @@ anything important?  Do the solutions below leave out anything important?
 1e. reg grammar $\to$ NFA
 
 * states: non-terminals of grammar + 
-      one additional state (the only final state)
-      
-* $S \to \lambda$ means $S$ is start state
+one additional state $F$ (a final state)
+    * Start symbol is also start state
+    * If $S \to \lambda$ is a rule, then $S$ is a final state
 
 * production rules become transitions in NFA
 
     * $A \to xB$ becomes $A \stackrel{x}{\to} B$
-    * $A \to x$  becomes $A \stackrel{x}{\to}$ final state
+    * $A \to x$  becomes $A \stackrel{x}{\to} F$ (the added final state)
   

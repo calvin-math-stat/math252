@@ -27,6 +27,10 @@ output:
 
 ### Models of Computation
 
+  * Worksheets: 
+  [PDF](models-of-computation/Models-of-Computation.pdf)
+  [HTML](models-of-computation/)
+  
 <!-- ### Langauges, Grammars, Machines -->
 
 <!-- Date  | Handout -->
