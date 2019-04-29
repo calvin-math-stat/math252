@@ -29,11 +29,11 @@ is an algorithm to do so.
 to "rip out". Let's call that state $R$.
 
     a. If $A$ doesn't have a self-loop, 
-    replace every $A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B$ with 
-    $A \stackrel{(r_{in} r_{out})}{\to}B$.
-    b. If $A$ has a self-loop labeled $r_{self}$, 
-    replace every $A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B$ with 
-    $A \stackrel{(r_{in} r_{self}^* r_{out})}{\to} B$.
+    replace every $A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B$ with 
+    $A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B$.
+    b. If $A$ has a self-loop labeled $r_{\mathrm{self}}$, 
+    replace every $A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B$ with 
+    $A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B$.
     c. If this results in multiple edges between two states $A$ and $B$, 
     replace them with one edge labeled with the union of their labels.
     
@@ -77,4 +77,14 @@ But note that sometimes the notation isn't quite the same.
 
 * $\varepsilon$ is sometimes used for what we have called $\lambda$.
 * $+$ is sometimes used in place of $\cup$.
+
+## Review problems
+
+1. Show that if $A$ is a regular language, then $\overline{A}$ is also a regular
+language.
+
+1. Show that if $A$ and $B$ are regular languages, then $A \intersect B$ is also
+a regular language.
+
+1. Convert the machines on this sheet to equivalent regular grammars.
 

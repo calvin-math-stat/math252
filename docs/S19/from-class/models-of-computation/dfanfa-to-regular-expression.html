@@ -25,7 +25,7 @@
 <meta name="author" content="R Pruim">
 
 
-<meta name="date" content="2019-04-27">
+<meta name="date" content="2019-04-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -117,6 +117,7 @@
 <li class="chapter" data-level="7.1" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>7.1</b> GNFA (Generalied NFA)</a></li>
 <li class="chapter" data-level="7.2" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#algorithm-for-converting-dfanfa-to-regular-expression"><i class="fa fa-check"></i><b>7.2</b> Algorithm for converting DFA/NFA to Regular Expression</a></li>
 <li class="chapter" data-level="7.3" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#examples-1"><i class="fa fa-check"></i><b>7.3</b> Examples</a></li>
+<li class="chapter" data-level="7.4" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#review-problems"><i class="fa fa-check"></i><b>7.4</b> Review problems</a></li>
 </ul></li>
 </ul>
 
@@ -163,11 +164,11 @@ with one edge labeled with the union of the labels of the original edges.
 to “rip out”. Let’s call that state <span class="math inline">\(R\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>If <span class="math inline">\(A\)</span> doesn’t have a self-loop,
-replace every <span class="math inline">\(A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B\)</span> with
-<span class="math inline">\(A \stackrel{(r_{in} r_{out})}{\to}B\)</span>.</li>
-<li>If <span class="math inline">\(A\)</span> has a self-loop labeled <span class="math inline">\(r_{self}\)</span>,
-replace every <span class="math inline">\(A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B\)</span> with
-<span class="math inline">\(A \stackrel{(r_{in} r_{self}^* r_{out})}{\to} B\)</span>.</li>
+replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B\)</span>.</li>
+<li>If <span class="math inline">\(A\)</span> has a self-loop labeled <span class="math inline">\(r_{\mathrm{self}}\)</span>,
+replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B\)</span>.</li>
 <li>If this results in multiple edges between two states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,
 replace them with one edge labeled with the union of their labels.</li>
 </ol></li>
@@ -203,6 +204,16 @@ expression for the language recognized by the original DFA or NFA.</p></li>
 <li><span class="math inline">\(\varepsilon\)</span> is sometimes used for what we have called <span class="math inline">\(\lambda\)</span>.</li>
 <li><span class="math inline">\(+\)</span> is sometimes used in place of <span class="math inline">\(\cup\)</span>.</li>
 </ul>
+</div>
+<div id="review-problems" class="section level2">
+<h2><span class="header-section-number">7.4</span> Review problems</h2>
+<ol style="list-style-type: decimal">
+<li><p>Show that if <span class="math inline">\(A\)</span> is a regular language, then <span class="math inline">\(\overline{A}\)</span> is also a regular
+language.</p></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are regular languages, then <span class="math inline">\(A \;\cap\;B\)</span> is also
+a regular language.</p></li>
+<li><p>Convert the machines on this sheet to equivalent regular grammars.</p></li>
+</ol>
 
 </div>
 </div>
