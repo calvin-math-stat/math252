@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>1 Alphabets, Languages, and Grammars | Modeling Computation</title>
-  <meta name="description" content="1 Alphabets, Languages, and Grammars | Modeling Computation">
+  <title>7 DFA/NFA to Regular Expression | Modeling Computation</title>
+  <meta name="description" content="7 DFA/NFA to Regular Expression | Modeling Computation">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="1 Alphabets, Languages, and Grammars | Modeling Computation" />
+  <meta property="og:title" content="7 DFA/NFA to Regular Expression | Modeling Computation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Alphabets, Languages, and Grammars | Modeling Computation" />
+  <meta name="twitter:title" content="7 DFA/NFA to Regular Expression | Modeling Computation" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="types-of-grammars.html">
+<link rel="prev" href="regular-langauges.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -135,135 +135,75 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="alphabets-languages-and-grammars" class="section level1">
-<h1><span class="header-section-number">1</span> Alphabets, Languages, and Grammars</h1>
-
-<div id="terminology" class="section level2">
-<h2><span class="header-section-number">1.1</span> Terminology</h2>
-<ul>
-<li>An <strong>alphabet</strong> (or <strong>vocabulary</strong>) is just a finite, non-empty set.
-It’s elements are called <strong>letters</strong> or <strong>symbols</strong>.</li>
-<li>A <strong>word</strong> (or <strong>string</strong>) is a finite sequence of symbols.</li>
-<li>A word consisting of no symbols is called the <strong>empty word</strong> and denoted <span class="math inline">\(\lambda\)</span>.
-(Think <code>&quot;&quot;</code>.)</li>
-<li>The set of all words using exactly <span class="math inline">\(n\)</span> symbols from <span class="math inline">\(V\)</span> (repetition allowed) is denoted <span class="math inline">\(V^n\)</span>.</li>
-<li>The set of all words using symbols in alphabet <span class="math inline">\(V\)</span> is denoted <span class="math inline">\(V^*\)</span>.
-(So <span class="math inline">\(V^* = V^0 \cup V^1 \cup V^2 \cdots\)</span>.)</li>
-<li>A <strong>language</strong> over <span class="math inline">\(V\)</span> is a subset of <span class="math inline">\(V^*\)</span>.</li>
-</ul>
-<div id="exercises" class="section level3 unnumbered">
-<h3>Exercises</h3>
-<!-- Let's see how well you understand those definitions. -->
+<div id="dfanfa-to-regular-expression" class="section level1">
+<h1><span class="header-section-number">7</span> DFA/NFA to Regular Expression</h1>
+<div id="gnfa-generalied-nfa" class="section level2">
+<h2><span class="header-section-number">7.1</span> GNFA (Generalied NFA)</h2>
+<p>A GNFA (Generalized NFA) is like an NFA but the edges may be labeled with
+any regular expression. One way of obtaining a regular expression
+from a DFA or NFA uses an algorithm that works with GNFAs.</p>
+</div>
+<div id="algorithm-for-converting-dfanfa-to-regular-expression" class="section level2">
+<h2><span class="header-section-number">7.2</span> Algorithm for converting DFA/NFA to Regular Expression</h2>
+<p>Suppose we want to find an equivalent regular expression for some DFA or NFA. Here
+is an algorithm to do so.</p>
 <ol style="list-style-type: decimal">
-<li><p>Let <span class="math inline">\(V = \{0, 1\}\)</span>.
-What is <span class="math inline">\(V^0\)</span>? What is <span class="math inline">\(V^2\)</span>? What is <span class="math inline">\(V^*\)</span>?</p></li>
-<li><p>Let <span class="math inline">\(V = \{2\}\)</span>.
-What is <span class="math inline">\(V^0\)</span>? What is <span class="math inline">\(V^2\)</span>? What is <span class="math inline">\(V^*\)</span>?</p></li>
-<li><p>Can <span class="math inline">\(\emptyset\)</span> (empty set) be a letter? an alphabet? a word? a language?</p></li>
+<li><p>Modify the the original machine.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Add a <strong>new start state</strong> with a <span class="math inline">\(\lambda\)</span> transition to the old start state.
+(We can skip this step if the start state is already lonely (has in-degree 0).)</li>
+<li>Add a <strong>new final state</strong> with a <span class="math inline">\(\lambda\)</span> transition from all old final states.
+(We can skip this step if there is exactly one final state and it has out-degree 0.)</li>
+<li>The new final state will be the <strong>only final state</strong>.</li>
+<li><strong>Replace mutliple edges</strong> between any pair of states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>
+with one edge labeled with the union of the labels of the original edges.
+[Example <span class="math inline">\(A \stackrel{0,1}{\to} B\)</span> becomes <span class="math inline">\(A \stackrel{0 \cup 1}{\to} B\)</span>.]</li>
+</ol></li>
+<li><p>Pick an internal state (not the start state or the final state)
+to “rip out”. Let’s call that state <span class="math inline">\(R\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>If <span class="math inline">\(A\)</span> doesn’t have a self-loop,
+replace every <span class="math inline">\(A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{in} r_{out})}{\to}B\)</span>.</li>
+<li>If <span class="math inline">\(A\)</span> has a self-loop labeled <span class="math inline">\(r_{self}\)</span>,
+replace every <span class="math inline">\(A \stackrel{r_{in}}{\to} R \stackrel{r_{out}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{in} r_{self}^* r_{out})}{\to} B\)</span>.</li>
+<li>If this results in multiple edges between two states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,
+replace them with one edge labeled with the union of their labels.</li>
+</ol></li>
+<li><p>Repeat step 2 until the only states left are the start state and the final
+state. There will be only one transition remaining, and its label will be a regular
+expression for the language recognized by the original DFA or NFA.</p></li>
 </ol>
 </div>
-</div>
-<div id="phrase-structure-grammars" class="section level2">
-<h2><span class="header-section-number">1.2</span> (Phrase-Structure) Grammars</h2>
-<p>A phase-structure grammar consists of</p>
-<ul>
-<li><strong>alphabet</strong>: <span class="math inline">\(V\)</span></li>
-<li><strong>start symbol</strong>: <span class="math inline">\(S \in V\)</span></li>
-<li><strong>terminal symbols</strong>: <span class="math inline">\(T \subset V\)</span>
-<ul>
-<li><span class="math inline">\(N = V - T\)</span> is the set of <strong>nonterminal symbols</strong></li>
-</ul></li>
-<li><strong>production rules</strong>: <span class="math inline">\(P \subseteq (V^*-N^*) \times V^*\)</span>
-<ul>
-<li>usually write elements of <span class="math inline">\(P\)</span> as <span class="math inline">\(u \to v\)</span> rather than <span class="math inline">\((u, v)\)</span>.</li>
-<li><span class="math inline">\(V^*-N^*\)</span> says that <span class="math inline">\(u\)</span> must contain at least on nonterminal.</li>
-<li><span class="math inline">\(v\)</span> can be any combinaton of terminals and nonterminals (including the empty string).</li>
-</ul></li>
-</ul>
-<div id="examples" class="section level3 unnumbered">
-<h3>Examples</h3>
-<p>Note: in each of these examples, capital letters are used for nonterminals and
-lower case letters or digits for terminals. That makes it easy to remember, but
-it is not a requirement of the definition of a grammar.</p>
-<p><strong>Grammar 1</strong> (<span class="math inline">\(G_1\)</span>):
-alphabet: <span class="math inline">\(\{a, b, A, B, S\}\)</span>,
-terminals: <span class="math inline">\(\{a, b\}\)</span>,
-start symbol: <span class="math inline">\(S\)</span>,
-production rules:</p>
-<ul>
-<li><span class="math inline">\(S \to ABa\)</span></li>
-<li><span class="math inline">\(A \to BB\)</span></li>
-<li><span class="math inline">\(B \to ab\)</span></li>
-<li><span class="math inline">\(AB \to b\)</span></li>
-</ul>
-<p><strong>Grammar 2</strong> (<span class="math inline">\(G_2\)</span>):
-alphabet: <span class="math inline">\(\{S, A, a, b\}\)</span>,
-terminals: <span class="math inline">\(\{a,b\}\)</span>,
-start symbol: <span class="math inline">\(S\)</span>,
-production rules:</p>
-<ul>
-<li><span class="math inline">\(S \to aA\)</span></li>
-<li><span class="math inline">\(S \to b\)</span></li>
-<li><span class="math inline">\(A \to aa\)</span></li>
-</ul>
-<p><strong>Grammar 3</strong> (<span class="math inline">\(G_3\)</span>):
-alphabet: <span class="math inline">\(\{S, 0, 1\}\)</span>,
-terminals: <span class="math inline">\(\{0,1\}\)</span>,
-start symbol: <span class="math inline">\(S\)</span>,
-production rules:</p>
-<ul>
-<li><span class="math inline">\(S \to 11S\)</span></li>
-<li><span class="math inline">\(S \to 0\)</span></li>
-</ul>
-<p><strong>Grammar 4</strong> (<span class="math inline">\(G_4\)</span>):
-alphabet: <span class="math inline">\(\{S, A, B, C, a, b, c\}\)</span>,
-terminals: <span class="math inline">\(\{a, b, c\}\)</span>,
-start symbol: <span class="math inline">\(S\)</span>,
-production rules:</p>
-<ul>
-<li><span class="math inline">\(S \to AB\)</span></li>
-<li><span class="math inline">\(A \to Ca\)</span></li>
-<li><span class="math inline">\(B \to Ba\)</span></li>
-<li><span class="math inline">\(B \to Cb\)</span></li>
-<li><span class="math inline">\(B \to b\)</span></li>
-<li><span class="math inline">\(C \to cb\)</span></li>
-<li><span class="math inline">\(C \to b\)</span></li>
-</ul>
-</div>
-<div id="derivations-and-languages" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Derivations and Languages</h3>
-<p>The rules of a grammar are used to derive strings of terminals (elements of <span class="math inline">\(T^*\)</span>)
-as follows.</p>
-<ul>
-<li>If <span class="math inline">\(w_0 \to w_1\)</span> is a rule, then <span class="math inline">\(lw_0r \Rightarrow lw_1r\)</span> for any strings <span class="math inline">\(l\)</span> and <span class="math inline">\(r\)</span>.</li>
-<li><span class="math inline">\(a \stackrel{*}{\Rightarrow}b\)</span> is defined recursively. <span class="math inline">\(a \stackrel{*}{\Rightarrow}b\)</span> if either
-<ul>
-<li><span class="math inline">\(a \Rightarrow b\)</span>, or</li>
-<li><span class="math inline">\(\exists c \; (a \Rightarrow c \land c \stackrel{*}{\Rightarrow}b)\)</span></li>
-</ul></li>
-</ul>
-<p>Basically the production rules are “rewrite rules” that allow us to replace
-the left side of the rule with the right side. A derivation is a sequence
-of rewrites.</p>
-<p>The language of a grammar <span class="math inline">\(G\)</span> is denoted <span class="math inline">\(L(G)\)</span> and contains all strings of
-terminals that can be derived from the start symbol:</p>
-<p><span class="math display">\[L(G) = \{w \in T^* \mid S \stackrel{*}{\Rightarrow}w\}\]</span></p>
-<div id="exercises-1" class="section level4 unnumbered">
-<h4>Exercises</h4>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Show that using Grammar 1, <span class="math inline">\(ABa \stackrel{*}{\Rightarrow}abababa\)</span>.</p></li>
-<li><p>Is <span class="math inline">\(abababa \in L(G_1)\)</span>, the language generated by Grammar 1?</p></li>
-<li><p>What is <span class="math inline">\(L(G_2)\)</span>?</p></li>
-<li><p>What is <span class="math inline">\(L(G_3)\)</span>?</p></li>
-<li><p>Generate several words using <span class="math inline">\(G_4\)</span>.</p></li>
-<li><p>Create a grammar <span class="math inline">\(G_5\)</span> such that <span class="math inline">\(L(G_5) = \{ 0^n1^n \mid n = 0, 1, 2, ... \}\)</span></p></li>
-<li><p>Create a grammar <span class="math inline">\(G_6\)</span> such that <span class="math inline">\(L(G_6) = \{ 0^n1^n \mid n \in \mathbb{Z}^+ \}\)</span></p></li>
-<li><p>Create a grammar <span class="math inline">\(G_7\)</span> such that <span class="math inline">\(L(G_7) = \{ 0^m1^n \mid m, n \in \mathbb{N} \}\)</span></p></li>
+<div id="examples-1" class="section level2">
+<h2><span class="header-section-number">7.3</span> Examples</h2>
+<ol style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
 </ol>
+<p><img src="../images/DFA-regex-example.png" width="40%" style="display: block; margin: auto;" /></p>
 
+<ol start="2" style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
+</ol>
+<p><img src="../images/DFA-regex-2.png" width="60%" style="display: block; margin: auto;" /></p>
 
-</div>
-</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
+</ol>
+<p><img src="../images/DFA-Fig-12-4-5.png" width="30%" style="display: block; margin: auto;" /></p>
+
+<p>You can find additional worked examples online at places like</p>
+<ul>
+<li><a href="https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf" class="uri">https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf</a></li>
+<li><a href="https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf" class="uri">https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf</a></li>
+</ul>
+<p>But note that sometimes the notation isn’t quite the same.</p>
+<ul>
+<li><span class="math inline">\(\varepsilon\)</span> is sometimes used for what we have called <span class="math inline">\(\lambda\)</span>.</li>
+<li><span class="math inline">\(+\)</span> is sometimes used in place of <span class="math inline">\(\cup\)</span>.</li>
+</ul>
+
 </div>
 </div>
             </section>
@@ -271,8 +211,8 @@ terminals that can be derived from the start symbol:</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="types-of-grammars.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regular-langauges.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
