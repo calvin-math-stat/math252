@@ -27,9 +27,16 @@ output:
 
 ### Models of Computation
 
-  * Worksheets: 
+* Worksheets: 
   [PDF](models-of-computation/Models-of-Computation.pdf)
   [HTML](models-of-computation/)
+  
+* Regular Exrpessions in Python
+
+    * [Slides]()
+    * Thonny -- easy self-contained python
+        * [download Thonny here](https://thonny.org/)
+    
   
 <!-- ### Langauges, Grammars, Machines -->
 

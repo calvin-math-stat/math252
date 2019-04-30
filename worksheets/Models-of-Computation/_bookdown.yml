@@ -13,6 +13,7 @@ rmd_files: ["index.Rmd",
             "04-Regex.Rmd",
             "05-Regular-Grammars.Rmd",
             "06-Regular-WrapUp.Rmd",
-            "07-DFA-to-regex.Rmd"
+            "07-DFA-to-regex.Rmd",
+            "08-Python-regex.Rmd"
       ]
 ---
