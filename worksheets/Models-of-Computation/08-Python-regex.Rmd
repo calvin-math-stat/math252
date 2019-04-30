@@ -1,6 +1,6 @@
 \newpage
 
-# Regular Expression in Python
+# Regular Expressions in Python
 
 ```{r python-setup, include = FALSE}
 library(reticulate)
@@ -23,7 +23,7 @@ This python-in-a-browser seems able to do what we need (based on minimal testing
 
 ### Thonny
 
-If you prefer to install a simple verions of python locally, try Thonny.
+If you prefer to install a simple versions of python locally, try Thonny.
 
 1. Download and install Thonny from <https://thonny.org/>.
 
