@@ -28,10 +28,10 @@ is an algorithm to do so.
 2. Pick an internal state (not the start state or the final state) 
 to "rip out". Let's call that state $R$.
 
-    a. If $A$ doesn't have a self-loop, 
-    replace every $A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B$ with 
+    a. If $R$ doesn't have a self-loop, 
+    replacejevery $A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B$ with 
     $A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B$.
-    b. If $A$ has a self-loop labeled $r_{\mathrm{self}}$, 
+    b. If $R$ has a self-loop labeled $r_{\mathrm{self}}$, 
     replace every $A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B$ with 
     $A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B$.
     c. If this results in multiple edges between two states $A$ and $B$, 

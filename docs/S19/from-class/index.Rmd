@@ -36,6 +36,7 @@ output:
     * [Slides]()
     * Thonny -- easy self-contained python
         * [download Thonny here](https://thonny.org/)
+    * [Regular Expression Game](http://play.inginf.units.it/)
     
   
 <!-- ### Langauges, Grammars, Machines -->

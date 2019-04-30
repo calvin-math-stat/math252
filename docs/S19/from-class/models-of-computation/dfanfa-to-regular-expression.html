@@ -233,10 +233,10 @@ with one edge labeled with the union of the labels of the original edges.
 <li><p>Pick an internal state (not the start state or the final state)
 to “rip out”. Let’s call that state <span class="math inline">\(R\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
-<li>If <span class="math inline">\(A\)</span> doesn’t have a self-loop,
-replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
+<li>If <span class="math inline">\(R\)</span> doesn’t have a self-loop,
+replacejevery <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
 <span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B\)</span>.</li>
-<li>If <span class="math inline">\(A\)</span> has a self-loop labeled <span class="math inline">\(r_{\mathrm{self}}\)</span>,
+<li>If <span class="math inline">\(R\)</span> has a self-loop labeled <span class="math inline">\(r_{\mathrm{self}}\)</span>,
 replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
 <span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B\)</span>.</li>
 <li>If this results in multiple edges between two states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,
