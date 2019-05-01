@@ -13,7 +13,7 @@ numbers = re.compile(r"\d+")
 print(numbers.findall(book[1:2000]))
 
 url = "https://calvin.edu/academics/departments-programs/mathematics-statistics/faculty-staff/"
-url = "https://calvin.edu"
+# url = "https://calvin.edu"
 mathstat = requests.get(url).text
 
 print(len(mathstat))
