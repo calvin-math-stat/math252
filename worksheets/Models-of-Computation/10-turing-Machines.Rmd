@@ -1,20 +1,7 @@
----
-title: "Turing Machines"
-author: "Math 252"
-output:
-  pdf_document: default
-  html_document: default
-header-includes: \usepackage{bm}
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+\newpage
 
-
-## The Turing Machine Model
-
-### Motivation
+# Turing Machines
 
 The Turing machine model pre-dates electronic computers and comes from the 
 work of Hilbert (early 1900's) and Turing and Church (1930)'s.
@@ -30,29 +17,25 @@ work of Hilbert (early 1900's) and Turing and Church (1930)'s.
 * The Turing machine is a specific formalization of these basic ingredients
   
 
-### Definition of a 1-tape Turing Machine
+## Definition of a 1-tape Turing Machine (Syntax)
 
 A Turing machine consists of the following:
 
-* input alphabet: A finite set $\Sigma$ that does not include the "blank symbol"
-* tape alphabet:  A finite set $\Gamma$ with  $\Sigma \subsetneq \Gamma$; 
-$\Gamma$ includes the "blank symbol"
-* states: A finite set $Q$
-* initial state: $q_0 \in Q$
-* final states: a subset of $Q$
-* program: A partial function
-$\delta: \Gamma \times Q \to \Gamma \times Q \times \{L,R,S\}$.  
-
-    * A partial funciton is not required to have a value for every input. 
-    You could think of this as a function
-    $\delta: \Gamma \times Q \to (\Gamma \times Q \times \{L,R,S\}) \cup \mbox{null})$,
-    where null is some symbol not in $\Gamma \times Q \times \{L,R,S\}$.
-    * A partial function can be represented as a subset of
-    $\Gamma \times Q \times \Gamma \times Q \times \{L,R,S\}$
-    (This is how we will formalize it below.)
-
-### Execution of a Turing Machine program
-
+* **input alphabet**: A set of symbols used for inputs.
+* **tape alphabet**:  Input alphabet plus and at least one additional symbol, 
+the **blank symbol**.
+* **states**: A finite set.
+* **initial/start state**: one of the states to start in
+* **final states**: some of the states are designated as final or accepting states.
+(In some variations there are two kinds of final states: accepting and regecting.)
+* **program**: A list of **instructions**. Each instruction has 5 parts:
+    * `<current tape symbol>`: any tape symbol
+    * `<current state>`: any state
+    * `<new tape symbol>`: any tape symbol
+    * `<new state>`: any state
+    * `<direction>`: left, right, or stay
+        
+## Execution of a Turing Machine program (Semantics)
 
 Imagine a machine with a 2-way infinite tape divided into cells.
 Each cell contains exactly one symbol from the tape alphabet.
@@ -61,7 +44,7 @@ the read/write head is located at the left most symbol of the input,
 and all cells that don't contain part of the input contain the blank sybmol.
 
 ```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
-knitr::include_graphics("images/TM-Fig-12-5-1.png")
+knitr::include_graphics("../images/TM-Fig-12-5-1.png")
 ```
 
 At each step in the execution of a Turing machine program, the 
@@ -80,82 +63,50 @@ This is repeated until one of two things happens:
 
 When either of these two things happens, the machine **halts**. 
 
-### An ASCII Representation of a Turing Machine
+### ASCII Representations of Turing Machines
 
-We will be working with a particular ASCII representation of a Turing machine.
+There are several websites that provide Turing machine simulators. Here are 
+a few:
 
-The format for a Turing machine file is the following. The first line
-indicates that this is A Turing machine file. The file format allows for 
-several variations on the basic 1-tape Turing machine, but for now we will
-focus on the basic version.
+* <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/> -- My favorite,
+but no longer usable since it was written in java by Calvin student Eliot Eschlemaman
+back when java applets were still a thing.
+* <http://morphett.info/turing/turing.html> -- plain output, and less flexible (initial 
+state must always be called 0, for example), but the program encoding is terse.
+* <https://turingmachinesimulator.com/> -- nice looking and more flexible, 
+but each instruction takes up 3 lines (current state and tape symbol on one line; new state,
+direction, and new symbol on the next line; then a blank line)
 
-There should be no blank lines in the file
+Each uses a slightly different ASCII representation of a Turing Machine.
+They are all pretty similar but differ in
 
-```
-Line 1: ATM. 
-Line 2: Name/description of the machine.
-Line 3: all characters in the input alphabet, separated by spaces 
-Line 4: all characters in the tape alphabet, separated by spaces 
-Line 5: the number of tapes (N). Use 1 for a 1-tape TM.
-Line 6: the number of tracks on tape 0. Use 1.
-Line 8: 1 or 2, indicating tape 0 is 1-way or 2-way infinite tape
-Line 9: the initial state of the Turing machine 
-Line 10: all the final states separated by spaces 
-Line 11: first of a list of transitions (see below) 
-Line 12: another transition 
-...
-2nd last line: last of the list of transitions 
-Last line: end  // You must type the word "end" but it can be upper or lower case
-```
+* How the input alphabet, tape alphabet, start state and accepting states are described
+* How they represent the blank tape symbol.  (Often there is a fixed symbol for this like
+`b`, `B` or `_`.)
+* Whether they are case sensitive, disallow certain characters, observe white space, etc.
+* How left/right/stay are denoted
+* The order in which the 5 parts of an instruction are given
+* Which of variaous variations on the the 1-tape Turing machine theme they support (and how you
+tell the simulator which flavor
 
-The format of a transition is:
-
-```
-<state> <content of tape> <next state> <next content of tape> <head-move direction>
-```
-
-where 
-
-* the `<state>` and `<next state>` are the names of states and can be any strings.
-
-<!-- When the state has multiple fields such as `[q0,a,b]`, there can be no spaces. This -->
-<!-- compound state is handled in the simulator as a single string, without spaces. -->
-
-* the `<content of tape>` and `<next content of tape>` are symbols from the 
-tape alphabet.
-
-* the `<head-move direction>` is one of R, L, or S,
-indicating a right or left movement or staying stationary.
-
-* The **blank symbol** is denoted by `B` and
-this symbol must not be used as part of the input alphabet. 
-
-* comments can be added with `//`
-
-\newpage
+## Examples
 
 ### Example 1
 
 <!-- Example 12.5.1 from Rosen6 -->
 
 ```
-ATM
-Example Turing Machine
-0 1 // input alphabet, note such comments are permitted at the end of the line 
-0 1 B // tape alphabet 
-1 // number of tapes 
-1 // number of tracks on tape  
-2 // tape is 2-way infinite 
-s0 // the initial state 
-s3 // final state
-s0 0 s0 0 R 
-s0 1 s1 1 R 
-s0 B s3 B R 
-s1 0 s0 0 R 
-s1 1 s2 1 L 
-s1 B s3 B R 
-s2 1 s3 0 R 
-end // required
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+; s0 is initial state
+0  * * * s0
+s0 0 0 r s0 
+s0 1 1 r s1 
+s0 _ _ r halt 
+s1 0 0 r s0
+s1 1 1 l s2 
+s1 _ _ r halt
+s2 1 0 r halt
 ```
 
 1. For each input string below, determine the configuration
@@ -167,33 +118,27 @@ of the Turing machine when it halts.
     b. 0101
     b. 010110
     b. 001
-    
+
+\newpage    
+
 ### Example 2
 
 ```
-ATM
-Example Turing Machine
-0 1 // input alphabet, note such comments are permitted at the end of the line 
-0 1 B // tape alphabet 
-1 // number of tapes 
-1 // number of tracks tape 
-2 // tape is 2-way infinite 
-[init] // the initial state 
-[final] // final state
-[init] 0 [10] 0 R 
-[init] 1 [01] 0 R 
-[init] B [final] B S 
-[00] 0 [10] 0 R
-[00] 1 [01] 1 R
-[00] B [final] B S
-[01] 0 [11] 0 R
-[01] 1 [00] 1 R
-[01] B [01] B R
-[10] 0 [00] 0 R
-[10] 1 [01] 1 R
-[11] 0 [01] 0 R
-[11] 1 [10] 1 R
-end // required
+; [init] is initial state
+0 * * * [init]
+[init] 0 0 r [10] 
+[init] 1 0 r [01]
+[init] _ _ * halt-init
+[00] 0 0 r [10]
+[00] 1 1 r [01]
+[00] _ _ * halt-00
+[01] 0 0 r [11]
+[01] 1 1 r [00]
+[01] _ _ r [01]
+[10] 0 0 r [00]
+[10] 1 1 r [11]
+[11] 0 0 r [01]
+[11] 1 1 r [10]
 ```
 
 2. For each input string below, determine the configuration
@@ -209,8 +154,7 @@ of the Turing machine when it halts.
 ### The language recognized by a Turing Machine
 
 We will say that a Turing machine $M$ accepts a string $x$ (by state) if 
-on input $x$ it halts in a final state.  The language of a 
-Turing machine is 
+on input $x$ it halts in a final state. The language of a Turing machine is 
 
 $$
 L(M) = \{x \mid M \mbox{ accepts } x\}
@@ -233,7 +177,7 @@ machine is the tape contents when it halts.
 6. Design a Turing machine that adds in unary. Use the input alphabet
 $\{1,+\}$.
 
-    In unary, a non-negative integer $n$ is represented by $n+1$ 1's.
+    In unary, a non-negative integer $n$ is represented by $n+1$ 1's.  So 3 is represented as 1111.
     
     Example: Our machine should convert `111+1111` into ______________.
     

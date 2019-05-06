@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>7 DFA/NFA to Regular Expression | Modeling Computation</title>
-  <meta name="description" content="7 DFA/NFA to Regular Expression | Modeling Computation">
+  <title>9 Turing Machines | Modeling Computation</title>
+  <meta name="description" content="9 Turing Machines | Modeling Computation">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="7 DFA/NFA to Regular Expression | Modeling Computation" />
+  <meta property="og:title" content="9 Turing Machines | Modeling Computation" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 DFA/NFA to Regular Expression | Modeling Computation" />
+  <meta name="twitter:title" content="9 Turing Machines | Modeling Computation" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="regular-langauges.html">
-<link rel="next" href="regular-expressions-in-python.html">
+<link rel="prev" href="regular-expressions-in-python.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -222,86 +222,287 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dfanfa-to-regular-expression" class="section level1">
-<h1><span class="header-section-number">7</span> DFA/NFA to Regular Expression</h1>
-<div id="gnfa-generalied-nfa" class="section level2">
-<h2><span class="header-section-number">7.1</span> GNFA (Generalied NFA)</h2>
-<p>A GNFA (Generalized NFA) is like an NFA but the edges may be labeled with
-any regular expression. One way of obtaining a regular expression
-from a DFA or NFA uses an algorithm that works with GNFAs.</p>
+<div id="turing-machines" class="section level1">
+<h1><span class="header-section-number">9</span> Turing Machines</h1>
+<p>The Turing machine model pre-dates electronic computers and comes from the
+work of Hilbert (early 1900’s) and Turing and Church (1930)’s.</p>
+<ul>
+<li>Not trying to model (electronic) computers, but computation or algorithm</li>
+<li>Identified three essential ingredients: ______________, _____________, __________________
+<ul>
+<li>implicitly there is a fourth ingredient: ___________________</li>
+</ul></li>
+</ul>
+<!-- Read, Write, Remember -->
+<!-- Read, Write, Remember, Move/Locate -->
+<ul>
+<li>The Turing machine is a specific formalization of these basic ingredients</li>
+</ul>
+<div id="definition-of-a-1-tape-turing-machine-syntax" class="section level2">
+<h2><span class="header-section-number">9.1</span> Definition of a 1-tape Turing Machine (Syntax)</h2>
+<p>A Turing machine consists of the following:</p>
+<ul>
+<li><strong>input alphabet</strong>: A set of symbols used for inputs.</li>
+<li><strong>tape alphabet</strong>: Input alphabet plus and at least one additional symbol,
+the <strong>blank symbol</strong>.</li>
+<li><strong>states</strong>: A finite set.</li>
+<li><strong>initial/start state</strong>: one of the states to start in</li>
+<li><strong>final states</strong>: some of the states are designated as final or accepting states.
+(In some variations there are two kinds of final states: accepting and regecting.)</li>
+<li><strong>program</strong>: A list of <strong>instructions</strong>. Each instruction has 5 parts:
+<ul>
+<li><code>&lt;current tape symbol&gt;</code>: any tape symbol</li>
+<li><code>&lt;current state&gt;</code>: any state</li>
+<li><code>&lt;new tape symbol&gt;</code>: any tape symbol</li>
+<li><code>&lt;new state&gt;</code>: any state</li>
+<li><code>&lt;direction&gt;</code>: left, right, or stay</li>
+</ul></li>
+</ul>
 </div>
-<div id="algorithm-for-converting-dfanfa-to-regular-expression" class="section level2">
-<h2><span class="header-section-number">7.2</span> Algorithm for converting DFA/NFA to Regular Expression</h2>
-<p>Suppose we want to find an equivalent regular expression for some DFA or NFA. Here
-is an algorithm to do so.</p>
-<ol style="list-style-type: decimal">
-<li><p>Modify the the original machine.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Add a <strong>new start state</strong> with a <span class="math inline">\(\lambda\)</span> transition to the old start state.
-(We can skip this step if the start state is already lonely (has in-degree 0).)</li>
-<li>Add a <strong>new final state</strong> with a <span class="math inline">\(\lambda\)</span> transition from all old final states.
-(We can skip this step if there is exactly one final state and it has out-degree 0.)</li>
-<li>The new final state will be the <strong>only final state</strong>.</li>
-<li><strong>Replace mutliple edges</strong> between any pair of states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>
-with one edge labeled with the union of the labels of the original edges.
-[Example <span class="math inline">\(A \stackrel{0,1}{\to} B\)</span> becomes <span class="math inline">\(A \stackrel{0 \cup 1}{\to} B\)</span>.]</li>
-</ol></li>
-<li><p>Pick an internal state (not the start state or the final state)
-to “rip out”. Let’s call that state <span class="math inline">\(R\)</span>.</p>
-<ol style="list-style-type: lower-alpha">
-<li>If <span class="math inline">\(R\)</span> doesn’t have a self-loop,
-replacejevery <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
-<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B\)</span>.</li>
-<li>If <span class="math inline">\(R\)</span> has a self-loop labeled <span class="math inline">\(r_{\mathrm{self}}\)</span>,
-replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
-<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B\)</span>.</li>
-<li>If this results in multiple edges between two states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,
-replace them with one edge labeled with the union of their labels.</li>
-</ol></li>
-<li><p>Repeat step 2 until the only states left are the start state and the final
-state. There will be only one transition remaining, and its label will be a regular
-expression for the language recognized by the original DFA or NFA.</p></li>
-</ol>
+<div id="execution-of-a-turing-machine-program-semantics" class="section level2">
+<h2><span class="header-section-number">9.2</span> Execution of a Turing Machine program (Semantics)</h2>
+<p>Imagine a machine with a 2-way infinite tape divided into cells.
+Each cell contains exactly one symbol from the tape alphabet.
+At the start of the execution, the input is written on the tape,
+the read/write head is located at the left most symbol of the input,
+and all cells that don’t contain part of the input contain the blank sybmol.</p>
+<p><img src="../images/TM-Fig-12-5-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>At each step in the execution of a Turing machine program, the
+read/write head is located at one cell of the tape. The program
+uses the current state and contents of the tape at that position
+to determine its action:</p>
+<ul>
+<li>write a symbol in the current cell (overwriting what was there before),</li>
+<li>move the head left or right (or stay put)</li>
+<li>update the state</li>
+</ul>
+<p>This is repeated until one of two things happens:</p>
+<ul>
+<li>there is no instruction to execute, or</li>
+<li>the state is a final state</li>
+</ul>
+<p>When either of these two things happens, the machine <strong>halts</strong>.</p>
+<div id="ascii-representations-of-turing-machines" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> ASCII Representations of Turing Machines</h3>
+<p>There are several websites that provide Turing machine simulators. Here are
+a few:</p>
+<ul>
+<li><a href="http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/" class="uri">http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/</a> – My favorite,
+but no longer usable since it was written in java by Calvin student Eliot Eschlemaman
+back when java applets were still a thing.</li>
+<li><a href="http://morphett.info/turing/turing.html" class="uri">http://morphett.info/turing/turing.html</a> – plain output, and less flexible (initial
+state must always be called 0, for example), but the program encoding is terse.</li>
+<li><a href="https://turingmachinesimulator.com/" class="uri">https://turingmachinesimulator.com/</a> – nice looking and more flexible,
+but each instruction takes up 3 lines (current state and tape symbol on one line; new state,
+direction, and new symbol on the next line; then a blank line)</li>
+</ul>
+<p>Each uses a slightly different ASCII representation of a Turing Machine.
+They are all pretty similar but differ in</p>
+<ul>
+<li>How the input alphabet, tape alphabet, start state and accepting states are described</li>
+<li>How they represent the blank tape symbol. (Often there is a fixed symbol for this like
+<code>b</code>, <code>B</code> or <code>_</code>.)</li>
+<li>Whether they are case sensitive, disallow certain characters, observe white space, etc.</li>
+<li>How left/right/stay are denoted</li>
+<li>The order in which the 5 parts of an instruction are given</li>
+<li>Which of variaous variations on the the 1-tape Turing machine theme they support (and how you
+tell the simulator which flavor</li>
+</ul>
 </div>
-<div id="examples-1" class="section level2">
-<h2><span class="header-section-number">7.3</span> Examples</h2>
+</div>
+<div id="examples-2" class="section level2">
+<h2><span class="header-section-number">9.3</span> Examples</h2>
+<div id="example-1" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> Example 1</h3>
+<!-- Example 12.5.1 from Rosen6 -->
+<pre><code>; in style of &lt;http://morphett.info/turing/turing.html&gt;
+; state symbol symbol direction state
+; s0 is initial state
+0  * * * s0
+s0 0 0 r s0 
+s0 1 1 r s1 
+s0 _ _ r halt 
+s1 0 0 r s0
+s1 1 1 l s2 
+s1 _ _ r halt
+s2 1 0 r halt</code></pre>
 <ol style="list-style-type: decimal">
-<li>Systematically convert this DFA into an equivalent regular expression.</li>
+<li><p>For each input string below, determine the configuration
+(tape contents, location of read-write head, and state)
+of the Turing machine when it halts.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lambda\)</span></li>
+<li>01</li>
+<li>0101</li>
+<li>010110</li>
+<li>001</li>
+</ol></li>
 </ol>
-<p><img src="../images/DFA-regex-example.png" width="40%" style="display: block; margin: auto;" /></p>
 
+</div>
+<div id="example-2" class="section level3">
+<h3><span class="header-section-number">9.3.2</span> Example 2</h3>
+<pre><code>; [init] is initial state
+0 * * * [init]
+[init] 0 0 r [10] 
+[init] 1 0 r [01]
+[init] _ _ * halt-init
+[00] 0 0 r [10]
+[00] 1 1 r [01]
+[00] _ _ * halt-00
+[01] 0 0 r [11]
+[01] 1 1 r [00]
+[01] _ _ r [01]
+[10] 0 0 r [00]
+[10] 1 1 r [11]
+[11] 0 0 r [01]
+[11] 1 1 r [10]</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>Systematically convert this DFA into an equivalent regular expression.</li>
+<li><p>For each input string below, determine the configuration
+(tape contents, location of read-write head, and state)
+of the Turing machine when it halts.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lambda\)</span></li>
+<li>0110</li>
+<li>01111</li>
+<li>01110</li>
+</ol></li>
 </ol>
-<p><img src="../images/DFA-regex-2.png" width="60%" style="display: block; margin: auto;" /></p>
-
-<ol start="3" style="list-style-type: decimal">
-<li>Systematically convert this DFA into an equivalent regular expression.</li>
-</ol>
-<p><img src="../images/DFA-Fig-12-4-5.png" width="30%" style="display: block; margin: auto;" /></p>
-
-<p>You can find additional worked examples online at places like</p>
-<ul>
-<li><a href="https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf" class="uri">https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf</a></li>
-<li><a href="https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf" class="uri">https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf</a></li>
-</ul>
-<p>But note that sometimes the notation isn’t quite the same.</p>
-<ul>
-<li><span class="math inline">\(\varepsilon\)</span> is sometimes used for what we have called <span class="math inline">\(\lambda\)</span>.</li>
-<li><span class="math inline">\(+\)</span> is sometimes used in place of <span class="math inline">\(\cup\)</span>.</li>
-</ul>
 </div>
-<div id="review-problems" class="section level2">
-<h2><span class="header-section-number">7.4</span> Review problems</h2>
-<ol style="list-style-type: decimal">
-<li><p>Show that if <span class="math inline">\(A\)</span> is a regular language, then <span class="math inline">\(\overline{A}\)</span> is also a regular
-language.</p></li>
-<li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are regular languages, then <span class="math inline">\(A \;\cap\;B\)</span> is also
-a regular language.</p></li>
-<li><p>Convert the machines on this sheet to equivalent regular grammars.</p></li>
+<div id="the-language-recognized-by-a-turing-machine" class="section level3">
+<h3><span class="header-section-number">9.3.3</span> The language recognized by a Turing Machine</h3>
+<p>We will say that a Turing machine <span class="math inline">\(M\)</span> accepts a string <span class="math inline">\(x\)</span> (by state) if
+on input <span class="math inline">\(x\)</span> it halts in a final state. The language of a Turing machine is</p>
+<p><span class="math display">\[
+L(M) = \{x \mid M \mbox{ accepts } x\}
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>What langauges do the previous two machines accept?</li>
+</ol>
+</div>
+<div id="designing-a-turing-machine" class="section level3">
+<h3><span class="header-section-number">9.3.4</span> Designing a Turing Machine</h3>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Design a Turing machine that recognizes
+<span class="math inline">\((\bm{0} \cup \bm{1})\bm{1}(\bm{0} \cup \bm{1})^*\)</span></p></li>
+<li><p>Design a Turing machine that recognizes
+<span class="math inline">\(\{0^n1^n \mid n \ge 0\}\)</span>. This shows that Turing machines
+can recognize languages that are not regular.</p></li>
+</ol>
+<p>Turing machines can also compute functions. The output of a Turing
+machine is the tape contents when it halts.</p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Design a Turing machine that adds in unary. Use the input alphabet
+<span class="math inline">\(\{1,+\}\)</span>.</p>
+<p>In unary, a non-negative integer <span class="math inline">\(n\)</span> is represented by <span class="math inline">\(n+1\)</span> 1’s. So 3 is represented as 1111.</p>
+<p>Example: Our machine should convert <code>111+1111</code> into ______________.</p></li>
+</ol>
+<p>A Turing machine computes <strong>neatly</strong> if when it halts (a) the read/write head
+is on the left-most non-blank tape symbol (or any blank symbol if the tape is
+all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
+are contiguous on the tape).</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Modify your previous machine so that it computes neatly.</li>
 </ol>
 
+</div>
+</div>
+<div id="variations-on-the-turing-machine" class="section level2">
+<h2><span class="header-section-number">9.4</span> Variations on the Turing Machine</h2>
+<p>There are many variations on the Turing machine. Here are some
+examples.</p>
+<ul>
+<li><p>Instead of having a single tape, a Turing machine can have multiple tapes.</p></li>
+<li><p>Instead of being 2-way infinite, the tape(s) can have a left end.
+These are called 1-way infinite tapes. (Attemping to move left
+from the left-most cell causes the machine to halt.)</p></li>
+<li><p>Turing machines may be required to move the head at each step (so “stay” is
+not an option).</p></li>
+<li><p>Multi-track tapes aren’t really a variation, but a handy way of thinking about
+a tape alphabet. (Our simulator makes this easy to do.) Since the tape alphabet
+may be anything, if we want to simulate writing two symbols from <span class="math inline">\(A\)</span>, we can use a
+tape alphabet of <span class="math inline">\(A \times A\)</span> or even <span class="math inline">\(A \cup (A \times A)\)</span>.
+One element of <span class="math inline">\(A \times A\)</span> represents two elements
+from <span class="math inline">\(A\)</span> (one on the “top track” and one on the “bottom track”).</p></li>
+<li><p>Instead of having a 1-diminsional tape, a tape can be a
+2-dimensional grid of cells. The read/write head can move up
+and down in addition to left and right.</p></li>
+</ul>
+<p>See the Turing machine specification for our simulator to learn how to write
+Turing machine programs that take advantage of these additional features.</p>
+<p>Each of these variations is equivalent to the standard Turing
+machine with one 2-way infinite tape. So are many other models of
+computation. This has led to the so-called <strong>Church-Turing Thesis</strong>.
+Here is one statement of that thesis:</p>
+<blockquote>
+<p>A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.</p>
+</blockquote>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Give a high level description of how to convert a Turing
+machine with 2-way infinite tape into a Turing machine with a
+1-way infinite tape.</p></li>
+<li><p>Give a high level description of how to convert a 2-tape
+machine into a 1-tape machine.</p></li>
+<li><p><strong>Nested Parens</strong>
+Write a Turing machine recognizes all strings that use the
+input alphabet <span class="math inline">\(\{(, ), *\}\)</span> and the parentheses are properly
+nested. (The asterisks may be anywhere.)</p>
+<ol style="list-style-type: lower-alpha">
+<li>First try this with a two-tape machine.</li>
+<li>Then try this with one two-track tape.</li>
+<li>For an extra challenge, try doing it with a one-tape machine
+with tape alphabet <span class="math inline">\(\{(, ), *, \# \}\)</span></li>
+</ol></li>
+</ol>
+</div>
+<div id="running-time-of-a-turing-machine" class="section level2">
+<h2><span class="header-section-number">9.5</span> Running time of a Turing machine</h2>
+<p>The running time of a Turing machine on input <span class="math inline">\(x\)</span> is the number
+of steps before it halts. The conversions above typically change
+the running time, but machines that run in polynomial time are
+converted into machines that run in polynomial time (typically
+with a different degree polynomial).</p>
+<div id="p-and-np" class="section level3">
+<h3><span class="header-section-number">9.5.1</span> P and NP</h3>
+<p>This provides a formal definition of the famous set <span class="math inline">\(P\)</span>. <span class="math inline">\(P\)</span> is the
+set of all languages that can be recognized by a Turing machine
+in polynomial time.</p>
+<p>A <strong>non-deterministic Turing machine</strong> can have multiple transitions
+from the same state/tape contents configuration. A non-deterministic
+TM accepts an input <span class="math inline">\(x\)</span> if there is a way of choosing transitions
+that causes the machine to halt in a final state. (This is similar
+to how non-detrministic automata were defined). <span class="math inline">\(NP\)</span> is the set of
+all languages that can be recognized by a non-detrministic
+Turing machine.</p>
+<p>The “<span class="math inline">\(P\)</span> vs. <span class="math inline">\(NP\)</span> question” is whether <span class="math inline">\(P\)</span> and <span class="math inline">\(NP\)</span> are the same
+or different. To date, this question is unresolved.</p>
+<!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
+<!-- modified to also accept empty string -->
+<!-- ``` -->
+<!-- ATM -->
+<!-- Example Turing Machine -->
+<!-- 0 1 // input alphabet, note such comments are permitted at the end of the line -->
+<!-- 0 1 X Y B // tape alphabet -->
+<!-- 1 // number of tapes -->
+<!-- 1 // number of tracks on tape 0 -->
+<!-- 2 // tape 0 is 2-way infinite -->
+<!-- q0 // the initial state -->
+<!-- q4 // final state -->
+<!-- q0 B q4 B S -->
+<!-- q0 0 q1 X R -->
+<!-- q0 Y q3 Y R -->
+<!-- q1 0 q1 0 R -->
+<!-- q1 1 q2 Y L -->
+<!-- q1 Y q1 Y R -->
+<!-- q2 0 q2 0 L -->
+<!-- q2 X q0 X R -->
+<!-- q2 Y q2 Y L -->
+<!-- q3 Y q3 Y R -->
+<!-- q3 B q4 B R -->
+<!-- end // required -->
+<!-- ``` -->
 
+</div>
 </div>
 </div>
             </section>
@@ -309,8 +510,8 @@ a regular language.</p></li>
           </div>
         </div>
       </div>
-<a href="regular-langauges.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="regular-expressions-in-python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regular-expressions-in-python.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
