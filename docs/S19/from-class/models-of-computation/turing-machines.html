@@ -25,7 +25,7 @@
 <meta name="author" content="R Pruim">
 
 
-<meta name="date" content="2019-05-05">
+<meta name="date" content="2019-05-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -200,7 +200,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.3" data-path="turing-machines.html"><a href="turing-machines.html#the-language-recognized-by-a-turing-machine"><i class="fa fa-check"></i><b>9.3.3</b> The language recognized by a Turing Machine</a></li>
 <li class="chapter" data-level="9.3.4" data-path="turing-machines.html"><a href="turing-machines.html#designing-a-turing-machine"><i class="fa fa-check"></i><b>9.3.4</b> Designing a Turing Machine</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#variations-on-the-turing-machine"><i class="fa fa-check"></i><b>9.4</b> Variations on the Turing Machine</a></li>
+<li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#what-can-turing-machines-do"><i class="fa fa-check"></i><b>9.4</b> What Can Turing Machines Do?</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="turing-machines.html"><a href="turing-machines.html#turing-computable-languages"><i class="fa fa-check"></i><b>9.4.1</b> Turing Computable Languages</a></li>
+<li class="chapter" data-level="9.4.2" data-path="turing-machines.html"><a href="turing-machines.html#the-halting-problem"><i class="fa fa-check"></i><b>9.4.2</b> The Halting Problem</a></li>
+<li class="chapter" data-level="9.4.3" data-path="turing-machines.html"><a href="turing-machines.html#variations-on-the-turing-machine"><i class="fa fa-check"></i><b>9.4.3</b> Variations on the Turing Machine</a></li>
+</ul></li>
 <li class="chapter" data-level="9.5" data-path="turing-machines.html"><a href="turing-machines.html#running-time-of-a-turing-machine"><i class="fa fa-check"></i><b>9.5</b> Running time of a Turing machine</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="turing-machines.html"><a href="turing-machines.html#p-and-np"><i class="fa fa-check"></i><b>9.5.1</b> P and NP</a></li>
 </ul></li>
@@ -248,7 +252,7 @@ the <strong>blank symbol</strong>.</li>
 <li><strong>states</strong>: A finite set.</li>
 <li><strong>initial/start state</strong>: one of the states to start in</li>
 <li><strong>final states</strong>: some of the states are designated as final or accepting states.
-(In some variations there are two kinds of final states: accepting and regecting.)</li>
+(In some variations there are two kinds of final states: accepting and rejecting.)</li>
 <li><strong>program</strong>: A list of <strong>instructions</strong>. Each instruction has 5 parts:
 <ul>
 <li><code>&lt;current tape symbol&gt;</code>: any tape symbol</li>
@@ -265,7 +269,7 @@ the <strong>blank symbol</strong>.</li>
 Each cell contains exactly one symbol from the tape alphabet.
 At the start of the execution, the input is written on the tape,
 the read/write head is located at the left most symbol of the input,
-and all cells that don’t contain part of the input contain the blank sybmol.</p>
+and all cells that don’t contain part of the input contain the blank symbol.</p>
 <p><img src="../images/TM-Fig-12-5-1.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>At each step in the execution of a Turing machine program, the
 read/write head is located at one cell of the tape. The program
@@ -288,7 +292,7 @@ to determine its action:</p>
 a few:</p>
 <ul>
 <li><a href="http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/" class="uri">http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/</a> – My favorite,
-but no longer usable since it was written in java by Calvin student Eliot Eschlemaman
+but no longer usable since it was written in java by Calvin student Eliot Eschelman
 back when java applets were still a thing.</li>
 <li><a href="http://morphett.info/turing/turing.html" class="uri">http://morphett.info/turing/turing.html</a> – plain output, and less flexible (initial
 state must always be called 0, for example), but the program encoding is terse.</li>
@@ -305,7 +309,7 @@ They are all pretty similar but differ in</p>
 <li>Whether they are case sensitive, disallow certain characters, observe white space, etc.</li>
 <li>How left/right/stay are denoted</li>
 <li>The order in which the 5 parts of an instruction are given</li>
-<li>Which of variaous variations on the the 1-tape Turing machine theme they support (and how you
+<li>Which of various variations on the the 1-tape Turing machine theme they support (and how you
 tell the simulator which flavor</li>
 </ul>
 </div>
@@ -372,12 +376,12 @@ of the Turing machine when it halts.</p>
 <div id="the-language-recognized-by-a-turing-machine" class="section level3">
 <h3><span class="header-section-number">9.3.3</span> The language recognized by a Turing Machine</h3>
 <p>We will say that a Turing machine <span class="math inline">\(M\)</span> accepts a string <span class="math inline">\(x\)</span> (by state) if
-on input <span class="math inline">\(x\)</span> it halts in a final state. The language of a Turing machine is</p>
+on input <span class="math inline">\(x\)</span> it halts in a final state. The language recognized by a Turing machine is</p>
 <p><span class="math display">\[
 L(M) = \{x \mid M \mbox{ accepts } x\}
 \]</span></p>
 <ol start="3" style="list-style-type: decimal">
-<li>What langauges do the previous two machines accept?</li>
+<li>What languages do the previous two machines recognize?</li>
 </ol>
 </div>
 <div id="designing-a-turing-machine" class="section level3">
@@ -407,29 +411,82 @@ are contiguous on the tape).</p>
 
 </div>
 </div>
-<div id="variations-on-the-turing-machine" class="section level2">
-<h2><span class="header-section-number">9.4</span> Variations on the Turing Machine</h2>
+<div id="what-can-turing-machines-do" class="section level2">
+<h2><span class="header-section-number">9.4</span> What Can Turing Machines Do?</h2>
+<div id="turing-computable-languages" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> Turing Computable Languages</h3>
+<p>A language <span class="math inline">\(L\)</span> is <strong>Turing computable</strong> if it is recognized by some Turing machine <strong>that always halts</strong>, that is,</p>
+<ul>
+<li><span class="math inline">\(L = L(M)\)</span> for some Turing machine <span class="math inline">\(M\)</span>.</li>
+<li><span class="math inline">\(M\)</span> halts on every input. (If <span class="math inline">\(x\in L\)</span> it halts in an accepting state.)</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Show that every regular language is Turing computable.</p>
+<p>[Hint: What must you do to demonstrate this?]</p></li>
+</ol>
+</div>
+<div id="the-halting-problem" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> The Halting Problem</h3>
+<p>The <strong>Halting Problem</strong> is a famous example of a language that is not Turing computable.
+By the <strong>Church-Turing Thesis</strong>, this would mean it is not computable by any means.</p>
+<p>Why is it called the Halting <em>Problem</em>, you ask, instead of the Halting <em>Language</em>?
+This goes back to a description of languages as answers to yes/no questions. Each such
+problem (ie, language) an be described by an <strong>instance</strong> and a <strong>question</strong>. Here are
+some examples:</p>
+<p><strong>Euler</strong></p>
+<ul>
+<li>Instance: A Graph <span class="math inline">\(G\)</span></li>
+<li>Question: Does <span class="math inline">\(G\)</span> have an Euler Circuit?</li>
+</ul>
+<p><strong>3-Colorability</strong></p>
+<ul>
+<li>Instance: A Graph <span class="math inline">\(G\)</span></li>
+<li>Question: Is <span class="math inline">\(G\)</span> 3-colorable? (Can we color the vertices with 3 colors so that
+no adjacent vertices are the same color.)</li>
+</ul>
+<p><strong>SAT</strong></p>
+<ul>
+<li>Instance: A first order logical formula <span class="math inline">\(\varphi\)</span> (made with <span class="math inline">\(\land\)</span>, <span class="math inline">\(\lor\)</span>, <span class="math inline">\(\neg\)</span> and some
+logical variables).</li>
+<li>Question: Is <span class="math inline">\(\varphi\)</span> satisfiable? (Can we set the variables to TRUE/FALSE in a way
+that makes the entire formula true?)</li>
+</ul>
+<p>Implicit in each of these descriptions is some encoding scheme by which the objects
+mentioned in the instance are coded as bit strings. Typically, if we are only interested
+in whether a problem is Turing computable or not, it does not matter which coding scheme
+is used as long as it is systematic.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>An entire book <span class="citation">(Garey and Johnson 1979)</span> of such problems (and whether or not they were NP-complete) was produced in
+the 1970’s by Garey and Johnson and popularized this description. So you will see languages
+referred to as problems throughout the CS literature.</p>
+<p>Here is a description of the Halting Problem.</p>
+<ul>
+<li>Instance: A Turing Machine <span class="math inline">\(M\)</span> and an input string <span class="math inline">\(x\)</span>.</li>
+<li>Question: Does <span class="math inline">\(M\)</span> stop on input <span class="math inline">\(x\)</span>? (This is written <span class="math inline">\(M(x) \downarrow\)</span>.)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Show that that Halting Problem is not Turing computable.</li>
+</ol>
+</div>
+<div id="variations-on-the-turing-machine" class="section level3">
+<h3><span class="header-section-number">9.4.3</span> Variations on the Turing Machine</h3>
 <p>There are many variations on the Turing machine. Here are some
 examples.</p>
 <ul>
 <li><p>Instead of having a single tape, a Turing machine can have multiple tapes.</p></li>
 <li><p>Instead of being 2-way infinite, the tape(s) can have a left end.
-These are called 1-way infinite tapes. (Attemping to move left
-from the left-most cell causes the machine to halt.)</p></li>
+These are called 1-way infinite tapes.</p></li>
 <li><p>Turing machines may be required to move the head at each step (so “stay” is
 not an option).</p></li>
 <li><p>Multi-track tapes aren’t really a variation, but a handy way of thinking about
-a tape alphabet. (Our simulator makes this easy to do.) Since the tape alphabet
+a tape alphabet. (And some simulators makes this easy to do.) Since the tape alphabet
 may be anything, if we want to simulate writing two symbols from <span class="math inline">\(A\)</span>, we can use a
 tape alphabet of <span class="math inline">\(A \times A\)</span> or even <span class="math inline">\(A \cup (A \times A)\)</span>.
 One element of <span class="math inline">\(A \times A\)</span> represents two elements
 from <span class="math inline">\(A\)</span> (one on the “top track” and one on the “bottom track”).</p></li>
-<li><p>Instead of having a 1-diminsional tape, a tape can be a
+<li><p>Instead of having a 1-dimensional tape, a tape can be a
 2-dimensional grid of cells. The read/write head can move up
 and down in addition to left and right.</p></li>
 </ul>
-<p>See the Turing machine specification for our simulator to learn how to write
-Turing machine programs that take advantage of these additional features.</p>
 <p>Each of these variations is equivalent to the standard Turing
 machine with one 2-way infinite tape. So are many other models of
 computation. This has led to the so-called <strong>Church-Turing Thesis</strong>.
@@ -437,7 +494,7 @@ Here is one statement of that thesis:</p>
 <blockquote>
 <p>A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.</p>
 </blockquote>
-<ol start="8" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li><p>Give a high level description of how to convert a Turing
 machine with 2-way infinite tape into a Turing machine with a
 1-way infinite tape.</p></li>
@@ -455,6 +512,7 @@ with tape alphabet <span class="math inline">\(\{(, ), *, \# \}\)</span></li>
 </ol></li>
 </ol>
 </div>
+</div>
 <div id="running-time-of-a-turing-machine" class="section level2">
 <h2><span class="header-section-number">9.5</span> Running time of a Turing machine</h2>
 <p>The running time of a Turing machine on input <span class="math inline">\(x\)</span> is the number
@@ -466,16 +524,17 @@ with a different degree polynomial).</p>
 <h3><span class="header-section-number">9.5.1</span> P and NP</h3>
 <p>This provides a formal definition of the famous set <span class="math inline">\(P\)</span>. <span class="math inline">\(P\)</span> is the
 set of all languages that can be recognized by a Turing machine
-in polynomial time.</p>
+in polynomial time, that is, the number of steps the machine takes
+on an input of length <span class="math inline">\(n\)</span> is bounded by <span class="math inline">\(p(n)\)</span> for some polynomial <span class="math inline">\(p\)</span>.</p>
 <p>A <strong>non-deterministic Turing machine</strong> can have multiple transitions
 from the same state/tape contents configuration. A non-deterministic
 TM accepts an input <span class="math inline">\(x\)</span> if there is a way of choosing transitions
 that causes the machine to halt in a final state. (This is similar
-to how non-detrministic automata were defined). <span class="math inline">\(NP\)</span> is the set of
-all languages that can be recognized by a non-detrministic
-Turing machine.</p>
+to how non-deterministic automata were defined). <span class="math inline">\(NP\)</span> is the set of
+all languages that can be recognized by a non-deterministic
+Turing machine in polynomial time.</p>
 <p>The “<span class="math inline">\(P\)</span> vs. <span class="math inline">\(NP\)</span> question” is whether <span class="math inline">\(P\)</span> and <span class="math inline">\(NP\)</span> are the same
-or different. To date, this question is unresolved.</p>
+or different. To date, this question is unresolved.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
 <!-- modified to also accept empty string -->
 <!-- ``` -->
@@ -502,8 +561,29 @@ or different. To date, this question is unresolved.</p>
 <!-- end // required -->
 <!-- ``` -->
 
+<div id="refs" class="references">
+<div>
+<p>Garey, M. R., and David S. Johnson. 1979. <em>Computers and Intractability: A Guide to the Theory of Np-Completeness</em>. W. H. Freeman.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The coding scheme can affect the efficiency of a Turing machine computation. Generally
+it is required that the encoding be reasonably efficient and not bloated or wasteful of space.<a href="turing-machines.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Solving this could make you both rich and famous.<a href="turing-machines.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

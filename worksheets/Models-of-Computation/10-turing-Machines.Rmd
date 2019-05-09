@@ -3,6 +3,7 @@
 
 # Turing Machines
 
+
 The Turing machine model pre-dates electronic computers and comes from the 
 work of Hilbert (early 1900's) and Turing and Church (1930)'s.
 
@@ -27,7 +28,7 @@ the **blank symbol**.
 * **states**: A finite set.
 * **initial/start state**: one of the states to start in
 * **final states**: some of the states are designated as final or accepting states.
-(In some variations there are two kinds of final states: accepting and regecting.)
+(In some variations there are two kinds of final states: accepting and rejecting.)
 * **program**: A list of **instructions**. Each instruction has 5 parts:
     * `<current tape symbol>`: any tape symbol
     * `<current state>`: any state
@@ -41,7 +42,7 @@ Imagine a machine with a 2-way infinite tape divided into cells.
 Each cell contains exactly one symbol from the tape alphabet.
 At the start of the execution, the input is written on the tape,
 the read/write head is located at the left most symbol of the input,
-and all cells that don't contain part of the input contain the blank sybmol.
+and all cells that don't contain part of the input contain the blank symbol.
 
 ```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
 knitr::include_graphics("../images/TM-Fig-12-5-1.png")
@@ -69,7 +70,7 @@ There are several websites that provide Turing machine simulators. Here are
 a few:
 
 * <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/> -- My favorite,
-but no longer usable since it was written in java by Calvin student Eliot Eschlemaman
+but no longer usable since it was written in java by Calvin student Eliot Eschelman
 back when java applets were still a thing.
 * <http://morphett.info/turing/turing.html> -- plain output, and less flexible (initial 
 state must always be called 0, for example), but the program encoding is terse.
@@ -86,7 +87,7 @@ They are all pretty similar but differ in
 * Whether they are case sensitive, disallow certain characters, observe white space, etc.
 * How left/right/stay are denoted
 * The order in which the 5 parts of an instruction are given
-* Which of variaous variations on the the 1-tape Turing machine theme they support (and how you
+* Which of various variations on the the 1-tape Turing machine theme they support (and how you
 tell the simulator which flavor
 
 ## Examples
@@ -154,13 +155,13 @@ of the Turing machine when it halts.
 ### The language recognized by a Turing Machine
 
 We will say that a Turing machine $M$ accepts a string $x$ (by state) if 
-on input $x$ it halts in a final state. The language of a Turing machine is 
+on input $x$ it halts in a final state. The language recognized by a Turing machine is 
 
 $$
 L(M) = \{x \mid M \mbox{ accepts } x\}
 $$
 
-3. What langauges do the previous two machines accept?
+3. What languages do the previous two machines recognize?
 
 ### Designing a Turing Machine
 
@@ -190,7 +191,67 @@ are contiguous on the tape).
 
 \newpage
 
-## Variations on the Turing Machine
+## What Can Turing Machines Do?
+
+### Turing Computable Languages
+
+A language $L$ is **Turing computable** if it is recognized by some Turing machine **that always halts**, that is, 
+
+* $L = L(M)$ for some Turing machine $M$.
+* $M$ halts on every input.  (If $x\in L$ it halts in an accepting state.)
+
+1. Show that every regular language is Turing computable.
+
+    [Hint: What must you do to demonstrate this?]
+
+### The Halting Problem
+
+The **Halting Problem** is a famous example of a language that is not Turing computable. 
+By the **Church-Turing Thesis**, this would mean it is not computable by any means.
+
+Why is it called the Halting *Problem*, you ask, instead of the Halting *Language*?
+This goes back to a description of languages as answers to yes/no questions. Each such
+problem (ie, language) an be described by an **instance** and a **question**.  Here are 
+some examples:
+
+**Euler**
+
+* Instance: A Graph $G$
+* Question: Does $G$ have an Euler Circuit?
+
+**3-Colorability**
+
+* Instance: A Graph $G$
+* Question: Is $G$ 3-colorable? (Can we color the vertices with 3 colors so that
+no adjacent vertices are the same color.)
+
+**SAT**
+
+* Instance: A first order logical formula $\varphi$ (made with $\land$, $\lor$, $\neg$ and some
+logical variables).
+* Question: Is $\varphi$ satisfiable? (Can we set the variables to TRUE/FALSE in a way
+that makes the entire formula true?)
+
+Implicit in each of these descriptions is some encoding scheme by which the objects
+mentioned in the instance are coded as bit strings.  Typically, if we are only interested
+in whether a problem is Turing computable or not, it does not matter which coding scheme 
+is used as long as it is systematic.[^TM-1]
+
+[^TM-1]: The coding scheme can affect the efficiency of a Turing machine computation. Generally
+it is required that the encoding be reasonably efficient and not bloated or wasteful of space.
+
+An entire book [@Garey:1979] of such problems (and whether or not they were NP-complete) was produced in
+the 1970's by Garey and Johnson and popularized this description. So you will see languages
+referred to as problems throughout the CS literature.
+
+Here is a description of the Halting Problem.
+
+* Instance: A Turing Machine $M$ and an input string $x$.
+* Question: Does $M$ stop on input $x$?  (This is written $M(x) \downarrow$.)
+
+2. Show that that Halting Problem is not Turing computable.
+
+### Variations on the Turing Machine
 
 There are many variations on the Turing machine.  Here are some
 examples.
@@ -198,25 +259,21 @@ examples.
 * Instead of having a single tape, a Turing machine can have multiple tapes.
 
 * Instead of being 2-way infinite, the tape(s) can have a left end.
-These are called 1-way infinite tapes.  (Attemping to move left
-from the left-most cell causes the machine to halt.)
+These are called 1-way infinite tapes.  
 
 * Turing machines may be required to move the head at each step (so "stay" is
 not an option).
 
 * Multi-track tapes aren't really a variation, but a handy way of thinking about
-a tape alphabet.  (Our simulator makes this easy to do.)  Since the tape alphabet
+a tape alphabet.  (And some simulators makes this easy to do.)  Since the tape alphabet
 may be anything, if we want to simulate writing two symbols from $A$, we can use a 
 tape alphabet of $A \times A$ or even $A \cup (A \times A)$. 
 One element of $A \times A$ represents two elements 
 from $A$ (one on the "top track" and one on the "bottom track").
 
-* Instead of having a 1-diminsional tape, a tape can be a
+* Instead of having a 1-dimensional tape, a tape can be a
 2-dimensional grid of cells.  The read/write head can move up
 and down in addition to left and right.
-
-See the Turing machine specification for our simulator to learn how to write 
-Turing machine programs that take advantage of these additional features.
 
 Each of these variations is equivalent to the standard Turing 
 machine with one 2-way infinite tape.  So are many other models of 
@@ -226,14 +283,14 @@ Here is one statement of that thesis:
 > A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.
 
 
-8. Give a high level description of how to convert a Turing 
+3. Give a high level description of how to convert a Turing 
 machine with 2-way infinite tape into a Turing machine with a 
 1-way infinite tape.
 
-9. Give a high level description of how to convert a 2-tape 
+4. Give a high level description of how to convert a 2-tape 
 machine into a 1-tape machine.
 
-10. **Nested Parens** 
+5. **Nested Parens** 
 Write a Turing machine recognizes all strings that use the 
 input alphabet $\{(, ), *\}$ and the parentheses are properly
 nested.  (The asterisks may be anywhere.)
@@ -243,7 +300,6 @@ nested.  (The asterisks may be anywhere.)
     c. For an extra challenge, try doing it with a one-tape machine
     with tape alphabet $\{(, ), *, \# \}$
     
-
 ## Running time of a Turing machine
 
 The running time of a Turing machine on input $x$ is the number 
@@ -256,18 +312,21 @@ with a different degree polynomial).
 
 This provides a formal definition of the famous set $P$. $P$ is the 
 set of all languages that can be recognized by a Turing machine
-in polynomial time.
+in polynomial time, that is, the number of steps the machine takes 
+on an input of length $n$ is bounded by $p(n)$ for some polynomial $p$.
 
 A **non-deterministic Turing machine** can have multiple transitions
 from the same state/tape contents configuration.  A non-deterministic
 TM accepts an input $x$ if there is a way of choosing transitions
 that causes the machine to halt in a final state.  (This is similar 
-to how non-detrministic automata were defined).  $NP$ is the set of 
-all languages that can be recognized by a non-detrministic
-Turing machine.
+to how non-deterministic automata were defined).  $NP$ is the set of 
+all languages that can be recognized by a non-deterministic
+Turing machine in polynomial time.
 
 The "$P$ vs. $NP$ question" is whether $P$ and $NP$ are the same
-or different.  To date, this question is unresolved.
+or different.  To date, this question is unresolved. [^TM-2]
+
+[^TM-2]: Solving this could make you both rich and famous.
 
 <!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
 <!-- modified to also accept empty string -->
