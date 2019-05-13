@@ -137,3 +137,42 @@ represented by a regular expression.
 DFAs, and NFAs.  (You should know how to do all of the conversions we have
 learned.)  Showing languages are not regular (Pumping Lemma).
 
+### Final Exam
+
+**Date/Time:** 1:30 on Wednseday, May 15 or 9am on Thursday, May 16. 
+(Please come to the time you have indicated so I have enough exam papers.)
+
+**Material Covered**: The exam will cover topics from the entire semester.
+In addition to the topics listed above for each test, the following topics are
+also included:
+
+* **Python regular expressions** (at the level of the slides we used and the regular
+expression game).
+* **Turing Computation**: Definition of Turing machine, tracing Turing machines,
+designing Turing machines, Turing computable languages, all regular languages
+are Turing computable, Halting Problem.
+
+An example question that could have been on test 3:
+
+> We learned an algorithm for converting any DFA into a regular expression.
+This problem asks you a few questions about that algorithm.
+
+> a. In the first phase of the algorithm,
+we must modify the automaton to make sure it
+satisfies some properties that are necessary for the algorithm to work correctly.
+What are those properties?
+> b. Demonstrate how to do the first phase using the DFA below.
+
+```{r echo = FALSE, out.width="50%", fig.align = "center"}
+knitr::include_graphics("test3-fig1.png")
+```
+
+> c. In the second phase, states are ``ripped out" of a GNFA until
+only two states remain.  Using that process, show what happens
+when state $a$ is ripped out of the GNFA shown below.
+(You don't have to complete the process, just do this one step.)
+
+```{r echo = FALSE, out.width="50%", fig.align = "center"}
+knitr::include_graphics("test3-fig2.png")
+```
+
