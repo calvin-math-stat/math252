@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introduction to Graphs | Graphs</title>
+  <meta name="description" content="1 Introduction to Graphs | Graphs" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introduction to Graphs | Graphs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introduction to Graphs | Graphs" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2020-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="more-graphs.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html"><i class="fa fa-check"></i><b>1</b> Introduction to Graphs</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graphs"><i class="fa fa-check"></i><b>1.1</b> Graphs</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-flavors"><i class="fa fa-check"></i><b>1.1.1</b> Graph flavors</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-representation"><i class="fa fa-check"></i><b>1.1.2</b> Graph Representation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#labeled-graphs"><i class="fa fa-check"></i><b>1.1.3</b> Labeled Graphs</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-models"><i class="fa fa-check"></i><b>1.1.4</b> Graph Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#bonus-problem"><i class="fa fa-check"></i><b>1.2</b> Bonus Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-graphs.html"><a href="more-graphs.html"><i class="fa fa-check"></i><b>2</b> More Graphs</a><ul>
+<li class="chapter" data-level="2.1" data-path="more-graphs.html"><a href="more-graphs.html#some-example-graphs"><i class="fa fa-check"></i><b>2.1</b> Some Example Graphs</a></li>
+<li class="chapter" data-level="2.2" data-path="more-graphs.html"><a href="more-graphs.html#some-terminology"><i class="fa fa-check"></i><b>2.2</b> Some Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="more-graphs.html"><a href="more-graphs.html#some-questions"><i class="fa fa-check"></i><b>2.3</b> Some Questions</a></li>
+<li class="chapter" data-level="2.4" data-path="more-graphs.html"><a href="more-graphs.html#nfl"><i class="fa fa-check"></i><b>2.4</b> NFL</a></li>
+<li class="chapter" data-level="2.5" data-path="more-graphs.html"><a href="more-graphs.html#some-special-graphs"><i class="fa fa-check"></i><b>2.5</b> Some special graphs</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Graphs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-graphs" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction to Graphs</h1>
+<div id="graphs" class="section level2">
+<h2><span class="header-section-number">1.1</span> Graphs</h2>
+<p>A Graph <span class="math inline">\(G\)</span> consists of two sets</p>
+<ul>
+<li><span class="math inline">\(V\)</span>, a set of vertices (also called nodes)</li>
+<li><span class="math inline">\(E\)</span>, a set of edges (each edge is associated with two<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> vertices)</li>
+</ul>
+<p>In modeling situations, the edges are used to express some sort of relationship
+between vertices.</p>
+<div id="graph-flavors" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Graph flavors</h3>
+<p>There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set. The first four are the most important.</p>
+<table>
+<thead>
+<tr class="header">
+<th>graph type</th>
+<th>edges</th>
+<th>multi-edges allowed?</th>
+<th>self-loops allowed?</th>
+<th>cycles allowed?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>simple graph</strong></td>
+<td>undirected</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td><strong>tree</strong></td>
+<td>undirected</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td><strong>directed graph</strong></td>
+<td>directed</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td><strong>directed acyclic graph</strong></td>
+<td>directed</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td>multigraph</td>
+<td>undirected</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>directed multigraph</td>
+<td>directed</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>pseudo-graph</td>
+<td>undirected</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>multi-edges</strong>: multiple edges between the same two vertices (in the same direction,
+in the case of directed graphs).</p>
+<p><strong>self-loop</strong>: an edge connecting a vertext to itself.</p>
+<p><strong>cycle</strong>: a chain of edges (called a <strong>path</strong>) that returns to where it started.</p>
+<p><strong>Directed graphs</strong> are sometimes called <strong>digraphs</strong>. <strong>Directed Acyclic Graphs</strong>
+are sometimes called <strong>DAGS</strong>.</p>
+</div>
+<div id="graph-representation" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Graph Representation</h3>
+<p>(Small) graphs are often depicted using dots for vertices and line segments
+or arcs for edges. For directed graphs, an arrow is used to indicate the
+direction.</p>
+<ol style="list-style-type: decimal">
+<li>For each type of graph, draw a picture of an example graph with 5 vertices.</li>
+<li>Why are trees called trees?</li>
+</ol>
+</div>
+<div id="labeled-graphs" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Labeled Graphs</h3>
+<p>In many situations it is useful to add additional information to either the
+vertices or the edges. These are sometimes called “labeled” graphs and the
+extra information referred to as labels.</p>
+</div>
+<div id="graph-models" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Graph Models</h3>
+<p>Many things can be models with graphs of various types. In each situation
+below,</p>
+<ul>
+<li>identify the vertices</li>
+<li>identify what edges represent</li>
+<li>determine which flavor of graph would be used</li>
+<li>determine what, if any, information might be useful as labels (on vertices
+or on edges or on both)</li>
+<li>if the graph has any special properties, note them</li>
+<li>if your group disagrees about some of the answers, identify whether it
+is because you are making different assumptions about the situation being
+modeled</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<table>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Vertices</th>
+<th>Edges</th>
+<th>Type of Graph</th>
+<th>Labels/Properties?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Niche Overlap.</strong> Some species of animals compete with other
+species in an ecosystem.</p></li>
+<li><p><strong>Acquaintanceship.</strong> Some pairs of people are acquainted with each
+other, some are not.</p></li>
+<li><p><strong>Precedence and Concurrent Processing.</strong> Computer programs can be
+executed more rapidly by executing some statements concurrently
+But it is important not to execute a statement that depends
+on the results of statements that have not yet been executed. What is the
+precedence graph for this simple program?</p></li>
+</ol>
+<pre><code>          a = 0
+          b = 1
+          c = a + 1
+          d = b + a
+          e = d + 1
+          e = c + d</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p><strong>Influence.</strong> In studies of group behavior it is observed that
+certain people can influence the thinking of other people.</p></li>
+<li><p><strong>Hollywood.</strong> Some actors have been in movies together, others have not.</p></li>
+<li><p><strong>Round-Robin Tournament.</strong> In a round robin tournament, each team plays
+each other team once. (The graph should keep track of who wins and loses each game.)</p></li>
+<li><p><strong>General Sports Schedule.</strong> The schedule for most leagues is
+not a round-robin tournament. How does that change the graph?
+If the games haven’t been played yet, what information might the
+graph keep track of? How?</p></li>
+<li><p><strong>Telephone calls.</strong></p></li>
+<li><p><strong>World Wide Web.</strong></p></li>
+<li><p><strong>Road maps.</strong></p></li>
+</ol>
+</div>
+</div>
+<div id="bonus-problem" class="section level2">
+<h2><span class="header-section-number">1.2</span> Bonus Problem</h2>
+<p>From 1961 through 1977 the NFL (National Football League) had a 14-game season.
+Until 1976, when two new teams were added, there were 13 teams in each of 2
+conferences. The NFL wanted a schedule were each team would play 11 games
+against other teams in their conference and 3 games against teams from the other
+conference.</p>
+<p>Devise such a schedule or explain why it is not possible.
+For simplicity, let’s name the teams in the American Football Conference (AFC)
+<span class="math inline">\(A_1, A_2, \dots, A_{13}\)</span> and the teams in the National Football Conference (NFC)
+<span class="math inline">\(N_1, N_2, \dots, N_{13}\)</span>.</p>
+<!-- motivate: degree, subgraph, bipartite graph -->
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>In some types of graphs, the two vertices may be the same, so there is
+really only one vertex. This is called a self-loop.<a href="introduction-to-graphs.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="more-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Graph-worksheets.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
