@@ -1,0 +1,34 @@
+---
+title: "Create WebWork Roster"
+author: "Math 252"
+date: "1/31/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(webwork)
+require(mosaic)
+require(tidyr)
+require(readxl)
+require(readr)
+```
+
+```{r}
+# Roster <- read_excel("M252S18roster.xlsx") 
+# Roster <- read_csv("Roster_MATH-252-A_1_28_2019_5_35 PM.csv") %>%
+#  bind_rows(read_csv("Roster_MATH-252-B_1_28_2019_5_35 PM.csv")) %>%
+
+Roster <- read_csv("section-rosters_MATH-252-A_1_31_2020_10_39 AM.csv") %>%
+  bind_rows(read_csv("section-rosters_MATH-252-B_1_31_2020_10_39 AM.csv")) %>%
+  setNames(c("student", "id", "class", "email"))  %>%
+  tidyr::separate(student, into = c("last", "first"), sep = ",", remove = FALSE) %>%
+  tidyr::separate(email, into = c("user", "domain"), sep = "@", remove = FALSE) 
+WWRoster <- 
+  with(Roster, 
+       webwork::ww_roster(
+         email = email, user = user, id = id, last_name = last,
+         first_name = first, comment = id))
+write.csv(WWRoster, row.names = FALSE, file = "wwRoster-m252-s20.lst")
+```
+  
