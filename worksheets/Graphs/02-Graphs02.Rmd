@@ -66,7 +66,7 @@ These questions will help make sure you understand the terminology above.
  4. Consider Figure 8.
     a. Compute the in-degree and the out-degree of each vertex in Figure 8.  
     b. Add up all the in-degrees.    
-    c. Now add up all the out degrees.    
+    c. Now add up all the out-degrees.    
     d. What do you notice?  Will this hold for all directed graphs, or is this graph special?
     
  5. What is the longest path you can find in Figure 8?  What does it represent in terms of the model?
