@@ -18,25 +18,28 @@ between vertices.
 
 ### Graph flavors
  
-There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set.
+There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set. The first four are the most important.
  
-   graph type  |  edges   | multi-edges allowed?  | self-loops allowed?  | cycles allowed? 
----------------|----------|---------------|----------------------|--------------- 
-simple graph   | set      | no            | no                   | yes
-directed graph | tuple    | no            | yes                  | yes
-multigraph     | set      | yes           | no                   | yes
-directed multigraph | tuple | yes         | yes                  | yes
-pseudo-graph   | set      | yes           | yes                  | yes
-tree           |  set     | no            | no                   | no
-directed acyclic graph (DAG) | tuple      | no | no              | no
+   graph type       |  edges   | multi-edges allowed?  | self-loops allowed?  | cycles allowed? 
+--------------------|----------|---------------|----------------------|--------------- 
+**simple graph**    | set      | no            | no                   | yes
+**tree**            | set      | no            | no                   | no
+**directed graph**  | tuple    | no            | yes                  | yes
+**directed acyclic graph (DAG)** | tuple  | no | no                   | no
+multigraph          | set      | yes           | no                   | yes
+directed multigraph | tuple    | yes           | yes                  | yes
+pseudo-graph        | set      | yes           | yes                  | yes
 
 **Directed graphs** are sometimes called **digraphs**. 
+
+### Graph Representation
 
 (Small) graphs are often depicted using dots for vertices and line segments
 or arcs for edges.  For directed graphs, an arrow is used to indicate the 
 direction.
 
   1. For each type of graph, draw a picture of an example graph with 5 vertices.
+  2. Why are trees called trees?
   
 ### Labeled Graphs
 
@@ -63,7 +66,6 @@ below,
 
 Model | Vertices          | Edges          | Type of Graph  | Labels/Properties?
 ------|-------------------|----------------|----------------|---------
-  2   |                   |                |                |         
   3   |                   |                |                |         
   4   |                   |                |                |         
   5   |                   |                |                |         
@@ -73,14 +75,15 @@ Model | Vertices          | Edges          | Type of Graph  | Labels/Properties?
   9   |                   |                |                |         
   10  |                   |                |                |         
   11  |                   |                |                |         
+  12  |                   |                |                |         
   
-  2. **Niche Overlap.**  Some species of animals compete with other 
+  3. **Niche Overlap.**  Some species of animals compete with other 
   species in an ecosystem.
   
-  2. **Acquaintanceship.** Some pairs of people are acquainted with each
+  4. **Acquaintanceship.** Some pairs of people are acquainted with each
   other, some are not.
   
-  3. **Precedence and Concurrent Processing.** Computer programs can be
+  5. **Precedence and Concurrent Processing.** Computer programs can be
   executed more rapidly by executing some statements concurrently 
   But it is important not to execute a statement that depends
   on the results of statements that have not yet been executed.  What is the
@@ -95,7 +98,7 @@ Model | Vertices          | Edges          | Type of Graph  | Labels/Properties?
           e = c + d
 ```
 
-  5. **Influence.** In studies of group behavior it is observed that 
+  6. **Influence.** In studies of group behavior it is observed that 
   certain people can influence the thinking of other people.
   
   4. **Hollywood.** Some actors have been in movies together, others have not.
