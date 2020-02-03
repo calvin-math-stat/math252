@@ -25,19 +25,19 @@ Vocab;  t;      color=purple;   V:
 
 Test blackout requests
 
-===03/20/2020
-Note:: Spring Break
-
-===03/21/2020
-Note:: Spring Break
-
-===03/22/2020
-Note:: Spring Break
-
 ===03/23/2020
 Note:: Spring Break
 
 ===03/24/2020
+Note:: Spring Break
+
+===03/25/2020
+Note:: Spring Break
+
+===03/26/2020
+Note:: Spring Break
+
+===03/27/2020
 Note:: Spring Break
 
 
@@ -52,6 +52,11 @@ Note:: Easter Monday
 Note:: No Class
 
 ===04/21/2020
+
+Note:: Academic Advising
+Note:: No Class
+
+===04/22/2020
 
 Note:: Academic Advising
 Note:: No Class
