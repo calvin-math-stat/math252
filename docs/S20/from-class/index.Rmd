@@ -31,13 +31,13 @@ output:
   [PDF](models-of-computation/Models-of-Computation.pdf)
   [HTML](models-of-computation/)
   
-* Regular Exrpessions in Python
+<!-- * Regular Exrpessions in Python -->
 
-    * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTNkq3iAo6ThK8_LJUE8z-KUczPj9hT7rZcir1cd_9cM-iZw55XkYXXOKZnTsl3hLw3I29cFzcH8W3P/pub?start=false&loop=false&delayms=3000)
-    * Thonny -- easy self-contained python
-        * [download Thonny here](https://thonny.org/)
-    * [Online python](https://repl.it/languages/python3)
-    * [Regular Expression Game](http://play.inginf.units.it/)
+<!--     * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTNkq3iAo6ThK8_LJUE8z-KUczPj9hT7rZcir1cd_9cM-iZw55XkYXXOKZnTsl3hLw3I29cFzcH8W3P/pub?start=false&loop=false&delayms=3000) -->
+<!--     * Thonny -- easy self-contained python -->
+<!--         * [download Thonny here](https://thonny.org/) -->
+<!--     * [Online python](https://repl.it/languages/python3) -->
+<!--     * [Regular Expression Game](http://play.inginf.units.it/) -->
     
   
 <!-- ### Langauges, Grammars, Machines -->
@@ -96,4 +96,4 @@ output:
 
 Date  | Resource
 ----- | ---------------------------------------------------
-02/01 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)
+02/03 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)
