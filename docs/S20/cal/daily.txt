@@ -1,0 +1,2022 @@
+---
+course:     Math 252
+instructor: Randall Pruim
+term:       Spring 2020
+time:       11:30 and 12:30
+days:       MWF
+---
+
+Math 252
+
+Math 252: Prob and Stats
+Spring 2020 -- 11:30 and 12:30 pm
+
+days:: MWF
+
+items::
+Topic;  b;      color=black;    T:
+Read;   i;      color=blue;     R:
+Assign; i;      color=green;    A:
+HW;     t;      color=green;    A:
+Due;    t;      color=red> Due: <!-- --;        D:
+Note;   b;      color=green;    N:
+Vocab;  t;      color=purple;   V:
+
+
+Test blackout requests
+
+===03/20/2020
+Note:: Spring Break
+
+===03/21/2020
+Note:: Spring Break
+
+===03/22/2020
+Note:: Spring Break
+
+===03/23/2020
+Note:: Spring Break
+
+===03/24/2020
+Note:: Spring Break
+
+
+===04/10/2020
+
+Note:: Good
+Note:: No Class
+
+===04/13/2020
+
+Note:: Easter Monday
+Note:: No Class
+
+===04/21/2020
+
+Note:: Academic Advising
+Note:: No Class
+
+
+===05/14/2020
+
+Note:: Friday Class Schedule
+
+===05/10/2019
+
+Note:: Reading Recess
+
+===05/20/2020
+
+Topic:: Final Exam B
+Topic:: 1:30 pm
+
+===05/21/2020
+
+Topic:: Final Exam A
+Topic:: 9am
+
+===02/03/2020
+Topic:: Graphs and Models
+Read:: Rosen 10.1-10.2
+
+Welcome Back
+
+Info Sheet
+
+Graph sheet #1
+
+Overview of course [didn't do]
+
+  * Graphs and graph algorithms (1/5)
+  * Counting and Probability (2/5)
+  * Models of computation (2/5)
+
+Home Page
+  * homework
+  * webwork
+  * calendar
+  * textbook
+
+
+Graphs consist of edges (E) and vertices (V)
+
+  V is a set
+
+  E is also a set.  Each edge in E is associated with a pair of vertices
+
+    * in hyper-graphs, edges are associated with larger sets of vertices
+
+	There are several flavors of graphs, determined by what one allows as edges
+
+	Typically use dots and arcs to represent graphs pictorally (for small graphs, anyway)
+
+        type                     edges?            multi edges?    self-loops
+        ====                    ======            ============    ==========
+     1  directed graph          directed              no              yes
+     2  simple graph            undirected            no              no
+     3  multi-graph             undirected            yes             no
+     4  directed multigraph     directed              yes             yes
+    [5] pseudo-graph            undirected            yes             yes
+     6  directed acyclic graph  directed              no              NO
+			also no cylces
+     7  tree                    undirected            no              NO
+	 		also no cylces
+
+	directed graph
+		E \subset V x V (same as a relation)
+
+		can be represented as a matrix (just like we did for relations)
+		number of digraphs on V: 2^(v^2)
+
+	simple graph
+		E \subset of unordered pairs of distinct elements from V
+			no self-loops
+
+		essentially the same as symmetric, irreflexive relation
+			matrix representation: 0's on diag, reflexive
+
+		number of simple graphs on V
+				2^C(v,2)
+				2^((1/2)(v^2-v))
+
+	multi-graph
+		f : E -> unordered pairs of distinct elements from V
+
+	etc.
+
+labeled graphs
+	can attach a label to an edge or vertex
+
+modeling situations
+	airline routing:
+		directed multigraph
+		vertices -> cities
+		edges -> cost/distance/price
+		shortest path = cheapest connection
+			algorithm issues
+				trying all paths is too inefficient (how many paths?)
+				we will learn a better algorithm later
+
+		connectivity: which places you can fly from/to
+			graph gives direct connections
+			what about connections with one plane change?
+				motivate matrix multiplication and give definition/example
+
+			trans closure generates info about any length connection
+				could be extended to include label info [mention only briefly]
+					def multiplication and addition of labels
+						mult = concatination
+						addition = union (or)
+						comparison to FOIL
+
+			algorithmic issues
+				if i just want to query a->b there is a faster algorithm
+				there are also algorithms for trans closure
+				choice between preprocess to build a table or on-line alg
+
+	sports schedules:
+		directed multigraph
+		vertices -> teams
+		edges -> date
+			direction: away->home
+			direction: loser->winner
+				(note lack of transitivity)
+
+		graph existence questions
+			softball scheduling example
+
+  adjacent, incident
+	adjacent to/from
+	initial/terminal(end) vertex
+	degree (in-degree, out-degree)
+
+===
+Topic:: Graphs
+Read:: Rosen 10.1-10.2
+
+Graphs02 worksheet
+
+  degree, adjacent, path, subgraph, etc.
+
+	NFL example
+		NFL example: 13+13 teams, 11+3 games
+			motivate: degree, subgraph, bipartite graph
+			intra-conference issue:
+			  * each node has degree 11
+			  * so total edges is 13 * 11 / 2 = not an integer
+
+		Handshaking Thm: 2e = sum of degrees
+			even number of nodes with odd degree
+			directed graph version: e = sum out-degree = sum in-degree
+
+  special graphs
+  	K_n: complete (skipped?)
+  	C_n: cycle
+  	W_n: wheel
+  	Q_n: cube
+
+Notes:
+  * had rotating secretaries for the three groups of questions
+  * collected one version from each group at end of hour
+  * perfect length worksheet; went really well in the groups
+
+===
+Topic:: Graph Representations
+Topic:: Graph Isomorphisms
+Read:: Rosen 10.3
+
+representations
+	adjacency matrix (did last week)
+	incidence matrix (V x E instead of V x V)
+		adjacent: two vertices are adjacent if edge between
+		incident: and edge and vertex if vertex is one endpoint of edge
+
+	edge list
+	adjacency list
+
+representing relations
+	list (i.e., the set)
+	arrow diagrams
+	matrix rep.
+		generalized bitstring rep of set
+		abstraction of tables
+
+checking properties from matrix
+	reflexive, symmetric, anti-symmetric
+
+combining relations
+	union, intersection, difference
+		because relations are sets
+		matrix representations
+		relation to bitops
+
+	symmetric difference / parity / xor
+
+	composition
+		relations are "function like" in that they have a "from" and "to"
+			like "domain" and "range" of a function
+
+matrix, list, and digraph representations
+	going back and forth
+	operations and representations (easy matrix ops)
+	properties and representations
+
+question: how do we tell if a relation is transitive from
+	the matrix representation?
+
+matrix ops
+	boolean and over integers
+	multiplication
+
+===
+Topic:: Paths in Graphs
+Read:: Rosen 10.4-5
+
+special graphs
+	review C_n, W_n, Q_n
+	K_n: complete
+	K_m,n: complete bipartite
+
+union
+
+isomorphism
+	examples from 461-462
+
+paths
+	review def (denote by list of edges, list of vertices)
+	connected, connected components
+	number of paths between two vertices M^k
+		repeated squaring to find if connected
+		M^|E| should not have any zeroes
+	in directed graphs
+		strongly connected
+		weakly connected
+
+Euler and Hamilton paths/cycles
+	Euler -- visit all edges exactly once
+	Hamilton -- visit all vertices exactly once
+		TSP -- visit all vertices with least cost
+
+
+===
+Topic:: Euler Paths and Cycles
+Topic:: Euler's Formula
+Read:: Rosen 10.4-5
+
+questions on homework
+  * simplest view of graph for farmer, wolf, goat, cabbage
+
+Euler degrees
+  * If there is an Euler path, graph must be connected
+  * If there is an Euler cycle, all degrees must be even
+  * If there is an Euler path that is not a cycle, there must be exactly 2 odd vertices
+  * In a directed graph, if there is an E cycle,
+      in degrees must match out degrees at each vertex
+  * If there is a path that is not a cycle, then
+      start must have one extra out degree,
+      end vertex must have one extra in degree,
+      all other must be balanced
+
+Other direction: If graph is connected and all degrees are even, must there be an E cycle?
+  * If so, how do we find it?
+
+  * Basic Idea:
+      * find any cycle (follow any edge)
+      * if it isn't complete, insert cycle from left over graph
+
+Euler paths?
+  * Add one edge connecting to vertices of odd degree, make cycle, delete the edge
+
+Euler formula:  In a connected, planar graph, V - E + R = 2 [so R = 2 + E - V]
+
+  * Proof by induction on edges
+  * What if graph is not connected?
+
+Planar graphs
+
+  * K5 is not planar
+    * use R <= 2 * E / 3
+
+  * K3,3 [define] is not planar
+    * use R <= 2 * E / 4
+    * regions must be bounded by at least 4 eges because no 3-cycles
+
+  * Kuratowksi's Thm: planar iff no subgraph homeomorphic to K5 or K3,3
+    * homeomorphic:
+        allowed to replace edge (u, v) with new vertex a and two edges(u, a) and (a, v)
+
+
+===skip  # come back during models of comp if time
+
+Topic:: Hamilton Path
+Topic:: Graph Coloring
+
+Hamilton circuits (paths)
+	definition
+	examples
+		can't have degree 1 vertex
+		must use both edges of degree 2 vertices
+			bowtie graph doesn't have ham cycle
+	no good general purpose alg known
+		some decent algorithms that work for many kinds of graphs
+		O(n^k) for any k would make you famous
+		mention completeness
+
+	application: Gray Codes
+		measuring with a needle
+		wanted: Ham cycle in Q_n
+		such ham cycles always exist
+
+	TSP
+		on labeled K_n
+			will be a hamilton cycle (in fact, n! many)
+			want hamilton cycle with shortest possible path length
+		also no known poly time algorithm
+
+
+===skip [Done in 212 now]
+Topic:: Shortest Paths (Dijkstra's Algorithm)
+Read:: Rosen 10.6
+
+Shortest paths from a to b
+	not required to use all vertices
+	makes problem easier to solve algorithmically
+	applications
+		fastest internet connection
+		cheapest airfare
+		etc.
+
+Dykstra's algorithm -- motivating examples
+
+                   3
+                b --- d
+             2 / \     \ 2
+              /	  \     \
+             a	   \ 6   z				upper path best
+              \	    \   /
+             4 \     \ / 1
+                c --- e
+                   5
+
+                   5
+                b --- d
+             2 / \     \ 2
+              /	  \     \
+             a	   \ 6   z				lower path best
+              \	    \   /
+             4 \     \ / 1
+                c --- e
+                   3
+
+                   5
+                b --- d
+             2 / \     \ 2
+              /	  \     \
+             a	   \ 3   z				middle path best
+              \	    \   /
+             4 \     \ / 1
+                c --- e
+                   6
+
+	conclusions from examples
+		checking all paths is impracticle: O(n!)
+		greedy local algorithm won't always work
+			in fact, initial local information is same
+				near a and z for all three graphs
+
+Warshall's Algorithm (and its generalizations) will find
+	shortest paths between _all_ pairs in O(n^3)
+	APSP: All-pairs shortest paths
+Can we do better if we just want shortest path from a to z?
+
+SSSP: Single Source Shortest Paths
+	Dijkstra's Algorithm finds all shortest paths from one starting
+		point
+
+Algorithm and examples (use java demo)
+
+	Data
+		M[u,v] = edge length from u to v (infinity if no edge)
+		S : set of vertices that have been "dealt with"
+		D[x] = length of shortest discovered path from s to x
+		s : a vertex (source)
+
+	Initialization
+		M <- input to algorithm (graph represented as a matrix)
+		s <- input to algorithm
+		D[x] = M[s,x]
+		S = {s}
+
+	Update (until S = V, or until specified vertex enters S)
+		1. Find w in V-S with D[w] minimum
+		2. put w into S
+		3. for all x in V-S D[x] = min(D[x], D[w]+M[w,x])
+
+
+	C-like Code:
+		// source:
+		// http://www.cs.rochester.edu/u/leblanc/csc173/graphs/sssp.html
+
+		DijkstraSSSP (int N, rmatrix &C, vertex v, rvector &D)
+		{
+		   set S;
+		   int i;
+		   vertex k, w;
+		   float cw;
+
+		   Insert(S,v);
+		   for (k = 0; k < N; k++) D[k] = C[v][k];
+		   for (i = 1; i < N; i++) {
+			   /* Find w in V-S st. D[w] is minimum */
+			   cw = INFINITY;
+			   for (k = 0; k < N; k++)
+				  if (! Member(S,k) && D[k] < cw) {
+					 cw = D[k];
+					 w = k;
+				  }
+			   Insert(S, w);
+			   /* Forall k not in S */
+			   for (k = 0; k < N; k++)
+				  if (! Member(S,k))
+					 /* Shorter path from v to k using w? */
+					 if (D[w] + C[w][k] < D[k])
+						D[k] = D[w] + C[w][k];
+		   }
+		} /* DijkstraSSSP */
+
+Analysis and improvements (n vertices, e edges)
+
+	As above:
+		O(n) to initialize
+		n updates
+			each update is O(n)
+				check each vertex x to see if x is new w in S
+				for each vertex x, update D[x]
+
+	Room for improvement
+		better finding of w
+			keep elements of V-S in a priority queue
+			O(log(n)) time for each  access of priority queue
+		better update of D
+			notice that changes only occur when there is an edge
+				from w to x for some x in V-S
+			if we have graph as adjaceny list rather than matrix,
+				we can consider only the necessary x's
+			over the course of the algorithm each edge considered
+				only one time
+
+		result:
+			Initialize in O(n)
+			Maintaining Priority Queue: O(n log n)
+				each vertex can be updated at most once per iteration
+			Determining w: O(n log n)
+				one dequeue per iteration
+			Updating D O(e log n)
+				each edge visited at most once
+				each visit causes at most one delete/insert to pqueue
+
+			Assuming n <= e <= n^2, this yields O(e log n)
+				worse if e = n^2
+				better if e < n^2 / log n
+				so works better on sparser graphs
+
+Using Dykstra to do APSP
+	matrix: O(n^3) just like Warshall
+	adj list: O(ne log n) -- better if graph is sparse
+
+===
+Topic:: Planer Graphs
+Read:: Rosen 10.7
+
+3 Houses/Utilities Problem
+	def: bipartite graph
+	def: complete bipartite graph
+	def: planer graph
+
+	question becomes is K3,3 a planer graph
+
+some easier examples first
+	is K4 planer? yes (but not usual picture)
+	is Q3 planer? yes (but not usual picture)
+
+Big Question for today:
+	is there an easy way to check if a graph is planer?
+		is it easy like Euler paths
+		is it hard like Hamilton paths
+		are there conditions that work some of the time?
+
+K3,3 is not planer
+	call vertices {a,b,c}  {1,2,3}
+	look at subgraph induced by {a,b,1,2}: this is K2,2
+		this is a cycle graph
+		devides plane into two regions
+		c must be in one of these regions
+			adding edges to c divides this region into two regions
+		now there is nowhere to put vertex 3
+
+Regions of a planer graph
+	the idea of regions was useful in the proof above,
+		but only makes sense for planer graphs.
+	is the number of regions an invariant?
+		perhaps different embeddings or different isomorhpic graphs
+			give rise to different numbers of regions
+
+	examples:	Fill out table for some example graphs
+
+				Graph		regions		edges 	vertices
+
+
+Thm (Euler). For any connected planer graph, r - e + v = 2
+
+	Proof: Build up G: G1, G2, ... Ge adding one edge at a time
+		either add one edge and one vertex or one edge and one region
+
+===
+Topic:: Bipartite Graphs
+
+What happens if graph is not conneted?
+	answer: vertices and edges add,
+			but we lose one region because it is double counted.
+
+Degree of a region
+	defined: note count dangling edges twice
+	examples
+
+Lemma: Every region in a simple graph has degree >= 3
+
+	Pf: degree 1 = loop; degree 2 -> multigraph
+
+Thm: For a connected planer simple graph,
+		2e = sum of degrees of regions >= 3r
+
+Cor: For a connected planer simple graph with v >= 3, e <= 3v - 6
+
+	Proof: use Euler characteristic
+
+			e - v + 2 = r <= 2/3 e
+
+			e - 3v + 6 <= 0
+
+			e <= 3v - 6
+
+	Note: so planer graphs are relative sparse
+
+Cor: K5 is non-planer
+
+	Proof: K5 has 10 edges and 5 vertices, but 3(10) - 6 = 9
+
+	Note: In fact, any planer graph must have a vertex of degree <= 5
+			else e >= 3 v, but e < 3v by above
+
+Cor: K3,3 is not planer
+	Proof:  e = 9; v = 6  (so can't get it easy like for K5)
+
+		suppose K3,3 were planer, then
+			each region in K3,3 would have degree at least 4
+			since there are no 3-cycles in K3,3
+
+			so e/2 >= r =  e - v + 2
+
+			so e <= 2v - 4
+
+			but 2(6) - 4 = 8 < 9
+
+Thm: A graph is nonplaner iff if contains a subgraph homeomorphic to
+		K5 or K3,3
+
+	one direction of the proof is pretty easy
+	other direction is difficult
+
+
+How hard is it to check if a graph is planer?
+
+	select 6 vertices (in order) : O(n^6) such tuples
+		check if subgraph induced by 6 vertices is homeomorphic to  K3,3
+
+	do same for K5
+
+Graph Coloring
+	Def: assignment of colors to vertices so that adjacent vertices
+			never have same color
+
+	chromatic number: least number of colors that suffices
+
+	examples on page 616 (#=3 and #=4)
+
+         ____
+       /|\  /|\
+      / | \/ | \
+      \ | /\ | /
+       \|/__\|/
+
+
+	   same thing with left- and right-most vertices connected.
+
+
+	chromatic number of K_n = n
+
+	when is a graph 2-colorable? (Ask but don't answer)
+
+	chromatic number of C_n [depends on parity]
+		wheels?
+
+===endofcal
+Topic:: Non-Planar Graphs
+
+===
+Topic:: Graphs Wrap-Up
+
+Tracing through algorithm for Euler paths/cycles
+
+Efficiency of graph algorithms (emphasized edge list rep)
+
+Question board
+  * Kuratowski's Thm and planarity
+  * How to test graph isomorphism
+
+
+ -- didn't do below --
+
+Analysis of Complexity of Euler Path/Circuit Detection Algorithms
+	1) checking that G is connected
+		a) M \/ M^2 \/ M^3 ... \/ M^|V|
+			uses matrix representation
+			O(|V| * |V|^3)  [can be improved some with better mult. alg]
+
+		b) Warshall's algorithm
+			uses matrix representation
+			O(|V|*|V|^2)
+			constant work per entry in new matrix
+
+		c) breadth first search with marking
+			* from adj list
+				O(|E|) because each edge encountered at most 2x
+					(from each end)
+			* from matrix
+				O(|V|^2) because for each vertex must
+					check through entire row to find neighbors
+
+	2) checking degree of each vertex
+		Adj Matrix: O(|V|^2)
+		Inc Matrix: O(|V|*|E|)  [more than previous if G is connected]
+		Adj List:   O(|E|) = O(|V|*|V|)
+			better in sparser graphs
+
+
+===
+Topic:: Basic Counting
+Read:: Rosen 6.1
+#Vocab:: Sum Rule, Product Rule, bijection principle
+
+Bijection Principle: if f:A -> B is 1-1 and onto, then |A| = |B|
+        this is the meaning of counting
+        how to tell if f: A -> B is a bijection:
+        given f(a) we can tell what a is.
+        given any b we can find a with f(a) = b.
+
+Interpretation: must count everything (can't miss anything)
+		must count each thing only once (no double counting)
+
+Application: if two sets have same size, counting one determines the
+		size of the other.
+
+Examples:
+	1a) numbers divisible by 6 between 10 and 100 (inclusive)
+	1b) numbers divisible by 6 between 11 and  98 (inclusive)
+	1c) numbers divisible by 6 between 12 and  96 (inclusive)
+	1d)	integers between 2 and 16 inclusive
+	1e)	integers between 1 and 15 inclusive
+
+	2a) ways to distribute three balls (1 red, 1 blue, 1 white) to 10 people
+			(a person may get more than one ball)
+	2b) fill in blanks with names from the ten people (repititions
+			allowed)
+	2c) fill in blanks with numbers (1-10) (repititions allowed)
+	2d) fill in blanks with numbers (0-9) (repititions allowed)
+	2e) 3-digit numbers: 000-999
+	2f) numbers: 001-1000
+
+
+    Product Rule: |A cross B| = |A| * |B|
+        if we can break a task down into two stages and there
+        are n ways to do the first stage and for each of these
+        there are m ways to do the second stage, then there are
+        nm ways to do the task.
+
+        example: 32 computers each with 24 ports (32*24) = 768 connections
+			[didn't do]
+
+        telephone numbers: X=[0..9], Y=[01], N=[2..9]
+        old system: NYX-NNX-XXXX    8^3 * 2 * 10^6  = 1 024 000 000
+        new system: NXX-NXX-XXXX    8^2 * 10^8  = 6 400 000 000
+
+===
+Topic:: Basic Counting
+Topic:: Pigeonhole Principle
+Read:: Rosen 6.1
+Read:: Rosen 6.2
+
+    Sum Rule: if A and B are disjoint, then |A union B| = |A| + |B|
+        i.e. if we can split our counting task into two pieces
+        so that the task can be done in exactly one of two ways,
+        then we can count the number of tasks done each way and add.
+
+        example: men and women in the class.
+
+        Generalizations:
+        1) can have more than 2 sets
+            fresh, soph, junior, senior in class
+
+        2) if A and B intersect non-trivially then
+            |A union B| = |A| + |B| - |A intersect B|
+
+        example: 12 math and 25 cs majors, how many people?
+
+    Examples where rules are used in combination:
+
+        how many strings of length 8 either
+            - start with 1
+            - or end with 1
+        do it two ways:
+            inclusion-exclusion
+            count compliment
+
+        how many passwords of length 6, 7, or 8
+          * all alpha-numeric
+          * include at least one digit
+
+
+          36^6 - 26^6 + 36^7 - 26^7 + 36^8- 26^8
+
+        what if the digit cannot come first (like in variables names in a
+          programming language)?
+
+          26 * (36^5 - 26^5) + ...
+
+Simple examples of PHP
+
+	socks in drawer: how many drawn to get a match?
+
+  two people in class share the same birth month
+    * if there are least 13 people,
+        there month be a shared birth month
+    * if there are least 12*2 + 1 = 25,
+        there must be a bith month common to 3 or more people
+
+    * if there are at least 12*3 + 1 = 37,
+        there must be a bith month common to 4 or more people
+
+    * in general, there must be a birth month shared by at least
+      cieling(n/12)
+
+Generalized form examples:
+	example: how large a hand to guarantee 3 of a suit?
+	example: how large a hand to get at least three hearts?
+	example: bridge hand guarantees how large a suit?
+
+
+Generalized PHP:
+  If there are least n objects blaced into k boxes, there must be at least
+  one box with at least cieling(n/k) objects
+
+For any n there is an x with only 1's and 0's in its expansion such that
+	n divides x.
+  (In fact it consists of a sequence of 1's followed by a sequence of 0's
+  and has at most n+1 digits)
+
+	proof: consider 1, 11, 111, 1111, ... 1^(n+1)
+		two must have the same remainder
+		difference will have remainder 0
+
+		example: 	1	11	111	1111	11111
+
+				n = 6	1	5	3	?
+
+
+Clever examlpe: n+1 positive integers < 2n:  show one must divide another
+	write each number as 2^k * a where a is odd.
+	there are only n possible values of a, so one must be repeated
+
+Clever example: monotone subseqences of length n+1 in sequence of length n^2 + 1 [skipped]
+	examples: n = 3, so looking for 4 monotone in sequence of 10
+
+  proof: for each index create a pair (i_k, d_k) giving the length of the
+  longest increasing and decreasing sequences starting at a_k
+
+  if i_k and d_k are in 1, ... n, and there are n^2+1 indices, there must
+    be two indices with the same (i,d) value.  But that is a contradiction
+    since the ealier element must add to either an increasing or decreasing
+    subsequence that continues at the later element
+
+  alternative approach: try to create a sequence with no monotone subsequences
+  of length n.  The (i,d) pairs must be distinct, and at most n^2 of them
+
+
+
+Ramsey example: 6 people, show three are mutual friends or enemies [deferred]
+	graph rep: monochrome triangles
+
+
+===
+Topic:: Permutations and Combinations
+Read:: Rosen 6.3
+#Vocab:: Sum Rule, Product Rule, bijection principle
+#Vocab:: permutation, r-permutation, combination, r-combination %%
+#	Pascal's triangle, binomial coefficients
+
+answered questions from homework
+
+Ramsey example from above
+
+intro to combinations and permutations
+	3 balls to 10 children if each kid gets at most 1.
+	3 balls to 10 children if balls are indistinguishable and each gets <=1
+	general P(n,k) and C(n,k)
+
+Permutations and Combinations examples
+--------------------------------------
+example: # ways to select 3 officers from club of 10 members [perm]
+	10*9*8 = P(10,3) = 720
+
+example: # soccer alignments (8 players, 6 play in 6 positions)
+	P(8,6) = 8 * 7 * 6 * 5 * 4 * 3 = 20 160
+
+language: r-permutation of a set (with n elements)
+	r-permuation is an arrangement (ordering) of r of the elements
+		of set
+	example: (2,1,4) is a 3-permuation of {1,2,3,4,5}
+			 (1,4,2) is different from (2,1,4)
+
+	formulas: P(n,r) = n * (n-1) * (n-2) ... * (n-r+1)
+					 = n! / r!
+
+language r-combinations of n elements
+	r-combination is simply a subset with r elements.
+	example: {1,2,4} is a 3-combination of {1,2,3,4,5}
+	         {2,1,4} is same as {1,2,4}
+
+	C(n,r) = P(n,r) / P(r,r) = n! / r! (n-r)!
+
+example: how many 5 card poker hands?
+	C(52,5) = 2 598 960
+
+example: # soccer alignments (8 players, 6 play, positions below)
+		1 keeper
+		2 backs
+		1 center forward
+		2 wings
+		2 sit out
+
+		C(8,1) * C(7,1) * C(6,2) * C(4,2) * C(2,2)
+		= 8 * 7 * 15 * 6 * 1 = 5040
+
+example: # soccer alignments (8 players, 3O, 3D, 2 sit)
+		C(8,3) * C(5,3) * C(2,2) = 8 * 7 * 6 * 5 * 4 * 3 /(3 * 2 * 1)^2
+		= 560
+
+example: # soccer alignments (8 players, 3O, 3D, 2 sit)
+	just get every combo of three to play together, don't worry
+		about offense and defense
+
+		1/2 of previous result = 280
+
+example: like above but with only 6 players
+
+	C(6,3) * C(3,3) / 2 = 20 * 1 = 20
+
+example: 8 players, 4O, 4D
+	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
+
+===
+Topic:: Intro to Probability
+Read:: Rosen 7.1, 7.2
+
+Homework questions
+
+Random
+  short-term unpredictability
+  long-term predictability
+
+basic defs (outcome, sample space, event)
+
+probability assigns numbers to events to indicate how likely they are to happen
+  0-1 scale
+
+Two kinds of probability
+  empirical: just do it
+    simulations, monte carlo algorithms
+
+  theoretical: just think about it
+
+Theoretical Probability Calculations (just think about it)
+
+  why is p(heads) = 1/2?
+    trace through the argument
+
+	General scheme for theoretical probability:  Combine
+		general probability rules that are always true
+		assumptions about specific situation
+		reasoning (mathematics)
+
+Probability Axioms
+	1) 0 <= P(E) <= 1
+	2) P(S) = 1
+	3) additivity of disjoint unions
+
+===
+Topic:: Using Probability Rules
+
+===3/6/2019
+Topic:: Test 1
+
+===
+Topic:: More Probability
+Read:: Rosen 7.1, 7.2
+
+Probability rules
+  4) Equally Likely Rule
+	5) P(E) + P(E^c) = 1
+	6) P(A U B) = P(A) + P(B) - P(A & B)
+
+Equally Likely Rule:
+	equally likely outcomes: P(E) = |E| * 1/n = |E|/|S|
+
+  ONLY WORKS WHEN ALL OUTCOMES ARE EQUALLY LIKELY
+
+examples: poker hands
+	flush, near flush, etc.
+	full house
+	4-of-a-kind
+
+example:  [similar thing came up on hw question in '16]
+  probability of at least 1 head in 10 coin tosses
+  probability of at least 2 heads in 10 coin tosses
+  probability of exactly 5 heads in 10 coin tosses
+
+===
+Topic:: Condiditional Probability
+Read:: Rosen 7.2
+
+equally likely review: lottery
+	pick 6 numbers 1-40
+	pick 6 numbers 1-40 and get 5 of six correct
+
+Example: loaded dice
+	1 comes up three times as often as the rest
+
+	P(1) = 3/8; P(k) = 1/8 for other k
+
+	P(odd) = 3/8 + 1/8 + 1/8 = 5/8
+
+  P(doubles) = 9/64 + 5/64 = 14/64
+
+P(x) : probability function, x an element of the sample space
+
+	1) for all x,  0 <= P(x) <= 1
+	2) sum P(x) = 1
+
+  P(E) = sum P(x) for x in E
+
+Conditional Probability
+  example: family with two kids
+    motivate definition
+
+	example: probability sum=10 given at least one five is rolled
+		compare with prob sum=10 (unconditional)
+		do with and without using definition
+
+	independent events
+
+Product Rule for Probability
+
+	P(A & B) = P(A) * P(B | A)
+
+  P(doubles, standard dice)
+
+  P(flush) using ordered hands and conditional probability
+
+  P(at least two numbers match when rolling 5 standard dice)
+    * complement rule
+    * conditional probability
+
+Example: probability of matching birthmonths/days (complement, independence)
+		for n=23, P(same birthday) > 1/2
+
+===
+Topic:: Bayes Theorem
+Read:: Rosen 7.3
+
+Bob's Boxes
+
+
+===
+Topic:: Conditional Probability
+Topic:: Random Variables
+
+Breast Cancer Screening
+
+
+=== 03/25/2019
+Topic:: Random Variables
+Topic:: Binomial Distributions
+
+===
+Topic:: Expected Value
+Read:: Rosen 7.4
+
+
+Binomial Dists
+
+Expected Value
+
+
+Coin Flipping Example
+	4 flips; X=number of heads in 4 flips
+
+	Pr(X=2)
+	Pr(X>2)
+
+	made table, worked out E(X)
+
+Daily 4 grand prize
+  E(X) and Var(X)
+
+===skip
+Topic:: Counting and Probability Examples
+Read:: Rosen 6-7
+
+Linearity of Expected Value (review)
+
+Linearity Examples:
+
+  Exmple: Bernoulli -> Binomial
+
+  Expected Number who will get their paper if I pass them back at random
+
+    * do cases for 1, 2, 3 people by hand
+    * use linearity to do general case
+
+  Note: Problem 21 uses this sort of reasoning to compute expected number of runs
+
+Independent random variables
+  P(X = x & Y = y) = P(X = x) * P(Y = y) for every combination of x and y
+
+  alternative: P(X = x | Y = y) = P(X = x) for every combo of x and y
+
+Linearity for Variance (requires independence)
+
+  Var(X + Y) = Var(X) + Var(Y)
+
+  SD(X+Y) = sqrt(SD(X)^2 + SD(Y)^2)
+
+  Pythagorean theorem for variance
+
+Short cut for variance
+  * Var(X) = E(X^2) - E(X)^2
+  * example: Bernoulli -> Binomial
+
+Four kinds of sampling
+  with/without replacement
+  order does/does not matter
+  do with replacement, order doesn't matter last (donut problem)
+
+ended here
+
+Yahtzee
+	Probability 5 different numbers
+	Probability of a straight
+    * note that the usual conditional probability chain fails because
+      P(4th good | first 3 good) is hard to compute
+    * use result below instead
+	Pr(straight | 5 different numbers)
+
+	Pr(Yahtzee)
+
+4-sided dice
+    roll two 4-sided dice, X=sum Y=product W=difference
+
+         k     2      3        4       5      6        7       8
+       P(X=k) 1/16    2/16    3/16    4/16    3/16    2/16    1/16
+
+            k      1      2       3       4     5      6      8    12    16
+        P(Y=k)  1/16   2/16    2/16    3/16     0   2/16   2/16  2/16  1/16
+
+            k      0       1       2       3
+          P(W=k) 4/16    6/16    4/16    2/16
+
+    P(X<=3) = 3/16; etc.
+
+	E(X) = 5
+
+	E(W) = 6/16 + 8/16 + 6/16 = 20/16 = 5/4 = 1.25
+
+Lottery
+	Daily 3 / Daily 4
+
+===
+Topic:: Grammars and Languages
+
+Language over V
+	V = set of symbols
+	V* = sequences of symbols (possibly empty)
+	lamnda = empty sequence
+	language over V = subset of V*
+
+Components of a (phrase-structure) Grammar
+	* Vocabulary (V)
+		- also called alphabet
+		* Start Symbol (S)
+			- Element of V
+		* Terminal Symbols (T)
+			- Non-terminal Symbols (N)
+	* Production Rules
+		u -> v where u, v in V* and u includes at least one non-terminal
+
+Examples
+
+
+Types of Grammar
+	Type 0:
+		anything goes
+
+	Type 1:
+		[context sensitive]
+
+		two types of rules
+			S -> lambda
+			lAr -> lwr
+				l and r may be anything in V*
+				A is a single non-terminal symbol
+				w is not empty and does not mention S
+
+	Type 2:
+		[context free]
+
+		A -> w
+			A = single non-terminal symbol
+			w = anything in V*
+
+		BNF
+
+	Type 3:
+		[regular]
+
+		A -> bC        [non terminal] -> [terminal][non terminal]
+		A -> b         [non terminal] -> [terminal]
+		S -> lambda    [start] -> [empty]
+
+	Non-contracting:
+		left not longer than right
+		type 1 almost same as non-contracting (need to add lambda)
+
+Return to examples and classify
+
+Build grammars for langauges
+	0's before 1's
+
+	0^n1^n
+
+checking if a particular string is in a language
+	Example 12
+
+BNF
+	examples on page 855
+	web page showing complete BNF description of java
+
+===
+Topic:: NFA and DFA
+
+===
+Topic:: Test 2
+
+===
+Topic:: NFA and DFA
+
+===
+Topic:: Regular Langauges
+
+===
+Advising
+
+===
+Topic:: Regular Languages
+
+===
+Topic:: Regular Expressions in Python
+
+===
+Topic:: A language that isn't regular
+
+# Note:: Review Session @ 4:30
+
+===04/24/2019
+
+Topic:: Turing Machines
+
+Motivation for TM model
+	Note: pre-dates elecontronic computers
+		Hilbert early 1900's (23 Problems in 1900)
+		Turing & Church (1930's)
+
+	Not trying to model (electronic) computers, but computation
+
+	What are essential ingredients of 'computation' (algorithm)?
+		Read, Write, Remember
+
+Def'n of 1-tape TM
+	input alphabet: \Sigma
+		doesn't include "blank"
+	tape alphabet: \Gamma \superseteq \Sigma
+		includes "blank"
+	states: Q
+	init state: q_0
+	"program": \delta: \Gamma x Q -> \Gamma x Q x {L,R,S}  (partial function)
+
+Format of the Turing Machine file
+
+The format for the Turing machine files is the following. The first line
+indicates that this is A Turing Machine file. There should be no blank lines:
+
+Line 1: ATM.
+Line 2: name of the machine. For assignments use name(s) and assignment number
+Line 3: all characters in the input alphabet, separated by spaces
+Line 4: all characters in the tape alphabet, separated by spaces
+Line 5: the number of tapes (N). They are numbered 0,…, N-1
+Line 6: the number of tracks on tape 0 (T0)
+Line 7: the number of tracks on tape 1 (if N > 1) (T1)
+…
+Line N+5: the number of tracks on tape N-1 (TN-1)
+Line N+6: 1 or 2, indicating tape 0 is 1-way or 2-way infinite tape
+Line N+7: 1 or 2, indicating tape 1 is 1-way or 2-way infinite
+…
+Line 2N+5: 1 or 2, indicating tape N-1 is 1-way or 2-way infinite
+Line 2N+6: the initial state of the Turing machine
+Line 2N+7: all the final states separated by spaces
+Line 2N+8: first of a list of transition (see below)
+Line 2N+9: another transition
+…
+Line 2N+?: last of the list of transitions
+Last line: end. You must type the word "end" but it can be upper or lower case
+
+The format of a transition is:
+
+<state> <content of tracks> <next-state> <next content of tracks> <head-move directions>
+
+where
+
+the <state> and <next-state> are the names of states (simple strings). When
+the state has multiple fields such as [q0,a,b], there can be no spaces. This
+compound state is handled in the simulator as a single string, without spaces.
+
+the <content of tracks> and <next content of tracks> have the general form:
+X1+X2+X3+…+XL, where L is the total number of tracks, i.e. L is the sum of T0,
+T1, T2, …, TN-1 and the Xj are the symbols on the individual tracks above the
+read/write head. Actually there is a read/write head for each tape but only
+one is shown in the graphical simulator.
+
+the <head-move directions> has the general form d1+d2+…+dN, where each dj is
+R, L or S, indicating a right or left movement or staying stationary of the
+tape head.
+
+The Blank Symbol
+
+As shown in the examples below, the blank tape symbol is denoted by "B" and
+this symbol must not be used as part of the input alphabet. The blank symbol
+is not shown on the tapes of the graphical simulator.
+
+Example 1:
+
+ATM
+Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt)
+0 1 // input alphabet, note such comments are permitted at the end of the line
+0 1 X Y B // tape alphabet
+1 // number of tapes
+1 // number of tracks on tape 0
+2 // tape 0 is 2-way infinite
+q0 // the initial state
+q4 // final state
+q0 0 q1 X R // the transitions do not use "+" since there is only one track
+q0 Y q3 Y R
+q1 0 q1 0 R
+q1 1 q2 Y L
+q1 Y q1 Y R
+q2 0 q2 0 L
+q2 X q0 X R
+q2 Y q2 Y L
+q3 Y q3 Y R
+q3 B q4 B R
+end //required
+
+
+#===
+#Topic:: Decidable Sets
+#Topic:: Computable Functions
+#Topic:: 1-way vs 2-way tape
+
+Turing machines
+	decidable sets
+		start with (rep of) potential element
+		end in accepting state iff element belongs to set
+
+	numerical function computation
+		interpret tape contents as numbers
+			- unary: n represented as 1^{n+1}
+			- binary: standard binary notation
+		start with rep of input number
+		end with rep of output number
+		# to separate multiple inputs/outputs
+
+Countability argument to show that there are non-computable sets
+
+Examples and demo of submission web page [see examples below]
+
+
+	neat computation
+		exactly one final state
+		end in final state
+		with tape head at left end of tape
+		with answer beginning in left-most tape cell
+
+	what numerical functions can they compute (neatly)?
+		shift right/left
+		shift to left end
+			anything that can be computed and be computed neatly
+		binary <-> unary conversions
+			homework
+		unary add, subtract
+			subtract is in handout
+			add is easy
+		unary multiply
+			in handout
+		unary division (either quotient or remainder)
+			outline idea:
+
+Robustness of model
+	comments on 2-way tape to 1-way tape simulation
+		analysis of cost
+	outline of 2-tape to 1-tape simulation
+		analysis of cost
+
+
+Example (shift right)
+
+	u |- Bu
+
+ATM
+r-shift: shifts input to the right 1 tape cell.
+0 1 // input alphabet
+0 1 # B // tape alphabet
+1     // number of tapes
+1     // number of tracks on tape 0
+1     // tape 0 is 1-way infinite
+[init] // initial state
+[done] // final state
+[init]      0     [shift_0]   #     R
+[init]      1     [shift_1]   #     R
+[init]      B     [done]      B     S
+[shift_0]   0     [shift_0]   0     R
+[shift_0]   1     [shift_1]   0     R
+[shift_0]   B     [return]    0     L
+[shift_1]   0     [shift_0]   1     R
+[shift_1]   1     [shift_1]   1     R
+[shift_1]   B     [return]    1     L
+[return]    0     [return]    0     L
+[return]    1     [return]    1     L
+[return]    B     [return]    B     L
+[return]    #     [done]      B     S
+end
+
+Example (check for power of 2 # of zeros)
+ATM
+POWER: recognizes {0^2^n | n >=0 }
+0 // input alphabet
+0 1 x B // tape alphabet
+1	// number of tapes
+1	// number of tracks on tape 0
+1	// tape 0 is 1-way infinite
+[init]  // initial state
+[acc] // final state
+[init]	0	[zero]	B	R
+[init]	x	[rej]	x	R
+[init]	B	[rej]	B	R
+[zero]	0	[ x ]	x	R
+[zero]	x	[zero]	x	R
+[zero]	B	[rej]	B	R
+[ x ]	0	[zero]	0	R
+[ x ]	x	[ x ]	x	R
+[ x ]	B	[back]	B	L
+[back]	0	[back]	0	L
+[back]	x	[back]	x	L
+[back]	B	[good]	B	R
+[good]	0	[ x ]	x	R
+[good]	x	[good]	x	R
+[good]	B	[left]	B	L
+[left]	x	[left]	0	L
+[left]	0	[ref]	0	R
+[left]	B	[acc]	0	S
+end
+
+
+Example (Copy) [didn't do]
+	u |- uBu
+
+ATM
+COPY: makes second copy of non-blank portion of tape (with 1 blank as separator)
+0 1 // input alphabet
+0 1 a b B // tape alphabet
+1       // number of tapes
+1       // number of tracks on tape 0
+1       // tape 0 is 1-way infinite
+[copy_init] // initial state
+[copy_done] // final state
+[copy_init]     0       [first_copy_0]  a       R
+[copy_init]     1       [first_copy_1]  b       R
+[copy_init]     B       [copy_init_B]   B       R
+[copy_init_B]   0       [copy_0]        a       R
+[copy_init_B]   1       [copy_1]        b       R
+[copy_init_B]   B       [copy_done]     B       L
+[first_copy_0]  0       [first_copy_0]  0       R
+[first_copy_0]  1       [first_copy_0]  1       R
+[first_copy_0]  B       [first_copy_0a] B       R
+[first_copy_1]  0       [first_copy_1]  0       R
+[first_copy_1]  1       [first_copy_1]  1       R
+[first_copy_1]  B       [first_copy_1a] B       R
+[first_copy_0a] 0       [first_copy_0a] 0       R
+[first_copy_0a] 1       [first_copy_0a] 1       R
+[first_copy_0a] B       [first_go_left] 0       L
+[first_copy_1a] 0       [first_copy_1a] 0       R
+[first_copy_1a] 1       [first_copy_1a] 1       R
+[first_copy_1a] B       [first_go_left] 1       L
+[first_go_left] 0       [first_go_left] 0       L
+[first_go_left] 1       [first_go_left] 1       L
+[first_go_left] B       [first_go_left] B       L
+[first_go_left] a       [grab]          a       R
+[first_go_left] b       [grab]          b       R
+[copy_0]        0       [copy_0]        0       R
+[copy_0]        1       [copy_0]        1       R
+[copy_0]        B       [copy_0a]       B       R
+[copy_1]        0       [copy_1]        0       R
+[copy_1]        1       [copy_1]        1       R
+[copy_1]        B       [copy_1a]       B       R
+[copy_0a]       0       [copy_0a]       0       R
+[copy_0a]       1       [copy_0a]       1       R
+[copy_0a]       B       [go_left]       0       L
+[copy_1a]       0       [copy_1a]       0       R
+[copy_1a]       1       [copy_1a]       1       R
+[copy_1a]       B       [go_left]       1       L
+[go_left]       0       [go_left]       0       L
+[go_left]       1       [go_left]       1       L
+[go_left]       B       [go_left]       B       L
+[go_left]       a       [grab]          0       R
+[go_left]       b       [grab]          1       R
+[grab]          0       [copy_0]        a       R
+[grab]          1       [copy_1]        b       R
+[grab]          B       [finish]        B       L
+[finish]        0       [finish]        0       L
+[finish]        1       [finish]        1       L
+[finish]        a       [copy_done]     0       S
+[finish]        b       [copy_done]     1       S
+[finish]        B       [copy_done]     B       S
+end
+
+
+Questions on homework
+
+sketch of 2-way tapes equivalent to 1-way
+
+sketch of 2 tapes equiv to 1 tape
+
+
+
+===
+Topic:: Turing Machines
+
+===
+Topic:: Turing Machines
+
+===
+Topic:: Turing Machine Variants
+Topic:: Halting Problem
+
+===endofcal
+
+
+===
+Topic:: Review
+
+Why this course was good for you ...
+
+Old textbook title: Programming = Data + Algorithms
+	how does math help us handle data and develop algorithms?
+
+Abstract (pull off)
+	let's us get at essential features of a situation
+		ignore parts that are not of interest at the moment
+
+	let's us see different situations as really being the same
+		example: shortest paths in a graph
+      Kevin Bacon
+      least expensive travel plan
+
+		example: graphs/relations
+      mathematical relationships: <, >, elment of, subset, etc.
+      graphs to represent data
+
+		example: inverse situations
+			really example of multiplicative situations
+      inverse of a matrix: product = identity matrix
+      (multiplicative) inverse of a number: product = 1
+      inverse mod 7: product = 1 mod 7
+        1 * 1
+        2 * 4
+        3 * 5
+        6 * 6
+
+		  inverse functions
+        f composed with g is identity function
+        log(2^x) = x
+
+		example: repeated doubling for matrix
+      M^5 = M^1 * M^4 = M * (M * M)^2  [only 3 products instead of 4]
+      similar idea works for other multiplicative situations
+
+		example: isomorphism	(preserves structure of interest)
+			graphs
+      many other mathematical structures have a notion of isomorphism
+        one-to-one onto function that "preserves structure"
+
+provides Representations for things
+	most data structures are implementations of an abstract
+		mathematical idea (sequences, trees, graphs, etc)
+
+	some representations are easier to work with or reason about
+		Turing machines <-> real programs [complexity theory]
+		boolean algebra <-> circuits	 [circuit reduction]
+		number theory <-> text messages  [RSA]
+
+	good to have multiple representations
+		adjacency lists, adjacenty matrix
+		boolean algebra, logic
+		set-builder, Venn, bitstring
+		[cpos <-> 2 linear orders]
+
+	good to have a large stock pile of abstract structures in tool box
+		then you can match tool to problem
+
+Reasoning  (logic)
+	it is important to prove that abstract structures behave "appropriately"
+
+	important to have a precise language for expressing things
+		example: compilers <-> grammars
+
+	mathematical reasoning can help us avoid errors, and give
+		us confidence in our results (program correctness)
+
+Counting (without counting)
+	CS often deals with extremely large numbers of things (bits, etc)
+		not practical to actually count
+	Sometimes counting arguments can save a lot of work
+	Xmas exchange
+	prime numbers
+
+Complexity
+	It is important to know how efficient an algorithm is
+	know where to invest effort to improve things
+		fast multiplication (that 25% sure adds up)
+	know when an algorithm is worth coding _before doing it_
+	know how to compare two algorithms and choose the better
+	know how to choose representation of data depending on intended
+		applications, anticipated inputs [matrix vs adj list for graph]
+
+	Approximate complexity (Big O) is often good enough
+		abstract away differences in machine speeds
+		much easier to do
+		it points out the large-scale differences between algorithms
+		finer scale comparisons can be done later if necessary
+
+neo4j
+  * graph data base
+
+final example: anagram program (word length w, dictionary size d)
+	scrambling a word and looking at all permutations is O(w! * d)
+    O(w! * log(d)) if we keep dictionary sorted and do binary search
+	going through dictionary and checking each word is O(d)
+		[really O(d * w log w), need to sort each word of good length]
+		can be sped up some by skipping chunks of dictionary
+			if the dictionary is organized.
+	keep dictionary in anagram order
+		initial preprocess time required
+		O(log d) to find anagrams using binary search
+
+
+
+
+
+===skip
+Topic:: Trees
+Read:: Rosen 10.1
+
+chromatic number examples
+	cycles (based on parity)
+	Qn (can be done with two colors)
+		note: two-colorable = bipartite
+		what are the "parts" of Qn?  (even number of 0's vs odd number of 0's)
+	wheels (left for an assignment)
+
+Applications of graph coloring
+	coloring maps
+		reason for name
+		was known for a long time that all planer graphs can be 5-colored
+		conjectured that all could be 4-colored
+		4-color theorem proved in 1970's using a computer to automate
+			checking many cases
+
+	scheduling exams
+	assigning tv frequencies
+
+Def of tree: an undirected, connected graph with no cylces
+	includes no loops, no multiple edges, so trees are simple graphs
+
+	identify trees in problems 1 and 2 on page 641, 642
+
+Thm: an undirected graph is a tree iff
+		between any pair of vertices there is exactly one simple path
+
+	Pf: =>: there will be a path because of connected
+		    shortest path will be simple
+		    if there were two paths, there would be a cycle
+
+		<=: existence of paths implies connected
+			a cycle would imply two paths (split cycle in half)
+			a loop implies two paths from x to y where y has loop
+
+Rooted trees
+	if we pick one vertex and call it the root, we have a rooted tree
+	since there is a unique simple path from root to any other vertex, we
+		can use this to assign directions to each edge
+
+	do a couple of examples (pick different roots from same graph
+
+	intro to tree terminology
+
+===skip
+Topic:: Tree Applications
+Read:: Rosen 10.2
+
+tree terminology
+	parent, child, sibling, anscestor, descendant
+	leaf (=childless), internal vertex (=parent)
+	subtree: vertex together with all descendants (and edges incident to them)
+
+	m-ary: at most m children
+	full m-ary: all internal vertices have exactly m children
+
+	ordered rooted tree: children of each internal node have order
+		left and right children if tree is binary
+		gives rise to left and right subtrees
+
+	check terminology using problem 9.1.3 on page 642
+
+
+example applications
+	file systems
+	saturated hydrocarbons:
+		4 C each with degree 4; H each have degree 1
+			how many H's?  how many edges?
+				edges: 4(4) - double counting = 16 - 3 = 13
+				1 - 13 + v = 2, so v = 14
+
+			C4H10 (butane)
+				make at least two possible graphs
+
+		in general if there are k C's, then e = 4k - (k-1) = 3k+1
+			v = 2 + e - r = 2 + 3k + 1 - 1 = 3k + 2
+			3k+2 - k = 2k+2 H's
+
+		different tree structures lead to different isomers of the hydrocarbon
+			only two for C4H10
+
+
+Thm: a tree with n vertices has n-1 edges
+
+	Pf: euler characteristic with r = 1
+
+Thm: a full m-ary tree with i internal vertices has mi+1 vertices
+
+	Pf: mi children, plus 1 root
+
+Cor: in a full m-ary tree v = mi+1 = i + l, so if we know any two
+		of v, m, i, l we can solve for the other two
+
+Cor: in a full binary tree v = 2i+1 = i + l, so l = i + 1
+
+Example: Chain letter; each person sends to four people or none.
+			When 100 people have received a letter but not sent one,
+			how many people have received a letter?
+
+
+More definitions
+	level: length of path from root
+	height: max level
+	balanced: all leaves at one of two levels (h or h-1 where h is the height)
+
+
+===skip
+Topic:: More Tree Examples
+Read:: Rosen 10.2
+
+Thm: at most m^h leaves in an m-ary tree of height h
+
+	Pf: induction (delete root and look at subtrees)
+
+Cor: h > log_m l
+
+Binary Search Trees
+	example
+
+	adding dummy nodes to make tree full adds at most 1 to the height
+
+	h > log_2 l, so worst case will take at least log(n) to insert or
+		remove from tree
+
+	if unbalanced, the height might be much worse
+
+	BSTs should be "balanced as we go" to improve the efficiency
+
+weighing 8 coins to find one that is light
+	3-ary tree
+	leaves = know which coin is light
+	must have at least 7 leaves
+	so height must be at least log_3(8) = 2
+
+	start with 3 v 3 and make decision tree
+
+	can we do 9 coins?
+		yes, small modification of previous example
+
+	10 coins must require at least 3 weighings
+
+===skip
+Topic:: Sorting, Prfeix Codes, Spanning Trees
+Read:: Rosen 10.3, 10.4
+
+Sorting algorithms
+	can represent as a binary decision tree
+	each of the n! orders must appear as a leaf of the tree
+	so height of tree is at least log(n!) = Theta(n log n)
+
+	same holds for average case, since more than half of leaves are in
+		higher levels of the tree
+
+Prefix Codes
+	self-termination idea
+		ascii is self-terminating because we know the number of bits used for
+			each character
+		could perhaps do better if we recoded things
+			letters that occur frequently should have short codes
+		need to be able to parse: self-termination
+			if we use both 0 and 1 we can only code two characters
+			in fact if we use 0 as a code, all other codes are "unary plus 1"
+		prefex-free might be a better name: no code string is the
+			prefix of another code string
+
+	examples: 01, 10, 001 is ok.
+			  00, 10, 11, 010 is ok.
+
+	good codes can be represented as desicion trees
+
+Huffman codes
+	want to make a prefix code that will result in an encoding
+	of a file that is as short as possible (data compression)
+
+	idea: build the decision tree with less frequent characters
+		at higher levels
+
+	can be improved if we encode not just individual characters but blocks of
+	characters.
+
+Spanning Trees = subgraphs that are trees and contain all vertices
+	n vertices, n-1 edges
+
+	depth-first and breadth-first search each produce a spanning tree
+
+===skip
+Topic:: Minimum Spanning Trees
+Read:: Rosen 10.5
+
+Defs
+	weighted edges
+	minimum spanning tree
+
+get student ideas about how to find it
+	interesting feature: 3 different greedy algorithms all work
+
+
+Prim's algorithm
+	keep adding min weight edge that is
+		- connected
+		- doesn't create a cycle
+
+Kruskall's algorithm
+	keep adding min weight edge that is
+		- doesn't create a cycle
+
+Sollin's algorithm [homework problems]
+
+
+===endofcal
+
+
+===
+Topic:: Binomial Coefficients
+Topic:: Combinatorial Proofs
+Read:: Rosen 5.1-4
+
+Another Example of Bijection Principle
+
+	3a) non-negative integer solutions to x + y + z = 18
+	3b) positive integer solutions to x + y + z = 21
+	3c) positive integer pairs (x,y) with  x + y <= 20
+	3d) 2-element subsets of {1,2,...,20}
+			small number is x, larger number is sum of x+y,
+			z can be calculuted from x and y
+
+			so C(20,2) is the count for each of these
+
+		false 3d) list of two numbers first {1,..,20}, second {1,..,19}
+
+			example:  <20,5> -> {20,5}
+					  <5,19> -> {5,20}
+
+Basics of sum/product rules:
+        <= 2-char BASIC vars 26 + 26*36 - 5 = 26 + 936 - 5 = 957
+        6-8 char passwords, at least one number, case insensitive
+        IPv4 addresses
+
+
+Binomial Coefficients
+	alternate notation for C(n,r)
+	[Pascal's] identity: C(n+1,r) = C(n,r) + C(n,r-1)
+		1) combinatorial proof: separate out one item and do 2 cases
+		2) algebraic proof: start with sum, common denominators, etc.
+	Pascal's Triangle
+	Sum across rows is 2^n
+		combinaorial: break up power set
+		informal inductive: each row in PT is twice sum of previous
+		third proof to come in a moment (binomial coefficients)
+
+Binomial Theorem: (x+y)^n  = sum C(n,k) x^k y^(n-k)
+	combinatorial proof
+	examples
+	third proof of sum of pascal's triangle
+
+alternating sum of pascal's triangle is 0
+	express using sum notation
+	using binomial thm: (-1+1)^n = 0^n = binomial coefficients
+	mention alternate proof idea: each term in previous row counts once
+		positively and once negatively
+
+sum 2^k C(n,k) = 3^n
+
+[do rest next time]
+more combinatorial proofs
+
+C(n+1,r+1) = sum_j  C(j,r)
+	count bit strings of length n+1 with exactly r+1 1's
+		split by location of last 1
+	depict on pascal's triangle
+
+C(m+n,r) = sum_k C(m,r-k) C(n,k)
+	pick k from collection of n
+	then pick remaining r-k from collection of m
+
+	illustrate on pascal's triangle
+
+	when m=n :
+
+===
+Topic:: The Donut Problem
+Read:: Rosen 5.5
+
+Another identity: alternating sum of binomial coefficients = 0
+	using (-1 + 1)^n = 0
+
+Questions on homework
+
+Donut Problem
+	1 dozen donuts with 4 varieties
+
+These are combinations with repetition
+
+===
+Topic:: Generating Permutations and Combinations
+Read:: Rosen 5.6
+
+Counting questions
+
+Number of distinct strings in SUCCESS
+
+generating permutations and combinations
+	lex order
+	next permutation
+	next bitstring
+	next combination
+		associate combinations with increasing list/permutation
+
+===
+Topic:: Regular and Not Regular
+
+
+===
+Topic:: Regular Expressions
+
+===
+Topic:: Programming With Regular Expressions
+
+===
+Topic:: Programming With Regular Expressions
+Topic:: DFA -> Regex
+
+Algorithm 1:
+	connection to Warshall's algorithm
+
+Algorithm 2: removal of intermediate states
+
+Simplification of regular expressions
+
+===
+Topic:: Languages and Grammars
+Read:: Rosen 12.1
+
+===
+Topic:: Languages and Grammars
+Read:: Rosen 12.1
+
+===
+Topic:: Finite State Machines with Output
+Read:: Rosen 12.2
+
+===
+Topic:: DFAs and NFAs
+Read:: Rosen 12.3
+
+===
+Topic:: Regular Languages
+Read:: Rosen 12.4
+
+
+===
+Topic:: Test 2 @@ test-info/
+
+===
+Topic:: Turing Machines
+Read:: Rosen 12.5
+
+===
+Topic:: Turing Machines
+Read:: Rosen 12.5
+
+
+===
+Topic:: Review & Wrap-Up
+

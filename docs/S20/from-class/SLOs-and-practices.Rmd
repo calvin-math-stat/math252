@@ -1,0 +1,36 @@
+---
+title: "SLOs and practices"
+author: "Math 252"
+date: "5/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## SLOs
+
+1. **Graphs**: Describe and analyze graphs and algorithms that use graphs.
+
+2. **Counting and Probability**: Apply counting techniques to determine the size
+of finite sets and to compute probabilities (including conditional
+probabilities) of events.
+
+3. **Random Variables**: Compute and interpret the mean and variance of a
+discrete random variable.
+
+4. **Models of Computation**: Identify problems that can and cannot be solved
+with various models of computation.
+
+## Practices
+
+1. In-class group work
+
+2. Pencil and paper homework
+
+3. Webwork
+
+4. Textbook
+
+5. Office hours/review sessions

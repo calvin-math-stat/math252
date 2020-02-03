@@ -1,0 +1,99 @@
+---
+title: "From Class"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../../styles/rpruim2017.css
+---
+
+
+## Worksheets/Handouts
+
+### Graphs
+
+ * Worksheets: 
+ [PDF](graphs/Graph-worksheets.pdf) 
+ [HTML](graphs/)
+ <!-- * [Notes from Professor Scofield](ScofieldPlanarityNotes.pdf) -->
+
+### Counting and Probability
+
+  * Worksheets: 
+  [PDF](counting-and-probability/Counting-and-Probability.pdf)
+  [HTML](counting-and-probability/)
+
+### Models of Computation
+
+* Worksheets: 
+  [PDF](models-of-computation/Models-of-Computation.pdf)
+  [HTML](models-of-computation/)
+  
+* Regular Exrpessions in Python
+
+    * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTNkq3iAo6ThK8_LJUE8z-KUczPj9hT7rZcir1cd_9cM-iZw55XkYXXOKZnTsl3hLw3I29cFzcH8W3P/pub?start=false&loop=false&delayms=3000)
+    * Thonny -- easy self-contained python
+        * [download Thonny here](https://thonny.org/)
+    * [Online python](https://repl.it/languages/python3)
+    * [Regular Expression Game](http://play.inginf.units.it/)
+    
+  
+<!-- ### Langauges, Grammars, Machines -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
+<!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
+<!-- 05/04 | [Turing Machine specification](http://www.calvin.edu/~rpruim/courses/m156/F16/TM/tmdoc.shtml) -->
+<!-- 04/30 | [Turing Machine Simulator](http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/) -->
+<!-- 04/30 | [Turing Machines worksheet](Turing-Machines.pdf) -->
+<!-- 04/27 | [DFA to regex conversion worksheet](DFA-to-regex.pdf) -->
+<!-- 04/27 | [DFA to regex conversion notes](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf) -->
+<!-- 04/25 | [Regular Languages Wrap-Up](Regular-WrapUp.pdf) -->
+<!-- 04/23 | [Regular Grammars](Regular-Grammars.pdf) -->
+<!-- 04/19 | [Regular Languages](RegularLanguages.pdf) -->
+<!-- 04/14 | [Regular Languages](RegularLanguages.pdf) -->
+<!-- 04/11 | [Automata](Automata.pdf) -->
+<!-- 04/09 | [Automata](Automata.pdf) -->
+<!-- 04/06 | [Grammars](Grammars.pdf) -->
+
+<!-- ### Counting and Probability -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 03/25 | [Variance](Probability-Variance.pdf) -->
+<!-- 03/16 | [Linearity of Expected Value](Probability-E-is-Linear.pdf) -->
+<!-- 03/14 | [Expected Value](Probability-Expected-Value.pdf) -->
+<!-- 03/12 | [Random Variables](Probability-Random-Variables.pdf) -->
+<!-- 03/10 | [More Probability](Probability-Bayes.pdf) -->
+<!-- 03/07 | [Conditional Probaility](Probability-Conditional.pdf) -->
+<!-- 03/05 | [Probaility Basics](Probability.pdf) -->
+<!-- 02/23 | [Counting Donuts](Counting-Donut.pdf) -->
+<!-- 02/21 | [Division Principe](Counting-Division.pdf) -->
+<!-- 02/19 | [Pigeonhole Principle](Counting-Pigeonhole.pdf) -->
+<!-- 02/16 | [Counting Problems](Counting-Basic.pdf) -->
+
+
+<!-- ### Graphs -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 01/30 | [Intro to Graphs](Graphs-Intro.pdf) -->
+<!-- 02/01 | [More Graphs](Graphs02.pdf) -->
+<!-- 02/04 | [Graph Representations, Graph Isomorphism](Graphs03.pdf) -->
+<!-- 02/06 | [Paths in Graphs](Graphs-Paths.pdf) -->
+<!-- 02/08 | [Bipartite and Planar Graphs](Graphs-Bipartite-Planar.pdf) -->
+<!-- 02/11 | Euler Paths: [[worksheet]](Graphs-Euler.pdf) [[long version]](Graphs-Euler.html) -->
+
+<br>
+
+------------
+
+
+## Other Resources
+
+Date  | Resource
+----- | ---------------------------------------------------
+02/01 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)
