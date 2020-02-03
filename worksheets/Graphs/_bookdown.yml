@@ -6,4 +6,11 @@ language:
   ui:
     chapter_name: ""
 delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "01-Graphs-Intro.Rmd",
+            "02-Graphs02.Rmd"]
+            # "03-Graphs03.Rmd",
+            # "04-Graphs-Paths.Rmd",
+            # "05-Graphs-Bipartite-Planar.Rmd",
+            # "06-Graphs-Euler.Rmd" ]
 ---

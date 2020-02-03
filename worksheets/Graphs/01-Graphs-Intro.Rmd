@@ -1,5 +1,5 @@
-
 \setcounter{page}{1}
+\newpage
 
 # Introduction to Graphs
 
@@ -22,15 +22,21 @@ There are several flavors of graphs depending on how edges are associated with p
  
    graph type       |  edges   | multi-edges allowed?  | self-loops allowed?  | cycles allowed? 
 --------------------|----------|---------------|----------------------|--------------- 
-**simple graph**    | set      | no            | no                   | yes
-**tree**            | set      | no            | no                   | no
-**directed graph**  | tuple    | no            | yes                  | yes
-**directed acyclic graph (DAG)** | tuple  | no | no                   | no
-multigraph          | set      | yes           | no                   | yes
-directed multigraph | tuple    | yes           | yes                  | yes
-pseudo-graph        | set      | yes           | yes                  | yes
+**simple graph**    | undirected      | no            | no                   | yes
+**tree**            | undirected      | no            | no                   | no
+**directed graph**  | directed    | no            | yes                  | yes
+**directed acyclic graph** | directed  | no | no                   | no
+multigraph          | undirected      | yes           | no                   | yes
+directed multigraph | directed    | yes           | yes                  | yes
+pseudo-graph        | undirected      | yes           | yes                  | yes
 
-**Directed graphs** are sometimes called **digraphs**. 
+**multi-edges**: multiple edges between the same two vertices (in the same direction,
+in the case of directed graphs). 
+**self-loop**: an edge connecting a vertext to itself.
+**cycle**: a chain of edges (called a **path**) that returns to where it started.
+
+**Directed graphs** are sometimes called **digraphs**. **Directed Acyclic Graphs**
+are sometimes called **DAGS**.
 
 ### Graph Representation
 

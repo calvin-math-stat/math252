@@ -6,18 +6,13 @@ site: bookdown::bookdown_site
 output: 
   bookdown::pdf_book: default
   bookdown::gitbook: default
-rmd_files: ["index.Rmd",
-            "01-Graphs-Intro.Rmd", 
-            "02-Graphs02.Rmd",
-            "03-Graphs03.Rmd",
-            "04-Graphs-Paths.Rmd",
-            "05-Graphs-Bipartite-Planar.Rmd",
-            "06-Graphs-Euler.Rmd" ]
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggformula)
+
 ```
 
 \newpage
