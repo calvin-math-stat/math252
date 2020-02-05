@@ -62,7 +62,10 @@ These questions will help make sure you understand the terminology above.
     a. Compute the in-degree and out-degree of each team in Figure 9.    
     b. What do these numbers tell us about the teams?   
     c. Who is the winner of the Round-Robin tournament in Figure 9? 
- 
+
+\newpage
+
+
  4. Consider Figure 8.
     a. Compute the in-degree and the out-degree of each vertex in Figure 8.  
     b. Add up all the in-degrees.    
