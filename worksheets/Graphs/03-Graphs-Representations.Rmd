@@ -45,11 +45,8 @@ An incidence matrix $M$ has a row for each vertex and a column for each edge.
 
 Draw graphs with the following representations.
   
-1. edge list: $\{ \{1, 2\}, \{2, 3\}, \{3, 4\}, \{4, 5\}, \{1, 3\}, \{2, 4\}, \{3, 5\} \}$.
 
-\newpage
-
-2. adjacency list
+1. adjacency list
     
 vertex | adjacent vertices
 -------|--------------------
@@ -59,6 +56,14 @@ vertex | adjacent vertices
    4   |  3, 5
    5   |  1, 3, 4  
   
+\bigskip
+\bigskip
+
+2. edge list: $\{ \{1, 2\}, \{2, 3\}, \{3, 4\}, \{4, 5\}, \{1, 3\}, \{2, 4\}, \{3, 5\} \}$.
+
+\vfill
+
+\newpage
 
 3. adjacency matrix: 
     
@@ -69,6 +74,8 @@ vertex | adjacent vertices
 1 1 0 0
 ```
 
+\vfill
+
 4. adjacency matrix: 
 
 ```
@@ -77,6 +84,8 @@ vertex | adjacent vertices
 1 0 0 1
 0 1 1 0
 ```
+
+\vfill
 
 5. adjacency matrix
 
@@ -89,6 +98,8 @@ vertex | adjacent vertices
 1 1 1 0 1 0
 ``` 
 
+\vfill
+
 6. incedence matrix
     
 ```
@@ -98,6 +109,8 @@ vertex | adjacent vertices
 1 0 1 0 0 0 
 0 1 0 1 1 0
 ```
+
+\vfill
 
 7. incedence matrix
     
@@ -111,19 +124,19 @@ vertex | adjacent vertices
 
 ### Variations on the theme {-}
 
- 7. Which of these representations can be used (perhaps with slight modification) 
+ 8. Which of these representations can be used (perhaps with slight modification) 
  with **directed graphs**?  What adjustments do you need to make?
  
- 3. Which of these representations can be used (perhaps with slight modification) 
+ 9. Which of these representations can be used (perhaps with slight modification) 
  for graphs with **multi-edges**?  What adjustments do you need to make?
  
- 4. Which of these representations can be used (perhaps with slight modification) 
+ 10. Which of these representations can be used (perhaps with slight modification) 
  for graphs with **self-loops**?  What adjustments do you need to make?
  
 ## Graph to representation
 
 
- 7. Use each representation to represent the following graphs or say why it isn't possible.
+ 11. Use each representation to represent the following graphs or say why it isn't possible.
  
 ```{r, echo = FALSE, out.width = "25%", fig.show = 'hold', fig.align = "center"}
 knitr::include_graphics("../images/GraphEx-9-3-1.png")

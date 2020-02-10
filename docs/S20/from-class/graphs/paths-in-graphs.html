@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Paths in Graphs | Graphs</title>
+  <meta name="description" content="5 Paths in Graphs | Graphs" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Paths in Graphs | Graphs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Paths in Graphs | Graphs" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2020-02-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="graph-isomorphism.html"/>
+<link rel="next" href="bipartite-graphs.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html"><i class="fa fa-check"></i><b>1</b> Introduction to Graphs</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graphs"><i class="fa fa-check"></i><b>1.1</b> Graphs</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-flavors"><i class="fa fa-check"></i><b>1.1.1</b> Graph flavors</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-representation"><i class="fa fa-check"></i><b>1.1.2</b> Graph Representation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#labeled-graphs"><i class="fa fa-check"></i><b>1.1.3</b> Labeled Graphs</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-models"><i class="fa fa-check"></i><b>1.1.4</b> Graph Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#bonus-problem"><i class="fa fa-check"></i><b>1.2</b> Bonus Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-graphs.html"><a href="more-graphs.html"><i class="fa fa-check"></i><b>2</b> More Graphs</a><ul>
+<li class="chapter" data-level="2.1" data-path="more-graphs.html"><a href="more-graphs.html#some-example-graphs"><i class="fa fa-check"></i><b>2.1</b> Some Example Graphs</a></li>
+<li class="chapter" data-level="2.2" data-path="more-graphs.html"><a href="more-graphs.html#some-terminology"><i class="fa fa-check"></i><b>2.2</b> Some Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="more-graphs.html"><a href="more-graphs.html#some-questions"><i class="fa fa-check"></i><b>2.3</b> Some Questions</a></li>
+<li class="chapter" data-level="2.4" data-path="more-graphs.html"><a href="more-graphs.html#nfl"><i class="fa fa-check"></i><b>2.4</b> NFL</a></li>
+<li class="chapter" data-level="2.5" data-path="more-graphs.html"><a href="more-graphs.html#some-special-graphs"><i class="fa fa-check"></i><b>2.5</b> Some special graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="graph-representations.html"><a href="graph-representations.html"><i class="fa fa-check"></i><b>3</b> Graph Representations</a><ul>
+<li class="chapter" data-level="3.1" data-path="graph-representations.html"><a href="graph-representations.html#representations-of-graphs"><i class="fa fa-check"></i><b>3.1</b> 4 Representations of Graphs</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="graph-representations.html"><a href="graph-representations.html#edge-lists"><i class="fa fa-check"></i><b>3.1.1</b> Edge Lists</a></li>
+<li class="chapter" data-level="3.1.2" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-lists"><i class="fa fa-check"></i><b>3.1.2</b> Adjacency Lists</a></li>
+<li class="chapter" data-level="3.1.3" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.1.3</b> Adjacency Matrix</a></li>
+<li class="chapter" data-level="3.1.4" data-path="graph-representations.html"><a href="graph-representations.html#incidence-matrix"><i class="fa fa-check"></i><b>3.1.4</b> Incidence Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="graph-representations.html"><a href="graph-representations.html#representation-to-graphs"><i class="fa fa-check"></i><b>3.2</b> Representation to Graphs</a><ul>
+<li class="chapter" data-level="" data-path="graph-representations.html"><a href="graph-representations.html#variations-on-the-theme"><i class="fa fa-check"></i>Variations on the theme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="graph-representations.html"><a href="graph-representations.html#graph-to-representation"><i class="fa fa-check"></i><b>3.3</b> Graph to representation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html"><i class="fa fa-check"></i><b>4</b> Graph Isomorphism</a><ul>
+<li class="chapter" data-level="4.1" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-isomorphic"><i class="fa fa-check"></i><b>4.1</b> Showing graphs are isomorphic</a></li>
+<li class="chapter" data-level="4.2" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-not-isomorphic"><i class="fa fa-check"></i><b>4.2</b> Showing graphs are not isomorphic</a></li>
+<li class="chapter" data-level="4.3" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#isomorphic-or-not"><i class="fa fa-check"></i><b>4.3</b> Isomorphic or not?</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html"><i class="fa fa-check"></i><b>5</b> Paths in Graphs</a><ul>
+<li class="chapter" data-level="5.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#definition-of-a-path"><i class="fa fa-check"></i><b>5.1</b> Definition of a path</a><ul>
+<li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.3</b> Connectedness</a></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.4</b> Euler and Hamilton Paths</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.4.1</b> Can you trace it?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.5</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
+<li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html"><i class="fa fa-check"></i><b>6</b> Bipartite Graphs</a><ul>
+<li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
+<li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
+<li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planar-graphs.html"><a href="planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar Graphs</a><ul>
+<li class="chapter" data-level="7.1" data-path="planar-graphs.html"><a href="planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="7.2" data-path="planar-graphs.html"><a href="planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Graphs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="paths-in-graphs" class="section level1">
+<h1><span class="header-section-number">5</span> Paths in Graphs</h1>
+<div id="definition-of-a-path" class="section level2">
+<h2><span class="header-section-number">5.1</span> Definition of a path</h2>
+<ul>
+<li>Informally, a <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.
+<ul>
+<li>Can also be described as a sequence of vertices, each one adjacent to the next.</li>
+<li>For directed graphs, we require that the directions of the edges be compatible.</li>
+</ul></li>
+<li><p>More formally, let <span class="math inline">\(n\)</span> be a nonnegative integer and <span class="math inline">\(G\)</span> an undirected [directed] graph.
+A <strong>path</strong> of <strong>length</strong> <span class="math inline">\(n\)</span> from vertex <span class="math inline">\(v_0\)</span> to vertex <span class="math inline">\(v_{n}\)</span> in <span class="math inline">\(G\)</span>
+is a sequence of <span class="math inline">\(n\)</span> edges <span class="math inline">\(e_1 , \dots , e_n\)</span> of <span class="math inline">\(G\)</span> such that
+when <span class="math inline">\(1 \le i \le n\)</span>, then
+<span class="math inline">\(e_i = \{v_{i-1}, v_i\}\)</span> [<span class="math inline">\(e_i = \langle v_{i-1}, v_i \rangle\)</span>]</p></li>
+<li><p>A path is a <strong>circuit</strong> (also called a <strong>cycle</strong>) if it begins and ends at
+the same vertex and has length <span class="math inline">\(\ge 1\)</span>.</p></li>
+<li><p>A path or circuit is <strong>simple</strong> if it does not include the same edge more than once.</p></li>
+</ul>
+<div id="questions" class="section level3 unnumbered">
+<h3>Questions</h3>
+<ol style="list-style-type: decimal">
+<li><p>What is a path of length 0?</p></li>
+<li><p>Can a path of length 1 be a circuit? If so, draw an example. If not, explain why not.</p></li>
+<li><p>Why are paths defined in terms of edges rather than vertices? In what situations
+does it matter? When does it not matter?</p></li>
+</ol>
+</div>
+</div>
+<div id="paths-and-isomorphism" class="section level2">
+<h2><span class="header-section-number">5.2</span> Paths and Isomorphism</h2>
+<p>If <span class="math inline">\(f : G \to H\)</span> is an isomorphism, then <span class="math inline">\(f\)</span> maps paths in <span class="math inline">\(G\)</span> to paths in <span class="math inline">\(H\)</span>. (Why?)
+This can be useful for finding and isomorphism between <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> or for showing that there
+is no isomorphism.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Answer some questions about the pairs of graphs below.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Compute the degreee sequences for each graph.</p></li>
+<li><p>Find the shortest and longest simple paths from <span class="math inline">\(v_1\)</span> to <span class="math inline">\(v_4\)</span>.</p></li>
+<li><p>Are the graphs isomorphic? Explain.</p></li>
+</ol></li>
+</ol>
+<p><img src="../images/GraphFig9-4-6.png" width="38%" style="display: block; margin: auto;" /><img src="../images/GraphFig9-4-7.png" width="38%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="connectedness" class="section level2">
+<h2><span class="header-section-number">5.3</span> Connectedness</h2>
+<ul>
+<li><p>An <strong>undirected graph</strong> is <strong>connected</strong> if there is a path between every pair of vertices.</p></li>
+<li><p>A <strong>directed graph</strong> is <strong>strongly connected</strong> if there is a path between every pair of vertices.</p></li>
+<li><p>A <strong>directed graph</strong> is <strong>weakly connected</strong> if the underlying undirected graph
+is connected.</p></li>
+<li><p>A connected component of a subgraph <span class="math inline">\(H\)</span> of a graph <span class="math inline">\(G\)</span> is maximal connected subgraph.
+That is, <span class="math inline">\(H\)</span> must be a subgraph of <span class="math inline">\(G\)</span>, <span class="math inline">\(H\)</span> be connected, but <span class="math inline">\(H\)</span> cannot be a subgraph
+of a larger connected subgraph of <span class="math inline">\(G\)</span>.</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Draw a directed graph with 6 vertices that is weakly connected but not strongly connected.</p></li>
+<li><p>Draw an undirected graph with two connected components.</p></li>
+</ol>
+</div>
+<div id="euler-and-hamilton-paths" class="section level2">
+<h2><span class="header-section-number">5.4</span> Euler and Hamilton Paths</h2>
+<ul>
+<li><p>An <strong>Euler path</strong> is a path that visits every edge of a graph exactly once.</p></li>
+<li><p>A <strong>Hamilton path</strong> is a path that visits every vertex exactly once.</p></li>
+</ul>
+<p>Euler paths are named after Leonid Euler who posed the following famous problem about the
+bridges in Königsberg.</p>
+<div id="can-you-trace-it" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Can you trace it?</h3>
+<p>Perhaps you have seen the following type of ``puzzle’’.
+The goal is to trace the figures without lifting your pencil from
+the paper and without retracing any of the lines.</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Which kind of path is this puzzle asking for?</p></li>
+<li><p>Which of these can you trace in this manner?</p></li>
+</ol>
+<p><img src="../images/Can-you-trace.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="relationships-in-graphs" class="section level2">
+<h2><span class="header-section-number">5.5</span> Relationships in Graphs</h2>
+<p>A <strong>planar graph</strong> is a graph that <em>can be</em> drawn in
+the plane without any edges crossing.</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Show that <span class="math inline">\(K_4\)</span> and <span class="math inline">\(Q_3\)</span> are both planar graphs.</li>
+</ol>
+<div style="page-break-after: always;"></div>
+<p>Here are some graphs that are missing their vertices.</p>
+<p><img src="../images/Nine-Graphs.png" width="85%" style="display: block; margin: auto;" /></p>
+<ol start="10" style="list-style-type: decimal">
+<li>Add dots showing vertices so that each graph is a planar graph.</li>
+</ol>
+<!-- Do this adding *as few vertices as possible* (but no fewer). -->
+<ol start="11" style="list-style-type: decimal">
+<li>Fill in the table below for the graphs above.
+Do you notice any patterns?
+Can you make any conjectures?
+Can you prove any of the conjectures?
+(Note: an even vertex is a vertex with even degree.
+An odd vertex is a vertex with odd degree.)</li>
+</ol>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="13%" />
+<col width="14%" />
+<col width="12%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Graph</th>
+<th align="right">number of even verticies</th>
+<th align="center">number of odd vertices</th>
+<th align="center">total degree</th>
+<th align="center">number of vertices</th>
+<th align="center">number of edges</th>
+<th align="center">number of regions</th>
+<th align="center">Euler path?</th>
+<th align="center">Euler circuit?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="königsberg-bridge-problem" class="section level2">
+<h2><span class="header-section-number">5.6</span> Königsberg Bridge Problem</h2>
+<div id="original-version" class="section level3">
+<h3><span class="header-section-number">5.6.1</span> Original Version</h3>
+<p>One of the founders of graph theory was Leonid Euler (one of the greatest
+mathematicians who ever lived). At the time he was alive, the city of Königsberg had seven bridges connecting the two banks of the river flowing
+through downtown and two islands in that river. Here are a couple maps
+of downtown Königsberg at the time. One is a bit stylized.</p>
+<p><img src="../images/Konigsberg-bridges-two.png" width="60%" style="display: block; margin: auto;" /></p>
+<!-- \begin{center} -->
+<!-- \includegraphics[width=3in]{../images/KonigsbergBridges03} -->
+<!-- \hfill -->
+<!-- \includegraphics[width=3in]{../images/KonigsbergBridges02} -->
+<!-- \end{center} -->
+<p>As the story goes, the residents of Königsberg enjoyed walking the bridges.
+The question is this: How can someone take a Sunday afternoon walk that
+starts and ends in the same place and crosses each bridge exactly once?
+(Leaving the map, renting hot air balloons, swimming, etc. are not allowed.)</p>
+<p>We’ll return to this problem in just a moment. But first, a different sort of puzzle.</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Create a graph that represents the Königsberg Bridge Puzzle (so it can be traced
+in this manner, if and only if the Königsberg Bridge Puzzle has a solution). What
+are the vertices? What are the edges? What type of graph is it?</li>
+</ol>
+
+<ol start="13" style="list-style-type: decimal">
+<li>Can you trace the Königsberg Bridge graph?</li>
+</ol>
+
+</div>
+<div id="extentions-to-the-königsberg-bridge-problem" class="section level3">
+<h3><span class="header-section-number">5.6.2</span> Extentions to the Königsberg bridge problem</h3>
+<p>Here are some extensions to the Königsberg Bridge problem.
+First, we embelish the map a bit:
+The northern bank of the river is occupied by the Schloss, or castle, of the
+Blue Prince; the southern by that of the Red Prince. The east bank is home to
+the Bishop’s Kirche, or church; and on the small island in the center is a
+Gasthaus, or inn.</p>
+<p><img src="../images/Konigsberg-extra.png" width="50%" style="display: block; margin: auto;" /></p>
+<!-- \begin{center} -->
+<!-- \includegraphics[width=3in]{../Probs/Figures/KonigsbergBridges04} -->
+<!-- \end{center} -->
+<!-- %It is understood that the problems to follow should be taken in order, and -->
+<!-- %begins with a statement of the original problem: -->
+<p>It being customary among the townsmen, after some hours in the Gasthaus, to
+attempt to walk the bridges, many have returned for more refreshment claiming
+to have walked each bridge exactly once.
+However, none have been able to repeat the feat by the light of day.</p>
+<ol start="14" style="list-style-type: decimal">
+<li><strong>The Blue Prince’s eighth bridge.</strong>
+The Blue Prince, having analyzed the town’s bridge system by means of graph
+theory, concludes that the bridges cannot be walked. He contrives a stealthy
+plan to build an eighth bridge so that he can begin in the evening at his
+castle, walk the bridges, and end at the Gasthaus to brag of his victory. Of
+course, he wants the Red Prince to be unable to duplicate the feat. Where does
+the Blue Prince build the eighth bridge?</li>
+</ol>
+<!-- %Solution The eighth bridge is between -->
+<!-- %the Red Prince's castle and the church.  Enlarge The eighth bridge is between -->
+<!-- %the Red Prince's castle and the church. -->
+<!-- %This Euler walk is desired to begin at the blue castle (which can be thought of -->
+<!-- %as the blue node) and end at the inn, or the beer-colored node. Thus a new edge -->
+<!-- %is drawn between the other two nodes between the Red Prince's castle and the -->
+<!-- %church. Since they each formerly had an odd number of edges, they must now have -->
+<!-- %an even number of edges. This is a change in parity from odd to even degree. -->
+<!-- %The graph now has exactly two nodes of odd degree--the Blue Prince's castle and -->
+<!-- %the inn. Thus, the Blue Prince can perform an Euler walk to the inn or anyone -->
+<!-- %starting at the inn could perform an Euler walk to the Blue Prince's castle, -->
+<!-- %but the Red Prince is unable to get to the inn. -->
+
+<ol start="15" style="list-style-type: decimal">
+<li><strong>The Red Prince’s ninth bridge.</strong>
+The Red Prince, infuriated by his brother’s solution to the problem,
+wants to build a ninth bridge, enabling him to begin at his castle, walk the
+bridges, and end at the Gasthaus to rub dirt in his brother’s face.
+Furthermore, his brother should then no longer walk the bridges himself.
+Where does the Red Prince build the ninth bridge?</li>
+</ol>
+<!-- %Solution The ninth bridge connects the two prince's castles. -->
+<!-- %Enlarge The ninth bridge connects the two prince's castles. -->
+<!-- %In this case, the required solution is for the Red Prince's castle and the inn -->
+<!-- %to have an odd number of edges, while the church and the Blue Prince's castle -->
+<!-- %have an even number. The church has an even number already, and the inn already -->
+<!-- %has an odd number. The Red Prince's castle has 4 edges, an even number, while -->
+<!-- %the Blue Prince's has 3. To make the red node of odd degree and the blue node -->
+<!-- %of even degree, the Red Prince must build a bridge between those twoøgiving his -->
+<!-- %castle 5 edges and the Blue Prince's 4. Again, there are exactly two nodes of -->
+<!-- %odd degree, but now they are the Red Prince's castle and the inn. The Red -->
+<!-- %Prince can perform the walk, but the Blue Prince cannot. -->
+
+<ol start="16" style="list-style-type: decimal">
+<li><strong>The Bishop’s tength bridge.</strong>
+The Bishop has watched this furious bridge-building with dismay. It upsets the
+townspeople and, worse, contributes to excessive drunkenness. He
+wants to build a tenth bridge that allows all the inhabitants to walk the
+bridges and return to their own beds. Where does the Bishop build the tenth
+bridge?</li>
+</ol>
+
+<div style="page-break-after: always;"></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="graph-isomorphism.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bipartite-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Graph-worksheets.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
