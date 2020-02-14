@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-02-10" />
+<meta name="date" content="2020-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,11 +104,11 @@
 <li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
-<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.3</b> Connectedness</a></li>
-<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.4</b> Euler and Hamilton Paths</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.4.1</b> Can you trace it?</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.3</b> Euler and Hamilton Paths</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.3.1</b> Can you trace it?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.5</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.4</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.5</b> Connectedness</a></li>
 <li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a><ul>
 <li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
 <li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
@@ -145,9 +145,9 @@
 <div id="definition-of-a-path" class="section level2">
 <h2><span class="header-section-number">5.1</span> Definition of a path</h2>
 <ul>
-<li>Informally, a <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.
+<li><p>Informally, a <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.</p>
 <ul>
-<li>Can also be described as a sequence of vertices, each one adjacent to the next.</li>
+<li>Can sometimes be described as a sequence of vertices, each one adjacent to the next (see below).</li>
 <li>For directed graphs, we require that the directions of the edges be compatible.</li>
 </ul></li>
 <li><p>More formally, let <span class="math inline">\(n\)</span> be a nonnegative integer and <span class="math inline">\(G\)</span> an undirected [directed] graph.
@@ -172,48 +172,44 @@ does it matter? When does it not matter?</p></li>
 <div id="paths-and-isomorphism" class="section level2">
 <h2><span class="header-section-number">5.2</span> Paths and Isomorphism</h2>
 <p>If <span class="math inline">\(f : G \to H\)</span> is an isomorphism, then <span class="math inline">\(f\)</span> maps paths in <span class="math inline">\(G\)</span> to paths in <span class="math inline">\(H\)</span>. (Why?)
-This can be useful for finding and isomorphism between <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> or for showing that there
+This can be useful for finding an isomorphism between <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> or for showing that there
 is no isomorphism.</p>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Answer some questions about the pairs of graphs below.</p>
+<li><p>Consider the pair of graphs below.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Compute the degreee sequences for each graph.</p></li>
-<li><p>Find the shortest and longest simple paths from <span class="math inline">\(v_1\)</span> to <span class="math inline">\(v_4\)</span>.</p></li>
+<li><p>Explain why any isophormphism must either
+pair <span class="math inline">\(u_1\)</span> with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(u_4\)</span> with <span class="math inline">\(v_4\)</span> or else
+pair <span class="math inline">\(u_1\)</span> with <span class="math inline">\(v_4\)</span> and <span class="math inline">\(u_4\)</span> with <span class="math inline">\(v_1\)</span>.</p></li>
+<li><p>How long is the shortest path from <span class="math inline">\(u_1\)</span> to <span class="math inline">\(u_4\)</span>? the shortest
+path from <span class="math inline">\(v_1\)</span> to <span class="math inline">\(v_4\)</span>?</p></li>
+<li><p>Is there a path of length 4 between <span class="math inline">\(u_1\)</span> and <span class="math inline">\(u_4\)</span>? between <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_4\)</span>?</p></li>
 <li><p>Are the graphs isomorphic? Explain.</p></li>
 </ol></li>
 </ol>
-<p><img src="../images/GraphFig9-4-6.png" width="38%" style="display: block; margin: auto;" /><img src="../images/GraphFig9-4-7.png" width="38%" style="display: block; margin: auto;" /></p>
-</div>
-<div id="connectedness" class="section level2">
-<h2><span class="header-section-number">5.3</span> Connectedness</h2>
-<ul>
-<li><p>An <strong>undirected graph</strong> is <strong>connected</strong> if there is a path between every pair of vertices.</p></li>
-<li><p>A <strong>directed graph</strong> is <strong>strongly connected</strong> if there is a path between every pair of vertices.</p></li>
-<li><p>A <strong>directed graph</strong> is <strong>weakly connected</strong> if the underlying undirected graph
-is connected.</p></li>
-<li><p>A connected component of a subgraph <span class="math inline">\(H\)</span> of a graph <span class="math inline">\(G\)</span> is maximal connected subgraph.
-That is, <span class="math inline">\(H\)</span> must be a subgraph of <span class="math inline">\(G\)</span>, <span class="math inline">\(H\)</span> be connected, but <span class="math inline">\(H\)</span> cannot be a subgraph
-of a larger connected subgraph of <span class="math inline">\(G\)</span>.</p></li>
-</ul>
+<p><img src="../images/GraphFig9-4-6.png" width="36%" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Draw a directed graph with 6 vertices that is weakly connected but not strongly connected.</p></li>
-<li><p>Draw an undirected graph with two connected components.</p></li>
+<li>How about these graphs? Are they isomporphic? How can considering paths help you figure
+this out?</li>
 </ol>
+<p><img src="../images/GraphFig9-4-7.png" width="36%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="euler-and-hamilton-paths" class="section level2">
-<h2><span class="header-section-number">5.4</span> Euler and Hamilton Paths</h2>
+<h2><span class="header-section-number">5.3</span> Euler and Hamilton Paths</h2>
 <ul>
 <li><p>An <strong>Euler path</strong> is a path that visits every edge of a graph exactly once.</p></li>
 <li><p>A <strong>Hamilton path</strong> is a path that visits every vertex exactly once.</p></li>
 </ul>
-<p>Euler paths are named after Leonid Euler who posed the following famous problem about the
-bridges in Königsberg.</p>
+<p>Euler paths are named after Leonid Euler who posed a famous problem about the
+bridges in Königsberg. Hamilton paths are named after the Irish mathematician
+William Rowan Hamilton, not after the American politician Alexander Hamilton.</p>
 <div id="can-you-trace-it" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Can you trace it?</h3>
+<h3><span class="header-section-number">5.3.1</span> Can you trace it?</h3>
 <p>Perhaps you have seen the following type of ``puzzle’’.
 The goal is to trace the figures without lifting your pencil from
 the paper and without retracing any of the lines.</p>
-<ol start="7" style="list-style-type: decimal">
+<ol start="6" style="list-style-type: decimal">
 <li><p>Which kind of path is this puzzle asking for?</p></li>
 <li><p>Which of these can you trace in this manner?</p></li>
 </ol>
@@ -221,18 +217,23 @@ the paper and without retracing any of the lines.</p>
 </div>
 </div>
 <div id="relationships-in-graphs" class="section level2">
-<h2><span class="header-section-number">5.5</span> Relationships in Graphs</h2>
+<h2><span class="header-section-number">5.4</span> Relationships in Graphs</h2>
 <p>A <strong>planar graph</strong> is a graph that <em>can be</em> drawn in
 the plane without any edges crossing.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Show that <span class="math inline">\(K_4\)</span> is a planar graph by drawing it without any edge crossings.</li>
+</ol>
+
 <ol start="9" style="list-style-type: decimal">
-<li>Show that <span class="math inline">\(K_4\)</span> and <span class="math inline">\(Q_3\)</span> are both planar graphs.</li>
+<li>Show that <span class="math inline">\(Q_3\)</span> is a planar graphs by drawing it without any edge crossings.</li>
 </ol>
+
 <div style="page-break-after: always;"></div>
-<p>Here are some graphs that are missing their vertices.</p>
-<p><img src="../images/Nine-Graphs.png" width="85%" style="display: block; margin: auto;" /></p>
 <ol start="10" style="list-style-type: decimal">
-<li>Add dots showing vertices so that each graph is a planar graph.</li>
+<li>Here are some graphs that are missing their vertices.
+Add dots showing vertices so that each graph is a planar graph.</li>
 </ol>
+<p><img src="../images/Nine-Graphs.png" width="85%" style="display: block; margin: auto;" /></p>
 <!-- Do this adding *as few vertices as possible* (but no fewer). -->
 <ol start="11" style="list-style-type: decimal">
 <li>Fill in the table below for the graphs above.
@@ -479,6 +480,29 @@ An odd vertex is a vertex with odd degree.)</li>
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="connectedness" class="section level2">
+<h2><span class="header-section-number">5.5</span> Connectedness</h2>
+<ul>
+<li><p>An <strong>undirected graph</strong> is <strong>connected</strong> if there is a path between every pair of vertices.</p></li>
+<li><p>A <strong>directed graph</strong> is <strong>strongly connected</strong> if there is a path between every pair of vertices.</p></li>
+<li><p>A <strong>directed graph</strong> is <strong>weakly connected</strong> if the underlying undirected graph
+is connected.</p></li>
+<li><p>A connected component <span class="math inline">\(H\)</span> of a graph <span class="math inline">\(G\)</span> is maximal connected subgraph.
+That is,</p>
+<ul>
+<li><span class="math inline">\(H\)</span> must be a subgraph of <span class="math inline">\(G\)</span>,</li>
+<li><span class="math inline">\(H\)</span> must be connected, but</li>
+<li><span class="math inline">\(H\)</span> cannot be a subgraph of a larger connected subgraph of <span class="math inline">\(G\)</span>.</li>
+</ul></li>
+</ul>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Draw a directed graph with 6 vertices that is weakly connected but not strongly connected.</p></li>
+<li><p>Draw an undirected graph with two connected components. Count the number of vertices,
+edges, and regions in your graph. How does this compare to the results in the table in
+problem 11?</p></li>
+</ol>
 </div>
 <div id="königsberg-bridge-problem" class="section level2">
 <h2><span class="header-section-number">5.6</span> Königsberg Bridge Problem</h2>
@@ -499,13 +523,13 @@ The question is this: How can someone take a Sunday afternoon walk that
 starts and ends in the same place and crosses each bridge exactly once?
 (Leaving the map, renting hot air balloons, swimming, etc. are not allowed.)</p>
 <p>We’ll return to this problem in just a moment. But first, a different sort of puzzle.</p>
-<ol start="12" style="list-style-type: decimal">
+<ol style="list-style-type: decimal">
 <li>Create a graph that represents the Königsberg Bridge Puzzle (so it can be traced
 in this manner, if and only if the Königsberg Bridge Puzzle has a solution). What
 are the vertices? What are the edges? What type of graph is it?</li>
 </ol>
 
-<ol start="13" style="list-style-type: decimal">
+<ol start="2" style="list-style-type: decimal">
 <li>Can you trace the Königsberg Bridge graph?</li>
 </ol>
 
@@ -528,7 +552,7 @@ Gasthaus, or inn.</p>
 attempt to walk the bridges, many have returned for more refreshment claiming
 to have walked each bridge exactly once.
 However, none have been able to repeat the feat by the light of day.</p>
-<ol start="14" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li><strong>The Blue Prince’s eighth bridge.</strong>
 The Blue Prince, having analyzed the town’s bridge system by means of graph
 theory, concludes that the bridges cannot be walked. He contrives a stealthy
@@ -550,7 +574,7 @@ the Blue Prince build the eighth bridge?</li>
 <!-- %starting at the inn could perform an Euler walk to the Blue Prince's castle, -->
 <!-- %but the Red Prince is unable to get to the inn. -->
 
-<ol start="15" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li><strong>The Red Prince’s ninth bridge.</strong>
 The Red Prince, infuriated by his brother’s solution to the problem,
 wants to build a ninth bridge, enabling him to begin at his castle, walk the
@@ -570,7 +594,7 @@ Where does the Red Prince build the ninth bridge?</li>
 <!-- %odd degree, but now they are the Red Prince's castle and the inn. The Red -->
 <!-- %Prince can perform the walk, but the Blue Prince cannot. -->
 
-<ol start="16" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li><strong>The Bishop’s tength bridge.</strong>
 The Bishop has watched this furious bridge-building with dismay. It upsets the
 townspeople and, worse, contributes to excessive drunkenness. He

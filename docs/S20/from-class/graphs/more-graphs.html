@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-02-10" />
+<meta name="date" content="2020-02-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,11 +104,11 @@
 <li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
-<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.3</b> Connectedness</a></li>
-<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.4</b> Euler and Hamilton Paths</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.4.1</b> Can you trace it?</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.3</b> Euler and Hamilton Paths</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.3.1</b> Can you trace it?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.5</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.4</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.5</b> Connectedness</a></li>
 <li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a><ul>
 <li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
 <li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
@@ -153,23 +153,23 @@
 <h2><span class="header-section-number">2.2</span> Some Terminology</h2>
 <ul>
 <li><p>Two vertices are <strong>adjacent</strong> if they are connected by an edge.</p></li>
-<li>Two edges are <strong>incident</strong> if they share a vertex.
+<li><p>Two edges are <strong>incident</strong> if they share a vertex.</p>
 <ul>
 <li>For directed graphs, one edge must point into the vertex and one out.</li>
 </ul></li>
-<li>The <strong>degree</strong> of a vertex in an undirected graph is the number of edges that include the vertex;
+<li><p>The <strong>degree</strong> of a vertex in an undirected graph is the number of edges that include the vertex;</p>
 <ul>
 <li>Self-loops (if they are allowed) contribute 2 to the degree.</li>
 <li>For a directed graph, we can talk about <strong>in-degree</strong>, <strong>out-degree</strong>, and
 <strong>total degree</strong>.</li>
 </ul></li>
-<li>A <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.
+<li><p>A <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.</p>
 <ul>
 <li>Can also be described as a sequence of vertices, each one adjacent to the next.</li>
 <li>For directed graphs, we require that the directions of the edges be compatible.</li>
 </ul></li>
 <li><p>A <strong>cycle</strong> is a path that begins and ends at the same vertex.</p></li>
-<li>A <strong>connected graph</strong> is one where there is a path between any pair of vertices.
+<li><p>A <strong>connected graph</strong> is one where there is a path between any pair of vertices.</p>
 <ul>
 <li>For a directed graph, we ignore the direction of the edges.</li>
 </ul></li>
@@ -197,7 +197,7 @@ degree indicate about a person? A small degree?</p></li>
 </li>
 <li>This result is called the <strong>Handshaking Theorem</strong>. Why does it have that name?</li>
 </ol></li>
-<li>In Figure 9, assume that <span class="math inline">\(a \to b\)</span> means team <span class="math inline">\(a\)</span> defeated team <span class="math inline">\(b\)</span>.
+<li><p>In Figure 9, assume that <span class="math inline">\(a \to b\)</span> means team <span class="math inline">\(a\)</span> defeated team <span class="math inline">\(b\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Compute the in-degree and out-degree of each team in Figure 9.<br />
 </li>
