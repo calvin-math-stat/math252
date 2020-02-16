@@ -3,6 +3,7 @@
 ```{r setup-bipartite-planar, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 # Bipartite Graphs
 
 ## Definition
@@ -46,14 +47,14 @@ knitr::include_graphics("../images/bipartite-graphs.png")
 
 \newpage
 
-# Planar Graphs
+# Planar and Non-planar Graphs
 
 A graph is a **planar graph** if it can be drawn in the plane with no edge crossings.
-[Note: You may need to rearrange the vertices to avoid crossings.]
+[Note: You may need to rearrange the vertices and edges to avoid crossings.]
 
 ## Euler and Planarity
 
-We have already seen that for planar graphs,
+We have already seen **Euler's Formula for Planar Graphs**:
 
 $$v - e + r = 1 + \mbox{number of connected components} \;,$$
 where $v$ is the number of vertices, $e$ the number of edges and $r$ the number of 
@@ -61,16 +62,20 @@ regions.
 
 In particular, for a connected graph we have $v - e + r = 2$.
 
- 1. Show that the following are planar.
+1. Show that the following are planar.
     a. $K_{2,2}$ 
     a. $K_{2,3}$ 
     a. $K_{2,4}$
     a. Is $K_{2,n}$ planar for every $n$?  
     
- 2. Use Euler's formula to show that $K_5$ is not planar.  (Hint: how many regions
- would $K_5$ have it if were planar? Why is that problematic?)
+2. Use Euler's formula to show that $K_5$ is not planar. 
  
- 3. Use Euler's formula to show that $K_{3,3}$ is not planar.
+    a. How many vertices does $K_5$ have?
+    b. How many edges does $K_5$ have?
+    c. If $K_5$ were planar, how many regions would it have?
+    d. Show that $K_5$ can't have that number of regions, so it must not be planar.
+    
+3. Use Euler's formula to show that $K_{3,3}$ is not planar.
  
 ## Kuratowski's Theorem
 
@@ -85,7 +90,10 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
   same graph by a sequence of elementary subdivisions.
   
   * an **elementary subdivision** of a graph $G$ removes one edge $(u, v)$ and 
-  adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$.
+  adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$. 
+  <!-- That's a fancy way -->
+  <!-- of saying "place an extra vertex in the middle of an edge to turn it into  -->
+  <!-- two edges". -->
   
  4. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
  subdivisions on your graph.

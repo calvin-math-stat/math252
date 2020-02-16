@@ -1,0 +1,105 @@
+---
+title: "Paths -- Group Sheet "
+author: "Math 252 -- Spring 2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Instructions
+
+A. Work in groups of 3 or 4. Put all of your group members' names in the space below:
+
+\vfill
+
+B. Have one person in your group be the official recorder for the group.  The recorder's job
+is to record your work on some of the problems on this sheet. Feel free to rotate the 
+recorder duties.  You should work on all of the problems, but you only have to turn in the
+ones on this sheet. Turn in as much as you finish during class.
+
+C. At the end of the hour, make sure all of these group sheets get turned in.
+
+D. The homework due today will be collected on Friday instead of today.
+
+
+-------
+
+ 
+### Paths and Isomorphism
+
+
+4. Consider the pair of graphs below.  Are the graphs isomorphic?  Explain.
+    
+
+\vfill
+\vfill
+
+
+### Can you trace it?
+
+ 6. Which kind of path is this puzzle asking for?
+ 
+\vfill
+
+
+### Relationships in Graphs
+
+
+ 8. Show that $K_4$ is a planar graph by drawing it without any edge crossings.
+ 
+\vfill
+\vfill
+ 
+ 9. Show that $Q_3$ is a planar graphs by drawing it without any edge crossings.
+
+\vfill
+\vfill
+
+\newpage
+
+ 10.  Add dots showing vertices so that each graph is a planar graph.
+
+```{r, echo = FALSE, fig.align = "center", out.width = "75%"}
+knitr::include_graphics("../../../worksheets/Graphs/images/Nine-Graphs.png")
+```
+
+ 
+ 
+<!-- Do this adding *as few vertices as possible* (but no fewer). -->
+
+ 11. Fill in the table below for the graphs above.
+
+Graph | # even verticies | # odd vertices | total degree | number of vertices  | number of edges     | number of regions    | Euler path? | Euler circuit?
+:-----:|-------:|:------:|:------:|:---------:|:----------:|:--------:|:-------:|:-------:
+         |          |        |           |           |            |       |           
+1        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+2        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+3        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+4        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+5        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+6        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+7        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+8        |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+         |          |        |           |           |            |       |           
+9        |          |        |           |           |            |       |           
+

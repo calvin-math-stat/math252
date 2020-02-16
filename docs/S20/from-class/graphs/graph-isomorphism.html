@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction to Graphs | Graphs</title>
-  <meta name="description" content="1 Introduction to Graphs | Graphs" />
+  <title>4 Graph Isomorphism | Graphs</title>
+  <meta name="description" content="4 Graph Isomorphism | Graphs" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction to Graphs | Graphs" />
+  <meta property="og:title" content="4 Graph Isomorphism | Graphs" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction to Graphs | Graphs" />
+  <meta name="twitter:title" content="4 Graph Isomorphism | Graphs" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="more-graphs.html"/>
+<link rel="prev" href="graph-representations.html"/>
+<link rel="next" href="paths-in-graphs.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,249 +140,80 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-graphs" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction to Graphs</h1>
-<div id="graphs" class="section level2">
-<h2><span class="header-section-number">1.1</span> Graphs</h2>
-<p>A Graph <span class="math inline">\(G\)</span> consists of two sets</p>
-<ul>
-<li><span class="math inline">\(V\)</span>, a set of vertices (also called nodes)</li>
-<li><span class="math inline">\(E\)</span>, a set of edges (each edge is associated with two<a href="planar-and-non-planar-graphs.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> vertices)</li>
-</ul>
-<p>In modeling situations, the edges are used to express some sort of relationship
-between vertices.</p>
-<div id="graph-flavors" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Graph flavors</h3>
-<p>There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set. The first four are the most important.</p>
-<table>
-<thead>
-<tr class="header">
-<th>graph type</th>
-<th>edges</th>
-<th>multi-edges allowed?</th>
-<th>self-loops allowed?</th>
-<th>cycles allowed?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>simple graph</strong></td>
-<td>undirected</td>
-<td>no</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td><strong>tree</strong></td>
-<td>undirected</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td><strong>directed graph</strong></td>
-<td>directed</td>
-<td>no</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td><strong>directed acyclic graph</strong></td>
-<td>directed</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td>multigraph</td>
-<td>undirected</td>
-<td>yes</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td>directed multigraph</td>
-<td>directed</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td>pseudo-graph</td>
-<td>undirected</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>multi-edges</strong>: multiple edges between the same two vertices (in the same direction,
-in the case of directed graphs).
-<strong>self-loop</strong>: an edge connecting a vertext to itself.
-<strong>cycle</strong>: a chain of edges (called a <strong>path</strong>) that returns to where it started.</p>
-<p><strong>Directed graphs</strong> are sometimes called <strong>digraphs</strong>. <strong>Directed Acyclic Graphs</strong>
-are sometimes called <strong>DAGS</strong>.</p>
-</div>
-<div id="graph-representation" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Graph Representation</h3>
-<p>(Small) graphs are often depicted using dots for vertices and line segments
-or arcs for edges. For directed graphs, an arrow is used to indicate the
-direction.</p>
+<div id="graph-isomorphism" class="section level1">
+<h1><span class="header-section-number">4</span> Graph Isomorphism</h1>
+<p>Two (mathematical) objects are called <strong>isomorphic</strong> if they are “essentially the same”
+(iso-morph means same-form).
+What “essentially the same” means depends on the kind of object.
+For graphs, we mean that the vertex and edge structure is the same. So</p>
+<blockquote>
+<p>Graphs <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are <strong>isomorphic</strong> if there is a bijection (1-1 and onto function)<br />
+<span class="math display">\[f: G \to H\]</span> such that
+there is an edge from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> in <span class="math inline">\(G\)</span> if and only if
+there is an edge from <span class="math inline">\(f(a)\)</span> to <span class="math inline">\(f(b)\)</span> in <span class="math inline">\(H\)</span>.<br />
+The function <span class="math inline">\(f\)</span> is called an <strong>isomorphism</strong>.</p>
+</blockquote>
+<p>(For graphs that allow multi-edges, we require that the number of edges be the same.)</p>
+<p>More informally, to who to graphs are isomorphic, we must show how to match up
+vertices in one graph with vertices in the other so that edges are preserved.</p>
+<div id="showing-graphs-are-isomorphic" class="section level2">
+<h2><span class="header-section-number">4.1</span> Showing graphs are isomorphic</h2>
+<p>When graphs are isomorphic, we can demonstrate this by providing the isomorphism.</p>
 <ol style="list-style-type: decimal">
-<li>For each type of graph, draw a picture of an example graph with 5 vertices.</li>
-<li>Why are trees called trees?</li>
+<li><p>Show that the following pair of graphs is isomorphic by providing the
+isomorphism.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What must you demonstrate to convince someone that your function
+is indeed an isomorphism?</p></li>
+<li><p>Is there more than one isomorphism? If so, give another one.</p></li>
+</ol></li>
 </ol>
+<p><img src="../images/GraphEx-9-3-39.png" width="25%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="labeled-graphs" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Labeled Graphs</h3>
-<p>In many situations it is useful to add additional information to either the
-vertices or the edges. These are sometimes called “labeled” graphs and the
-extra information referred to as labels.</p>
-</div>
-<div id="graph-models" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Graph Models</h3>
-<p>Many things can be models with graphs of various types. In each situation
-below,</p>
-<ul>
-<li>identify the vertices</li>
-<li>identify what edges represent</li>
-<li>determine which flavor of graph would be used</li>
-<li>determine what, if any, information might be useful as labels (on vertices
-or on edges or on both)</li>
-<li>if the graph has any special properties, note them</li>
-<li>if your group disagrees about some of the answers, identify whether it
-is because you are making different assumptions about the situation being
-modeled</li>
-</ul>
-<div style="page-break-after: always;"></div>
-<table>
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Vertices</th>
-<th>Edges</th>
-<th>Type of Graph</th>
-<th>Labels/Properties?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>3</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div id="showing-graphs-are-not-isomorphic" class="section level2">
+<h2><span class="header-section-number">4.2</span> Showing graphs are not isomorphic</h2>
+<p>Showing that two graphs are <em>not</em> isomorphic can be trickier. Somehow you need
+to demonstrate that no isomorphism exists. Unfortunately, there are a lot of
+bijections (<span class="math inline">\(n!\)</span> if the graphs each have <span class="math inline">\(n\)</span> vertices), so checking
+all possible bijections to see if they are isomorphisms would not be
+a very efficient algorithm.</p>
+<p><strong>News Flash:</strong> Until recently, the best known algorithm for Graph Isomorphism
+had exponential worst case running time (but was polynomial time on average).
+In 2015, Laszlo Babai demonstrated an <a href="https://motherboard.vice.com/en_us/article/4xagmd/graph-isomorphism-youve-been-served">algorithm that runs in sub-exponential
+time</a>
+(almost, but not quite polynomial time).</p>
+<p>Back to showing two graphs are not isomorphic. We need to demonstrate that no
+isomorphism exists, but we don’t want to check all of them. One good approach
+is to consider <strong>graph invariants</strong>. A graph invariant is a property that is
+the same whenever two graphs are isomorphic.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Which of the following are graph invariants?</p>
+<ol style="list-style-type: lower-alpha">
+<li>number of vertices</li>
+<li>number of edges</li>
+<li>degree sequence</li>
+<li>adjacency matrix</li>
+<li>incidence matrix</li>
+<li>having a subgraph isomorphic to <span class="math inline">\(K_4\)</span></li>
+<li>having a subgraph isomorphic to _____ (can you fill in the blank with any graph?)</li>
+</ol></li>
+</ol>
+<p>Unfortunately, matching invariants does not guarantee that graphs are
+isomorphic, but you can use graph invariants to help narrow the search.</p>
 <ol start="3" style="list-style-type: decimal">
-<li><p><strong>Niche Overlap.</strong> Some species of animals compete with other
-species in an ecosystem.</p></li>
-<li><p><strong>Acquaintanceship.</strong> Some pairs of people are acquainted with each
-other, some are not.</p></li>
-<li><p><strong>Precedence and Concurrent Processing.</strong> Computer programs can be
-executed more rapidly by executing some statements concurrently
-But it is important not to execute a statement that depends
-on the results of statements that have not yet been executed. What is the
-precedence graph for this simple program?</p></li>
+<li>Explain why each of the following pairs of graphs is not isomorphic.</li>
 </ol>
-<pre><code>          a = 0
-          b = 1
-          c = a + 1
-          d = b + a
-          e = d + 1
-          e = c + d</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p><strong>Influence.</strong> In studies of group behavior it is observed that
-certain people can influence the thinking of other people.</p></li>
-<li><p><strong>Hollywood.</strong> Some actors have been in movies together, others have not.</p></li>
-<li><p><strong>Round-Robin Tournament.</strong> In a round robin tournament, each team plays
-each other team once. (The graph should keep track of who wins and loses each game.)</p></li>
-<li><p><strong>General Sports Schedule.</strong> The schedule for most leagues is
-not a round-robin tournament. How does that change the graph?
-If the games haven’t been played yet, what information might the
-graph keep track of? How?</p></li>
-<li><p><strong>Telephone calls.</strong></p></li>
-<li><p><strong>World Wide Web.</strong></p></li>
-<li><p><strong>Road maps.</strong></p></li>
+<p><img src="../images/GraphFig-9-3-9.png" width="45%" /><img src="../images/GraphFig-9-3-10.png" width="45%" /></p>
+</div>
+<div id="isomorphic-or-not" class="section level2">
+<h2><span class="header-section-number">4.3</span> Isomorphic or not?</h2>
+<ol start="4" style="list-style-type: decimal">
+<li>For each pair, determine whether the graphs are isomorphic. Be sure to explain how you know.</li>
 </ol>
-</div>
-</div>
-<div id="bonus-problem" class="section level2">
-<h2><span class="header-section-number">1.2</span> Bonus Problem</h2>
-<p>From 1961 through 1977 the NFL (National Football League) had a 14-game season.
-Until 1976, when two new teams were added, there were 13 teams in each of 2
-conferences. The NFL wanted a schedule were each team would play 11 games
-against other teams in their conference and 3 games against teams from the other
-conference.</p>
-<p>Devise such a schedule or explain why it is not possible.
-For simplicity, let’s name the teams in the American Football Conference (AFC)
-<span class="math inline">\(A_1, A_2, \dots, A_{13}\)</span> and the teams in the National Football Conference (NFC)
-<span class="math inline">\(N_1, N_2, \dots, N_{13}\)</span>.</p>
-<!-- motivate: degree, subgraph, bipartite graph -->
+<p><img src="../images/GraphFig-9-3-12.png" width="45%" /><img src="../images/GraphEx-9-3-63.png" width="45%" /></p>
+<hr />
+<p><img src="../images/GraphEx-9-3-43.png" width="45%" /><img src="../images/GraphEx-9-3-37.png" width="45%" /></p>
+<div style="page-break-after: always;"></div>
 
 </div>
 </div>
@@ -391,8 +222,8 @@ For simplicity, let’s name the teams in the American Football Conference (AFC)
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="more-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="graph-representations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paths-in-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

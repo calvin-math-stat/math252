@@ -20,7 +20,7 @@ library(ggformula)
 # Preface {-}
 
 These exercises were assembled to accompany a Discrete Mathematics course
-at Calvin College. 
+at Calvin University. 
 
 \newpage
 

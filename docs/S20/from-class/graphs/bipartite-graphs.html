@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Introduction to Graphs | Graphs</title>
-  <meta name="description" content="1 Introduction to Graphs | Graphs" />
+  <title>6 Bipartite Graphs | Graphs</title>
+  <meta name="description" content="6 Bipartite Graphs | Graphs" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Introduction to Graphs | Graphs" />
+  <meta property="og:title" content="6 Bipartite Graphs | Graphs" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Introduction to Graphs | Graphs" />
+  <meta name="twitter:title" content="6 Bipartite Graphs | Graphs" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="more-graphs.html"/>
+<link rel="prev" href="paths-in-graphs.html"/>
+<link rel="next" href="planar-and-non-planar-graphs.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,250 +140,44 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-graphs" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction to Graphs</h1>
-<div id="graphs" class="section level2">
-<h2><span class="header-section-number">1.1</span> Graphs</h2>
-<p>A Graph <span class="math inline">\(G\)</span> consists of two sets</p>
-<ul>
-<li><span class="math inline">\(V\)</span>, a set of vertices (also called nodes)</li>
-<li><span class="math inline">\(E\)</span>, a set of edges (each edge is associated with two<a href="planar-and-non-planar-graphs.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> vertices)</li>
-</ul>
-<p>In modeling situations, the edges are used to express some sort of relationship
-between vertices.</p>
-<div id="graph-flavors" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Graph flavors</h3>
-<p>There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set. The first four are the most important.</p>
-<table>
-<thead>
-<tr class="header">
-<th>graph type</th>
-<th>edges</th>
-<th>multi-edges allowed?</th>
-<th>self-loops allowed?</th>
-<th>cycles allowed?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>simple graph</strong></td>
-<td>undirected</td>
-<td>no</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td><strong>tree</strong></td>
-<td>undirected</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td><strong>directed graph</strong></td>
-<td>directed</td>
-<td>no</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td><strong>directed acyclic graph</strong></td>
-<td>directed</td>
-<td>no</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td>multigraph</td>
-<td>undirected</td>
-<td>yes</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td>directed multigraph</td>
-<td>directed</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td>pseudo-graph</td>
-<td>undirected</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<p><strong>multi-edges</strong>: multiple edges between the same two vertices (in the same direction,
-in the case of directed graphs).
-<strong>self-loop</strong>: an edge connecting a vertext to itself.
-<strong>cycle</strong>: a chain of edges (called a <strong>path</strong>) that returns to where it started.</p>
-<p><strong>Directed graphs</strong> are sometimes called <strong>digraphs</strong>. <strong>Directed Acyclic Graphs</strong>
-are sometimes called <strong>DAGS</strong>.</p>
+<div id="bipartite-graphs" class="section level1">
+<h1><span class="header-section-number">6</span> Bipartite Graphs</h1>
+<div id="definition" class="section level2">
+<h2><span class="header-section-number">6.1</span> Definition</h2>
+<p>A simple graph <span class="math inline">\(G\)</span> is <strong>biparatite</strong> if its vertices can be partitioned into two disjoint
+subsets <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span> and every edge connects a vertex in <span class="math inline">\(V_1\)</span> with a vertex in <span class="math inline">\(V_2\)</span>.
+The pair <span class="math inline">\(\langle V_1, V_2 \rangle\)</span> is called a <strong>bipartition</strong> of <span class="math inline">\(G\)</span>.</p>
 </div>
-<div id="graph-representation" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Graph Representation</h3>
-<p>(Small) graphs are often depicted using dots for vertices and line segments
-or arcs for edges. For directed graphs, an arrow is used to indicate the
-direction.</p>
+<div id="examples" class="section level2">
+<h2><span class="header-section-number">6.2</span> Examples</h2>
 <ol style="list-style-type: decimal">
-<li>For each type of graph, draw a picture of an example graph with 5 vertices.</li>
-<li>Why are trees called trees?</li>
+<li>Which of the following are bipartite?</li>
+</ol>
+<p><img src="../images/GraphFig-9-2-8.png" width="40%" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>For what values of <span class="math inline">\(n\)</span> are the following bipartite?</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(K_n\)</span></li>
+<li><span class="math inline">\(C_n\)</span></li>
+<li><span class="math inline">\(Q_n\)</span></li>
+</ol></li>
+<li><p>Can a bipartite graph have more than one bipartition? If so, give an example. If
+not, explain why not.</p></li>
+<li><p>Describe an algorithm for checking whether a graph is bipartite. How efficient is
+your algorithm?</p></li>
 </ol>
 </div>
-<div id="labeled-graphs" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Labeled Graphs</h3>
-<p>In many situations it is useful to add additional information to either the
-vertices or the edges. These are sometimes called “labeled” graphs and the
-extra information referred to as labels.</p>
-</div>
-<div id="graph-models" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Graph Models</h3>
-<p>Many things can be models with graphs of various types. In each situation
-below,</p>
-<ul>
-<li>identify the vertices</li>
-<li>identify what edges represent</li>
-<li>determine which flavor of graph would be used</li>
-<li>determine what, if any, information might be useful as labels (on vertices
-or on edges or on both)</li>
-<li>if the graph has any special properties, note them</li>
-<li>if your group disagrees about some of the answers, identify whether it
-is because you are making different assumptions about the situation being
-modeled</li>
-</ul>
+<div id="complete-bipartite-graphs" class="section level2">
+<h2><span class="header-section-number">6.3</span> Complete Bipartite Graphs</h2>
+<p>A complete biparite graph <span class="math inline">\(K_{m,n}\)</span> has two disjoint sets of vertices <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span>
+with <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> elements. There is an edge between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> if and only if
+<span class="math inline">\(x \in V_1\)</span> and <span class="math inline">\(y \in V_2\)</span> or <span class="math inline">\(x \in V_2\)</span> and <span class="math inline">\(y \in V_1\)</span>.</p>
+<p>Here are some examples.</p>
+<p><img src="../images/bipartite-graphs.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Draw the following graphs: <span class="math inline">\(K_{2,2}\)</span>, <span class="math inline">\(K_{4,2}\)</span>, <span class="math inline">\(K_{4,3}\)</span></li>
+</ol>
 <div style="page-break-after: always;"></div>
-<table>
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Vertices</th>
-<th>Edges</th>
-<th>Type of Graph</th>
-<th>Labels/Properties?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>3</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ol start="3" style="list-style-type: decimal">
-<li><p><strong>Niche Overlap.</strong> Some species of animals compete with other
-species in an ecosystem.</p></li>
-<li><p><strong>Acquaintanceship.</strong> Some pairs of people are acquainted with each
-other, some are not.</p></li>
-<li><p><strong>Precedence and Concurrent Processing.</strong> Computer programs can be
-executed more rapidly by executing some statements concurrently
-But it is important not to execute a statement that depends
-on the results of statements that have not yet been executed. What is the
-precedence graph for this simple program?</p></li>
-</ol>
-<pre><code>          a = 0
-          b = 1
-          c = a + 1
-          d = b + a
-          e = d + 1
-          e = c + d</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p><strong>Influence.</strong> In studies of group behavior it is observed that
-certain people can influence the thinking of other people.</p></li>
-<li><p><strong>Hollywood.</strong> Some actors have been in movies together, others have not.</p></li>
-<li><p><strong>Round-Robin Tournament.</strong> In a round robin tournament, each team plays
-each other team once. (The graph should keep track of who wins and loses each game.)</p></li>
-<li><p><strong>General Sports Schedule.</strong> The schedule for most leagues is
-not a round-robin tournament. How does that change the graph?
-If the games haven’t been played yet, what information might the
-graph keep track of? How?</p></li>
-<li><p><strong>Telephone calls.</strong></p></li>
-<li><p><strong>World Wide Web.</strong></p></li>
-<li><p><strong>Road maps.</strong></p></li>
-</ol>
-</div>
-</div>
-<div id="bonus-problem" class="section level2">
-<h2><span class="header-section-number">1.2</span> Bonus Problem</h2>
-<p>From 1961 through 1977 the NFL (National Football League) had a 14-game season.
-Until 1976, when two new teams were added, there were 13 teams in each of 2
-conferences. The NFL wanted a schedule were each team would play 11 games
-against other teams in their conference and 3 games against teams from the other
-conference.</p>
-<p>Devise such a schedule or explain why it is not possible.
-For simplicity, let’s name the teams in the American Football Conference (AFC)
-<span class="math inline">\(A_1, A_2, \dots, A_{13}\)</span> and the teams in the National Football Conference (NFC)
-<span class="math inline">\(N_1, N_2, \dots, N_{13}\)</span>.</p>
-<!-- motivate: degree, subgraph, bipartite graph -->
-
 </div>
 </div>
             </section>
@@ -391,8 +185,8 @@ For simplicity, let’s name the teams in the American Football Conference (AFC)
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="more-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="paths-in-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="planar-and-non-planar-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

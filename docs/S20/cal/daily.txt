@@ -43,7 +43,7 @@ Note:: Spring Break
 
 ===04/10/2020
 
-Note:: Good
+Note:: Good Friday
 Note:: No Class
 
 ===04/13/2020
@@ -227,7 +227,6 @@ Notes:
 
 ===
 Topic:: Graph Representations
-Topic:: Graph Isomorphisms
 Read:: Rosen 10.3
 
 representations
@@ -274,6 +273,11 @@ matrix ops
 	multiplication
 
 ===
+Topic:: Graph Isomorphisms
+Topic:: Graph Invariants
+Read:: Rosen 10.3
+
+===
 Topic:: Paths in Graphs
 Read:: Rosen 10.4-5
 
@@ -306,6 +310,7 @@ Euler and Hamilton paths/cycles
 ===
 Topic:: Euler Paths and Cycles
 Topic:: Euler's Formula
+Topic:: Connected Components
 Read:: Rosen 10.4-5
 
 questions on homework
@@ -336,20 +341,6 @@ Euler formula:  In a connected, planar graph, V - E + R = 2 [so R = 2 + E - V]
 
   * Proof by induction on edges
   * What if graph is not connected?
-
-Planar graphs
-
-  * K5 is not planar
-    * use R <= 2 * E / 3
-
-  * K3,3 [define] is not planar
-    * use R <= 2 * E / 4
-    * regions must be bounded by at least 4 eges because no 3-cycles
-
-  * Kuratowksi's Thm: planar iff no subgraph homeomorphic to K5 or K3,3
-    * homeomorphic:
-        allowed to replace edge (u, v) with new vertex a and two edges(u, a) and (a, v)
-
 
 ===skip  # come back during models of comp if time
 
@@ -530,54 +521,12 @@ Using Dykstra to do APSP
 	adj list: O(ne log n) -- better if graph is sparse
 
 ===
-Topic:: Planer Graphs
-Read:: Rosen 10.7
-
-3 Houses/Utilities Problem
-	def: bipartite graph
-	def: complete bipartite graph
-	def: planer graph
-
-	question becomes is K3,3 a planer graph
-
-some easier examples first
-	is K4 planer? yes (but not usual picture)
-	is Q3 planer? yes (but not usual picture)
-
-Big Question for today:
-	is there an easy way to check if a graph is planer?
-		is it easy like Euler paths
-		is it hard like Hamilton paths
-		are there conditions that work some of the time?
-
-K3,3 is not planer
-	call vertices {a,b,c}  {1,2,3}
-	look at subgraph induced by {a,b,1,2}: this is K2,2
-		this is a cycle graph
-		devides plane into two regions
-		c must be in one of these regions
-			adding edges to c divides this region into two regions
-		now there is nowhere to put vertex 3
-
-Regions of a planer graph
-	the idea of regions was useful in the proof above,
-		but only makes sense for planer graphs.
-	is the number of regions an invariant?
-		perhaps different embeddings or different isomorhpic graphs
-			give rise to different numbers of regions
-
-	examples:	Fill out table for some example graphs
-
-				Graph		regions		edges 	vertices
-
-
-Thm (Euler). For any connected planer graph, r - e + v = 2
-
-	Proof: Build up G: G1, G2, ... Ge adding one edge at a time
-		either add one edge and one vertex or one edge and one region
+Topic:: Bipartite Graphs
+Read:: Rosen 10.2
 
 ===
-Topic:: Bipartite Graphs
+Topic:: Planer and Non-planar Graphs
+Read:: Rosen 10.7
 
 What happens if graph is not conneted?
 	answer: vertices and edges add,
@@ -665,8 +614,62 @@ Graph Coloring
 	chromatic number of C_n [depends on parity]
 		wheels?
 
-===endofcal
-Topic:: Non-Planar Graphs
+Planar graphs
+
+  * K5 is not planar
+    * use R <= 2 * E / 3
+
+  * K3,3 [define] is not planar
+    * use R <= 2 * E / 4
+    * regions must be bounded by at least 4 eges because no 3-cycles
+
+  * Kuratowksi's Thm: planar iff no subgraph homeomorphic to K5 or K3,3
+    * homeomorphic:
+        allowed to replace edge (u, v) with new vertex a and two edges(u, a) and (a, v)
+
+
+3 Houses/Utilities Problem
+	def: bipartite graph
+	def: complete bipartite graph
+	def: planer graph
+
+	question becomes is K3,3 a planer graph
+
+some easier examples first
+	is K4 planer? yes (but not usual picture)
+	is Q3 planer? yes (but not usual picture)
+
+Big Question for today:
+	is there an easy way to check if a graph is planer?
+		is it easy like Euler paths
+		is it hard like Hamilton paths
+		are there conditions that work some of the time?
+
+K3,3 is not planer
+	call vertices {a,b,c}  {1,2,3}
+	look at subgraph induced by {a,b,1,2}: this is K2,2
+		this is a cycle graph
+		devides plane into two regions
+		c must be in one of these regions
+			adding edges to c divides this region into two regions
+		now there is nowhere to put vertex 3
+
+Regions of a planer graph
+	the idea of regions was useful in the proof above,
+		but only makes sense for planer graphs.
+	is the number of regions an invariant?
+		perhaps different embeddings or different isomorhpic graphs
+			give rise to different numbers of regions
+
+	examples:	Fill out table for some example graphs
+
+				Graph		regions		edges 	vertices
+
+
+Thm (Euler). For any connected planer graph, r - e + v = 2
+
+	Proof: Build up G: G1, G2, ... Ge adding one edge at a time
+		either add one edge and one vertex or one edge and one region
 
 ===
 Topic:: Graphs Wrap-Up
@@ -706,7 +709,6 @@ Analysis of Complexity of Euler Path/Circuit Detection Algorithms
 		Inc Matrix: O(|V|*|E|)  [more than previous if G is connected]
 		Adj List:   O(|E|) = O(|V|*|V|)
 			better in sparser graphs
-
 
 ===
 Topic:: Basic Counting
@@ -971,7 +973,7 @@ Probability Axioms
 ===
 Topic:: Using Probability Rules
 
-===3/6/2019
+===
 Topic:: Test 1
 
 ===
