@@ -66,16 +66,17 @@ In particular, for a connected graph we have $v - e + r = 2$.
     a. $K_{2,2}$ 
     a. $K_{2,3}$ 
     a. $K_{2,4}$
-    a. Is $K_{2,n}$ planar for every $n$?  
     
-2. Use Euler's formula to show that $K_5$ is not planar. 
+2. Is $K_{2,n}$ planar for every $n$?  
+    
+3. Use Euler's formula to show that $K_5$ is not planar. 
  
     a. How many vertices does $K_5$ have?
     b. How many edges does $K_5$ have?
     c. If $K_5$ were planar, how many regions would it have?
     d. Show that $K_5$ can't have that number of regions, so it must not be planar.
     
-3. Use Euler's formula to show that $K_{3,3}$ is not planar.
+4. Use Euler's formula to show that $K_{3,3}$ is not planar.
  
 ## Kuratowski's Theorem
 
@@ -95,14 +96,14 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
   <!-- of saying "place an extra vertex in the middle of an edge to turn it into  -->
   <!-- two edges". -->
   
- 4. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
+ 5. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
  subdivisions on your graph.
  
- 5. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
+ 6. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
 
- 6. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
+ 7. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
 
- 7. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
+ 8. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
  
 ```{r, echo = FALSE, fig.align = "center", out.width = "25%"}
 knitr::include_graphics("../images/Graph-Peterson.png")
