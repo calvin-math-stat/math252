@@ -33,8 +33,8 @@ proofs center on very clever uses of the pigeonhole principle.)
     eaten by the students.
     
     a. What is the average number of cookies eaten by a student?
-    b. This means the at least one student had at least _______ cookies.
-    c. This means the at least one student had at most _______ cookies.
+    b. This means that the student who had the most cookies had at least _______ cookies.
+    c. This means that the student who had the fewest cookies had at most _______ cookies.
  
 \vfill
 
