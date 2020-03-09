@@ -935,10 +935,17 @@ example: 8 players, 4O, 4D
 	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
 
 ===
+Topic:: Donut Problems
+
+===
+Topic:: Counting Wrap Up
+
+===03/06/2020
+Topic:: Test 1
+
+===
 Topic:: Intro to Probability
 Read:: Rosen 7.1, 7.2
-
-Homework questions
 
 Random
   short-term unpredictability
@@ -972,12 +979,6 @@ Probability Axioms
 
 ===
 Topic:: Using Probability Rules
-
-===
-Topic:: Test 1
-
-===
-Topic:: More Probability
 Read:: Rosen 7.1, 7.2
 
 Probability rules
@@ -989,6 +990,10 @@ Equally Likely Rule:
 	equally likely outcomes: P(E) = |E| * 1/n = |E|/|S|
 
   ONLY WORKS WHEN ALL OUTCOMES ARE EQUALLY LIKELY
+
+===
+Topic:: More Probability
+Read:: Rosen 7.1, 7.2
 
 examples: poker hands
 	flush, near flush, etc.
@@ -1063,7 +1068,7 @@ Topic:: Random Variables
 Breast Cancer Screening
 
 
-=== 03/25/2019
+===03/30/2020
 Topic:: Random Variables
 Topic:: Binomial Distributions
 
@@ -1236,27 +1241,25 @@ Topic:: NFA and DFA
 ===
 Topic:: Test 2
 
-===
+===04/15/2020
 Topic:: NFA and DFA
 
 ===
 Topic:: Regular Langauges
 
 ===
-Advising
-
-===
 Topic:: Regular Languages
 
 ===
+Advising
+
+===endofcal
 Topic:: Regular Expressions in Python
 
 ===
 Topic:: A language that isn't regular
 
-# Note:: Review Session @ 4:30
-
-===04/24/2019
+===
 
 Topic:: Turing Machines
 
