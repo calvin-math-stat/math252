@@ -24,12 +24,18 @@ E-mail: [`rpruim@calvin.edu`](mailto:rpruim@calvin.edu)
 * **Section A:** Monday, Wednesday, Friday 11:30 - 12:20, in North Hall 259
 * **Section B:** Monday, Wednesday, Friday 12:30 - 1:20, in North Hall 259
 
+
 ### Office Hours
 
-Official office hours are TBD,
-but we can make arrangements for other times as well.  Catch me after 
-class, or send me an email with some times that work for you.
-Or just stop by my office and see if I'm available.
+Office hours will not be held in my office while we are online. But I will attempt to monitor
+the piazza discussion more carefully from 11:30-1:30 Monday, Wednesday, and Friday (the usual
+times of our class). So if you stick to that routine, you are likely to get the most rapid 
+response both from me and from other students.
+
+<!-- Official office hours are TBD, -->
+<!-- but we can make arrangements for other times as well.  Catch me after -->
+<!-- class, or send me an email with some times that work for you. -->
+<!-- Or just stop by my office and see if I'm available. -->
 
 ## Course Objectives 
 
@@ -47,12 +53,58 @@ The student who successfully completes this class should be able to
 I will maintain an email list of all students registered in this class 
 and will occasionally use it to distribute information and reminders of 
 various things pertaining to this course. 
-If you prefer to read your email from an account other than your calvin 
+If you prefer to read your email from an account other than your Calvin 
 student account and do not have it set up to forward automatically, 
 send me email with the email address you prefer.
 
-Please **check your email daily**.
+While we are online especially, please **check your email daily**.
 You are responsible for any information communicated via email.
+
+### MS Teams
+
+At least while the class is online (and perhaps beyond), we will be using
+**Microsoft Teams for class discussion**. Rather than emailing questions to me,
+I encourage you to post your questions in the appropriate channel in MS Teams.
+That way everyone can benefit from the answer.
+
+You can also use MS Teams to message each other or to set up "meetings" where you 
+can work online together.
+
+<!-- ### Piazza -->
+
+<!-- At least while the class is online (and perhaps beyond), we will be using -->
+<!-- **Piazza for class discussion**. The system is highly catered to getting you -->
+<!-- help fast and efficiently from classmates or instructors. Rather than emailing -->
+<!-- questions to me, I encourage you to post your questions on Piazza. -->
+<!-- Although I have only used Piazza a little bit, here are some of the advantages I see. -->
+
+<!-- * It is used in some other CS courses, so some of you will be familiar with it -->
+<!-- already, and others of you will use it in the future. It comes recommended by  -->
+<!-- several instructors in CS. -->
+
+<!-- * Conversations can be organized by themes.  -->
+
+<!--     I've created a number of "folders" (they function more like tags than -->
+<!--     folder), and you will need to select one for each new converstaion. This -->
+<!--     will make it easier for all of us to find things and keep organized. -->
+
+<!--     I've  created several "folders" already, include some that are targeted at -->
+<!--     specific topics (like `probability-5`, which means things related to the -->
+<!--     topic of worksheet 5, on probability). Let me know if you think I should add -->
+<!--     some additional folders. -->
+
+<!-- * The system that has been used the most by students (moodles discussion forums) -->
+<!-- was rated pretty low in the survey. I took that to mean: "Please avoid." -->
+
+<!-- * I've been told that the search mechanism works quite well -- that will make also help us find stuff. -->
+
+<!-- * I can go in an mark responses as "approved" or "official", so you can know that a response -->
+<!-- is good, even if it didn't originally come from me. -->
+
+<!-- If you have any problems or feedback for the developers, email `team@piazza.com`. -->
+
+<!-- Find our class page at: https://piazza.com/calvin/spring2020/math252/home or using -->
+<!-- the quick link at the top of this page. -->
 
 ### Web Pages
 
