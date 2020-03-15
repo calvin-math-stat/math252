@@ -1,0 +1,230 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ../../../styles/rpruim2017a.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+
+<style>
+button.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, button.collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 9px;
+  display: none; 
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+
+### Daily Dope Sheet 
+
+## Monday, March 16
+
+---
+
+
+#### Homework 
+
+  * due today: WW06
+  * due Wednesday: WW07
+
+#### Stuff to do before 11:30 / 12:30
+
+1. Make sure you are able to access our MS Team for the course. 
+
+    * You should have gotten an invite to the team, I think.
+    * [This link](https://teams.microsoft.com/l/team/19%3a076ad0b56a6146509163f69ae34a2740%40thread.tacv2/conversations?groupId=fd1cdf22-72c3-4d88-b309-1a0939c70ec0&tenantId=756349b9-0610-4b01-917b-2a4ac10df947) should also get you to our team.
+    * I recommend that you install the appropriate MS Teams app for your
+    device(s). That's a nicer way to work than in the browser. (There is a
+    little icon in the far lower left corner of the browser that lets you
+    install the app.  Or you can go to the appropriate online store for your
+    device.)
+
+2. Create at least one post in the Anything Goes channel.  
+
+    * Since it is the Anything Goes channel, you may write anything you like. But it is 
+    important that you post something. This is how I'll know you have access.
+    
+    * You may start a new post or reply to someone else. But if you reply, your post should
+    be a reply and related to the previous poster's comment.
+    
+    * Feel free to show off your awesome MS Teams prowess if you like, but a simple one sentence post is all that is required.
+    
+    * If you have trouble getting into Teams, let me know. I'll help if I'm able.
+    
+3. Read the [Welcome to online Math 252](Welcome.html). 
+
+    * Once you get to the frequently asked questions, you can scan the questions and only 
+    read the answers if you have those questions. 
+    (Several of those were answered in an email already as well.)
+    
+    * If you have additional questions, post them in the General channel in our MS Team.
+   
+
+#### At 11:30 / 12:30
+
+1. If at all possible, be online at 11:30 (Section A) or 12:30 (Section B) with
+MS Teams up and running. It's fine if you choose the time of the section you
+don't usually attend if that works better for you.
+
+2. Start working on the Stuff to Do. If you have questions, post in the appropriate channel of
+our team.
+
+3. Shortly after 11:30 and again shortly after 12:30, I may try to initiate a "meeting" (basically a video chat), mainly to test it out.
+
+    * Be sure to mute yourself when you are not talking. That makes the audio much better.
+    * If you are with other students in the same room, it is important that at most one of 
+    you has a mic on.  Else we may get some terrible feedback.
+
+
+#### Stuff to do 
+
+1. Get today's worksheet (section 6). 
+
+    * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
+    * [HTML](../counting-and-probability/conditional-probability.html)
+
+2. Introduction to Conditional Probability
+
+    a. You may have noticed the following problem on the last worksheet:
+
+        *  **Boys and Girls.** A family has two children.  One of them is a boy.  What is the probability that the other is a girl?
+    
+        Write down a what you think the answer should be.
+    
+    b. Then listen to this discussion of the problem (Sorry for the flickering; I'll
+    try to get that figured out so we don't have flickering in every video.)
+    
+        * [part 1](recordings/2kids-p1.mp4)
+        * [part 2](recordings/2kids-p2.mp4)
+        * [part 3](recordings/2kids-p3.mp4)
+        * [part 4](recordings/2kids-p4.mp4)
+    
+    c. With that introduction, work on **Exercises 1-9.** Pay careful attention to notation.
+    (You can check your work below.)
+    
+3. Product Rule and Independence
+
+    a. The product rule follows from the definition of conditional probability
+    by a little simple algebra. Make sure you [see how](cond-prod-algebra.mp4).
+    
+    b. Continue working on the problems on the worksheet.
+    
+    c. After you get to the birthday problem, add your birthday to the list
+    [here](https://docs.google.com/document/d/1LR6QY8uJhhblcm8aq57KXOixOjNrpD7OCe4deK9yADA/edit?usp=sharing) and we'll see if anyone in our class (both sections) shares a birthday.
+
+#### Hints and Solutions
+
+
+<button type = 'button' class = "collapsible">Exercises 6.1 - 6.9 (some)</button>
+<div class = "content">
+
+notation    | meaning | probability 1 | probability 2
+----------- | ------- | ------------- | -----------------
+$p(R)$      | probability that kid likes red best | $15/45 = 1/3$ |
+$p(G)$      | probability that kid is a girl | $20/45$ |
+$p(R \intersect G)$      | probability that kid is a girl who likes red | $8/45$ | 
+$p(R \mid G)$      | among girls, what is the probability that a kid likes red | $8/20$ | $\frac{\prob(R\intersect G)}{\prob(G)} =  \frac{8/45}{20/45} = 8/20$
+$p(\overline{G} \mid R)$      | among those who like red, what is the probability of being a boy | $7/15$ | $\frac{\prob(\overline{G}\intersect R)}{\prob(R)} =  \frac{8/45}{20/45} = 8/20 = \frac{7/45}{15/45} = 7/15$
+
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 6.11</button>
+<div class = "content">
+$P(B \mid A) = P(B)$, so $\prob(A \intersect B) = \prob(A) \cdot \prob(B)$
+</div>
+    
+<button type = 'button' class = "collapsible">Exercise 6.12 (hint)</button>
+<div class = "content">
+Think of $\prob(A \intersect B \intersect C)$ as 
+$\prob((A \intersect B) \intersect C)$ and apply the product rule twice.
+</div>
+    
+<button type = 'button' class = "collapsible">Exercise 6.13</button>
+<div class = "content">
+$\prob(A \intersect B \intersect C \intersect D) = 
+\prob(A) \cdot \prob(B \mid A) \cdot \prob(C \mid A \intersect B) \cdot 
+\prob (D \mid A \intersect B \intersect C)$
+
+Notice: Each term is the probability of one event given all the *previous* 
+events.
+</div>
+    
+<button type = 'button' class = "collapsible">Exercise 6.14</button>
+<div class = "content">
+a) $\frac{6 \cdot 1}{6 \cdot 6} = \frac{6}{36} = \frac{1}{6}$
+b) $\prob( \mbox{first number is between 1 and 6} ) \cdot \prob(\mbox{2nd number matches first number} \mid \mbox{first number is beteen 1 and 6}) = 1 \cdot \frac{1}{6} = \frac{1}{6}$
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 6.16</button>
+<div class = "content">
+Let's try a version with just three people. To get the probability that
+at least two of them share a birthday, we will compute the probabilty 
+that they all have different birthdays and subtract from 1.
+
+To simplify notation, let let $N_i$ mean that person $i$ has a "new"
+birthday (no one with a smaller index has that birthday).
+So $N_1$ is always true.  $N_2$ will be true unless the first two
+people have the same birthday.  When will $N_3$ be false?
+
+```{r include = FALSE}
+birthday <- function(n) {
+  1 - prod((366: (366 - n + 1))/366)
+}
+```
+
+\begin{align*}
+ 1 - \prob(N_1)
+ \cdot
+ \prob(N_2 \mid N_1)
+ \cdot
+ \prob(N_3 \mid N_2 \intersect N_1)\\
+ &= 1 - 1 \cdot \frac{365}{366} \cdot \frac{364}{365} =
+`r round(birthday(3), 4)`
+\end{align*}
+
+Note: The conditional probabilities are important here.  Why?
+
+To see more details, look on page 461.
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
