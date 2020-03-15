@@ -15,27 +15,8 @@ knitr::opts_chunk$set(echo = TRUE)
 \def\union{\cup}
 
 <style>
-button.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 4px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, button.collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 9px;
-  display: none; 
-  overflow: hidden;
-  background-color: #f1f1f1;
+div.hide {
+  display: none;
 }
 </style>
 
@@ -102,6 +83,9 @@ our team.
 
 #### Stuff to do 
 
+Coming soon...
+
+<div class="hide">
 1. Get today's worksheet (section 6). 
 
     * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
@@ -209,6 +193,8 @@ birthday <- function(n) {
 Note: The conditional probabilities are important here.  Why?
 
 To see more details, look on page 461.
+</div>
+
 </div>
 
 

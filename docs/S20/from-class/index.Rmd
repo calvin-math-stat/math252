@@ -47,52 +47,58 @@ sheets), but there will be some additional resources as well.
     
 4. WW and PS assignments will be maintained on the **homework page** just as before.
 
-5. You can post questions on [**Piazza**](https://piazza.com/calvin/spring2020/math252/home)
+<!-- 5. You can post questions on [**Piazza**](https://piazza.com/calvin/spring2020/math252/home) -->
 
-    a. Find our class page at: https://piazza.com/calvin/spring2020/math252/home.  You should 
-    have received an invitation to join our class. Let me know if you
-    have any trouble joining.
-  
-    a. At least while the class is online (and perhaps beyond), we will be using
-**Piazza for class discussion**. The system is highly catered to getting you
-help fast and efficiently from classmates or instructors. Rather than emailing
-questions to me, I encourage you to post your questions on Piazza. Although I
-have only used Piazza a little bit, here are some of the advantages I see.
+<!--     a. Find our class page at: https://piazza.com/calvin/spring2020/math252/home.  You should  -->
+<!--     have received an invitation to join our class. Let me know if you -->
+<!--     have any trouble joining. -->
 
-        * It is used in some other CS courses, so some of you will be familiar with it
-already, and others of you will use it in the future. It comes recommended by 
-several instructors in CS.
+<!--     a. At least while the class is online (and perhaps beyond), we will be using -->
+<!-- **Piazza for class discussion**. The system is highly catered to getting you -->
+<!-- help fast and efficiently from classmates or instructors. Rather than emailing -->
+<!-- questions to me, I encourage you to post your questions on Piazza. Although I -->
+<!-- have only used Piazza a little bit, here are some of the advantages I see. -->
 
-        * Conversations can be organized by themes. 
+<!--         * It is used in some other CS courses, so some of you will be familiar with it -->
+<!-- already, and others of you will use it in the future. It comes recommended by  -->
+<!-- several instructors in CS. -->
 
-            I've created a number of "folders" (they function more like tags than
-    folder), and you will need to select one for each new converstaion. This
-    will make it easier for all of us to find things and keep organized.
+<!--         * Conversations can be organized by themes.  -->
 
-            I've  created several "folders" already, include some that are targeted at
-    specific topics (like `probability-5`, which means things related to the
-    topic of worksheet 5, on probability). Let me know if you think I should add
-    some additional folders.
-    
-    * The system that has been used the most by students (moodles discussion forums)
-was rated pretty low in the survey. I took that to mean: "Please avoid."
+<!--             I've created a number of "folders" (they function more like tags than -->
+<!--     folder), and you will need to select one for each new converstaion. This -->
+<!--     will make it easier for all of us to find things and keep organized. -->
 
-    * I've been told that the search mechanism works quite well -- that will make also help us find stuff.
+<!--             I've  created several "folders" already, include some that are targeted at -->
+<!--     specific topics (like `probability-5`, which means things related to the -->
+<!--     topic of worksheet 5, on probability). Let me know if you think I should add -->
+<!--     some additional folders. -->
 
-    * I can go in an mark responses as "approved" or "official", so you can know that a response
-is good, even if it didn't originally come from me.
+<!--     * The system that has been used the most by students (moodles discussion forums) -->
+<!-- was rated pretty low in the survey. I took that to mean: "Please avoid." -->
 
-If you have any problems or feedback for the developers, email `team@piazza.com`.
+<!--     * I've been told that the search mechanism works quite well -- that will make also help us find stuff. -->
+
+<!--     * I can go in an mark responses as "approved" or "official", so you can know that a response -->
+<!-- is good, even if it didn't originally come from me. -->
+
+<!-- If you have any problems or feedback for the developers, email `team@piazza.com`. -->
 
 ## Daily Dope Sheets
 
 This will collect together the things you need (and need to know) for
 each day.
 
-* [Week 1 online](online/Week1.html)
+* [Day 1 online](online/Day1.html)
 
 
 ## Worksheets/Handouts
+
+### Counting and Probability
+
+  * Worksheets: 
+  [PDF](counting-and-probability/Counting-and-Probability.pdf)
+  [HTML](counting-and-probability/)
 
 ### Graphs
 
@@ -103,17 +109,11 @@ each day.
  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/a3ww0gwEszo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Counting and Probability
+<!-- ### Models of Computation -->
 
-  * Worksheets: 
-  [PDF](counting-and-probability/Counting-and-Probability.pdf)
-  [HTML](counting-and-probability/)
-
-### Models of Computation
-
-* Worksheets: 
-  [PDF](models-of-computation/Models-of-Computation.pdf)
-  [HTML](models-of-computation/)
+<!-- * Worksheets:  -->
+<!--   [PDF](models-of-computation/Models-of-Computation.pdf) -->
+<!--   [HTML](models-of-computation/) -->
   
 <!-- * Regular Exrpessions in Python -->
 
