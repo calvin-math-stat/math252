@@ -991,7 +991,7 @@ Equally Likely Rule:
 
   ONLY WORKS WHEN ALL OUTCOMES ARE EQUALLY LIKELY
 
-===
+===skip
 Topic:: More Probability
 Read:: Rosen 7.1, 7.2
 
@@ -1004,6 +1004,10 @@ example:  [similar thing came up on hw question in '16]
   probability of at least 1 head in 10 coin tosses
   probability of at least 2 heads in 10 coin tosses
   probability of exactly 5 heads in 10 coin tosses
+
+===
+Note:: No Class
+Note:: Online Transition Day
 
 ===
 Topic:: Condiditional Probability
@@ -1239,10 +1243,12 @@ BNF
 Topic:: NFA and DFA
 
 ===
+Topic:: NFA and DFA
+
+===endofcal
 Topic:: Test 2
 
 ===04/15/2020
-Topic:: NFA and DFA
 
 ===
 Topic:: Regular Langauges
