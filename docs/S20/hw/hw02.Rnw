@@ -112,24 +112,15 @@ Additional assignments will be filled in over time.
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-	 Thu 3/12 & \WW{06} & Rosen 7 & Probability
+	 Mon 3/16 & \WW{06} & Rosen 7 & Probability
 	 \\
 	   \hline
-	 Mon 3/16 & \WW{07} & Rosen 7 & Probability
+	 Wed 3/18 & \WW{07} & Rosen 7 & Probability
 	 \\
 	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Mon 3/25 & \WW{08} & Rosen 7 & Probability
+	 Fri 3/20 & \WW{08} & Rosen 7 & Probability
 	 \\
-	   \hline
-	 Thu 3/28 & \WW{09} & Rosen 7 & Probability
-	 \\
-	   \hline
-	 Fri 3/29 & PS 7 & Rosen 7.1 &
+	 & PS 7 & Rosen 7.1 &
 	 \mand[lottery]{26b}
 	 \mand[super lottery]{28}
 
@@ -152,6 +143,18 @@ Additional assignments will be filled in over time.
 	 \helper[permutation events]{5--7}
 	 \extra[birth month]{19}
 	 \extra[birth day]{20}
+	 \\
+	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+	   \hline
+	 Thu 3/28 & \WW{09} & Rosen 7 & Probability
+	 \\
+	   \hline
+	 Fri 3/29 & PS 7 &
 
 	 \extra[odd one out]{29}
 	 %\helper[inequality]{11}

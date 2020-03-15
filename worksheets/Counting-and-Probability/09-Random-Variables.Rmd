@@ -31,13 +31,19 @@ A **random variable** is a random process that produces a number.
 
 ### First example {-}
 
-Here is an example probability table for a random variable we'll call $X$.
+When studying random variables, we typically want to now the answers to two questions:
+
+* What values can the random variable have?
+* With what probability does it have each of those values?
+
+We can create a **probability table** as a way to record the answers to those two 
+questions. Here is an example probability table for a random variable we'll call $X$.
 
 value       |  1   |   2   |  3   |   4  
 ----------: | :--: | :---: | :--: | :--:
 probability | 0.4  |  0.3  | 0.2  | 0.1
 
-1. What properties must the numbers in such a table always have?
+1. What properties must the probabilities in such a table always have?
 
 2. What is $\Prob(X = 2)$?
 

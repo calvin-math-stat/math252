@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,10 +156,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a><ul>
-<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.1</b> Random Primality Testing</a></li>
-<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.2</b> Bob’s Beautiful Boxes</a></li>
-<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.3</b> Breast cancer screening</a></li>
-<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.4</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.1</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.2</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.3</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.4</b> Random Primality Testing</a></li>
 <li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a><ul>
@@ -217,49 +217,49 @@ The resuls are in the table below.</p>
 <thead>
 <tr class="header">
 <th>\</th>
-<th align="center">Blue</th>
+<th align="center">Red</th>
 <th align="center">Other</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Boy</td>
-<td align="center">18</td>
 <td align="center">7</td>
+<td align="center">18</td>
 </tr>
 <tr class="even">
 <td>Girl</td>
-<td align="center">12</td>
 <td align="center">8</td>
+<td align="center">12</td>
 </tr>
 </tbody>
 </table>
-<p>Suppose we put the names of all the children into a hat and selection one randomly.
+<p>Suppose we put the names of all the children into a hat and select one randomly.
 Consider the following events.</p>
 <ul>
 <li><span class="math inline">\(G\)</span>: The selected child is a girl.</li>
-<li><span class="math inline">\(L\)</span>: The selected child’s favorite color is blue.</li>
+<li><span class="math inline">\(R\)</span>: The selected child’s favorite color is red.</li>
 </ul>
 <p>For each of the following, (a) express the probability in words, (b) determine the probability.
 For conditional probabilities, compute the probabilities two different ways.</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(p(L)\)</span>
+<li><span class="math inline">\(p(R)\)</span>
 </li>
-<li><span class="math inline">\(p(\overline{L})\)</span>
+<li><span class="math inline">\(p(\overline{R})\)</span>
 </li>
 <li><span class="math inline">\(p(G)\)</span>
 </li>
 <li><span class="math inline">\(p(\overline{G})\)</span>
 </li>
-<li><span class="math inline">\(p(L \;\cap\;G)\)</span>
+<li><span class="math inline">\(p(R \;\cap\;G)\)</span>
 </li>
-<li><span class="math inline">\(p(L \mid G)\)</span>
+<li><span class="math inline">\(p(R \mid G)\)</span>
 </li>
-<li><span class="math inline">\(p(G \mid L)\)</span>
+<li><span class="math inline">\(p(G \mid R)\)</span>
 </li>
-<li><span class="math inline">\(p(G \mid \overline{L})\)</span>
+<li><span class="math inline">\(p(G \mid \overline{R})\)</span>
 </li>
-<li><span class="math inline">\(p(\overline{G} \mid L)\)</span></li>
+<li><span class="math inline">\(p(\overline{G} \mid R)\)</span></li>
 </ol>
 <div style="page-break-after: always;"></div>
 </div>
@@ -306,10 +306,11 @@ Do this two ways: (a) using the Equally Likely Rule and (b) using the Product Ru
 </ol>
 
 <ol start="16" style="list-style-type: decimal">
-<li><p>How many people are in this room?
-What is the probability that two people in this room have the same birthday (month and day)?
-(Hint: Use the Complement Rule.)</p>
-<p>What assumption must we make to do this calculation?</p></li>
+<li><p>There are 33 students in Math 252.
+What is the probability that two people in this class have the same
+birthday (month and day)? (Hint: Use the Complement Rule.)</p>
+<p>What assumption must we make to do this calculation? Is that
+a reasonable assumption?</p></li>
 </ol>
 
 <ol start="17" style="list-style-type: decimal">

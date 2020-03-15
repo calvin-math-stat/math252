@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,10 +156,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a><ul>
-<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.1</b> Random Primality Testing</a></li>
-<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.2</b> Bob’s Beautiful Boxes</a></li>
-<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.3</b> Breast cancer screening</a></li>
-<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.4</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.1</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.2</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.3</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.4</b> Random Primality Testing</a></li>
 <li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a><ul>
@@ -194,8 +194,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="probability-trees-and-bayes" class="section level1">
 <h1><span class="header-section-number">7</span> Probability Trees and Bayes</h1>
+<div id="bobs-beautiful-boxes" class="section level2">
+<h2><span class="header-section-number">7.1</span> Bob’s Beautiful Boxes</h2>
+<p>Bob has two beautiful boxes of balls. Box A contains 2 green balls and 7 red balls.
+Box B contains 4 green balls and 3 red balls. Bob flips a coin to randomly select
+a box. Then he randomly selects one ball from that box. If the selected ball is red, what
+is the probability that it was chosen from Box A?</p>
+<p>Let’s build up to this step by step.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>These balls are not equally likely to be selected. Why not?
+Which are more likely and which less likely?</p></li>
+<li><p>Let’s define some events.</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: Bob selects Box A</li>
+<li><span class="math inline">\(B\)</span>: Bob selects Box B</li>
+<li><span class="math inline">\(R\)</span>: Bob selects a red ball</li>
+</ul></li>
+<li><p>Let’s do some inventory. Which of these probabilities can we easily
+determine? Which is our main question? How can you use the items on the list
+that you know to figure out the values you don’t know? (Feel free to add
+additional probabilities to the inventory if that is helpful.)</p></li>
+</ol>
+<p><span class="math display">\[
+p(A) \qquad
+p(B) \qquad
+p(R)
+\]</span></p>
+<p><span class="math display">\[
+p(A \;\cap\;B) \qquad
+p(A \operatorname{\cup}B) \qquad
+p(A \;\cap\;R) \qquad
+p(B \;\cap\;R)
+\]</span></p>
+<p><span class="math display">\[
+p(A \mid R) \qquad
+p(R \mid A) \qquad
+p(B \mid R) \qquad
+p(R \mid B) \qquad
+p(R \mid A)
+\]</span></p>
+</div>
+<div id="breast-cancer-screening" class="section level2">
+<h2><span class="header-section-number">7.2</span> Breast cancer screening</h2>
+<p>Here is some information about breast cancer screening.
+(Note: These percentages are approximate, and very difficult to estimate.)</p>
+<ul>
+<li><p>American Cancer Society estimates that about 1.7% of women have breast cancer.
+<a href="http://www.cancer.org/cancer/cancerbasics/cancer-prevalence" class="uri">http://www.cancer.org/cancer/cancerbasics/cancer-prevalence</a></p></li>
+<li><p>Susan G. Komen For The Cure Foundation states that mammography correctly
+identifies about 78% of women who truly have breast cancer.
+<a href="http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html" class="uri">http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html</a></p></li>
+<li><p>An article published in 2003 suggests that up to 10% of all mammograms are
+false positive. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940" class="uri">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940</a></p></li>
+</ul>
+<p>If a mammogram yields a positive result,
+what is the probability that patient has cancer?</p>
+</div>
+<div id="disease-testing" class="section level2">
+<h2><span class="header-section-number">7.3</span> Disease Testing</h2>
+<p>A test for a rare medical condition that affects 1 person in 10,000 has the following
+properties: If a person is healthy, it correctly diagnoses this 98% of the time.
+If a person is diseased, it correctly diagnoses this 99% of the time.
+If you take the test and it comes back positive (ie, the test says you have the disease),
+what is the probability that you have the disease?</p>
+<p>Hint: Use the inventory method. Useful events include</p>
+<ul>
+<li><span class="math inline">\(H\)</span>: person is healthy</li>
+<li><span class="math inline">\(D\)</span>: person is diseased</li>
+<li><span class="math inline">\(P\)</span>: test is positive (indicates disease)</li>
+<li><span class="math inline">\(N\)</span>: test is negative (indicates healthy)</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</div>
 <div id="random-primality-testing" class="section level2">
-<h2><span class="header-section-number">7.1</span> Random Primality Testing</h2>
+<h2><span class="header-section-number">7.4</span> Random Primality Testing</h2>
 <p>Miller’s test for primality of a number <span class="math inline">\(n\)</span> uses arithmetic
 mod <span class="math inline">\(n\)</span> and a base <span class="math inline">\(b\)</span> with <span class="math inline">\(1 &lt; b &lt; n\)</span>. For a given <span class="math inline">\(b\)</span>, the test either determines that
 <span class="math inline">\(n\)</span> is composite or it is inconclusive. It can be shown that for any composite number, the
@@ -225,75 +297,6 @@ and decoding a message. If a composite number sneaks through the randomized test
 decoding won’t work and we can try again with a different pair of probably prime
 numbers.</p>
 </div>
-<div id="bobs-beautiful-boxes" class="section level2">
-<h2><span class="header-section-number">7.2</span> Bob’s Beautiful Boxes</h2>
-<p>Bob has two beautiful boxes of balls. Box A contains 2 green balls and 7 red balls.
-Box B contains 4 green balls and 3 red balls. Bob flips a coin to randomly select
-a box. Then he randomly selects one ball from that box. If the selected ball is red, what
-is the probability that it was chosen from Box A?</p>
-<p>Let’s build up to this step by step.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Is every ball equally likely to be seleced? If not, which are more likely and which less
-likely?</p></li>
-<li><p>Let’s define some events.</p>
-<ul>
-<li><span class="math inline">\(A\)</span>: Bob selects Box A</li>
-<li><span class="math inline">\(B\)</span>: Bob selects Box B</li>
-<li><span class="math inline">\(R\)</span>: Bob selects a red ball</li>
-</ul></li>
-<li><p>Let’s do some inventory. Which of these probabilities can we easily determine? Which is our main question? How can you use the items on the list that you know to figure out the values you don’t know? (Feel free to add additional probabilities to the inventory if that is helpful.)</p></li>
-</ol>
-<p><span class="math display">\[
-p(A) \qquad
-p(B) \qquad
-p(R)
-\]</span></p>
-<p><span class="math display">\[
-p(A \;\cap\;B) \qquad
-p(A \operatorname{\cup}B) \qquad
-p(A \;\cap\;R) \qquad
-p(B \;\cap\;R)
-\]</span></p>
-<p><span class="math display">\[
-p(A \mid R) \qquad
-p(R \mid A) \qquad
-p(B \mid R) \qquad
-p(R \mid B) \qquad
-p(R \mid A)
-\]</span></p>
-</div>
-<div id="breast-cancer-screening" class="section level2">
-<h2><span class="header-section-number">7.3</span> Breast cancer screening</h2>
-<p>Here is some information about breast cancer screening.
-(Note: These percentages are approximate, and very difficult to estimate.)</p>
-<ul>
-<li><p>American Cancer Society estimates that about 1.7% of women have breast cancer.
-<a href="http://www.cancer.org/cancer/cancerbasics/cancer-prevalence" class="uri">http://www.cancer.org/cancer/cancerbasics/cancer-prevalence</a></p></li>
-<li><p>Susan G. Komen For The Cure Foundation states that mammography correctly
-identifies about 78% of women who truly have breast cancer.
-<a href="http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html" class="uri">http://ww5.komen.org/BreastCancer/AccuracyofMammograms.html</a></p></li>
-<li><p>An article published in 2003 suggests that up to 10% of all mammograms are
-false positive. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940" class="uri">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1360940</a></p></li>
-</ul>
-<p>If a mammogram yields a positive result,
-what is the probability that patient has cancer?</p>
-</div>
-<div id="disease-testing" class="section level2">
-<h2><span class="header-section-number">7.4</span> Disease Testing</h2>
-<p>A test for a rare medical condition that affects 1 person in 10,000 has the following
-properties: If a person is healthy, it correctly diagnoses this 98% of the time.
-If a person is diseased, it correctly diagnoses this 99% of the time.
-If you take the test and it comes back positive (ie, the test says you have the disease),
-what is the probability that you have the disease?</p>
-<p>Hint: Use the inventory method. Useful events include</p>
-<ul>
-<li><span class="math inline">\(H\)</span>: person is healthy</li>
-<li><span class="math inline">\(D\)</span>: person is diseased</li>
-<li><span class="math inline">\(P\)</span>: test is positive (indicates disease)</li>
-<li><span class="math inline">\(N\)</span>: test is negative (indicates healthy)</li>
-</ul>
-<div style="page-break-after: always;"></div>
-</div>
 <div id="hashing" class="section level2">
 <h2><span class="header-section-number">7.5</span> Hashing</h2>
 <p>A hash function <span class="math inline">\(h\)</span> assigns one of <span class="math inline">\(m\)</span> storage locations (an
@@ -313,20 +316,20 @@ the probability is exactly <span class="math inline">\(1/m\)</span>. That should
 hash functions.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>If a hash function is mapping to 20 storage locations, what is the
-probability that we can place 4 keys without any colisions? (That is,
+probability that we can place 4 keys without any collisions? (That is,
 what is the probability that the first four hash values will all be
 different.)</p></li>
 <li><p>If a hash function is mapping to 50 storage locations, what is the
-probability that we can place 10 keys without any colisions? (That is,
+probability that we can place 10 keys without any collisions? (That is,
 what is the probability that the first ten hash values will all be
 different.)</p></li>
 <li><p>If a hash function is mapping to 300 storage locations, what is the
-probability that we can place 25 keys without any colisions?</p></li>
+probability that we can place 25 keys without any collisions?</p></li>
 <li><p>Make up a similar problem of your own with a different number of storage
 locations and a different number of keys to place.</p></li>
 <li><p>This is probably too big for your calculator, but if <span class="math inline">\(m\)</span> is 1 million, then
 the probability of placing 1178 keys without any collisions is <span class="math inline">\(\approx 1/2\)</span>.</p></li>
-<li><p>Explain why these results indicate that hash tables will need to deal with colisions
+<li><p>Explain why these results indicate that hash tables will need to deal with collisions
 if they are going to be memory efficient.</p></li>
 </ol>
 

@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-02-28" />
+<meta name="date" content="2020-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,10 +156,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a><ul>
-<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.1</b> Random Primality Testing</a></li>
-<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.2</b> Bob’s Beautiful Boxes</a></li>
-<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.3</b> Breast cancer screening</a></li>
-<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.4</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.1</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.2</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.3</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.4</b> Random Primality Testing</a></li>
 <li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a><ul>
@@ -221,7 +221,13 @@ probability for any specified value.</p></li>
 <h2><span class="header-section-number">8.2</span> Probability Tables</h2>
 <div id="first-example" class="section level3 unnumbered">
 <h3>First example</h3>
-<p>Here is an example probability table for a random variable we’ll call <span class="math inline">\(X\)</span>.</p>
+<p>When studying random variables, we typically want to now the answers to two questions:</p>
+<ul>
+<li>What values can the random variable have?</li>
+<li>With what probability does it have each of those values?</li>
+</ul>
+<p>We can create a <strong>probability table</strong> as a way to record the answers to those two
+questions. Here is an example probability table for a random variable we’ll call <span class="math inline">\(X\)</span>.</p>
 <table>
 <thead>
 <tr class="header">
@@ -243,7 +249,7 @@ probability for any specified value.</p></li>
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p>What properties must the numbers in such a table always have?</p></li>
+<li><p>What properties must the probabilities in such a table always have?</p></li>
 <li><p>What is <span class="math inline">\(p(X = 2)\)</span>?</p></li>
 <li><p>What is <span class="math inline">\(p(X &gt; 2)\)</span>?</p></li>
 <li><p>What is <span class="math inline">\(p(X \mbox{ is even})\)</span>?</p></li>

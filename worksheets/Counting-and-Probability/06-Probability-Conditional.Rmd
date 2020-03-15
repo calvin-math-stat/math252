@@ -24,37 +24,37 @@ the notation correctly.
 A number of school children, some boys and some girls, are asked about their favorite color.
 The resuls are in the table below.
 
-\        | Blue | Other 
+\        | Red  | Other 
 -------- | :--: | :----:
-Boy      | 18   | 7
-Girl     | 12   | 8
+Boy      | 7    | 18
+Girl     | 8    | 12
 
-Suppose we put the names of all the children into a hat and selection one randomly.
+Suppose we put the names of all the children into a hat and select one randomly.
 Consider the following events.
 
  * $G$: The selected child is a girl.
- * $L$: The selected child's favorite color is blue.
+ * $R$: The selected child's favorite color is red.
  
 For each of the following, (a) express the probability in words, (b) determine the probability.
 For conditional probabilities, compute the probabilities two different ways.
 
-1. $\Prob(L)$
+1. $\Prob(R)$
 \vfill
-2. $\Prob(\overline{L})$
+2. $\Prob(\overline{R})$
 \vfill
 3. $\Prob(G)$
 \vfill
 4. $\Prob(\overline{G})$
 \vfill
-5. $\Prob(L \intersect G)$
+5. $\Prob(R \intersect G)$
 \vfill
-6. $\Prob(L \mid G)$
+6. $\Prob(R \mid G)$
 \vfill
-7. $\Prob(G \mid L)$
+7. $\Prob(G \mid R)$
 \vfill
-8. $\Prob(G \mid \overline{L})$
+8. $\Prob(G \mid \overline{R})$
 \vfill
-9. $\Prob(\overline{G} \mid L)$
+9. $\Prob(\overline{G} \mid R)$
 
 \newpage
 
@@ -108,11 +108,12 @@ we say that $A$ and $B$ are **independent events**.
  
 \vfill
 
-16. How many people are in this room? 
-What is the probability that two people in this room have the same birthday (month and day)?
-(Hint: Use the Complement Rule.)
+16. There are 33 students in Math 252.
+What is the probability that two people in this class have the same 
+birthday (month and day)? (Hint: Use the Complement Rule.)
  
-    What assumption must we make to do this calculation?
+    What assumption must we make to do this calculation? Is that 
+    a reasonable assumption?
  
 \vfill
  

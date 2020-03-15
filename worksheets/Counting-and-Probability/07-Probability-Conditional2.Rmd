@@ -4,43 +4,6 @@
 # Probability Trees and Bayes
 
 
-## Random Primality Testing  
-
-Miller's test for primality of a number $n$ uses arithmetic
- mod $n$ and a base $b$ with $1 < b < n$.  For a given $b$, the test either determines that
- $n$ is composite or it is inconclusive.  It can be shown that for any composite number, the
- test is conclusive and correct for at least 3/4 of the possible values of $b$. For a prime
- number, the test is always inconclusive. This leads to an interesting randomized test:
-
-```{Rcpp, eval = FALSE}
- string PrimeTest(n, attempts) {
-   for (i = 0; i < attempts; i++) {
-     select b at random with 1 < b < n
-     if (MillersTest(n, b) ==  "composite") {
-       return("composite (for sure)")
-     }
-     return("prime (well, probably)")
-   }
- }
-```
-
-  a. If $n$ is prime, what is the probability that `PrimeTest(n, 5)`
-    returns `"prime (well, probably)"`?
-
-  b. If $n$ is composite, what is the probability that `PrimeTest(n, 5)`
-    returns `"prime (well, probably)"`?
-
-  c. If $n$ is composite, what is the probability that `PrimeTest(n, 10)`
-    returns `"prime (well, probably)"`?
-
-  d. If $n$ is composite, what is the probability that `PrimeTest(n, 20)`
-  returns `"prime (well, probably)"`?
-
-Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
-and decoding a message.  If a composite number sneaks through the randomized test,
-decoding won't work and we can try again with a different pair of probably prime
-numbers.
-
 ## Bob's Beautiful Boxes
 
 Bob has two beautiful boxes of balls.  Box A contains 2 green balls and 7 red balls.
@@ -50,8 +13,8 @@ is the probability that it was chosen from Box A?
 
 Let's build up to this step by step.
 
-a. Is every ball equally likely to be seleced?  If not, which are more likely and which less
-  likely?
+a. These balls are not equally likely to be selected. Why not? 
+Which are more likely and which less likely?
 
 b. Let's define some events.
 
@@ -59,7 +22,10 @@ b. Let's define some events.
     * $B$: Bob selects Box B
     * $R$: Bob selects a red ball
 
-c. Let's do some inventory. Which of these probabilities can we easily determine?  Which is our main question? How can you use the items on the list that you know to figure out the values you don't know? (Feel free to add additional probabilities to the inventory if that is helpful.)
+c. Let's do some inventory. Which of these probabilities can we easily
+determine?  Which is our main question? How can you use the items on the list
+that you know to figure out the values you don't know? (Feel free to add
+additional probabilities to the inventory if that is helpful.)
 
 $$
 \Prob(A) \qquad
@@ -81,8 +47,6 @@ $$
 \Prob(R \mid B) \qquad
 \Prob(R \mid A)
 $$
-
-
 
 ## Breast cancer screening
 
@@ -121,6 +85,44 @@ Hint: Use the inventory method.  Useful events include
 
 \newpage 
 
+## Random Primality Testing  
+
+Miller's test for primality of a number $n$ uses arithmetic
+ mod $n$ and a base $b$ with $1 < b < n$.  For a given $b$, the test either determines that
+ $n$ is composite or it is inconclusive.  It can be shown that for any composite number, the
+ test is conclusive and correct for at least 3/4 of the possible values of $b$. For a prime
+ number, the test is always inconclusive. This leads to an interesting randomized test:
+
+```{Rcpp, eval = FALSE}
+ string PrimeTest(n, attempts) {
+   for (i = 0; i < attempts; i++) {
+     select b at random with 1 < b < n
+     if (MillersTest(n, b) ==  "composite") {
+       return("composite (for sure)")
+     }
+     return("prime (well, probably)")
+   }
+ }
+```
+
+  a. If $n$ is prime, what is the probability that `PrimeTest(n, 5)`
+    returns `"prime (well, probably)"`?
+
+  b. If $n$ is composite, what is the probability that `PrimeTest(n, 5)`
+    returns `"prime (well, probably)"`?
+
+  c. If $n$ is composite, what is the probability that `PrimeTest(n, 10)`
+    returns `"prime (well, probably)"`?
+
+  d. If $n$ is composite, what is the probability that `PrimeTest(n, 20)`
+  returns `"prime (well, probably)"`?
+
+Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
+and decoding a message.  If a composite number sneaks through the randomized test,
+decoding won't work and we can try again with a different pair of probably prime
+numbers.
+
+
 ## Hashing 
 
 A hash function $h$ assigns one of $m$ storage locations (an
@@ -141,17 +143,17 @@ the probability is exactly $1/m$. That should be a good approximation for good
 hash functions.
 
 a. If a hash function is mapping to 20 storage locations, what is the
-    probability that we can place 4 keys without any colisions?  (That is,
+    probability that we can place 4 keys without any collisions?  (That is,
     what is the probability that the first four hash values will all be
     different.)
 
 b. If a hash function is mapping to 50 storage locations, what is the
-    probability that we can place 10 keys without any colisions?  (That is,
+    probability that we can place 10 keys without any collisions?  (That is,
     what is the probability that the first ten hash values will all be
     different.)
 
 c. If a hash function is mapping to 300 storage locations, what is the
-    probability that we can place 25 keys without any colisions?
+    probability that we can place 25 keys without any collisions?
 
 d. Make up a similar problem of your own with a different number of storage
     locations and a different number of keys to place.
@@ -159,5 +161,5 @@ d. Make up a similar problem of your own with a different number of storage
 e. This is probably too big for your calculator, but if $m$ is 1 million, then
     the probability of placing 1178 keys without any collisions is $\approx 1/2$.
 
-f. Explain why these results indicate that hash tables will need to deal with colisions
+f. Explain why these results indicate that hash tables will need to deal with collisions
     if they are going to be memory efficient.

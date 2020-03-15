@@ -101,10 +101,11 @@ what is the probability that you have the disease?
  index in an array, for example) to each key $k$.  Typically
  there are many more keys than storage locations, but only a much smaller number of keys will occur
  in a particular application. For example, if the keys are social security numbers, then there 
- are approximately 350 active social security numbers (keys), but a give application may have data
- on only a very small fraction of these people.  If $h(k_1) = h(k_2)$, then we say there is a 
- collision (because we would like to put both keys into the same storage location and have to figure
- out some work-around). 
+ are approximately 350 million active social security numbers (keys), but a
+ given application may have data on only a very small fraction of these people.
+ If $h(k_1) = h(k_2)$, then we say there is a collision (because we would like
+ to put both keys into the same storage location and have to figure out some
+ work-around).
  
     Good hash functions have the property that if a key is selected at random, then the 
     probability of being mapped to a specified storage location is approximately $1/m$, where
