@@ -6,8 +6,90 @@ output:
   html_document:
     includes:
       before_body: ../header.shtml
-    css: ../../styles/rpruim2017.css
+    css: ../../styles/rpruim2017a.css
 ---
+
+
+## Moving Online
+
+While we are online, things may evolve some as we all get better at using online tools (and
+abandon things that don't work as well as we had hoped). 
+But here are some things you should know.
+
+1. **The course website is still the main starting point for information.**
+I'll put links to other resources here.
+
+2. We will still have both **webwork assignments and problem sets**. 
+Problem sets will be submitted via moodle. Grading may be a little more challenging, so have
+some patience with our graders as they get this figured out.
+
+3. To keep you organized, I plan to create a **daily dope sheet**[^dope]
+for each day that 
+
+    a. outlines what is due that day and what upcoming assignments are,
+    b. provides a step-by-step of what you need to do for that day, and
+    c. includes links to resources you may need.
+    
+[^dope]: If you are not familiar with the various meanings of the word dope,
+here are some from Websters' online dictionary: 
+
+    a. *n.* information, especially from a reliable source [eg, the inside dope];
+    b. *v.* to figure out -- usually used with out; 
+    c. *adj.* excellent.
+    
+    I hope all three apply.
+
+
+
+
+4. We will continue to use **worksheets** (links below and in the daily dope
+sheets), but there will be some additional resources as well.
+    
+4. WW and PS assignments will be maintained on the **homework page** just as before.
+
+5. You can post questions on [**Piazza**](https://piazza.com/calvin/spring2020/math252/home)
+
+    a. Find our class page at: https://piazza.com/calvin/spring2020/math252/home.  You should 
+    have received an invitation to join our class. Let me know if you
+    have any trouble joining.
+  
+    a. At least while the class is online (and perhaps beyond), we will be using
+**Piazza for class discussion**. The system is highly catered to getting you
+help fast and efficiently from classmates or instructors. Rather than emailing
+questions to me, I encourage you to post your questions on Piazza. Although I
+have only used Piazza a little bit, here are some of the advantages I see.
+
+        * It is used in some other CS courses, so some of you will be familiar with it
+already, and others of you will use it in the future. It comes recommended by 
+several instructors in CS.
+
+        * Conversations can be organized by themes. 
+
+            I've created a number of "folders" (they function more like tags than
+    folder), and you will need to select one for each new converstaion. This
+    will make it easier for all of us to find things and keep organized.
+
+            I've  created several "folders" already, include some that are targeted at
+    specific topics (like `probability-5`, which means things related to the
+    topic of worksheet 5, on probability). Let me know if you think I should add
+    some additional folders.
+    
+    * The system that has been used the most by students (moodles discussion forums)
+was rated pretty low in the survey. I took that to mean: "Please avoid."
+
+    * I've been told that the search mechanism works quite well -- that will make also help us find stuff.
+
+    * I can go in an mark responses as "approved" or "official", so you can know that a response
+is good, even if it didn't originally come from me.
+
+If you have any problems or feedback for the developers, email `team@piazza.com`.
+
+## Daily Dope Sheets
+
+This will collect together the things you need (and need to know) for
+each day.
+
+* [Week 1 online](online/Week1.html)
 
 
 ## Worksheets/Handouts
