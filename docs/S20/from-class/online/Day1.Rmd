@@ -136,9 +136,20 @@ $p(\overline{G} \mid R)$      | among those who like red, what is the probabilit
 
 </div>
 
+<button type = 'button' class = "collapsible">Exercise 6.10</button>
+<div class = "content">
+We can rewrite $\prob(B \mid A) = P(B)$, as 
+$\frac{\prob(A \intersect B)}{\prob(A)} = \prob(B)$
+
+As little algera makes this $\frac{\prob(B \intersect A)}{\prob(B)} = \prob(A)$,
+so 
+$\prob(A \mid B) = P(A)$.
+
+</div>
+
 <button type = 'button' class = "collapsible">Exercise 6.11</button>
 <div class = "content">
-$P(B \mid A) = P(B)$, so $\prob(A \intersect B) = \prob(A) \cdot \prob(B)$
+$\prob(B \mid A) = P(B)$, so $\prob(A \intersect B) = \prob(A) \cdot \prob(B)$
 </div>
     
 <button type = 'button' class = "collapsible">Exercise 6.12 (hint)</button>
