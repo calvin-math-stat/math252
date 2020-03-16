@@ -31,7 +31,7 @@ div.hide {
 
   * due today: WW 6
   * due Wednesday: WW 7
-  * due Friday: WW 8 and PS 7
+  * due Friday: WW 8 and PS 7 (Note: you can start working on PS 7 already now.)
 
 #### Stuff to do before 11:30 / 12:30
 
