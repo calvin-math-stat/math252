@@ -12,6 +12,18 @@ As we discussed in class before moving online, some parts of what we do in class
 will be tricky to mimic online.  But I have some ideas, and we will refine
 them as we go along.
 
+* For each class day, I'll prepare a **Daily Dope Sheet**[^dope] that will let you know
+what's up for the day.
+
+[^dope]: If you are not familiar with the various meanings of the word dope,
+here are some from Websters' online dictionary: 
+
+    a. *n.* information, especially from a reliable source [eg, the inside dope];
+    b. *v.* to figure out -- usually used with out; 
+    c. *adj.* excellent.
+    
+    I hope all three apply.
+
 * **I'll try to break things up a bit** and include some hints and solutions
 along the way so you can check and see how you are doing. 
 <br><br>
@@ -19,6 +31,7 @@ along the way so you can check and see how you are doing.
     This will be a bit like those interruptions I do in class -- except that I
     won't be directly responding to you, I'll be trying to anticipate.
 
+    
 * You can **use MS Teams to post questions**. 
 <br><br>
 
