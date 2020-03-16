@@ -85,7 +85,7 @@ our team.
 
 Coming soon...
 
-<div class="hide">
+<div>
 1. Get today's worksheet (section 6). 
 
     * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
