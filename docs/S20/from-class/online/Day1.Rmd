@@ -29,8 +29,9 @@ div.hide {
 
 #### Homework 
 
-  * due today: WW06
-  * due Wednesday: WW07
+  * due today: WW 6
+  * due Wednesday: WW 7
+  * due Friday: WW 8 and PS 7
 
 #### Stuff to do before 11:30 / 12:30
 
@@ -83,7 +84,6 @@ our team.
 
 #### Stuff to do 
 
-Coming soon...
 
 <div>
 1. Get today's worksheet (section 6). 
