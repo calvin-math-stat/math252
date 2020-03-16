@@ -171,7 +171,11 @@ events.
 <button type = 'button' class = "collapsible">Exercise 6.14</button>
 <div class = "content">
 a) $\frac{6 \cdot 1}{6 \cdot 6} = \frac{6}{36} = \frac{1}{6}$
-b) $\prob( \mbox{first number is between 1 and 6} ) \cdot \prob(\mbox{2nd number matches first number} \mid \mbox{first number is beteen 1 and 6}) = 1 \cdot \frac{1}{6} = \frac{1}{6}$
+b) Let's let F be "the first number is between 1 and 6" and let
+   M be "the second number matches the first".  Then we can write
+   this as
+   
+    $\prob(F \intersect M)  = \prob( F ) \cdot p(M \mid F)$ $= 1 \cdot \frac{1}{6} = \frac{1}{6}$
 </div>
 
 <button type = 'button' class = "collapsible">Exercise 6.16</button>
