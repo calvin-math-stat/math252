@@ -44,8 +44,7 @@ $$
 \Prob(A \mid R) \qquad
 \Prob(R \mid A) \qquad
 \Prob(B \mid R) \qquad
-\Prob(R \mid B) \qquad
-\Prob(R \mid A)
+\Prob(R \mid B) 
 $$
 
 ## Breast cancer screening
