@@ -116,7 +116,8 @@ Miller's test for primality of a number $n$ uses arithmetic
   d. If $n$ is composite, what is the probability that `PrimeTest(n, 20)`
   returns `"prime (well, probably)"`?
 
-Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
+Note: For RSA cryptography purposes, 
+once we get two large probably prime numbers, we can try encoding
 and decoding a message.  If a composite number sneaks through the randomized test,
 decoding won't work and we can try again with a different pair of probably prime
 numbers.
