@@ -21,58 +21,55 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Homework 
 
-  * due today: WW 8 and PS 7
-      * submit PS 7 via WebWork
-  * due Monday, March 30: TBD
+* due today: WW 8 and PS 7
+    * submit PS 7 via Moodle
+    
+* due Monday, March 30: WW 9
+    * I've set this to turn on Friday, March 27.  The intent is to get your brain
+      warmed up again after a little break. (Yes, I'm forcing you to put this off and 
+      not due during break.)
+      
+* due Wednesday, April 1: WW 10 and PS 8 
+
+    * OK, if you are desparate for something to do over break (and we migh all be),
+    you can start working on PS 8.  But you don't have to do that.  There will be time
+    after break.
 
 #### Stuff to do
 
-1. Get today's worksheets. We'll be working on sections 7.4 and 7.5 (Probability Trees and Bayes) and the beginning of section 8 (Random Variables). 
+1. Get today's worksheets. We'll be working mainly on Section 8 (Random Variables) 
 
     * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
-    * [HTML -- section 7](../counting-and-probability/probability-trees-and-bayes.html)
     * [HTML -- section 8](../counting-and-probability/random-variables.html)
+    * [HTML -- section 7](../counting-and-probability/probability-trees-and-bayes.html)
 
-2. Section  7.4: Random Primaility Testing
-
-3. Section  7.5: Hashing
-    
-4. Sections 8.1 and 8.2: Introduction to Random Variables
+2. Sections 8: Introduction to Random Variables
 
     Note: You have already seen a little bit of random variable notation
     in one of your WebWork problems. The main ideas are pretty simple:
     
-        * A random variable is a random process that results in a number.
-        * We can describe events using mathematical notation like $X = 2$ or 
-        $X \ge 4$ and ask the probability that these events happen.
+    * A random variable is a random process that results in a number.
+    * We can describe events using mathematical notation like $X = 2$ or 
+      $X \ge 4$ and ask the probability that these events happen.
+    * We can describe random variables either with tables or functions.
+    * Binomial random variables are a special, important use case.
         
     More details on the worksheet.
 
-5. Some hints/solutions/discussion below.
+3. If you finish up Section 8, you can go back and take a look at Sections 7.4
+(Random Primaility Testing) and 7.5 (Hashing) to see some applications of
+probability to computer science. There isn't any new probability there, just
+some nice examples of the things we have been doing.
+
+    * If you haven't heard of RSA, no worries. That's just an application that needs to
+    identify large prime numbers and gives some additional context for why primality 
+    testing is important for cryptography.
+    
+4. Some hints/solutions/discussion below.
 
 #### Comments/Hints/Solutions
 
 Check our MS Team channels as well.
-
-
-<button type = 'button' class = "collapsible">Random Primality Testing</button>
-<div class = "content">
-
-a. Since $n$ is prime, `MillersTest(n, b)` will never say "composite", so the `PrimeTest(n)` will
-always return "prime (well, probably)".  
-
-b. At each pass through the loop, the probability of `MillersTest(n, b)` returning "composite"
-is greater than 3/4, so the probability of continuing to the next pass through the loop is 
-less than 1/4.  The probability of doing this 5 times is 
-$\le (1/4)^5 \approx `r round(0.25^5, 5)`$.
-
-Read more about this problem on page 464.
-</div>
-
-<button type = 'button' class = "collapsible">Hashing</button>
-<div class = "content">
-Read about this problem on page 462.
-</div>
 
 
 <button type = 'button' class = "collapsible">Exercise 8.2.1</button>
@@ -129,6 +126,26 @@ Some hints:
 hand is 4.
 
 </div>
+
+<button type = 'button' class = "collapsible">Random Primality Testing</button>
+<div class = "content">
+
+a. Since $n$ is prime, `MillersTest(n, b)` will never say "composite", so the `PrimeTest(n)` will
+always return "prime (well, probably)".  
+
+b. At each pass through the loop, the probability of `MillersTest(n, b)` returning "composite"
+is greater than 3/4, so the probability of continuing to the next pass through the loop is 
+less than 1/4.  The probability of doing this 5 times is 
+$\le (1/4)^5 \approx `r round(0.25^5, 5)`$.
+
+Read more about this problem on page 464.
+</div>
+
+<button type = 'button' class = "collapsible">Hashing</button>
+<div class = "content">
+Read about this problem on page 462.
+</div>
+
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
