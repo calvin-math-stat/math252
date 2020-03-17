@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-03-16" />
+<meta name="date" content="2020-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,7 +291,8 @@ returns <code>"prime (well, probably)"</code>?</p></li>
 <li><p>If <span class="math inline">\(n\)</span> is composite, what is the probability that <code>PrimeTest(n, 20)</code>
 returns <code>"prime (well, probably)"</code>?</p></li>
 </ol>
-<p>Note: For RSA purposes, once we get two large probably prime numbers, we can try encoding
+<p>Note: For RSA cryptography purposes,
+once we get two large probably prime numbers, we can try encoding
 and decoding a message. If a composite number sneaks through the randomized test,
 decoding won’t work and we can try again with a different pair of probably prime
 numbers.</p>

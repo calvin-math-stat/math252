@@ -21,26 +21,34 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Homework 
 
-  * due today: WW08 and PS 9
+  * due today: WW 8 and PS 7
+      * submit PS 7 via WebWork
   * due Monday, March 30: TBD
 
 #### Stuff to do
 
-1. Get today's worksheets. We'll be working section 7 and the beginning of section 8. 
+1. Get today's worksheets. We'll be working on sections 7.4 and 7.5 (Probability Trees and Bayes) and the beginning of section 8 (Random Variables). 
 
     * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
     * [HTML -- section 7](../counting-and-probability/probability-trees-and-bayes.html)
     * [HTML -- section 8](../counting-and-probability/random-variables.html)
 
-2. Section  7.5: Disease Testing
+2. Section  7.4: Random Primaility Testing
 
-3. Section  7.6: Hashing
+3. Section  7.5: Hashing
     
-    There are some comments/hints/solutions below. Take a look at them after
-    each section before moving on to the next.
-
 4. Sections 8.1 and 8.2: Introduction to Random Variables
 
+    Note: You have already seen a little bit of random variable notation
+    in one of your WebWork problems. The main ideas are pretty simple:
+    
+        * A random variable is a random process that results in a number.
+        * We can describe events using mathematical notation like $X = 2$ or 
+        $X \ge 4$ and ask the probability that these events happen.
+        
+    More details on the worksheet.
+
+5. Some hints/solutions/discussion below.
 
 #### Comments/Hints/Solutions
 
@@ -55,7 +63,8 @@ always return "prime (well, probably)".
 
 b. At each pass through the loop, the probability of `MillersTest(n, b)` returning "composite"
 is greater than 3/4, so the probability of continuing to the next pass through the loop is 
-less than 1/4.  The probability of doing this 5 times is $(1/4)^5 \approx `r round(0.25^5, 5)`$.
+less than 1/4.  The probability of doing this 5 times is 
+$\le (1/4)^5 \approx `r round(0.25^5, 5)`$.
 
 Read more about this problem on page 464.
 </div>
