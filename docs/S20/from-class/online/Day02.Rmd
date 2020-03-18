@@ -285,17 +285,17 @@ review the solutions above (and make sure you have the right notation for each o
 events and probabilities).
 
 ```{r include = FALSE}
-a <- round( 1/10000 * 0.98, 6)
-b <- round(9999/10000 * 0.01, 6)
+a <- round( 1/10000 * 0.99, 6)
+b <- round(9999/10000 * 0.02, 6)
 a / (a + b)
 ```
 
-$p(D \mid P) = \frac{\frac1{10000}(.98)}{ \frac1{10000}(0.98) + \frac{9999}{10000} (0.01)} =$
+$p(D \mid P) = \frac{\frac1{10000}(.99)}{ \frac1{10000}(0.98) + \frac{9999}{10000} (0.02)} =$
 $\frac{`r a`}{`r a` + `r b`} =$ 
-`r round( 1/10000 * 0.98 / (1/10000 * 0.98 + 9999/10000 * 0.01), 4)`
+`r round( 1/10000 * 0.99 / (1/10000 * 0.99 + 9999/10000 * 0.02), 4)`
 
 **Note 1:** That probability is small, but it much larger than $\prob(D)$ -- it's
-about 100 times as big.  So a positive test result increases your changes of
+about 50 times as big.  So a positive test result increases your changes of
 having the disease by two orders of magnitude.
 
 **Note 2:** This is why we don't test everyone for everything -- the result would be 
