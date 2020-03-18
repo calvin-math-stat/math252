@@ -1,7 +1,7 @@
 
 
 
-\documentclass{scrartcl}
+\documentclass{article}
 \usepackage[margin=.5in,top=.5in,bottom=.3in,includehead,includefoot]{geometry}
 \renewcommand{\arraystretch}{1.5}
 
@@ -144,19 +144,16 @@ Additional assignments will be filled in over time.
 	 \extra[birth month]{19}
 	 \extra[birth day]{20}
 	 \\
+	   \hline
+	 Mon 3/30 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
+	 \\
 	 \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
-
-	   \hline
-	 Thu 3/28 & \WW{09} & Rosen 7 & Probability
-	 \\
-	   \hline
-	 Fri 3/29 & PS 7 &
-
-	 \extra[odd one out]{29}
+	 & PS 8 & Rosen 7.2 &
+	 \mand[odd one out]{29}
 	 %\helper[inequality]{11}
 	 %\mand[inequality]{12}
 	 \\
@@ -175,11 +172,12 @@ Additional assignments will be filled in over time.
 	 \extra{14}
 	 \extra[Monty Hall]{15}
 	 \\
+	 \hline
+
 	 && Rosen 7.4 &
 	 \mand[lottery]{6}
 	 \mand[dice]{10}
 	 \\
-	 \hline
 	  &  & Rosen 6.RQ & \extra{1--2, 5, 8} % --12}
 	 \\
 	  &  & Rosen 6.SE & \extra{1--7} % , 24, 29, 32}
@@ -189,7 +187,10 @@ Additional assignments will be filled in over time.
 	  &  & Rosen 7.SE & \extra{1--5, 7a, 17, 23}
 	 \\
 	 \hline
-
+	   \hline
+	 Thu 3/28 & \WW{09} & Rosen 7 & Probability
+	 \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
