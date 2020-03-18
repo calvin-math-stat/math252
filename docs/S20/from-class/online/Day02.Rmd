@@ -46,8 +46,11 @@ button.collapsible {
 #### Homework 
 
   * due today: WW 7
-  * due Friday: WW 8 and PS 9
-     * submit PS 9 via moodle 
+  * due Friday: WW 8 and PS 7
+     * Submit PS 7 via moodle
+     * You can submit up to five files (Moodle's max), but if you can assemble things into a single file somehow (perhaps drop your photos into Word or use some other online tool) and submit a single PDF, I think that will make things much nicer on the back end for our graders.
+     * If you find a great workflow for this, post in the homework channel of Teams.
+     
 
 
 #### Stuff to do
@@ -65,9 +68,25 @@ button.collapsible {
     
     There are some comments/hints/solutions below. Take a look at them after
     each section before moving on to the next.
+    
+    **Note:** You can ask very similar questions about the Corona virus, and most
+    of the interesting questions are conditional probabilities like
+    
+    * *If* I get this *and* I'm young and healthy, what is the probability that I die?
+    (Or to make it less personal, what proportion of young, healthy individuals who
+    contract Covid-19 will die from it?)
+    
+    * What proportion of people who are extreme social distancers will contract Covid-19?
+    * What proportion of mild social distancers will contract Covid-19?
+    * What proportion of our health care workers will contract Covid-19?
+    * Eventually: What proportion of people who are vaccinated will be immune?
+    
+    Right now, people are working hard to get estimates of these numbers, but we probably
+    won't know for sure until after things have settled down and epidemiologists have 
+    had some time to go over the data.
 
 3. If you finish those and have extra time, feel free to get started on 
-Sections 7.4 (Random Pramility Testing) and 7.5 (Hashing).
+Sections 7.4 (Random Primality Testing) and 7.5 (Hashing).
 
 #### Comments/Hints/Solutions
 
@@ -84,8 +103,9 @@ If it helps, imagine an extreme case: Suppose Box A had 1 million balls and Box 
 The balls in Box A would be very unlikely to be selected -- even if Box A were chosen.
 The ball in Box B would be chosen half the time -- every time Box B is chosen.
 
-**Note:** The color of the balls is not the issue here. We are asking about the 
+**Note 1:** The color of the balls is not the issue here. We are asking about the 
 individual balls, not their color. 
+
 
 **What's the point?** 
 We cannot use the equally likely rule by counting balls since the balls
@@ -95,7 +115,7 @@ are not equally likely.
 <button type = 'button' class = "collapsible">Inventory -- Getting Started</button>
 <div class = "content">
 * First Row:
-    * Selecting boxes: $\prob(A) = 1/2$; $prob(B) = 1/2$
+    * Selecting boxes: $\prob(A) = 1/2$; $\prob(B) = 1/2$
 * Second Row:
     * $\prob(A \intersect B) = 0$. (They are mutually exclusive.)
     * $A \union B$ is the sample space (we only have those two boxes), 
@@ -133,7 +153,7 @@ We want $\displaystyle \prob(A \mid R) = \frac{\prob(A \intersect R)}{\prob(R)}$
 fraction is in our inventory. But how do we get the bottom part?
 
 A red ball could have come form either box, so let's use 
-$R = (A \intersect R) \union (B \intersect R) =$ and our rule for unions.
+$R = (A \intersect R) \union (B \intersect R)$ and our rule for unions.
 
 $\prob(R) = \prob((A \intersect R) \union (B \intersect R)) =$ ________ + __________ - _________
 </div>
@@ -236,7 +256,7 @@ You don't have to use a probability tree to do this problem, you just need to mu
 the correct probabilities together.  But the tree is a handy way to organize the arithmetic.
 
 This [video](recordings/breast-cancer-p1.mp4) 
-will will you through the process. See how my tree compares to yours. Then finish 
+will walk you through the process. See how my tree compares to yours. Then finish 
 the problem before seeing how I did it in the next tab.
 
 <video width="600" controls>
@@ -274,6 +294,15 @@ $p(D \mid P) = \frac{\frac1{10000}(.98)}{ \frac1{10000}(0.98) + \frac{9999}{1000
 $\frac{`r a`}{`r a` + `r b`} =$ 
 `r round( 1/10000 * 0.98 / (1/10000 * 0.98 + 9999/10000 * 0.01), 4)`
 
+**Note 1:** That probability is small, but it much larger than $\prob(D)$ -- it's
+about 100 times as big.  So a positive test result increases your changes of
+having the disease by two orders of magnitude.
+
+**Note 2:** This is why we don't test everyone for everything -- the result would be 
+lots of false positives. But if we only test people with symptoms, then our before
+test probability of having the disease is much higher.  To see for yourself,
+redo this problem assuming $\prob(D)$ is $1/10$, as it might be for someone who
+has symptoms that could indicate the disease, but could also be something else.
 </div>
 
 
