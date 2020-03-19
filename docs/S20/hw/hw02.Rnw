@@ -118,7 +118,7 @@ Additional assignments will be filled in over time.
 	 Wed 3/18 & \WW{07} & Rosen 7 & Probability
 	 \\
 	   \hline
-	 Fri 3/20 & \WW{08} & Rosen 7 & Probability
+	 Tue 3/24 & \WW{08} & Rosen 7 & Probability
 	 \\
 	 & PS 7 & Rosen 7.1 &
 	 \mand[lottery]{26b}
@@ -145,7 +145,7 @@ Additional assignments will be filled in over time.
 	 \extra[birth day]{20}
 	 \\
 	   \hline
-	 Mon 3/30 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
+	 Wed 4/1 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
 	 \\
 	 \hline
 \end{longtable}
