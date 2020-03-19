@@ -21,17 +21,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Homework 
 
-* due today: WW 8 and PS 7
+* due Tuesday, March 24 (11:59pm Eastern): WW 8 and PS 7
     * submit PS 7 via Moodle
     
-* due Monday, March 30: WW 9
-    * I've set this to turn on Friday, March 27.  The intent is to get your brain
+* due Wednesday, April 1: WW 9
+    * I've set this to turn on Monday, March 30.  The intent is to get your brain
       warmed up again after a little break. (Yes, I'm forcing you to put this off and 
-      not due during break.)
+      not do it during break.)
       
-* due Wednesday, April 1: WW 10 and PS 8 
+* due Friday, April 3: WW 10 and PS 8 
 
-    * OK, if you are desparate for something to do over break (and we migh all be),
+    * If you are desparate for something to do over break (and we might all be),
     you can start working on PS 8.  But you don't have to do that.  There will be time
     after break.
 
@@ -72,6 +72,8 @@ some nice examples of the things we have been doing.
 Check our MS Team channels as well.
 
 
+<button type = 'button' class = "collapsible">8.2: Probability Tables</button>
+<div class = "content">
 <button type = 'button' class = "collapsible">Exercise 8.2.1</button>
 <div class = "content">
 The must sum to 1. The probabilities of all possibilities must always sum to 1.
@@ -124,7 +126,82 @@ Some hints:
 * It is probably easiest to work with [unordered hands](ordered-vs-unordered-hands.mp4).
 * There are only 4 diamonds in the deck, so the largest number of diamonds you can have in your 
 hand is 4.
+</div>
+</div>
 
+
+<button type = 'button' class = "collapsible">8.3: Probability Functions</button>
+<div class = "content">
+<button type = 'button' class = "collapsible">Exercise 8.3.8</button>
+<div class = "content">
+
+$\prob(Y = 3) = 3/10 = 0.3$.
+
+The table can be constructed by computing the probabilities for each of $y=1$,
+$y=2$, $y=3$, and $y=4$.
+
+value of $Y$ | 1   |  2  | 3   |  4
+------------ | --- | --- | --- | ---
+probability  | 0.1 | 0.2 | 0.3 | 0.4 
+
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 8.3.9</button>
+<div class = "content">
+
+$\prob(F = 1) = 1/2$ since that's the probability of flipping a head on the first toss.
+
+$F = 2$ means the first toss is a tail and the second is a head. The coin tosses
+are independent, so we can multiple probabilities. Similarly for $F=3$ we must flip
+TTH, etc.
+
+The possible values of $F$ are any positive integer, and you shoud be able to
+get a formula pretty easily once you see the examples for $F=1$, $F=2$, $F=3$, etc.
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 8.3.10</button>
+<div class = "content">
+Possible values: 0 through $n$ (inclusive).  Don't forget about 0.
+
+We can get the probability using the same kind of reasoning we used to
+count the total number of bit strings of a certain length and the 
+number of bitstrings with a certain number of 1's. Now it is heads and 
+tails instead of 0s and 1s.
+
+$\prob(X = k) = \frac{???}{2^n}$.  Can you fill in the question marks?  (Hint: 
+Use binomial coefficients, aka the choose function.)
+
+We will see a different way to think about this in the next problem. (It's fine 
+if you use that way already here.)
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 8.3.11</button>
+<div class = "content">
+
+a. $\prob(X = 1) = 0.75$
+b. $\prob(X = 1) = \prob(HT) + \prob(TH) = 2 (0.75) (0.25)$
+c. Hint: think about the types of coin toss patterns that lead to each value of
+$X$. How many are there? What is the probability of each one?
+
+
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 8.3.11d</button>
+<div class = "content">
+d. ${\prob(X = x) = \binom{n}{x} p^x (1-p)^{n-x}}$ 
+
+  * $\binom{n}{x}$: The heads can be in any $x$ of the $n$ positions. 
+  * $p^x$: we need $x$ heads and each has probability $p$.
+  * $(1-p)^{n-x}$: we need $n - x$ tails and each has probability $1-p$.
+  * We get to multiply probabilities becase the coin tosses are independent.
+    
+Note: When $p = 1/2$, then $p^x (1-p)^{n-x} = (1/2)^n$.
+</div>
+
+<button type = 'button' class = "collapsible">Exercise 8.4.12 & 8.4.13</button>
+<div class = "content">
+Use the formula in the preceeding problem to fill in the tables.
+</div>
 </div>
 
 <button type = 'button' class = "collapsible">Random Primality Testing</button>
@@ -146,6 +223,10 @@ Read more about this problem on page 464.
 Read about this problem on page 462.
 </div>
 
+
+<br>
+<br>
+<br>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");

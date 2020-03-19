@@ -123,7 +123,8 @@ The previous example illustrates a scenario that arises in many applications:
  
 We will denote this $X \sim \Binom(n,p)$.
 
-11. Create a probability table for a $\Binom(2, 0.2)$ random variable.  
+12. Create a probability table for a $\Binom(2, 0.2)$ random variable.  
 
-12. Create a probability table for a $\Binom(3, 1/4)$ random variable.
+13. Create a probability table for a $\Binom(3, 1/4)$ random variable.
 
+\newpage
