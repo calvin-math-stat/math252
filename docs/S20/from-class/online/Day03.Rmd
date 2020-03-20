@@ -23,6 +23,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * due Tuesday, March 24 (11:59pm Eastern): WW 8 and PS 7
     * submit PS 7 via Moodle
+    * Note: Moodle will have some downtime for upgrades over break.  Last I heard,
+    this will be sometime on Monday.
     
 * due Wednesday, April 1: WW 9
     * I've set this to turn on Monday, March 30.  The intent is to get your brain
@@ -31,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
       
 * due Friday, April 3: WW 10 and PS 8 
 
-    * If you are desparate for something to do over break (and we might all be),
+    * If you are desperate for something to do over break (and we might all be),
     you can start working on PS 8.  But you don't have to do that.  There will be time
     after break.
 
