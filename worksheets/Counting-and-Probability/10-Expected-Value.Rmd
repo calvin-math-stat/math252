@@ -26,8 +26,10 @@ probability table?
 ## Generalizing
 
 We can generalize this idea to compute the **mean** (more commonly called **expected value**)
-of any random variable $X$.  This is denoted either $\E(X)$ or $\mu_X$.
-
+of any random variable $X$.  This is denoted either $\E(X)$ or $\mu_X$. 
+E is short for expected value. 
+The Greek letter $\mu$ (read "mu") is the Greek version of the letter $m$ for mean.
+We will use whichever is handier in the moment.
 
 
 6. Let $X$ be defined by the probability table below.  Compute $\E(X)$.
@@ -63,7 +65,8 @@ raffle ticket.
   
 \vfill
 
-10. Let $D$ be the absolute value of the difference between the values of **two 4-sided dice**.
+10. Let $D$ be the absolute value of the difference (i.e., higher minus lower)
+between the values of **two 4-sided dice**.
 
     a. Create a probability table for $D$.
     b. Compute $\E(D)$.
