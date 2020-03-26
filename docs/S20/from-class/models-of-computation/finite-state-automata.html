@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Finite State Automata | Modeling Computation</title>
+  <meta name="description" content="3 Finite State Automata | Modeling Computation" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Finite State Automata | Modeling Computation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Finite State Automata | Modeling Computation" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2020-03-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="types-of-grammars.html"/>
+<link rel="next" href="regular-expressions-and-languages.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Modeling Computation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html"><i class="fa fa-check"></i><b>1</b> Alphabets, Languages, and Grammars</a><ul>
+<li class="chapter" data-level="1.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#terminology"><i class="fa fa-check"></i><b>1.1</b> Terminology</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#phrase-structure-grammars"><i class="fa fa-check"></i><b>1.2</b> (Phrase-Structure) Grammars</a><ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="1.2.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#derivations-and-languages"><i class="fa fa-check"></i><b>1.2.1</b> Derivations and Languages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="types-of-grammars.html"><a href="types-of-grammars.html"><i class="fa fa-check"></i><b>2</b> Types of Grammars</a><ul>
+<li class="chapter" data-level="2.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a><ul>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-algol-60-identifier"><i class="fa fa-check"></i>BNF for ALGOL 60 identifier</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-signed-integer"><i class="fa fa-check"></i>BNF for signed integer</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-specification-for-java"><i class="fa fa-check"></i>BNF specification for Java</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="finite-state-automata.html"><a href="finite-state-automata.html"><i class="fa fa-check"></i><b>3</b> Finite State Automata</a><ul>
+<li class="chapter" data-level="3.1" data-path="finite-state-automata.html"><a href="finite-state-automata.html#graph-representation"><i class="fa fa-check"></i><b>3.1</b> Graph Representation</a></li>
+<li class="chapter" data-level="3.2" data-path="finite-state-automata.html"><a href="finite-state-automata.html#extended-transition-function"><i class="fa fa-check"></i><b>3.2</b> Extended transition function</a></li>
+<li class="chapter" data-level="3.3" data-path="finite-state-automata.html"><a href="finite-state-automata.html#language-recognition"><i class="fa fa-check"></i><b>3.3</b> Language Recognition</a></li>
+<li class="chapter" data-level="3.4" data-path="finite-state-automata.html"><a href="finite-state-automata.html#equivalent-automata-and-grammars"><i class="fa fa-check"></i><b>3.4</b> Equivalent Automata and Grammars</a></li>
+<li class="chapter" data-level="3.5" data-path="finite-state-automata.html"><a href="finite-state-automata.html#nondeterministic-automata"><i class="fa fa-check"></i><b>3.5</b> Nondeterministic Automata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html"><i class="fa fa-check"></i><b>4</b> Regular Expressions and Languages</a><ul>
+<li class="chapter" data-level="4.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#operations-on-languages"><i class="fa fa-check"></i><b>4.1</b> Operations on Languages</a></li>
+<li class="chapter" data-level="4.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#regular-expressions"><i class="fa fa-check"></i><b>4.2</b> Regular Expressions</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#syntax"><i class="fa fa-check"></i><b>4.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="4.2.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#semantics"><i class="fa fa-check"></i><b>4.2.2</b> Semantics</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#recognizing-regular-languages-with-nfas"><i class="fa fa-check"></i><b>4.3</b> Recognizing Regular Languages with NFAs</a></li>
+<li class="chapter" data-level="4.4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#solution-to-problem-4.3.9"><i class="fa fa-check"></i><b>4.4</b> Solution to problem 4.3.9</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html"><i class="fa fa-check"></i><b>5</b> Regular Grammars and Automata</a><ul>
+<li class="chapter" data-level="5.1" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#grammars-to-automata"><i class="fa fa-check"></i><b>5.1</b> Grammars to Automata</a></li>
+<li class="chapter" data-level="5.2" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#automata-to-grammars"><i class="fa fa-check"></i><b>5.2</b> Automata to Grammars</a></li>
+<li class="chapter" data-level="5.3" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#some-review"><i class="fa fa-check"></i><b>5.3</b> Some Review</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regular-langauges.html"><a href="regular-langauges.html"><i class="fa fa-check"></i><b>6</b> Regular Langauges</a><ul>
+<li class="chapter" data-level="6.1" data-path="regular-langauges.html"><a href="regular-langauges.html#equivalent-definitions"><i class="fa fa-check"></i><b>6.1</b> Equivalent Definitions</a><ul>
+<li class="chapter" data-level="" data-path="regular-langauges.html"><a href="regular-langauges.html#your-mission-you-must-choose-to-accept-it"><i class="fa fa-check"></i>Your Mission (You must choose to accept it)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="regular-langauges.html"><a href="regular-langauges.html#a-language-that-is-not-regular"><i class="fa fa-check"></i><b>6.2</b> A language that is not regular</a></li>
+<li class="chapter" data-level="6.3" data-path="regular-langauges.html"><a href="regular-langauges.html#solutions"><i class="fa fa-check"></i><b>6.3</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html"><i class="fa fa-check"></i><b>7</b> DFA/NFA to Regular Expression</a><ul>
+<li class="chapter" data-level="7.1" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>7.1</b> GNFA (Generalied NFA)</a></li>
+<li class="chapter" data-level="7.2" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#algorithm-for-converting-dfanfa-to-regular-expression"><i class="fa fa-check"></i><b>7.2</b> Algorithm for converting DFA/NFA to Regular Expression</a></li>
+<li class="chapter" data-level="7.3" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#examples-1"><i class="fa fa-check"></i><b>7.3</b> Examples</a></li>
+<li class="chapter" data-level="7.4" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#review-problems"><i class="fa fa-check"></i><b>7.4</b> Review problems</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html"><i class="fa fa-check"></i><b>8</b> Regular Expressions in Python</a><ul>
+<li class="chapter" data-level="8.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#getting-your-python-environment-working"><i class="fa fa-check"></i><b>8.1</b> Getting your python environment working</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#repl.it"><i class="fa fa-check"></i><b>8.1.1</b> repl.it</a></li>
+<li class="chapter" data-level="8.1.2" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#thonny"><i class="fa fa-check"></i><b>8.1.2</b> Thonny</a></li>
+<li class="chapter" data-level="8.1.3" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#testing-your-python-setup"><i class="fa fa-check"></i><b>8.1.3</b> Testing your python setup</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="turing-machines.html"><a href="turing-machines.html"><i class="fa fa-check"></i><b>9</b> Turing Machines</a><ul>
+<li class="chapter" data-level="9.1" data-path="turing-machines.html"><a href="turing-machines.html#definition-of-a-1-tape-turing-machine-syntax"><i class="fa fa-check"></i><b>9.1</b> Definition of a 1-tape Turing Machine (Syntax)</a></li>
+<li class="chapter" data-level="9.2" data-path="turing-machines.html"><a href="turing-machines.html#execution-of-a-turing-machine-program-semantics"><i class="fa fa-check"></i><b>9.2</b> Execution of a Turing Machine program (Semantics)</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="turing-machines.html"><a href="turing-machines.html#ascii-representations-of-turing-machines"><i class="fa fa-check"></i><b>9.2.1</b> ASCII Representations of Turing Machines</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="turing-machines.html"><a href="turing-machines.html#examples-2"><i class="fa fa-check"></i><b>9.3</b> Examples</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="turing-machines.html"><a href="turing-machines.html#example-1"><i class="fa fa-check"></i><b>9.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="9.3.2" data-path="turing-machines.html"><a href="turing-machines.html#example-2"><i class="fa fa-check"></i><b>9.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="9.3.3" data-path="turing-machines.html"><a href="turing-machines.html#the-language-recognized-by-a-turing-machine"><i class="fa fa-check"></i><b>9.3.3</b> The language recognized by a Turing Machine</a></li>
+<li class="chapter" data-level="9.3.4" data-path="turing-machines.html"><a href="turing-machines.html#designing-a-turing-machine"><i class="fa fa-check"></i><b>9.3.4</b> Designing a Turing Machine</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#what-can-turing-machines-do"><i class="fa fa-check"></i><b>9.4</b> What Can Turing Machines Do?</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="turing-machines.html"><a href="turing-machines.html#turing-computable-languages"><i class="fa fa-check"></i><b>9.4.1</b> Turing Computable Languages</a></li>
+<li class="chapter" data-level="9.4.2" data-path="turing-machines.html"><a href="turing-machines.html#the-halting-problem"><i class="fa fa-check"></i><b>9.4.2</b> The Halting Problem</a></li>
+<li class="chapter" data-level="9.4.3" data-path="turing-machines.html"><a href="turing-machines.html#variations-on-the-turing-machine"><i class="fa fa-check"></i><b>9.4.3</b> Variations on the Turing Machine</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="turing-machines.html"><a href="turing-machines.html#running-time-of-a-turing-machine"><i class="fa fa-check"></i><b>9.5</b> Running time of a Turing machine</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="turing-machines.html"><a href="turing-machines.html#p-and-np"><i class="fa fa-check"></i><b>9.5.1</b> P and NP</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling Computation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="finite-state-automata" class="section level1">
+<h1><span class="header-section-number">3</span> Finite State Automata</h1>
+<p>A <strong>finite state automaton</strong> consists of the following:</p>
+<ul>
+<li>a finite set of <strong>states</strong>: <span class="math inline">\(S\)</span></li>
+<li>a finite <strong>input alphabet</strong>: <span class="math inline">\(I\)</span></li>
+<li>a <strong>start state</strong>: <span class="math inline">\(s_0 \in S\)</span>.</li>
+<li>a set of <strong>final states</strong>: <span class="math inline">\(F \subseteq S\)</span></li>
+<li>a <strong>transition function</strong>: <span class="math inline">\(f : S \times I \to S\)</span></li>
+</ul>
+<p><strong>Example (<span class="math inline">\(M_0\)</span>)</strong>
+states: <span class="math inline">\(\{A, B, C, D\}\)</span>; input alphabet: <span class="math inline">\(\{0, 1\}\)</span>; start state: <span class="math inline">\(A\)</span>;
+final states: <span class="math inline">\(\{A, D\}\)</span>; transition function described in table below</p>
+<!-- \  | \  | \  | \  | \  | \  | \  | \  | \ -->
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(M_0\)</span></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>state</td>
+<td>A</td>
+<td>A</td>
+<td>B</td>
+<td>B</td>
+<td>C</td>
+<td>C</td>
+<td>D</td>
+<td>D</td>
+</tr>
+<tr class="even">
+<td>letter</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(f\)</span></td>
+<td>A</td>
+<td>B</td>
+<td>A</td>
+<td>C</td>
+<td>A</td>
+<td>A</td>
+<td>C</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<div id="graph-representation" class="section level2">
+<h2><span class="header-section-number">3.1</span> Graph Representation</h2>
+<ol style="list-style-type: decimal">
+<li><p>It is often easier to visualize what is going on if we represent an automaton
+with a graph. Create a labeled, directed graph with the following properties:</p>
+<ul>
+<li>There is a vertex for each state, labeled with the state.
+(Draw this as a circle with the state inside the circle.</li>
+<li>There is an edge from state <span class="math inline">\(s\)</span> to state <span class="math inline">\(t\)</span> labeled with letter <span class="math inline">\(x\)</span> if and only if <span class="math inline">\(f(s, x) = t\)</span></li>
+<li>Final states are circled a second time. (We could use shape or color or something else to make it clear which states are final states, but double circling is easy.)</li>
+<li>An extra arrow (not coming from any state) points to the start state. This
+isn’t really an edge in the graph, just an extra bit of labeling.</li>
+</ul></li>
+</ol>
+</div>
+<div id="extended-transition-function" class="section level2">
+<h2><span class="header-section-number">3.2</span> Extended transition function</h2>
+<p>We can extend the transition function to <span class="math inline">\(f^*: S \times I^* \to S\)</span> with the following
+recursive definition:</p>
+<ul>
+<li><span class="math inline">\(f^*(s, \lambda) = s\)</span> for any state <span class="math inline">\(s\)</span></li>
+<li><span class="math inline">\(f^*(s, xa) = f(f^*(s,x) a)\)</span> for any <span class="math inline">\(x \in I^*\)</span> and <span class="math inline">\(a \in I\)</span></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Use this definition to determine the following.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(f^*(B, \lambda)\)</span></li>
+<li><span class="math inline">\(f^*(B, 0)\)</span></li>
+<li><span class="math inline">\(f^*(B, 010)\)</span></li>
+<li><span class="math inline">\(f^*(A, 101)\)</span></li>
+<li><span class="math inline">\(f^*(A, 1011)\)</span></li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="language-recognition" class="section level2">
+<h2><span class="header-section-number">3.3</span> Language Recognition</h2>
+<p>For any automaton <span class="math inline">\(M\)</span>
+with transition function <span class="math inline">\(f\)</span>, start state <span class="math inline">\(s\)</span> and final states <span class="math inline">\(F\)</span>,
+the language recognized by <span class="math inline">\(M\)</span> (written <span class="math inline">\(L(M)\)</span>) is defined as follows:</p>
+<p><span class="math display">\[
+x \in L(M) \iff f^*(s, x) \in F
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>For each string <span class="math inline">\(x\)</span> below, compute <span class="math inline">\(f^*(A, x)\)</span>.
+Which of these strings are in <span class="math inline">\(L(M_0)\)</span>?<br />
+(We will say that such strings are <strong>accepted by <span class="math inline">\(M_0\)</span></strong>.)
+<!-- Do this both from the table and from the graph.  (You should get the same result either way.) --></p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lambda\)</span></li>
+<li><span class="math inline">\(0\)</span></li>
+<li><span class="math inline">\(1\)</span></li>
+<li><span class="math inline">\(010\)</span></li>
+<li><span class="math inline">\(1011\)</span></li>
+</ol></li>
+</ol>
+<p>Here are three automata:</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>For each of the machines <span class="math inline">\(M_1, M_2, M_3\)</span>, compute</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(f^*(s_0, 10)\)</span></li>
+<li><span class="math inline">\(f^*(s_0, 1011)\)</span></li>
+<li><span class="math inline">\(f^*(s_1, 1011)\)</span></li>
+</ol></li>
+<li><p>For each of the machines <span class="math inline">\(M_1, M_2, M_3\)</span>, determine the language recognized.</p></li>
+</ol>
+<p><img src="../images/DFA-Fig-12-3-2.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Create automata that recognize each of the following languages.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The set of bitstrings that begin with two 0’s</li>
+<li>The set of bitstrings that contain exactly two 0’s</li>
+<li>The set of bitstrings that contain at least two 0’s</li>
+<li>The set of bitstrings that contain two consecutive 0’s (anywhere in the string)</li>
+<li>The set of bitstrings that do not contain two consecutive 0’s anywhere</li>
+<li>The set of bitstrings that end with two 0’s</li>
+</ol></li>
+</ol>
+</div>
+<div id="equivalent-automata-and-grammars" class="section level2">
+<h2><span class="header-section-number">3.4</span> Equivalent Automata and Grammars</h2>
+<p>We will say that two automata <span class="math inline">\(M\)</span> and <span class="math inline">\(N\)</span> are equivalent if <span class="math inline">\(L(M) = L(N)\)</span>, that is, if they recognize
+the same language. Similarly, two grammars are equivalent if they generate the same language.</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>What must you do to show that two automata are <strong>not</strong> equivalent?</p></li>
+<li><p>What must you do to show that two automata <strong>are</strong> equivalent.</p></li>
+<li><p>Are the two automata represented below equivalent? Explain.</p></li>
+</ol>
+<p><img src="../images/DFA-Fig-12-3-5.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="nondeterministic-automata" class="section level2">
+<h2><span class="header-section-number">3.5</span> Nondeterministic Automata</h2>
+<p>The finite state automata we have seen so far are often called <strong>deterministic finite-state automata</strong> or
+DFAs. There is a generalization called a <strong>non-deterministic finite-state automaton</strong> or NFA. The only
+difference is how the transition function is specified. For an NFA, the transition function has the form</p>
+<p><span class="math display">\[ f: S \times I^* \to P(S)\]</span></p>
+<p>where <span class="math inline">\(S\)</span> is the set of states, <span class="math inline">\(I\)</span> is the input alphabet, and <span class="math inline">\(P(S)\)</span> is the powerset of <span class="math inline">\(S\)</span>. (The powerset of <span class="math inline">\(S\)</span> is the set of all subsets of <span class="math inline">\(S\)</span>.
+So the transition function for an NFA returns a <em>set</em> of states.)</p>
+<p>Here is a tabular description of the transition function for an NFA <span class="math inline">\(N_0\)</span> with
+start state A and final states C and D.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(N_0\)</span></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>state</td>
+<td>A</td>
+<td>A</td>
+<td>B</td>
+<td>B</td>
+<td>C</td>
+<td>C</td>
+<td>D</td>
+<td>D</td>
+</tr>
+<tr class="even">
+<td>letter</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(f\)</span></td>
+<td><span class="math inline">\(\{A,B\}\)</span></td>
+<td><span class="math inline">\(\{D\}\)</span></td>
+<td><span class="math inline">\(\{A\}\)</span></td>
+<td><span class="math inline">\(\{B, D\}\)</span></td>
+<td><span class="math inline">\(\{ \}\)</span></td>
+<td><span class="math inline">\(\{A, C\}\)</span></td>
+<td><span class="math inline">\(\{A, B, C\}\)</span></td>
+<td><span class="math inline">\(\{B\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Draw the graph representation.
+How will the graph of an NFA differ from the graph for a DFA?</p></li>
+<li><p>How do we define the language recognized by an NFA? [Check your answer before proceeding.]</p></li>
+<li><p>Which of these strings are accepted by <span class="math inline">\(N_0\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li>01</li>
+<li>011</li>
+<li>00</li>
+<li>0000</li>
+<li><span class="math inline">\(\lambda\)</span></li>
+<li>010101</li>
+</ol></li>
+</ol>
+<p>Here is the graph of an NFA <span class="math inline">\(N_1\)</span>.</p>
+<p><img src="../images/DFA-Fig-12-3-7.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Make a table showing the transition function for <span class="math inline">\(N_1\)</span>.</p></li>
+<li><p>Which of the following strings are accepted by <span class="math inline">\(N_1\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lambda\)</span></li>
+<li>00</li>
+<li>01</li>
+<li>010</li>
+<li>011</li>
+<li>001</li>
+</ol></li>
+<li><p>What is <span class="math inline">\(L(N_1)\)</span>?</p></li>
+<li><p>Create a DFA that recognizes <span class="math inline">\(L(N_1)\)</span>.</p></li>
+<li><p>Given an NFA <span class="math inline">\(N\)</span>, is it always possible to create a DFA <span class="math inline">\(M\)</span> that recognizes the same language? If so,
+explain how. If not, provide an example <span class="math inline">\(N\)</span> and explain why <span class="math inline">\(L(N)\)</span> cannot be recognized by a DFA.</p></li>
+</ol>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="types-of-grammars.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regular-expressions-and-languages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Models-of-Computation.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
