@@ -1,3 +1,7 @@
+docs/S20/from-class/images/
+docs/S20/from-class/*/*.tex
+docs/S20/from-class/*/libs/
+grades/
 .DS_store
 *.mkv
 docs/S20/from-class/online/recordings/2020*.mp4
