@@ -95,13 +95,13 @@ But there are some additional operations that we will use.
 
 A regular expression over an input alphabet $I$ is defined recursively.
 
-* $\bm{\emptyset}$ and $\bm{\lambda}$ and regular expressions.
-* $\bm{x}$ is a regular expression for each $i \in I$.
-* If $\bm{A}$ and $\bm{B}$ are regular expressions, then
+* $\mybold{\emptyset}$ and $\mybold{\lambda}$ and regular expressions.
+* $\mybold{x}$ is a regular expression for each $i \in I$.
+* If $\mybold{A}$ and $\mybold{B}$ are regular expressions, then
 
-    * $\bm{A}^*$ is a regular expression
-    * $(\bm{A} \cup \bm{B})$ is a regular expression
-    * $(\bm{AB})$ is a regular expression
+    * $\mybold{A}^*$ is a regular expression
+    * $(\mybold{A} \cup \mybold{B})$ is a regular expression
+    * $(\mybold{AB})$ is a regular expression
   
 <!-- Figures created with http://madebyevan.com/fsm/ -->
 
@@ -109,26 +109,26 @@ A regular expression over an input alphabet $I$ is defined recursively.
 
 Each regular expression represents a language as follows.
 
-* $\bm{\emptyset}$ represents the empty langauge: $\emptyset$
-* $\bm{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
-* For each $x \in I$, $\bm{x}$ represents the language containing only $x$: $\{x \}$
-* If $\bm{A}$ and $\bm{B}$ are regular expressions representing languages $A$ and $B$, then
-    * $(\bm{AB})$ represents $AB$
-    * $(\bm{A \cup B})$ represents $A \cup B$ \hfill 
+* $\mybold{\emptyset}$ represents the empty langauge: $\emptyset$
+* $\mybold{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
+* For each $x \in I$, $\mybold{x}$ represents the language containing only $x$: $\{x \}$
+* If $\mybold{A}$ and $\mybold{B}$ are regular expressions representing languages $A$ and $B$, then
+    * $(\mybold{AB})$ represents $AB$
+    * $(\mybold{A \cup B})$ represents $A \cup B$ \hfill 
     [Note: This is often written `(A|B)` in programming languages.]
-    * $\bm{A}^*$ represents $A^*$  \hfill 
+    * $\mybold{A}^*$ represents $A^*$  \hfill 
     [Note: This is often written as `A*` in programming languages.]
     
 The langauges represented by regular expressions are called **regular languages** (how creative).
 
 4. Describe in words the languages represented by each of these regular expressions.
 
-    a. $\bm{10^*}$
-    a. $\bm{(10)^*}$
-    a. $\bm{0 \cup 01}$
-    a. $\bm{0^* \cup 01}$
-    a. $\bm{0 (0 \cup 1)^*}$
-    a. $\bm{(0 \cup 01)^*}$
+    a. $\mybold{10^*}$
+    a. $\mybold{(10)^*}$
+    a. $\mybold{0 \cup 01}$
+    a. $\mybold{0^* \cup 01}$
+    a. $\mybold{0 (0 \cup 1)^*}$
+    a. $\mybold{(0 \cup 01)^*}$
 
 5. Can each of the languages above be recongized by an NFA? a DFA?
 
@@ -168,11 +168,11 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 computer program to do the translation from regular expression to NFA), and it
 provides a proof that all regular languages can be recognized by an NFA. But it
 might produce an NFA with more states than is minimally required. Create an NFA
-that recognizes $\bm{1}^* \cup \bm{01}$.  Do this two ways:
+that recognizes $\mybold{1}^* \cup \mybold{01}$.  Do this two ways:
   
     a. Following the steps outlined in 1--6.
     b. Any way you like, but using fewer states than in part a.  
-    c. What is the smallest (fewest states) NFA you can find that recognizes $\bm{1}^* \cup \bm{01}$?
+    c. What is the smallest (fewest states) NFA you can find that recognizes $\mybold{1}^* \cup \mybold{01}$?
 
 10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^C$) 
 is too.

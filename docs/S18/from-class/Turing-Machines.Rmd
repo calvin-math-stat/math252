@@ -221,7 +221,7 @@ $$
 ### Designing a Turing Machine
 
 4. Design a Turing machine that recognizes 
-$(\bm{0} \cup \bm{1})\bm{1}(\bm{0} \cup \bm{1})^*$
+$(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$
 
 5. Design a Turing machine that recognizes
 $\{0^n1^n \mid n \ge 0\}$.  This shows that Turing machines
