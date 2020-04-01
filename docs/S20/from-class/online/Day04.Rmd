@@ -51,6 +51,16 @@ Check our MS Team channels as well.
 
 
 <div class = "explain" label = "GPA">
+
+Because it's April 1, and because puppies make people happy, meet my dog Taz:
+
+```{r echo = FALSE, out.width = "300", fig.align = "center"}
+knitr::include_graphics("Taz-2020-04-01.jpg")
+```
+
+If you every hear barking in the background during class, that's Taz.  She sometimes 
+can't tell the difference between play time and class time.
+
 <div class = "explain" label = "Exercise 9.1">
 The student got more A's than C's, so the average should be higher than a B.
 </div>
@@ -214,6 +224,13 @@ exp_suits <- sum(vals * probs); exp_suits
 Answer: `r exp_suits`.
 
 Hint: Be careful not to overcount. Do your probabilities add up to 1?
+
+Taz says if you got this one, you deserve a nap:
+
+```{r echo = FALSE, out.width = "400", fig.align = "center"}
+knitr::include_graphics("Taz-nap.jpg")
+```
+
 </div>
 
 <div class = "explain" label = "Exercise 9.14">
