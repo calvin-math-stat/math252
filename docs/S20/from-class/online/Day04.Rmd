@@ -37,6 +37,9 @@ will have another test is April 13 (after Easter).
 * due Friday, April 3: WW 10 and PS 8 
     * Submit PS 8 via <https://gradescope.com>. Let me know if you did not get an invite 
     to our class.
+    * Here's how to do it.
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KMPoby5g_nE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Stuff to do
 
