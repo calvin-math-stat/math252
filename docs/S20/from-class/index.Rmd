@@ -87,9 +87,10 @@ sheets), but there will be some additional resources as well.
 This will collect together the things you need (and need to know) for
 each day.
 
-* [Day 1 online -- March 16](online/Day01.html)
-* [Day 2 online -- March 18](online/Day02.html)
+* [Day 4 online -- April 1](online/Day04.html)
 * [Day 3 online -- March 20](online/Day03.html)
+* [Day 2 online -- March 18](online/Day02.html)
+* [Day 1 online -- March 16](online/Day01.html)
 
 <!-- * [Day 3 online -- March 20](online/Day03.html) -->
 <!-- * [Day 4 online -- March 20](online/Day04.html) -->

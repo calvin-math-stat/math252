@@ -39,7 +39,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
     * The most important things today: 
         * Understanding how to calculate expected value for a discrete random variable
-        * Understnading what expected value tells you about a random varaible.
+        * Understanding what expected value tells you about a random varaible.
     * Be sure to complete Exercise 1 - 12.  
     * Exercises 13 and 14 are bonus problems which are a little trickier.  But if things 
     are going well, you might like to give them a try.  (13 is easier than 14.)
@@ -63,6 +63,7 @@ $$
 </div>
 
 <div class = "explain" label = "Exercise 9.3">
+Here's the algebra.  The big numbers are the ones that fill in the blanks.
 \begin{align*}
 \mbox{GPA} &= 
 \frac{4 + 4 + 4 + 4 + 4 + 3 + 3 + 3 + 3 + 2}{10} \\
@@ -96,7 +97,7 @@ probability   |  5/10 |  4/10 |  1/10
 </div>
 
 <div class = "explain" label = "Exercise 9.7">
-First we creat the probability table:
+First we create the probability table:
 
 value         |   0   |   1   |   2    |   3
 -------------:|:-----:|:-----:|:------:|:------
@@ -129,14 +130,14 @@ Now $k$ runs over all possible values of the random variable.
 Or you can think in terms of pseudo code:
 
 ```
-def expecte_value(values, prob): 
+def expected_value(values, prob): 
   ev = 0
   for v in values: 
     ev = ev + v * prob(v)
   return ev
 ```
 
-If you work in R (a programming language for statistics), this is supper easy:
+If you work in R (a programming language for statistics), this is super easy:
 
 ```{r}
 values = c(0, 1, 2, 3)
@@ -212,7 +213,7 @@ exp_suits <- sum(vals * probs); exp_suits
 
 Answer: `r exp_suits`.
 
-Hint: Be carful not to overcount. Do your probabilities add up to 1?
+Hint: Be careful not to overcount. Do your probabilities add up to 1?
 </div>
 
 <div class = "explain" label = "Exercise 9.14">
