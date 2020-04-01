@@ -22,6 +22,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Wednesday, April 1 -- Expected Value
 
+#### A Note on tests
+
+The Mathematics and Statistics Department is still coordinating efforts with the
+University to figure out the best procedures for tests for the rest of the
+semester. I'll hold off deciding whether there will be one more test or two
+(plus a final) and setting the date for test 2 until I learn more. But the soonest we
+will have another test is April 13 (after Easter).
+
 #### Homework 
 
 * due Wednesday, April 1: WW 9

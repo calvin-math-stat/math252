@@ -49,7 +49,7 @@ Note:: No Class
 ===04/13/2020
 
 Note:: Easter Monday
-Note:: No Class
+Note:: But we have class
 
 ===04/21/2020
 
@@ -1063,25 +1063,23 @@ Topic:: Bayes Theorem
 Read:: Rosen 7.3
 
 Bob's Boxes
-
+Breast Cancer Screening
 
 ===
-Topic:: Conditional Probability
 Topic:: Random Variables
+Topic:: Binomial Random Variables
 
-Breast Cancer Screening
 
 
 ===03/30/2020
-Topic:: Random Variables
-Topic:: Binomial Distributions
+Note:: Extended Spring Break
+
+# Topic:: Random Variables
+# Topic:: Binomial Distributions
 
 ===
 Topic:: Expected Value
 Read:: Rosen 7.4
-
-
-Binomial Dists
 
 Expected Value
 
@@ -1097,11 +1095,9 @@ Coin Flipping Example
 Daily 4 grand prize
   E(X) and Var(X)
 
-===skip
-Topic:: Counting and Probability Examples
+===
+Topic:: E is Linear
 Read:: Rosen 6-7
-
-Linearity of Expected Value (review)
 
 Linearity Examples:
 
@@ -1190,8 +1186,9 @@ Components of a (phrase-structure) Grammar
 
 Examples
 
+===
+Topic:: Types of Grammars
 
-Types of Grammar
 	Type 0:
 		anything goes
 
@@ -1240,7 +1237,10 @@ BNF
 	web page showing complete BNF description of java
 
 ===
+
+===
 Topic:: NFA and DFA
+
 
 ===
 Topic:: NFA and DFA
