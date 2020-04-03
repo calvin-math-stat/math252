@@ -42,6 +42,8 @@ $(document).ready(function() {
     $(this).siblings('code, img').slideToggle('fast', 'swing');
   });
 
+  // hide/show div.explain
+
   $('div.explain').each(function () {
     // wrap in explain-wrapper
     $(this).wrap("<div class='explain-wrapper'></div>")
