@@ -171,7 +171,7 @@ Additional assignments will be filled in over time.
 	 & \WW{10} & Rosen 7 & Expected Value
 	 \\
 	 \hline
-	 Mon 4/6 & PS 9 & Rosen 7.2 &
+	 Mon 4/6 & PS 9 & Rosen 7.4 &
 	 \helper{1}
 	 \mand[rolling 6s]{3}
 	 \extra[loaded die]{5}
