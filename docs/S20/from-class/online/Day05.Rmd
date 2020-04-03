@@ -35,7 +35,9 @@ knitr::opts_chunk$set(echo = TRUE)
     
     * Seems like the new system is working well so far.
     
-# due Monday, April 6: WW 11 and PS 9
+* due Monday, April 6: WW 11 and PS 9
+
+    * Let's plan to use gradescope for PS 9 just like we did for PS 8.
 
 #### Stuff to do
 
@@ -61,6 +63,8 @@ knitr::opts_chunk$set(echo = TRUE)
     * Problems 15-17 show some more intersting ways to use linearity.
     **It would be good to do at least one of these**. (You may recognize 
     a couple of them from past worksheets.)
+    
+3. This is the end of our tour of probability. Monday we start something new.
 
 #### Comments/Hints/Solutions
 
