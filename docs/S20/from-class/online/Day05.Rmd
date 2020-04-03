@@ -25,9 +25,42 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Friday, April 3: Expectation is Linear
 
 #### Homework 
+      
+* due today:  WW 10 and PS 8 
+    * Submit PS 8 via <https://gradescope.com>. Let me know if you did not get an invite 
+    to our class.
+    * Here's how to do it.
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KMPoby5g_nE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    * Seems like the new system is working well so far.
+    
+# due Monday, April 6: WW 11 and PS 9
 
 #### Stuff to do
 
+1. Get today's worksheets. We'll be working mainly on Section 9 (Expected Value)
+
+    * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
+    * [HTML -- section 10](../counting-and-probability/more-expected-value.html)
+
+2. Today's Theme: Expected Value is Linear
+
+    * The most important things today: 
+        * Understand what it means to say that expected value is linear.
+        * Use linearity to simplify computing expected values.
+        
+    * Be sure to complete Exercise 1 - 13.  
+    
+    * Problem 14 is about proving that the Linearity Theorem is true.
+    It's not hard, just a bit of algebra. But the intuition is probably
+    just as important. For example, if on average $X$ produces 5
+    and $Y$ produces 2, it makes sense that on average $X +Y$ should be 
+    $5 + 2$.
+    
+    * Problems 15-17 show some more intersting ways to use linearity.
+    **It would be good to do at least one of these**. (You may recognize 
+    a couple of them from past worksheets.)
 
 #### Comments/Hints/Solutions
 
