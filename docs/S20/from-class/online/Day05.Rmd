@@ -37,7 +37,8 @@ knitr::opts_chunk$set(echo = TRUE)
     
 * due Monday, April 6: WW 11 and PS 9
 
-    * Let's plan to use gradescope for PS 9 just like we did for PS 8.
+    * Let's plan to use [gradescope](https://gradescope.com) 
+    for PS 9 just like we did for PS 8.
 
 #### Stuff to do
 
