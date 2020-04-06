@@ -25,8 +25,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Homework 
 
+* due Monday, April 6: WW 11 and PS 9
+    * submit PS 9 via [gradescope](https://gradescope.com) 
+
+* due Wednesday, April 8: PS 10  
+    * submit PS 10 via [gradescope](https://gradescope.com) 
+
 #### Stuff to do
 
+We are moving into a new section: Models of computation.  Today's topic is
+alphabets, lanuages and grammars.  As you go through the worksheet, pay careful
+attention to definitions and notation. **Your main tasks today:**
+
+1. Understand what a language is.
+2. Understand how grammars generate strings and languages.
+
+The terminology here comes from linguistics and natural languages, but 
+there are applications to many more areas.
+
+As usual, you can access the **worksheet** (section 1) in either of two formats:
+
+* [HTML](../models-of-computation/alphabets-languages-and-grammars.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
 
 #### Comments/Hints/Solutions
 
@@ -110,7 +130,7 @@ $G_4$ is more complicated, so it would be challenging to figure out
 exactly what can and cannot be generated. But you should be able 
 to generate examples.  
 
-***Note:** it is easy to convince someone that a
+**Note:** it is easy to convince someone that a
 string is in a language -- you just show how to derive it using the rules.
 It is harder to convince someone that a string is *not* in the language --
 you need a convincing argument that there is *no way* to derive it using 
@@ -137,7 +157,7 @@ you must have at least one 0 (and at least one 1).
 </div>
 
 <div class = "explain" label = "Exercise 1.11">
-How is the different from the previous two examples?
+How is this one different from the previous two examples?
 Note $\mathbb{N} = \{0, 1, 2, 3, \dots \}$.  (Think unsigned integer -- but
 without a MAXINT.)
 
