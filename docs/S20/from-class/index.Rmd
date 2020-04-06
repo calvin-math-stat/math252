@@ -100,7 +100,7 @@ each day.
 
 * Worksheets: 
   [PDF](models-of-computation/Models-of-Computation.pdf)
-  [HTML](models-of-computaiton)
+  [HTML](models-of-computation)
 
 ### Counting and Probability
 
