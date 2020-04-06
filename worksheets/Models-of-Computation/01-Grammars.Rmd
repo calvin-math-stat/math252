@@ -44,9 +44,10 @@ We can denote this as $S\in V$.
         * The start symbol is a terminal in some languages and a nonterminal in others
 * **production rules** ($P$): $P \subseteq (V^*-N^*) \times V^*$
     * usually write elements of $P$ as $u \to v$ rather than $(u, v)$.
-    * $V^*-N^*$ says that the lefthand side of the rul ($u$) must 
+    * $u$: $V^*-N^*$ says that the lefthand side of the rule ($u$) must 
     **contain at least one nonterminal**.
-    * $v$ can be any combinaton of terminals and nonterminals (including the empty string).
+    * $v$: The righthand side can be any combinaton of terminals and nonterminals 
+    (including the empty string).
 
 ### Examples {-}
 
