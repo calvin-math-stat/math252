@@ -96,9 +96,15 @@ each day.
 
 ## Worksheets/Handouts
 
+### Models of Computation
+
+* Worksheets: 
+  [PDF](models-of-computation/Models-of-Computation.pdf)
+  [HTML](models-of-computaiton)
+
 ### Counting and Probability
 
-  * Worksheets: 
+* Worksheets: 
   [PDF](counting-and-probability/Counting-and-Probability.pdf)
   [HTML](counting-and-probability/)
 
