@@ -120,8 +120,6 @@ Some hints:
 * Your probabilities should sum to 1.
 * Make sure that you are always creating a full 5-card hand.
 * It is probably easiest to work with [unordered hands](ordered-vs-unordered-hands.mp4).
-* There are only 4 diamonds in the deck, so the largest number of diamonds you can have in your 
-hand is 4.
 </div>
 </div>
 
