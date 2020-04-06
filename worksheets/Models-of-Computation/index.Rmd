@@ -4,6 +4,10 @@ author: "R Pruim"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 bibliography: models-of-computation.bib
+output: 
+  bookdown::pdf_book: default
+  bookdown::gitbook: default
+
 
 ---
 
