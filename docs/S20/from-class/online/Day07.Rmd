@@ -1,0 +1,96 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Wednesday, April 8: Regular (and other) Grammars
+
+#### Homework 
+
+* due Wednesday, April 8: PS 10 (submit via [gradescope](https://gradescope.com))
+
+* due Monday, April 13: PS 11 (submit via [gradescope](https://gradescope.com))
+    
+#### Stuff to do
+
+Last time we learned the basics of grammars and how they are used to 
+generate strings and languages. Today we are going to look at some types
+of grammars that arise by restricting the types of rules that are allowed.
+
+As usual, you can access the **worksheet** (Section 2) in either of two formats:
+
+* [HTML](../models-of-computation/types-of-grammars.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+##### Important Notes 
+
+* For some of the questions, you will need to refer back to the grammars listed
+in Section 1.
+* For Exercise 1, log your answers regarding  grammars 1-4 in this [google form](https://docs.google.com/forms/d/e/1FAIpQLSfMWd2J9gM44ScBVSCf7mYb6Y9SB6pX3AdQkmuMinM2m2zPxg/viewform?usp=sf_link).
+* For Exercise 2, a poll will open up in Teams during class.  Log your answer in that poll.
+
+#### Comments/Hints/Solutions
+
+\def\emptystring{\lambda}
+
+<div class = "explain" label = "Exercise 2.1 -- Identify types of grammars">
+For each grammar, look at each rule to see if it follows the restrictions
+of each type of grammar.
+
+Example: $G_1$
+
+* Not context sensitive because the rule $AB \to b$ doesn't work.  (One of $A$
+  or $B$ would need to be part of the context and so reappear on the right side.)
+* Not context free or regular because there are rules with more than a single
+  non-terminal on the left side.
+* So $G_1$ is type 0, but not any of the other types.
+
+Log your answers for grammars 1-4 in this [google form](https://docs.google.com/forms/d/e/1FAIpQLSfMWd2J9gM44ScBVSCf7mYb6Y9SB6pX3AdQkmuMinM2m2zPxg/viewform?usp=sf_link).
+
+Don't forget about grammars 5-7 (the ones you created).
+</div>
+
+<div class = "explain" label = "Exercise 2.2 -- Grammar Hierarchy?">
+There is one case where the answer is no.  Can you find it?
+Submit your answer via the poll in teams.
+</div>
+
+<div class = "explain" label = "Exercise 2.3 -- Language Hierarchy?">
+Despite the answer to Exercise 2, this is true. Do you see how to get around the 
+issue in Exercise 2 when we talk about languages rather than grammars?
+</div>
+
+<div class = "explain" label = "Exercise 2.4 -- BNF only for context free grammars">
+**Answer:** 
+There is no place for context in the notation.  The left side is always just
+a single non-terminal.
+</div>
+
+<div class = "explain" label = "Exercise 2.5 -- BNF examples">
+Example: Grammar 2
+
+```
+<S> ::= a<A> | b
+<A> ::= aa
+```
+</div>
+
+<br><br>

@@ -5,27 +5,24 @@
 **Type 0**: no restrictions
 
 **Type 1 (context sensitive)**: only two types of rules allowed
-
     
 * $lAr \to lwr$ where
 
-    * $l, r \in V^*$
-    * $A \in N$
-    * $w \in V^+$  [That is, $w \neq \lambda$.]
+    * $l, r \in V^*$ \qquad [so they can be anything, including empty]
+    * $A \in N$ \qquad [so $A$ is a single non-terminal]
+    * $w \in V^+$  \qquad [That is, $w \neq \lambda$.]
     * shorthand: `[left][nonterminal][right]` $\to$ `[left][non-empty][right]`
     
 * $S \to \lambda$
     * shorthand: `[start]` $\to$ `[empty string]`
-    * If the rule is used, the the start symbol may not appear on
-    the right side of any rule, so other rules become 
-    `[left][non-empty without start symbol][right]`.
+    * **If this rule is used, the the start symbol $S$ may not appear on the right side of any rule.**
     
 **Type 2 (context free)**: only one type of rule allowed 
 
 * $A \to w$ where
 
-    * $A$ is a single nonterminal symbol
-    * $w \in V^*$ (so no restriction here)
+    * $A \in N$  \qquad [so $A$ is a single nonterminal symbol]
+    * $w \in V^*$ \qquad [so no restriction here]
 
 * shorthand: `[nonterminal]` $\to$ `[any string]`
 
@@ -33,9 +30,9 @@
 
 **Type 3 (regular)**: Three types of rules allowed
 
-*	`[nonterminal]` $\to$ `[terminal]` `[non terminal]` \qquad (Example: $A \to bC$)
-*	`[nonterminal]` $\to$ `[terminal]` \qquad  (Example: $A \to b$)
-*	`[start]` $\to$ `[empty string]` \qquad  (Example: $S \to \lambda$)
+*	`[nonterminal]` $\to$ `[terminal]` `[non terminal]` \qquad [Example: $A \to bC$]
+*	`[nonterminal]` $\to$ `[terminal]` \qquad [Example: $A \to b$]
+*	`[start]` $\to$ `[empty string]` \qquad [Example: $S \to \lambda$]
 
 <!-- Non-contracting: -->
 <!-- 	left not longer than right -->
@@ -50,6 +47,8 @@ regular, context free, context sensitive.  (Some grammars will be
 more than one.  All grammars are type 0.)
 
 2. True or false: Every grammar of type $n$ is a grammar of type $n-1$.
+
+3. True or false: Every language of type $n$ is a language of type $n-1$.
 
 ## Backus-Naur Form (BNF) for Context Free Grammars
 
@@ -67,7 +66,6 @@ $A \to Aa$, $A \to a$, and $A \to AB$, we will write
 ```
 <A> ::= <A>a | a | <A><B>
 ```
-
 
 ### BNF for ALGOL 60 identifier {-}
 
@@ -94,6 +92,6 @@ for Java.
 
 ### Exercises {-}
 
-3. Why does BNF notation only work for context free grammars?
+4. Why does BNF notation only work for context free grammars?
 
-4. For each context free grammar we have seen, give its BNF representation.
+5. For each context free grammar we have seen, give its BNF representation.
