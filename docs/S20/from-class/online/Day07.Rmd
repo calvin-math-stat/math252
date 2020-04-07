@@ -68,23 +68,31 @@ Log your answers for grammars 1-4 in this [google form](https://docs.google.com/
 Don't forget about grammars 5-7 (the ones you created).
 </div>
 
-<div class = "explain" label = "Exercise 2.2 -- Grammar Hierarchy?">
+<div class = "explain" label = "Exercise 2.2 -- Rule Elimination">
+
+Example: You can't have $A \to \lambda$ and $A$ on the right side of rules in
+a context sensitive grammar.  So you will need to remove one or the other to
+make this type 1.  (There are other things that need doing as well.)
+
+</div>
+
+<div class = "explain" label = "Exercise 2.3 -- Grammar Hierarchy?">
 There is one case where the answer is no.  Can you find it?
 Submit your answer via the poll in teams.
 </div>
 
-<div class = "explain" label = "Exercise 2.3 -- Language Hierarchy?">
+<div class = "explain" label = "Exercise 2.4 -- Language Hierarchy?">
 Despite the answer to Exercise 2, this is true. Do you see how to get around the 
 issue in Exercise 2 when we talk about languages rather than grammars?
 </div>
 
-<div class = "explain" label = "Exercise 2.4 -- BNF only for context free grammars">
+<div class = "explain" label = "Exercise 2.5 -- BNF only for context free grammars">
 **Answer:** 
 There is no place for context in the notation.  The left side is always just
 a single non-terminal.
 </div>
 
-<div class = "explain" label = "Exercise 2.5 -- BNF examples">
+<div class = "explain" label = "Exercise 2.6 -- BNF examples">
 Example: Grammar 2
 
 ```
