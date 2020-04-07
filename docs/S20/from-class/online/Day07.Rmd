@@ -45,7 +45,7 @@ As usual, you can access the **worksheet** (Section 2) in either of two formats:
 * For some of the questions, you will need to refer back to the grammars listed
 in Section 1.
 * For Exercise 1, log your answers regarding  grammars 1-4 in this [google form](https://docs.google.com/forms/d/e/1FAIpQLSfMWd2J9gM44ScBVSCf7mYb6Y9SB6pX3AdQkmuMinM2m2zPxg/viewform?usp=sf_link).
-* For Exercise 2, a poll will open up in Teams during class.  Log your answer in that poll.
+* For Exercise 3, a poll will open up in Teams during class.  Log your answer in that poll.
 
 #### Comments/Hints/Solutions
 
@@ -64,8 +64,6 @@ Example: $G_1$
 * So $G_1$ is type 0, but not any of the other types.
 
 Log your answers for grammars 1-4 in this [google form](https://docs.google.com/forms/d/e/1FAIpQLSfMWd2J9gM44ScBVSCf7mYb6Y9SB6pX3AdQkmuMinM2m2zPxg/viewform?usp=sf_link).
-
-Don't forget about grammars 5-7 (the ones you created).
 </div>
 
 <div class = "explain" label = "Exercise 2.2 -- Rule Elimination">

@@ -65,8 +65,8 @@ more than one.  All grammars are type 0.)
         
     a. Why isn't this a type 1 grammar?
     b. Which rules can you eliminate to make this a type 1 grammar? (Eliminate as few as possible.)
-    c. Which rules can you eliminate to make this a type 2 grammar (Eliminate as few as possible.)?
-    d. Which rules can you eliminate to make this a type 3 grammar (Eliminate as few as possible.)?
+    c. Which rules can you eliminate to make this a type 2 grammar? (Eliminate as few as possible.)
+    d. Which rules can you eliminate to make this a type 3 grammar? (Eliminate as few as possible.)
         
 3. True or false: Every grammar of type $n$ is a grammar of type $n-1$.
 
