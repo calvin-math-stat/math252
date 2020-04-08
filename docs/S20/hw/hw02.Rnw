@@ -194,7 +194,19 @@ Additional assignments will be filled in over time.
 	 \extra{15}
 	 \\
 	 \hline
+	   Mon 4/13 & PS 11 & Rosen 13.1 &
+	    \mand[types of grammars]{19}
+	    \mand[palindromes]{20}
+	    \mand[union]{21a}
 
+	    Be sure to provide an explanation for problem 19.
+	   %  \mand[derivation trees]{24ab}
+	   %
+	   % \mand[BNF]{28}
+	   % \mand[BNF]{31ab}
+	   % \mand[EBNF]{34}
+	 \\
+	 \hline
 
 \end{longtable}
 \end{center}
