@@ -74,6 +74,10 @@ Which of these strings are in $L(M_0)$?
    
 Here are three automata:
 
+```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+knitr::include_graphics("../images/DFA-Fig-12-3-2.png")
+```
+
 4. For each of the machines $M_1, M_2, M_3$, compute
 
     a. $f^*(s_0, 10)$
@@ -82,9 +86,6 @@ Here are three automata:
     
 5. For each of the machines $M_1, M_2, M_3$, determine the language recognized.
 
-```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
-knitr::include_graphics("../images/DFA-Fig-12-3-2.png")
-```
 
 6. Create automata that recognize each of the following languages.
 
