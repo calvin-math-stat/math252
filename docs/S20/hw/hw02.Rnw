@@ -207,11 +207,27 @@ Additional assignments will be filled in over time.
 	   % \mand[EBNF]{34}
 	 \\
 	 \hline
-
+	   Wed 4/15 & PS 12 & Rosen 13.3 &
+	   \helper[testing strings]{11}
+	   \mand[testing strings]{12}
+	   \mand[what langauge?]{16--17}
+	   \mand[create DFA]{25--26}
+   \\
+   \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
+	   Fri 4/17 & PS 13 & Rosen 13.3 &
+	   \mand[what langauge?]{19--20}
+	   \mand[create DFA]{32}
+	   \mand[create DFA]{34}
+	   \mand[create DFA]{36}
+	   \mand[what langauge?]{45--46}
+	 \\
+	 \hline
+	   \mand[NFA to DFA]{52--54}
+
    Mon 4/6 & PS 9 & Rosen 7.4 &
 	 \mand[lottery]{6}
 	 \mand[dice]{10}
