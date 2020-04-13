@@ -21,7 +21,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Daily Dope Sheet 
 
-## Monday, April 13: Finite State Automata (Finite State Machines)
+## Monday, April 13: (Determinisitic) Finite State Automata 
+
+### aka (Deterministic) Finite State Machines
 
 #### Homework 
 
@@ -37,20 +39,23 @@ In place of our usual worksheet, today we are going to work through
 
 * [Section 4.4 of our Zybook](https://learn.zybooks.com/zybook/CALVINMATH252PruimSpring2020/chapter/4/section/4)
 
+You will need to set up your account following the instructions sent by email
+and posted in Teams.
+
 As you go through this section,
 
-* Do the **Participation Activities** as you come to them. You will get immediate feedback
-about whether your answers are correct.
+* Do the **Participation Activities** as you come to them. 
+You will get immediate feedback about whether your answers are correct.
 
 * Do the **Additional Exercises** at the end of the section. These are similar to 
 the kinds of activities I would put on a worksheet.
 
-    * The most important ones *for what we will be doing in the coming days) 
+    * The most important ones *for what we will be doing in the coming days* 
     are Exercises 4.4.3 and 4.4.4.  Feel free to do those
     before you do Exercises 4.3.1 and 4.3.2, if you like.
 
 The Zybook does not mention extended transition functions, choosing to simply
-express this concept in word each time it arises. See the worksheet (links
+express this concept in words each time it arises. See the worksheet (links
 below) for the notation Rosen uses for this.
 
 #### Note about notation
@@ -80,7 +85,7 @@ what notation each author is using. I prefer the name **accepting state** to
 final state because it describes better what it does, but you will see both names.
 (Wikipedia calls them accepting states, but then use $F$ for the notation!)
 
-You will both finite state machine and finite state automaton used, but
+You will see both finite state machine and finite state automaton used, but
 automaton is probably more common, especially when abbreviated as DFA or NFA.
 (We'll learn about what the D and N refer to later.)
 

@@ -87,6 +87,7 @@ sheets), but there will be some additional resources as well.
 This will collect together the things you need (and need to know) for
 each day.
 
+* [Day 8 online -- April 13](online/Day08.html)
 * [Day 7 online -- April 8](online/Day07.html)
 * [Day 6 online -- April 6](online/Day06.html)
 * [Day 5 online -- April 3](online/Day05.html)
