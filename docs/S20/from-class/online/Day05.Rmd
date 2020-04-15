@@ -138,14 +138,14 @@ Notice that $X^2 = X$ in this example (because $0^2 = 0$ and $1^2 = 1$).
 
 <div class = "explain" label = "Exercise 10.4">
 <video width="600" controls>
-  <source src="recordings/probs-from-2way-table-p1.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//probs-from-2way-table-p1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
 
 <div class = "explain" label = "Exercise 10.5">
 <video width="600" controls>
-  <source src="recordings/probs-from-2way-table-p2.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//probs-from-2way-table-p2.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
@@ -236,7 +236,7 @@ Watch this video to see how to handle the case with 5 people.  Then see if you
 can do 10 people, 20 people, and 1 person.
 
 <video width="600" controls>
-  <source src="recordings/names-in-hat-5people.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//names-in-hat-5people.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
@@ -319,14 +319,14 @@ about how you create your sum.
 
 <div class = "explain" label = "Exercise 10.17 -- Unique numbers rolled (part 1)">
 <video width="600" controls>
-  <source src="recordings/unique-die-rolls-p1.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//unique-die-rolls-p1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
 
 <div class = "explain" label = "Exercise 10.17 -- Unique numbers rolled (part 2)">
 <video width="600" controls>
-  <source src="recordings/unique-die-rolls-p2.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//unique-die-rolls-p2.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>

@@ -102,10 +102,10 @@ our team.
     b. Then listen to this discussion of the problem (Sorry for the flickering; I'll
     try to get that figured out so we don't have flickering in every video.)
     
-        * [part 1](recordings/2kids-p1.mp4)
-        * [part 2](recordings/2kids-p2.mp4)
-        * [part 3](recordings/2kids-p3.mp4)
-        * [part 4](recordings/2kids-p4.mp4)
+        * [part 1](https://rpruim.github.io/m252-recordings/probability//2kids-p1.mp4)
+        * [part 2](https://rpruim.github.io/m252-recordings/probability//2kids-p2.mp4)
+        * [part 3](https://rpruim.github.io/m252-recordings/probability//2kids-p3.mp4)
+        * [part 4](https://rpruim.github.io/m252-recordings/probability//2kids-p4.mp4)
     
     c. With that introduction, work on **Exercises 1-9.** Pay careful attention to notation.
     (You can check your work below.)

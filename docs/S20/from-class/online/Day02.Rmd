@@ -183,10 +183,10 @@ You can learn about that in Stats 341.)
 The approach used above is very algebraic. We can organize the same arithmetic
 visually using the method of probability trees.
 
-First we set up the tree in this [video](recordings/bobs-boxes-p1.mp4).
+First we set up the tree in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4).
 
 <video width="600" controls>
-  <source src="recordings/bobs-boxes-p1.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
@@ -194,10 +194,10 @@ First we set up the tree in this [video](recordings/bobs-boxes-p1.mp4).
 <button type = 'button' class = "collapsible">Using Probability Trees -- part 2</button>
 <div class = "content">
 Now that we have our tree, we can 
-use the tree to get the probability we want in this [video](recordings/bobs-boxes-p2.mp4).
+use the tree to get the probability we want in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4).
 
 <video width="600" controls>
-  <source src="recordings/bobs-boxes-p2.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
@@ -255,12 +255,12 @@ See if you can fill in some missing probabilities. Then check your work in the n
 You don't have to use a probability tree to do this problem, you just need to multiply 
 the correct probabilities together.  But the tree is a handy way to organize the arithmetic.
 
-This [video](recordings/breast-cancer-p1.mp4) 
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4) 
 will walk you through the process. See how my tree compares to yours. Then finish 
 the problem before seeing how I did it in the next tab.
 
 <video width="600" controls>
-  <source src="recordings/breast-cancer-p1.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
@@ -269,9 +269,9 @@ the problem before seeing how I did it in the next tab.
 <div class = "content">
 
 Now that we have the tree, we are all set to calculate the probability that we need.
-This [video](recordings/breast-cancer-p2.mp4) will walk you through the steps.
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4) will walk you through the steps.
 <video width="600" controls>
-  <source src="recordings/breast-cancer-p2.mp4" type="video/mp4">
+  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
