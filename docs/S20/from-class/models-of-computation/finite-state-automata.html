@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-04-10" />
+<meta name="date" content="2020-04-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -232,12 +232,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>a finite set of <strong>states</strong>: <span class="math inline">\(S\)</span></li>
 <li>a finite <strong>input alphabet</strong>: <span class="math inline">\(I\)</span></li>
 <li>a <strong>start state</strong>: <span class="math inline">\(s_0 \in S\)</span>.</li>
-<li>a set of <strong>final states</strong>: <span class="math inline">\(F \subseteq S\)</span></li>
+<li>a set of <strong>accepting states</strong>: <span class="math inline">\(F \subseteq S\)</span></li>
 <li>a <strong>transition function</strong>: <span class="math inline">\(f : S \times I \to S\)</span></li>
 </ul>
 <p><strong>Example (<span class="math inline">\(M_0\)</span>)</strong>
 states: <span class="math inline">\(\{A, B, C, D\}\)</span>; input alphabet: <span class="math inline">\(\{0, 1\}\)</span>; start state: <span class="math inline">\(A\)</span>;
-final states: <span class="math inline">\(\{A, D\}\)</span>; transition function described in table below</p>
+accepting states: <span class="math inline">\(\{A, D\}\)</span>; transition function described in table below</p>
 <!-- \  | \  | \  | \  | \  | \  | \  | \  | \ -->
 <table>
 <thead>
@@ -298,7 +298,7 @@ with a graph. Create a labeled, directed graph with the following properties:</p
 <li>There is a vertex for each state, labeled with the state.
 (Draw this as a circle with the state inside the circle.</li>
 <li>There is an edge from state <span class="math inline">\(s\)</span> to state <span class="math inline">\(t\)</span> labeled with letter <span class="math inline">\(x\)</span> if and only if <span class="math inline">\(f(s, x) = t\)</span></li>
-<li>Final states are circled a second time. (We could use shape or color or something else to make it clear which states are final states, but double circling is easy.)</li>
+<li>Accepting states are circled a second time. (We could use shape or color or something else to make it clear which states are accepting states, but double circling is easy.)</li>
 <li>An extra arrow (not coming from any state) points to the start state. This
 isn’t really an edge in the graph, just an extra bit of labeling.</li>
 </ul></li>
@@ -327,7 +327,7 @@ recursive definition:</p>
 <div id="language-recognition" class="section level2">
 <h2><span class="header-section-number">3.3</span> Language Recognition</h2>
 <p>For any automaton <span class="math inline">\(M\)</span>
-with transition function <span class="math inline">\(f\)</span>, start state <span class="math inline">\(s\)</span> and final states <span class="math inline">\(F\)</span>,
+with transition function <span class="math inline">\(f\)</span>, start state <span class="math inline">\(s\)</span> and accepting states <span class="math inline">\(F\)</span>,
 the language recognized by <span class="math inline">\(M\)</span> (written <span class="math inline">\(L(M)\)</span>) is defined as follows:</p>
 <p><span class="math display">\[
 x \in L(M) \iff f^*(s, x) \in F
@@ -382,64 +382,69 @@ the same language. Similarly, two grammars are equivalent if they generate the s
 <p>The finite state automata we have seen so far are often called <strong>deterministic finite-state automata</strong> or
 DFAs. There is a generalization called a <strong>non-deterministic finite-state automaton</strong> or NFA. The only
 difference is how the transition function is specified. For an NFA, the transition function has the form</p>
-<p><span class="math display">\[ f: S \times I^* \to P(S)\]</span></p>
-<p>where <span class="math inline">\(S\)</span> is the set of states, <span class="math inline">\(I\)</span> is the input alphabet, and <span class="math inline">\(P(S)\)</span> is the powerset of <span class="math inline">\(S\)</span>. (The powerset of <span class="math inline">\(S\)</span> is the set of all subsets of <span class="math inline">\(S\)</span>.
-So the transition function for an NFA returns a <em>set</em> of states.)</p>
+<p><span class="math display">\[ f: S \times I \to P(S)\]</span></p>
+<p>where <span class="math inline">\(S\)</span> is the set of states, <span class="math inline">\(I\)</span> is the input alphabet, and <span class="math inline">\(P(S)\)</span> is the
+powerset of <span class="math inline">\(S\)</span>. (The powerset of <span class="math inline">\(S\)</span> is the set of all subsets of <span class="math inline">\(S\)</span>.) So the
+transition function for an NFA returns a <em>set</em> of states. That set could contain
+just one state, or multiple states, or no states at all (empty set).</p>
 <p>Here is a tabular description of the transition function for an NFA <span class="math inline">\(N_0\)</span> with
-start state A and final states C and D.</p>
+start state A and accepting states C and D.</p>
 <table>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(N_0\)</span></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center"><span class="math inline">\(N_0\)</span></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>state</td>
-<td>A</td>
-<td>A</td>
-<td>B</td>
-<td>B</td>
-<td>C</td>
-<td>C</td>
-<td>D</td>
-<td>D</td>
+<td align="center">state</td>
+<td align="center">A</td>
+<td align="center">A</td>
+<td align="center">B</td>
+<td align="center">B</td>
+<td align="center">C</td>
+<td align="center">C</td>
+<td align="center">D</td>
+<td align="center">D</td>
 </tr>
 <tr class="even">
-<td>letter</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
+<td align="center">letter</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(f\)</span></td>
-<td><span class="math inline">\(\{A,B\}\)</span></td>
-<td><span class="math inline">\(\{D\}\)</span></td>
-<td><span class="math inline">\(\{A\}\)</span></td>
-<td><span class="math inline">\(\{B, D\}\)</span></td>
-<td><span class="math inline">\(\{ \}\)</span></td>
-<td><span class="math inline">\(\{A, C\}\)</span></td>
-<td><span class="math inline">\(\{A, B, C\}\)</span></td>
-<td><span class="math inline">\(\{B\}\)</span></td>
+<td align="center"><span class="math inline">\(f\)</span></td>
+<td align="center"><span class="math inline">\(\{A,B\}\)</span></td>
+<td align="center"><span class="math inline">\(\{D\}\)</span></td>
+<td align="center"><span class="math inline">\(\{A\}\)</span></td>
+<td align="center"><span class="math inline">\(\{B, D\}\)</span></td>
+<td align="center"><span class="math inline">\(\{ \}\)</span></td>
+<td align="center"><span class="math inline">\(\{A, C\}\)</span></td>
+<td align="center"><span class="math inline">\(\{A, B, C\}\)</span></td>
+<td align="center"><span class="math inline">\(\{B\}\)</span></td>
 </tr>
 </tbody>
 </table>
 <ol start="10" style="list-style-type: decimal">
-<li><p>Draw the graph representation.
-How will the graph of an NFA differ from the graph for a DFA?</p></li>
+<li>Draw the graph representation.
+How will the graph of an NFA differ from the graph for a DFA?</li>
+</ol>
+<div style="page-break-after: always;"></div>
+<ol start="11" style="list-style-type: decimal">
 <li><p>How do we define the language recognized by an NFA? [Check your answer before proceeding.]</p></li>
 <li><p>Which of these strings are accepted by <span class="math inline">\(N_0\)</span>?</p>
 <ol style="list-style-type: lower-alpha">
@@ -464,11 +469,26 @@ How will the graph of an NFA differ from the graph for a DFA?</p></li>
 <li>011</li>
 <li>001</li>
 </ol></li>
+<li><p>Which is harder: to convince someone that a string <em>is</em> accepted by an NFA or that it <em>is not</em>
+accepted by an NFA? Why?</p></li>
 <li><p>What is <span class="math inline">\(L(N_1)\)</span>?</p></li>
+<li><p>For each of the following languages</p>
+<ul>
+<li>Construct an NFA that recognizes the language. Try to do this with as few states and
+transitionas as you can.</li>
+<li>Construct a DFA that recognizes the language.
+Try to do this with as few states and transitions as you can.</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>The language consisting of all strings that either start 01 or start 10.</li>
+<li>The set of bitstrings that end with two 0’s</li>
+</ol></li>
 <li><p>Create a DFA that recognizes <span class="math inline">\(L(N_1)\)</span>.</p></li>
-<li><p>Given an NFA <span class="math inline">\(N\)</span>, is it always possible to create a DFA <span class="math inline">\(M\)</span> that recognizes the same language? If so,
-explain how. If not, provide an example <span class="math inline">\(N\)</span> and explain why <span class="math inline">\(L(N)\)</span> cannot be recognized by a DFA.</p></li>
+<li><p>Given an NFA <span class="math inline">\(N\)</span>, is it always possible to create a DFA <span class="math inline">\(M\)</span> that recognizes
+the same language? If so, explain how. If not, provide an example <span class="math inline">\(N\)</span> and
+explain why <span class="math inline">\(L(N)\)</span> cannot be recognized by a DFA.</p></li>
 </ol>
+<div style="page-break-after: always;"></div>
 
 <div style="page-break-after: always;"></div>
 </div>

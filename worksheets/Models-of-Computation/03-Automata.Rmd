@@ -7,12 +7,12 @@ A **finite state automaton** consists of the following:
 * a finite set of **states**: $S$
 * a finite **input alphabet**: $I$
 * a **start state**: $s_0 \in S$.
-* a set of **final states**: $F \subseteq S$
+* a set of **accepting states**: $F \subseteq S$
 * a **transition function**: $f : S \times I \to S$
 
 **Example ($M_0$)**
 states: $\{A, B, C, D\}$; input alphabet: $\{0, 1\}$; start state: $A$; 
-final states: $\{A, D\}$; transition function described in table below
+accepting states: $\{A, D\}$; transition function described in table below
 
 <!-- \  | \  | \  | \  | \  | \  | \  | \  | \ -->
 $M_0$   |   |   |   |   |   |   |   | 
@@ -29,7 +29,7 @@ with a graph.  Create a labeled, directed graph with the following properties:
     * There is a vertex for each state, labeled with the state. 
       (Draw this as a circle with the state inside the circle.
     * There is an edge from state $s$ to state $t$ labeled with letter $x$ if and only if $f(s, x) = t$
-    * Final states are circled a second time.  (We could use shape or color or something else to make it clear which states are final states, but double circling is easy.)
+    * Accepting states are circled a second time.  (We could use shape or color or something else to make it clear which states are accepting states, but double circling is easy.)
     * An extra arrow (not coming from any state) points to the start state.  This 
     isn't really an edge in the graph, just an extra bit of labeling.
    
@@ -54,7 +54,7 @@ recursive definition:
 ## Language Recognition
 
 For any automaton $M$ 
-with transition function $f$, start state $s$ and final states $F$,
+with transition function $f$, start state $s$ and accepting states $F$,
 the language recognized by $M$ (written $L(M)$) is defined as follows:
 
 $$
@@ -121,22 +121,27 @@ The finite state automata we have seen so far are often called **deterministic f
 DFAs.  There is a generalization called a **non-deterministic finite-state automaton** or NFA.  The only 
 difference is how the transition function is specified.  For an NFA, the transition function has the form
 
-$$ f: S \times I^* \to P(S)$$
+$$ f: S \times I \to P(S)$$
 
-where $S$ is the set of states, $I$ is the input alphabet, and $P(S)$ is the powerset of $S$.  (The powerset of $S$ is the set of all subsets of $S$.
-So the transition function for an NFA returns a *set* of states.)
+where $S$ is the set of states, $I$ is the input alphabet, and $P(S)$ is the
+powerset of $S$.  (The powerset of $S$ is the set of all subsets of $S$.) So the
+transition function for an NFA returns a *set* of states. That set could contain 
+just one state, or multiple states, or no states at all (empty set).
+
 
 Here is a tabular description of the transition function for an NFA $N_0$ with
-start state A and final states C and D.  
+start state A and accepting states C and D.  
 
 $N_0$   |   |   |   |   |   |   |   | 
-------- | - | - | - | - | - | - | - | -
+ :----: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-:
 state   | A | A | B | B | C | C | D | D
 letter  | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1
 $f$     | $\{A,B\}$ | $\{D\}$ | $\{A\}$ | $\{B, D\}$ | $\{ \}$ | $\{A, C\}$ | $\{A, B, C\}$ | $\{B\}$
 
 10. Draw the graph representation.
 How will the graph of an NFA differ from the graph for a DFA?
+
+\newpage 
 
 11. How do we define the language recognized by an NFA?  [Check your answer before proceeding.]
 
@@ -166,11 +171,30 @@ knitr::include_graphics("../images/DFA-Fig-12-3-7.png")
     e. 011
     f. 001
 
-15. What is $L(N_1)$?
+15. Which is harder: to convince someone that a string *is* accepted by an NFA or that it *is not*
+accepted by an NFA? Why?
 
-16. Create a DFA that recognizes $L(N_1)$.
+16. What is $L(N_1)$?
 
-17. Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes the same language?  If so,
-explain how.  If not, provide an example $N$ and explain why $L(N)$ cannot be recognized by a DFA.
+17. For each of the following languages 
 
+    * Construct an NFA that recognizes the language. 
+    * Construct a DFA that recognizes the language. 
+    
+    In each case, try to do this with as few states and 
+    transitionas as you can. You may find it helpful to give your states
+    good names that reflect what they represent.
 
+    a. The set of bitstrings that either start 01 or start 10.
+    b. The set of bitstrings that end with two 0's
+    c. The set of bitstrings that either end 01 or end 10.
+    
+    Which do you find easier to construct: NFAs or DFAs? Why?
+    
+18. Create a DFA that recognizes $L(N_1)$.
+
+19. Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes
+the same language?  If so, explain how.  If not, provide an example $N$ and
+explain why $L(N)$ cannot be recognized by a DFA.
+
+\newpage 

@@ -104,9 +104,6 @@ cover automata with output, but the Zybook does.
 
 #### Comments/Hints/Solutions
 
-\def\emptystring{\lambda}
-
-Some of the practice activities and additional exercises in the Zybook have revealable 
-solutions or will tell you whether your response is correct.
+Several of the exercises in the Zybook will give you immediate feedback.
 
 <br><br>
