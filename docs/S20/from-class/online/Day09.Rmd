@@ -77,13 +77,17 @@ on our lass day of in-person class, and it looks like that is going to be our be
     test session so you can try everything out in advance of the test. We will try to make 
     this as easy as is possible in the new course configuration.
 
-#### Stuff to do
+#### What we are learning to day
 
 Last time we learned about deterministic finite state automata (DFAs).  Today we will
 learn 
 
 * about **nondeterministic** finite state automata (NFAs), and 
 * what it means for two automata or grammars to be **equivalent**.
+
+NFAs are a lot like DFAs. With a DFA, there was always exactly one thing you
+could do for each symbol processed -- the next step was completely determined.
+With an NFA, you may have multiple options, or no options at all!
 
 #### Worksheet
 
