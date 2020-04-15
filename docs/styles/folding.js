@@ -42,8 +42,6 @@ $(document).ready(function() {
     $(this).siblings('code, img').slideToggle('fast', 'swing');
   });
 
-  // hide/show div.explain
-
   $('div.explain').each(function () {
     // wrap in explain-wrapper
     $(this).wrap("<div class='explain-wrapper'></div>")
@@ -54,8 +52,7 @@ $(document).ready(function() {
       $(this).before('<button class="explain">Show Explanation</button>');
     }
     $(this).attr('class', 'explain folded');
-    // $(this).append('<br class = "explain"/>');
-    // $(this).prepend('<br class = "explain"/>');
+    $(this).prepend('<br class = "explain"/>');
   });
 
   // function to toggle the visibility
@@ -67,6 +64,30 @@ $(document).ready(function() {
       $(this).html(label.replace('Hide', 'Show'));
     }
     $(this).next('div.explain').slideToggle('fast', 'swing');
+  });
+
+  $('div.foldable').each(function () {
+    // wrap in foldable-wrapper
+    $(this).wrap("<div class='foldable-wrapper'></div>")
+    // add button
+    if ($(this).attr('label')) {
+      $(this).before('<button class="foldable">' + $(this).attr('label') + '</button>');
+    } else {
+      $(this).before('<button class="foldable">Show Explanation</button>');
+    }
+    $(this).attr('class', 'foldable folded');
+    $(this).prepend('<br class = "foldable"/>');
+  });
+
+  // function to toggle the visibility
+  $('button.foldable').click(function() {
+    var label = $(this).html();
+    if (label.indexOf('Show') >= 0) {
+      $(this).html(label.replace('Show', 'Hide'));
+    } else {
+      $(this).html(label.replace('Hide', 'Show'));
+    }
+    $(this).next('div.foldable').slideToggle('fast', 'swing');
   });
 
   // hide all folded chunks when document is loaded

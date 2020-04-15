@@ -1,3 +1,4 @@
+button.foldable,
 button.explain {
   border-radius: 5px;
   background-color: #777;
@@ -12,10 +13,13 @@ button.explain {
   font-size: 15px;
 }
 
-.active, button.explain:hover {
+.active,
+button.foldable:hover,
+button.explain:hover {
   background-color: #555;
 }
 
+div.foldable,
 div.explain {
   border-style: none;
   border-width: 1px;
@@ -25,6 +29,7 @@ div.explain {
   overflow: hidden;
 }
 
+div.foldable-wrapper,
 div.explain-wrapper {
   padding: 0px;
   margin: 5px;
