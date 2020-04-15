@@ -191,7 +191,6 @@ accepted by an NFA? Why?
     
     Which do you find easier to construct: NFAs or DFAs? Why?
     
-    
 18. Create a DFA that recognizes $L(N_1)$.
 
 19. Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes
