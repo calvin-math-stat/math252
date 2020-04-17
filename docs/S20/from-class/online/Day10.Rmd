@@ -129,6 +129,21 @@ Note: Rosen likes to label his states $s_0$, $s_1$, etc.  I find that clunky and
 You can use numbers, or letters, or even short words or phrases that identify
 what a state represents. The worksheet will show you both styles.
 
+<div class = "foldable" label = "Exercise 4.2.21">
+
+We did this problem together in class.  There should be a video in our teams 
+channel for you to watch if you want to see an replay.
+
+<div class = "foldable" label = "Here's our DFA">
+
+Here's our final solution.
+
+```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
+knitr::include_graphics('images/NFA2DFA-example1sol.png')
+```
+
+</div>
+</div>
 
 <div class = "foldable" label = "Exercise 4.2.22">
 
