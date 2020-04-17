@@ -212,7 +212,7 @@ c. $\mybold{0 \cup 01} = \{0, 01\}$, a langauge with only two strings, $0$ and $
 d. $\mybold{0^* \cup 01}$ consists of the string 01 and any string made up only
 of 0's (including the empty string).
 e. $\mybold{0 (0 \cup 1)^*}$ is the langauge consisting of strings that start with $0$.
-f. $\mybold{(0 \cup 01)^*}$ is the langauge consisting of all strings that do not have two adjacent $1$'s.
+f. $\mybold{(0 \cup 01)^*}$ is the langauge consisting of all strings that do not start with a 1 and do not have two adjacent $1$'s.  (The empty string is included in this.)
 </div>
 
 <div class = "foldable" label = "Exercise 4.3.7">
