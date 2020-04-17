@@ -88,13 +88,13 @@ frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-pic
 If we are doing this with pencil and paper, we could instead keep a record like this:
 
 $$
-\{s_0\} \to \{s_0, s_2\} \to \{s_1, s_4\} \to \{s_4, s_3\}
+\{s_0\} \stackrel{0}{\to} \{s_0, s_2\} \stackrel{1}{\to} \{s_1, s_4\} \stackrel{1}{\to} \{s_4, s_3\}
 $$
 
 or even more succinctly (since each state can be identified with a single character) as 
 
 $$
-0 \to 02 \to 14 \to 43
+0 \stackrel{0}{\to} 02 \stackrel{1}{\to} 14 \stackrel{1}{\to} 43
 $$
 Since $s_4$ is an accepting state, there is an accepting path -- there is some way to
 get to that state.
@@ -110,7 +110,7 @@ frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-pic
 Here's the pencil-and-paper version (succinct notation):
 
 $$
-0 \to 02 \to 14 \to 3
+0 \stackrel{0}{\to} 02 \stackrel{1}{\to} 14 \stackrel{0}{\to} 3
 $$
 
 Notice:
