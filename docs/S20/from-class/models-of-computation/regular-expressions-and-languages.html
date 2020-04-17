@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-04-15" />
+<meta name="date" content="2020-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -153,6 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="finite-state-automata.html"><a href="finite-state-automata.html#language-recognition"><i class="fa fa-check"></i><b>3.3</b> Language Recognition</a></li>
 <li class="chapter" data-level="3.4" data-path="finite-state-automata.html"><a href="finite-state-automata.html#equivalent-automata-and-grammars"><i class="fa fa-check"></i><b>3.4</b> Equivalent Automata and Grammars</a></li>
 <li class="chapter" data-level="3.5" data-path="finite-state-automata.html"><a href="finite-state-automata.html#nondeterministic-automata"><i class="fa fa-check"></i><b>3.5</b> Nondeterministic Automata</a></li>
+<li class="chapter" data-level="3.6" data-path="finite-state-automata.html"><a href="finite-state-automata.html#the-equivalence-of-dfa-and-nfa."><i class="fa fa-check"></i><b>3.6</b> The Equivalence of DFA and NFA.</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html"><i class="fa fa-check"></i><b>4</b> Regular Expressions and Languages</a><ul>
 <li class="chapter" data-level="4.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#operations-on-languages"><i class="fa fa-check"></i><b>4.1</b> Operations on Languages</a></li>
@@ -161,7 +162,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#semantics"><i class="fa fa-check"></i><b>4.2.2</b> Semantics</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#recognizing-regular-languages-with-nfas"><i class="fa fa-check"></i><b>4.3</b> Recognizing Regular Languages with NFAs</a></li>
-<li class="chapter" data-level="4.4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#solution-to-problem-4.3.9"><i class="fa fa-check"></i><b>4.4</b> Solution to problem 4.3.9</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html"><i class="fa fa-check"></i><b>5</b> Regular Grammars and Automata</a><ul>
 <li class="chapter" data-level="5.1" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#grammars-to-automata"><i class="fa fa-check"></i><b>5.1</b> Grammars to Automata</a></li>
@@ -232,12 +232,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Since languages are sets, we can use set operations like <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> to create new languages.
 But there are some additional operations that we will use.</p>
 <ul>
-<li>concatenation of strings: <span class="math inline">\(xy\)</span> is the concetanation of strings <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> (<span class="math inline">\(x\)</span> followed by <span class="math inline">\(y\)</span>)</li>
-<li>concatenation of sets: <span class="math inline">\(AB = \{ xy \mid x \in A \land y \in B \}\)</span></li>
-<li>power: <span class="math inline">\(A^0 = \emptyset\)</span>; <span class="math inline">\(A^1 = A\)</span>; <span class="math inline">\(A^{n+1} = A^n A\)</span>. (Power is iterated concatenation.)</li>
-<li>Kleene star: <span class="math inline">\(\displaystyle A^* = \cup_{n = 0}^{\infty} \; A^n\)</span></li>
+<li><p>concatenation of strings: <span class="math inline">\(xy\)</span> is the concetanation of strings <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> (<span class="math inline">\(x\)</span> followed by <span class="math inline">\(y\)</span>)</p></li>
+<li><p>concatenation of sets: <span class="math inline">\(AB = \{ xy \mid x \in A \land y \in B \}\)</span></p></li>
+<li><p>power: <span class="math inline">\(A^0 = \emptyset\)</span>; <span class="math inline">\(A^1 = A\)</span>; <span class="math inline">\(A^{n+1} = A^n A\)</span>. (Power is iterated concatenation.)</p></li>
+<li><p>Kleene star: <span class="math inline">\(\displaystyle A^* = \cup_{n = 0}^{\infty} \; A^n\)</span></p></li>
 </ul>
 <ol style="list-style-type: decimal">
+<li><p>What strings belong to <span class="math inline">\(\{0, 01\}^2\)</span>?</p></li>
 <li><p>Which of these strings belong to <span class="math inline">\(\{0, 01\}^*\)</span>?</p>
 <ol style="list-style-type: lower-alpha">
 <li>01001</li>
@@ -252,20 +253,22 @@ But there are some additional operations that we will use.</p>
 <li>11110111</li>
 </ol></li>
 </ol>
+<div style="page-break-after: always;"></div>
 </div>
 <div id="regular-expressions" class="section level2">
 <h2><span class="header-section-number">4.2</span> Regular Expressions</h2>
+<p>Regular expression are a type of shorthand notation for representing certain types of sets.</p>
 <div id="syntax" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Syntax</h3>
 <p>A regular expression over an input alphabet <span class="math inline">\(I\)</span> is defined recursively.</p>
 <ul>
-<li><p><span class="math inline">\({\boldsymbol \emptyset}\)</span> and <span class="math inline">\({\boldsymbol \lambda}\)</span> and regular expressions.</p></li>
-<li><p><span class="math inline">\({\boldsymbol x}\)</span> is a regular expression for each <span class="math inline">\(i \in I\)</span>.</p></li>
-<li><p>If <span class="math inline">\({\boldsymbol A}\)</span> and <span class="math inline">\({\boldsymbol B}\)</span> are regular expressions, then</p>
+<li><p><span class="math inline">\(\boldsymbol{\emptyset}\)</span> and <span class="math inline">\(\boldsymbol{\lambda}\)</span> and regular expressions.</p></li>
+<li><p><span class="math inline">\(\boldsymbol{x}\)</span> is a regular expression for each <span class="math inline">\(i \in I\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> are regular expressions, then</p>
 <ul>
-<li><span class="math inline">\({\boldsymbol A}^*\)</span> is a regular expression</li>
-<li><span class="math inline">\(({\boldsymbol A} \cup {\boldsymbol B})\)</span> is a regular expression</li>
-<li><span class="math inline">\(({\boldsymbol AB})\)</span> is a regular expression</li>
+<li><span class="math inline">\(\boldsymbol{A}^*\)</span> is a regular expression</li>
+<li><span class="math inline">\((\boldsymbol{A} \cup \boldsymbol{B})\)</span> is a regular expression</li>
+<li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})\)</span> is a regular expression</li>
 </ul></li>
 </ul>
 <!-- Figures created with http://madebyevan.com/fsm/ -->
@@ -274,36 +277,36 @@ But there are some additional operations that we will use.</p>
 <h3><span class="header-section-number">4.2.2</span> Semantics</h3>
 <p>Each regular expression represents a language as follows.</p>
 <ul>
-<li><span class="math inline">\({\boldsymbol \emptyset}\)</span> represents the empty langauge: <span class="math inline">\(\emptyset\)</span></li>
-<li><span class="math inline">\({\boldsymbol \lambda}\)</span> represents language that contains only the empty string: <span class="math inline">\(\{\lambda\}\)</span></li>
-<li>For each <span class="math inline">\(x \in I\)</span>, <span class="math inline">\({\boldsymbol x}\)</span> represents the language containing only <span class="math inline">\(x\)</span>: <span class="math inline">\(\{x \}\)</span></li>
-<li>If <span class="math inline">\({\boldsymbol A}\)</span> and <span class="math inline">\({\boldsymbol B}\)</span> are regular expressions representing languages <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then
+<li><span class="math inline">\(\boldsymbol{\emptyset}\)</span> represents the empty langauge: <span class="math inline">\(\emptyset\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\lambda}\)</span> represents language that contains only the empty string: <span class="math inline">\(\{\lambda\}\)</span></li>
+<li>For each <span class="math inline">\(x \in I\)</span>, <span class="math inline">\(\boldsymbol{x}\)</span> represents the language containing only <span class="math inline">\(x\)</span>: <span class="math inline">\(\{x \}\)</span></li>
+<li>If <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> are regular expressions representing languages <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then
 <ul>
-<li><span class="math inline">\(({\boldsymbol AB})\)</span> represents <span class="math inline">\(AB\)</span></li>
-<li><span class="math inline">\(({\boldsymbol A \cup B})\)</span> represents <span class="math inline">\(A \cup B\)</span> 
+<li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})\)</span> represents <span class="math inline">\(AB\)</span></li>
+<li><span class="math inline">\((\boldsymbol{A} \cup \boldsymbol{B})\)</span> represents <span class="math inline">\(A \cup B\)</span> 
 [Note: This is often written <code>(A|B)</code> in programming languages.]</li>
-<li><span class="math inline">\({\boldsymbol A}^*\)</span> represents <span class="math inline">\(A^*\)</span> 
+<li><span class="math inline">\(\boldsymbol{A}^*\)</span> represents <span class="math inline">\(A^*\)</span> 
 [Note: This is often written as <code>A*</code> in programming languages.]</li>
 </ul></li>
 </ul>
 <p>The langauges represented by regular expressions are called <strong>regular languages</strong> (how creative).</p>
-<div style="page-break-after: always;"></div>
-<ol start="3" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>In Rosen 7, the definition of regular expression is missing boldface
 in a couple places. Find them.</li>
 </ol>
 <p><img src="../images/regex-def.png" width="60%" style="display: block; margin: auto;" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>What is the difference between <span class="math inline">\({\boldsymbol 1}\)</span> and <span class="math inline">\(1\)</span>?
-between <span class="math inline">\({\boldsymbol \lambda}\)</span> and <span class="math inline">\(\lambda\)</span>?
-between <span class="math inline">\({\boldsymbol \emptyset}\)</span> and <span class="math inline">\(\emptyset\)</span>?</p></li>
+<ol start="5" style="list-style-type: decimal">
+<li><p>What is the difference between <span class="math inline">\(\boldsymbol{1}\)</span> and <span class="math inline">\(1\)</span>?
+between <span class="math inline">\(\boldsymbol{\lambda}\)</span> and <span class="math inline">\(\lambda\)</span>?
+between <span class="math inline">\(\boldsymbol{\emptyset}\)</span> and <span class="math inline">\(\emptyset\)</span>?</p></li>
 <li><p>Describe in words the languages represented by each of these regular expressions:</p>
-<p> a. <span class="math inline">\({\boldsymbol 10^*} \quad\)</span> b. <span class="math inline">\({\boldsymbol (10)^*}\quad\)</span> c. <span class="math inline">\({\boldsymbol 0 \cup 01}\quad\)</span> d. <span class="math inline">\({\boldsymbol 0^* \cup 01}\quad\)</span> e. <span class="math inline">\({\boldsymbol 0 (0 \cup 1)^*}\quad\)</span> f. <span class="math inline">\({\boldsymbol (0 \cup 01)^*}\quad\)</span></p></li>
-<li><p>Can each of the languages above be recongized by an NFA? a DFA?</p></li>
+<p> a. <span class="math inline">\(\boldsymbol{10^*} \quad\)</span> b. <span class="math inline">\(\boldsymbol{(10)^*}\quad\)</span> c. <span class="math inline">\(\boldsymbol{0 \cup 01}\quad\)</span> d. <span class="math inline">\(\boldsymbol{0^* \cup 01}\quad\)</span> e. <span class="math inline">\(\boldsymbol{0 (0 \cup 1)^*}\quad\)</span> f. <span class="math inline">\(\boldsymbol{(0 \cup 01)^*}\quad\)</span></p></li>
+<li><p>Can each of the languages above be recognized by an NFA? a DFA?</p></li>
 <li><p>What would we need to do to show that every regualar language can be recognized by an NFA?
 Give it a try and see how far you get. Which parts are easy? Which are trickier? Why?</p></li>
 </ol>
 
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div id="recognizing-regular-languages-with-nfas" class="section level2">
@@ -320,20 +323,20 @@ build a new NFA that recognizes <span class="math inline">\(AB\)</span>?]</p></l
 build a new NFA that recognizes <span class="math inline">\(A \cup B\)</span>?]</p></li>
 <li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then <span class="math inline">\(A^*\)</span> is, too.</p>
 <p>[Hint: Let <span class="math inline">\(N_A\)</span> be the NFA that recognizes <span class="math inline">\(A\)</span> How can you use it to
-build a new NFA that recognizes <span class="math inline">\(A \cup B\)</span>?]</p></li>
+build a new NFA that recognizes $A^*?]</p></li>
 <li><p>Explain how 1–6 above show that every regular language is recognized by an NFA.</p></li>
 <li><p>Explain how 7 implies that every regular language is recognized by a DFA.</p></li>
 <li><p>The method just outlined is automatic (you could fairly easily write a
 computer program to do the translation from regular expression to NFA), and it
 provides a proof that all regular languages can be recognized by an NFA. But it
 might produce an NFA with more states than is minimally required. Create an NFA
-that recognizes <span class="math inline">\({\boldsymbol 1}^* \cup {\boldsymbol 01}\)</span>. Do this two ways:</p>
+that recognizes <span class="math inline">\(\boldsymbol{1}^* \cup \boldsymbol{01}\)</span>. Do this two ways:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Following the steps outlined in 1–6.</li>
 <li>Any way you like, but using fewer states than in part a.</li>
-<li>What is the smallest (fewest states) NFA you can find that recognizes <span class="math inline">\({\boldsymbol 1}^* \cup {\boldsymbol 01}\)</span>?</li>
+<li>What is the smallest (fewest states) NFA you can find that recognizes <span class="math inline">\(\boldsymbol{1}^* \cup \boldsymbol{01}\)</span>?</li>
 </ol></li>
-<li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then the complement of <span class="math inline">\(A\)</span> (<span class="math inline">\(\overline{A} = A^C\)</span>)
+<li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then the complement of <span class="math inline">\(A\)</span> (<span class="math inline">\(\overline{A} = A^c\)</span>)
 is too.</p>
 <p>[Hint: There is an easy way and a hard way – use the easy way.]</p></li>
 </ol>
@@ -371,10 +374,10 @@ is too.</p>
 <!-- \end{tikzpicture} -->
 <!-- \end{center} -->
 <div style="page-break-after: always;"></div>
-</div>
-<div id="solution-to-problem-4.3.9" class="section level2">
-<h2><span class="header-section-number">4.4</span> Solution to problem 4.3.9</h2>
-<p><img src="../images/NFA-Fig-12-4-3.png" width="80%" style="display: block; margin: auto;" /></p>
+<!-- ## Solution to problem 4.3.9 -->
+<!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
+<!-- ``` -->
 <!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
 
 </div>

@@ -9,24 +9,33 @@ Since languages are sets, we can use set operations like $\cup$ and $\cap$ to cr
 But there are some additional operations that we will use.
 
 * concatenation of strings: $xy$ is the concetanation of strings $x$ and $y$ ($x$ followed by $y$)
+
 * concatenation of sets: $AB = \{ xy \mid x \in A \land y \in B \}$
+
 * power: $A^0 = \emptyset$; $A^1 = A$; $A^{n+1} = A^n A$.  (Power is iterated concatenation.)
+
 * Kleene star: $\displaystyle A^* = \cup_{n = 0}^{\infty} \; A^n$
 
-1. Which of these strings belong to $\{0, 01\}^*$?
+1. What strings belong to $\{0, 01\}^2$?
+
+2. Which of these strings belong to $\{0, 01\}^*$?
 
     a. 01001
     b. 10110
     c. 00010
 
-2. Which of these strings belong to $\{101, 111, 11\}^*$?
+3. Which of these strings belong to $\{101, 111, 11\}^*$?
 
     a. 1010111
     b. 1011011
     c. 1110111
     d. 11110111
-    
+
+\newpage
+
 ## Regular Expressions
+
+Regular expression are a type of shorthand notation for representing certain types of sets.
 
 ### Syntax
 
@@ -38,7 +47,7 @@ A regular expression over an input alphabet $I$ is defined recursively.
 
     * $\mybold{A}^*$ is a regular expression
     * $(\mybold{A} \cup \mybold{B})$ is a regular expression
-    * $(\mybold{AB})$ is a regular expression
+    * $(\mybold{A}\mybold{B})$ is a regular expression
   
 <!-- Figures created with http://madebyevan.com/fsm/ -->
 
@@ -50,37 +59,37 @@ Each regular expression represents a language as follows.
 * $\mybold{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
 * For each $x \in I$, $\mybold{x}$ represents the language containing only $x$: $\{x \}$
 * If $\mybold{A}$ and $\mybold{B}$ are regular expressions representing languages $A$ and $B$, then
-    * $(\mybold{AB})$ represents $AB$
-    * $(\mybold{A \cup B})$ represents $A \cup B$ \hfill 
+    * $(\mybold{A}\mybold{B})$ represents $AB$
+    * $(\mybold{A} \cup \mybold{B})$ represents $A \cup B$ \hfill 
     [Note: This is often written `(A|B)` in programming languages.]
     * $\mybold{A}^*$ represents $A^*$  \hfill 
     [Note: This is often written as `A*` in programming languages.]
     
 The langauges represented by regular expressions are called **regular languages** (how creative).
 
-\newpage
-
-3. In Rosen 7, the definition of regular expression is missing boldface
+4. In Rosen 7, the definition of regular expression is missing boldface
 in a couple places.  Find them.
 
 ```{r echo=FALSE, out.width = "60%", fig.align = "center"}
 knitr::include_graphics("../images/regex-def.png")
 ```
 
-4. What is the difference between $\mybold{1}$ and $1$?
+5. What is the difference between $\mybold{1}$ and $1$?
 between $\mybold{\lambda}$ and $\lambda$?
 between $\mybold{\emptyset}$ and $\emptyset$?
 
-5. Describe in words the languages represented by each of these regular expressions: 
+6. Describe in words the languages represented by each of these regular expressions: 
 
     \ a. $\mybold{10^*} \quad$ b. $\mybold{(10)^*}\quad$ c. $\mybold{0 \cup 01}\quad$ d. $\mybold{0^* \cup 01}\quad$ e. $\mybold{0 (0 \cup 1)^*}\quad$ f. $\mybold{(0 \cup 01)^*}\quad$
 
-6. Can each of the languages above be recongized by an NFA? a DFA?
+7. Can each of the languages above be recognized by an NFA? a DFA?
 
-7. What would we need to do to show that every regualar language can be recognized by an NFA?
+8. What would we need to do to show that every regualar language can be recognized by an NFA?
 Give it a try and see how far you get.  Which parts are easy? Which are trickier? Why?
 
 \vfill
+
+\newpage
 
 ## Recognizing Regular Languages with NFAs
 
@@ -103,7 +112,7 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 6. Show that if $A$ is recognized by an NFA, then $A^*$ is, too.
 
     [Hint: Let $N_A$ be the NFA that recognizes $A$ How can you use it to
-    build a new NFA that recognizes $A \cup B$?]
+    build a new NFA that recognizes $A^*?]
     
 7. Explain how 1--6 above show that every regular language is recognized by an NFA.
 
@@ -119,7 +128,7 @@ that recognizes $\mybold{1}^* \cup \mybold{01}$.  Do this two ways:
     b. Any way you like, but using fewer states than in part a.
     c. What is the smallest (fewest states) NFA you can find that recognizes $\mybold{1}^* \cup \mybold{01}$?
 
-10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^C$) 
+10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^c$) 
 is too.
 
     [Hint: There is an easy way and a hard way -- use the easy way.]
@@ -161,11 +170,11 @@ is too.
 \newpage
 
 
-## Solution to problem 4.3.9
+<!-- ## Solution to problem 4.3.9 -->
 
-```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
-knitr::include_graphics("../images/NFA-Fig-12-4-3.png")
-```
+<!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
+<!-- ``` -->
 
 <!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
 

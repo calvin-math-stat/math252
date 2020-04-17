@@ -132,9 +132,6 @@ specific notation is less crucial.
 
 \def\emptystring{\lambda}
 
-Some of the practice activities and additional exercises in the Zybook have revealable 
-solutions or will tell you whether your response is correct.
-
 <div class = "foldable" label = "Exercise 3.4.7">
 To show two automata are not equivalent, we just need to find one string on which 
 they disagree (one machine accepts and the other rejects).

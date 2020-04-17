@@ -1,0 +1,153 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Friday, April 17: DFA = NFA; Regular Expressions
+
+
+#### Homework 
+
+* due today: PS 13 (submit via [gradescope](https://gradescope.com))
+* due Monday: PS 14 (submit via [gradescope](https://gradescope.com))
+    
+#### When is Test 2 going to be?
+
+See the information from [Wednesday's Daily Dope Sheet](Day09.html)
+
+#### What we are learning to day
+
+The last two days we learned about DFAs and NFAs.  Today we will learn that 
+the two models are equivalent: Every language recognized by one type of machine
+is also recognized by the other.
+
+We will also learn a useful system for describing languages: Regular Expressions.
+
+#### Worksheet
+
+We will cover Section 3.6 (Equivalence of DFA and NFA) 
+and sections 4.1-4.2 (about regular expressions).
+
+* [HTML](../models-of-computation/finite-state-automata.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+
+Note: Rosen likes to label his states $s_0$, $s_1$, etc.  I find that clunky and 
+**I suggest that you not bother with subscripts when creating your own machines.** 
+You can use numbers, or letters, or even short words or phrases that identify
+what a state represents. The worksheet will show you both styles.
+
+#### Comments/Hints/Solutions
+
+\def\emptystring{\lambda}
+
+<div class = "foldable" label = "Exercise 4.2.22">
+
+It isn't important where you put the states, but it is important that the edges and labels
+match.
+
+```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
+knitr::include_graphics('images/DFA-Fig7-13-3-8.png')
+```
+</div>
+
+<div class = "foldable" label = "Exercise 4.2.23">
+
+In the worst case there is a state in the DFA for every possible set of states in the NFA.
+If the NFA has $n$ states, how many subsets of states are there?  Hint: to build a subset, you
+need to decide for each state whether it is in our out of the subset.  Now you use your counting
+rules.
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.1">
+What strings belong to $\{0, 01\}^2$? Let's add a vertical bar to show how the strings
+are formed.  We need to have two pieces, and each piece must be either 0 or 01, so
+
+* $0|0  \to 00$
+* $0|01  \to 001$
+* $01|0  \to 010$
+* $01|01  \to 0101$
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.2">
+Which of these strings belong to $\{0, 01\}^*$?
+
+a. $01001$.  Yes: $01|0|01$
+b. $10110$.  No: Cannt start with a $1$.
+c. $00010$.  Yes: $0|0|01|0$. 
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.3">
+Which of these strings belong to $\{101, 111, 11\}^*$?
+
+a. $1010111$.  No.  You can start 101, but then you are stuck.
+b. $1011011$.   No.  You have to start 101, then 101 again, but then there is only one 1 left.
+c. $1110111$.   Yes.  $11|101|11$.
+d. $11110111$.  Yes.  $111|101|11$
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.5">
+$1$ is a symbol or a string with one symbol. 
+$\mybold{1}$ represents a language with one string in it: $\{1}$.
+
+$\lambda$ is the empty string.
+$\mybold{\lambda}$ represents a language containing only the empty string: $\{\lambda\}$.
+
+$\emptyset$ is the empty set.
+$\mybold{\emptyset}$ represents the empty language, but languages are sets, so the 
+empty language is the empty set.
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.6">
+Describe in words the languages represented by each of these regular expressions: 
+
+a. $\mybold{10^*}$ is the set of all strings that begin with a 1 but don't have any other 1's.
+b. $\mybold{(10)^*}$ is the set of all strings with even length that alternate 1's and 0's,
+starting with a 1.  (0 is even, so the empty string is included in this description.)
+c. $\mybold{0 \cup 01} = \{0, 01\}$, a langauge with only two strings, $0$ and $01$.
+d. $\mybold{0^* \cup 01}$ consists of the string 01 and any string made up only
+of 0's (including the empty string).
+e. $\mybold{0 (0 \cup 1)^*}$ is the langauge consisting of strings that start with $0$.
+f. $\mybold{(0 \cup 01)^*}$ is the langauge consisting of all strings that do not have two adjacent $1$'s.
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.7">
+All of the languages in this problem can be recogized by either a DFA or an NFA.
+Do you see how to design them?
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.8">
+This is will our topic for next time.
+</div>
+
+<!-- <div class = "foldable" label = "Exercise 4.3.10"> -->
+
+<!-- We can build up the solution bit by bit using methods for constructing unions, concatenations, -->
+<!-- Kleene Star, etc. -->
+
+<!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
+<!-- ``` -->
+
+<!-- </div> -->
+
+<br><br>

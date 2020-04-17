@@ -34,7 +34,7 @@ at Calvin College.
 \newcommand{\Var}{\operatorname{Var}}
 \newcommand{\SD}{\operatorname{SD}}
 \newcommand{\Binom}{\textsf{Binom}}
-\newcommand{\mybold}[1]{{\boldsymbol #1}}
+\newcommand{\mybold}[1]{\boldsymbol{#1}}
 
 <!-- $\bm A \boldmath B \boldsymbol C \mathbf D \mybold{E} \boldsymbol{F}$ -->
 

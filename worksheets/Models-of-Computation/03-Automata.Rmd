@@ -197,4 +197,40 @@ accepted by an NFA? Why?
 the same language?  If so, explain how.  If not, provide an example $N$ and
 explain why $L(N)$ cannot be recognized by a DFA.
 
+## The Equivalence of DFA and NFA.
+
+Despite their apparent differences, DFAs and NFAs recognize exactly the same set
+of languages. That is
+
+* If the language $L$ is recognized by a DFA $M$, then there is also and NFA $N$ 
+that recognizes $L$.
+
+* If the language $L$ is recognized by a DFA $N$, then there is also and NFA $M$ 
+that recognizes $L$.
+
+To prove this, we need 
+
+* Algorithm 1: an algorithm that converts DFAs into equivalent NFAs 
+* Algorithm 2: an algorithm that converst NFAs into equivalent DFAs.
+
+20. One of these two algorithms is super easy. Which one? What is the algorithm?
+
+21. The other direction is more interesting. Let's see if we can figure out a 
+general algorithm for this task by first exploring an example. Consider the 
+following NFA. Create an equivalent DFA, using a method that could be applied 
+to any NFA.
+
+```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+knitr::include_graphics('../images/DFA-NFA/NFA4.png')
+```
+
+22. Now convert the NFA $N_1$ into an equivalent DFA.  Here's $N_1$ again.
+
+```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+knitr::include_graphics("../images/DFA-Fig-12-3-7.png")
+```
+
+23. If an NFA has $n$ states and we use this method to convert it to a DFA,
+what is the most states the DFA might have?  
+
 \newpage 
