@@ -224,14 +224,32 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA, NFA]{55--56}
 
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
+   \\
+   \hline
+	   Tue 4/21 & PS 13 & Rosen 13.3 &
+	   \mand[NFA to DFA]{52--54}
+	   \\
+	   & & Rosen 13.4 &
+	   \extra{1}
+	   \mand[describe in words]{2abde}
+	   \extra{3}
+	   \mand[does it belong?]{4}
+	   \mand[regex]{6}
+	   \extra[regex]{7}
 	 \\
 	 \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
-	   \mand[NFA to DFA]{52--54}
-
+   \\
+	   \hline
+	   Fri 4/27 & PS 14 & Rosen 13.4 &
+	   \mand[Kleene's Thm]{12}
+	   \mand[$\to$ grammar]{15--16}
+	   \mand[lonely start]{20}
+	   \mand[pumping lemma]{22, 24, 25}
+	   \\
    Mon 4/6 & PS 9 & Rosen 7.4 &
 	 \mand[lottery]{6}
 	 \mand[dice]{10}

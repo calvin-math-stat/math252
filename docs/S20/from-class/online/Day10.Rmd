@@ -34,6 +34,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 See the information from [Wednesday's Daily Dope Sheet](Day09.html)
 
+* I have a telcon today to talk with a vendor about an online testing product.
+So perhaps we are getting closer to resolving this.  Stay tuned.
+    
+#### No Class next Wednesday
+
+Next Tuesday and Wednesday are advising days, so no class on Wednesday.
+
 #### What we are learning to day
 
 The last two days we learned about DFAs and NFAs.  Today we will learn that 
@@ -50,15 +57,78 @@ and sections 4.1-4.2 (about regular expressions).
 * [HTML](../models-of-computation/finite-state-automata.html)
 * [PDF](../models-of-computation/Models-of-Computation.pdf)
 
+But before we begin, let's go back and think about an exercise from last time.
+<div class = "foldable" label = "Exercise 4.2.14">
+There are (at least two ways) to think about searching for accepting 
+paths in an NFA.  If you are familiar with the terms depth-first and breadth-first,
+they correspond to those.
+
+* depth-first: Follow a single path to its end.  If it is an accepting path, you
+have found one and your are done.  If not, start over (or better do some back tracking)
+to try a different path.  Keep going until you find an accepting path or have 
+exhausted all possibilities.
+
+* breadth-first pebbling: In this approach  
+  we can imagine placing pebbles on the graph of the NFA representing all the 
+  states we could get to at a particular step in processing a string.  
+  
+    1. We start with a pebble on the start state. 
+    2. At each step me move pebbles to any state we could reach from one 
+    of the currently pebbled states.
+    3. When we are done, we check to see whether an accepting state has a pebble.
+
+Let's illustrate the pebbling method using Exercise 4.2.14 on the string $011$.
+
+<iframe width="800" height="450"
+src="https://www.youtube.com/embed/BrUbzZ3QDSY?rel=0&showinfo=0&autohide=1" 
+frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+
+If we are doing this with pencil and paper, we could instead keep a record like this:
+
+$$
+\{s_0\} \to \{s_0, s_2\} \to \{s_1, s_4\} \to \{s_4, s_3\}
+$$
+
+or even more succinctly (since each state can be identified with a single character) as 
+
+$$
+0 \to 02 \to 14 \to 43
+$$
+Since $s_4$ is an accepting state, there is an accepting path -- there is some way to
+get to that state.
+
+
+Here's another illustration using the string $010$.
+
+<iframe width="800" height="450"
+src="https://www.youtube.com/embed/r5iqJqWif2U?rel=0&showinfo=0&autohide=1" 
+frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+Here's the pencil-and-paper version (succinct notation):
+
+$$
+0 \to 02 \to 14 \to 3
+$$
+
+Notice:
+
+* At the last step, two pebbles go to the same place, so the number of states goes from 2 to 1.
+* Since $s_3$ is not an accepting state, there is no accepting path and $010$ is not in the
+language recognized by this machine.
+</div>
+
+#### Comments/Hints/Solutions
+
+\def\emptystring{\lambda}
 
 Note: Rosen likes to label his states $s_0$, $s_1$, etc.  I find that clunky and 
 **I suggest that you not bother with subscripts when creating your own machines.** 
 You can use numbers, or letters, or even short words or phrases that identify
 what a state represents. The worksheet will show you both styles.
 
-#### Comments/Hints/Solutions
-
-\def\emptystring{\lambda}
 
 <div class = "foldable" label = "Exercise 4.2.22">
 
