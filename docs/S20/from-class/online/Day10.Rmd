@@ -58,7 +58,7 @@ and sections 4.1-4.2 (about regular expressions).
 * [PDF](../models-of-computation/Models-of-Computation.pdf)
 
 But before we begin, let's go back and think about an exercise from last time.
-<div class = "foldable" label = "Exercise 4.2.14">
+<div class = "foldable" label = "Exercise 3.5.14">
 There are (at least two ways) to think about searching for accepting 
 paths in an NFA.  If you are familiar with the terms depth-first and breadth-first,
 they correspond to those.

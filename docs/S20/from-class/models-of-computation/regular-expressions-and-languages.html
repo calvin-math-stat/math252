@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-04-16" />
+<meta name="date" content="2020-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -314,17 +314,32 @@ Give it a try and see how far you get. Which parts are easy? Which are trickier?
 <ol style="list-style-type: decimal">
 <li><p>Show that the empty language (<span class="math inline">\(\emptyset\)</span>) is recognized by an NFA.</p></li>
 <li><p>Show that the language <span class="math inline">\(\{\lambda\}\)</span> is recognized by an NFA.</p></li>
-<li><p>Show that if <span class="math inline">\(a \in I\)</span>, then the langauge <span class="math inline">\(\{a \}\)</span> is recognized by an NFA.</p></li>
+<li><p>Show that if <span class="math inline">\(a \in I\)</span>, then the language <span class="math inline">\(\{a \}\)</span> is recognized by an NFA.</p></li>
+<li><p>An NFA is said to have a <strong>lonely start state</strong> if there are no transitions
+into the start state.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Contruct an NFA with a lonely start state that is equivalent to the
+NFA below.</li>
+</ol>
+<p><img src="../images/DFA-NFA/NFA4.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Explain why every NFA is equivalent to an NFA with a lonely start state.
+That is, describe how to convert any NFA into an equivalent NFA with
+a lonely start state.</li>
+</ol></li>
 <li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are each recognized by an NFA, then <span class="math inline">\(AB\)</span> is, too.</p>
-<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. How can you use them to
-build a new NFA that recognizes <span class="math inline">\(AB\)</span>?]</p></li>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. You may
+assume each has a lonely start state if that is useful.
+How can you use them to build a new NFA that recognizes <span class="math inline">\(AB\)</span>?]</p></li>
 <li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are each recognized by an NFA, then <span class="math inline">\(A \cup B\)</span> is, too.</p>
-<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. How can you use them to
-build a new NFA that recognizes <span class="math inline">\(A \cup B\)</span>?]</p></li>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
+You may assume each has a lonely start state if that is useful.
+How can you use them to build a new NFA that recognizes <span class="math inline">\(A \cup B\)</span>?]</p></li>
 <li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then <span class="math inline">\(A^*\)</span> is, too.</p>
-<p>[Hint: Let <span class="math inline">\(N_A\)</span> be the NFA that recognizes <span class="math inline">\(A\)</span> How can you use it to
-build a new NFA that recognizes $A^*?]</p></li>
-<li><p>Explain how 1–6 above show that every regular language is recognized by an NFA.</p></li>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> be the NFA that recognizes <span class="math inline">\(A\)</span>.
+You may assume it has a lonely start state if that is useful.
+How can you use it to build a new NFA that recognizes <span class="math inline">\(A^*\)</span>?]</p></li>
+<li><p>Explain how 1–7 above show that every regular language is recognized by an NFA.</p></li>
 <li><p>Explain how 7 implies that every regular language is recognized by a DFA.</p></li>
 <li><p>The method just outlined is automatic (you could fairly easily write a
 computer program to do the translation from regular expression to NFA), and it
@@ -379,6 +394,10 @@ is too.</p>
 <!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
 <!-- ``` -->
 <!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
+<!-- regex to epsilon NFA -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/RYNN-tb9WxI?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- epsilon NFA to DFA -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/taClnxU-nao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 </div>
 </div>

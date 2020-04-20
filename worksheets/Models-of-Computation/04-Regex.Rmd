@@ -97,24 +97,41 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 
 2. Show that the language $\{\lambda\}$ is recognized by an NFA.
 
-3. Show that if $a \in I$, then the langauge $\{a \}$ is recognized by an NFA.
+3. Show that if $a \in I$, then the language $\{a \}$ is recognized by an NFA.
+
+4. An NFA is said to have a **lonely start state** if there are no transitions
+into the start state.
+
+    a. Contruct an NFA with a lonely start state that is equivalent to the 
+    NFA below.
+    
+    ```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+    knitr::include_graphics('../images/DFA-NFA/NFA4.png')
+    ```
+    
+    b. Explain why every NFA is equivalent to an NFA with a lonely start state.
+    That is, describe how to convert any NFA into an equivalent NFA with
+    a lonely start state.
 
 4. Show that if $A$ and $B$ are each recognized by an NFA, then $AB$ is, too.
 
-    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
-    build a new NFA that recognizes $AB$?]
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  You may 
+    assume each has a lonely start state if that is useful.
+    How can you use them to build a new NFA that recognizes $AB$?]
 
 5. Show that if $A$ and $B$ are each recognized by an NFA, then $A \cup B$ is, too.
 
-    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
-    build a new NFA that recognizes $A \cup B$?]
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$. 
+    You may assume each has a lonely start state if that is useful.
+    How can you use them to build a new NFA that recognizes $A \cup B$?]
     
 6. Show that if $A$ is recognized by an NFA, then $A^*$ is, too.
 
-    [Hint: Let $N_A$ be the NFA that recognizes $A$ How can you use it to
-    build a new NFA that recognizes $A^*?]
+    [Hint: Let $N_A$ be the NFA that recognizes $A$. 
+    You may assume it has a lonely start state if that is useful.
+    How can you use it to build a new NFA that recognizes $A^*$?]
     
-7. Explain how 1--6 above show that every regular language is recognized by an NFA.
+7. Explain how 1--7 above show that every regular language is recognized by an NFA.
 
 8. Explain how 7 implies that every regular language is recognized by a DFA.
 
@@ -180,4 +197,12 @@ is too.
 
 
 
+<!-- regex to epsilon NFA -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/RYNN-tb9WxI?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+<!-- epsilon NFA to DFA -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/taClnxU-nao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
