@@ -236,25 +236,18 @@ Additional assignments will be filled in over time.
 	   \mand[does it belong?]{4}
 	   \mand[regex]{6}
 	   \extra[regex]{7}
+   \\
+   \hline
+	   Fri 4/24 & PS 15 & Rosen 13.4 &
+	   \mand[build NFA]{10}
+	   \mand[Kleene's Thm]{12}
+	   \extra[Kleene's Thm]{13}
+	   \extra[lonely start]{20}
+	   \\
+	   & & Rosen 7.SE & \mand[cards]{6ab}
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-   \\
-	   \hline
-	   Fri 4/27 & PS 14 & Rosen 13.4 &
-	   \mand[Kleene's Thm]{12}
-	   \mand[$\to$ grammar]{15--16}
-	   \mand[lonely start]{20}
-	   \mand[pumping lemma]{22, 24, 25}
-	   \\
-   Mon 4/6 & PS 9 & Rosen 7.4 &
-	 \mand[lottery]{6}
-	 \mand[dice]{10}
-	 \\
-	  &  & Rosen 6.RQ & \extra{1--2, 5, 8} % --12}
+	  Review & --  & Rosen 6.RQ & \extra{1--2, 5, 8} % --12}
 	 \\
 	  &  & Rosen 6.SE & \extra{1--7} % , 24, 29, 32}
 	 \\
@@ -262,7 +255,20 @@ Additional assignments will be filled in over time.
 	 \\
 	  &  & Rosen 7.SE & \extra{1--5, 7a, 17, 23}
 	 \\
+	  &  & Rosen 13.RQ & TBD
+	 \\
+	  &  & Rosen 13.SE & TBD
+	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+   Mon 4/6 & PS 9 & Rosen 7.4 &
+	   \mand[$\to$ grammar]{15--16}
+	   \mand[pumping lemma]{22, 24, 25}
+	 \mand[lottery]{6}
+	 \mand[dice]{10}
 \end{longtable}
 \end{center}
 \label{end}
