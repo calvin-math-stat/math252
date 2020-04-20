@@ -168,7 +168,7 @@ smaller details that are important to remember.
 
 Big idea:
 
-* $AB$: Hook up the machine one after the other, and provide a way to get from the
+* $AB$: Hook up the machines "one after the other", and provide a way to get from the
 first to the second whenever you could have gone to an accepting state in the first machine.
 
 One note: Below the illustration for $AB$ it says
@@ -187,8 +187,8 @@ smaller details that are important to remember.
 
 Big idea:
 
-* $A \union B$: Hook up the machines "in parallel" and make a first decision about which machine
-to use.
+* $A \union B$: Hook up the machines "in parallel".  Add a new start state and use it to make 
+a first decision about which machine to use.
 
 </div>
 
@@ -199,7 +199,7 @@ smaller details that are important to remember.
 
 Big idea:
 
-* $A^*$: Provide a way to "start over" any time you reach an accepting state.
+* $A^*$: Provide a way to "start over" any time you could have reached an accepting state.
 </div>
 
 <div class = "foldable" label = "Exercise 4.3.10">
