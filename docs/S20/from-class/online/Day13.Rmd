@@ -42,7 +42,7 @@ Today we add the last arrow to this chart: DFA $\to$ regular expression.
 $$
 \Large
 \begin{array}{ccc}
-\mathrm{DFA} & \stackrel{\longrightarrow}\longleftrightarrow & \mathrm{NFA} \\
+\mathrm{DFA} & \stackrel{\longrightarrow}\longleftarrow & \mathrm{NFA} \\
 \downarrow& \nearrow & \downarrow \uparrow \\
 \mathrm{regular}& & \mathrm{regular} \\
 \mathrm{expression}& & \mathrm{grammar} 
