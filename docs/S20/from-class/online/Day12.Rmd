@@ -1,0 +1,186 @@
+---
+pagetitle: 'M252: 4/20/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Friday, April 24: Regular Grammars and Regular Languages
+
+#### Homework 
+
+* due Today: PS 15 (submit via [gradescope](https://gradescope.com))
+* due Monday: PS 16 (submit via [gradescope](https://gradescope.com))
+    
+#### Test 2 Info
+
+Test 2 will be on **Friday, May 1.**  I hope to get logisical details sorted
+soon, but I need to know more about the system we will be using and what is/is
+not possible in that system. A list of topics is already on the test information
+page.
+
+    
+#### What we are learning today
+
+Today we will learn how to convert back aand forth between regular grammars and NFAs.
+That adds two more arrows to our diagram:
+
+$$
+\Large
+\begin{array}{ccc}
+\mathrm{DFA} & \stackrel{\small 4/17}{\longleftrightarrow} & \mathrm{NFA} \\
+& \stackrel{\small 4/20}{\nearrow} & \phantom{today} \downarrow \uparrow  \mathrm{\small today}\\
+\mathrm{regular} & & \mathrm{regular}\\
+\mathrm{expression}  & & \mathrm{grammar}
+\end{array}
+$$
+
+
+We will see that all of these are equivalent.  The languages recognized/generated/expressed
+by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges**.
+
+**Question:** If you could add one more arrow to this diagram, which one would it be? Why?
+(We'll do that next time.)
+
+
+#### Worksheet
+
+Today we will cover Sections 5.1 (Grammars to Automat) and 5.2 (Automata to Grammars)
+
+* [HTML](../models-of-computation/regular-grammars-and-automata.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+
+#### Comments/Hints/Solutions
+
+\def\emptystring{\lambda}
+\def\set#1{\{#1\}}
+
+<div class = "foldable" label = "Exercise 5.1.1">
+
+Start state: $S$;
+Accepting state: $X$
+
+state     |   0          |   1
+--------: | :----------: | :--------:
+$S$       |  $\set{X}$   | $\set{A}$
+$A$       |  $\set{A}$   | $\set{A}$
+$X$       |  $\set{}$    | $\set{}$
+
+</div>
+
+<div class = "foldable" label = "Exercise 5.1.2">
+Start state: $S$;
+Accepting state: $X$
+
+state     |   0           |   1
+--------: | :-----------: | :-----------:
+$S$       |  $\set{X}$    | $\set{A}$
+$A$       |  $\set{B}$    | $\set{A, X}$
+$B$       |  $\set{A, X}$ | $\set{B}$
+$X$       |  $\set{}$     | $\set{}$
+
+</div>
+
+
+<div class = "foldable" label = "Exercise 5.1.3">
+
+Three types of rules $S\to\lambda$, $A \to x B$, $A \to x$ where $S$ is the start state, capitals are 
+non-terminals and lower case are terminals.
+
+States of $N$: one for each non-terminal in the grammar and one more (let's call is $X$ for extra).
+
+Start state = start symbol
+
+$X$ is the only accepting state
+
+Convert rules to transitions:
+
+* $S \to \lambda$ makes the start state accepting.
+* $A \to xB$ adds a transition $A \stackrel{x}{\to} B$.  (This is a self-loop if $A = B$.)
+* $A \to x$ adds a transition $A \stackrel{x}\to X$.
+* Note: there will be not transitions out of state $X$.
+
+</div>
+
+
+<div class = "foldable" label = "Exercise 5.2.6">
+
+* $S_0 \to \lambda$
+* $S_0 \to 0S_1$
+* $S_0 \to 1S_2$
+* $S_0 \to 1$
+* $S_1 \to 0S_1$
+* $S_1 \to 1S_2$
+* $S_1 \to 1$
+* $S_2 \to 0S_1$
+* $S_2 \to 1S_2$
+* $S_2 \to 1$
+</div>
+
+
+<div class = "foldable" label = "Exercise 5.2.7">
+
+$S$ is new lonely start state.
+
+* $S \to 0S_0$
+* $S \to 1S_1$
+* $S_0 \to 0S_0$
+* $S_0 \to 1S_1$
+* $S_0 \to 1$
+* $S_1 \to 0S_2$
+* $S_1 \to 1S_1$
+* $S_1 \to 1$
+* $S_2 \to 0S_2$
+* $S_2 \to 1S_2$
+</div>
+
+
+<div class = "foldable" label = "Exercise 5.2.8">
+
+$S$ is new lonely start state.
+
+* $S \to \lambda$
+* $S \to 1S_1$
+* $S \to 1$
+* $S_0 \to 1S_1$
+* $S_0 \to 1$
+* $S_0 \to 0S_0$
+* $S_1 \to 0S_2$
+* $S_2 \to 0S_0$
+* $S_2 \to 1S_0$
+* $S_2 \to 0$
+* $S_2 \to 1$
+</div>
+<div class = "foldable" label = "Exercise 5.2.9">
+
+* terminals = input alphabet
+* non-terminals = states (after adding lonely start state)
+* start symbol = lonely start state
+* Add $S \to \lambda$ if start state is accepting.
+* Add $A \to xB$ if $A \stackrel{x}{\to} B$ is a transition.
+* Add $A \to x$ if $A \stackrel{x}{\to} B$ and $B$ is accepting.
+* Lonely start state avoids having rules with start state on the right side (which is not allowed for regular grammars).
+
+</div>
+
+
+<br><br>
