@@ -12,8 +12,8 @@ rmd_files: ["index.Rmd",
             "03-Automata.Rmd",
             "04-Regex.Rmd",
             "05-Regular-Grammars.Rmd",
-            "06-Regular-WrapUp.Rmd",
-            "07-DFA-to-regex.Rmd",
+            "06-DFA-to-regex.Rmd",
+            "07-Nonregular-Language.Rmd",
             "08-Python-regex.Rmd",
             "10-Turing-Machines.Rmd"
       ]

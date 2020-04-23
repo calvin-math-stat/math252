@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-04-20" />
+<meta name="date" content="2020-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="regular-grammars-and-automata.html"/>
-<link rel="next" href="dfanfa-to-regular-expression.html"/>
+<link rel="next" href="a-language-that-is-not-regular.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -169,18 +169,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#some-review"><i class="fa fa-check"></i><b>5.3</b> Some Review</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="regular-langauges.html"><a href="regular-langauges.html"><i class="fa fa-check"></i><b>6</b> Regular Langauges</a><ul>
-<li class="chapter" data-level="6.1" data-path="regular-langauges.html"><a href="regular-langauges.html#equivalent-definitions"><i class="fa fa-check"></i><b>6.1</b> Equivalent Definitions</a><ul>
-<li class="chapter" data-level="" data-path="regular-langauges.html"><a href="regular-langauges.html#your-mission-you-must-choose-to-accept-it"><i class="fa fa-check"></i>Your Mission (You must choose to accept it)</a></li>
+<li class="chapter" data-level="6.1" data-path="regular-langauges.html"><a href="regular-langauges.html#equivalent-representations"><i class="fa fa-check"></i><b>6.1</b> Equivalent Representations</a></li>
+<li class="chapter" data-level="6.2" data-path="regular-langauges.html"><a href="regular-langauges.html#dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2</b> DFA to Regular Expression</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="regular-langauges.html"><a href="regular-langauges.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>6.2.1</b> GNFA (Generalied NFA)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="regular-langauges.html"><a href="regular-langauges.html#algorithm-for-converting-dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2.2</b> Algorithm for converting DFA to Regular Expression</a></li>
+<li class="chapter" data-level="6.2.3" data-path="regular-langauges.html"><a href="regular-langauges.html#examples-1"><i class="fa fa-check"></i><b>6.2.3</b> Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="regular-langauges.html"><a href="regular-langauges.html#a-language-that-is-not-regular"><i class="fa fa-check"></i><b>6.2</b> A language that is not regular</a></li>
-<li class="chapter" data-level="6.3" data-path="regular-langauges.html"><a href="regular-langauges.html#solutions"><i class="fa fa-check"></i><b>6.3</b> Solutions</a></li>
+<li class="chapter" data-level="6.3" data-path="regular-langauges.html"><a href="regular-langauges.html#review-problems"><i class="fa fa-check"></i><b>6.3</b> Review problems</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html"><i class="fa fa-check"></i><b>7</b> DFA/NFA to Regular Expression</a><ul>
-<li class="chapter" data-level="7.1" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>7.1</b> GNFA (Generalied NFA)</a></li>
-<li class="chapter" data-level="7.2" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#algorithm-for-converting-dfanfa-to-regular-expression"><i class="fa fa-check"></i><b>7.2</b> Algorithm for converting DFA/NFA to Regular Expression</a></li>
-<li class="chapter" data-level="7.3" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#examples-1"><i class="fa fa-check"></i><b>7.3</b> Examples</a></li>
-<li class="chapter" data-level="7.4" data-path="dfanfa-to-regular-expression.html"><a href="dfanfa-to-regular-expression.html#review-problems"><i class="fa fa-check"></i><b>7.4</b> Review problems</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="a-language-that-is-not-regular.html"><a href="a-language-that-is-not-regular.html"><i class="fa fa-check"></i><b>7</b> A language that is not regular</a></li>
 <li class="chapter" data-level="8" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html"><i class="fa fa-check"></i><b>8</b> Regular Expressions in Python</a><ul>
 <li class="chapter" data-level="8.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#getting-your-python-environment-working"><i class="fa fa-check"></i><b>8.1</b> Getting your python environment working</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#repl.it"><i class="fa fa-check"></i><b>8.1.1</b> repl.it</a></li>
@@ -227,8 +224,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="regular-langauges" class="section level1">
 <h1><span class="header-section-number">6</span> Regular Langauges</h1>
-<div id="equivalent-definitions" class="section level2">
-<h2><span class="header-section-number">6.1</span> Equivalent Definitions</h2>
+<div id="equivalent-representations" class="section level2">
+<h2><span class="header-section-number">6.1</span> Equivalent Representations</h2>
 <p>We have been working toward a result that says the following are
 all equivalent.</p>
 <ol style="list-style-type: decimal">
@@ -238,8 +235,8 @@ all equivalent.</p>
 <li><span class="math inline">\(L\)</span> is generated by a regular grammar.</li>
 </ol>
 <p>The proof that these are equivalent amounts to describing algorithms
-that can convert from one representation to another. In particular we
-have shown</p>
+that can convert from one representation to another.
+So far we have shown</p>
 <ol style="list-style-type: lower-alpha">
 <li><span class="math inline">\(1 \Rightarrow 3\)</span></li>
 <li><span class="math inline">\(2 \Rightarrow 3\)</span></li>
@@ -247,116 +244,138 @@ have shown</p>
 <li><span class="math inline">\(2 \Rightarrow 4\)</span></li>
 <li><span class="math inline">\(4 \Rightarrow 3\)</span></li>
 </ol>
+<p>We can depict this a bit more visually like this:</p>
+<p><span class="math display">\[
+\Large
+\begin{array}{ccc}
+\mathrm{DFA} &amp; \stackrel{\longrightarrow}{\longleftarrow} &amp; \mathrm{NFA} \\
+\phantom{\downarrow} &amp; \nearrow &amp; \downarrow \uparrow \\
+\mathrm{regular}&amp; &amp; \mathrm{regular} \\
+\mathrm{expression}&amp; &amp; \mathrm{grammar} 
+\end{array}
+\]</span></p>
 <p>Still missing from our list is</p>
 <ol start="6" style="list-style-type: lower-alpha">
-<li><span class="math inline">\(2 \Rightarrow 1\)</span></li>
+<li><span class="math inline">\(? \Rightarrow 1\)</span></li>
 </ol>
-<p>Once we have that, we will see that all 4 definitions are equivalent.</p>
-<div id="your-mission-you-must-choose-to-accept-it" class="section level3 unnumbered">
-<h3>Your Mission (You must choose to accept it)</h3>
-<p>For each conversion a – e, write a brief description of the algorithm. Your
-description should include the most important “big idea” and also any potential
-“gotchas”, things you have to be careful about or might forget about.</p>
-<p>Bonus: Can you figure out how to do conversion f?</p>
-</div>
-</div>
-<div id="a-language-that-is-not-regular" class="section level2">
-<h2><span class="header-section-number">6.2</span> A language that is not regular</h2>
-<p>Since we now have several equivalent ways to show that a langauge is regular,
-we also have several ways to show that a languages is not regular.</p>
-<p>Here is a language that is not regular: <span class="math inline">\(L = \{0^n1^n \mid n = 0, 1, 2, ...\}\)</span>.</p>
-<ol style="list-style-type: decimal">
-<li><p>What are our options for showing the language is not regular?</p></li>
-<li><p>Which do you think will be easiest?</p></li>
-<li><p>See if you can give a convincing argument that <span class="math inline">\(L\)</span> is not regular.</p></li>
-<li><p>What other languages can you construct that are not regular using the same
-basic idea idea?</p></li>
-</ol>
+<p>It doesn’t matter which representation we start from (do you see why?), so we will choose the easiest:</p>
+<p><span class="math display">\[
+\mbox{DFA} \Rightarrow \mbox{regular expresssion}
+\]</span>
+Once we have that, we will see that all 4 definitions are equivalent.</p>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="solutions" class="section level2">
-<h2><span class="header-section-number">6.3</span> Solutions</h2>
-<p>Compare your descriptions to the descriptions below. Did you leave out
-anything important? Do the solutions below leave out anything important?</p>
-<p>1a. regex <span class="math inline">\(\to\)</span> NFA:</p>
+<div id="dfa-to-regular-expression" class="section level2">
+<h2><span class="header-section-number">6.2</span> DFA to Regular Expression</h2>
+<div id="gnfa-generalied-nfa" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> GNFA (Generalied NFA)</h3>
+<p>A GNFA (Generalized NFA) is like an NFA but the edges/transitions may be labeled
+with <strong>any regular expression</strong>. One way of obtaining a regular expression from
+a DFA uses an algorithm that works with GNFAs.</p>
+</div>
+<div id="algorithm-for-converting-dfa-to-regular-expression" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Algorithm for converting DFA to Regular Expression</h3>
+<p>Suppose we want to find an equivalent regular expression for some DFA. Here
+is an algorithm to do so.</p>
+<ol style="list-style-type: decimal">
+<li><p>Modify the the original machine.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Add a <strong>new start state</strong> with a <span class="math inline">\(\lambda\)</span> transition to the old start state.
+This makes the new start state <strong>lonely</strong>.
+(We can skip this step if the start state is already lonely (has in-degree 0).)</li>
+<li>Add a <strong>new accepting state</strong> with a <span class="math inline">\(\lambda\)</span> transition from all old accepting states.
+(We can skip this step if there is exactly one final state and it has out-degree 0.)</li>
+<li>The new accepting state will be the <strong>only accepting state</strong>.</li>
+<li><strong>Replace mutliple edges</strong> between any pair of states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>
+with one edge labeled with the union of the labels of the original edges.
+[Example <span class="math inline">\(A \stackrel{0,1}{\to} B\)</span> becomes <span class="math inline">\(A \stackrel{0 \cup 1}{\to} B\)</span>.]</li>
+</ol></li>
+<li><p>Pick an internal state (not the start state or the final state)
+to “rip out”. Let’s call that state <span class="math inline">\(R\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>If <span class="math inline">\(R\)</span> doesn’t have a self-loop,
+replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{out}})}{\longrightarrow}B\)</span>.</li>
+<li>If <span class="math inline">\(R\)</span> has a self-loop labeled <span class="math inline">\(r_{\mathrm{self}}\)</span>,
+replace every <span class="math inline">\(A \stackrel{r_{\mathrm{in}}}{\to} R \stackrel{r_{\mathrm{out}}} \to B\)</span> with
+<span class="math inline">\(A \stackrel{(r_{\mathrm{in}} r_{\mathrm{self}}^* r_{\mathrm{out}})}{\longrightarrow} B\)</span>.</li>
+<li>If this results in multiple edges between two states <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,
+replace them with one edge labeled with the union of their labels.</li>
+</ol></li>
+<li><p>Repeat step 2 until the only states left are the start state and the final
+state. There will be only one transition remaining, and its label will be a regular
+expression for the language recognized by the original DFA.</p></li>
+</ol>
+</div>
+<div id="examples-1" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Examples</h3>
+<ol style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
+</ol>
+<p><img src="../images/DFA-regex-example.png" width="40%" style="display: block; margin: auto;" /></p>
+
+<div style="page-break-after: always;"></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
+</ol>
+<p><img src="../images/DFA-regex-2.png" width="60%" style="display: block; margin: auto;" /></p>
+
+<ol start="3" style="list-style-type: decimal">
+<li>Systematically convert this DFA into an equivalent regular expression.</li>
+</ol>
+<p><img src="../images/DFA-Fig-12-4-5.png" width="30%" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Would this algorithm work (possibly with slight modificiation) if we started with an NFA instead of a DFA?
+(Be sure to list any modifications that are needed.)</p></li>
+<li><p>Would this algorithm work (possibly with slight modificiation) if we started with a GNFA instead of a DFA?
+(Be sure to list any modifications that are needed.)</p></li>
+</ol>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="review-problems" class="section level2">
+<h2><span class="header-section-number">6.3</span> Review problems</h2>
+<ol style="list-style-type: decimal">
+<li>For each arrow in the diagram below, write a brief description of the algorithm
+that converts from one representation to another.
+Your description should include the most important “big idea” and also any potential
+“gotchas”, things you have to be careful about or might forget about.</li>
+</ol>
+<p><span class="math display">\[
+\Large
+\begin{array}{ccc}
+\mathrm{DFA} &amp; \stackrel{\longrightarrow}{\longleftarrow} &amp; \mathrm{NFA} \\
+\downarrow &amp; \nearrow &amp; \downarrow \uparrow \\
+\mathrm{regular}&amp; &amp; \mathrm{regular} \\
+\mathrm{expression}&amp; &amp; \mathrm{grammar} 
+\end{array}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Show that if <span class="math inline">\(A\)</span> is a regular language, then <span class="math inline">\(\overline{A}\)</span> is also a regular
+language.</p></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are regular languages, then <span class="math inline">\(A \;\cap\;B\)</span> is also
+a regular language.</p></li>
+<li><p>Convert the machines on this sheet to equivalent regular grammars.</p></li>
+</ol>
+
+<p><br>
+<br>
+<br></p>
+<p>You can find additional worked examples online at places like</p>
 <ul>
-<li><p>6 parts:</p>
-<ul>
-<li>3 base cases – pretty easy</li>
-<li>3 that show union, concatenation and Kleene star – these are the “interesting” part</li>
-</ul></li>
-<li><p>union: <span class="math inline">\(A \cup B\)</span> where <span class="math inline">\(A = L(N_1)\)</span> and <span class="math inline">\(B = L(N_2)\)</span>.</p>
-<ul>
-<li><p>keep all states and transitions from <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span></p></li>
-<li><p>add one new start state <span class="math inline">\(S\)</span>; <span class="math inline">\(S\)</span> is final if either
-start state of <span class="math inline">\(N_1\)</span> or start state of <span class="math inline">\(N_2\)</span> is final</p></li>
-<li><p>add some additional transitions</p>
-<ul>
-<li>if <span class="math inline">\(S_1 \stackrel{x}{\to} A\)</span>, add <span class="math inline">\(S \stackrel{x}{\to} A\)</span></li>
-<li>if <span class="math inline">\(S_2 \stackrel{x}{\to} B\)</span>, add <span class="math inline">\(S \stackrel{x}{\to} B\)</span></li>
-</ul></li>
-</ul></li>
-<li><p>concatenation: <span class="math inline">\(AB\)</span> where <span class="math inline">\(A = L(N_1)\)</span> and <span class="math inline">\(B = L(N_2)\)</span>.</p>
-<ul>
-<li>keep all states and transitions from <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span></li>
-<li>start state from <span class="math inline">\(N_1\)</span> is the start state</li>
-<li>only final states from <span class="math inline">\(N_2\)</span> are final</li>
-<li>add some additional transitions
-<ul>
-<li>if <span class="math inline">\(A \stackrel{x}{\to} F\)</span> (a final state in <span class="math inline">\(N_1\)</span>), then add
-add <span class="math inline">\(A \stackrel{x}{\to} S_2\)</span> (start state in <span class="math inline">\(N_2\)</span>)</li>
-</ul></li>
-</ul></li>
-<li><p>Kleene star: <span class="math inline">\(A = L(N_1)\)</span></p>
-<ul>
-<li><p>keep all states and transitions from <span class="math inline">\(N_1\)</span></p></li>
-<li><p>add a new start state that is a final state (because <span class="math inline">\(\lambda \in A^*\)</span>)</p></li>
-<li><p>add new transitions from new start state (<span class="math inline">\(S\)</span>)</p>
-<ul>
-<li>if <span class="math inline">\(S_1 \stackrel{x}{\to} A\)</span>, add <span class="math inline">\(S \stackrel{x}{\to} A\)</span> (includes case where <span class="math inline">\(A = S_1\)</span>)</li>
-</ul></li>
-<li><p>add new transitions to old start state (<span class="math inline">\(S_1\)</span>)</p>
-<ul>
-<li>if <span class="math inline">\(A \stackrel{x}{\to} F\)</span>, where F is final, add <span class="math inline">\(A \stackrel{x}{\to} S_1\)</span></li>
-<li>If we are at the end of a string in <span class="math inline">\(L(N_1)\)</span>, this lets us “restart”</li>
-</ul></li>
-</ul></li>
+<li><a href="https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf" class="uri">https://courses.cs.washington.edu/courses/cse311/14sp/kleene.pdf</a></li>
+<li><a href="https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf" class="uri">https://courses.engr.illinois.edu/cs374/sp2019/extra_notes/01_nfa_to_reg.pdf</a></li>
 </ul>
-<p>1b. DFA <span class="math inline">\(\to\)</span> NFA</p>
+<p>But note that sometimes the notation isn’t quite the same.</p>
 <ul>
-<li>easy: a DFA “is” an NFA</li>
+<li><span class="math inline">\(\varepsilon\)</span> is sometimes used for what we have called <span class="math inline">\(\lambda\)</span>.</li>
+<li><span class="math inline">\(|\)</span> is sometimes used in place of <span class="math inline">\(\cup\)</span>.</li>
+<li><span class="math inline">\(+\)</span> is sometimes used in place of <span class="math inline">\(\cup\)</span>. (To make matters worse, <span class="math inline">\(+\)</span> is more
+often used for something else that we haven’t seen yet; so make sure you know
+how <span class="math inline">\(+\)</span> is being used if you see it.)</li>
 </ul>
-<p>1c. NFA <span class="math inline">\(\to\)</span> DFA</p>
-<ul>
-<li><p>DFA states are <strong>subsets of NFA states</strong> (think: magnets on white board)</p></li>
-<li><p>A is final in DFA if A contains a final state of NFA</p></li>
-<li><p>Remember that <span class="math inline">\(\{ \}\)</span> may be needed as one of the states in the DFA</p></li>
-</ul>
-<p>1d. DFA (or NFA) <span class="math inline">\(\to\)</span> reg grammar</p>
-<ul>
-<li><p><span class="math inline">\(A \stackrel{x}{\to} B\)</span> becomes</p>
-<ul>
-<li><p><span class="math inline">\(A \to xB\)</span></p></li>
-<li><p>also <span class="math inline">\(A \to x\)</span> if B is final state</p></li>
-</ul></li>
-<li><p>If S is final in NFA/DFA, then add <span class="math inline">\(S \to \lambda\)</span></p></li>
-<li><p>Number of rules = number of transitions + number of transitions to final states +
-1 more if the start state is final</p></li>
-</ul>
-<p>1e. reg grammar <span class="math inline">\(\to\)</span> NFA</p>
-<ul>
-<li><p>states: non-terminals of grammar +
-one additional state <span class="math inline">\(F\)</span> (a final state)</p>
-<ul>
-<li>Start symbol is also start state</li>
-<li>If <span class="math inline">\(S \to \lambda\)</span> is a rule, then <span class="math inline">\(S\)</span> is a final state</li>
-</ul></li>
-<li><p>production rules become transitions in NFA</p>
-<ul>
-<li><span class="math inline">\(A \to xB\)</span> becomes <span class="math inline">\(A \stackrel{x}{\to} B\)</span></li>
-<li><span class="math inline">\(A \to x\)</span> becomes <span class="math inline">\(A \stackrel{x}{\to} F\)</span> (the added final state)</li>
-</ul></li>
-</ul>
+<div style="page-break-after: always;"></div>
 
 <div style="page-break-after: always;"></div>
 </div>
@@ -367,7 +386,7 @@ one additional state <span class="math inline">\(F\)</span> (a final state)</p>
         </div>
       </div>
 <a href="regular-grammars-and-automata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="dfanfa-to-regular-expression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-language-that-is-not-regular.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
