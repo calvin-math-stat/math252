@@ -83,7 +83,7 @@ state     |   0          |   1
 --------: | :----------: | :--------:
 $S$       |  $\set{X}$   | $\set{A}$
 $A$       |  $\set{A}$   | $\set{A}$
-$X$       |  $\set{}$    | $\set{}$
+$X$       |  $\set{}$    | $\set{X}$
 
 ```{r echo = FALSE, fig.align = 'center'}
 knitr::include_graphics('../images/grammar-to-nfa-01.png')
