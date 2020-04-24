@@ -77,13 +77,26 @@ Today we will cover Sections 5.1 (Grammars to Automat) and 5.2 (Automata to Gram
 <div class = "foldable" label = "Exercise 5.1.1">
 
 Start state: $S$;
-Accepting state: $X$
+Accepting states: $S$ and $X$
 
 state     |   0          |   1
 --------: | :----------: | :--------:
 $S$       |  $\set{X}$   | $\set{A}$
 $A$       |  $\set{A}$   | $\set{A}$
 $X$       |  $\set{}$    | $\set{}$
+
+```{r echo = FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/grammar-to-nfa-01.png')
+```
+
+It's a good idea to check your work on a few strings to make sure
+the grammar and the NFA agree.  You might try some of these:
+
+* $\lambda$
+* $0$
+* $1$
+* $01$
+* $101$
 
 </div>
 
@@ -97,6 +110,19 @@ $S$       |  $\set{X}$    | $\set{A}$
 $A$       |  $\set{B}$    | $\set{A, X}$
 $B$       |  $\set{A, X}$ | $\set{B}$
 $X$       |  $\set{}$     | $\set{}$
+
+```{r echo = FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/grammar-to-nfa-02.png')
+```
+
+It's a good idea to check your work on a few strings to make sure
+the grammar and the NFA agree.  You might try some of these:
+
+* $\lambda$
+* $110$
+* $011$
+* $11001$
+* $11100$
 
 </div>
 
@@ -143,6 +169,7 @@ $S$ is new lonely start state.
 
 * $S \to 0S_0$
 * $S \to 1S_1$
+* $S \to 1$
 * $S_0 \to 0S_0$
 * $S_0 \to 1S_1$
 * $S_0 \to 1$
