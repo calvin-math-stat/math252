@@ -61,7 +61,7 @@ by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges
 
 We will cover Section 6.
 
-* [HTML](../models-of-computation/regular-expressions-and-languages.html)
+* [HTML](../models-of-computation/regular-langauges.html)
 * [PDF](../models-of-computation/Models-of-Computation.pdf)
 
 
