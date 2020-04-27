@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * due Today: PS 16 (submit via [gradescope](https://gradescope.com))
 * due Wednesday: no homework -- review for exam
-    * Note: Rosen does not cover today's topic, so there are now exercises
+    * Note: Rosen does not cover today's topic, so there are no exercises
     about converting from DFA or NFA to regular expression, but you are 
     expected to know how to do this for the test.
     
