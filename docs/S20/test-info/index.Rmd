@@ -96,13 +96,20 @@ the "donut problems".
 
 #### Logistics
 
-We will be using a system called RPNow (Remote Proctor Now) which you 
-will access via Moodle.
-I'm still figuring exactly how the system works,
-so stay tuned for details.
+We will be using RPNow for Test 2. I've created a short practice test for you so
+you can make sure you understand in advance how the test logistics will work.
+**I highly recommend that you do this before Friday.**
 
-I will be setting up a demo test so that you can go through all of the
-steps ahead of time and make sure that everything works before the test.
+Allow yourself 75 minutes to take the test.
+
+* 10 minutes for setting up, pre-check, submitting, etc.
+* 65 minutes for the exam itself.
+
+Unless you have made other arrangements with me, you must begin the exam between 11 am and 12:40 pm.
+Once you begin the exam in Moodle, you will have 65 minutes to complete it.
+
+[Here](RPnow.html) are some 
+[**detailed instructions for using RPNow**](RPnow.html) (for either the practice or the actual test).
 
 
 #### Topics
