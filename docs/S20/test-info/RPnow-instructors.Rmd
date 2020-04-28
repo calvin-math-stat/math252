@@ -75,13 +75,13 @@ knitr::include_graphics("rpnow-exam-registration2.png")
 ```
 
 * Copy in the **password** that you entered in the Moodle quiz.  This is the only
-connection betwen the two systems and keeps students form taking the Moodle quiz outside
+connection between the two systems and keeps students form taking the Moodle quiz outside
 the RPnow system.  **Do not tell the students what the password is!**
 
 * The approximate duration is just to give the RPnow folks an idea of how much processing
 they have coming their way.
 
-* Indicate whether the exam is **procotored** or not. (Set up a non-proctored test as 
+* Indicate whether the exam is **proctored** or not. (Set up a non-proctored test as 
 practice for your students so they can make sure that everything works and they know how
 to navigate the system.  Non-proctored exams are free and highly recommended.)
 
