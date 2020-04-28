@@ -1,0 +1,85 @@
+---
+title: "Tests with RPnow"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is RPnow?
+
+RPnow (Remote Proctor now) is a service that monitors your computer activity and
+video records you while you take a test. Instructors specify what is or is not
+allowed during the test, and activities that appear to be in violation are flagged
+for instructor review.
+
+## Preparing to use RPnow
+
+What you need to do to prepare your computer for the practice quiz and final exam
+
+### Step 1: Confirm you have the necessary equipment
+
+* computer (PC or Mac only; no Linux or mobile devices, such as tablets or smartphones, permitted)
+* webcam (either external or built into your computer)
+* microphone
+* internet connection
+* photo ID
+
+### Step 2: Set up Remote Proctor software
+
+1. Go to <www.calvin.remoteproctor.com>.  You will see two large buttons on the screen.
+2. Watch the video demonstrating how the system works (first button).
+3. Down load and install the software (second button).
+
+### Step 3: Prepare for your test/quiz/exam session
+
+1. Make sure you are logged OUT of Moodle.
+2. Make sure you have your photo ID handy 
+3. Prepare your workspace (you will need to video your environment before you take the test)
+
+    a. You will be allowed to use a calculator, but not your phone or any other devices.
+    b. You may have pencils, pens, and erasers, and some blank paper to write on. 
+    (You will show that this paper is blank during your room scan and submit what you
+    have written via gradescope when you are finished.)
+    
+4. Disable any additional monitors if you have dual monitors enabled on your computer.
+5. Shut down unnecessary applications. 
+
+## Taking a test
+
+### Step 1: Lauch PSI Secure Browser and do pre-check
+
+1. Launch **PSI Secure Browser** (installed above).
+2. You will be prompted to do a **microphone check**.
+3. On the next screen, select your **instructor** and then the **test** that you are about to take.
+4. Then fill in **your name and email** (use your Calvin student email address). Your phone number is 
+optional, but can be used if you need technical support during the test.
+5. Read the **Pre-exam Advisory** and click **Next**.
+6. Follow any instructions you may see in the **Security Check**.  (This will prompt you to
+close some software applications, disconnect any external monitors, etc. if you haven't already 
+done this.)
+7. Follow instructions for **ID photo**, **room scan**, and **user photo**.
+
+### Step 2: Take the exam
+
+1. **Enter Exam**.
+2. Once Remote Proctor has authenticated your session, you have 10 minutes to navigate to and begin 
+the appropriate test in Moodle. **You will do this inside the PSI Secure Browser** -- 
+do not re-open any other browsers or any other software until you have completed and submitted your test.
+3. Log into Moodle > go to the Moodle course > click on the link for the appropriate exam.
+4. When you are prompted for a password, click the **Insert Exam Password** button at the top of the page.
+   Remote Proctor will provide the password to unlock the test.
+5. Complete the exam (within the allotted time frame).
+
+### Step 3: When you are finished
+
+1. Be sure to **submit the Moodle Quiz**.
+2. Also **submit your hand-written work via gradescope**.
+3. To end the remote proctoring session click the Close button > then click End exam.
+
+## Technical questions &/or support
+
+If you have any technical issues, please contact Software Secure/Remote Proctor
+directly. Software Secure technical support is available 24/7 for students.
+
