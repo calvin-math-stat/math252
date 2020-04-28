@@ -30,8 +30,7 @@ What you need to do to prepare your computer for the practice quiz and final exa
 * photo ID
 
 ### Step 2: Set up Remote Proctor software
-
-1. Go to <https://www.calvin.remoteproctor.com>.  You will see two large buttons on the screen.
+1. Go to <http://www.calvin.remoteproctor.com>.  You will see two large buttons on the screen.
 2. Watch the video demonstrating how the system works (first button).
 3. Down load and install the software (second button).
 

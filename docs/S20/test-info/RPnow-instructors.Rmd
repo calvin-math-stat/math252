@@ -54,7 +54,7 @@ related problems created in R) in your Moodle quiz.
 
 ## Setting things up in RPnow
 
-* Website: <https://calvin.remoteproctor.com/adminsite>
+* Website: <http://calvin.remoteproctor.com/adminsite>
 
 * You will need to have an administrator create an account for you.
 
