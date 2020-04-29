@@ -92,11 +92,8 @@ knitr::include_graphics(path)
 </div>
 <div class = "foldable" label = "Exercise 6.2.3">
 
-**There is a missing edge in one of the steps here!**  I'll get that fixed, but it will take a bit longer
-to redraw the diagrams.
-
-The missing edge comes from ripping out the first state. We should also add $11^*0$ to the self-loop 
-on the top state. (So it will be $0 \cup 11^*0$.)
+I've fixed an earlier error where one transition was omitted when the first state 
+was ripped out.
 
 
 ```{r echo = FALSE, fig.align = 'center'}
