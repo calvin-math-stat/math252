@@ -1,0 +1,65 @@
+---
+pagetitle: 'M252: 4/29/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Wednesday, April 29: Review Day
+
+#### Homework 
+
+* No new homework.
+* Make sure you have turned in all of your past homework.
+    
+#### Test 2 
+
+Test 2 is on Friday.
+
+We will be using RPNow for Test 2. I've created a short practice test for you so
+you can make sure you understand in advance how the test logistics will work.
+**I highly recommend that you do this before Friday.**
+You can find more information on the [test information page](../../test-info/)
+
+Allow yourself 75 minutes to take the test.
+
+* 10 minutes for setting up, pre-check, submitting, etc.
+* 65 minutes for the exam itself.
+
+Unless you have made other arrangements with me, you must begin the exam between 11 am and 12:40 pm.
+Once you begin the exam in Moodle, you will have 65 minutes to complete it.
+
+#### In Class
+
+I'll be available starting at 11:30 to answer questions.
+
+#### Worksheets
+
+Models of Computation
+
+* [HTML](../models-of-computation/)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+Counting and Probability
+
+* [HTML](../counting-and-probability/)
+* [PDF](../models-of-computation/Counting-and-Probability.pdf)
+
