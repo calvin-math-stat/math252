@@ -265,9 +265,21 @@ Additional assignments will be filled in over time.
 	 \\
 	  &  & Rosen 7.SE & \extra{1--5, 7a, 17, 23}
 	 \\
-	  &  & Rosen 13.RQ & TBD
-	 \\
-	  &  & Rosen 13.SE & TBD
+	    & & Rosen 13.RQ &
+   \extra{1--2}
+   \extra{4}
+   \extra{5a}
+   \extra{6a--12}
+   % \extra{15}
+   \\
+   & & Rosen 13.SE &
+   % \extra{3}
+   \extra{7}
+   \extra{8}
+   % \extra{9}
+   \extra{19--21}
+   \extra{23--25}
+   % \extra{26--27}
 	 \\
 	 \hline
 \end{longtable}
