@@ -105,8 +105,26 @@ Allow yourself 75 minutes to take the test.
 * 10 minutes for setting up, pre-check, submitting, etc.
 * 65 minutes for the exam itself.
 
-Unless you have made other arrangements with me, you must begin the exam between 11 am and 12:40 pm.
-Once you begin the exam in Moodle, you will have 65 minutes to complete it.
+Unless you have made other arrangements with me, you must begin the exam between
+11 am and 12:40 pm. Once you begin the exam in Moodle, you will have 65 minutes
+to complete it.
+
+##### What is allowed during the exam?
+
+* You may use a **calculator**, but not your phone or any other devices.
+* You may not use any additional software on your computer other than Moodle via 
+the secure browser.
+    * Note: RPnow will require you to close some applicaitons to even run, but
+    all application use will be logged while you take the test.
+    
+* You may have **pencils, pens, and erasers**, and some **blank paper** to write on. 
+    * You will show that this paper is blank during your room scan 
+    * You will submit your paper via gradescope when you are finished.
+    
+* You may not have other notes or books, consult other people or the internet.
+
+
+##### How does RPnow work?
 
 [Here](RPnow.html) are some 
 [**detailed instructions for using RPNow**](RPnow.html) (for either the practice or the actual test).
