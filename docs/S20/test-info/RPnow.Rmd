@@ -71,8 +71,17 @@ done this.)
 the appropriate test in Moodle. **You will do this inside the PSI Secure Browser** -- 
 do not re-open any other browsers or any other software until you have completed and submitted your test.
 3. Log into Moodle > go to the Moodle course > click on the link for the appropriate exam.
-4. When you are prompted for a password, click the **Insert Exam Password** button at the top of the page.
-   Remote Proctor will provide the password to unlock the test.
+
+    a. **If Moodle requires you to use Duo Mobile to authenticate**, 
+    you may use your phone for this. Just put it aside after gettting logged in 
+    and before taking the test.
+    
+4. When you are prompted for a password, click the **Insert Exam Password**
+button at the top of the page. Remote Proctor will provide the password to
+unlock the test.
+   
+   a. **From this point on, you should not use your phone.**
+   
 5. Complete the exam (within the allotted time frame).
 
 ### Step 3: When you are finished
