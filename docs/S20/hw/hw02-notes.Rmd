@@ -66,4 +66,13 @@ correct thing on the empty string.
   finite state machines. But it is a good idea to test a couple of example strings to make 
   sure you haven't overlooked anything.
   
-  
+### PS 14
+
+* For #6d: Note that 100, 00 are in the language and 0 is not.  Many of your machines 
+were incorrect on those strings.
+
+* For #6e: Note that a string with an even number of 1's may have any number of 0's.
+
+* For converting from NFA to DFA, make sure your resulting machine is a DFA. 
+There must be exactly one transition out of each state for each input symbol.
+Also, make sure that you indicate which states are the accepting states.
