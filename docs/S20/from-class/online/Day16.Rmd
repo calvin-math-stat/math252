@@ -33,7 +33,7 @@ theme_set(theme_bw())
 * Due Wednesday:  PS 17 (submit via [gradescope](https://gradescope.com))
 
 * Wednesday's assignment is short.  If you want to get a head start for Wednesday's
-class, Read the first part of section 4.5 of our Zybook, up to an including
+class, read the first part of section 4.5 of our Zybook, up to and including
 Participation Exercise 4.5.2: Identifying the next configuration of a Turing machine.
 We will talk more about Turing Machines in class on Wednesday.
 
@@ -99,12 +99,12 @@ In addition to the in class discussion, you might like to look at page 885 of th
 
 <div class = "foldable" label = "The Pumping Lemma"> 
 
-<div class = "foldable" label = "Ideas behing the Pumping Lemma"> 
+<div class = "foldable" label = "Ideas behind the Pumping Lemma"> 
 
 The basic idea used to show that $\{0^n1^n \ mid n = 0, 1, 2, ... \}$ is not regular
 can be turned into a lemma that doesn't mention DFAs at all.  
 
-Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recoginizes
+Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recognizes
 $L$.  This machine has some number of states, let's call that number $N$.
 
 Now suppose we have a long string $x$ with more symbols than $N$.  (We will write this 
@@ -140,7 +140,7 @@ such that
 
 * $l(u) < N$,
 * $l(v) > 0$,
-* $x \in L$ if and only if $uv^kw \in L$ for every naturual number $k$.
+* $x \in L$ if and only if $uv^kw \in L$ for every natural number $k$.
 
 Important things to note:
 
