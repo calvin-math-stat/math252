@@ -95,3 +95,16 @@ during your test and the **time window** in which the test can be taken.
 
 You might model your communication on [this example](RPnow.html).
 
+## Issues to be aware of 
+
+* Student will need a Mac or PC with a new enough operating sysgtem.  Linux and iOS are not supported.
+* Students must have a working webcam to use the system.
+* Even if you walk students through the process and provide detailed written instructions,
+you will get questions from students.  Most common questions I had:
+
+    * Where are the instructions?
+    * What's the password? (They should not know it, there is a big green button for
+    them to push the populates the password field.)
+    * 
+    * What time is the test?
+
