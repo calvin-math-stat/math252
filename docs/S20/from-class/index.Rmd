@@ -87,7 +87,7 @@ sheets), but there will be some additional resources as well.
 This will collect together the things you need (and need to know) for
 each day.
 
-* [Day 16 online -- May 4i](onlind/Day16.html)
+* [Day 16 online -- May 4](online/Day16.html)
 * Day 15 online -- May 1 -- Test 2 
 * [Day 14 online -- April 29 -- Review Day](online/Day14.html)
 * [Day 13 online -- April 27](online/Day13.html)

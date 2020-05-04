@@ -28,8 +28,6 @@ theme_set(theme_bw())
 
 ## Monday, May 5: Languages that are not regular
 
-#### Homework 
-
 * Due Wednesday:  PS 17 (submit via [gradescope](https://gradescope.com))
 
 * Wednesday's assignment is short.  If you want to get a head start for Wednesday's
@@ -101,7 +99,7 @@ In addition to the in class discussion, you might like to look at page 885 of th
 
 <div class = "foldable" label = "Ideas behind the Pumping Lemma"> 
 
-The basic idea used to show that $\{0^n1^n \ mid n = 0, 1, 2, ... \}$ is not regular
+The basic idea used to show that $\{0^n1^n \mid n = 0, 1, 2, ... \}$ is not regular
 can be turned into a lemma that doesn't mention DFAs at all.  
 
 Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recognizes
@@ -159,7 +157,7 @@ In particular, $l(uv) \le N$.
 
 <div class = "foldable" label = "Pumping Lemma -- Example Application"> 
 
-Let's try using the Pumping Lemma to show that ${0^n1^n \mid n = 0, 1, \dots}$ is not
+Let's try using the Pumping Lemma to show that $\{0^n1^n \mid n = 0, 1, \dots \}$ is not
 regular.
 
 Suppose $L$ were regular.
@@ -171,11 +169,17 @@ Let $N$ be the number given by the Pumping Lemma.  Consider $x = 0^N1^N$.
 Now consider the string $uw$.  $uw$ must be in $L$, but $uw$ has fewer 0's than 1's, so
 it can't be in $L$.  This means our assumption that $L$ was regular must be false.
 
-**Note:** Anything you can prove using the Pumping Lemma, you can also prove by going
+**Note 1:** Anything you can prove using the Pumping Lemma, you can also prove by going
 back to the underlying argument about repeated states (pigeon hole principle), loops,
 etc.  So you can think of the Pumping Lemma as an (optional) alternative way to think
 about these problems.  I don't care which approach you take, as long as you do it correctly.
 Any problem that says "by the Pumping Lemma" may also be done from the underlying argument.
+
+**Note 2:** Using $x = 0^N1^N$ is sufficient since we read more more state than we 
+have read sybmols.  (After reading the first symbol, we have seen the start state and a next
+state.)  But if you prefer to use $x=0^{N+1}1^{N+1}$ just to make the arguement easier,
+that's fine too.  (I switched from $N$ to $N + 1$ when doing it in class to save us a little
+time.)
 </div>
 </div>
 
