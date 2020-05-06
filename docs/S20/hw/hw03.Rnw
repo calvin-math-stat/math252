@@ -120,6 +120,22 @@ Additional assignments will be filled in over time.
 	   \mand[pumping lemma]{23, 25}
 	   \\
 	   \hline
+	  Fri 5/8 & PS 18 & Rosen 13.5 &
+	  \mand[trace TM]{2}
+	  \mand[trace TM]{5}
+	  \extra[trace TM]{1}
+	  \extra[trace TM]{3--4}
+
+	  \mand[design TM]{6}
+	  \mand[design TM]{10}
+	  \extra[design TM]{7--12}
+\\
+	  &&& For problems 6 and 10, describe your Turing machine
+	  using the syntax of one of our two Turing machine simulators.
+	  (You can use a text editor or copy and paste from the
+	  online simulator into a file.)
+	   \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
@@ -143,17 +159,6 @@ Additional assignments will be filled in over time.
    \extra{23--25}
    \extra{26--27}
    	   \\
-	   \hline
-	  Mon 5/7 & PS 16 & Rosen 12.5 &
-	  \mand[trace TM]{2}
-	  \mand[trace TM]{5}
-	  \extra[trace TM]{1}
-	  \extra[trace TM]{3--4}
-
-	  \mand[design TM]{6}
-	  \mand[design TM]{10}
-	  \extra[design TM]{7--12}
-	   \\
 	   \hline
 \end{document}
 

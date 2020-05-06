@@ -8,8 +8,15 @@ The Turing machine model pre-dates electronic computers and comes from the
 work of Hilbert (early 1900's) and Turing and Church (1930)'s.
 
 * Not trying to model (electronic) computers, but computation or algorithm
-* Identified three essential ingredients: ______________, _____________, __________________
-    * implicitly there is a fourth ingredient: ___________________
+* Identified three essential ingredients: 
+
+    1. ____________
+    2. ____________
+    3. ____________
+    
+* implicitly there is a fourth ingredient: 
+
+    4. ____________
     
 <!-- Read, Write, Remember -->
     
@@ -22,27 +29,42 @@ work of Hilbert (early 1900's) and Turing and Church (1930)'s.
 
 A Turing machine consists of the following:
 
-* **input alphabet**: A set of symbols used for inputs.
+* **input alphabet**: A finite set of symbols used for inputs.
 * **tape alphabet**:  Input alphabet plus and at least one additional symbol, 
-the **blank symbol**.
+the **blank symbol**. 
+  * It is important that the blank symbol is not one of the input symbols.
+  * The tape alphabet may have any finite number of additional symbols
+  beyond the blank symbol and the input alphabet.
+  * Traditionally, the blank symbol is denoted $\not\! b$ or
+  b or B or \textvisiblespace\ or with an underscore. Zylabs is quirky and uses *.
 * **states**: A finite set.
-* **initial/start state**: one of the states to start in
-* **final states**: some of the states are designated as final or accepting states.
-(In some variations there are two kinds of final states: accepting and rejecting.)
+* **initial/start state**: One of the states to start in
+* **halting states**: Some of the states are designated as halting state.
+These can further be divided into accepting states and rejecting states.
+
 * **program**: A list of **instructions**. Each instruction has 5 parts:
     * `<current tape symbol>`: any tape symbol
-    * `<current state>`: any state
+    * `<current state>`: any non-halting state
     * `<new tape symbol>`: any tape symbol
     * `<new state>`: any state
-    * `<direction>`: left, right, or stay
-        
+    * `<direction>`: left, right, or stay 
+      *  Some flavors of Turing machine, including the flavor in our Zybook
+      do not allow stay.
+   
+\newpage
+
 ## Execution of a Turing Machine program (Semantics)
 
-Imagine a machine with a 2-way infinite tape divided into cells.
+Imagine a machine with an infinite tape divided into cells.
 Each cell contains exactly one symbol from the tape alphabet.
 At the start of the execution, the input is written on the tape,
 the read/write head is located at the left most symbol of the input,
 and all cells that don't contain part of the input contain the blank symbol.
+The tape may be **1-way infinite**, in which case there is a left end to the tape,
+or **2-way infinite**, extening infinitely in both directions.
+
+Our Zybook shows some examples of 1-way infinite tapes.  Here is a picture 
+of a 2-way infinite tape.
 
 ```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
 knitr::include_graphics("../images/TM-Fig-12-5-1.png")
@@ -60,23 +82,32 @@ to determine its action:
 This is repeated until one of two things happens:
 
 * there is no instruction to execute, or
-* the state is a final state
+* the state is a halting state
 
 When either of these two things happens, the machine **halts**. 
+Otherwise it runs forever.
 
-### ASCII Representations of Turing Machines
+## ASCII Representations of Turing Machines
 
 There are several websites that provide Turing machine simulators. Here are 
 a few:
 
-* <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/> -- My favorite,
+* <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/> 
+
+    * My favorite,
 but no longer usable since it was written in java by Calvin student Eliot Eschelman
 back when java applets were still a thing.
-* <http://morphett.info/turing/turing.html> -- plain output, and less flexible (initial 
-state must always be called 0, for example), but the program encoding is terse.
-* <https://turingmachinesimulator.com/> -- nice looking and more flexible, 
-but each instruction takes up 3 lines (current state and tape symbol on one line; new state,
-direction, and new symbol on the next line; then a blank line)
+
+* <http://morphett.info/turing/turing.html> 
+
+    * plain output, and less flexible (initial state must always be called 0, 
+    for example), but the program encoding is terse.
+    
+* <https://turingmachinesimulator.com/> 
+
+    * nice looking and more flexible,  but each instruction takes up 3 lines
+    (current state and tape symbol on one line; new state, direction, and new
+    symbol on the next line; then a blank line)
 
 Each uses a slightly different ASCII representation of a Turing Machine.
 They are all pretty similar but differ in
@@ -87,19 +118,19 @@ They are all pretty similar but differ in
 * Whether they are case sensitive, disallow certain characters, observe white space, etc.
 * How left/right/stay are denoted
 * The order in which the 5 parts of an instruction are given
-* Which of various variations on the the 1-tape Turing machine theme they support (and how you
-tell the simulator which flavor
+* Which of various variations on the Turing machine theme they support (and how you tell the simulator which flavor to use).
 
-## Examples
+\newpage
 
-### Example 1
+
+### Example 1 (13.5.1 in Rosen 7)
 
 <!-- Example 12.5.1 from Rosen6 -->
 
 ```
 ; in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
-; s0 is initial state
+; s0 is initial state in Rosen
 0  * * * s0
 s0 0 0 r s0 
 s0 1 1 r s1 
@@ -112,7 +143,8 @@ s2 1 0 r halt
 
 1. For each input string below, determine the configuration
 (tape contents, location of read-write head, and state)
-of the Turing machine when it halts.
+of the Turing machine when it halts.  
+Do this by hand, then check your work using the simulator.
 
     a. $\lambda$
     b. 01
@@ -120,91 +152,196 @@ of the Turing machine when it halts.
     b. 010110
     b. 001
 
-\newpage    
 
 ### Example 2
 
 ```
-; [init] is initial state
-0 * * * [init]
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0 * * * [init]          ; [init] is "initial state"
 [init] 0 0 r [10] 
 [init] 1 0 r [01]
-[init] _ _ * halt-init
-[00] 0 0 r [10]
-[00] 1 1 r [01]
-[00] _ _ * halt-00
-[01] 0 0 r [11]
-[01] 1 1 r [00]
-[01] _ _ r [01]
-[10] 0 0 r [00]
-[10] 1 1 r [11]
-[11] 0 0 r [01]
-[11] 1 1 r [10]
+[init] _ _ * halt-accept
+[00]   0 0 r [10]
+[00]   1 1 r [01]
+[00]   _ _ * halt-accept
+[01]   0 0 r [11]
+[01]   1 1 r [00]
+[01]   _ _ r [01]
+[10]   0 0 r [00]
+[10]   1 1 r [11]
+[11]   0 0 r [01]
+[11]   1 1 r [10]
 ```
 
 2. For each input string below, determine the configuration
 (tape contents, location of read-write head, and state)
 of the Turing machine when it halts.
+Do this by hand, then check your work using the simulator.
 
     a. $\lambda$
     b. 0110
     c. 01111
     d. 01110
 
+\newpage
 
-### The language recognized by a Turing Machine
+### Table notation
+
+3. Convert the Turing machine in the table below (Zybook table 4.5.2)
+
+$\delta$ |  a	        |  b	          | *
+-------- | :--------: | :-----------: | :-----------:
+q0	     | (q0, a, R)	| (q1, b, R)	  | (qrej, *, L)
+q1	     | (q1, a, R)	| (qacc, b, L)	| (qrej, *, L)
+
+into an ASCII representation for use at
+
+a. <http://morphett.info/turing/turing.html>
+b. <https://turingmachinesimulator.com/> 
+    
+
+## The language recognized by a Turing Machine
 
 We will say that a Turing machine $M$ accepts a string $x$ (by state) if 
-on input $x$ it halts in a final state. The language recognized by a Turing machine is 
+on input $x$ it halts in an accepting state. 
+The language recognized by such a Turing machine is 
 
 $$
 L(M) = \{x \mid M \mbox{ accepts } x\}
 $$
 
-3. What languages do the previous two machines recognize?
+4. If $x \not\in L(M)$, what are the two ways the machine $M$ might
+behave on input $x$?
+
+5. What language does the machine in Example 2 above recognize?
 
 ### Designing a Turing Machine
 
-4. Design a Turing machine that recognizes 
+For each of the following, design a Turing machine that always 
+halts and use one of the simulators to run your program on some 
+test strings. Explain in words what each of your states is for.
+
+6. Design a Turing machine that recognizes 
 $(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$
 
-5. Design a Turing machine that recognizes
+<!-- This is Example 13.5.2 in Rosen 7 -->
+
+```{r include = FALSE, eval = FALSE}
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+; s0 is initial state in Rosen
+0  * * * s0
+s0 0 0 r s1 
+s0 1 1 r s1 
+s1 0 0 r s2
+s1 1 1 r halt-accept-s3 
+s2 0 0 r s2
+s0 _ 0 r s2
+s1 _ 0 r s2
+```
+
+```{r include = FALSE, eval = FALSE}
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0      * * * start
+start  * * r second 
+second 1 1 r halt-accept
+second 0 0 r halt-reject
+second _ _ l halt-reject   
+start  _ _ r halt-reject
+```
+
+
+7. Design a Turing machine that recognizes
 $\{0^n1^n \mid n \ge 0\}$.  This shows that Turing machines
 can recognize languages that are not regular.
 
+```{r include = FALSE, eval = FALSE}
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0      * * * start
+start  * * r second 
+second 1 1 r halt-accept
+second 0 0 r halt-reject
+second _ _ l halt-reject   
+start  _ _ r halt-reject
+```
+
+8. Design a Turing machine that has input
+alphabet $\{$ `(`, `)`, `0`, `1`, `+` $\}$ 
+and recognizes strings where the parentheses are properly nested.
+
+    * Bonus: See how few states you can use.
+
+```{r include = FALSE, eval = FALSE}
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0      * * * searchR
+searchR ) ] l searchL 
+searchR _ _ l noR 
+searchR * * r noR 
+searchL ( [ r searchR
+searchL _ _ r halt-reject  ; no ( for some )
+searchL * * l searchL
+noR     _ _ r halt-accept  ; no ( either
+noR     ( ( r halt-reject  ; extra (
+noR     * * l noR
+```
+
+```{r include = FALSE, eval = FALSE}
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0 _ Y r halt
+0 ( { r 1
+0 ) N r halt
+0 \ / l 0
+0 / \ r 0
+1 ( [ r 1
+1 ) / l 1
+1 [ \ r 1
+1 _ N r halt
+1 { \ r 0
+1 \ / l 1
+1 / \ r 1
+```
 Turing machines can also compute functions.  The output of a Turing
 machine is the tape contents when it halts.
 
-6. Design a Turing machine that adds in unary. Use the input alphabet
+9. Design a Turing machine that adds in unary. Use the input alphabet
 $\{1,+\}$.
 
     In unary, a non-negative integer $n$ is represented by $n+1$ 1's.  So 3 is represented as 1111.
     
     Example: Our machine should convert `111+1111` into ______________.
-    
+
+### Neat computation
+
 A Turing machine computes **neatly** if when it halts (a) the read/write head
 is on the left-most non-blank tape symbol (or any blank symbol if the tape is
 all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
 are contiguous on the tape).
 
-7. Modify your previous machine so that it computes neatly.
+10. Modify your previous machine so that it computes neatly.
 
 \newpage
 
-## What Can Turing Machines Do?
+# What Can Turing Machines Do?
 
-### Turing Computable Languages
+## Turing Computable Languages
 
 A language $L$ is **Turing computable** if it is recognized by some Turing machine **that always halts**, that is, 
 
 * $L = L(M)$ for some Turing machine $M$.
-* $M$ halts on every input.  (If $x\in L$ it halts in an accepting state.)
+* $M$ halts on every input.
+(If $x\in L$, them $M$ halts in an accepting state on input $x$.
+If $x \not\in L$, then $M$ halts in a rejecting state on input $x$.)
 
 1. Show that every regular language is Turing computable.
 
     [Hint: What must you do to demonstrate this?]
 
-### The Halting Problem
+## The Halting Problem
 
 The **Halting Problem** is a famous example of a language that is not Turing computable. 
 By the **Church-Turing Thesis**, this would mean it is not computable by any means.
@@ -251,7 +388,7 @@ Here is a description of the Halting Problem.
 
 2. Show that that Halting Problem is not Turing computable.
 
-### Variations on the Turing Machine
+## Variations on the Turing Machine
 
 There are many variations on the Turing machine.  Here are some
 examples.
@@ -318,7 +455,7 @@ on an input of length $n$ is bounded by $p(n)$ for some polynomial $p$.
 A **non-deterministic Turing machine** can have multiple transitions
 from the same state/tape contents configuration.  A non-deterministic
 TM accepts an input $x$ if there is a way of choosing transitions
-that causes the machine to halt in a final state.  (This is similar 
+that causes the machine to halt in a halting state.  (This is similar 
 to how non-deterministic automata were defined).  $NP$ is the set of 
 all languages that can be recognized by a non-deterministic
 Turing machine in polynomial time.
