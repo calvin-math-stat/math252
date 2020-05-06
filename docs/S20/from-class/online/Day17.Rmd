@@ -31,7 +31,7 @@ theme_set(theme_bw())
 #### Homework
 
 * Due today:  PS 17 (submit via [gradescope](https://gradescope.com))
-* Due Friday: PS 18 
+* Due Friday:  PS 18 (submit via [gradescope](https://gradescope.com))
 
 #### Worksheets
 
