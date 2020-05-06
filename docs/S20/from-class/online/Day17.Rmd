@@ -31,7 +31,7 @@ theme_set(theme_bw())
 #### Homework
 
 * Due today:  PS 17 (submit via [gradescope](https://gradescope.com))
-* Due Friday:  PS 18 (submit via [gradescope](https://gradescope.com))
+* Due Monday:  PS 18 (submit via [gradescope](https://gradescope.com))
 
 #### Worksheets
 
@@ -40,7 +40,8 @@ Models of Computation
 * [HTML](../models-of-computation/turing-machines)
 * [PDF](../models-of-computation/Models-of-Computation.pdf)
 
-The goal is to get through Exercise 7 or 8 today.
+The goal is to get through Exercise 5. Next time we will learn how to
+create our own Turing machines.
 
 ### Solutions/Hints/etc.
 
@@ -87,91 +88,3 @@ and an even number of 1's.
 
 </div>
 
-<div class = "foldable" label = "Exercise 6"> 
-
-Here are two Turing machines that recognizes 
-$(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$
-
-This is Example 13.5.2 in Rosen 7
-
-```
-; in style of <http://morphett.info/turing/turing.html>
-; state symbol symbol direction state
-; s0 is initial state in Rosen
-0  * * * s0
-s0 0 0 r s1 
-s0 1 1 r s1 
-s1 0 0 r s2
-s1 1 1 r halt-accept-s3 
-s2 0 0 r s2
-s0 _ 0 r s2
-s1 _ 0 r s2
-```
-
-Here is a similar machine with better names for the states.
-
-```
-; in style of <http://morphett.info/turing/turing.html>
-; state symbol symbol direction state
-0      * * * start
-start  * * r second 
-second 1 1 r halt-accept
-second 0 0 r halt-reject
-second _ _ l halt-reject   
-start  _ _ r halt-reject
-```
-</div>
-
-<div class = "foldable" label = "Exercise 7"> 
-See Rosen, page 891-892.
-</div>
-
-<div class = "foldable" label = "Exercise 8"> 
-
-Here is a Turing machine that has input
-alphabet $\{$ `(`, `)`, `0`, `1`, `+` $\}$ 
-and recognizes strings where the parentheses are properly nested.
-Here is how to think about the states:
-
-* searchR: scanning right looking for a )
-* searchL: scanning left looking for a (
-* noR: scanning left to make sure there are no unmatched ('s since we 
-are out of )'s.
-
-Note the use of the wild card to shorten the code.
-
-```
-; in style of <http://morphett.info/turing/turing.html>
-; state symbol symbol direction state
-0      * * * searchR
-searchR ) ] l searchL 
-searchR _ _ l noR 
-searchR * * r noR 
-searchL ( [ r searchR
-searchL _ _ r halt-reject  ; no ( for some )
-searchL * * l searchL
-noR     _ _ r halt-accept  ; no ( either
-noR     ( ( r halt-reject  ; extra (
-noR     * * l noR
-```
-
-Here is a version that only uses 2 states, but isn't as easy to understand.
-
-```
-; in style of <http://morphett.info/turing/turing.html>
-; state symbol symbol direction state
-0 _ Y r halt
-0 ( { r 1
-0 ) N r halt
-0 \ / l 0
-0 / \ r 0
-1 ( [ r 1
-1 ) / l 1
-1 [ \ r 1
-1 _ N r halt
-1 { \ r 0
-1 \ / l 1
-1 / \ r 1
-```
-
-</div>
