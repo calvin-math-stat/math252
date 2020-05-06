@@ -120,7 +120,7 @@ Additional assignments will be filled in over time.
 	   \mand[pumping lemma]{23, 25}
 	   \\
 	   \hline
-	  Fri 5/8 & PS 18 & Rosen 13.5 &
+	  Mon 5/10 & PS 18 & Rosen 13.5 &
 	  \mand[trace TM]{2}
 	  \mand[trace TM]{5}
 	  \extra[trace TM]{1}
