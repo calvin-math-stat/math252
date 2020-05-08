@@ -26,7 +26,7 @@ theme_set(theme_bw())
 
 ### Daily Dope Sheet 
 
-## Wednesday, May 8: Designing Turing Machines
+## Friday, May 8: Designing Turing Machines
 
 #### Homework
 
