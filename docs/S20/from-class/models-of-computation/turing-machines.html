@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2020-05-06" />
+<meta name="date" content="2020-05-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -195,7 +195,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#the-language-recognized-by-a-turing-machine"><i class="fa fa-check"></i><b>9.4</b> The language recognized by a Turing Machine</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="turing-machines.html"><a href="turing-machines.html#designing-a-turing-machine"><i class="fa fa-check"></i><b>9.4.1</b> Designing a Turing Machine</a></li>
-<li class="chapter" data-level="9.4.2" data-path="turing-machines.html"><a href="turing-machines.html#neat-computation"><i class="fa fa-check"></i><b>9.4.2</b> Neat computation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="turing-machines.html"><a href="turing-machines.html#computing-funcitons-with-a-turing-machine"><i class="fa fa-check"></i><b>9.5</b> Computing funcitons with a Turing machine</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="turing-machines.html"><a href="turing-machines.html#neat-computation"><i class="fa fa-check"></i><b>9.5.1</b> Neat computation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html"><i class="fa fa-check"></i><b>10</b> What Can Turing Machines Do?</a><ul>
@@ -458,7 +460,8 @@ halts and use one of the simulators to run your program on some
 test strings. Explain in words what each of your states is for.</p>
 <ol start="6" style="list-style-type: decimal">
 <li>Design a Turing machine that recognizes
-<span class="math inline">\((\boldsymbol{0} \cup \boldsymbol{1})\boldsymbol{1}(\boldsymbol{0} \cup \boldsymbol{1})^*\)</span></li>
+<span class="math inline">\((\boldsymbol{0} \cup \boldsymbol{1})\boldsymbol{1}(\boldsymbol{0} \cup \boldsymbol{1})^*\)</span>.
+Is every regular language recognized by a Turing machine? How do you know?</li>
 </ol>
 <!-- This is Example 13.5.2 in Rosen 7 -->
 <ol start="7" style="list-style-type: decimal">
@@ -472,6 +475,10 @@ and recognizes strings where the parentheses are properly nested.</p>
 <li>Bonus: See how few states you can use.</li>
 </ul></li>
 </ol>
+</div>
+</div>
+<div id="computing-funcitons-with-a-turing-machine" class="section level2">
+<h2><span class="header-section-number">9.5</span> Computing funcitons with a Turing machine</h2>
 <p>Turing machines can also compute functions. The output of a Turing
 machine is the tape contents when it halts.</p>
 <ol start="9" style="list-style-type: decimal">
@@ -480,15 +487,17 @@ machine is the tape contents when it halts.</p>
 <p>In unary, a non-negative integer <span class="math inline">\(n\)</span> is represented by <span class="math inline">\(n+1\)</span> 1’s. So 3 is represented as 1111.</p>
 <p>Example: Our machine should convert <code>111+1111</code> into ______________.</p></li>
 </ol>
-</div>
 <div id="neat-computation" class="section level3">
-<h3><span class="header-section-number">9.4.2</span> Neat computation</h3>
+<h3><span class="header-section-number">9.5.1</span> Neat computation</h3>
 <p>A Turing machine computes <strong>neatly</strong> if when it halts (a) the read/write head
 is on the left-most non-blank tape symbol (or any blank symbol if the tape is
 all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
 are contiguous on the tape).</p>
 <ol start="10" style="list-style-type: decimal">
-<li>Modify your previous machine so that it computes neatly.</li>
+<li><p>Modify your previous machine so that it computes neatly. What is the
+advantage of neatly computing Turing machines?</p></li>
+<li><p>Write a Turing machine that neatly computes the function <span class="math inline">\(f(x) = 2x\)</span> in
+unary.</p></li>
 </ol>
 <div style="page-break-after: always;"></div>
 </div>

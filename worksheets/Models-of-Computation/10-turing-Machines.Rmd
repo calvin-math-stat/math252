@@ -223,7 +223,8 @@ halts and use one of the simulators to run your program on some
 test strings. Explain in words what each of your states is for.
 
 6. Design a Turing machine that recognizes 
-$(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$
+$(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$.
+Is every regular language recognized by a Turing machine?  How do you know?
 
 <!-- This is Example 13.5.2 in Rosen 7 -->
 
@@ -305,6 +306,9 @@ noR     * * l noR
 1 \ / l 1
 1 / \ r 1
 ```
+
+## Computing funcitons with a Turing machine
+
 Turing machines can also compute functions.  The output of a Turing
 machine is the tape contents when it halts.
 
@@ -322,7 +326,11 @@ is on the left-most non-blank tape symbol (or any blank symbol if the tape is
 all blanks), and (b) there are no internal blanks (ie, all the non-blank symbols
 are contiguous on the tape).
 
-10. Modify your previous machine so that it computes neatly.
+10. Modify your previous machine so that it computes neatly. What is the 
+advantage of neatly computing Turing machines?
+
+11. Write a Turing machine that neatly computes the function $f(x) = 2x$ in
+unary.
 
 \newpage
 
