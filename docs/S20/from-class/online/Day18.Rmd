@@ -58,7 +58,7 @@ Models of Computation
 * [HTML](../models-of-computation/turing-machines)
 * [PDF](../models-of-computation/Models-of-Computation.pdf)
 
-Last time we learned how to trace the behavior of an Turing machine program
+Last time we learned how to trace the behavior of a Turing machine program
 and how Turing machines can be used to recognize languages.
 
 Today we will practice creating Turing machines to preform specified tasks.
@@ -69,7 +69,7 @@ Some advice: before starting to type in the code for a Turing machine,
 * Think about what it would look like to watch the Turing machine;
 * Define *states* that identify phases of the Turing machine action -- 
 choose good names for them;
-* Then fiture out what the machine needs to do when it encounters
+* Then figure out what the machine needs to do when it encounters
 different symbols in each of the states.
 
 ### Solutions/Hints/etc.
