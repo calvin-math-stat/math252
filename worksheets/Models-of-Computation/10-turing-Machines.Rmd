@@ -273,6 +273,10 @@ start  _ _ r halt-reject
 alphabet $\{$ `(`, `)`, `0`, `1`, `+` $\}$ 
 and recognizes strings where the parentheses are properly nested.
 
+    * Note: You don't have to do a full check that the input is a valid
+    expression (that would be a bit more involved, go ahead and add that if 
+    you like).  The intent here is just to do the parenthesis matching part.
+    
     * Bonus: See how few states you can use.
 
 ```{r include = FALSE, eval = FALSE}
