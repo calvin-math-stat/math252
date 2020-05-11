@@ -20,6 +20,7 @@ theme_set(theme_bw())
 \def\union{\cup}
 \def\To{\Rightarrow}
 \def\mybold#1{\boldsymbol{#1}}
+\def\enc#1{\langle #1 \rangle}
 
 
 <script src="../../../styles/folding.js"></script>
