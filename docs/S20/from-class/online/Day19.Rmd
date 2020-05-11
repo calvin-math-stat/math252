@@ -36,8 +36,16 @@ theme_set(theme_bw())
 
 Is there really nothing to do in this class?  Well, not exacltly. But there will be 
 not more homework assignments to turn in.  You are responsible for the information
-we cover in class today and Wednesday, but there won't be homework. Your focus (and our graders's focus) should be on finishing out the semester and preparing for final exams
-and projects.
+we cover in class today and Wednesday, but there won't be homework. Your focus 
+(and our graders' focus) should be on finishing out the semester and preparing for 
+final exams and projects.
+
+I should have some more information about the final on Wednesday, but here are some 
+important things to note:
+
+* It is cumulative.
+* The review sheets and extra problems for Tests 1 and 2 cover most of the 
+material on the final, so you get started preparing any time.
 
 #### A Note on scanning gradescope submissions
 
