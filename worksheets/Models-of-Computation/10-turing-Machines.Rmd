@@ -340,9 +340,10 @@ unary.
 
 # What Can Turing Machines Do?
 
-## Turing Computable Languages
+## Turing Computable Languages 
 
-A language $L$ is **Turing computable** if it is recognized by some Turing machine **that always halts**, that is, 
+A language $L$ is **Turing computable** (also called **decidable**) 
+if it is recognized by some Turing machine **that always halts**, that is, 
 
 * $L = L(M)$ for some Turing machine $M$.
 * $M$ halts on every input.
@@ -352,6 +353,67 @@ If $x \not\in L$, then $M$ halts in a rejecting state on input $x$.)
 1. Show that every regular language is Turing computable.
 
     [Hint: What must you do to demonstrate this?]
+    
+2. Construct a Turing Machine that recognizes the same language
+as this DFA, using your method from the previous problem.
+
+```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
+knitr::include_graphics("../images/Rosen13RQ-7.png")
+```
+
+## Variations on the Turing Machine
+
+There are many variations on the Turing machine.  Here are some
+examples.
+
+* Instead of having a single tape, a Turing machine can have multiple tapes.
+
+* Instead of being 2-way infinite, the tape(s) can have a left end.
+These are called 1-way infinite tapes.  
+
+* Turing machines may be required to move the head at each step (so "stay" is
+not an option).
+
+* Multi-track tapes aren't really a variation, but a handy way of thinking about
+a tape alphabet.  (And some simulators makes this easy to do.)  Since the tape alphabet
+may be anything, if we want to simulate writing two symbols from $A$, we can use a 
+tape alphabet of $A \times A$ or even $A \cup (A \times A)$. 
+One element of $A \times A$ represents two elements 
+from $A$ (one on the "top track" and one on the "bottom track").
+
+* Instead of having a 1-dimensional tape, a tape can be a
+2-dimensional grid of cells.  The read/write head can move up
+and down in addition to left and right.
+
+Each of these variations is equivalent to the standard Turing 
+machine with one 2-way infinite tape.  So are many other models of 
+computation.  This has led to the so-called **Church-Turing Thesis**.
+Here is one statement of that thesis:
+
+> A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.
+
+3. Write a 2-tape Turing machine to do parenthesis matching. It should run much
+faster than a 1-tape Turing machine for the same task. How will you take
+advantage of the second tape?
+
+4. Give a high level description of how to convert a Turing 
+machine with 2-way infinite tape into a Turing machine with a 
+1-way infinite tape.
+
+5. Give a high level description of how to convert a 2-tape 
+machine into a 1-tape machine.
+
+<!-- 5. **Nested Parens**  -->
+<!-- Write a Turing machine recognizes all strings that use the  -->
+<!-- input alphabet $\{(, ), *\}$ and the parentheses are properly -->
+<!-- nested.  (The asterisks may be anywhere.) -->
+
+<!--     a. First try this with a two-tape machine. -->
+<!--     b. Then try this with one two-track tape. -->
+<!--     c. For an extra challenge, try doing it with a one-tape machine -->
+<!--     with tape alphabet $\{(, ), *, \# \}$ -->
+
+\newpage
 
 ## The Halting Problem
 
@@ -393,62 +455,80 @@ An entire book [@Garey:1979] of such problems (and whether or not they were NP-c
 the 1970's by Garey and Johnson and popularized this description. So you will see languages
 referred to as problems throughout the CS literature.
 
-Here is a description of the Halting Problem.
+**Halting Problem** 
 
 * Instance: A Turing Machine $M$ and an input string $x$.
-* Question: Does $M$ stop on input $x$?  (This is written $M(x) \downarrow$.)
+* Question: Does $M$ halt on input $x$?  (This is written $M(x) \downarrow$.)
 
-2. Show that that Halting Problem is not Turing computable.
+\newpage
 
-## Variations on the Turing Machine
+### The Halting Problem is not Turing Computable (sketch)
 
-There are many variations on the Turing machine.  Here are some
-examples.
+\def\enc#1{\langle #1 \rangle}
 
-* Instead of having a single tape, a Turing machine can have multiple tapes.
+Here is a high level sketch of the proof that the Halting Problem is not
+Turing computable.
 
-* Instead of being 2-way infinite, the tape(s) can have a left end.
-These are called 1-way infinite tapes.  
+1. Choose particular encoding of a Turning machines as binary strings.
+(This can clearly be done since our Turing machine simulators do this using 
+ASCII strings and ASCII can be encoded in binary.) 
 
-* Turing machines may be required to move the head at each step (so "stay" is
-not an option).
+    * Decision problems typically envolve specifying an encoding. 
+    For EULER and 3-COLORABILITY, we would need to specify how we encode
+    our graphs, for example.  The details of the encoding matter
+    very little as long as we can extract the information we need.
 
-* Multi-track tapes aren't really a variation, but a handy way of thinking about
-a tape alphabet.  (And some simulators makes this easy to do.)  Since the tape alphabet
-may be anything, if we want to simulate writing two symbols from $A$, we can use a 
-tape alphabet of $A \times A$ or even $A \cup (A \times A)$. 
-One element of $A \times A$ represents two elements 
-from $A$ (one on the "top track" and one on the "bottom track").
+2. Code instances of the Halting Problem as $\enc{M}\#\enc{x}$, $\enc{M}$ 
+is the encoding of $M$ and $\enc{x}$ is a binary encoding of its input $x$.
 
-* Instead of having a 1-dimensional tape, a tape can be a
-2-dimensional grid of cells.  The read/write head can move up
-and down in addition to left and right.
+    * The only important thing here is that we can tell where the 
+    encoding for the machine halts and the encoding for the input begins.
 
-Each of these variations is equivalent to the standard Turing 
-machine with one 2-way infinite tape.  So are many other models of 
-computation.  This has led to the so-called **Church-Turing Thesis**.
-Here is one statement of that thesis:
+3. Suppose the Halting Problem is Turing Computable by a machine $H$. Let's use it 
+to build a new machine $K$ that works as follows.
 
-> A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.
-
-
-3. Give a high level description of how to convert a Turing 
-machine with 2-way infinite tape into a Turing machine with a 
-1-way infinite tape.
-
-4. Give a high level description of how to convert a 2-tape 
-machine into a 1-tape machine.
-
-5. **Nested Parens** 
-Write a Turing machine recognizes all strings that use the 
-input alphabet $\{(, ), *\}$ and the parentheses are properly
-nested.  (The asterisks may be anywhere.)
-
-    a. First try this with a two-tape machine.
-    b. Then try this with one two-track tape.
-    c. For an extra challenge, try doing it with a one-tape machine
-    with tape alphabet $\{(, ), *, \# \}$
+    a. on input $x$, create tape contents $x\#x$ and move the tape head back 
+    to the left end of the tape.  We can do this by moving back and 
+    forth on our tape to copy one symbol at a time -- sort of like our parenthesis
+    matching machine.
     
+    b. Now run machine $H$ with two modifications.
+    
+        i. change all accepting states to the state LOOP and and add the instruction
+        
+            ```
+            LOOP * * r *   ; this will cause the machine to move right forever.
+            ```
+    
+        ii. Change all rejecting states into accepting states.
+
+So that's our high level description of the Turing machine $K$.  How does this help us?
+Let's consider $H(\enc{K}\#\enc{K}$). (We're going to show the $H$ gets the wrong answer.)
+
+#### Exercises {-}
+
+6. Suppose $H(\enc{K}\#\enc{K})$ accepts. 
+
+    a. What does this tell us about $K$ because of how $H$ is defined?
+    b. What does this tell us about $K$ because of how we defined $K$?
+    
+        <!-- * $K$ on input $\enc{K}$ should halt, but -->
+        <!-- * $K$ on input $\enc{K}$ runs for ever because of 3.b.i. -->
+
+7. Suppose $H(\enc{K}\#\enc{K})$ rejects. 
+
+    a. What does this tell us about $K$ because of how $H$ is defined?
+    b. What does this tell us about $K$ because of how we defined $K$?
+
+        <!-- * $K$ on input $\enc{K}$ must never halt, but -->
+        <!-- * $K$ on input $\enc{K}$ will halt and accept because of 3.a. -->
+
+8. Combine these results to explain why the Halting Problem is not 
+Turing Computable.
+
+   
+\newpage
+
 ## Running time of a Turing machine
 
 The running time of a Turing machine on input $x$ is the number 

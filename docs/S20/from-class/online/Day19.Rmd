@@ -1,0 +1,123 @@
+---
+pagetitle: 'M252: 5/11/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+library(dplyr)
+theme_set(theme_bw())
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Monday, May 11: What Turing machines can and can't do
+
+#### Homework
+
+* Due today:  PS 18 (submit via [gradescope](https://gradescope.com))
+* Due Wednesday: Nothing!
+* Due Thursday: Nothing!
+
+Is there really nothing to do in this class?  Well, not exacltly. But there will be 
+not more homework assignments to turn in.  You are responsible for the information
+we cover in class today and Wednesday, but there won't be homework. Your focus (and our graders's focus) should be on finishing out the semester and preparing for final exams
+and projects.
+
+#### A Note on scanning gradescope submissions
+
+While grading Test 2, it became clear that using
+some sort of scanning software rather than a simple photograph makes things
+much easier to work with and more legible.  
+**I recommend that you all use scanning software rather than plain photos going forward, including on the final exam.**  Some examples include
+
+* Used by several students in our class
+    * [CamScanner](https://www.camscanner.com/)
+* Recommended by gradescope
+    * [Evernote Scannable](https://evernote.com/products/scannable) for iOS devices
+    * [Genius Scan](https://thegrizzlylabs.com/genius-scan/) for Android
+    
+* Another one I've heard about
+    * [MS Office Lens](https://play.google.com/store/apps/details?id=com.microsoft.office.officelens)
+    
+If you have used something else, let me know and I'll add it to the list.
+
+#### Worksheets
+
+Models of Computation
+
+* [HTML](../models-of-computation/turing-machines)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+Turing Machine simulators
+
+* <http://morphett.info/turing/turing.html> 
+
+    * plain output, and less flexible (initial state must always be called 0, 
+    for example), but the program encoding is terse.
+    
+* <https://turingmachinesimulator.com/> 
+
+    * nice looking and more flexible,  but each instruction takes up 3 lines
+    (current state and tape symbol on one line; new state, direction, and new
+    symbol on the next line; then a blank line)
+    
+Today we are going to talk a bit about what Turing machines can and cannot do
+and why the Turing machine model is important.  But we'll
+warm up with a reminder from last time: creating a Turing machine 
+that recognizes the same langauge as a DFA.
+
+### Solutions/Hints/etc.
+
+<div class = "foldable" label = "Exercise 1"> 
+Recall the big ideas from our discussion last time.
+
+* What will the states of the Turing machine be?
+* What will (most of) the transition in the Turing machine be?
+* How do we get the Turing machine to accept? (This is a little different from
+how a DFA works, but not hard.)
+
+</div>
+
+<div class = "foldable" label = "Exercise 2"> 
+If you are working on this during our live class, chat in our channel when you have it.
+We'll take a look at a solution or two, and I'll eventually copy and paste a solution
+here.
+</div>
+
+<div class = "foldable" label = "Exercise 3"> 
+You should be able to do this without ever moving left on the input tape.
+</div>
+
+<div class = "foldable" label = "Exercise 6"> 
+
+* Because of $H$: $K$ on input $\enc{K}$ should halt, but 
+* $K$ on input $\enc{K}$ runs for ever because of 3.b.i. 
+</div>
+
+<div class = "foldable" label = "Exercise 7"> 
+* Because of $H$: $K$ on input $\enc{K}$ must never halt, but 
+* $K$ on input $\enc{K}$ will halt and accept because of 3.a.
+</div>
+
+<div class = "foldable" label = "Exercise 8"> 
+$H$ is not a correct Turing machine for the Halting Problem since we just showed
+an answer it gets incorrect.  But can there be a different machine that works?
+No. We could do exactly the same procedure to show that that machine is also wrong
+at least once. Every Turing machine is wrong about the Halting Problem at least once.
+</div>
