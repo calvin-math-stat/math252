@@ -1,0 +1,131 @@
+---
+pagetitle: 'M252: 5/13/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+library(dplyr)
+theme_set(theme_bw())
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+\def\enc#1{\langle #1 \rangle}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Monday, May 13: Regular Expressions in Practice
+
+#### Homework
+
+* Due today: Nothing!
+* Due Thursday: Nothing!
+* But, you should play some of the regex games below to make sure you understand
+extended regular expressions as they are used in many programming langauges and editors.
+(The slides use Python, but things are pretty similar in lots of langauges.)
+
+#### We made it!
+
+Today is the last day of new material. Thursday will be a review day. Come with questions
+and we will discuss. I may try to schedule another review next week Monday or Tuesday, if
+people are interested.
+
+Thanks for all your work during this strange semester. I hope final projects and exams
+go well for all of you.
+
+#### Test 2
+
+Test 2 has (finally) been graded. I had to fight with Moodle a bit, but I'll spare you the details.
+
+* You can see **your score as item `test02` in Moodle**.
+
+  * A: 57-67
+  * B: 47-57
+  * C: 37-47
+  * D: 27-37
+  
+* You should be able to see your work in Moodle and Gradescope, I think.  Important notes:
+
+  * Some things were graded in Moodle, some in Gradescope, and some were post-processed by me
+  after Moodle tried (and failed) to grade things sanely. So don't put too much stock in 
+  any raw numbers that Moodle shows you (if it does).
+  
+  * In gradescope, the items worth 0 points are the ones that were graded in Moodle (and possibly then post-processed).
+  
+  * I think Moodlle will show you correct answers, even if it doesn't grade them the
+  way I want it to.
+  
+  * For most of the problems I hand graded, I looked at both Moodle and Gradescope, and then
+  recorded the grade in only one of the two.
+
+* If you see something fishy...
+ 
+  * Take a deep breath, read the comments above again, and see if it might actually be 
+  OK.
+  * If not, drop me an email and I'll investigate (eventually).
+  
+* Remember that if your final exam score is better than your worse test, I will
+replace the lower test with your final exam score.
+
+#### Final Exam
+
+I've posted information about the final exam on the test info page.
+
+Fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSdzTLw97yIrneWvpSAj0t-fa2SGHeqjca7cuAAThCR0XGS13w/viewform?usp=sf_link) to sign up for one of two times:
+
+* Wednesday at 1:30 pm
+* Thursday at 9:00 am
+
+#### Course Evaluations
+
+You have probably been getting nag emails about filling out a course evaluation.
+You can make those stop by filling out a course evaluation :^).
+
+If you like, you can also send me an email with comments about the course,
+especially about how things worked once we went online. We are all hoping to be
+on campus in the fall, but that will all depend on how things go with COVID-19
+over the summer. 
+We may also be developing some courses that are intended to be online.
+If all or part of the fall is online and for courses intended to be online, 
+we want to learn from this semester to make things that worked well even better
+and to change things that didn't work as well. 
+
+#### Slides
+
+Today will be a little bit different.  We will start by going through some slides
+together, and then instead of homeowrk to turn in, I have some regular expression
+games for you to play.
+
+* Slides: [(Python) Regular Expressions](https://docs.google.com/presentation/d/1yLmE835w4xJJPI0lsY0gcw4wLt91PrmNIQ7dOlvhvWI/edit?usp=sharing)
+    * I'll try to remember to turn on the recording in Teams so you can listen to
+    the audio as well.
+
+* [The regular expression game](http://play.inginf.units.it/#/)
+    * Construct regular expression to match the indicated portions of a page of text.
+    * These tasks seem to mimic the kinds of things you might really do (finding authors
+    in a bibilography, finding MAC addresses in some text, etc.)
+* [Regex crossword game](https://regexcrossword.com/)
+    * Fill in the crossword with text that matches regex clues.
+* [Regular expression golf](https://alf.nu/RegexGolf)
+    * Find a short regex that matches everything in one column but doesn't match
+    any portion of anything in the other column.
+    * Some of the hard ones here get pretty hard and not very "natural"
+
+### Solutions/Hints/etc.
+
+<div class = "foldable" label = "Exercise 1"> 
+</div>
+

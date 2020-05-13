@@ -3,7 +3,7 @@ output:
   html_document:
     includes:
       before_body: ../header.shtml
-    css: ../../styles/rpruim2017.css
+    css: ../../styles/rpruim2017a.css
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +15,7 @@ require(kableExtra)
 require(scales)
 t1bks <- c(20, 33, 45, 57, 69, 83) %>% rev()
   # c(20, 43, 54, 65, 76, 88) %>% rev()
-t2bks <- c(20, 40, 50, 60, 70, 86) %>% rev()
+t2bks <- c(10, 27, 37, 47, 57, 67) %>% rev()
 t3bks <- c(5, 20, 29, 38, 48, 58)  %>% rev()
 
 fbks  <- c(25, 74, 96, 118, 140, 165)  %>% rev()
@@ -192,51 +192,90 @@ $$
 Notes: 
 
 * Counting topics will largely arise in the context of probability calculations.
-* Some of you may have seen extended regular expressions that include additional operators like $+$. These
-are **not** included in our definition of regular expression.  (We will say something more about these later.)
-
-<!-- ### Test 3 -->
-
-<!-- **Date:** Friday, May 3 -->
+* Some of you may have seen extended regular expressions that include additional
+operators like $+$. These are **not** included in our definition of regular
+expression.  (We will say something more about these later.)
 
 
-<!-- ### Final Exam -->
+### Final Exam
 
-<!-- **Date/Time:** 1:30 on Wednseday, May 15 or 9am on Thursday, May 16.  -->
-<!-- (Please come to the time you have indicated so I have enough exam papers.) -->
+**Date/Time:** 1:30 pm on Wednesday, May 20 or 9 am on Thursday, May 21.
 
-<!-- **Material Covered**: The exam will cover topics from the entire semester. -->
-<!-- In addition to the topics listed above for each test, the following topics are -->
-<!-- also included: -->
+* Use this [sign up sheet](https://docs.google.com/forms/d/e/1FAIpQLSdzTLw97yIrneWvpSAj0t-fa2SGHeqjca7cuAAThCR0XGS13w/viewform?usp=sf_link) 
+to tell me which time you plan to take the exam.
 
-<!-- * Showing languages are not regular (Pumping Lemma). -->
-<!-- * **Python regular expressions** (at the level of the slides we used and the regular -->
-<!-- expression game). -->
-<!-- * **Turing Computation**: Definition of Turing machine, tracing Turing machines, -->
-<!-- designing Turing machines, Turing computable languages, all regular languages -->
-<!-- are Turing computable, Halting Problem. -->
 
-<!-- An example question that could have been on test 3: -->
+#### Logistics
 
-<!-- > We learned an algorithm for converting any DFA into a regular expression. -->
-<!-- This problem asks you a few questions about that algorithm. -->
+##### Respondus
 
-<!-- > a. In the first phase of the algorithm, -->
-<!-- we must modify the automaton to make sure it -->
-<!-- satisfies some properties that are necessary for the algorithm to work correctly. -->
-<!-- What are those properties? -->
-<!-- > b. Demonstrate how to do the first phase using the DFA below. -->
+We will be using Respondus for the Final Exam. This is similar to 
+RPnow, but appears to be a simpler to use.  (You will just navigate
+to the test inside Moodle since the integration with Moodle is tighter.)
 
-<!-- ```{r echo = FALSE, out.width="50%", fig.align = "center"} -->
-<!-- knitr::include_graphics("test3-fig1.png") -->
-<!-- ``` -->
 
-<!-- > c. In the second phase, states are ``ripped out" of a GNFA until -->
-<!-- only two states remain.  Using that process, show what happens -->
-<!-- when state $a$ is ripped out of the GNFA shown below. -->
-<!-- (You don't have to complete the process, just do this one step.) -->
+I'll be creating a **practice quiz** like I did for test 2 so that you 
+can test out the entire workflow prior to the final exam.
+I'll let you know when that is ready to go.
+**Please do this and let me know if you have any problems on your end.**
 
-<!-- ```{r echo = FALSE, out.width="50%", fig.align = "center"} -->
-<!-- knitr::include_graphics("test3-fig2.png") -->
-<!-- ``` -->
+You will have up to 3 hours to take the test, but it will be closer 
+to 2 or 2.5 times as long as a test.
+
+##### What is allowed during the exam?
+
+* You may use a **calculator**, but not your phone or any other devices.
+
+* You may not use any additional software on your computer other than 
+Moodle via the Respondus secure browser.
+    
+* You may have **pencils, pens, and erasers**, and some **blank paper** to write on. 
+    * You will show that this paper is blank during your room scan 
+    * You will submit your paper via gradescope when you are finished.
+    
+* You may not have other notes or books, consult other people or the internet.
+
+#### Material Covered
+
+The exam will cover topics from the entire semester. In addition to the topics
+listed above for each test, the following topics are also included:
+
+* Showing languages are not regular (Pumping Lemma).
+* **Applied (extended) regular expressions** 
+(at the level of the slides we used and the regular expression game).
+    * You should be able to write extended regular expressions as they appear in languages like Python.  (These are similar in most modern languages.)
+    * You should recognize Python commands like `re.search()`, `re.findAll()`, `re.sub()`, 
+    etc. (The specific command names and syntax will be different in each language,
+    but the key ideas of finding one match, finding all matches, and make substitutions
+    are fundamental to using regular expressions.)
+* **Turing Computation**: Definition of Turing machine, tracing Turing machines,
+designing Turing machines, Turing computable languages, all regular languages
+are Turing computable, Halting Problem.
+
+#### Example problem
+
+Here is a question that could have been (an nearly was) on test 3. 
+Since I wrote it, I thought I'd give it to you as a practice problem.
+
+1. We learned an algorithm for converting any DFA into a regular expression.
+This problem asks you a few questions about that algorithm.
+
+    a. In the first phase of the algorithm, we must modify the automaton to make
+    sure it satisfies some properties that are necessary for the algorithm to work
+    correctly. What are those properties?
+
+    b. Demonstrate how to do the first phase using the DFA below.
+
+    ```{r echo = FALSE, out.width="50%", fig.align = "center"}
+    knitr::include_graphics("test3-fig1.png")
+    ```
+
+    c. In the second phase, states are ``ripped out" of a GNFA until
+only two states remain.  Using that process, show what happens
+when state $a$ is ripped out of the GNFA shown below.
+(You don't have to complete the process, just do this one step.)
+
+    ```{r echo = FALSE, out.width="50%", fig.align = "center"}
+    knitr::include_graphics("test3-fig2.png")
+    ```
 
