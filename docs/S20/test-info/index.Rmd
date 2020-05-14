@@ -213,6 +213,8 @@ We will be using Respondus for the Final Exam. This is similar to
 RPnow, but appears to be a simpler to use.  (You will just navigate
 to the test inside Moodle since the integration with Moodle is tighter.)
 
+* [Respondus instructions](Respondus.html)
+
 
 I'll be creating a **practice quiz** like I did for test 2 so that you 
 can test out the entire workflow prior to the final exam.
