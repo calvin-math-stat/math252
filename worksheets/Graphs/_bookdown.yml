@@ -1,6 +1,6 @@
 ---
 book_filename: "Graph-worksheets"
-output_dir: "../../docs/S20/from-class/graphs"
+output_dir: "../../docs/S21/from-class/graphs"
 site: bookdown::bookdown_site
 language:
   ui:

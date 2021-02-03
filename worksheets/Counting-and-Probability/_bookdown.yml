@@ -1,6 +1,6 @@
 ---
 book_filename: "Counting-and-Probability"
-output_dir: "../../docs/S20/from-class/counting-and-probability"
+output_dir: "../../docs/S21/from-class/counting-and-probability"
 site: bookdown::bookdown_site
 language:
   ui:
