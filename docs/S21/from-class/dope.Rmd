@@ -1,0 +1,93 @@
+---
+title: ""
+pagetitle: "M252 Dope"
+output: 
+  html_document:
+    theme: yeti
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    css: ['../../styles/rpruim2020.css', '../../styles/folding.css']
+    includes:
+      before_body: ../header.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(qrcode)
+library(mosaic)
+library(rjp)
+library(tidyr)
+set.seed(123)
+spaces <- function(n) {
+  paste(rep(" ", n), collapse = "")
+}
+Roster <- read.csv('../../../grades/S21/Math252-S21-roster-clean.csv') %>%
+  mutate(name = paste(first, last))
+```
+
+<script src="../../styles/folding.js"></script>
+
+
+\def\prob{\operatorname{P}}
+\def\Prob{\operatorname{P}}
+\def\tand{\operatorname{and}}
+\def\tor{\operatorname{or}}
+\def\tif{\operatorname{if}}
+\def\intersect{\operatorname{and}}
+\def\union{\operatorname{or}}
+
+
+# Dope Sheets {.tabset}
+
+**dope**[^webster]
+
+* *n.* information, especially from a reliable source [the inside dope];  
+* *v.* figure out -- usually used with out;                              
+* *adj.* excellent
+
+[^webster]: Definitions selected from Webster's online dictionary  
+
+Here's where you can come to find out what's up each day. Homework 
+assignments are available on the [**homework page**](../hw/). 
+
+
+## Week 1 {.active}
+
+### Wed 2/3
+
+* Welcome to Math 252!
+
+* **Topic of the Day**: Intro to Graphs
+
+  * Worksheet:  [[PDF]](graphs/intro-to-graphs.pdf)
+  
+  <!-- [[HTML]](graphs/introduction-to-graphs.html)  -->
+  
+* [Homework](../hw/) due Friday
+
+  * Officially due at 11:59 pm, but you should attempt to have it done before class.
+  * Submit via [Gradescope](https:://gradescope.com) -- details on [the homework page](../hw)
+
+  
+### Fri 2/5
+
+
+```{r echo = FALSE, results = "asis", include = FALSE}
+set.seed(205)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+## Week 2 
+
+### Mon 2/8
+
+### Wed 2/10
+
+### Fri 2/12
