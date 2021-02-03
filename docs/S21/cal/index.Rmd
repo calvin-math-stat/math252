@@ -1,11 +1,11 @@
 ---
-title: "Calendar -- Spring 2020"
+title: "Calendar -- Spring 2021"
 author: ""
 date: ""
 output:
   html_document:
     includes:
-      before_body: ../header.shtml
+      before_body: ../header.html
 ---
 
 ```{r, setup, include = FALSE}
@@ -17,8 +17,8 @@ library(magrittr)
 ```{r, results = 'asis', echo = FALSE}
 daily2html(
   "daily.txt", 
-  start = lubridate::mdy("02/03/2020"), 
-  end   = lubridate::mdy("05/25/2020"), 
+  start = lubridate::mdy("02/01/2021"), 
+  end   = lubridate::mdy("05/15/2021"), 
   show = 2:6, 
   items = c("Topic", "Read", "R", "Due", "Note")) %>%
   cat()
@@ -27,6 +27,6 @@ daily2html(
 
 ```{r, fig.width = 10, fig.height = 10, eval = FALSE, include = FALSE}
 calendar("daily.txt", mask = c(2,4,6),
-         start = lubridate::mdy("02/03/2020")) %>%
+         start = lubridate::mdy("02/01/2021")) %>%
   gg_calendar(show = 2:6) 
 ```

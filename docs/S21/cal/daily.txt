@@ -25,68 +25,36 @@ Vocab;  t;      color=purple;   V:
 
 Test blackout requests
 
-===03/23/2020
-Note:: Spring Break
+Test blackout requests
 
-===03/24/2020
-Note:: Spring Break
+===03/04/2021
 
-===03/25/2020
-Note:: Spring Break
+Note:: Advising Day
 
-===03/26/2020
-Note:: Spring Break
+===03/23/2021
 
-===03/27/2020
-Note:: Spring Break
+Note:: Advising Day
 
+===04/14/2021
 
-===04/10/2020
+Note:: Advising Day
 
-Note:: Good Friday
-Note:: No Class
-
-===04/13/2020
-
-Note:: Easter Monday
-Note:: But we have class
-
-===04/21/2020
-
-Note:: Academic Advising
-Note:: No Class
-
-===04/22/2020
-
-Note:: Academic Advising
-Note:: No Class
+===04/04/2021
+Note:: Easter
 
 
-===05/14/2020
+===05/7/2021
 
-Note:: Friday Class Schedule
+Note:: Study Day
 
-===05/10/2019
 
-Note:: Reading Recess
-
-===05/20/2020
-
-Topic:: Final Exam B
-Topic:: 1:30 pm
-
-===05/21/2020
-
-Topic:: Final Exam A
-Topic:: 9am
-
-===02/03/2020
+===02/03/2021
 Topic:: Graphs and Models
 Read:: Rosen 10.1-10.2
 
 Welcome Back
 
-Info Sheet
+Info Sheet -- online
 
 Graph sheet #1
 
@@ -97,7 +65,7 @@ Overview of course [didn't do]
   * Models of computation (2/5)
 
 Home Page
-  * homework
+  * homework -- gradescope
   * webwork
   * calendar
   * textbook
@@ -864,7 +832,7 @@ Ramsey example: 6 people, show three are mutual friends or enemies [deferred]
 	graph rep: monochrome triangles
 
 
-===
+===endofcal
 Topic:: Permutations and Combinations
 Read:: Rosen 6.3
 #Vocab:: Sum Rule, Product Rule, bijection principle
