@@ -3,6 +3,7 @@ docs/S20/from-class/*/libs/
 grades/
 
 # these are generated from Rnw
+docs/*/hw/hw01.tex
 docs/*/hw/hw02.tex
 docs/*/hw/hw03.tex
 docs/*/from-class/*/*.tex
