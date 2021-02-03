@@ -27,10 +27,10 @@ output:
 <!--     I hope all three apply. -->
 
 
-## Daily Dope Sheets
+<!-- ## Daily Dope Sheets -->
 
-This will collect together the things you need (and need to know) for
-each day.
+<!-- This will collect together the things you need (and need to know) for -->
+<!-- each day. -->
 
 <!-- * [Day 19 online -- May 11](online/Day19.html) -->
 <!-- * [Day 18 online -- May 8](online/Day18.html) -->
@@ -133,7 +133,8 @@ each day.
 
 <!-- Date  | Handout -->
 <!-- ----- | --------------------------------------------------- -->
-<!-- 01/30 | [Intro to Graphs](Graphs-Intro.pdf) -->
+<!-- 02/03 | [Intro to Graphs](Graphs-Intro.pdf) -->
+
 <!-- 02/01 | [More Graphs](Graphs02.pdf) -->
 <!-- 02/04 | [Graph Representations, Graph Isomorphism](Graphs03.pdf) -->
 <!-- 02/06 | [Paths in Graphs](Graphs-Paths.pdf) -->
@@ -145,8 +146,8 @@ each day.
 ------------
 
 
-## Other Resources
+<!-- ## Other Resources -->
 
-Date  | Resource
------ | ---------------------------------------------------
-02/03 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)
+<!-- Date  | Resource -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 02/03 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms) -->
