@@ -16,7 +16,7 @@ button.explain {
 .active,
 button.foldable:hover,
 button.explain:hover {
-  background-color: #555;
+  # background-color: #555;
 }
 
 div.foldable,
