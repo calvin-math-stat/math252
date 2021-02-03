@@ -1,0 +1,20 @@
+---
+title: ""
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.html
+    css: ../../styles/rpruim2020.css
+    theme: yeti
+---
+
+
+
+Information about problem sets will be posted here as it become available.
+ 
+ * [Problem Sets due before Test 1](hw01.pdf)
+ * [Problem Sets due between Test 1 and Test 2](hw02.pdf)
+    * Some [comments on homework](hw02-notes.html)
+ * [Problem Sets due after Test 2](hw03.pdf)
