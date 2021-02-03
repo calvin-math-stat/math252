@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 \setcounter{page}{1}
 \newpage
 
@@ -21,7 +26,7 @@ between vertices.
 There are several flavors of graphs depending on how edges are associated with pairs of vertices and what constraints are placed on the edge set. The first four are the most important.
  
    graph type       |  edges   | multi-edges allowed?  | self-loops allowed?  | cycles allowed? 
---------------------|----------|---------------|----------------------|--------------- 
+--------------------|----------|:-------------:|:--------------------:|:-------------: 
 **simple graph**    | undirected      | no            | no                   | yes
 **tree**            | undirected      | no            | no                   | no
 **directed graph**  | directed    | no            | yes                  | yes
