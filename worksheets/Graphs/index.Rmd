@@ -4,8 +4,8 @@ author: "R Pruim"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
-  bookdown::pdf_book: default
   bookdown::gitbook: default
+  bookdown::pdf_book: default
 
 ---
 
