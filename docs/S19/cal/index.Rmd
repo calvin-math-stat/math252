@@ -6,17 +6,18 @@ output:
   html_document:
     includes:
       before_body: ../header.shtml
+    css: ../../styles/unmaintained.css
 ---
 
 ```{r, setup, include = FALSE}
-library(rjp)
+library(daily)
 library(magrittr)
 ```
 
 ```{r, results = 'asis', echo = FALSE}
 calendar_css() %>% cat()
 Cal <-
-  calendar("daily.txt", mask = c(2, 4, 6),
+  daily2cal("daily.txt", days = c(2, 4, 6),
          start = lubridate::mdy("1/28/2019")) 
 Cal %>% 
   html_calendar(show = 2:6, items = c("Topic", "Read", "R", "Due", "Note")) %>%

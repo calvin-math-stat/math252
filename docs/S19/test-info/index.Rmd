@@ -3,7 +3,7 @@ output:
   html_document:
     includes:
       before_body: ../header.shtml
-    css: ../../styles/rpruim2017.css
+    css: ../../styles/unmaintained.css
 ---
 
 ```{r setup, include=FALSE}

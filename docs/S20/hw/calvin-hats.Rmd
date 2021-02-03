@@ -1,0 +1,94 @@
+
+
+```{r data generation, echo = FALSE, results = "hide"}
+ag <- c(4, 3, 9, 9, 11)
+cm <- c(9, 9, 4, 3, 5)
+
+i <- sample(1:7, 1)
+ag <- c(11, 5, 4, 3, 9, 9, 11)[i]
+cm <- c(5, 11, 9, 9, 4, 3, 5)[i]
+
+sols <-
+  "Marbles in hats with fewer marbles are more likely to be selected.",
+  1/3,
+  1/3 * 1/(1 + ag),
+  1/3 * 1/(1 + ag) + 1/3 * 1/2 + 1/3 * cm/(cm + 1),
+  1/3 * 1/(1 + ag) / 1/3 * 1/(1 + ag) + 1/3 * 1/2 + 1/3 * cm/(cm + 1),
+  "100000",
+  "001000",
+  "010000",
+  "000010"
+)
+```
+
+Question
+========
+
+Calvin has three hats.  Each hat contains some maroon and some gold marbles.
+
+* Hat A has 1 maroon and `r ag` gold.
+* Hat B has 1 maroon and 1 gold.
+* Hat C has `r cm` maroon and 1 gold.
+
+Calvin randomly selects a hat (with equal probability) and then randomly selects
+a marble from that hat.
+
+Answerlist
+----------
+
+* All together, there are `r (4 + ag + cm)` marbles.
+  Explain why they are not equally likely to be selected.
+
+* What is the probability that the marble selected comes from hat A?
+
+* What is the probability that the selected marble is the maroon marble in hat A?
+
+* What is the probability that the selected marble is maroon (from any hat)?
+
+* If the marble selected is maroon, what is the probability that the hat selected
+is hat A?
+
+What is the correct notation for part b? (A is the event that the hat selected
+was hat A; M is the event that the marble is maroon.)
+
+* $\Prob(A)$ 
+* $\Prob(M)$ 
+* $\Prob(A \cap M)$ 
+* $\Prob(A \cup M)$ 
+* $\Prob(A \mid M)$ 
+* $\Prob(M \mid A)$
+
+What is the correct notation for part c?
+
+* $\Prob(A)$ 
+* $\Prob(M)$ 
+* $\Prob(A \cap M)$ 
+* $\Prob(A \cup M)$ 
+* $\Prob(A \mid M)$ 
+* $\Prob(M \mid A)$
+
+What is the correct notation for part d?
+
+* $\Prob(A)$ 
+* $\Prob(M)$ 
+* $\Prob(A \cap M)$ 
+* $\Prob(A \cup M)$ 
+* $\Prob(A \mid M)$ 
+* $\Prob(M \mid A)$
+
+What is the correct notation for part e?
+
+* $\Prob(A)$ 
+* $\Prob(M)$ 
+* $\Prob(A \cap M)$ 
+* $\Prob(A \cup M)$ 
+* $\Prob(A \mid M)$ 
+* $\Prob(M \mid A)$
+
+Meta-information
+============
+extype: cloze
+exclozetype: text|num|num|num|num|schoice|schoice|schoice|schoice
+exsolution:  paste(sols, sep = "|")
+exname: conditional probability
+extol: 0.003
