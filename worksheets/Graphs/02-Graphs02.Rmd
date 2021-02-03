@@ -4,15 +4,15 @@
 ## Some Example Graphs
 
 ```{r graphs02-example01, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("images/GraphFigs-9.6-9.7.png") 
+knitr::include_graphics("images/GraphFigs-9-6-9-7.png") 
 ```
 
 ```{r graphs02-example02, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("images/GraphFigs-9.8-9.9.png")
+knitr::include_graphics("images/GraphFigs-9-8-9-9.png")
 ```
 
 ```{r graphs02-example03, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("images/GraphFig-9.11.png")
+knitr::include_graphics("images/GraphFig-9-11.png")
 ```
 
 \newpage 
