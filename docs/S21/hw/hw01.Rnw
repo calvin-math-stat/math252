@@ -17,7 +17,7 @@
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
 
-\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S20-Pruim/WW#1}{WW#1}}
+\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S21-Pruim/WW#1}{WW#1}}
 
 \newif\ifanswers
 \answerstrue
@@ -112,7 +112,7 @@ Additional assignments will be filled in over time.
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-     never & \WW{0} & -- & Intro to WebWork
+     never & \WW{00} & -- & Intro to WebWork
      \\
      \hline
   	 Fri 2/5 & PS 1 & Rosen 10.1 &
@@ -124,7 +124,9 @@ Additional assignments will be filled in over time.
 	 \mand[Fred]{18}
 	 \mand[precedence graph]{33}
 	 \\
-	 \hline
+	 & & online & Fill out this \href{https://docs.google.com/forms/d/e/1FAIpQLScw7Y2EjYhofeA8nJ4qYZODBB1GSSaC2tPMBVL5L8uTUSiTBQ/viewform?usp=sf_link}{pre-course survey}
+	\\
+	\hline
 	 Mon 2/8 & \WW{01} & Rosen 10.2 &
 	 \\
 	 \hline
