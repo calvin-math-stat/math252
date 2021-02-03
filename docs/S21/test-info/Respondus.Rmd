@@ -1,0 +1,72 @@
+---
+title: "Using Respondus"
+output: html_document
+---
+
+### Technology prerequisites
+
+To use Respondus you need each of the following:
+
+1. a Windows machine with Windows 7, 8 or 10, a Mac with OS 10.10 or later, or an iPad with iOS 10.0 or later (a smartphone is not an alternative).
+    * If you use an ipad, you will need to figure out a way to prop it up so that it is steady and the camera has a good view of you.
+2. a webcam and microphone.
+3. reliable internet.
+
+If you have challenges with any of these, let me know well in advance of the test date
+and we will see what we can work out.
+
+
+### Respondus browser
+
+Respondus provides a special browser that locks out other apps and webpages. 
+The features of the browser include:
+
+1. Assessments are displayed full-screen and cannot be minimized.
+2. Browser menu and toolbar options are removed, except for Back, Forward, Refresh and Stop.
+3. Access to other applications including messaging, screen-sharing, virtual machines, and remote desktops is prevented.
+4. Printing and screen capture functions are disabled.
+5. Copying and pasting anything to or from an assessment is prevented.
+6. Right-click menu options, function keys, keyboard shortcuts and task switching are disabled.
+7. An assessment cannot be exited until the student submits it for grading.
+8. Assessments that are set up for use with LockDown Browser cannot be accessed with other browsers.
+
+I have enabled a built-in calculator that you may use if you like.
+
+### Respondus set up and practice quiz
+
+The first time you engage with Respondus through Moodle you will be asked to
+download the browser and install it, but you should not have to do so any subsequent time.
+
+I have created a practice quiz for you to take so you can test out the technology.
+You may take the practice quiz as many times as you like if you want to experiment 
+with different computers, etc.
+
+### Test environment
+
+1. Your test location should be quiet and free from distraction (to the extent possible). 
+2. On your table you will have only a pen/pencil, an eraser, a calculator, and blank sheets
+of paper on which to write solutions.
+3. You will not be allowed to use computers, phones, or any other external resources 
+while taking the exam. 
+
+### Accessing the Final Exam (and the practice quiz)
+
+The exam will be accessed within a Moodle Quiz environment. Just go to our Moodle
+course and select the appropriate item.
+
+### Sumbitting the work you do on paper
+
+When you finish the exam, scan your pencil-and-paper solutions and submit them via
+Gradescope, just as we have done for Test 2 and for homework.  A few notes:
+
+1. Your written work should be submitted as soon as you finish the test.
+
+2. Be sure to label things clearly.
+
+3. If you can use a scanning app rather than plain photos, this works much better
+for grading and is appreciated.
+
+4. Be sure to show all of your work. I will make it clear if there are problems
+that only need an answer in Moodle.  Otherwise, assume that work is required and
+must be shown.
+
