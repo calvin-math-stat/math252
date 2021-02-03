@@ -1,0 +1,32 @@
+---
+title: "Calendar -- Spring 2020"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+---
+
+```{r, setup, include = FALSE}
+library(calendar)
+library(magrittr)
+```
+
+
+```{r, results = 'asis', echo = FALSE}
+daily2html(
+  "daily.txt", 
+  start = lubridate::mdy("02/03/2020"), 
+  end   = lubridate::mdy("05/25/2020"), 
+  show = 2:6, 
+  items = c("Topic", "Read", "R", "Due", "Note")) %>%
+  cat()
+```
+
+
+```{r, fig.width = 10, fig.height = 10, eval = FALSE, include = FALSE}
+calendar("daily.txt", mask = c(2,4,6),
+         start = lubridate::mdy("02/03/2020")) %>%
+  gg_calendar(show = 2:6) 
+```
