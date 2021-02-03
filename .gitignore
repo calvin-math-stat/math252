@@ -1,6 +1,11 @@
-docs/S20/from-class/images/
-docs/S20/from-class/*/libs/
 grades/
+
+
+docs/S21/from-class/images/
+docs/S21/test-info/
+docs/S21/from-class/*/libs/
+docs/S21/from-class/online/
+
 
 # these are generated from Rnw
 docs/*/hw/hw01.tex
@@ -9,6 +14,13 @@ docs/*/hw/hw03.tex
 docs/*/from-class/*/*.tex
 
 .DS_store
+
+
+docs/S20/from-class/images/
+docs/S20/from-class/online/exams-testing*
+docs/S20/from-class/*/libs/
+
+docs/S19/from-class/SLO*
 
 # recordings not needed in repo
 *.mkv
