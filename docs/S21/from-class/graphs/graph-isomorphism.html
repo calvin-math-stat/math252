@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Graph Isomorphism | Graphs</title>
+  <meta name="description" content="4 Graph Isomorphism | Graphs" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Graph Isomorphism | Graphs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Graph Isomorphism | Graphs" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2021-02-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="graph-representations.html"/>
+<link rel="next" href="paths-in-graphs.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html"><i class="fa fa-check"></i><b>1</b> Introduction to Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graphs"><i class="fa fa-check"></i><b>1.1</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-flavors"><i class="fa fa-check"></i><b>1.1.1</b> Graph flavors</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-representation"><i class="fa fa-check"></i><b>1.1.2</b> Graph Representation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#labeled-graphs"><i class="fa fa-check"></i><b>1.1.3</b> Labeled Graphs</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-models"><i class="fa fa-check"></i><b>1.1.4</b> Graph Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#bonus-problem"><i class="fa fa-check"></i><b>1.2</b> Bonus Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-graphs.html"><a href="more-graphs.html"><i class="fa fa-check"></i><b>2</b> More Graphs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="more-graphs.html"><a href="more-graphs.html#some-example-graphs"><i class="fa fa-check"></i><b>2.1</b> Some Example Graphs</a></li>
+<li class="chapter" data-level="2.2" data-path="more-graphs.html"><a href="more-graphs.html#some-terminology"><i class="fa fa-check"></i><b>2.2</b> Some Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="more-graphs.html"><a href="more-graphs.html#some-questions"><i class="fa fa-check"></i><b>2.3</b> Some Questions</a></li>
+<li class="chapter" data-level="2.4" data-path="more-graphs.html"><a href="more-graphs.html#nfl"><i class="fa fa-check"></i><b>2.4</b> NFL</a></li>
+<li class="chapter" data-level="2.5" data-path="more-graphs.html"><a href="more-graphs.html#some-special-graphs"><i class="fa fa-check"></i><b>2.5</b> Some special graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="graph-representations.html"><a href="graph-representations.html"><i class="fa fa-check"></i><b>3</b> Graph Representations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="graph-representations.html"><a href="graph-representations.html#representations-of-graphs"><i class="fa fa-check"></i><b>3.1</b> 4 Representations of Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="graph-representations.html"><a href="graph-representations.html#edge-lists"><i class="fa fa-check"></i><b>3.1.1</b> Edge Lists</a></li>
+<li class="chapter" data-level="3.1.2" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-lists"><i class="fa fa-check"></i><b>3.1.2</b> Adjacency Lists</a></li>
+<li class="chapter" data-level="3.1.3" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.1.3</b> Adjacency Matrix</a></li>
+<li class="chapter" data-level="3.1.4" data-path="graph-representations.html"><a href="graph-representations.html#incidence-matrix"><i class="fa fa-check"></i><b>3.1.4</b> Incidence Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="graph-representations.html"><a href="graph-representations.html#representation-to-graphs"><i class="fa fa-check"></i><b>3.2</b> Representation to Graphs</a>
+<ul>
+<li class="chapter" data-level="" data-path="graph-representations.html"><a href="graph-representations.html#variations-on-the-theme"><i class="fa fa-check"></i>Variations on the theme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="graph-representations.html"><a href="graph-representations.html#graph-to-representation"><i class="fa fa-check"></i><b>3.3</b> Graph to representation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html"><i class="fa fa-check"></i><b>4</b> Graph Isomorphism</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-isomorphic"><i class="fa fa-check"></i><b>4.1</b> Showing graphs are isomorphic</a></li>
+<li class="chapter" data-level="4.2" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-not-isomorphic"><i class="fa fa-check"></i><b>4.2</b> Showing graphs are not isomorphic</a></li>
+<li class="chapter" data-level="4.3" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#isomorphic-or-not"><i class="fa fa-check"></i><b>4.3</b> Isomorphic or not?</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html"><i class="fa fa-check"></i><b>5</b> Paths in Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#definition-of-a-path"><i class="fa fa-check"></i><b>5.1</b> Definition of a path</a>
+<ul>
+<li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.3</b> Euler and Hamilton Paths</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.3.1</b> Can you trace it?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.4</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.5</b> Connectedness</a></li>
+<li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
+<li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html"><i class="fa fa-check"></i><b>6</b> Bipartite Graphs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
+<li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
+<li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar and Non-planar Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="7.2" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Graphs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="graph-isomorphism" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Graph Isomorphism</h1>
+<p>Two (mathematical) objects are called <strong>isomorphic</strong> if they are “essentially the same”
+(iso-morph means same-form).
+What “essentially the same” means depends on the kind of object.
+For graphs, we mean that the vertex and edge structure is the same. So</p>
+<blockquote>
+<p>Graphs <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> are <strong>isomorphic</strong> if there is a bijection (1-1 and onto function)<br />
+<span class="math display">\[f: G \to H\]</span> such that
+there is an edge from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> in <span class="math inline">\(G\)</span> if and only if
+there is an edge from <span class="math inline">\(f(a)\)</span> to <span class="math inline">\(f(b)\)</span> in <span class="math inline">\(H\)</span>.<br />
+The function <span class="math inline">\(f\)</span> is called an <strong>isomorphism</strong>.</p>
+</blockquote>
+<p>(For graphs that allow multi-edges, we require that the number of edges be the same.)</p>
+<p>More informally, to who to graphs are isomorphic, we must show how to match up
+vertices in one graph with vertices in the other so that edges are preserved.</p>
+<div id="showing-graphs-are-isomorphic" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Showing graphs are isomorphic</h2>
+<p>When graphs are isomorphic, we can demonstrate this by providing the isomorphism.</p>
+<ol style="list-style-type: decimal">
+<li><p>Show that the following pair of graphs is isomorphic by providing the
+isomorphism.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What must you demonstrate to convince someone that your function
+is indeed an isomorphism?</p></li>
+<li><p>Is there more than one isomorphism? If so, give another one.</p></li>
+</ol></li>
+</ol>
+<p><img src="../images/GraphEx-9-3-39.png" width="25%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="showing-graphs-are-not-isomorphic" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Showing graphs are not isomorphic</h2>
+<p>Showing that two graphs are <em>not</em> isomorphic can be trickier. Somehow you need
+to demonstrate that no isomorphism exists. Unfortunately, there are a lot of
+bijections (<span class="math inline">\(n!\)</span> if the graphs each have <span class="math inline">\(n\)</span> vertices), so checking
+all possible bijections to see if they are isomorphisms would not be
+a very efficient algorithm.</p>
+<p><strong>News Flash:</strong> Until recently, the best known algorithm for Graph Isomorphism
+had exponential worst case running time (but was polynomial time on average).
+In 2015, Laszlo Babai demonstrated an <a href="https://motherboard.vice.com/en_us/article/4xagmd/graph-isomorphism-youve-been-served">algorithm that runs in sub-exponential
+time</a>
+(almost, but not quite polynomial time).</p>
+<p>Back to showing two graphs are not isomorphic. We need to demonstrate that no
+isomorphism exists, but we don’t want to check all of them. One good approach
+is to consider <strong>graph invariants</strong>. A graph invariant is a property that is
+the same whenever two graphs are isomorphic.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Which of the following are graph invariants?</p>
+<ol style="list-style-type: lower-alpha">
+<li>number of vertices</li>
+<li>number of edges</li>
+<li>degree sequence</li>
+<li>adjacency matrix</li>
+<li>incidence matrix</li>
+<li>having a subgraph isomorphic to <span class="math inline">\(K_4\)</span></li>
+<li>having a subgraph isomorphic to _____ (can you fill in the blank with any graph?)</li>
+</ol></li>
+</ol>
+<p>Unfortunately, matching invariants does not guarantee that graphs are
+isomorphic, but you can use graph invariants to help narrow the search.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Explain why each of the following pairs of graphs is not isomorphic.</li>
+</ol>
+<p><img src="../images/GraphFig-9-3-9.png" width="45%" /><img src="../images/GraphFig-9-3-10.png" width="45%" /></p>
+</div>
+<div id="isomorphic-or-not" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Isomorphic or not?</h2>
+<ol start="4" style="list-style-type: decimal">
+<li>For each pair, determine whether the graphs are isomorphic. Be sure to explain how you know.</li>
+</ol>
+<p><img src="../images/GraphFig-9-3-12.png" width="45%" /><img src="../images/GraphEx-9-3-63.png" width="45%" /></p>
+<hr />
+<p><img src="../images/GraphEx-9-3-43.png" width="45%" /><img src="../images/GraphEx-9-3-37.png" width="45%" /></p>
+<div style="page-break-after: always;"></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="graph-representations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paths-in-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Graph-worksheets.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

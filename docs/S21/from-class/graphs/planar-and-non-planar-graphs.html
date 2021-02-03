@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Planar and Non-planar Graphs | Graphs</title>
+  <meta name="description" content="7 Planar and Non-planar Graphs | Graphs" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Planar and Non-planar Graphs | Graphs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Planar and Non-planar Graphs | Graphs" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2021-02-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bipartite-graphs.html"/>
+
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html"><i class="fa fa-check"></i><b>1</b> Introduction to Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graphs"><i class="fa fa-check"></i><b>1.1</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-flavors"><i class="fa fa-check"></i><b>1.1.1</b> Graph flavors</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-representation"><i class="fa fa-check"></i><b>1.1.2</b> Graph Representation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#labeled-graphs"><i class="fa fa-check"></i><b>1.1.3</b> Labeled Graphs</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-models"><i class="fa fa-check"></i><b>1.1.4</b> Graph Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#bonus-problem"><i class="fa fa-check"></i><b>1.2</b> Bonus Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-graphs.html"><a href="more-graphs.html"><i class="fa fa-check"></i><b>2</b> More Graphs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="more-graphs.html"><a href="more-graphs.html#some-example-graphs"><i class="fa fa-check"></i><b>2.1</b> Some Example Graphs</a></li>
+<li class="chapter" data-level="2.2" data-path="more-graphs.html"><a href="more-graphs.html#some-terminology"><i class="fa fa-check"></i><b>2.2</b> Some Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="more-graphs.html"><a href="more-graphs.html#some-questions"><i class="fa fa-check"></i><b>2.3</b> Some Questions</a></li>
+<li class="chapter" data-level="2.4" data-path="more-graphs.html"><a href="more-graphs.html#nfl"><i class="fa fa-check"></i><b>2.4</b> NFL</a></li>
+<li class="chapter" data-level="2.5" data-path="more-graphs.html"><a href="more-graphs.html#some-special-graphs"><i class="fa fa-check"></i><b>2.5</b> Some special graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="graph-representations.html"><a href="graph-representations.html"><i class="fa fa-check"></i><b>3</b> Graph Representations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="graph-representations.html"><a href="graph-representations.html#representations-of-graphs"><i class="fa fa-check"></i><b>3.1</b> 4 Representations of Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="graph-representations.html"><a href="graph-representations.html#edge-lists"><i class="fa fa-check"></i><b>3.1.1</b> Edge Lists</a></li>
+<li class="chapter" data-level="3.1.2" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-lists"><i class="fa fa-check"></i><b>3.1.2</b> Adjacency Lists</a></li>
+<li class="chapter" data-level="3.1.3" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.1.3</b> Adjacency Matrix</a></li>
+<li class="chapter" data-level="3.1.4" data-path="graph-representations.html"><a href="graph-representations.html#incidence-matrix"><i class="fa fa-check"></i><b>3.1.4</b> Incidence Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="graph-representations.html"><a href="graph-representations.html#representation-to-graphs"><i class="fa fa-check"></i><b>3.2</b> Representation to Graphs</a>
+<ul>
+<li class="chapter" data-level="" data-path="graph-representations.html"><a href="graph-representations.html#variations-on-the-theme"><i class="fa fa-check"></i>Variations on the theme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="graph-representations.html"><a href="graph-representations.html#graph-to-representation"><i class="fa fa-check"></i><b>3.3</b> Graph to representation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html"><i class="fa fa-check"></i><b>4</b> Graph Isomorphism</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-isomorphic"><i class="fa fa-check"></i><b>4.1</b> Showing graphs are isomorphic</a></li>
+<li class="chapter" data-level="4.2" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-not-isomorphic"><i class="fa fa-check"></i><b>4.2</b> Showing graphs are not isomorphic</a></li>
+<li class="chapter" data-level="4.3" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#isomorphic-or-not"><i class="fa fa-check"></i><b>4.3</b> Isomorphic or not?</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html"><i class="fa fa-check"></i><b>5</b> Paths in Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#definition-of-a-path"><i class="fa fa-check"></i><b>5.1</b> Definition of a path</a>
+<ul>
+<li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.3</b> Euler and Hamilton Paths</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.3.1</b> Can you trace it?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.4</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.5</b> Connectedness</a></li>
+<li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
+<li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html"><i class="fa fa-check"></i><b>6</b> Bipartite Graphs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
+<li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
+<li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar and Non-planar Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="7.2" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Graphs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="planar-and-non-planar-graphs" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Planar and Non-planar Graphs</h1>
+<p>A graph is a <strong>planar graph</strong> if it can be drawn in the plane with no edge crossings.
+[Note: You may need to rearrange the vertices and edges to avoid crossings.]</p>
+<div id="euler-and-planarity" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Euler and Planarity</h2>
+<p>We have already seen <strong>Euler’s Formula for Planar Graphs</strong>:</p>
+<p><span class="math display">\[v - e + r = 1 + \mbox{number of connected components} \;,\]</span>
+where <span class="math inline">\(v\)</span> is the number of vertices, <span class="math inline">\(e\)</span> the number of edges and <span class="math inline">\(r\)</span> the number of
+regions.</p>
+<p>In particular, for a connected graph we have <span class="math inline">\(v - e + r = 2\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Show that the following are planar.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(K_{2,2}\)</span></li>
+<li><span class="math inline">\(K_{2,3}\)</span></li>
+<li><span class="math inline">\(K_{2,4}\)</span></li>
+</ol></li>
+<li><p>Is <span class="math inline">\(K_{2,n}\)</span> planar for every <span class="math inline">\(n\)</span>?</p></li>
+<li><p>Use Euler’s formula to show that <span class="math inline">\(K_5\)</span> is not planar.</p>
+<ol style="list-style-type: lower-alpha">
+<li>How many vertices does <span class="math inline">\(K_5\)</span> have?</li>
+<li>How many edges does <span class="math inline">\(K_5\)</span> have?</li>
+<li>If <span class="math inline">\(K_5\)</span> were planar, how many regions would it have?</li>
+<li>Show that <span class="math inline">\(K_5\)</span> can’t have that number of regions, so it must not be planar.</li>
+</ol></li>
+<li><p>Use Euler’s formula to show that <span class="math inline">\(K_{3,3}\)</span> is not planar.</p></li>
+</ol>
+</div>
+<div id="kuratowskis-theorem" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Kuratowski’s Theorem</h2>
+<p>The proof of the following theorem is too involved for this course, but it turns
+out that all nonplanar graphs contain a “homeomorphic copy” of either <span class="math inline">\(K_{5}\)</span> or <span class="math inline">\(K_{3,3}\)</span>.</p>
+<p><strong>Kuratowski’s Theoerm:</strong>
+A graph <span class="math inline">\(G\)</span> is nonplanar if and only if it contains a subgraph <span class="math inline">\(H\)</span>
+that is homeomorphic to either <span class="math inline">\(K_5\)</span> or <span class="math inline">\(K_{3,3}\)</span>.</p>
+<ul>
+<li><p>two graphs are <strong>homeomorphic</strong> if they can each be obtained from the
+same graph by a sequence of elementary subdivisions.</p></li>
+<li><p>an <strong>elementary subdivision</strong> of a graph <span class="math inline">\(G\)</span> removes one edge <span class="math inline">\((u, v)\)</span> and
+adds a new vertex <span class="math inline">\(n\)</span> and two new edges <span class="math inline">\((u,n)\)</span> and <span class="math inline">\((v,n)\)</span>.
+<!-- That's a fancy way -->
+<!-- of saying "place an extra vertex in the middle of an edge to turn it into  -->
+<!-- two edges". --></p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Create a graph with 5 vertices and 7 edges. Now perform three elementary
+subdivisions on your graph.</p></li>
+<li><p>Describe what an elementary subdivision is in simple words a kindergarterner could understand.</p></li>
+<li><p>Explain why two homeomorphic graphs are either both planar or both nonplanar.</p></li>
+<li><p>Use Kuratowski’s Theorem to show that the Petersen graph is nonplanar.</p></li>
+</ol>
+<p><img src="../images/Graph-Peterson.png" width="25%" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bipartite-graphs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Graph-worksheets.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
