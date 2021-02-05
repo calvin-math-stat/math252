@@ -72,8 +72,11 @@ assignments are available on the [**homework page**](../hw/).
   
 ### Fri 2/5
 
+* Meet in Teams
 
-```{r echo = FALSE, results = "asis", include = FALSE}
+* Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
 set.seed(205)
 R <- shuffle(Roster) %>% group_by(section) %>% 
   mutate(group = rep(1:5, length.out = n())) %>%
@@ -83,6 +86,15 @@ for(g in 1:10) {
   cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
 }
 ```
+
+* **Topic of the Day:** More about Graphs
+
+  * Worksheet: [[PDF]](graphs.more-graphs.pdf)
+  
+    * If you print this out, I recommend printing 1-sided, or printing the first page separate from the other two.
+    That will make it easier to work with (less page flipping).
+    
+     
 
 ## Week 2 
 
