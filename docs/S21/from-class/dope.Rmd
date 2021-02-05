@@ -89,7 +89,7 @@ for(g in 1:10) {
 
 * **Topic of the Day:** More about Graphs
 
-  * Worksheet: [[PDF]](graphs.more-graphs.pdf)
+  * Worksheet: [[PDF]](graphs/more-graphs.pdf)
   
     * If you print this out, I recommend printing 1-sided, or printing the first page separate from the other two.
     That will make it easier to work with (less page flipping).
