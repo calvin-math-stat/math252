@@ -94,6 +94,8 @@ for(g in 1:10) {
     * If you print this out, I recommend printing 1-sided, or printing the first page separate from the other two.
     That will make it easier to work with (less page flipping).
     
+    * Keep track of your group's progress with this [Progress Log](Progress Log: https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing)
+    
      
 
 ## Week 2 
