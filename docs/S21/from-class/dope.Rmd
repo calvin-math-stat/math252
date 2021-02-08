@@ -52,7 +52,7 @@ Here's where you can come to find out what's up each day. Homework
 assignments are available on the [**homework page**](../hw/). 
 
 
-## Week 1 {.active}
+## Week 1 
 
 ### Wed 2/3
 
@@ -98,9 +98,19 @@ for(g in 1:10) {
     [Progress Log](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
      
 
-## Week 2 
+## Week 2 {.active}
 
 ### Mon 2/8
+
+* Meet in Teams
+
+* **Topic of the Day**: Representing Graphs
+
+  * Worksheet: 
+  [[PDF](graphs/graph-representations.pdf)]
+  [[HTML](graphs/graph-representations.html)]
+  
+* WebWork assignments due tonight and Wednesday night
 
 ### Wed 2/10
 
