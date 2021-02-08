@@ -51,6 +51,9 @@ Roster <- read.csv('../../../grades/S21/Math252-S21-roster-clean.csv') %>%
 Here's where you can come to find out what's up each day. Homework 
 assignments are available on the [**homework page**](../hw/). 
 
+And here is a link to the 
+[**Progress Log**](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
+we will often use when working in groups on Teams.
 
 ## Week 1 
 
