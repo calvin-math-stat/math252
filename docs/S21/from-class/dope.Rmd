@@ -146,7 +146,7 @@ can get different matrices for the same graph if you just change the order of th
 
 In problem 3, here is one way to show the second pair are not isomorphic:
 Consider $x$ and $y$.  They are adjacent and each has degree 2.  But there is no pair 
-of adjecent vertices with degree 2 in graph G. (There are other ways to show that these 
+of adjacent vertices with degree 2 in graph G. (There are other ways to show that these 
 graphs are not isomorphic as well.)
 
 In problem 4, 
