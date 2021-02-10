@@ -142,14 +142,10 @@ Additional assignments will be filled in over time.
   	 \mand[isomorphic?]{36}
   	 \mand[isomorphic?]{38}
   	 \mand[isomorphic?]{40}
+
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Mon 2/17 & PS 3 & Rosen 10.4 &
+	 	 Mon 2/15 & PS 3 & Rosen 10.4 &
 	 \mand[paths]{2}
 	 \mand[components]{6}
 	 \mand[strong/weak connectivity]{12}
@@ -167,6 +163,12 @@ Additional assignments will be filled in over time.
 	 \extra[isomorphic?]{21, 23}
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+
 	 Wed 2/19 & PS 4 & Rosen 10.5 &
 	 \mand[Euler paths/circuits]{2--8 even}
 	 \mand[bridges]{10}
