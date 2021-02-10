@@ -28,6 +28,11 @@ Roster <- read.csv('../../../grades/S21/Math252-S21-roster-clean.csv') %>%
 
 <script src="../../styles/folding.js"></script>
 
+<style>
+div.indent {
+  margin: 0 0 0 25px;
+}
+</style>
 
 \def\prob{\operatorname{P}}
 \def\Prob{\operatorname{P}}
@@ -131,5 +136,29 @@ for(g in 1:10) {
   
 * WW2 due tonight, PS 2 on Monday.
 
+<div class = "indent">
+<div class = "explain" label = "Show some comments on the worksheet">
+In problem 2, the two matrices are **not** graph invariants.  The problem is
+that for the matrices to match, the order of the vertices (and edges in the case
+of an incidence matrix) must line up according to the isomorphism. If they don't,
+you may have different matrices even though the graphs are isomorphic.  (In fact, you
+can get different matrices for the same graph if you just change the order of the vertices.)
+
+In problem 3, here is one way to show the second pair are not isomorphic:
+Consider $x$ and $y$.  They are adjacent and each has degree 2.  But there is no pair 
+of adjecent vertices with degree 2 in graph G. (There are other ways to show that these 
+graphs are not isomorphic as well.)
+
+In problem 4, 
+
+* The second pair are directed graphs.  Be sure to make the directions match when looking
+for an isomorphism.  In-degree and out-degree can be useful for directed graphs.
+
+* The third pair is challenging.  Both graphs are 3-regular (meaning every vertex has
+degree 3, so degree alone doesn't help you).
+</div>
+</div>
+<br>
 
 ### Fri 2/12
+
