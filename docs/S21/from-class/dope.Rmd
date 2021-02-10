@@ -107,6 +107,8 @@ for(g in 1:10) {
 
 * Meet in Teams
 
+* Same groups as Friday
+
 * **Topic of the Day**: Representing Graphs
 
   * Worksheet: 
@@ -116,5 +118,18 @@ for(g in 1:10) {
 * WebWork assignments due tonight and Wednesday night
 
 ### Wed 2/10
+
+* Meet in Teams
+
+* Same groups as Friday
+
+* **Topic of the Day**: Graph Isomorphism
+
+  * Worksheet: 
+  [[PDF](graphs/graph-isomorphism.pdf)]
+  [[HTML](graphs/graph-isomorphism.html)]
+  
+* WW2 due tonight, PS 2 on Monday.
+
 
 ### Fri 2/12
