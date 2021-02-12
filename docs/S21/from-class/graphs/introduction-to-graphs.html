@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -132,8 +131,11 @@
 <li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
 <li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
 <li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
-<li class="chapter" data-level="6.4" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>6.4</b> Euler and Planarity</a></li>
-<li class="chapter" data-level="6.5" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>6.5</b> Kuratowski’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar and Non-planar Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="7.2" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
 </ul></li>
 </ul>
 
@@ -169,8 +171,8 @@ between vertices.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="center">graph type</th>
-<th align="center">edges</th>
+<th>graph type</th>
+<th>edges</th>
 <th align="center">multi-edges allowed?</th>
 <th align="center">self-loops allowed?</th>
 <th align="center">cycles allowed?</th>
@@ -178,50 +180,50 @@ between vertices.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><strong>simple graph</strong></td>
-<td align="center">undirected</td>
+<td><strong>simple graph</strong></td>
+<td>undirected</td>
 <td align="center">no</td>
 <td align="center">no</td>
 <td align="center">yes</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>tree</strong></td>
-<td align="center">undirected</td>
+<td><strong>tree</strong></td>
+<td>undirected</td>
 <td align="center">no</td>
 <td align="center">no</td>
 <td align="center">no</td>
 </tr>
 <tr class="odd">
-<td align="center"><strong>directed graph</strong></td>
-<td align="center">directed</td>
+<td><strong>directed graph</strong></td>
+<td>directed</td>
 <td align="center">no</td>
 <td align="center">yes</td>
 <td align="center">yes</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>directed acyclic graph</strong></td>
-<td align="center">directed</td>
+<td><strong>directed acyclic graph</strong></td>
+<td>directed</td>
 <td align="center">no</td>
 <td align="center">no</td>
 <td align="center">no</td>
 </tr>
 <tr class="odd">
-<td align="center">multigraph</td>
-<td align="center">undirected</td>
+<td>multigraph</td>
+<td>undirected</td>
 <td align="center">yes</td>
 <td align="center">no</td>
 <td align="center">yes</td>
 </tr>
 <tr class="even">
-<td align="center">directed multigraph</td>
-<td align="center">directed</td>
+<td>directed multigraph</td>
+<td>directed</td>
 <td align="center">yes</td>
 <td align="center">yes</td>
 <td align="center">yes</td>
 </tr>
 <tr class="odd">
-<td align="center">pseudo-graph</td>
-<td align="center">undirected</td>
+<td>pseudo-graph</td>
+<td>undirected</td>
 <td align="center">yes</td>
 <td align="center">yes</td>
 <td align="center">yes</td>

@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2021-02-02" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -174,7 +173,7 @@ when <span class="math inline">\(1 \le i \le n\)</span>, then
 the same vertex and has length <span class="math inline">\(\ge 1\)</span>.</p></li>
 <li><p>A path or circuit is <strong>simple</strong> if it does not include the same edge more than once.</p></li>
 </ul>
-<div id="questions" class="section level3 unnumbered" number="">
+<div id="questions" class="section level3 unnumbered">
 <h3>Questions</h3>
 <ol style="list-style-type: decimal">
 <li><p>What is a path of length 0?</p></li>
@@ -186,9 +185,10 @@ does it matter? When does it not matter?</p></li>
 </div>
 <div id="paths-and-isomorphism" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Paths and Isomorphism</h2>
-<p>If <span class="math inline">\(f : G \to H\)</span> is an isomorphism, then <span class="math inline">\(f\)</span> maps paths in <span class="math inline">\(G\)</span> to paths in <span class="math inline">\(H\)</span>. (Why?)
-This can be useful for finding an isomorphism between <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> or for showing that there
-is no isomorphism.</p>
+<!-- If $f : G \to H$ is an isomorphism, and $G$ doesn't include multi-edges, -->
+<!-- then $f$ maps paths in $G$ to paths in $H$. (Why?) -->
+<p>Paths can be useful for finding an isomorphism between <span class="math inline">\(G\)</span> and <span class="math inline">\(H\)</span> or for showing
+that there is no isomorphism.</p>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Consider the pair of graphs below.</p>
 <ol style="list-style-type: lower-alpha">
@@ -205,8 +205,8 @@ path from <span class="math inline">\(v_1\)</span> to <span class="math inline">
 <p><img src="../images/GraphFig9-4-6.png" width="36%" style="display: block; margin: auto;" /></p>
 <div style="page-break-after: always;"></div>
 <ol start="5" style="list-style-type: decimal">
-<li>How about these graphs? Are they isomporphic? How can considering paths help you figure
-this out?</li>
+<li>How about these graphs? Are they isomporphic? How can considering paths help
+you figure this out?</li>
 </ol>
 <p><img src="../images/GraphFig9-4-7.png" width="36%" style="display: block; margin: auto;" /></p>
 </div>

@@ -162,3 +162,33 @@ degree 3, so degree alone doesn't help you).
 
 ### Fri 2/12
 
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(212)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+* **Topic of the Day**: Paths in Graphs
+
+  * Worksheet: 
+  [[PDF](graphs/paths-in-graphs.pdf)]
+  [[HTML](graphs/ipaths-in-graphs.html)]
+
+* PS 2 due tonight; PS 3 due Monday -- Submit via GradeScope
+
+```{r, include = FALSE}
+library(networkD3)
+G <- data.frame(
+  from = rep(1:10, each = 3),
+  to = c(2,5,10, 1,3,9, 2,8,4, 3,7,5, 1,4,6, 5,8,9, 4,6,9, 6,3,10, 
+         2,6,7, 1,8,6)
+)
+simpleNetwork(G, height="100px", width="100px", charge = 0)
+```
