@@ -6,7 +6,6 @@ site: bookdown::bookdown_site
 output: 
   bookdown::gitbook: default
   bookdown::pdf_book: default
-
 ---
 
 ```{r setup, include=FALSE}

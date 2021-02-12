@@ -35,9 +35,10 @@ knitr::opts_chunk$set(echo = TRUE)
  
 ## Paths and Isomorphism
 
-If $f : G \to H$ is an isomorphism, then $f$ maps paths in $G$ to paths in $H$. (Why?)
-This can be useful for finding an isomorphism between $G$ and $H$ or for showing that there
-is no isomorphism.
+<!-- If $f : G \to H$ is an isomorphism, and $G$ doesn't include multi-edges, -->
+<!-- then $f$ maps paths in $G$ to paths in $H$. (Why?) -->
+Paths can be useful for finding an isomorphism between $G$ and $H$ or for showing
+that there is no isomorphism.
 
 4. Consider the pair of graphs below.
  
@@ -60,8 +61,8 @@ knitr::include_graphics("../images/GraphFig9-4-6.png")
 
 \newpage 
 
-5. How about these graphs?  Are they isomporphic? How can considering paths help you figure
-this out?
+5. How about these graphs?  Are they isomporphic? How can considering paths help
+you figure this out?
 
 ```{r, echo = FALSE, fig.align = "center", out.width = "36%"}
 knitr::include_graphics("../images/GraphFig9-4-7.png")
