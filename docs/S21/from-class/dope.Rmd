@@ -175,6 +175,10 @@ for(g in 1:10) {
 }
 ```
 
+* Reminder: 
+You can request that we not have a test on a particular day by filling out 
+[**this form**](https://docs.google.com/forms/d/e/1FAIpQLSdZxGUTSv8ie4itR0ErnRDpfEVtxWS5t2noU0cxnye0GgvVbQ/viewform?usp=sf_link).
+
 * **Topic of the Day**: Paths in Graphs
 
   * Worksheet: 
