@@ -183,7 +183,7 @@ You can request that we not have a test on a particular day by filling out
 
   * Worksheet: 
   [[PDF](graphs/paths-in-graphs.pdf)]
-  [[HTML](graphs/ipaths-in-graphs.html)]
+  [[HTML](graphs/paths-in-graphs.html)]
 
 * PS 2 due tonight; PS 3 due Monday -- Submit via GradeScope
 
