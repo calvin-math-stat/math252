@@ -106,7 +106,7 @@ for(g in 1:10) {
     [Progress Log](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
      
 
-## Week 2 {.active}
+## Week 2 
 
 ### Mon 2/8
 
@@ -196,3 +196,30 @@ G <- data.frame(
 )
 simpleNetwork(G, height="100px", width="100px", charge = 0)
 ```
+
+## Week 3 {.active}
+
+### Mon 2/15
+
+* **Topics of the Day**: 
+
+  * Euler's Formula for Planar Graphs
+  * Euler paths
+  * Bipartite Graphs
+
+* Worksheets: 
+  
+  * Paths in Graphs (continued from last time): 
+  [[PDF](graphs/paths-in-graphs.pdf)]
+  [[HTML](graphs/paths-in-graphs.html)]
+  
+  * Bipartite Graphs (new): 
+  [[PDF](graphs/bipartite-graphs.pdf)]
+  [[HTML](graphs/bipartite-graphs.html)]
+  
+* Problem Set due each day this week
+
+### Wed 2/17
+
+### Fri 2/19
+
