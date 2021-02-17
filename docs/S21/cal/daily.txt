@@ -493,7 +493,7 @@ Topic:: Bipartite Graphs
 Read:: Rosen 10.2
 
 ===
-Topic:: Planer and Non-planar Graphs
+Topic:: Planar and Non-planar Graphs
 Read:: Rosen 10.7
 
 What happens if graph is not conneted?
@@ -508,10 +508,10 @@ Lemma: Every region in a simple graph has degree >= 3
 
 	Pf: degree 1 = loop; degree 2 -> multigraph
 
-Thm: For a connected planer simple graph,
+Thm: For a connected planar simple graph,
 		2e = sum of degrees of regions >= 3r
 
-Cor: For a connected planer simple graph with v >= 3, e <= 3v - 6
+Cor: For a connected planar simple graph with v >= 3, e <= 3v - 6
 
 	Proof: use Euler characteristic
 
@@ -521,19 +521,19 @@ Cor: For a connected planer simple graph with v >= 3, e <= 3v - 6
 
 			e <= 3v - 6
 
-	Note: so planer graphs are relative sparse
+	Note: so planar graphs are relative sparse
 
-Cor: K5 is non-planer
+Cor: K5 is non-planar
 
 	Proof: K5 has 10 edges and 5 vertices, but 3(10) - 6 = 9
 
-	Note: In fact, any planer graph must have a vertex of degree <= 5
+	Note: In fact, any planar graph must have a vertex of degree <= 5
 			else e >= 3 v, but e < 3v by above
 
-Cor: K3,3 is not planer
+Cor: K3,3 is not planar
 	Proof:  e = 9; v = 6  (so can't get it easy like for K5)
 
-		suppose K3,3 were planer, then
+		suppose K3,3 were planar, then
 			each region in K3,3 would have degree at least 4
 			since there are no 3-cycles in K3,3
 
@@ -543,14 +543,14 @@ Cor: K3,3 is not planer
 
 			but 2(6) - 4 = 8 < 9
 
-Thm: A graph is nonplaner iff if contains a subgraph homeomorphic to
+Thm: A graph is nonplanar iff if contains a subgraph homeomorphic to
 		K5 or K3,3
 
 	one direction of the proof is pretty easy
 	other direction is difficult
 
 
-How hard is it to check if a graph is planer?
+How hard is it to check if a graph is planar?
 
 	select 6 vertices (in order) : O(n^6) such tuples
 		check if subgraph induced by 6 vertices is homeomorphic to  K3,3
@@ -599,21 +599,21 @@ Planar graphs
 3 Houses/Utilities Problem
 	def: bipartite graph
 	def: complete bipartite graph
-	def: planer graph
+	def: planar graph
 
-	question becomes is K3,3 a planer graph
+	question becomes is K3,3 a planar graph
 
 some easier examples first
-	is K4 planer? yes (but not usual picture)
-	is Q3 planer? yes (but not usual picture)
+	is K4 planar? yes (but not usual picture)
+	is Q3 planar? yes (but not usual picture)
 
 Big Question for today:
-	is there an easy way to check if a graph is planer?
+	is there an easy way to check if a graph is planar?
 		is it easy like Euler paths
 		is it hard like Hamilton paths
 		are there conditions that work some of the time?
 
-K3,3 is not planer
+K3,3 is not planar
 	call vertices {a,b,c}  {1,2,3}
 	look at subgraph induced by {a,b,1,2}: this is K2,2
 		this is a cycle graph
@@ -622,9 +622,9 @@ K3,3 is not planer
 			adding edges to c divides this region into two regions
 		now there is nowhere to put vertex 3
 
-Regions of a planer graph
+Regions of a planar graph
 	the idea of regions was useful in the proof above,
-		but only makes sense for planer graphs.
+		but only makes sense for planar graphs.
 	is the number of regions an invariant?
 		perhaps different embeddings or different isomorhpic graphs
 			give rise to different numbers of regions
@@ -634,7 +634,7 @@ Regions of a planer graph
 				Graph		regions		edges 	vertices
 
 
-Thm (Euler). For any connected planer graph, r - e + v = 2
+Thm (Euler). For any connected planar graph, r - e + v = 2
 
 	Proof: Build up G: G1, G2, ... Ge adding one edge at a time
 		either add one edge and one vertex or one edge and one region
@@ -831,6 +831,10 @@ Clever example: monotone subseqences of length n+1 in sequence of length n^2 + 1
 Ramsey example: 6 people, show three are mutual friends or enemies [deferred]
 	graph rep: monochrome triangles
 
+
+===03/05/2021
+
+Topic:: Test 1
 
 ===endofcal
 Topic:: Permutations and Combinations
@@ -1650,7 +1654,7 @@ chromatic number examples
 Applications of graph coloring
 	coloring maps
 		reason for name
-		was known for a long time that all planer graphs can be 5-colored
+		was known for a long time that all planar graphs can be 5-colored
 		conjectured that all could be 4-colored
 		4-color theorem proved in 1970's using a computer to automate
 			checking many cases
