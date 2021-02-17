@@ -235,7 +235,7 @@ simpleNetwork(G, height="100px", width="100px", charge = 0)
   for determining if a graph is bipartite.
   
   * **Planar and Non-Planar Graphs**:
-  [[PDF](planar-and-non-planar-graphs.pdf)]
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
   [[HTML]](graphs/planar-and-non-planar-graphs.html)
   
     * Work through question 3.
