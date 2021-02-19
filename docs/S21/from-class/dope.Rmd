@@ -247,6 +247,16 @@ simpleNetwork(G, height="100px", width="100px", charge = 0)
 
 * **Test 1** will be two weeks from today.  More info next week.
 
+  * [Google Doc](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing) where you can post questions
+  
+    * I'll take a look at these before Monday and spend some time on them if needed
+    before moving on to our next unit (Counting and Probability)
+    
+    * I will likely schedule a review session on March 4 (advising day).  That will
+    be another opportunity to answer questions from this list.
+    
+    * I'll add additional sections next week.
+    
 * New Groups
 
 ```{r echo = FALSE, results = "asis", include = TRUE}

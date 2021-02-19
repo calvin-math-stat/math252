@@ -110,6 +110,11 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
 8. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
 
     Here's one way you can go about it.
+    You may find it helpful to see if you can find the subgraph of the 
+    Petersen graph that will be homeomorphic to $K_5$ or $K_{3,3}$ before you start
+    this process. (Ask yourself which 6 vertices will correspond to the 
+    vertices in $K_5$ or $K_{3,3}$? Which will be introduced by subdivision?
+    Which vertices or edges will you remove to get your subgraph?)
 
     a. Start with either $K_5$ or $K_{3,3}$.  (This might only work for
     one and not for the other, so give some thought to which one you choose.)
@@ -117,6 +122,7 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
     b. Perform some elementary subdivision on your selected graph.
     
     c. Show that your subdivision is isomorphic to a subgraph of the Petersen graph.
+    
  
 ```{r, echo = FALSE, fig.align = "center", out.width = "25%"}
 # URL to vido showing homeomorphism
