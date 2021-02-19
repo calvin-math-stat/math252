@@ -245,3 +245,23 @@ simpleNetwork(G, height="100px", width="100px", charge = 0)
   
 ### Fri 2/19
 
+* **Test 1** will be two weeks from today.  More info next week.
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(2192021)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+* **Planar and Non-Planar Graphs**:
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
+  [[HTML]](graphs/planar-and-non-planar-graphs.html)
+
+  

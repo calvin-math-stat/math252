@@ -87,26 +87,44 @@ out that all nonplanar graphs contain a "homeomorphic copy" of either $K_{5}$ or
 A graph $G$ is nonplanar if and only if it contains a subgraph $H$ 
 that is homeomorphic to either $K_5$ or $K_{3,3}$.
 
-  * two graphs are **homeomorphic** if they can each be obtained from the 
-  same graph by a sequence of elementary subdivisions.
-  
   * an **elementary subdivision** of a graph $G$ removes one edge $(u, v)$ and 
   adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$. 
+  
+  * a **subdivision** of a graph $G$ is the result of performing 0 or more
+  elementary subdivisions, starting from $G$.
+  
+  * two graphs are **homeomorphic** if some subdivision of one is isomorphic
+  to some subdivision of the other.
+  
   <!-- That's a fancy way -->
   <!-- of saying "place an extra vertex in the middle of an edge to turn it into  -->
   <!-- two edges". -->
   
- 5. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
+5. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
  subdivisions on your graph.
  
- 6. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
+6. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
 
- 7. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
+7. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
 
- 8. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
+8. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
+
+    Here's one way you can go about it.
+
+    a. Start with either $K_5$ or $K_{3,3}$.  (This might only work for
+    one and not for the other, so give some thought to which one you choose.)
+    
+    b. Perform some elementary subdivision on your selected graph.
+    
+    c. Show that your subdivision is isomorphic to a subgraph of the Petersen graph.
  
 ```{r, echo = FALSE, fig.align = "center", out.width = "25%"}
+# URL to vido showing homeomorphism
+url <-
+  "https://www.youtube.com/watch?v=SbjIdEbd754&ab_channel=FirstYearMathematicsandStatisticsUNSW"
 knitr::include_graphics("../images/Graph-Peterson.png")
 ```
+
+9. Show that the Petersen graph is not planar *without* using Kuratowski's Theorem.
  
 \newpage
