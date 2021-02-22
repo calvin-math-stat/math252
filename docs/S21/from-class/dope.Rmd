@@ -197,7 +197,7 @@ G <- data.frame(
 simpleNetwork(G, height="100px", width="100px", charge = 0)
 ```
 
-## Week 3 {.active}
+## Week 3 
 
 ### Mon 2/15
 
@@ -274,4 +274,15 @@ for(g in 1:10) {
   [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
   [[HTML]](graphs/planar-and-non-planar-graphs.html)
 
+## Week 4 {.active}
+
+### Mon 2/22
+
+* **Planar and Non-Planar Graphs**:
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
+  [[HTML]](graphs/planar-and-non-planar-graphs.html)
   
+* Graphs Wrap-up
+
+* Counting without counting [[HTML]](counting-and-probability/counting-basics.html)
+
