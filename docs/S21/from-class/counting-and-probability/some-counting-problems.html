@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Some Counting Problems | Counting and Probability</title>
+  <meta name="description" content="1 Some Counting Problems | Counting and Probability" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Some Counting Problems | Counting and Probability" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Some Counting Problems | Counting and Probability" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2021-02-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="pigeonhole-principle.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="some-counting-problems.html"><a href="some-counting-problems.html"><i class="fa fa-check"></i><b>1</b> Some Counting Problems</a></li>
+<li class="chapter" data-level="2" data-path="pigeonhole-principle.html"><a href="pigeonhole-principle.html"><i class="fa fa-check"></i><b>2</b> Pigeonhole Principle</a></li>
+<li class="chapter" data-level="3" data-path="division-principle.html"><a href="division-principle.html"><i class="fa fa-check"></i><b>3</b> Division Principle</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="division-principle.html"><a href="division-principle.html#a-problem-about-cookies"><i class="fa fa-check"></i><b>3.1</b> A problem about cookies</a></li>
+<li class="chapter" data-level="3.2" data-path="division-principle.html"><a href="division-principle.html#the-division-principle"><i class="fa fa-check"></i><b>3.2</b> The Division Principle</a></li>
+<li class="chapter" data-level="3.3" data-path="division-principle.html"><a href="division-principle.html#more-counting-problems"><i class="fa fa-check"></i><b>3.3</b> More Counting Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="counting-problems.html"><a href="counting-problems.html"><i class="fa fa-check"></i><b>4</b> Counting Problems</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="counting-problems.html"><a href="counting-problems.html#donut-problems"><i class="fa fa-check"></i><b>4.1</b> Donut problems</a></li>
+<li class="chapter" data-level="4.2" data-path="counting-problems.html"><a href="counting-problems.html#more-problems"><i class="fa fa-check"></i><b>4.2</b> More Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>5</b> Probability</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="probability.html"><a href="probability.html#notation-note"><i class="fa fa-check"></i><b>5.1</b> Notation Note</a></li>
+<li class="chapter" data-level="5.2" data-path="probability.html"><a href="probability.html#probability-axioms"><i class="fa fa-check"></i><b>5.2</b> Probability Axioms</a></li>
+<li class="chapter" data-level="5.3" data-path="probability.html"><a href="probability.html#some-additional-probability-rules"><i class="fa fa-check"></i><b>5.3</b> Some Additional Probability Rules</a></li>
+<li class="chapter" data-level="5.4" data-path="probability.html"><a href="probability.html#exercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>6</b> Conditional Probability</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-1"><i class="fa fa-check"></i><b>6.1</b> Exercises</a></li>
+<li class="chapter" data-level="6.2" data-path="conditional-probability.html"><a href="conditional-probability.html#product-rule"><i class="fa fa-check"></i><b>6.2</b> Product Rule</a></li>
+<li class="chapter" data-level="6.3" data-path="conditional-probability.html"><a href="conditional-probability.html#independence"><i class="fa fa-check"></i><b>6.3</b> Independence</a></li>
+<li class="chapter" data-level="6.4" data-path="conditional-probability.html"><a href="conditional-probability.html#exercises-2"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html"><i class="fa fa-check"></i><b>7</b> Probability Trees and Bayes</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#bobs-beautiful-boxes"><i class="fa fa-check"></i><b>7.1</b> Bob’s Beautiful Boxes</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#breast-cancer-screening"><i class="fa fa-check"></i><b>7.2</b> Breast cancer screening</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#disease-testing"><i class="fa fa-check"></i><b>7.3</b> Disease Testing</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#random-primality-testing"><i class="fa fa-check"></i><b>7.4</b> Random Primality Testing</a></li>
+<li class="chapter" data-level="7.5" data-path="probability-trees-and-bayes.html"><a href="probability-trees-and-bayes.html#hashing"><i class="fa fa-check"></i><b>7.5</b> Hashing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>8</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="random-variables.html"><a href="random-variables.html#describing-random-variables"><i class="fa fa-check"></i><b>8.1</b> Describing Random Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="random-variables.html"><a href="random-variables.html#probability-tables"><i class="fa fa-check"></i><b>8.2</b> Probability Tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#first-example"><i class="fa fa-check"></i>First example</a></li>
+<li class="chapter" data-level="" data-path="random-variables.html"><a href="random-variables.html#creating-a-probability-table"><i class="fa fa-check"></i>Creating a probability table</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="random-variables.html"><a href="random-variables.html#probability-functions"><i class="fa fa-check"></i><b>8.3</b> Probability Functions</a></li>
+<li class="chapter" data-level="8.4" data-path="random-variables.html"><a href="random-variables.html#binomial-distributions"><i class="fa fa-check"></i><b>8.4</b> Binomial Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="expected-value.html"><a href="expected-value.html"><i class="fa fa-check"></i><b>9</b> Expected Value</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="expected-value.html"><a href="expected-value.html#an-example-gpa"><i class="fa fa-check"></i><b>9.1</b> An Example: GPA</a></li>
+<li class="chapter" data-level="9.2" data-path="expected-value.html"><a href="expected-value.html#generalizing"><i class="fa fa-check"></i><b>9.2</b> Generalizing</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="more-expected-value.html"><a href="more-expected-value.html"><i class="fa fa-check"></i><b>10</b> More Expected Value</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations-and-sums"><i class="fa fa-check"></i><b>10.1</b> Transformations and Sums</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="more-expected-value.html"><a href="more-expected-value.html#transformations"><i class="fa fa-check"></i><b>10.1.1</b> Transformations</a></li>
+<li class="chapter" data-level="10.1.2" data-path="more-expected-value.html"><a href="more-expected-value.html#sums"><i class="fa fa-check"></i><b>10.1.2</b> Sums</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="more-expected-value.html"><a href="more-expected-value.html#linearity-of-expected-value"><i class="fa fa-check"></i><b>10.2</b> Linearity of Expected Value</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="more-expected-value.html"><a href="more-expected-value.html#exercises-3"><i class="fa fa-check"></i><b>10.2.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Counting and Probability</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-counting-problems" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Some Counting Problems</h1>
+<p>Each of these problems involves determining how many of something there are.
+For most, there will be too many to simply make a list and count them off, so
+you will need to “count without counting”.
+As you go along, make a list of important counting principles you are using.</p>
+<ol style="list-style-type: decimal">
+<li><p>There are 32 microcomputers in a computer center. Each microcomputer has 24
+ports. How many different ports to a microcomputer in the center are there?</p></li>
+<li><p>A new company with just two employees, Sanchez and Patel, rents a floor of a
+building with 12 offices. How many ways are there to assign different offices to
+these two employees?</p></li>
+<li><p>The chairs of an auditorium are labeled with a letter (indicating the row) and a positive integer not exceeding 100 (indicating the seat within the row).
+Give an upper bound on the number of seats in the auditorium.</p></li>
+<li><p>How many bitstrings of length 8 are there?</p></li>
+<li><p>How many bitstrings of length 8 either start with a 1 or end with a 1?</p></li>
+</ol>
+<!-- do it two ways: -->
+<!--     inclusion-exclusion -->
+<!--     count compliment -->
+<ol start="6" style="list-style-type: decimal">
+<li><p>A state issues license plates that consist of
+three letters followed by three numbers. How many
+such plates are there?</p></li>
+<li><p>A graph isomorphism is a 1-1 and onto function from the vertices in one graph to the vertices in another (that additionally preserves edges). You decide to write a little program that will check each 1-1 and onto function to see if it an isomorphism.</p>
+<p>If your graphs have <span class="math inline">\(n\)</span> vertices, how many such functions must you check?</p></li>
+<li><p>Now you modify your graph isomorphism algorithm so that it only tries
+bijections (1-1 and onto functions) that respect the degrees of the vertices. If
+the degree sequences of two graphs are both <span class="math inline">\((5, 5, 4, 4, 4, 3, 3, 2)\)</span>, how many
+functions must you check? How much better is this than your previous algorithm
+(on these two graphs)?</p></li>
+<li><p>Let’s use the following coding scheme to describe
+possible telephone numbers.</p>
+<ul>
+<li>let X denote a digit that can take on any
+integer value 0 – 9;</li>
+<li>let N denote a digit that can take on values 2 – 9</li>
+<li>let Y denote a digit that can only take on values 0 or 1.</li>
+</ul>
+<p> </p>
+<ol style="list-style-type: lower-alpha">
+<li><p>In the scheme used in the 1960’s, telephone numbers had to have the form NYX-NNX-XXXX. How many such
+phone numbers are there?</p></li>
+<li><p>A new scheme (<em>The North American Numbering Plan</em>)
+was introduced that required telephone numbers
+have the form NXX-NXX-XXXX. How many more phone
+numbers are available in the new scheme?</p></li>
+</ol></li>
+</ol>
+<!-- telephone numbers: X=[0..9], Y=[01], N=[2..9] -->
+<!-- old system: NYX-NNX-XXXX    8^3 * 2 * 10^6  = 1 024 000 000 -->
+<!-- new system: NXX-NXX-XXXX    8^2 * 10^8  = 6 400 000 000   -->
+<ol start="10" style="list-style-type: decimal">
+<li>How many password of length 6, 7, or 8 are there if the passwords must be alpha-numeric, capitalization doesn’t matter, and there must be at least one digit?</li>
+</ol>
+<!-- 36^6 - 26^6 + 36^7 - 26^7 + 36^8- 26^8 -->
+<ol start="11" style="list-style-type: decimal">
+<li>In the previous example, how many passwords are there if the first character must
+be a letter?</li>
+</ol>
+<!-- 26 * (36^5 - 26^5) + ... -->
+<ol start="12" style="list-style-type: decimal">
+<li><p>Professor Pruim puts the names of 30 students into a hat. He draws one out
+and gives that person a chocolate bar. Then he draws out another name, and gives that person a bag of M and M’s. Finally, he draws out a third name and gives that person a bag
+of Valentine hearts he picked up cheap on February 15.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>How many different ways can the prizes be distributed?</p></li>
+<li><p>If you are one of the 30 students, how many of those ways include you getting a prize?</p></li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+<!-- 13. Below is a description of IPv4 addresses. -->
+<!-- ```{r, echo = FALSE, fig.align = "center"} -->
+<!-- knitr::include_graphics("images/ipv4-prob.png") -->
+<!-- knitr::include_graphics("images/ipv4.png") -->
+<!-- ``` -->
+<div style="display:none">
+<div style="page-break-after: always;"></div>
+<div id="answerssolutions" class="section level3 unnumbered">
+<h3>Answers/Solutions</h3>
+<ol style="list-style-type: decimal">
+<li><p><code>32 * 24</code> = 768.</p></li>
+<li><p><code>12 * 11</code> = 132.</p></li>
+<li><p><code>26 * 100 = 2600</code></p></li>
+<li><p><span class="math inline">\(2^8 =\)</span> 256</p></li>
+<li><p>Two ways:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>only bad thing is beginning AND ending with 0, so <span class="math inline">\(2^8 - 2^6\)</span> = 192.</p></li>
+<li><p>Start with 1 or end with 1 but not both: <span class="math inline">\(2^7 + 2^7 - 2^6\)</span> = 192</p></li>
+</ol></li>
+<li><p><span class="math inline">\(10^3 \cdot 26^3 =\)</span> 17576000</p></li>
+<li><p><span class="math inline">\(n!\)</span></p></li>
+<li><p><span class="math inline">\(2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1\)</span> = 24. (<span class="math inline">\(8!\)</span> = 40320, so that’s a pretty big speed up.)</p></li>
+<li><p>See book.</p></li>
+<li><p><span class="math inline">\(36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =\)</span> 2684483063360</p></li>
+<li><p><code>26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)</code> =
+1878468937280</p></li>
+<li><pre><code>a. `30 * 29 * 28` = 24360
+b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
+2436</code></pre></li>
+</ol>
+</div>
+</div>
+<p><!-- 13. See book. --></p>
+<div style="page-break-after: always;"></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pigeonhole-principle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Counting-and-Probability.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

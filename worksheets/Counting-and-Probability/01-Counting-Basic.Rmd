@@ -101,6 +101,8 @@ of Valentine hearts he picked up cheap on February 15.
 <!-- ``` -->
 
 
+\iffalse
+<div style = "display:none">
 \newpage
 
 ### Answers/Solutions {-}
@@ -136,6 +138,8 @@ of Valentine hearts he picked up cheap on February 15.
     a. `30 * 29 * 28` = `r 30 * 29 * 28`
     b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
     `r 1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1`
+</div>    
+\fi
  
  <!-- 13. See book. -->
  
