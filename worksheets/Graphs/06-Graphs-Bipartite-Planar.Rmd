@@ -114,7 +114,7 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
     Here's one way you can go about it.
     You may find it helpful to see if you can find the subgraph of the 
     Petersen graph that will be homeomorphic to $K_5$ or $K_{3,3}$ before you start
-    this process. (Ask yourself which 6 vertices will correspond to the 
+    this process. (Ask yourself which vertices will correspond to the 
     vertices in $K_5$ or $K_{3,3}$? Which will be introduced by subdivision?
     Which vertices or edges will you remove to get your subgraph?)
 
