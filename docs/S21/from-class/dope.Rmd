@@ -284,5 +284,5 @@ for(g in 1:10) {
   
 * Graphs Wrap-up
 
-* Counting without counting [[HTML]](counting-and-probability/counting-basics.html)
+* Counting without counting [[HTML]](counting-and-probability/some-counting-problems.html)
 
