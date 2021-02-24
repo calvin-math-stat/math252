@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup-basic, include=FALSE}
@@ -109,34 +109,34 @@ of Valentine hearts he picked up cheap on February 15.
 
 ### Answers/Solutions {-}
 
- 1. `32 * 24` = `r 32 * 24`.
+1. `32 * 24` = `r 32 * 24`.
  
- 2. `12 * 11` = `r 12 * 11`.
+2. `12 * 11` = `r 12 * 11`.
  
- 3. `26 * 100 = 2600`
+3. `26 * 100 = 2600`
  
- 4. $2^8 =$ `r 2^8`
+4. $2^8 =$ `r 2^8`
  
- 5. Two ways:
+5. Two ways:
 
     a. only bad thing is beginning AND ending with 0, so $2^8 - 2^6$ = `r 2^8 - 2^6`.
     
     b. Start with 1 or end with 1 but not both: $2^7 + 2^7 - 2^6$ = `r 2^7 + 2^7 - 2^6`
     
- 6. $10^3 \cdot 26^3 =$ `r 10^3 * 26^3`
+6. $10^3 \cdot 26^3 =$ `r 10^3 * 26^3`
  
- 7. $n!$
+7. $n!$
  
- 8. $2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1$ = `r 2 * 1 * 3 * 2 * 1 * 2 * 1 * 1`. ($8!$ = `r factorial(8)`, so that's a pretty big speed up.)
+8. $2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1$ = `r 2 * 1 * 3 * 2 * 1 * 2 * 1 * 1`. ($8!$ = `r factorial(8)`, so that's a pretty big speed up.)
 
- 9. See book.
+9. See book.
  
- 10.  $36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =$ `r 36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8` 
+10.  $36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =$ `r 36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8` 
  
- 11.  `26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` =
+11.  `26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` =
  `r 26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` 
  
- 12. 
+12. 
     a. `30 * 29 * 28` = `r 30 * 29 * 28`
     b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
     `r 1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1`
