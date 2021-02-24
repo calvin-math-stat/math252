@@ -102,8 +102,10 @@ of Valentine hearts he picked up cheap on February 15.
 
 
 \iffalse
-<div style = "display:none">
 \newpage
+
+<br>
+<div class = "explain" label = "Show Solutions/Answers">
 
 ### Answers/Solutions {-}
 
