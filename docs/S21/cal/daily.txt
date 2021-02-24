@@ -831,12 +831,7 @@ Clever example: monotone subseqences of length n+1 in sequence of length n^2 + 1
 Ramsey example: 6 people, show three are mutual friends or enemies [deferred]
 	graph rep: monochrome triangles
 
-
-===03/05/2021
-
-Topic:: Test 1
-
-===endofcal
+===
 Topic:: Permutations and Combinations
 Read:: Rosen 6.3
 #Vocab:: Sum Rule, Product Rule, bijection principle
@@ -905,6 +900,13 @@ example: like above but with only 6 players
 
 example: 8 players, 4O, 4D
 	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
+
+
+===03/05/2021
+
+Topic:: Test 1
+
+===endofcal
 
 ===
 Topic:: Donut Problems
