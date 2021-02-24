@@ -195,12 +195,33 @@ Additional assignments will be filled in over time.
 	 \mand[degree]{3}
 	 \\
 	 \hline
-	 Mon 2/22 & PS 6 & Rosen 10.7 &
+	 \newpage
+	 Wed 2/24 & PS 6 & Rosen 10.7 &
 	 \mand[planar]{6--8}
 	 \mand[Kuratowski]{23--25}
 	 \\
 	 && Rosen 10.SE &
 	 \mand[isomorphic?]{3--5}
+	 \extra[invariants]{29abcf}
+	 \\
+  && Rosen 10.RQ &
+   \extra[types of graph]{1}
+	 \extra[models]{2}
+	 \extra[degree]{3--5}
+	 \extra[graph examples]{6--7}
+	 \extra[bipartite]{8}
+
+	 \extra[graph representation]{9}
+	 \extra[isomorphism]{10}
+	 \extra[connected]{11}
+
+	 \extra[checking isomorphism]{12}
+	 \extra[Euler paths]{13}
+	 \extra[Hamilton paths]{14a}
+
+	 \extra[planar graph]{17}
+	 \extra[Euler's formula]{18}
+	 \extra[Kuratowski's Theorem]{19}
 	 \\
 	 \hline
 \end{longtable}
@@ -209,10 +230,6 @@ Additional assignments will be filled in over time.
 \end{document}
 
 
-	 Thu 2/27 & \WW{03} & Rosen 6.1 & Note Thursday due date (at 11am)
-	 \\
-	 \hline
-	 Sat 2/29 & \WW{04} & & Note Saturday due date
 	 \\
 	 \hline
 	 \newpage
@@ -238,27 +255,8 @@ Additional assignments will be filled in over time.
  \hline
  Wed 3/4 & \WW{05} & & \\
  \hline
- Fri 3/6 & ** & Rosen 10.RQ &
-   \extra[types of graph]{1}
-	 \extra[models]{2}
-	 \extra[degree]{3--5}
-	 \extra[graph examples]{6--7}
-	 \extra[bipartite]{8}
-
-	 \extra[graph representation]{9}
-	 \extra[isomorphism]{10}
-	 \extra[connected]{11}
-	 \extra[checking isomorphism]{12}
-	 \extra[Euler paths]{13}
-
-	 \extra[Hamilton paths]{14a}
-	 \extra[planar graph]{17}
-	 \extra[Euler's formula]{18}
-	 \extra[Kuratowski's Theorem]{19}
-	 \\
 	 & & Rosen 10.SE &
 	 \extra[isomorphic?]{3--5}
-	 \extra[invariants]{29abcf}
  \\
   & & Rosen 6.RQ &
 	 \extra[counting principles]{1--3}
