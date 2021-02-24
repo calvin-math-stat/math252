@@ -4,8 +4,9 @@ author: "R Pruim"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: 
+  bookdown::gitbook: 
+    css: ../folding.css
   bookdown::pdf_book: default
-  bookdown::gitbook: default
 
 ---
 
@@ -19,6 +20,9 @@ output:
       "11-E-is-Linear.Rmd",
       "12-Variance.Rmd"]
 ```
+
+<script src = "../folding.js">
+</script>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

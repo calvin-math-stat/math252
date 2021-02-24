@@ -117,6 +117,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<link rel="stylesheet" href="../folding.css" type="text/css" />
 </head>
 
 <body>
@@ -129,11 +130,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
+<li><a href="./">Counting and Probability</a></li>
+
+<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="some-counting-problems.html"><a href="some-counting-problems.html"><i class="fa fa-check"></i><b>1</b> Some Counting Problems</a>
-<ul>
-<li class="chapter" data-level="" data-path="some-counting-problems.html"><a href="some-counting-problems.html#answerssolutions"><i class="fa fa-check"></i>Answers/Solutions</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="some-counting-problems.html"><a href="some-counting-problems.html"><i class="fa fa-check"></i><b>1</b> Some Counting Problems</a></li>
 <li class="chapter" data-level="2" data-path="pigeonhole-principle.html"><a href="pigeonhole-principle.html"><i class="fa fa-check"></i><b>2</b> Pigeonhole Principle</a></li>
 <li class="chapter" data-level="3" data-path="division-principle.html"><a href="division-principle.html"><i class="fa fa-check"></i><b>3</b> Division Principle</a>
 <ul>
@@ -290,17 +291,20 @@ of Valentine hearts he picked up cheap on February 15.</p>
 <!-- knitr::include_graphics("images/ipv4.png") -->
 <!-- ``` -->
 <br>
-<div id="answerssolutions" class="section level3 unnumbered explain" label="Show Solutions/Answers">
-<h3>Answers/Solutions</h3>
+<div class="explain" label="Show Solutions/Answers">
+<p><br></p>
+<p><strong>Answers/Solutions</strong></p>
 <ol style="list-style-type: decimal">
 <li><p><code>32 * 24</code> = 768.</p></li>
 <li><p><code>12 * 11</code> = 132.</p></li>
 <li><p><code>26 * 100 = 2600</code></p></li>
 <li><p><span class="math inline">\(2^8 =\)</span> 256</p></li>
-<li><p>Two ways:</p>
+<li><p>Three ways:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>only bad thing is beginning AND ending with 0, so <span class="math inline">\(2^8 - 2^6\)</span> = 192.</p></li>
 <li><p>Start with 1 or end with 1 but not both: <span class="math inline">\(2^7 + 2^7 - 2^6\)</span> = 192</p></li>
+<li><p>Three ways to start/end (0-1, 1-0, or 1-1), and <span class="math inline">\(2^6\)</span> ways to fill in the middle
+six bits: <span class="math inline">\(3 \cdot 2^6 = 192\)</span>.</p></li>
 </ol></li>
 <li><p><span class="math inline">\(10^3 \cdot 26^3 =\)</span> 17576000</p></li>
 <li><p><span class="math inline">\(n!\)</span></p></li>
@@ -312,7 +316,7 @@ of Valentine hearts he picked up cheap on February 15.</p>
 <li><ol style="list-style-type: lower-alpha">
 <li><code>30 * 29 * 28</code> = 24360</li>
 <li><code>1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1</code> = <code>30 * 29 * 28 - 29 * 28 * 27</code>
-2436</li>
+= 2436</li>
 </ol></li>
 </ol>
 </div>
