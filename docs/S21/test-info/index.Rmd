@@ -59,7 +59,7 @@ meet all requests, but I'll do what I can to work with the data.
 
 **Date:** Friday, March 5
 
-**Material Covered**: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.5)
+**Material Covered**: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.3)
 
 #### Logistics
 
@@ -89,9 +89,9 @@ bijection principle (no double counting, no skipping);
 multiplication principle; addition principle; subtraction principle;
 inclusion-exclusion;
 division principle;
-pigeonhole principle;
-permutations and combinations;
-binomial coefficients;
+pigeonhole principle
+<!-- permutations and combinations -->
+<!-- binomial coefficients -->
 <!-- the "donut problems". -->
 
 
