@@ -227,17 +227,10 @@ Additional assignments will be filled in over time.
 	 Mon 3/1 & \WW{03} & Rosen 6.1 &
 	 \\
 	 \hline
-
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-
+	 Tue 3/2 & \WW{04} & Rosen 6.2 &
 	 \\
 	 \hline
-	 \newpage
-	  Mon 3/2 & PS 6 & Rosen 6.1 &
+	  Wed 3/2 & PS 7 & Rosen 6.1 &
     \mand[license plates]{28}
 	  \mand[bit strings]{48}
 	  \mand[DNA]{42}
@@ -256,7 +249,19 @@ Additional assignments will be filled in over time.
     \mand[strings]{22}
     \mand[softball]{26}
  \\
- \hline
+	 & \WW{05} & Rosen 6.3 &
+	 \\
+	 \hline
+
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+
+	 \\
+	 \hline
+	 \newpage
  Wed 3/4 & \WW{05} & & \\
  \hline
 	 & & Rosen 10.SE &
