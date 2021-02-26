@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Some Counting Problems | Counting and Probability</title>
-  <meta name="description" content="1 Some Counting Problems | Counting and Probability" />
+  <title>2 Pigeonhole Principle | Counting and Probability</title>
+  <meta name="description" content="2 Pigeonhole Principle | Counting and Probability" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Some Counting Problems | Counting and Probability" />
+  <meta property="og:title" content="2 Pigeonhole Principle | Counting and Probability" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Some Counting Problems | Counting and Probability" />
+  <meta name="twitter:title" content="2 Pigeonhole Principle | Counting and Probability" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="pigeonhole-principle.html"/>
+<link rel="prev" href="some-counting-problems.html"/>
+<link rel="next" href="division-principle.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -214,113 +214,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="some-counting-problems" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Some Counting Problems</h1>
-<p>Each of these problems involves determining how many of something there are.
-For most, there will be too many to simply make a list and count them off, so
-you will need to “count without counting”.
-As you go along, make a list of important counting principles you are using.</p>
-<ol style="list-style-type: decimal">
-<li><p>There are 32 microcomputers in a computer center. Each microcomputer has 24
-ports. How many different ports to a microcomputer in the center are there?</p></li>
-<li><p>A new company with just two employees, Sanchez and Patel, rents a floor of a
-building with 12 offices. How many ways are there to assign different offices to
-these two employees?</p></li>
-<li><p>The chairs of an auditorium are labeled with a letter (indicating the row) and a positive integer not exceeding 100 (indicating the seat within the row).
-Give an upper bound on the number of seats in the auditorium.</p></li>
-<li><p>How many bitstrings of length 8 are there?</p></li>
-<li><p>How many bitstrings of length 8 either start with a 1 or end with a 1?</p></li>
-</ol>
-<!-- do it two ways: -->
-<!--     inclusion-exclusion -->
-<!--     count compliment -->
-<ol start="6" style="list-style-type: decimal">
-<li><p>A state issues license plates that consist of
-three letters followed by three numbers. How many
-such plates are there?</p></li>
-<li><p>A graph isomorphism is a 1-1 and onto function from the vertices in one graph to the vertices in another (that additionally preserves edges). You decide to write a little program that will check each 1-1 and onto function to see if it an isomorphism.</p>
-<p>If your graphs have <span class="math inline">\(n\)</span> vertices, how many such functions must you check?</p></li>
-<li><p>Now you modify your graph isomorphism algorithm so that it only tries
-bijections (1-1 and onto functions) that respect the degrees of the vertices. If
-the degree sequences of two graphs are both <span class="math inline">\((5, 5, 4, 4, 4, 3, 3, 2)\)</span>, how many
-functions must you check? How much better is this than your previous algorithm
-(on these two graphs)?</p></li>
-<li><p>Let’s use the following coding scheme to describe
-possible telephone numbers.</p>
+<div id="pigeonhole-principle" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Pigeonhole Principle</h1>
+<p><img src="images/pigeons.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><strong>Big Idea</strong>: It is not possible for everyone to be above average or for everyone to be below average. (It is possible for everyone to be exactly average.)</p>
+<p>So if <span class="math inline">\(n\)</span> things are distributed into <span class="math inline">\(k\)</span> groups,</p>
 <ul>
-<li>let X denote a digit that can take on any
-integer value 0 – 9;</li>
-<li>let N denote a digit that can take on values 2 – 9</li>
-<li>let Y denote a digit that can only take on values 0 or 1.</li>
+<li><p>The largest group will have at least <span class="math inline">\(\lceil n/k \rceil\)</span> things, and</p></li>
+<li><p>The smallest group will have at most <span class="math inline">\(\lfloor n/k \rfloor\)</span> things.</p></li>
 </ul>
-<p> </p>
+<p>This is called the (generalized) pigeon hole principle based on the analogy of
+putting letters into mail slots (called pigeon holes).</p>
+<p>Applying the pigeonhole principle is generally easy <em>once you figure out what
+the pigeons (letters, really) and the pigeonholes are</em>. Figuring out the
+pigeons and holes can be easy, or it can take a clever idea. (Some famous
+proofs center on very clever uses of the pigeonhole principle.)</p>
+<ol style="list-style-type: decimal">
+<li><p>Suppose (in some alternative reality) that Professor Pruim brought 150 cookies to
+a class with 34 students. At the end of the hour, all of the cookies had been
+eaten by the students.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>In the scheme used in the 1960’s, telephone numbers had to have the form NYX-NNX-XXXX. How many such
-phone numbers are there?</p></li>
-<li><p>A new scheme (<em>The North American Numbering Plan</em>)
-was introduced that required telephone numbers
-have the form NXX-NXX-XXXX. How many more phone
-numbers are available in the new scheme?</p></li>
+<li>What is the average number of cookies eaten by a student?</li>
+<li>This means that the student who had the most cookies had at least _______ cookies.</li>
+<li>This means that the student who had the fewest cookies had at most _______ cookies.</li>
 </ol></li>
 </ol>
-<!-- telephone numbers: X=[0..9], Y=[01], N=[2..9] -->
-<!-- old system: NYX-NNX-XXXX    8^3 * 2 * 10^6  = 1 024 000 000 -->
-<!-- new system: NXX-NXX-XXXX    8^2 * 10^8  = 6 400 000 000   -->
-<ol start="10" style="list-style-type: decimal">
-<li>How many password of length 6, 7, or 8 are there if the passwords must be alpha-numeric, capitalization doesn’t matter, and there must be at least one digit?</li>
-</ol>
-<!-- 36^6 - 26^6 + 36^7 - 26^7 + 36^8- 26^8 -->
-<ol start="11" style="list-style-type: decimal">
-<li>In the previous example, how many passwords are there if the first character must
-be a letter?</li>
-</ol>
-<!-- 26 * (36^5 - 26^5) + ... -->
-<ol start="12" style="list-style-type: decimal">
-<li><p>Professor Pruim puts the names of 30 students into a hat. He draws one out
-and gives that person a chocolate bar. Then he draws out another name, and gives that person a bag of M and M’s. Finally, he draws out a third name and gives that person a bag
-of Valentine hearts he picked up cheap on February 15.</p>
+<p>In each of the following problems, each time you use the pigeonhole principle,
+identify the “pigeons” and the “holes” and explain how that solves the problem.
+If you don’t use the pigeonhole principle directly, be sure to explain your reasoning
+carefully.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Fill in the blanks.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>How many different ways can the prizes be distributed?</p></li>
-<li><p>If you are one of the 30 students, how many of those ways include you getting a prize?</p></li>
+<li><p>In a class of 38 students, there are always at least _____ students who were born
+in the same month.</p></li>
+<li><p>In a class of 38 students, there are always at least _____ students who were born
+on the same day of the week.</p></li>
 </ol></li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>In the 2014 Winter Olympics, 88 nations competed in 98 events. Explain how
+this guaranteed that some country would win more than one gold medal. (No, the
+answer is not “Norway was there.”)</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>At the 2014 Winter Olympics, Norway won 11 gold medals. Does that fact
+alone guarantee that a country won no gold medals?</li>
 </ol>
 <div style="page-break-after: always;"></div>
-<!-- 13. Below is a description of IPv4 addresses. -->
-<!-- ```{r, echo = FALSE, fig.align = "center"} -->
-<!-- knitr::include_graphics("images/ipv4-prob.png") -->
-<!-- knitr::include_graphics("images/ipv4.png") -->
-<!-- ``` -->
-<br>
-<div class="explain" label="Show Solutions/Answers">
-<p><br></p>
-<p><strong>Answers/Solutions</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><code>32 * 24</code> = 768.</p></li>
-<li><p><code>12 * 11</code> = 132.</p></li>
-<li><p><code>26 * 100 = 2600</code></p></li>
-<li><p><span class="math inline">\(2^8 =\)</span> 256</p></li>
-<li><p>Three ways:</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Joe has 21 white socks and 15 black socks. (Don’t ask what happened to the
+missing socks, no one knows where they go.)</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>only bad thing is beginning AND ending with 0, so <span class="math inline">\(2^8 - 2^6\)</span> = 192.</p></li>
-<li><p>Start with 1 or end with 1 but not both: <span class="math inline">\(2^7 + 2^7 - 2^6\)</span> = 192</p></li>
-<li><p>Three ways to start/end (0-1, 1-0, or 1-1), and <span class="math inline">\(2^6\)</span> ways to fill in the middle
-six bits: <span class="math inline">\(3 \cdot 2^6 = 192\)</span>.</p></li>
-</ol></li>
-<li><p><span class="math inline">\(10^3 \cdot 26^3 =\)</span> 17576000</p></li>
-<li><p><span class="math inline">\(n!\)</span></p></li>
-<li><p><span class="math inline">\(2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1\)</span> = 24. (<span class="math inline">\(8!\)</span> = 40320, so that’s a pretty big speed up.)</p></li>
-<li><p>See book.</p></li>
-<li><p><span class="math inline">\(36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =\)</span> 2684483063360</p></li>
-<li><p><code>26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)</code> =
-1878468937280</p></li>
-<li><ol style="list-style-type: lower-alpha">
-<li><code>30 * 29 * 28</code> = 24360</li>
-<li><code>1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1</code> = <code>30 * 29 * 28 - 29 * 28 * 27</code>
-= 2436</li>
+<li><p>If he pulls socks in the dark (so he can’t tell what color they are), how many
+must he grab to make sure he has a pair of white socks?</p></li>
+<li><p>If he pulls socks in the dark (so he can’t tell what color they are), how many
+must he grab to make sure he has a pair of black socks?</p></li>
+<li><p>If he pulls socks in the dark (so he can’t tell what color they are), how many
+must he grab to make sure he has a pair of matching socks?</p></li>
 </ol></li>
 </ol>
-</div>
-<p><!-- 13. See book. --></p>
+<ol start="6" style="list-style-type: decimal">
+<li>For his birthday, Joe received a gift of 8 red socks
+(4 pairs, and he hasn’t lost any yet).
+Now how many socks must Joe grab to be sure that he has a matching pair?</li>
+</ol>
+<ol start="7" style="list-style-type: decimal">
+<li>Joe is going on a trip and needs 3 pairs of matching socks. He’s still too
+lazy to turn on the light to see what socks he is grabbing. How many socks
+must Joe bring along to make sure he has 3 matching pairs? (He doesn’t care
+how many pairs are red, white, or black.)</li>
+</ol>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Checkers.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Consider a <span class="math inline">\(3 \times 9\)</span> grid (like an odd-shaped checker board). Show that no
+matter how you place red and black checkers on the 27 squares, there will always
+be a rectangle whose 4 corners have the same color checker. (The rectangles must
+be at least <span class="math inline">\(2 \times 2\)</span>; <span class="math inline">\(1\times 1\)</span> rectangles don’t have four different checkers
+on their corners.)</p></li>
+<li><p>Consider a <span class="math inline">\(3 \times 7\)</span> grid (like an odd-shaped checker board). Show that no
+matter how you place red and black checkers on the 21 squares, there will always
+be a rectangle whose 4 corners have the same color checker. (The rectangles must
+be at least <span class="math inline">\(2 \times 2\)</span>; <span class="math inline">\(1\times 1\)</span> rectangles don’t have four different checkers
+on their corners.)</p></li>
+<li><p>Show how to place red and black checkers on a <span class="math inline">\(3 \times 6\)</span> grid without
+having any rectangles with mono-chromatic corners.</p></li>
+</ol></li>
+</ol>
+<ol start="9" style="list-style-type: decimal">
+<li><p>A computer lab has 15 workstations and 10 servers. Workstations can only
+access servers via direct connections, and each server can only use one of these
+connections at a time.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If we connect every workstation to every server,
+how many connections is that?</p></li>
+<li><p>Show that 60 connections suffice make it possible to use any set of 10
+workstations simultaneously.
+(No matter what we do, we won’t be able to connect
+11 workstations to servers since there are only 10 servers.)</p></li>
+<li><p>Show that 59 connections is not enough.<br />
+That is, no matter how you do the connecting,
+there will always be a combination of 10 workstations that cannot
+simultaneously connect to servers.
+(Hint: on average, how many connections are there per server?)</p></li>
+</ol></li>
+</ol>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Show that there is an integer that is divisible by 35 and consists only of
+1’s and 0’s in its decimal representation.</p>
+<p>Hint: Consider the numbers 1, 11, 111, 1111, 11111, etc. Show that two of them
+have the same remainder when you divide by 35.
+How does that help you answer the question?</p></li>
+</ol>
+<ol start="11" style="list-style-type: decimal">
+<li>Was there anything special about the number 35 in the previous example?
+For what other divisors does this work? Explain.</li>
+</ol>
+<ol start="12" style="list-style-type: decimal">
+<li>Is there anything special about the digits 1 and 0 in the previous example? What other combinations of digits would work?</li>
+</ol>
+<ol start="13" style="list-style-type: decimal">
+<li><p>The integers from 1 to 10 are distributed around a circle. Prove that there
+must be three neighbors whose sum is at least 17. What about 18? What about 19?</p>
+<p>Hint: think about the nine numbers that are greater than 1.</p></li>
+</ol>
+<!-- Consider 3 non-overlapping boxes not including 1. One of these must include -->
+<!-- 2 of 10, 9, 8, and 7, and an additional number at least 2.  So that sum is at least -->
+<!-- 15 + 2 = 17.  The only way to stay below 18, is for 8, 7, and 2 to be in a box. -->
+<!-- Now one of the other two boxes must contain at least two of 10, 9, and 6, and a number  -->
+<!-- at least 3.  9 + 6 + 3 = 18, so there must be a box with 18. -->
+<!-- Counter-example for 19: 10 6 2 4 9 5 4 3 8 7 1 10 6 -->
 <div style="page-break-after: always;"></div>
 
 </div>
@@ -329,8 +353,8 @@ six bits: <span class="math inline">\(3 \cdot 2^6 = 192\)</span>.</p></li>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="pigeonhole-principle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="some-counting-problems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="division-principle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -113,24 +113,7 @@ carefully.
  
 \vfill
 
-9. Show that there is an integer that is divisible by 37 and consists only of 
- 1's and 0's in its decimal representation.
- 
-    Hint: Consider the numbers 1, 11, 111, 1111, 11111, etc.  Show that two of them
-    are congruent mod 37.  How does that help you answer the question?
-    
-\vfill
-
-10. Was there anything special about the number 37 in the previous example? 
- For what other divisors does this work? Explain.
- 
-\vfill
-
-11. Is there anything special about the digits 1 and 0 in the previous example?  What other combinations of digits would work?
- 
-\vfill
-
-12. A computer lab has 15 workstations and 10 servers. Workstations can only
+9. A computer lab has 15 workstations and 10 servers. Workstations can only
 access servers via direct connections, and each server can only use one of these 
 connections at a time.
     
@@ -150,7 +133,36 @@ connections at a time.
  
 \vfill
 
- 13. The integers from 1 to 10 are distributed around a circle. Prove that there
+10. Show that there is an integer that is divisible by 35 and consists only of 
+ 1's and 0's in its decimal representation.
+ 
+    Hint: Consider the numbers 1, 11, 111, 1111, 11111, etc.  Show that two of them
+    have the same remainder when you divide by 35. 
+    How does that help you answer the question?
+    
+\vfill
+
+11. Was there anything special about the number 35 in the previous example? 
+ For what other divisors does this work? Explain.
+ 
+\vfill
+
+12. Is there anything special about the digits 1 and 0 in the previous example?  What other combinations of digits would work?
+ 
+\vfill
+
+13. The integers from 1 to 10 are distributed around a circle. Prove that there
  must be three neighbors whose sum is at least 17. What about 18? What about 19?
+ 
+    Hint: think about the nine numbers that are greater than 1.
+
+<!-- Consider 3 non-overlapping boxes not including 1. One of these must include -->
+<!-- 2 of 10, 9, 8, and 7, and an additional number at least 2.  So that sum is at least -->
+<!-- 15 + 2 = 17.  The only way to stay below 18, is for 8, 7, and 2 to be in a box. -->
+<!-- Now one of the other two boxes must contain at least two of 10, 9, and 6, and a number  -->
+<!-- at least 3.  9 + 6 + 3 = 18, so there must be a box with 18. -->
+
+<!-- Counter-example for 19: 10 6 2 4 9 5 4 3 8 7 1 10 6 -->
+
  
 \newpage

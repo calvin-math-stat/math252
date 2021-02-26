@@ -19,7 +19,7 @@ But you will need to know more than that to answer them.
     a. How many different ways can she give away the donuts if no one gets 
    more than one?
    
-    b. How many different ways can she give away the donuts if she allow the possibility
+    b. How many different ways can she give away the donuts if she allows the possibility
     of giving more than one to the same person?
 
  <!-- a) w/o replacement, order matters -->
