@@ -306,3 +306,17 @@ for(g in 1:10) {
   [[PDF]](counting-and-probability/some-counting-problems.pdf)
 
 ### Fri 2/26
+
+* [Test 1 Info](../test-info/index.html) is available on the test info page.
+
+* Wrap-up from last time: 4 Counting Principles
+    * Multiplication Principle
+    * Addition Principle
+    * Subtraction Principle
+    * Inclusion-Exclusion
+
+* **Topic of the day**: Pigeonhole Principle
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/pigeonhole-principle.html)
+  [[PDF]](counting-and-probability/pigeonhole-principle.pdf)
