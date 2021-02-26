@@ -309,6 +309,16 @@ for(g in 1:10) {
 
 * [Test 1 Info](../test-info/index.html) is available on the test info page.
 
+    * Review session next Thursday at noon (via Teams)
+
+* [Homework](../hw/) notes
+
+    * All homework due before Test 1 has been posted.
+    * WW 4 is due on **Tuesday** next week (but you can do it sooner if you like).
+    * I can't promise that the last problem set will be graded before the test (that 
+    will depend on our graders' schedules), but you should have feedback from 
+    everything else.
+    
 * Wrap-up from last time: 4 Counting Principles
     * Multiplication Principle
     * Addition Principle
