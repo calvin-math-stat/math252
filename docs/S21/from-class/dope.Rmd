@@ -274,7 +274,7 @@ for(g in 1:10) {
   [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
   [[HTML]](graphs/planar-and-non-planar-graphs.html)
 
-## Week 4 {.active}
+## Week 4 
 
 ### Mon 2/22
 
@@ -325,8 +325,24 @@ for(g in 1:10) {
     * Subtraction Principle
     * Inclusion-Exclusion
 
-* **Topic of the day**: Pigeonhole Principle
+* **Topic of the day**: The Pigeonhole Principle
 
   * Worksheet: 
   [[HTML]](counting-and-probability/pigeonhole-principle.html)
   [[PDF]](counting-and-probability/pigeonhole-principle.pdf)
+
+## Week 5 {.active}
+
+### Mon 3/1
+
+* Test on Friday
+  * Review session Thursday at noon (via Teams)
+ 
+* Homework due Monday, Tuesday, and Wednesday this week
+
+* **Topic of the Day**: The Division Principle
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/division-principle.html)
+  [[PDF]](counting-and-probability/division-principle.pdf)
+
