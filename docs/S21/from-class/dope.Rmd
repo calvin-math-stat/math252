@@ -350,6 +350,7 @@ for(g in 1:10) {
 
 * Test on Friday
   * Review session Thursday at noon (via Teams)
+    * Post questions [**here**](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing)
   * Contact me TODAY if you are able to take the test in our classroom (NH 259) 
   at the regular time.  (Of course, if something like a COVID quarantine comes up, we'll
   adjust.)
