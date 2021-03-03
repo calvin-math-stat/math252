@@ -346,3 +346,23 @@ for(g in 1:10) {
   [[HTML]](counting-and-probability/division-principle.html)
   [[PDF]](counting-and-probability/division-principle.pdf)
 
+### Wed 3/3
+
+* Test on Friday
+  * Review session Thursday at noon (via Teams)
+  * Contact me TODAY if you are able to take the test in our classroom (NH 259) 
+  at the regular time.  (Of course, if something like a COVID quarantine comes up, we'll
+  adjust.)
+  
+* **Topic of the Day**: The Division (and other) Principles
+
+  * More practice with counting problems
+  * Binomial coefficients can help simplify your thought process
+  * Worksheet: 
+  [[HTML]](counting-and-probability/counting-problems.html)
+  [[PDF]](counting-and-probability/counting-problems.pdf)
+
+### Fri 3/5
+
+* **Test 1**
+  * In NH 259 (for most of you)
