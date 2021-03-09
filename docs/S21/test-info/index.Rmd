@@ -14,8 +14,7 @@ require(tidyr)
 require(kable)
 require(kableExtra)
 require(scales)
-t1bks <- c(20, 33, 45, 57, 69, 83) %>% rev()
-  # c(20, 43, 54, 65, 76, 88) %>% rev()
+t1bks <- c(17, 34, 44, 52, 61, 68) %>% rev()
 t2bks <- c(10, 27, 37, 47, 57, 67) %>% rev()
 t3bks <- c(5, 20, 29, 38, 48, 58)  %>% rev()
 
@@ -23,9 +22,9 @@ fbks  <- c(25, 74, 96, 118, 140, 165)  %>% rev()
 GS <- 
   data_frame(
     Grade = LETTERS[1:4],
-    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
-    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
-    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4)
+    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4)
+    # `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4)
+    # `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4)
     # `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
   ) %>% 
   arrange(Grade)
@@ -42,18 +41,24 @@ You can request that we not have a test on a particular day by filling out
 I can't promise to 
 meet all requests, but I'll do what I can to work with the data.
 
-<!-- ### Grading Scales -->
+### Grading 
 
-<!-- Here are the grading scales used for each of our tests and the final. -->
+Here are the grading scales used for each of our tests and the final. These
+scales will give some idea how you are doing, but the actual test scores are
+used to compute grades at the end of the term.
 
-<!-- ```{r, echo = FALSE} -->
-<!-- kable(GS) %>% -->
-<!--   kable_styling(bootstrap_options = "striped", full_width = F) %>% -->
-<!--   row_spec(1, bold = F, color = "gray20", background = alpha("steelblue", 0.3)) %>% -->
-<!--   row_spec(2, bold = F, color = "gray20", background = alpha("navy", 0.3)) %>% -->
-<!--   row_spec(4, bold = F, color = "gray20", background = alpha("forestgreen", 0.3)) %>% -->
-<!--   row_spec(3, bold = F, color = "gray20", background = alpha("limegreen", 0.2)) -->
-<!-- ``` -->
+```{r, echo = FALSE}
+kable(GS) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  row_spec(1, bold = F, color = "gray20", background = alpha("steelblue", 0.3)) %>%
+  row_spec(2, bold = F, color = "gray20", background = alpha("navy", 0.3)) %>%
+  row_spec(4, bold = F, color = "gray20", background = alpha("forestgreen", 0.3)) %>%
+  row_spec(3, bold = F, color = "gray20", background = alpha("limegreen", 0.2))
+```
+
+Remember, at the end of the term, if your final exam is better than your worst test, then your final
+exam score will replace your worst test score (making the final exam worth a test + the final).
+
 
 ### Test 1
 
