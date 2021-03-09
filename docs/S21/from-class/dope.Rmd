@@ -388,5 +388,7 @@ for(g in 1:10) {
 
 * **Topic of the day**: Probability
 
-  * Worksheet: [[HTML]](counting-and-probability/probability.html)
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability.html)
+  [[PDF]](counting-and-probability/probability.pdf)
   
