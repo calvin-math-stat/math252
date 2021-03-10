@@ -391,4 +391,20 @@ for(g in 1:10) {
   * Worksheet: 
   [[HTML]](counting-and-probability/probability.html)
   [[PDF]](counting-and-probability/probability.pdf)
+ 
+### Wed 3/10
+
+* **Topic of the day:**  More Probability
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability.html)
+  [[PDF]](counting-and-probability/probability.pdf)
+  
+
+### Fri 3/12
+
+* **Topic of the day:**  Conditional Probability
+  [[HTML]](counting-and-probability/conditional-probability.html)
+  [[PDF]](counting-and-probability/conditional-probability.pdf)
+
   
