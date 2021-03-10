@@ -384,7 +384,7 @@ for(g in 1:10) {
   cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
 }
 ```
-* Test have been graded; information will be posted later today.
+* Tests have been graded; information will be posted later today.
 
 * **Topic of the day**: Probability
 
@@ -399,6 +399,8 @@ for(g in 1:10) {
   * Worksheet: 
   [[HTML]](counting-and-probability/probability.html)
   [[PDF]](counting-and-probability/probability.pdf)
+  
+  * [Record your birthday here](https://docs.google.com/spreadsheets/d/1ygRJPrvJAEdWTPnmqLK7FMEsoRzGH0_b85JwJcKT-gQ/edit?usp=sharing)
   
 
 ### Fri 3/12
