@@ -108,7 +108,7 @@ we say that $A$ and $B$ are **independent events**.
  
 \vfill
 
-16. There are 33 students in Math 252.
+16. There are 36 students in Math 252.
 What is the probability that two people in this class have the same 
 birthday (month and day)? (Hint: Use the Complement Rule.)
  
