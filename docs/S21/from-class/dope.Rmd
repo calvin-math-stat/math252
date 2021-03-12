@@ -409,4 +409,87 @@ for(g in 1:10) {
   [[HTML]](counting-and-probability/conditional-probability.html)
   [[PDF]](counting-and-probability/conditional-probability.pdf)
 
-  
+<div class = "explain" label = "Show some hints and solutions">
+
+<div class = "explain" label = "Show 6.1-6.9">
+
+notation    | meaning | probability 1 | probability 2
+----------- | ------- | ------------- | -----------------
+$p(R)$      | probability that kid likes red best | $15/45 = 1/3$ |
+$p(G)$      | probability that kid is a girl | $20/45$ |
+$p(R \intersect G)$      | probability that kid is a girl who likes red | $8/45$ | 
+$p(R \mid G)$      | among girls, what is the probability that a kid likes red | $8/20$ | $\frac{\prob(R\intersect G)}{\prob(G)} =  \frac{8/45}{20/45} = 8/20$
+$p(\overline{G} \mid R)$      | among those who like red, what is the probability of being a boy | $7/15$ | $\frac{\prob(\overline{G}\intersect R)}{\prob(R)} =  \frac{8/45}{20/45} = 8/20 = \frac{7/45}{15/45} = 7/15$
+
+</div>
+
+<div class = "explain" label = "Show 6.10">
+We can rewrite $\prob(B \mid A) = P(B)$, as 
+$\frac{\prob(A \intersect B)}{\prob(A)} = \prob(B)$
+
+As little algera makes this $\frac{\prob(B \intersect A)}{\prob(B)} = \prob(A)$,
+so 
+$\prob(A \mid B) = P(A)$.
+
+</div>
+
+<div class = "explain" label = "Show 6.11">
+$\prob(B \mid A) = P(B)$, so $\prob(A \intersect B) = \prob(A) \cdot \prob(B)$
+</div>
+    
+<div class = "explain" label = "Show 6.12">
+Think of $\prob(A \intersect B \intersect C)$ as 
+$\prob((A \intersect B) \intersect C)$ and apply the product rule twice.
+</div>
+    
+<div class = "explain" label = "Show 6.13">
+$\prob(A \intersect B \intersect C \intersect D) = 
+\prob(A) \cdot \prob(B \mid A) \cdot \prob(C \mid A \intersect B) \cdot 
+\prob (D \mid A \intersect B \intersect C)$
+
+Notice: Each term is the probability of one event given all the *previous* 
+events.
+</div>
+    
+<div class = "explain" label = "Show 6.14">
+a) $\frac{6 \cdot 1}{6 \cdot 6} = \frac{6}{36} = \frac{1}{6}$
+b) Let's let F be "the first number is between 1 and 6" and let
+   M be "the second number matches the first".  Then we can write
+   this as
+   
+    $$
+    \prob(F \intersect M)  = \prob( F ) \cdot p(M \mid F) = 1 \cdot \frac{1}{6} = \frac{1}{6}
+    $$
+</div>
+
+<div class = "explain" label = "Show 6.15">
+Let's try a version with just three people. To get the probability that
+at least two of them share a birthday, we will compute the probabilty 
+that they all have different birthdays and subtract from 1.
+
+To simplify notation, let let $N_i$ mean that person $i$ has a "new"
+birthday (no one with a smaller index has that birthday).
+So $N_1$ is always true.  $N_2$ will be true unless the first two
+people have the same birthday.  When will $N_3$ be false?
+
+```{r include = FALSE}
+birthday <- function(n) {
+  1 - prod((366: (366 - n + 1))/366)
+}
+```
+
+\begin{align*}
+ 1 - \prob(N_1)
+ \cdot
+ \prob(N_2 \mid N_1)
+ \cdot
+ \prob(N_3 \mid N_2 \intersect N_1)\\
+ &= 1 - 1 \cdot \frac{365}{366} \cdot \frac{364}{365} =
+`r round(birthday(3), 4)`
+\end{align*}
+
+Note: The conditional probabilities are important here.  Why?
+
+To see more details, look on page 461.
+</div>
+</div>
