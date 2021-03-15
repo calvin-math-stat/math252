@@ -78,6 +78,7 @@ for(g in 1:10) {
   cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
 }
 ```
+
 * Tests have been graded; information will be posted later today.
 
 * **Topic of the day**: Probability
@@ -227,6 +228,7 @@ not have the test using
 
       * Bob's boxes
       * Breast cancer screening
+      * Disease testing
 
     * If you finish those and have extra time, feel free to take a look at
       Sections 7.4 (Random Primality Testing) and 7.5 (Hashing).
@@ -439,12 +441,7 @@ has symptoms that could indicate the disease, but could also be something else.
 </div>
 </div>
 
-
 ### Wed, March 17
 
 ### Fri, March 19
 
-
-### Wed, March 17
-
-### Fri, March 19
