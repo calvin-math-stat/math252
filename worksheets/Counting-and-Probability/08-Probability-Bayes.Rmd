@@ -93,8 +93,8 @@ what is the probability that you have the disease?
     
       * $H$: person is healthy
       * $D$: person is diseased
-      * $P$: test is positive (indicates disease)
-      * $N$: test is negative (indicates healthy)
+      * $+$: test is positive (indicates disease)
+      * $-$: test is negative (indicates healthy)
 
   
  4. **Hashing.** A hash function $h$ assigns one of $m$ storage locations (an

@@ -79,8 +79,8 @@ Hint: Use the inventory method.  Useful events include
 
 * $H$: person is healthy
 * $D$: person is diseased
-* $P$: test is positive (indicates disease)
-* $N$: test is negative (indicates healthy)
+* $+$: test is positive (indicates disease)
+* $-$: test is negative (indicates healthy)
 
 \newpage 
 

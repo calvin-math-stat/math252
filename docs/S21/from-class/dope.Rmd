@@ -60,315 +60,9 @@ And here is a link to the
 [**Progress Log**](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
 we will often use when working in groups on Teams.
 
-## Week 1 
+[Dope sheets for weeks 1 - 5](dope01.html)
 
-### Wed 2/3
-
-* Welcome to Math 252!
-
-* **Topic of the Day**: Intro to Graphs
-
-  * Worksheet:  [[PDF]](graphs/intro-to-graphs.pdf)
-  
-  <!-- [[HTML]](graphs/introduction-to-graphs.html)  -->
-  
-* [Homework](../hw/) due Friday
-
-  * Officially due at 11:59 pm, but you should attempt to have it done before class.
-  * Submit via [Gradescope](https:://gradescope.com) -- details on [the homework page](../hw)
-
-  
-### Fri 2/5
-
-* Meet in Teams
-
-* Groups
-
-```{r echo = FALSE, results = "asis", include = TRUE}
-set.seed(205)
-R <- shuffle(Roster) %>% group_by(section) %>% 
-  mutate(group = rep(1:5, length.out = n())) %>%
-  mutate(group = ifelse(section == "B", group + 5, group))
-         
-for(g in 1:10) {
-  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
-}
-```
-
-* **Topic of the Day:** More about Graphs
-
-  * Worksheet: [[PDF]](graphs/more-graphs.pdf)
-  
-    * If you print this out, I recommend printing 1-sided, or printing the first page separate from the other two.
-    That will make it easier to work with (less page flipping).
-    
-    * Keep track of your group's progress with this 
-    [Progress Log](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
-     
-
-## Week 2 
-
-### Mon 2/8
-
-* Meet in Teams
-
-* Same groups as Friday
-
-* **Topic of the Day**: Representing Graphs
-
-  * Worksheet: 
-  [[PDF](graphs/graph-representations.pdf)]
-  [[HTML](graphs/graph-representations.html)]
-  
-* WebWork assignments due tonight and Wednesday night
-
-### Wed 2/10
-
-* Meet in Teams
-
-* Same groups as Friday
-
-* **Topic of the Day**: Graph Isomorphism
-
-  * Worksheet: 
-  [[PDF](graphs/graph-isomorphism.pdf)]
-  [[HTML](graphs/graph-isomorphism.html)]
-  
-* WW2 due tonight, PS 2 on Monday.
-
-<div class = "indent">
-<div class = "explain" label = "Show some comments on the worksheet">
-In problem 2, the two matrices are **not** graph invariants.  The problem is
-that for the matrices to match, the order of the vertices (and edges in the case
-of an incidence matrix) must line up according to the isomorphism. If they don't,
-you may have different matrices even though the graphs are isomorphic.  (In fact, you
-can get different matrices for the same graph if you just change the order of the vertices.)
-
-In problem 3, here is one way to show the second pair are not isomorphic:
-Consider $x$ and $y$.  They are adjacent and each has degree 2.  But there is no pair 
-of adjacent vertices with degree 2 in graph G. (There are other ways to show that these 
-graphs are not isomorphic as well.)
-
-In problem 4, 
-
-* The second pair are directed graphs.  Be sure to make the directions match when looking
-for an isomorphism.  In-degree and out-degree can be useful for directed graphs.
-
-* The third pair is challenging.  Both graphs are 3-regular (meaning every vertex has
-degree 3, so degree alone doesn't help you).
-</div>
-</div>
-<br>
-
-### Fri 2/12
-
-* New Groups
-
-```{r echo = FALSE, results = "asis", include = TRUE}
-set.seed(212)
-R <- shuffle(Roster) %>% group_by(section) %>% 
-  mutate(group = rep(1:5, length.out = n())) %>%
-  mutate(group = ifelse(section == "B", group + 5, group))
-         
-for(g in 1:10) {
-  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
-}
-```
-
-* Reminder: 
-You can request that we not have a test on a particular day by filling out 
-[**this form**](https://docs.google.com/forms/d/e/1FAIpQLSdZxGUTSv8ie4itR0ErnRDpfEVtxWS5t2noU0cxnye0GgvVbQ/viewform?usp=sf_link).
-
-* **Topic of the Day**: Paths in Graphs
-
-  * Worksheet: 
-  [[PDF](graphs/paths-in-graphs.pdf)]
-  [[HTML](graphs/paths-in-graphs.html)]
-
-* PS 2 due tonight; PS 3 due Monday -- Submit via GradeScope
-
-```{r, include = FALSE}
-library(networkD3)
-G <- data.frame(
-  from = rep(1:10, each = 3),
-  to = c(2,5,10, 1,3,9, 2,8,4, 3,7,5, 1,4,6, 5,8,9, 4,6,9, 6,3,10, 
-         2,6,7, 1,8,6)
-)
-simpleNetwork(G, height="100px", width="100px", charge = 0)
-```
-
-## Week 3 
-
-### Mon 2/15
-
-* **Topics of the Day**: 
-
-  * Euler's Formula for Planar Graphs
-  * Euler paths
-  * Bipartite Graphs
-
-* Worksheets: 
-  
-  * Paths in Graphs (continued from last time): 
-  [[PDF](graphs/paths-in-graphs.pdf)]
-  [[HTML](graphs/paths-in-graphs.html)]
-  
-  * Bipartite Graphs (new): 
-  [[PDF](graphs/bipartite-graphs.pdf)]
-  [[HTML](graphs/bipartite-graphs.html)]
-  
-* Problem Set due each day this week
-
-### Wed 2/17
-
-* **Announcements**
-
-  * Test 1 will be on Friday, March 5 (day after advising day)
-
-* **Topics of the Day**
-
-  * **Bipartite Graphs**: 
-  [[PDF](graphs/bipartite-graphs.pdf)]
-  [[HTML](graphs/bipartite-graphs.html)]
-  
-    * Complete this worksheet and be sure to check with me about the algorithm
-  for determining if a graph is bipartite.
-  
-  * **Planar and Non-Planar Graphs**:
-  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
-  [[HTML]](graphs/planar-and-non-planar-graphs.html)
-  
-    * Work through question 3.
-  
-  * Check with me if your group has questions about any of the recent 
-  graph things
-  
-### Fri 2/19
-
-* **Test 1** will be two weeks from today.  More info next week.
-
-  * [Google Doc](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing) where you can post questions
-  
-    * I'll take a look at these before Monday and spend some time on them if needed
-    before moving on to our next unit (Counting and Probability)
-    
-    * I will likely schedule a review session on March 4 (advising day).  That will
-    be another opportunity to answer questions from this list.
-    
-    * I'll add additional sections next week.
-    
-* New Groups
-
-```{r echo = FALSE, results = "asis", include = TRUE}
-set.seed(2192021)
-R <- shuffle(Roster) %>% group_by(section) %>% 
-  mutate(group = rep(1:5, length.out = n())) %>%
-  mutate(group = ifelse(section == "B", group + 5, group))
-         
-for(g in 1:10) {
-  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
-}
-```
-
-* **Planar and Non-Planar Graphs**:
-  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
-  [[HTML]](graphs/planar-and-non-planar-graphs.html)
-
-## Week 4 
-
-### Mon 2/22
-
-* **Planar and Non-Planar Graphs**:
-  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
-  [[HTML]](graphs/planar-and-non-planar-graphs.html)
-  
-* Graphs Wrap-up
-
-### Wed 2/24
-
-* New Groups
-
-```{r echo = FALSE, results = "asis", include = TRUE}
-set.seed(2242021)
-R <- shuffle(Roster) %>% group_by(section) %>% 
-  mutate(group = rep(1:5, length.out = n())) %>%
-  mutate(group = ifelse(section == "B", group + 5, group))
-         
-for(g in 1:10) {
-  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
-}
-```
-
-
-* **Topic of the day**: Counting without counting
-  * Worksheet: 
-  [[HTML]](counting-and-probability/some-counting-problems.html)
-  [[PDF]](counting-and-probability/some-counting-problems.pdf)
-
-### Fri 2/26
-
-* [Test 1 Info](../test-info/index.html) is available on the test info page.
-
-    * Review session next Thursday at noon (via Teams)
-
-* [Homework](../hw/) notes
-
-    * All homework due before Test 1 has been posted.
-    * WW 4 is due on **Tuesday** next week (but you can do it sooner if you like).
-    * I can't promise that the last problem set will be graded before the test (that 
-    will depend on our graders' schedules), but you should have feedback from 
-    everything else.
-    
-* Wrap-up from last time: 4 Counting Principles
-    * Multiplication Principle
-    * Addition Principle
-    * Subtraction Principle
-    * Inclusion-Exclusion
-
-* **Topic of the day**: The Pigeonhole Principle
-
-  * Worksheet: 
-  [[HTML]](counting-and-probability/pigeonhole-principle.html)
-  [[PDF]](counting-and-probability/pigeonhole-principle.pdf)
-
-## Week 5 
-
-### Mon 3/1
-
-* Test on Friday
-  * Review session Thursday at noon (via Teams)
- 
-* Homework due Monday, Tuesday, and Wednesday this week
-
-* **Topic of the Day**: The Division Principle
-
-  * Worksheet: 
-  [[HTML]](counting-and-probability/division-principle.html)
-  [[PDF]](counting-and-probability/division-principle.pdf)
-
-### Wed 3/3
-
-* Test on Friday
-  * Review session Thursday at noon (via Teams)
-    * Post questions [**here**](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing)
-  * Contact me TODAY if you are able to take the test in our classroom (NH 259) 
-  at the regular time.  (Of course, if something like a COVID quarantine comes up, we'll
-  adjust.)
-  
-* **Topic of the Day**: The Division (and other) Principles
-
-  * More practice with counting problems
-  * Binomial coefficients can help simplify your thought process
-  * Worksheet: 
-  [[HTML]](counting-and-probability/counting-problems.html)
-  [[PDF]](counting-and-probability/counting-problems.pdf)
-
-### Fri 3/5
-
-* **Test 1**
-  * In NH 259 (for most of you)
-
-## Week 6 {.active}
+## Week 6 
 
 ### Mon 3/8
 
@@ -493,3 +187,264 @@ Note: The conditional probabilities are important here.  Why?
 To see more details, look on page 461.
 </div>
 </div>
+
+## Week 7 {.active}
+
+### Mon, March 15
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(31520215)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+* Soon it will be time to set the date for **Test 2**. You can request a date to
+not have the test using
+[this form](https://docs.google.com/forms/d/e/1FAIpQLSdZxGUTSv8ie4itR0ErnRDpfEVtxWS5t2noU0cxnye0GgvVbQ/viewform?usp=sf_link).
+
+* **Topic of the Day**: "Bayes Rule"
+  
+  * There are various forms of this "Rule", but we won't approach this so much 
+  from a "rule" perspective as from a big idea. 
+  
+  * These situations arise when we know P(A | B) but want to know P(B | A).
+  
+  * Along the way, we will learn a useful (but not required) method 
+  for keeping track of the arithmetic: probability trees.
+  
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability-trees-and-bayes.html)
+  [[PDF]](counting-and-probability/probability-trees-and-bayes.pdf)
+  
+    * Focus your attention on sections 7.1 - 7.3. So basically three problems today:
+
+      * Bob's boxes
+      * Breast cancer screening
+
+    * If you finish those and have extra time, feel free to take a look at
+      Sections 7.4 (Random Primality Testing) and 7.5 (Hashing).
+      These present some computer science applications of probability.
+    
+    * There are some comments/hints/solutions below. Take a look at them after
+    each section before moving on to the next.
+
+<div class = "indent">
+
+<div class = "explain" label  ="Hints and Solutions">
+<div class = "explain" label = "Bob's Beatiful Boxes">
+<div class = "explain" label = "Not Equally Likely">
+Box A has 9 balls; Box B has 7 balls.  The boxes are equally likely to be selected,
+but since box A has more balls than box B, those balls are less likely to be chosen.
+
+If it helps, imagine an extreme case: Suppose Box A had 1 million balls and Box B had 1.
+The balls in Box A would be very unlikely to be selected -- even if Box A were chosen.
+The ball in Box B would be chosen half the time -- every time Box B is chosen.
+
+**Note 1:** The color of the balls is not the issue here. We are asking about the 
+individual balls, not their color. 
+
+
+**What's the point?** 
+We cannot use the equally likely rule by counting balls since the balls
+are not equally likely.
+</div>
+
+<div class = "explain" label = "Inventory -- Getting Started">
+* First Row:
+    * Selecting boxes: $\prob(A) = 1/2$; $\prob(B) = 1/2$
+* Second Row:
+    * $\prob(A \intersect B) = 0$. (They are mutually exclusive.)
+    * $A \union B$ is the sample space (we only have those two boxes), 
+so $\prob(A \union B) = 1$.
+    * We will come back to the last two items in this row shortly.
+
+* Third Row: Two are easy, two are more challenging
+    * Selecting colors *from within a box*: 
+        * $\prob(R \mid A) = \frac{7}{9}$ since 7 of the 9 balls in that box are red (and they are all equally like *if* box A is chosen.
+        * $\prob(R \mid B) = \frac{3}{7}$ since 3 of the 7 balls in that box are red
+        (and they are all equally likely *if* box B is chosen.
+    
+    * Our question: $\prob(A \mid R)$.  *If* we know the ball was red, then what is
+    the probability that it was drawn from Box A?
+</div>
+
+<div class = "explain" label = "Inventory -- Building Up">
+We can get some more probabilities if we use the product rule: 
+$\prob(E \intersect F) = \prob(E) \cdot \prob(F \mid E)$
+
+* $\prob(A \intersect R) = \prob(A) \cdot \prob(R \mid A) =$ ___________
+* $\prob(B \intersect R) = \prob(B) \cdot \prob(R \mid B) =$ ___________
+
+</div>
+
+<div class = "explain" label = "Inventory -- Building up some more">
+Now we can get even more probabilities using $\prob(E \union F) = \prob(E) + \prob(F) - \prob(E\intersect F)$.  Do you see how? (Note: this equation involves 4 probabilities.
+If you ever know 3 of them, you can solve for the fourth.)
+</div>
+
+<div class = "explain" label = "Inventory -- Solution">
+We want $\displaystyle \prob(A \mid R) = \frac{\prob(A \intersect R)}{\prob(R)}$.  The top part of that 
+fraction is in our inventory. But how do we get the bottom part?
+
+A red ball could have come form either box, so let's use 
+$R = (A \intersect R) \union (B \intersect R)$ and our rule for unions.
+
+$\prob(R) = \prob((A \intersect R) \union (B \intersect R)) =$ ________ + __________ - _________
+</div>
+
+<div class = "explain" label = "Putting it all together">
+Combining everything we get
+
+$\prob(A \mid R) = \displaystyle \frac{\prob(A \intersect R)}{\prob(R)}$ 
+$= \displaystyle \frac{\prob(A) \cdot \prob(R \mid A)}{\prob(A) \cdot \prob(R \mid A) + \prob(B) \cdot \prob(R \mid B)}$ 
+$= \displaystyle \frac{\frac12 \cdot \frac79}{\frac12 \cdot \frac79 + \frac12 \cdot \frac37}$
+$=$ `r round((7/9)/(7/9 + 3/7), 4)`
+
+Notice how the question has the color in the condition and the solution has the 
+box in the condition. This is our first example of a problem that flips those around.
+The general approach is similar in all of these problems and is usually credited to
+[Rev. Thomas Bayes](https://en.wikipedia.org/wiki/Thomas_Bayes).
+(The formal theorem involved is called 
+[Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem), and there is an
+entire branch of statistics called 
+[Bayesian statistics](https://en.wikipedia.org/wiki/Bayesian_statistics) based on this idea.
+You can learn about that in Stats 341.)
+</div>
+
+<div class = "explain" label = "Using Probability Trees -- part 1">
+The approach used above is very algebraic. We can organize the same arithmetic
+visually using the method of probability trees.
+
+First we set up the tree in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4).
+
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+<div class = "explain" label = "Using Probability Trees -- part 2">
+Now that we have our tree, we can 
+use the tree to get the probability we want in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4).
+
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+</div>
+
+
+<div class = "explain" label = "Breast Cancer Screening">
+
+This problem has a similar structure to Bob's boxes.
+Let $C$ be the event that a woman has breast cancer.
+Let $+$ mean there is a positive test result. (A positive test result
+means the test thinks the person has cancer.)
+Start by identifying the three numbers we are given.
+Make sure you use good notation.
+
+* 0.017 = P(________)
+* 0.780 = P(________)
+* 0.10  = P(________).  Be careful with this one.
+
+Now see if you can get from there to the probability we want, 
+which is P(________)
+
+---
+
+Note: There is a little bit of ambiguity here about whether all the figures (which come
+from different sources) align to the same people. 
+
+**Let's assume that the probabilities given are the probabilities *among women who are tested*.**
+That might not actually be true
+of the first figure (which might apply to the whole population).  But since we don't have
+any information about who does/does not get tested, that's the best we can do
+with the data at hand.
+
+Our calculations could be misleading if the rate of cancer is much higher among
+those who are tested.  It probably is at least somewhat higher -- we test people
+more when they are more likely to have cancer.
+
+
+<div class = "explain" label = "Setting up a probability tree">
+Since we know $\prob(C)$ and $\prob(+ \mid C)$, it makes sense to set up our 
+tree like this:
+
+![probabilty tree](../../S21/from-class/online/images/breast-cancer-tree-empty.jpg)
+
+See if you can fill in some missing probabilities. Then check your work in the next tab.
+</div>
+
+<div class = "explain" label = "Filling in the probability tree">
+You don't have to use a probability tree to do this problem, you just need to multiply 
+the correct probabilities together.  But the tree is a handy way to organize the arithmetic.
+
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4) 
+will walk you through the process. See how my tree compares to yours. Then finish 
+the problem before seeing how I did it in the next tab.
+
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+<div class = "explain" label = "Using the probability tree">
+
+Now that we have the tree, we are all set to calculate the probability that we need.
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4) will walk you through the steps.
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+</div>
+
+<div class = "explain" label = "Disease Testing">
+
+This time you just get an answer to check your work.  If you didn't get this answer,
+review the solutions above (and make sure you have the right notation for each of your 
+events and probabilities).
+
+```{r include = FALSE}
+a <- round( 1/10000 * 0.99, 6)
+b <- round(9999/10000 * 0.02, 6)
+a / (a + b)
+```
+
+$p(D \mid P) = \frac{\frac1{10000}(.99)}{ \frac1{10000}(0.98) + \frac{9999}{10000} (0.02)} =$
+$\frac{`r a`}{`r a` + `r b`} =$ 
+`r round( 1/10000 * 0.99 / (1/10000 * 0.99 + 9999/10000 * 0.02), 4)`
+
+**Note 1:** That probability is small, but it much larger than $\prob(D)$ -- it's
+about 50 times as big.  So a positive test result increases your changes of
+having the disease by two orders of magnitude.
+
+**Note 2:** This is why we don't test everyone for everything -- the result would be 
+lots of false positives. But if we only test people with symptoms, then our before
+test probability of having the disease is much higher.  To see for yourself,
+redo this problem assuming $\prob(D)$ is $1/10$, as it might be for someone who
+has symptoms that could indicate the disease, but could also be something else.
+</div>
+
+</div>
+</div>
+
+
+### Wed, March 17
+
+### Fri, March 19
+
+
+### Wed, March 17
+
+### Fri, March 19
