@@ -119,6 +119,9 @@ Additional assignments will be filled in over time.
 	 \\
 	   \hline
 	 Wed 3/17 & \WW{08} & Rosen 7 & Probability
+
+	 Note: $A^c = \overline A$ denotes the complement of $A$.  For events, you
+	 can also write this as "not A".
 	 \\
 	 & PS 7 & Rosen 7.1 &
 	 \mand[lottery]{26b}
@@ -150,6 +153,7 @@ Additional assignments will be filled in over time.
 \label{end}
 \end{document}
 	 Tue 3/24 & \WW{08} & Rosen 7 & Probability
+
 	 \\
 	   \hline
 	 Wed 4/1 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
