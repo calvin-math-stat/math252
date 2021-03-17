@@ -952,6 +952,7 @@ Equally Likely Rule:
 
   ONLY WORKS WHEN ALL OUTCOMES ARE EQUALLY LIKELY
 
+===
 Topic:: More Probability
 Read:: Rosen 7.1, 7.2
 
@@ -966,7 +967,7 @@ example:  [similar thing came up on hw question in '16]
   probability of exactly 5 heads in 10 coin tosses
 
 ===
-Topic:: Condiditional Probability
+Topic:: Conditional Probability
 Read:: Rosen 7.2
 
 equally likely review: lottery
