@@ -148,21 +148,10 @@ Additional assignments will be filled in over time.
 	 \extra[birth day]{20}
 	 \\
 	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-	 Tue 3/24 & \WW{08} & Rosen 7 & Probability
-
+	 Fri 3/19 & \WW{09} & Rosen 7 & Probability
 	 \\
-	   \hline
-	 Wed 4/1 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
-	 \\
-	 \hline
-	 Fri 4/3 & PS 8 & Rosen 7.2 &
+	 & PS 8 & Rosen 7.2 &
 	 \mand[odd one out]{29}
-	 %\helper[inequality]{11}
-	 %\mand[inequality]{12}
 	 \\
 	 & & Rosen 7.3 &
 	 \helper{1}
@@ -179,6 +168,16 @@ Additional assignments will be filled in over time.
 	 \extra{14}
 	 \extra[Monty Hall]{15}
 	 \\
+	   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+	 Wed 4/1 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
+	 \\
+	 \hline
+	 %\helper[inequality]{11}
+	 %\mand[inequality]{12}
 	 & \WW{10} & Rosen 7 & Expected Value
 	 \\
 	 \hline
