@@ -448,6 +448,10 @@ has symptoms that could indicate the disease, but could also be something else.
   * Worksheet: 
   [[HTML]](counting-and-probability/random-variables.html)
   [[PDF]](counting-and-probability/random-variables.pdf)
+  
+  * Start with section 8 (random variables).  If you finish that, go
+  back to the primality testing and hashing examples from last time.
+  
 
 
 <div class = "indent">

@@ -906,16 +906,6 @@ example: 8 players, 4O, 4D
 
 Topic:: Test 1
 
-===endofcal
-
-===
-Topic:: Donut Problems
-
-===
-Topic:: Counting Wrap Up
-
-===03/06/2020
-Topic:: Test 1
 
 ===
 Topic:: Intro to Probability
@@ -951,9 +941,6 @@ Probability Axioms
 	2) P(S) = 1
 	3) additivity of disjoint unions
 
-===
-Topic:: Using Probability Rules
-Read:: Rosen 7.1, 7.2
 
 Probability rules
   4) Equally Likely Rule
@@ -965,7 +952,6 @@ Equally Likely Rule:
 
   ONLY WORKS WHEN ALL OUTCOMES ARE EQUALLY LIKELY
 
-===skip
 Topic:: More Probability
 Read:: Rosen 7.1, 7.2
 
@@ -978,10 +964,6 @@ example:  [similar thing came up on hw question in '16]
   probability of at least 1 head in 10 coin tosses
   probability of at least 2 heads in 10 coin tosses
   probability of exactly 5 heads in 10 coin tosses
-
-===
-Note:: No Class
-Note:: Online Transition Day
 
 ===
 Topic:: Condiditional Probability
@@ -1033,23 +1015,21 @@ Example: probability of matching birthmonths/days (complement, independence)
 		for n=23, P(same birthday) > 1/2
 
 ===
-Topic:: Bayes Theorem
+Topic:: "Bayes Rule"
 Read:: Rosen 7.3
 
 Bob's Boxes
 Breast Cancer Screening
+Disesase testing
 
 ===
 Topic:: Random Variables
-Topic:: Binomial Random Variables
 
 
+===endofcal
 
-===03/30/2020
-Note:: Extended Spring Break
-
-# Topic:: Random Variables
-# Topic:: Binomial Distributions
+Topic:: Random Variables
+Topic:: Binomial Distributions
 
 ===
 Topic:: Expected Value
