@@ -123,7 +123,7 @@ Additional assignments will be filled in over time.
 	 Note: $A^c = \overline A$ denotes the complement of $A$.  For events, you
 	 can also write this as "not A".
 	 \\
-	 & PS 7 & Rosen 7.1 &
+	 & PS 8 & Rosen 7.1 &
 	 \mand[lottery]{26b}
 	 \mand[super lottery]{28}
 
@@ -150,7 +150,7 @@ Additional assignments will be filled in over time.
 	   \hline
 	 Fri 3/19 & \WW{09} & Rosen 7 & Probability
 	 \\
-	 & PS 8 & Rosen 7.2 &
+	 & PS 9 & Rosen 7.2 &
 	 \mand[odd one out]{29}
 	 \\
 	 & & Rosen 7.3 &
