@@ -1025,11 +1025,6 @@ Disesase testing
 
 ===
 Topic:: Random Variables
-
-
-===endofcal
-
-Topic:: Random Variables
 Topic:: Binomial Distributions
 
 ===
@@ -1120,7 +1115,7 @@ Yahtzee
 Lottery
 	Daily 3 / Daily 4
 
-===
+===endofcal
 Topic:: Grammars and Languages
 
 Language over V
