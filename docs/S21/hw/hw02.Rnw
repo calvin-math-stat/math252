@@ -150,7 +150,8 @@ Additional assignments will be filled in over time.
 	   \hline
 	 Fri 3/19 & \WW{09} & Rosen 7 & Probability
 	 \\
-	 & PS 9 & Rosen 7.2 &
+	 \hline
+	 Mon 3/22 &  PS 9 & Rosen 7.2 &
 	 \mand[odd one out]{29}
 	 \\
 	 & & Rosen 7.3 &
