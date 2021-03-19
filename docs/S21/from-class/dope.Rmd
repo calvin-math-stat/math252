@@ -735,16 +735,16 @@ expected value = $0 \cdot \frac{4}{16} + 1 \cdot \frac{6}{16} + 2 \cdot \frac{4}
 
 Start by filling in this table
 
-number of diamonds |   0   |   1   |   2    |   3   |   4
-------------------:|:-----:|:-----:|:------:|:-----:|:------
-probability        |   ??  |   ??  |   ??   |   ??  |  ??
+number of diamonds |   0   |   1   |   2    |   3   |   4   |   5 
+------------------:|:-----:|:-----:|:------:|:-----:|:-----:|:-------
+probability        |   ??  |   ??  |   ??   |   ??  |  ??   |   ??
 
 Here's one example: $\displaystyle P(D = 2) = \frac{\binom{13}{2} \binom{39}{3}}{\binom{52}{5}}$
 
 Fill in the rest of the tale and then "sum of values times probabilities".
 
 ```{r include = FALSE}
-x = 0:4
+x = 0:5
 ExpVal = sum( x * choose(13, x) * choose(39, 5-x) / choose(52, 5) )
 ```
 
