@@ -326,20 +326,20 @@ visually using the method of probability trees.
 
 First we set up the tree in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4).
 
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 <div class = "explain" label = "Using Probability Trees -- part 2">
 Now that we have our tree, we can 
 use the tree to get the probability we want in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4).
 
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 </div>
@@ -394,20 +394,20 @@ This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer
 will walk you through the process. See how my tree compares to yours. Then finish 
 the problem before seeing how I did it in the next tab.
 
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 <div class = "explain" label = "Using the probability tree">
 
 Now that we have the tree, we are all set to calculate the probability that we need.
 This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4) will walk you through the steps.
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 </div>
 
@@ -646,17 +646,19 @@ probability   |  5/10 |  4/10 |  1/10
 </div>
 
 <div class = "explain" label = "Exercise 9.5">
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+[video]<https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 <div class = "explain" label = "Exercise 9.6">
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+[video]<https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 <div class = "explain" label = "Exercise 9.7">
@@ -711,10 +713,11 @@ sum(values * probs)
 </div>
 
 <div class = "explain" label = "Exercise 9.9">
-<video width="600" controls>
-  <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+[video]<https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
 </div>
 
 <div class = "explain" label = "Exercise 9.10">
