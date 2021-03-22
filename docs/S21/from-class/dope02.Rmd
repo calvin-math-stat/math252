@@ -1,0 +1,802 @@
+---
+title: ""
+pagetitle: "M252 Dope"
+output: 
+  html_document:
+    theme: yeti
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    css: ['../../styles/rpruim2020.css', '../../styles/folding.css']
+    includes:
+      before_body: ../header.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(qrcode)
+library(mosaic)
+library(rjp)
+library(tidyr)
+set.seed(123)
+spaces <- function(n) {
+  paste(rep(" ", n), collapse = "")
+}
+Roster <- read.csv('../../../grades/S21/Math252-S21-roster-clean.csv') %>%
+  mutate(name = paste(first, last))
+```
+
+<script src="../../styles/folding.js"></script>
+
+<style>
+div.indent {
+  margin: 0 0 0 25px;
+}
+</style>
+
+\def\prob{\operatorname{P}}
+\def\Prob{\operatorname{P}}
+\def\tand{\operatorname{and}}
+\def\tor{\operatorname{or}}
+\def\tif{\operatorname{if}}
+\def\intersect{\operatorname{and}}
+\def\union{\operatorname{or}}
+
+
+# Dope Sheets {.tabset}
+
+**dope**[^webster]
+
+* *n.* information, especially from a reliable source [the inside dope];  
+* *v.* figure out -- usually used with out;                              
+* *adj.* excellent
+
+[^webster]: Definitions selected from Webster's online dictionary  
+
+Here's where you can come to find out what's up each day. Homework 
+assignments are available on the [**homework page**](../hw/). 
+
+And here is a link to the 
+[**Progress Log**](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
+we will often use when working in groups on Teams.
+
+[Dope sheets for weeks 1 - 5](dope01.html)
+
+## Week 6 
+
+### Mon 3/8
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(30820212)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+* Tests have been graded; information will be posted later today.
+
+* **Topic of the day**: Probability
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability.html)
+  [[PDF]](counting-and-probability/probability.pdf)
+ 
+### Wed 3/10
+
+* **Topic of the day:**  More Probability
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability.html)
+  [[PDF]](counting-and-probability/probability.pdf)
+  
+  * [Record your birthday here](https://docs.google.com/spreadsheets/d/1ygRJPrvJAEdWTPnmqLK7FMEsoRzGH0_b85JwJcKT-gQ/edit?usp=sharing)
+  
+
+### Fri 3/12
+
+* **Topic of the day:**  Conditional Probability
+  [[HTML]](counting-and-probability/conditional-probability.html)
+  [[PDF]](counting-and-probability/conditional-probability.pdf)
+
+<div class = "explain" label = "Show some hints and solutions">
+
+<div class = "explain" label = "Show 6.1-6.9">
+
+notation    | meaning | probability 1 | probability 2
+----------- | ------- | ------------- | -----------------
+$p(R)$      | probability that kid likes red best | $15/45 = 1/3$ |
+$p(G)$      | probability that kid is a girl | $20/45$ |
+$p(R \intersect G)$      | probability that kid is a girl who likes red | $8/45$ | 
+$p(R \mid G)$      | among girls, what is the probability that a kid likes red | $8/20$ | $\frac{\prob(R\intersect G)}{\prob(G)} =  \frac{8/45}{20/45} = 8/20$
+$p(\overline{G} \mid R)$      | among those who like red, what is the probability of being a boy | $7/15$ | $\frac{\prob(\overline{G}\intersect R)}{\prob(R)} =  \frac{8/45}{20/45} = 8/20 = \frac{7/45}{15/45} = 7/15$
+
+</div>
+
+<div class = "explain" label = "Show 6.10">
+We can rewrite $\prob(B \mid A) = P(B)$, as 
+$\frac{\prob(A \intersect B)}{\prob(A)} = \prob(B)$
+
+As little algera makes this $\frac{\prob(B \intersect A)}{\prob(B)} = \prob(A)$,
+so 
+$\prob(A \mid B) = P(A)$.
+
+</div>
+
+<div class = "explain" label = "Show 6.11">
+$\prob(B \mid A) = P(B)$, so $\prob(A \intersect B) = \prob(A) \cdot \prob(B)$
+</div>
+    
+<div class = "explain" label = "Show 6.12">
+Think of $\prob(A \intersect B \intersect C)$ as 
+$\prob((A \intersect B) \intersect C)$ and apply the product rule twice.
+</div>
+    
+<div class = "explain" label = "Show 6.13">
+$\prob(A \intersect B \intersect C \intersect D) = 
+\prob(A) \cdot \prob(B \mid A) \cdot \prob(C \mid A \intersect B) \cdot 
+\prob (D \mid A \intersect B \intersect C)$
+
+Notice: Each term is the probability of one event given all the *previous* 
+events.
+</div>
+    
+<div class = "explain" label = "Show 6.14">
+a) $\frac{6 \cdot 1}{6 \cdot 6} = \frac{6}{36} = \frac{1}{6}$
+b) Let's let F be "the first number is between 1 and 6" and let
+   M be "the second number matches the first".  Then we can write
+   this as
+   
+    $$
+    \prob(F \intersect M)  = \prob( F ) \cdot p(M \mid F) = 1 \cdot \frac{1}{6} = \frac{1}{6}
+    $$
+</div>
+
+<div class = "explain" label = "Show 6.15">
+Let's try a version with just three people. To get the probability that
+at least two of them share a birthday, we will compute the probabilty 
+that they all have different birthdays and subtract from 1.
+
+To simplify notation, let let $N_i$ mean that person $i$ has a "new"
+birthday (no one with a smaller index has that birthday).
+So $N_1$ is always true.  $N_2$ will be true unless the first two
+people have the same birthday.  When will $N_3$ be false?
+
+```{r include = FALSE}
+birthday <- function(n) {
+  1 - prod((366: (366 - n + 1))/366)
+}
+```
+
+\begin{align*}
+ 1 - \prob(N_1)
+ \cdot
+ \prob(N_2 \mid N_1)
+ \cdot
+ \prob(N_3 \mid N_2 \intersect N_1)\\
+ &= 1 - 1 \cdot \frac{365}{366} \cdot \frac{364}{365} =
+`r round(birthday(3), 4)`
+\end{align*}
+
+Note: The conditional probabilities are important here.  Why?
+
+To see more details, look on page 461.
+</div>
+</div>
+
+## Week 7 
+
+### Mon, March 15
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(31520215)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+* Soon it will be time to set the date for **Test 2**. You can request a date to
+not have the test using
+[this form](https://docs.google.com/forms/d/e/1FAIpQLSdZxGUTSv8ie4itR0ErnRDpfEVtxWS5t2noU0cxnye0GgvVbQ/viewform?usp=sf_link).
+
+* **Topic of the Day**: "Bayes Rule"
+  
+  * There are various forms of this "Rule", but we won't approach this so much 
+  from a "rule" perspective as from a big idea. 
+  
+  * These situations arise when we know P(A | B) but want to know P(B | A).
+  
+  * Along the way, we will learn a useful (but not required) method 
+  for keeping track of the arithmetic: probability trees.
+  
+  * Worksheet: 
+  [[HTML]](counting-and-probability/probability-trees-and-bayes.html)
+  [[PDF]](counting-and-probability/probability-trees-and-bayes.pdf)
+  
+    * Focus your attention on sections 7.1 - 7.3. So basically three problems today:
+
+      * Bob's boxes
+      * Breast cancer screening
+      * Disease testing
+
+    * If you finish those and have extra time, feel free to take a look at
+      Sections 7.4 (Random Primality Testing) and 7.5 (Hashing).
+      These present some computer science applications of probability.
+    
+    * There are some comments/hints/solutions below. Take a look at them after
+    each section before moving on to the next.
+
+<div class = "indent">
+
+<div class = "explain" label  ="Hints and Solutions">
+<div class = "explain" label = "Bob's Beatiful Boxes">
+<div class = "explain" label = "Not Equally Likely">
+Box A has 9 balls; Box B has 7 balls.  The boxes are equally likely to be selected,
+but since box A has more balls than box B, those balls are less likely to be chosen.
+
+If it helps, imagine an extreme case: Suppose Box A had 1 million balls and Box B had 1.
+The balls in Box A would be very unlikely to be selected -- even if Box A were chosen.
+The ball in Box B would be chosen half the time -- every time Box B is chosen.
+
+**Note 1:** The color of the balls is not the issue here. We are asking about the 
+individual balls, not their color. 
+
+
+**What's the point?** 
+We cannot use the equally likely rule by counting balls since the balls
+are not equally likely.
+</div>
+
+<div class = "explain" label = "Inventory -- Getting Started">
+* First Row:
+    * Selecting boxes: $\prob(A) = 1/2$; $\prob(B) = 1/2$
+* Second Row:
+    * $\prob(A \intersect B) = 0$. (They are mutually exclusive.)
+    * $A \union B$ is the sample space (we only have those two boxes), 
+so $\prob(A \union B) = 1$.
+    * We will come back to the last two items in this row shortly.
+
+* Third Row: Two are easy, two are more challenging
+    * Selecting colors *from within a box*: 
+        * $\prob(R \mid A) = \frac{7}{9}$ since 7 of the 9 balls in that box are red (and they are all equally like *if* box A is chosen.
+        * $\prob(R \mid B) = \frac{3}{7}$ since 3 of the 7 balls in that box are red
+        (and they are all equally likely *if* box B is chosen.
+    
+    * Our question: $\prob(A \mid R)$.  *If* we know the ball was red, then what is
+    the probability that it was drawn from Box A?
+</div>
+
+<div class = "explain" label = "Inventory -- Building Up">
+We can get some more probabilities if we use the product rule: 
+$\prob(E \intersect F) = \prob(E) \cdot \prob(F \mid E)$
+
+* $\prob(A \intersect R) = \prob(A) \cdot \prob(R \mid A) =$ ___________
+* $\prob(B \intersect R) = \prob(B) \cdot \prob(R \mid B) =$ ___________
+
+</div>
+
+<div class = "explain" label = "Inventory -- Building up some more">
+Now we can get even more probabilities using $\prob(E \union F) = \prob(E) + \prob(F) - \prob(E\intersect F)$.  Do you see how? (Note: this equation involves 4 probabilities.
+If you ever know 3 of them, you can solve for the fourth.)
+</div>
+
+<div class = "explain" label = "Inventory -- Solution">
+We want $\displaystyle \prob(A \mid R) = \frac{\prob(A \intersect R)}{\prob(R)}$.  The top part of that 
+fraction is in our inventory. But how do we get the bottom part?
+
+A red ball could have come form either box, so let's use 
+$R = (A \intersect R) \union (B \intersect R)$ and our rule for unions.
+
+$\prob(R) = \prob((A \intersect R) \union (B \intersect R)) =$ ________ + __________ - _________
+</div>
+
+<div class = "explain" label = "Putting it all together">
+Combining everything we get
+
+$\prob(A \mid R) = \displaystyle \frac{\prob(A \intersect R)}{\prob(R)}$ 
+$= \displaystyle \frac{\prob(A) \cdot \prob(R \mid A)}{\prob(A) \cdot \prob(R \mid A) + \prob(B) \cdot \prob(R \mid B)}$ 
+$= \displaystyle \frac{\frac12 \cdot \frac79}{\frac12 \cdot \frac79 + \frac12 \cdot \frac37}$
+$=$ `r round((7/9)/(7/9 + 3/7), 4)`
+
+Notice how the question has the color in the condition and the solution has the 
+box in the condition. This is our first example of a problem that flips those around.
+The general approach is similar in all of these problems and is usually credited to
+[Rev. Thomas Bayes](https://en.wikipedia.org/wiki/Thomas_Bayes).
+(The formal theorem involved is called 
+[Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem), and there is an
+entire branch of statistics called 
+[Bayesian statistics](https://en.wikipedia.org/wiki/Bayesian_statistics) based on this idea.
+You can learn about that in Stats 341.)
+</div>
+
+<div class = "explain" label = "Using Probability Trees -- part 1">
+The approach used above is very algebraic. We can organize the same arithmetic
+visually using the method of probability trees.
+
+First we set up the tree in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4).
+
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p1.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+<div class = "explain" label = "Using Probability Trees -- part 2">
+Now that we have our tree, we can 
+use the tree to get the probability we want in this [video](https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4).
+
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//bobs-boxes-p2.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+</div>
+
+
+<div class = "explain" label = "Breast Cancer Screening">
+
+This problem has a similar structure to Bob's boxes.
+Let $C$ be the event that a woman has breast cancer.
+Let $+$ mean there is a positive test result. (A positive test result
+means the test thinks the person has cancer.)
+Start by identifying the three numbers we are given.
+Make sure you use good notation.
+
+* 0.017 = P(________)
+* 0.780 = P(________)
+* 0.10  = P(________).  Be careful with this one.
+
+Now see if you can get from there to the probability we want, 
+which is P(________)
+
+---
+
+Note: There is a little bit of ambiguity here about whether all the figures (which come
+from different sources) align to the same people. 
+
+**Let's assume that the probabilities given are the probabilities *among women who are tested*.**
+That might not actually be true
+of the first figure (which might apply to the whole population).  But since we don't have
+any information about who does/does not get tested, that's the best we can do
+with the data at hand.
+
+Our calculations could be misleading if the rate of cancer is much higher among
+those who are tested.  It probably is at least somewhat higher -- we test people
+more when they are more likely to have cancer.
+
+
+<div class = "explain" label = "Setting up a probability tree">
+Since we know $\prob(C)$ and $\prob(+ \mid C)$, it makes sense to set up our 
+tree like this:
+
+![probabilty tree](../../S21/from-class/online/images/breast-cancer-tree-empty.jpg)
+
+See if you can fill in some missing probabilities. Then check your work in the next tab.
+</div>
+
+<div class = "explain" label = "Filling in the probability tree">
+You don't have to use a probability tree to do this problem, you just need to multiply 
+the correct probabilities together.  But the tree is a handy way to organize the arithmetic.
+
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4) 
+will walk you through the process. See how my tree compares to yours. Then finish 
+the problem before seeing how I did it in the next tab.
+
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p1.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+<div class = "explain" label = "Using the probability tree">
+
+Now that we have the tree, we are all set to calculate the probability that we need.
+This [video](https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4) will walk you through the steps.
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//breast-cancer-p2.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+</div>
+
+<div class = "explain" label = "Disease Testing">
+
+This time you just get an answer to check your work.  If you didn't get this answer,
+review the solutions above (and make sure you have the right notation for each of your 
+events and probabilities).
+
+```{r include = FALSE}
+a <- round( 1/10000 * 0.99, 6)
+b <- round(9999/10000 * 0.02, 6)
+a / (a + b)
+```
+
+$p(D \mid P) = \frac{\frac1{10000}(.99)}{ \frac1{10000}(0.99) + \frac{9999}{10000} (0.02)} =$
+$\frac{`r a`}{`r a` + `r b`} =$ 
+`r round( 1/10000 * 0.99 / (1/10000 * 0.99 + 9999/10000 * 0.02), 4)`
+
+**Note 1:** That probability is small, but it much larger than $\prob(D)$ -- it's
+about 50 times as big.  So a positive test result increases your changes of
+having the disease by two orders of magnitude.
+
+**Note 2:** This is why we don't test everyone for everything -- the result would be 
+lots of false positives. But if we only test people with symptoms, then our before
+test probability of having the disease is much higher.  To see for yourself,
+redo this problem assuming $\prob(D)$ is $1/10$, as it might be for someone who
+has symptoms that could indicate the disease, but could also be something else.
+</div>
+
+</div>
+</div>
+
+### Wed, March 17
+
+* **Topic of the Day**: Random Variables
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/random-variables.html)
+  [[PDF]](counting-and-probability/random-variables.pdf)
+  
+  * Start with section 8 (random variables).  If you finish that, go
+  back to the primality testing and hashing examples from last time.
+  
+
+
+<div class = "indent">
+<div class = "explain" label = "Hints and Solutions">
+<div class = "explain" label = "8.2: Probability Tables">
+<div class = "explain" label = "Exercise 8.2.1">
+They must sum to 1. The probabilities of all possibilities must always sum to 1.
+</div>
+
+
+<div class = "explain" label = "Exercise 8.2.2">
+$p(X = 2) = 0.3$
+</div>
+
+
+<div class = "explain" label = "Exercise 8.2.3">
+$p(X > 2) = p(X = 3) + p(X = 4) = 0.2 + 0.1 = 0.3$
+</div>
+
+<div class = "explain" label = "Exercise 8.2.4">
+$p(X = 2) + p(X = 4) = 0.3 + 0.1 = 0.4$
+</div>
+
+<div class = "explain" label = "Exercise 8.2.5">
+The possible values are 0, 1, 2, 3, or 4.  (Don't forget 0.)
+
+$p(X = 2) = \binom{4}{2} 0.5^4 = `r choose(4,2) * 0.5^4`$  (Why $\binom{4}{2}$?)
+
+You should be able to work out the other four probabilities.  Be sure they sum to 1.
+</div>
+
+<div class = "explain" label = "Exercise 8.2.6">
+The possible values are 0, 1, 2, and 3.
+
+There are only 16 possible die rolls. There are two ways you could approach this.
+
+* For each of the 16, determine what the value of $X$ will be.
+* For each possible value, ask yourself how many of the 16 rolls give you that value.
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.7">
+
+Some hints:
+
+* Your probabilities should sum to 1.
+* Make sure that you are always creating a full 5-card hand.
+* It is probably easiest to work with unordered hands.
+</div>
+</div>
+
+
+<div class = "explain" label = "8.3 Probability Functions">
+<div class = "explain" label = "Exercise 8.2.7">
+
+$\prob(Y = 3) = 3/10 = 0.3$.
+
+The table can be constructed by computing the probabilities for each of $y=1$,
+$y=2$, $y=3$, and $y=4$.
+
+value of $Y$ | 1   |  2  | 3   |  4
+------------ | --- | --- | --- | ---
+probability  | 0.1 | 0.2 | 0.3 | 0.4 
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.9">
+
+$\prob(F = 1) = 1/2$ since that's the probability of flipping a head on the first toss.
+
+$F = 2$ means the first toss is a tail and the second is a head. The coin tosses
+are independent, so we can multiple probabilities. Similarly for $F=3$ we must flip
+TTH, etc.
+
+The possible values of $F$ are any positive integer, and you shoud be able to
+get a formula pretty easily once you see the examples for $F=1$, $F=2$, $F=3$, etc.
+</div>
+
+<div class = "explain" label = "Exercise 8.2.10">
+Possible values: 0 through $n$ (inclusive).  Don't forget about 0.
+
+We can get the probability using the same kind of reasoning we used to
+count the total number of bit strings of a certain length and the 
+number of bitstrings with a certain number of 1's. Now it is heads and 
+tails instead of 0s and 1s.
+
+$\prob(X = k) = \frac{???}{2^n}$.  Can you fill in the question marks?  (Hint: 
+Use binomial coefficients, aka the choose function.)
+
+We will see a different way to think about this in the next problem. (It's fine 
+if you use that way already here.)
+</div>
+
+<div class = "explain" label = "Exercise 8.2.11">
+
+a. $\prob(X = 1) = 0.75$
+b. $\prob(X = 1) = \prob(HT) + \prob(TH) = 2 (0.75) (0.25)$
+c. Hint: think about the types of coin toss patterns that lead to each value of
+$X$. How many are there? What is the probability of each one?
+
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.11d">
+d. ${\prob(X = x) = \binom{n}{x} p^x (1-p)^{n-x}}$ 
+
+  * $\binom{n}{x}$: The heads can be in any $x$ of the $n$ positions. 
+  * $p^x$: we need $x$ heads and each has probability $p$.
+  * $(1-p)^{n-x}$: we need $n - x$ tails and each has probability $1-p$.
+  * We get to multiply probabilities becase the coin tosses are independent.
+    
+Note: When $p = 1/2$, then $p^x (1-p)^{n-x} = (1/2)^n$.
+</div>
+
+<div class = "explain" label = "Exercise 8.4.12 & 8.4.13">
+Use the formula in the preceeding problem to fill in the tables.
+</div>
+</div>
+
+<div class = "explain" label = "Random Primaility Testing">
+
+a. Since $n$ is prime, `MillersTest(n, b)` will never say "composite", so the `PrimeTest(n)` will
+always return "prime (well, probably)".  
+
+b. At each pass through the loop, the probability of `MillersTest(n, b)` returning "composite"
+is greater than 3/4, so the probability of continuing to the next pass through the loop is 
+less than 1/4.  The probability of doing this 5 times is 
+$\le (1/4)^5 \approx `r round(0.25^5, 5)`$.
+
+Read more about this problem on page 464.
+</div>
+
+<div class = "explain" label = "Hashing">
+Read about this problem on page 462.
+</div>
+</div>
+
+</div>
+
+### Fri, March 19
+
+**Topic of the Day**: Expected Value
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/expected-value.html)
+  [[PDF]](counting-and-probability/expected-value.pdf)
+
+<div class = "indent">
+<div class = "explain" label = "Hints and Solutions">
+
+<div class = "explain" label = "Taz">
+Meet my dog Taz:
+
+```{r echo = FALSE, out.width = "300", fig.align = "center"}
+knitr::include_graphics("../../S20/from-class/online/Taz-2020-04-01.jpg")
+```
+
+If you every hear barking in the background during class, that's Taz.  She sometimes 
+can't tell the difference between play time and class time.  But usually
+she waits until I'm no longer talking to the computer screen
+and then comes to fetch me.
+</div>
+
+<div class = "explain" label = "Exercise 9.1">
+The student got more A's than C's, so the average should be higher than a B.
+</div>
+
+<div class = "explain" label = "Exercise 9.2">
+Add up the 10 grades and divide by 10 -- just like you learned in grade school:
+$$
+\frac{4 + 4 + 4 + 4 + 4 + 3 + 3 + 3 + 3 + 2}{10}
+$$
+</div>
+
+<div class = "explain" label = "Exercise 9.3">
+Here's the algebra.  The big numbers are the ones that fill in the blanks.
+\begin{align*}
+\mbox{GPA} &= 
+\frac{4 + 4 + 4 + 4 + 4 + 3 + 3 + 3 + 3 + 2}{10} \\
+&=
+\frac{5 \cdot 4}{10} + \frac{3 \cdot 4}{10} +\frac{1 \cdot 2}{10} \\
+& =  4 \cdot \frac{\Large{5}}{10} + 3 \cdot \frac{\Large{4}}{10} + 2 \cdot \frac{\Large{1}}{10}
+\end{align*}
+
+</div>
+
+<div class = "explain" label = "Exercise 9.4">
+
+value         |   4   |   3   |   2   
+-------------:|:-----:|:-----:|:-------
+probability   |  5/10 |  4/10 |  1/10
+</div>
+
+<div class = "explain" label = "Exercise 9.5">
+[video]<https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+<div class = "explain" label = "Exercise 9.6">
+[video]<https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+<div class = "explain" label = "Exercise 9.7">
+First we create the probability table:
+
+value         |   0   |   1   |   2    |   3
+-------------:|:-----:|:-----:|:------:|:------
+probability   |  1/8  |  3/8  |  3/8   |  1/8
+
+From this we get the expected value as **"sum of values times probabilities"**:
+
+$$
+\mbox{expected value} = 0 \cdot \frac18 + 1 \cdot \frac38 + 2 \cdot \frac38 + 3 \cdot \frac18 = \frac{12}{8} = 1.5
+$$
+This makes sense: 1.5 is half of 3 and we should get half as many heads as flips (on average).
+</div>
+
+<div class = "explain" label = "Exercise 9.8">
+The mathematical notation for "sum of values times probabilities" is 
+
+$$
+\sum_{x} x \cdot \Prob(X = x)
+$$
+where the sum is over all possible values of $x$.
+
+If you don't like using both upper and lower case X (and keeping track of which goes where), you
+could use a different letter, like this:
+
+$$
+\sum_{k} k \cdot \Prob(X = k)
+$$
+Now $k$ runs over all possible values of the random variable.
+
+Or you can think in terms of pseudo code:
+
+```
+def expected_value(values, prob): 
+  ev = 0
+  for v in values: 
+    ev = ev + v * prob(v)
+  return ev
+```
+
+If you work in R (a programming language for statistics), this is super easy:
+
+```{r}
+values = c(0, 1, 2, 3)
+probs = c(1/8, 3/8, 3/8, 1/8)
+sum(values * probs)
+```
+
+</div>
+
+<div class = "explain" label = "Exercise 9.9">
+[video]<https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4>
+<!-- <video width="600" controls> -->
+<!--   <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4" type="video/mp4"> -->
+<!--   Your browser does not support HTML5 video. -->
+<!-- </video> -->
+</div>
+
+<div class = "explain" label = "Exercise 9.10">
+There are $4 \cdot 4 = 16$ equally likely rolls of the two dice.  We can get our 
+probability table by counting up how many combinations give each difference.
+
+value         |   0   |   1   |   2    |   3
+-------------:|:-----:|:-----:|:------:|:------
+probability   | 4/16  | 6/16  |  4/16  |  2/16
+
+From here the expected value is (as always) the sum of values times probabilities.
+
+expected value = $0 \cdot \frac{4}{16} + 1 \cdot \frac{6}{16} + 2 \cdot \frac{4}{16} + 3 \cdot \frac{2}{16}$
+
+</div>
+
+<div class = "explain" label = "Exercise 9.11">
+
+Start by filling in this table
+
+number of diamonds |   0   |   1   |   2    |   3   |   4   |   5 
+------------------:|:-----:|:-----:|:------:|:-----:|:-----:|:-------
+probability        |   ??  |   ??  |   ??   |   ??  |  ??   |   ??
+
+Here's one example: $\displaystyle P(D = 2) = \frac{\binom{13}{2} \binom{39}{3}}{\binom{52}{5}}$
+
+Fill in the rest of the tale and then "sum of values times probabilities".
+
+```{r include = FALSE}
+x = 0:5
+ExpVal = sum( x * choose(13, x) * choose(39, 5-x) / choose(52, 5) )
+```
+
+You should get `r ExpVal`
+</div>
+
+<div class = "explain" label = "Exercise 9.12">
+
+```{r include = FALSE}
+vals <- 0:5
+probs <- dbinom(vals, 5, 1/6)
+exp_sixes <- sum(vals * probs)
+f <- as.character(mosaic::fractions(exp_sixes))
+```
+
+Answer: `r exp_sixes` = `r f`.
+
+Do you see why you should have expected that answer?
+</div>
+
+<div class = "explain" label = "Exercise 9.13">
+
+```{r, include = FALSE}
+vals <- 1:4
+probs <- diff(c(0, choose(4,vals) * choose(vals*13, 5) / choose(52, 5))); probs
+sum(probs)
+exp_suits <- sum(vals * probs); exp_suits
+```
+
+Answer: `r exp_suits`.
+
+Hint: Be careful not to overcount. Do your probabilities add up to 1?
+
+Taz says if you got this one, you deserve a nap:
+
+```{r echo = FALSE, out.width = "400", fig.align = "center"}
+knitr::include_graphics("../../S20/from-class/online/Taz-nap.jpg")
+```
+
+</div>
+
+<div class = "explain" label = "Exercise 9.14">
+You will have to be especially careful to avoid (or adjust for) double counting here.
+This is a challenging problem (given what we currently know).
+
+Answer: `r 6 * (1 - (5/6)^5)`.
+
+</div>
+</div>
+</div>
+
+<br><br>
