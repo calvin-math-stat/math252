@@ -189,7 +189,7 @@ To see more details, look on page 461.
 </div>
 </div>
 
-## Week 7 {.active}
+## Week 7 
 
 ### Mon, March 15
 
@@ -797,3 +797,117 @@ Answer: `r 6 * (1 - (5/6)^5)`.
 </div>
 
 <br><br>
+
+## Week 8 {.active}
+
+### Mon 3/22
+
+* **Test 2** will be on Friday, April 2. I had no requests for that date to be a black out date.
+More details to come.
+
+* **Topic of the Day:** More Expected Value
+
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/more-expected-value.html)
+  [[PDF]](counting-and-probability/more-expected-value.pdf)
+
+<div class = "indent">
+<div class = "explain" label = "Hints and Solutions">
+
+<div class = "explain" label = "Exercise 10.2">
+value        |    0  |   1  
+:----------: | :---: | :---: 
+probability  |  0.5  |  0.5
+</div>
+
+<div class = "explain" label = "Exercise 10.3">
+The table for $X^2$ is exactly the same as the table for $X$ in this case. (That's unusual,
+do you see when this will happen?)
+</div>
+
+<div class = "explain" label = "Exercise 10.4">
+
+* $\Prob(X = 3 \land  Y = 2) = 0.10$. 
+* $\Prob(X = 3) = 0.25 + 0.10 + 0.05 = 0.4$.  
+* $\Prob(Y = 2) = 0.10 + 0.05 + 0.10 = 0.25$.
+</div>
+
+<div class = "explain" label = "Exercise 10.6">
+
+
+value of $X$ |   1    |   2    |    3
+-------------| :----: | :----: | :----:
+probability  |  0.30  |  0.30  |  0.40
+
+value of $Y$ |   1    |   2    |    3
+-------------| :----: | :----: | :----:
+probability  |  0.45  |  0.25  |  0.30
+
+value of $X + Y$ |   2    |   3    |    4   |   5    |   6   
+-----------------| :----: | :----: | :----: | :----: | :----: 
+probability      |  0.10  |  0.20  |  0.40  |  0.25  |  0.05
+
+</div>
+
+<div class = "explain" label = "Exercise 10.8">
+
+a) 
+
+* $E(3 X + 2) = 3 E(X) + 2 = 3 \cdot 20 + 2 = 62$.
+* $E(2 X − 3) = 2 E(X) - 3 = 2\cdot 20 - 3 = 37$.
+
+b) 
+
+* $E (X +Y) = 5 + 2 = 7$; $E(X - Y) = E(X + (-Y)) = 5 + (-2) = 3$
+
+</div>
+
+<div class = "explain" label = "Exercise 10.10">
+$E(X_1 + X_2) = E(X_1) + E(X_2) = 3.5 + 3.5 = 7$.
+</div>
+
+<div class = "explain" label = "Exercise 10.11">
+The expected value is the same no matter how many people there are.
+If you didn't get that, double check your work.
+</div>
+
+<div class = "explain" label = "Exercise 10.12">
+Answer: $p$
+</div>
+
+<div class = "explain" label = "Exercise 10.13">
+Answer: $np$
+</div>
+
+<div class = "explain" label = "Exercise 10.15">
+Hint: What is the expected number of diamonds on the first card?
+</div>
+
+<div class = "explain" label = "Exercise 10.16">
+Hint: Can you split this into a sum of 5 terms?
+</div>
+
+<div class = "explain" label = "Exercise 10.17">
+Hint: Let $X_i = 1$ if the number $i$ is rolled and 0 other wise.  
+What is $\E(X_i)$ and how is it related to the main question?
+</div>
+</div>
+</div>
+
+### Wed 3/24
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(3242021)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+### Fri 3/26

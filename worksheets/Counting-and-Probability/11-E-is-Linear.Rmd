@@ -131,7 +131,7 @@ What is $\E(X)$?  How would the answer change if 10 people put their names into 
 probability table.  What are the possible values of $X$?]
 
 13. Let $X \sim {\sf Binom}(n, p)$.  What is $\E(X)$?  [Hint: Use the previous
-problem and the Linearity Lemma.  How can you write $X$ as a sum?]
+problem and the Linearity Theorem.  How can you write $X$ as a sum?]
 
 14. Can you prove the linearity theorem?  [For part b, you may restrict your attention to
 a sum of two random variables.]
@@ -141,3 +141,4 @@ a sum of two random variables.]
 16. If you roll 5 4-sided dice, what is the expected number of 4s rolled?
 
 17. If you roll 5 standard dice, what is the expected number of unique numbers rolled?
+
