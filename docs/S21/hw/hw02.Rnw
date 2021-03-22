@@ -170,6 +170,16 @@ Additional assignments will be filled in over time.
 	 \extra[Monty Hall]{15}
 	 \\
 	   \hline
+	 Wed 3/24 & \WW{10} & Rosen 7 & Expected Value
+	 \\
+	         & PS 9 & Rosen 7.4 &
+	 \helper{1}
+	 \mand[rolling 6s]{3}
+	 \extra[loaded die]{5}
+	 \mand[test score]{7}
+	 \mand[three dice]{8}
+   \\
+   \hline
 \end{longtable}
 \end{center}
 \label{end}
@@ -179,16 +189,6 @@ Additional assignments will be filled in over time.
 	 \hline
 	 %\helper[inequality]{11}
 	 %\mand[inequality]{12}
-	 & \WW{10} & Rosen 7 & Expected Value
-	 \\
-	 \hline
-	 Mon 4/6 & PS 9 & Rosen 7.4 &
-	 \helper{1}
-	 \mand[rolling 6s]{3}
-	 \extra[loaded die]{5}
-	 \mand[test score]{7}
-	 \mand[three dice]{8}
-   \\
 	 & \WW{11} & Rosen 7 & Expected Value; binomial distributions
 	 \\
 	 \hline
