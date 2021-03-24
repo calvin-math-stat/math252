@@ -278,14 +278,16 @@ What is <span class="math inline">\(V^0\)</span>? What is <span class="math inli
 <h2><span class="header-section-number">1.2</span> (Phrase-Structure) Grammars</h2>
 <p>A phase-structure grammar consists of</p>
 <ul>
-<li>an <strong>alphabet</strong>: denoted <span class="math inline">\(V\)</span> here</li>
-<li>a <strong>start symbol</strong> <span class="math inline">\(S\)</span>: <span class="math inline">\(S\)</span> must be (exactly) one of the symbols in the alphabet.
-We can denote this as <span class="math inline">\(S\in V\)</span>.</li>
-<li><strong>terminal symbols</strong> (<span class="math inline">\(T\)</span>): a set of symbols in the alphabet (<span class="math inline">\(T \subset V\)</span>)
-* <span class="math inline">\(N = V - T\)</span> is the set of <strong>nonterminal symbols</strong>
-* so very symbol is either terminal or nonterminal
-* The start symbol is a terminal in some languages and a nonterminal in others</li>
-<li><strong>production rules</strong> (<span class="math inline">\(P\)</span>): <span class="math inline">\(P \subseteq (V^*-N^*) \times V^*\)</span>
+<li><p>an <strong>alphabet</strong>: denoted <span class="math inline">\(V\)</span> here</p></li>
+<li><p>a <strong>start symbol</strong> <span class="math inline">\(S\)</span>: <span class="math inline">\(S\)</span> must be (exactly) one of the symbols in the alphabet.
+We can denote this as <span class="math inline">\(S\in V\)</span>.</p></li>
+<li><p><strong>terminal symbols</strong> (<span class="math inline">\(T\)</span>): a set of symbols in the alphabet (<span class="math inline">\(T \subset V\)</span>)</p>
+<ul>
+<li><span class="math inline">\(N = V - T\)</span> is the set of <strong>nonterminal symbols</strong></li>
+<li>so very symbol is either terminal or nonterminal</li>
+<li>The start symbol is a terminal in some languages and a nonterminal in others</li>
+</ul></li>
+<li><p><strong>production rules</strong> (<span class="math inline">\(P\)</span>): <span class="math inline">\(P \subseteq (V^*-N^*) \times V^*\)</span></p>
 <ul>
 <li>usually write elements of <span class="math inline">\(P\)</span> as <span class="math inline">\(u \to v\)</span> rather than <span class="math inline">\((u, v)\)</span>.</li>
 <li><span class="math inline">\(u\)</span>: <span class="math inline">\(V^*-N^*\)</span> says that the lefthand side of the rule (<span class="math inline">\(u\)</span>) must
