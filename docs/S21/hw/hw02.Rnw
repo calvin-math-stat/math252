@@ -170,28 +170,19 @@ Additional assignments will be filled in over time.
 	 \extra[Monty Hall]{15}
 	 \\
 	   \hline
-	 Wed 3/24 & PS 9 & Rosen 7.4 &
+	 Wed 3/24 & PS 10 & Rosen 7.4 &
 	 \helper{1}
 	 \mand[rolling 6s]{3}
 	 \mand[biased coin]{4}
 	 \extra[loaded die]{5}
 	 \mand[test score]{7}
 	 \mand[three dice]{8}
-   \\
-   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-	 Wed 4/1 & \WW{09} & Rosen 7 & Due at 11 AM (ie, before class time)
+	 \\
+	   \hline
+	 Fri 3/26 & \WW{10} & Rosen 7 & probability review
 	 \\
 	 \hline
-	 %\helper[inequality]{11}
-	 %\mand[inequality]{12}
-	 & \WW{11} & Rosen 7 & Expected Value; binomial distributions
-	 \\
-	 \hline
-	   Wed 4/8 & PS 10 & Rosen 13.1 &
+	 Mon 3/29 & PS 11 & Rosen 13.1 &
    \mand[sentences]{1ad}
 	 \extra{2}
 	 \helper{3}
@@ -204,6 +195,10 @@ Additional assignments will be filled in over time.
 	 \extra{15}
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
 	   Mon 4/13 & PS 11 & Rosen 13.1 &
 	    \mand[types of grammars]{19}
 	    \mand[palindromes]{20}
