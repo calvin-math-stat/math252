@@ -39,10 +39,13 @@ A phase-structure grammar consists of
 * a **start symbol** $S$: $S$ must be (exactly) one of the symbols in the alphabet.
 We can denote this as $S\in V$.
 * **terminal symbols** ($T$): a set of symbols in the alphabet ($T \subset V$) 
-        * $N = V - T$ is the set of **nonterminal symbols**
-        * so very symbol is either terminal or nonterminal
-        * The start symbol is a terminal in some languages and a nonterminal in others
+
+    * $N = V - T$ is the set of **nonterminal symbols**
+    * so very symbol is either terminal or nonterminal
+    * The start symbol is a terminal in some languages and a nonterminal in others
+  
 * **production rules** ($P$): $P \subseteq (V^*-N^*) \times V^*$
+
     * usually write elements of $P$ as $u \to v$ rather than $(u, v)$.
     * $u$: $V^*-N^*$ says that the lefthand side of the rule ($u$) must 
     **contain at least one nonterminal**.
