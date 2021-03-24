@@ -198,8 +198,8 @@ attention to definitions and notation. **Your main tasks today:**
 
     As usual, you can access the **worksheet** in either of two formats:
 
-    * [HTML](../models-of-computation/alphabets-languages-and-grammars.html)
-    * [PDF](../models-of-computation/alphabets-languages-and-grammars.pdf)
+    * [HTML](models-of-computation/alphabets-languages-and-grammars.html)
+    * [PDF](models-of-computation/alphabets-languages-and-grammars.pdf)
 
 <div class = "indent">
 <div class = "explain" label = "Comments/Hints/Solutions">
