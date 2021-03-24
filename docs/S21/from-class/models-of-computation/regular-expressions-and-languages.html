@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Regular Expressions and Languages | Modeling Computation</title>
+  <meta name="description" content="4 Regular Expressions and Languages | Modeling Computation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Regular Expressions and Languages | Modeling Computation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Regular Expressions and Languages | Modeling Computation" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2021-03-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="finite-state-automata.html"/>
+<link rel="next" href="regular-grammars-and-automata.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html"><i class="fa fa-check"></i><b>1</b> Alphabets, Languages, and Grammars</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#terminology"><i class="fa fa-check"></i><b>1.1</b> Terminology</a>
+<ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#phrase-structure-grammars"><i class="fa fa-check"></i><b>1.2</b> (Phrase-Structure) Grammars</a>
+<ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="1.2.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#derivations-and-languages"><i class="fa fa-check"></i><b>1.2.1</b> Derivations and Languages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="types-of-grammars.html"><a href="types-of-grammars.html"><i class="fa fa-check"></i><b>2</b> Types of Grammars</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a>
+<ul>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-algol-60-identifier"><i class="fa fa-check"></i>BNF for ALGOL 60 identifier</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-signed-integer"><i class="fa fa-check"></i>BNF for signed integer</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-specification-for-java"><i class="fa fa-check"></i>BNF specification for Java</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="finite-state-automata.html"><a href="finite-state-automata.html"><i class="fa fa-check"></i><b>3</b> Finite State Automata</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="finite-state-automata.html"><a href="finite-state-automata.html#graph-representation"><i class="fa fa-check"></i><b>3.1</b> Graph Representation</a></li>
+<li class="chapter" data-level="3.2" data-path="finite-state-automata.html"><a href="finite-state-automata.html#extended-transition-function"><i class="fa fa-check"></i><b>3.2</b> Extended transition function</a></li>
+<li class="chapter" data-level="3.3" data-path="finite-state-automata.html"><a href="finite-state-automata.html#language-recognition"><i class="fa fa-check"></i><b>3.3</b> Language Recognition</a></li>
+<li class="chapter" data-level="3.4" data-path="finite-state-automata.html"><a href="finite-state-automata.html#equivalent-automata-and-grammars"><i class="fa fa-check"></i><b>3.4</b> Equivalent Automata and Grammars</a></li>
+<li class="chapter" data-level="3.5" data-path="finite-state-automata.html"><a href="finite-state-automata.html#nondeterministic-automata"><i class="fa fa-check"></i><b>3.5</b> Nondeterministic Automata</a></li>
+<li class="chapter" data-level="3.6" data-path="finite-state-automata.html"><a href="finite-state-automata.html#the-equivalence-of-dfa-and-nfa."><i class="fa fa-check"></i><b>3.6</b> The Equivalence of DFA and NFA.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html"><i class="fa fa-check"></i><b>4</b> Regular Expressions and Languages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#operations-on-languages"><i class="fa fa-check"></i><b>4.1</b> Operations on Languages</a></li>
+<li class="chapter" data-level="4.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#regular-expressions"><i class="fa fa-check"></i><b>4.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#syntax"><i class="fa fa-check"></i><b>4.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="4.2.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#semantics"><i class="fa fa-check"></i><b>4.2.2</b> Semantics</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#recognizing-regular-languages-with-nfas"><i class="fa fa-check"></i><b>4.3</b> Recognizing Regular Languages with NFAs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html"><i class="fa fa-check"></i><b>5</b> Regular Grammars and Automata</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#grammars-to-automata"><i class="fa fa-check"></i><b>5.1</b> Grammars to Automata</a></li>
+<li class="chapter" data-level="5.2" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#automata-to-grammars"><i class="fa fa-check"></i><b>5.2</b> Automata to Grammars</a></li>
+<li class="chapter" data-level="5.3" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#some-review"><i class="fa fa-check"></i><b>5.3</b> Some Review</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regular-langauges.html"><a href="regular-langauges.html"><i class="fa fa-check"></i><b>6</b> Regular Langauges</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="regular-langauges.html"><a href="regular-langauges.html#equivalent-representations"><i class="fa fa-check"></i><b>6.1</b> Equivalent Representations</a></li>
+<li class="chapter" data-level="6.2" data-path="regular-langauges.html"><a href="regular-langauges.html#dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2</b> DFA to Regular Expression</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="regular-langauges.html"><a href="regular-langauges.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>6.2.1</b> GNFA (Generalied NFA)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="regular-langauges.html"><a href="regular-langauges.html#algorithm-for-converting-dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2.2</b> Algorithm for converting DFA to Regular Expression</a></li>
+<li class="chapter" data-level="6.2.3" data-path="regular-langauges.html"><a href="regular-langauges.html#examples-1"><i class="fa fa-check"></i><b>6.2.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="regular-langauges.html"><a href="regular-langauges.html#review-problems"><i class="fa fa-check"></i><b>6.3</b> Review problems</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="a-language-that-is-not-regular.html"><a href="a-language-that-is-not-regular.html"><i class="fa fa-check"></i><b>7</b> A language that is not regular</a></li>
+<li class="chapter" data-level="8" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html"><i class="fa fa-check"></i><b>8</b> Regular Expressions in Python</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#getting-your-python-environment-working"><i class="fa fa-check"></i><b>8.1</b> Getting your python environment working</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#repl.it"><i class="fa fa-check"></i><b>8.1.1</b> repl.it</a></li>
+<li class="chapter" data-level="8.1.2" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#thonny"><i class="fa fa-check"></i><b>8.1.2</b> Thonny</a></li>
+<li class="chapter" data-level="8.1.3" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#testing-your-python-setup"><i class="fa fa-check"></i><b>8.1.3</b> Testing your python setup</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="turing-machines.html"><a href="turing-machines.html"><i class="fa fa-check"></i><b>9</b> Turing Machines</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="turing-machines.html"><a href="turing-machines.html#definition-of-a-1-tape-turing-machine-syntax"><i class="fa fa-check"></i><b>9.1</b> Definition of a 1-tape Turing Machine (Syntax)</a></li>
+<li class="chapter" data-level="9.2" data-path="turing-machines.html"><a href="turing-machines.html#execution-of-a-turing-machine-program-semantics"><i class="fa fa-check"></i><b>9.2</b> Execution of a Turing Machine program (Semantics)</a></li>
+<li class="chapter" data-level="9.3" data-path="turing-machines.html"><a href="turing-machines.html#ascii-representations-of-turing-machines"><i class="fa fa-check"></i><b>9.3</b> ASCII Representations of Turing Machines</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="turing-machines.html"><a href="turing-machines.html#example-1-13.5.1-in-rosen-7"><i class="fa fa-check"></i><b>9.3.1</b> Example 1 (13.5.1 in Rosen 7)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="turing-machines.html"><a href="turing-machines.html#example-2"><i class="fa fa-check"></i><b>9.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="9.3.3" data-path="turing-machines.html"><a href="turing-machines.html#table-notation"><i class="fa fa-check"></i><b>9.3.3</b> Table notation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#the-language-recognized-by-a-turing-machine"><i class="fa fa-check"></i><b>9.4</b> The language recognized by a Turing Machine</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="turing-machines.html"><a href="turing-machines.html#designing-a-turing-machine"><i class="fa fa-check"></i><b>9.4.1</b> Designing a Turing Machine</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="turing-machines.html"><a href="turing-machines.html#computing-funcitons-with-a-turing-machine"><i class="fa fa-check"></i><b>9.5</b> Computing funcitons with a Turing machine</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="turing-machines.html"><a href="turing-machines.html#neat-computation"><i class="fa fa-check"></i><b>9.5.1</b> Neat computation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html"><i class="fa fa-check"></i><b>10</b> What Can Turing Machines Do?</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#turing-computable-languages"><i class="fa fa-check"></i><b>10.1</b> Turing Computable Languages</a></li>
+<li class="chapter" data-level="10.2" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#variations-on-the-turing-machine"><i class="fa fa-check"></i><b>10.2</b> Variations on the Turing Machine</a></li>
+<li class="chapter" data-level="10.3" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#the-halting-problem"><i class="fa fa-check"></i><b>10.3</b> The Halting Problem</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#the-halting-problem-is-not-turing-computable-sketch"><i class="fa fa-check"></i><b>10.3.1</b> The Halting Problem is not Turing Computable (sketch)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#running-time-of-a-turing-machine"><i class="fa fa-check"></i><b>10.4</b> Running time of a Turing machine</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#p-and-np"><i class="fa fa-check"></i><b>10.4.1</b> P and NP</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling Computation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regular-expressions-and-languages" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Regular Expressions and Languages</h1>
+<div id="operations-on-languages" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Operations on Languages</h2>
+<p>Since languages are sets, we can use set operations like <span class="math inline">\(\cup\)</span> and <span class="math inline">\(\cap\)</span> to create new languages.
+But there are some additional operations that we will use.</p>
+<ul>
+<li><p>concatenation of strings: <span class="math inline">\(xy\)</span> is the concetanation of strings <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> (<span class="math inline">\(x\)</span> followed by <span class="math inline">\(y\)</span>)</p></li>
+<li><p>concatenation of sets: <span class="math inline">\(AB = \{ xy \mid x \in A \land y \in B \}\)</span></p></li>
+<li><p>power: <span class="math inline">\(A^0 = \emptyset\)</span>; <span class="math inline">\(A^1 = A\)</span>; <span class="math inline">\(A^{n+1} = A^n A\)</span>. (Power is iterated concatenation.)</p></li>
+<li><p>Kleene star: <span class="math inline">\(\displaystyle A^* = \cup_{n = 0}^{\infty} \; A^n\)</span></p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>What strings belong to <span class="math inline">\(\{0, 01\}^2\)</span>?</p></li>
+<li><p>Which of these strings belong to <span class="math inline">\(\{0, 01\}^*\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li>01001</li>
+<li>10110</li>
+<li>00010</li>
+</ol></li>
+<li><p>Which of these strings belong to <span class="math inline">\(\{101, 111, 11\}^*\)</span>?</p>
+<ol style="list-style-type: lower-alpha">
+<li>1010111</li>
+<li>1011011</li>
+<li>1110111</li>
+<li>11110111</li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="regular-expressions" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Regular Expressions</h2>
+<p>Regular expression are a type of shorthand notation for representing certain types of sets.</p>
+<div id="syntax" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Syntax</h3>
+<p>A regular expression over an input alphabet <span class="math inline">\(I\)</span> is defined recursively.</p>
+<ul>
+<li><p><span class="math inline">\(\boldsymbol{\emptyset}\)</span> and <span class="math inline">\(\boldsymbol{\lambda}\)</span> and regular expressions.</p></li>
+<li><p><span class="math inline">\(\boldsymbol{x}\)</span> is a regular expression for each <span class="math inline">\(i \in I\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> are regular expressions, then</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}^*\)</span> is a regular expression</li>
+<li><span class="math inline">\((\boldsymbol{A} \cup \boldsymbol{B})\)</span> is a regular expression</li>
+<li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})\)</span> is a regular expression</li>
+</ul></li>
+</ul>
+<!-- Figures created with http://madebyevan.com/fsm/ -->
+</div>
+<div id="semantics" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Semantics</h3>
+<p>Each regular expression represents a language as follows.</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{\emptyset}\)</span> represents the empty langauge: <span class="math inline">\(\emptyset\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\lambda}\)</span> represents language that contains only the empty string: <span class="math inline">\(\{\lambda\}\)</span></li>
+<li>For each <span class="math inline">\(x \in I\)</span>, <span class="math inline">\(\boldsymbol{x}\)</span> represents the language containing only <span class="math inline">\(x\)</span>: <span class="math inline">\(\{x \}\)</span></li>
+<li>If <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> are regular expressions representing languages <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, then
+<ul>
+<li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})\)</span> represents <span class="math inline">\(AB\)</span></li>
+<li><span class="math inline">\((\boldsymbol{A} \cup \boldsymbol{B})\)</span> represents <span class="math inline">\(A \cup B\)</span> </li>
+<li><span class="math inline">\(\boldsymbol{A}^*\)</span> represents <span class="math inline">\(A^*\)</span> </li>
+</ul></li>
+</ul>
+<p>The langauges represented by regular expressions are called <strong>regular languages</strong> (how creative).</p>
+<ol start="4" style="list-style-type: decimal">
+<li>In Rosen 7, the definition of regular expression is missing boldface
+in a couple places. Find them.</li>
+</ol>
+<p><img src="../images/regex-def.png" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>What is the difference between <span class="math inline">\(\boldsymbol{1}\)</span> and <span class="math inline">\(1\)</span>?
+between <span class="math inline">\(\boldsymbol{\lambda}\)</span> and <span class="math inline">\(\lambda\)</span>?
+between <span class="math inline">\(\boldsymbol{\emptyset}\)</span> and <span class="math inline">\(\emptyset\)</span>?</p></li>
+<li><p>Describe in words the languages represented by each of these regular expressions:</p>
+<p> a. <span class="math inline">\(\boldsymbol{10^*} \quad\)</span> b. <span class="math inline">\(\boldsymbol{(10)^*}\quad\)</span> c. <span class="math inline">\(\boldsymbol{0 \cup 01}\quad\)</span> d. <span class="math inline">\(\boldsymbol{0^* \cup 01}\quad\)</span> e. <span class="math inline">\(\boldsymbol{0 (0 \cup 1)^*}\quad\)</span> f. <span class="math inline">\(\boldsymbol{(0 \cup 01)^*}\quad\)</span></p></li>
+<li><p>Can each of the languages above be recognized by an NFA? a DFA?</p></li>
+<li><p>What would we need to do to show that every regualar language can be recognized by an NFA?
+Give it a try and see how far you get. Which parts are easy? Which are trickier? Why?</p></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="recognizing-regular-languages-with-nfas" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Recognizing Regular Languages with NFAs</h2>
+<ol style="list-style-type: decimal">
+<li><p>Show that the empty language (<span class="math inline">\(\emptyset\)</span>) is recognized by an NFA.</p></li>
+<li><p>Show that the language <span class="math inline">\(\{\lambda\}\)</span> is recognized by an NFA.</p></li>
+<li><p>Show that if <span class="math inline">\(a \in I\)</span>, then the language <span class="math inline">\(\{a \}\)</span> is recognized by an NFA.</p></li>
+<li><p>An NFA is said to have a <strong>lonely start state</strong> if there are no transitions
+into the start state.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Contruct an NFA with a lonely start state that is equivalent to the
+NFA below.</li>
+</ol>
+<p><img src="../images/DFA-NFA/NFA4.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Explain why every NFA is equivalent to an NFA with a lonely start state.
+That is, describe how to convert any NFA into an equivalent NFA with
+a lonely start state.</li>
+</ol></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are each recognized by an NFA, then <span class="math inline">\(AB\)</span> is, too.</p>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. You may
+assume each has a lonely start state if that is useful.
+How can you use them to build a new NFA that recognizes <span class="math inline">\(AB\)</span>?]</p></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are each recognized by an NFA, then <span class="math inline">\(A \cup B\)</span> is, too.</p>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> and <span class="math inline">\(N_B\)</span> be the NFAs that recognize <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.
+You may assume each has a lonely start state if that is useful.
+How can you use them to build a new NFA that recognizes <span class="math inline">\(A \cup B\)</span>?]</p></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then <span class="math inline">\(A^*\)</span> is, too.</p>
+<p>[Hint: Let <span class="math inline">\(N_A\)</span> be the NFA that recognizes <span class="math inline">\(A\)</span>.
+You may assume it has a lonely start state if that is useful.
+How can you use it to build a new NFA that recognizes <span class="math inline">\(A^*\)</span>?]</p></li>
+<li><p>Explain how 1–7 above show that every regular language is recognized by an NFA.</p></li>
+<li><p>Explain how 7 implies that every regular language is recognized by a DFA.</p></li>
+<li><p>The method just outlined is automatic (you could fairly easily write a
+computer program to do the translation from regular expression to NFA), and it
+provides a proof that all regular languages can be recognized by an NFA. But it
+might produce an NFA with more states than is minimally required. Create an NFA
+that recognizes <span class="math inline">\(\boldsymbol{1}^* \cup \boldsymbol{01}\)</span>. Do this two ways:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Following the steps outlined in 1–6.</li>
+<li>Any way you like, but using fewer states than in part a.</li>
+<li>What is the smallest (fewest states) NFA you can find that recognizes <span class="math inline">\(\boldsymbol{1}^* \cup \boldsymbol{01}\)</span>?</li>
+</ol></li>
+<li><p>Show that if <span class="math inline">\(A\)</span> is recognized by an NFA, then the complement of <span class="math inline">\(A\)</span> (<span class="math inline">\(\overline{A} = A^c\)</span>)
+is too.</p>
+<p>[Hint: There is an easy way and a hard way – use the easy way.]</p></li>
+</ol>
+<!-- \begin{center} -->
+<!-- \begin{tikzpicture}[scale=0.12] -->
+<!-- \tikzstyle{every node}+=[inner sep=0pt] -->
+<!-- \draw [black] (21.5,-14.4) circle (3); -->
+<!-- \draw (21.5,-14.4) node {$S$}; -->
+<!-- \draw [black] (49.8,-15) circle (3); -->
+<!-- \draw (49.8,-15) node {$A$}; -->
+<!-- \draw [black] (36.2,-30.9) circle (3); -->
+<!-- \draw (36.2,-30.9) node {$B$}; -->
+<!-- \draw [black] (36.2,-30.9) circle (2.4); -->
+<!-- \draw [black] (33.235,-30.472) arc (-103.7691:-172.83463:15.449); -->
+<!-- \fill [black] (33.24,-30.47) -- (32.58,-29.8) -- (32.34,-30.77); -->
+<!-- \draw (24.84,-27.2) node [left] {$1$}; -->
+<!-- \draw [black] (24.5,-14.46) -- (46.8,-14.94); -->
+<!-- \fill [black] (46.8,-14.94) -- (46.01,-14.42) -- (45.99,-15.42); -->
+<!-- \draw (35.64,-15.22) node [below] {$0$}; -->
+<!-- \draw [black] (47.85,-17.28) -- (38.15,-28.62); -->
+<!-- \fill [black] (38.15,-28.62) -- (39.05,-28.34) -- (38.29,-27.69); -->
+<!-- \draw (42.45,-21.51) node [left] {$0$}; -->
+<!-- \draw [black] (52.106,-13.099) arc (157.24052:-130.75948:2.25); -->
+<!-- \draw (57.13,-13.04) node [right] {$0$}; -->
+<!-- \fill [black] (52.71,-15.67) -- (53.26,-16.44) -- (53.64,-15.52); -->
+<!-- \draw [black] (24.256,-13.218) arc (110.43244:67.13842:30.965); -->
+<!-- \fill [black] (24.26,-13.22) -- (25.18,-13.41) -- (24.83,-12.47); -->
+<!-- \draw (35.73,-10.76) node [above] {$1$}; -->
+<!-- \draw [black] (49.152,-17.926) arc (-16.89127:-64.19251:19.485); -->
+<!-- \fill [black] (49.15,-17.93) -- (48.44,-18.55) -- (49.4,-18.84); -->
+<!-- \draw (45.86,-26.37) node [right] {$1$}; -->
+<!-- \draw [black] (34.2,-28.66) -- (23.5,-16.64); -->
+<!-- \fill [black] (23.5,-16.64) -- (23.65,-17.57) -- (24.4,-16.9); -->
+<!-- \draw (29.39,-21.2) node [right] {$0$}; -->
+<!-- \end{tikzpicture} -->
+<!-- \end{center} -->
+<div style="page-break-after: always;"></div>
+<!-- ## Solution to problem 4.3.9 -->
+<!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
+<!-- ``` -->
+<!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
+<!-- regex to epsilon NFA -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/RYNN-tb9WxI?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- epsilon NFA to DFA -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/taClnxU-nao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="finite-state-automata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regular-grammars-and-automata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Models-of-Computation.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
