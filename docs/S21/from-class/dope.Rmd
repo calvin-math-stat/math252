@@ -320,3 +320,12 @@ without a MAXINT.)
 <br>
 
 ### Fri 3/26
+
+* Test 2 is next Friday
+    * [Test Info](../test-info/)
+
+* **Topic of the Day:** Types of grammars.
+  * Worksheet: 
+    [[HTML]](models-of-computation/types-of-grammars.html)
+    [[PDF]](models-of-computation/types-of-grammars.pdf)
+
