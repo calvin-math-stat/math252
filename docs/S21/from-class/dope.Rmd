@@ -69,7 +69,7 @@ we will often use when working in groups on Teams.
 [Dope sheets for weeks 6 - 7](dope02.html)
 
 
-## Week 8 {.active}
+## Week 8 
 
 ### Mon 3/22
 
@@ -421,3 +421,32 @@ Example: Grammar 2
 </div>
 
 <br><br>
+
+## Week 9 {.active}
+
+### Mon 3/29
+
+* Test on Friday
+
+  * [Test Info](../test-info)
+  
+* **Topics of the Day**
+
+  * Making sure we understand the grammars
+    [[HTML]](models-of-computation/types-of-grammars.html)
+    [[PDF]](models-of-computation/types-of-grammars.pdf)
+    
+  * Getting started with automata (not on test 2)
+    [[HTML]](models-of-computation/finite-state-automata.html)
+    [[PDF]](models-of-computation/finite-state-automata.pdf)
+    
+      * Note: this is a multi-day worksheet
+
+### Wed 3/31
+
+* Review Day
+
+### Fri 4/2
+
+* Test 2 -- in NH 259 unless you have made other arrangements
+
