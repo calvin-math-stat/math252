@@ -444,8 +444,27 @@ Example: Grammar 2
 
 ### Wed 3/31
 
-* Review Day
+* Test 2 stuff
 
+  * If you can't take the test in the classroom, be sure to 
+  [fill out this form **TODAY**](https://docs.google.com/forms/d/e/1FAIpQLSennHyKmqQ_7oQ4PXOjWEoIopY0qtT20m7aPKdp_JtAM6yoYA/viewform?usp=sf_link) so we can make other arrangements.
+  
+  * [Test Info](../test-info/)
+  
+  
+* **Topic of the Day:** Review 
+
+  * Worksheet: [[HTML]](test-info/test02-review.html)
+    [[PDF]](test-info/test02-review.pdf)
+
+### Thursday 4/1
+
+* Review session at 12:00
+  
+  * No formal agenda, I'll just be available to answer questions.
+
+  * You can post questions in advance [here](https://docs.google.com/document/d/10mPnDKnZ_H7MRsQttVnHGAxbmJFhFjGUJAaTG8sbTO8/edit?usp=sharing).
+  
 ### Fri 4/2
 
 * Test 2 -- in NH 259 unless you have made other arrangements
