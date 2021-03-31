@@ -454,8 +454,8 @@ Example: Grammar 2
   
 * **Topic of the Day:** Review 
 
-  * Worksheet: [[HTML]](test-info/test02-review.html)
-    [[PDF]](test-info/test02-review.pdf)
+  * Worksheet: [[HTML]](../test-info/test02-review.html)
+    [[PDF]](../test-info/test02-review.pdf)
 
 ### Thursday 4/1
 
