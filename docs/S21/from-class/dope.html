@@ -544,6 +544,75 @@ S \Rightarrow AB \Rightarrow CaB \Rightarrow baB \Rightarrow baCb \Rightarrow ba
 <li>Worksheet: <a href="../test-info/test02-review.html">[HTML]</a> <a href="../test-info/test02-review.pdf">[PDF]</a></li>
 </ul></li>
 </ul>
+<div class="indent">
+<div class="explain" label="Some hints/solutions">
+<div class="explain" label="Exercise 7">
+<pre class="r"><code>choose(4, 1) *        # choose 1 suit
+  choose(13, 2) *     # choose 2 cards from that suit
+  choose(13, 1)^3 /   # choose 1 card from each of the other three suits
+  choose(52, 5)       # total number of hands</code></pre>
+<pre><code>## [1] 0.2637455</code></pre>
+</div>
+<div class="explain" label="Exercise 8">
+<p>This is a challenging problem, and you need to think carefully to avoid double coungting or skipping.</p>
+<p>The method from Exercise 7 would be very tedious because there are many suit patterns that give you 4 suits in a 13-card hand. Let’s do it differently. Let’s use the compliment rule and count the hands that don’t have all the suits.</p>
+<p>This almost works.</p>
+<pre class="r"><code>choose(4,3) * choose(39, 13)</code></pre>
+<pre><code>## [1] 32489701776</code></pre>
+<p>But it over counts hands that have fewer than 3 suits.</p>
+<ul>
+<li><p>A hand with exactly 2 suits shows up twice.</p>
+<p>Example: a hand with <span class="math inline">\(\clubsuit\)</span> and <span class="math inline">\(\diamondsuit\)</span> will get counted for only have <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\diamondsuit\)</span> <span class="math inline">\(\heartsuit\)</span> and a again for only having <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\diamondsuit\)</span> <span class="math inline">\(\spadesuit\)</span>.</p></li>
+<li><p>A hand with exactly 1 suit shows up <span class="math inline">\(\binom{3}{2} = 3\)</span> times.</p>
+<p>Example: A hand with only <span class="math inline">\(\clubsuit\)</span> shows up for <span class="math inline">\(\clubsuit\)</span> combined with any 2 of the other 3 suits: <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\diamondsuit\)</span> <span class="math inline">\(\heartsuit\)</span> or <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\diamondsuit\)</span> <span class="math inline">\(\spadesuit\)</span> or <span class="math inline">\(\clubsuit\)</span> <span class="math inline">\(\heartsuit\)</span> <span class="math inline">\(\spadesuit\)</span>.</p></li>
+</ul>
+<pre class="r"><code># E1 = exactly 1 suit
+# E2 = exactly 2 suits
+# E3 = exactly 3 suits
+# M3 = at most 3 suits
+E1 = choose(4, 1) * choose(13, 13); E1</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>E2 = choose(4, 2) * (choose(26, 13) - 2 * choose(13, 13)); E2</code></pre>
+<pre><code>## [1] 62403588</code></pre>
+<pre class="r"><code>E3 = choose(4, 3) * choose(39, 13) - 2 * E2 - 3 * E1; E3</code></pre>
+<pre><code>## [1] 32364894588</code></pre>
+<pre class="r"><code>M3 = choose(4, 3) * choose(39, 13) - E2 - (choose(3, 2) - 1) * E1; M3</code></pre>
+<pre><code>## [1] 32427298180</code></pre>
+<pre class="r"><code>E1 + E2 + E3</code></pre>
+<pre><code>## [1] 32427298180</code></pre>
+<p>We can also use inclusion-exclusion. Let <span class="math inline">\(C\)</span> be the set of hands with NO clubs. Let <span class="math inline">\(D\)</span>, <span class="math inline">\(H\)</span>, and <span class="math inline">\(S\)</span> be defined similarly for the other suits. Hands that don’t have all four suits are in at least one of these sets. To save some space, let’s write intersections as <span class="math inline">\(X \cap Y = XY\)</span> (just like leaving out the multiplication symbol in algebra).</p>
+<p><span class="math display">\[\begin{align*}
+|C \cup D \cup H \cup S|
+=&amp;
+|C| + |D| + |H| + |S| \\
+&amp;-
+|CD| - |CH| - |CS| - |DH| - |DS| - |HS|  \\
+&amp;+
+|DHS| + |CHS| + |CDS| + |CDH| \\
+&amp;-
+|CDHS|
+\end{align*}\]</span></p>
+<p>This is a generalization of our usual <span class="math inline">\(|A \cup B| = |A| + |B| - |A \cap B|\)</span>.</p>
+<pre class="r"><code>M3b =
+  choose(4,1) * choose(39,13) -
+  choose(4,2) * choose(26,13) +
+  choose(4,3) * choose(13,13) -
+  0
+M3b</code></pre>
+<pre><code>## [1] 32427298180</code></pre>
+<pre class="r"><code># same answer either way
+M3b - M3</code></pre>
+<pre><code>## [1] 0</code></pre>
+<p>Once we have the counting worked out, the probability is easy.</p>
+<pre class="r"><code># Probability have having all 4 suits
+1 - M3 / choose(52, 13)</code></pre>
+<pre><code>## [1] 0.9489345</code></pre>
+<p>A hand with 2 suits gets counted twice (with each of the other two suits). A hand with 1 suit gets counted three times So let’s adjust for that.</p>
+<pre class="r"><code>choose(4,3) * choose(39, 13) - choose(4,2) * choose(26, 13)</code></pre>
+<pre><code>## [1] 32427298176</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div id="thursday-41" class="section level3">
 <h3>Thursday 4/1</h3>
