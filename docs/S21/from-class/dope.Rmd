@@ -102,8 +102,8 @@ for(g in 1:10) {
   * **Start at question 3** to get back into this after a week away from
   automata.
 
-### Wed 4.7
+### Wed 4/7
 
-### Wed 4.9
+### Wed 4/9
 
 
