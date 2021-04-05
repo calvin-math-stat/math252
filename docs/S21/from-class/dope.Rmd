@@ -88,10 +88,22 @@ for(g in 1:10) {
 }
 ```
 
-* More finite state automata 
+* Homework
+
+  * Find homework in the "after test 2" section now.
+  * PS 13 due on Wednesday
+
+* **Topic of the Day:** More finite state automata 
+
   * Worksheet: 
     [[HTML]](models-of-computation/finite-state-automata.html)
     [[PDF]](models-of-computation/finite-state-automata.pdf)
-  * Start at question 3 to get back into this after a week away from
-  automata.
     
+  * **Start at question 3** to get back into this after a week away from
+  automata.
+
+### Wed 4.7
+
+### Wed 4.9
+
+
