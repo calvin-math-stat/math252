@@ -104,6 +104,20 @@ for(g in 1:10) {
 
 ### Wed 4/7
 
+* **Topic of the Day:** DFAs and NFAs
+
+  * A couple things from last time
+  
+      * #6 d and e -- how to design a DFA (and what the states are) 
+      * definition of NFA
+      
+  * Worksheet: 
+    [[HTML]](models-of-computation/finite-state-automata.html)
+    [[PDF]](models-of-computation/finite-state-automata.pdf)
+    
+      * Start at #10 and don't go beyond #19.
+      * If you get through #19, don't leave without checking in with me.
+
 ### Fri 4/9
 
 
