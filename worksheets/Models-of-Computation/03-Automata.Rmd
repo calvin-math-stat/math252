@@ -39,7 +39,7 @@ We can extend the transition function to $f^*: S \times I^* \to S$ with the foll
 recursive definition:
 
 * $f^*(s, \lambda) = s$ for any state $s$
-* $f^*(s, xa) = f(f^*(s,x) a)$ for any $x \in I^*$ and $a \in I$
+* $f^*(s, xa) = f(f^*(s,x), a)$ for any $x \in I^*$ and $a \in I$
 
 2. Use this definition to determine the following.
 
