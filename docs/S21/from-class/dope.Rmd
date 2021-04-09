@@ -124,25 +124,20 @@ for(g in 1:10) {
 
 * **Topics of the Day:** 
 
-    * DFAs and NFAs are equivalent
+    * **DFAs and NFAs are equivalent**
 
 
         The last two days we learned about DFAs and NFAs.  Today we will learn that the
 two models are equivalent: Every language recognized by one type of machine is
 also recognized by the other.
 
-    * Regular Expressions
+    * **Regular Expressions**
     
         Regular expressions are a useful system for describing languages
 
-* Worksheets:  We will cover Section 3.6 (Equivalence of DFA and NFA) 
-    and sections 4.1-4.2 (about regular expressions)
-
-    * [HTML](../models-of-computation/finite-state-automata.html)
-    * [PDF](../models-of-computation/Models-of-Computation.pdf)
-
 * Before we get going, let's go back and think about an exercise from last time.
-    
+  
+<div class = "indent">  
 <div class = "explain" label = "Exercise 3.5.14">
 There are (at least two ways) to think about searching for accepting 
 paths in an NFA.  If you are familiar with the terms depth-first and breadth-first,
@@ -207,10 +202,20 @@ Notice:
 * Since $s_3$ is not an accepting state, there is no accepting path and $010$ is not in the
 language recognized by this machine.
 </div>
+</div>
+<br>
 
-#### Comments/Hints/Solutions
+* Worksheets:  We will cover Section 3.6 (Equivalence of DFA and NFA) 
+    and sections 4.1-4.2 (about regular expressions)
+
+    * [HTML](../models-of-computation/finite-state-automata.html)
+    * [PDF](../models-of-computation/Models-of-Computation.pdf)
+
 
 \def\emptystring{\lambda}
+
+<div class = "indent">
+<div class = "explain" label = "Comments/Hints/Solutions">
 
 Note: Rosen likes to label his states $s_0$, $s_1$, etc.  I find that clunky and 
 **I suggest that you not bother with subscripts when creating your own machines.** 
@@ -219,10 +224,16 @@ what a state represents. The worksheet will show you both styles.
 
 <div class = "explain" label = "Exercise 3.6.21">
 
+Hint: Think about the pebbling algorithm.  How do the pebbles relate
+to states in a DFA?
 
+Make sure you give this a good attempt before comparing your work to this solution.
+
+<div class = "explain">
 ```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
 knitr::include_graphics('images/NFA2DFA-example1sol.png')
 ```
+</div>
 
 </div>
 
@@ -305,6 +316,8 @@ Do you see how to design them?
 
 <div class = "explain" label = "Exercise 4.2.8">
 This is will our topic for next time.
+</div>
+</div>
 </div>
 
 <!-- <div class = "explain" label = "Exercise 4.3.10"> -->
