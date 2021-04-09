@@ -208,8 +208,8 @@ language recognized by this machine.
 * Worksheets:  We will cover Section 3.6 (Equivalence of DFA and NFA) 
     and sections 4.1-4.2 (about regular expressions)
 
-    * [HTML](../models-of-computation/finite-state-automata.html)
-    * [PDF](../models-of-computation/Models-of-Computation.pdf)
+    * [HTML](models-of-computation/finite-state-automata.html)
+    * [PDF](models-of-computation/Models-of-Computation.pdf)
 
 
 \def\emptystring{\lambda}
