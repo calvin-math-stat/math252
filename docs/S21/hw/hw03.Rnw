@@ -133,15 +133,9 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand[create DFA, NFA]{55--56}
 
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
-	   \\
-	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
    \\
    \hline
-	   Mon 4/12 & PS 15 & Rosen 13.3 &
+	   Wed 4/14 & PS 15 & Rosen 13.3 &
 	   \mand[NFA to DFA]{52--54}
 	   \\
 	   & & Rosen 13.4 &
@@ -151,6 +145,12 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand[does it belong?]{4}
 	   \mand[regex]{6}
 	   \extra[regex]{7}
+	   \\
+	   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
    \\
    \hline
 	   Fri 4/16 & PS 16 & Rosen 13.4 &
