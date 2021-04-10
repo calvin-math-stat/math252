@@ -15,15 +15,15 @@ require(kable)
 require(kableExtra)
 require(scales)
 t1bks <- c(17, 34, 44, 52, 61, 68) %>% rev()
-t2bks <- c(10, 27, 37, 47, 57, 67) %>% rev()
+t2bks <- c(15, 35, 50, 60, 69, 78) %>% rev()
 t3bks <- c(5, 20, 29, 38, 48, 58)  %>% rev()
 
 fbks  <- c(25, 74, 96, 118, 140, 165)  %>% rev()
 GS <- 
   data_frame(
     Grade = LETTERS[1:4],
-    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4)
-    # `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4)
+    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
+    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4)
     # `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4)
     # `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
   ) %>% 
