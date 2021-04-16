@@ -145,12 +145,19 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand[does it belong?]{4}
 	   \mand[regex]{6}
 	   \extra[regex]{7}
+   \\
+   \hline
+	   Mon 4/19 & PS 16 & Rosen 13.4 &
+	   \mand[grammar to NFA]{14abc}
+	   \mand[NFA to grammar]{15--17}
 	   \\
 	   \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
+	   \mand[regex to NFA]{12ab}
+	   \mand[regex to NFA]{13a}
    \\
    \hline
 	   Fri 4/16 & PS 16 & Rosen 13.4 &
