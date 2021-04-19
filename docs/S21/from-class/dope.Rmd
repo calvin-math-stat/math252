@@ -693,7 +693,7 @@ by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges
 
 * **Note;** Rosen does not cover this topic.
 
-  * This means there are also no problems on this topic.
+  * This means there are also no texbook problems on this topic.
   * But **it will be covered on test**.
   * You can easily practice using any DFA (or NFA) we have seen.  (You probably want
   to choose ones that don't have too many states.)
