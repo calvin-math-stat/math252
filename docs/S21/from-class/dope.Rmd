@@ -334,7 +334,7 @@ This is will our topic for next time.
 <br><br>
 
 
-## Week 11 {.active}
+## Week 11 
 
 ### Mon 4/12
 
@@ -672,3 +672,203 @@ $S$ is new lonely start state.
 </div>
 
 <br><br>    
+
+## Week 12 {.active}
+
+* Today we add the last arrow to this chart: DFA $\to$ regular expression.
+
+    $$
+    \Large
+    \begin{array}{ccc}
+    \mathrm{DFA} & \stackrel{\longrightarrow}\longleftarrow & \mathrm{NFA} \\
+    \downarrow& \nearrow & \downarrow \uparrow \\
+    \mathrm{regular}& & \mathrm{regular} \\
+    \mathrm{expression}& & \mathrm{grammar} 
+    \end{array}
+    $$
+
+    This shows that all four of our representations (DFA, NFA, regular grammar, regular expression)
+are equivalent.  The languages recognized/generated/expressed
+by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges**.
+
+* **Note;** Rosen does not cover this topic.
+
+  * This means there are also no problems on this topic.
+  * But **it will be covered on test**.
+  * You can easily practice using any DFA (or NFA) we have seen.  (You probably want
+  to choose ones that don't have too many states.)
+
+* Worksheet: Section 6 today
+
+  * [HTML](../models-of-computation/regular-langauges.html)
+  * [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+
+<div class = "indent">
+<div class = "explain" label = "Comments/Hints/Solutions">
+
+\def\emptystring{\lambda}
+\def\union{\cup}
+
+<div class = "foldable" label = "Exercise 6.2.1">
+
+```{r echo = FALSE, fig.align = 'center'}
+# path <- glue::glue('../images/DFA2regex1/frame_0000{i}.png', i = 1:9)
+path <- dir('images/DFA2regex1', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+</div>
+
+<div class = "foldable" label = "Exercise 6.2.2">
+
+```{r echo = FALSE, fig.align = 'center'}
+path <- dir('images/DFA2regex2', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+</div>
+<div class = "foldable" label = "Exercise 6.2.3">
+
+
+```{r echo = FALSE, fig.align = 'center'}
+path <- dir('images/DFA2regex3', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+</div>
+
+<div class = "foldable" label = "Exercise 6.2.4-5">
+The algorithm works just the same if you start from an NFA or a GNFA.
+
+As a side note, this implies that GNFAs are equivalent to NFAs.  In particular,
+$\lambda$-NFAs (NFAs that allow transitions labeled $\lambda$ that can be used
+without processing any input symbols) are equivalent.  So our diagram looks like
+this
+
+$$
+\Large
+\begin{array}{ccccccc}
+\mathrm{DFA} & \longleftrightarrow & \mathrm{NFA} & \longrightarrow & \lambda\mathrm{-NFA} & \longrightarrow & \mathrm{GNFA} \\
+&& \downarrow \uparrow & \nwarrow  &  & \swarrow  \\
+& & \mathrm{regular}& & \mathrm{regular} \\
+& & \mathrm{grammar}& & \mathrm{expression} 
+\end{array}
+$$
+Some books and online resources will demonstrate the conversion 
+
+$$
+\mbox{regular expression} \longrightarrow \lambda\mathrm{-NFA}
+$$
+since this is slightly easier than 
+$$
+\mbox{regular expression} \longrightarrow \mathrm{NFA}
+$$
+But then we would need an additional conversion
+$$
+\lambda\mathrm{-NFA} \longrightarrow  \mathrm{NFA} \;.
+$$
+This doable, but isn't really any easier than building it into the 
+the conversion from regular expressions to NFAs, the way we did it.
+
+You should know how to perform all of the conversions illustrated in the diagram
+above.
+</div>
+
+<div class = "foldable" label = "Exercise 6.3.1">
+Compare your descriptions to the descriptions below.  Did you leave out 
+anything important?  Do the solutions below leave out anything important?
+
+1a. regex $\to$ NFA: 
+
+* 6 parts: 
+    * 3 base cases -- pretty easy
+    * 3 that show union, concatenation and Kleene star -- these are the "interesting" part
+  
+* union: $A \cup B$ where $A = L(N_1)$ and $B = L(N_2)$.
+
+    * keep all states and transitions from $N_1$ and $N_2$
+    
+    * add one new start state $S$; $S$ is final if either 
+      start state of $N_1$ or start state of $N_2$ is final
+      
+    * add some additional transitions
+        * if $S_1 \stackrel{x}{\to} A$, add $S \stackrel{x}{\to} A$
+        * if $S_2 \stackrel{x}{\to} B$, add $S \stackrel{x}{\to} B$
+
+* concatenation: $AB$ where $A = L(N_1)$ and $B = L(N_2)$.
+
+    * keep all states and transitions from $N_1$ and $N_2$
+    * start state from $N_1$ is the start state 
+    * only final states from $N_2$ are final
+    * add some additional transitions
+        * if $A \stackrel{x}{\to} F$ (a final state in $N_1$), then add
+          add $A \stackrel{x}{\to} S_2$ (start state in $N_2$)
+          
+* Kleene star: $A = L(N_1)$
+
+    * keep all states and transitions from $N_1$ 
+    * add a new start state that is a final state (because $\lambda \in A^*$)
+    * add new transitions from new start state ($S$)
+    
+        * if $S_1 \stackrel{x}{\to} A$, add $S \stackrel{x}{\to} A$ (includes case where $A = S_1$)
+        
+    * add new transitions to old start state ($S_1$)
+    
+        * if $A \stackrel{x}{\to} F$, where F is final, add $A \stackrel{x}{\to} S_1$
+        * If we are at the end of a string in $L(N_1)$, this lets us "restart"
+    
+        
+1b. DFA $\to$ NFA
+
+* easy: a DFA "is" an NFA. (Why is "is" in quotes?)
+
+1c. NFA $\to$ DFA
+
+* DFA states are **subsets of NFA states** (think: magnets on white board)
+
+* A is final in DFA if A contains a final state of NFA 
+
+* Remember that $\{ \}$ may be needed as one of the states in the DFA
+    
+1d. DFA (or NFA) $\to$ reg grammar
+
+* $A \stackrel{x}{\to} B$ becomes 
+
+    * $A \to xB$
+    
+    * also $A \to x$  if B is final state
+    
+* If S is final in NFA/DFA, then add $S \to \lambda$
+    
+* Number of rules = number of transitions + number of transitions to final states +
+    1 more if the start state is final
+    
+1e. reg grammar $\to$ NFA
+
+* states: non-terminals of grammar + 
+one additional state $F$ (a final state)
+    * Start symbol is also start state
+    * If $S \to \lambda$ is a rule, then $S$ is a final state
+
+* production rules become transitions in NFA
+
+    * $A \to xB$ becomes $A \stackrel{x}{\to} B$
+    * $A \to x$  becomes $A \stackrel{x}{\to} F$ (the added final state)
+  
+1f. DFA $\to$ regular expression
+ 
+* Big idea: Make GNFAs with fewer and fewer states until we have a GNFA with two states 
+(one the start state and the other the accepting state) and one transition between them, labeled
+with a regular expression.
+
+* If necessary, make two addjustments to the DFA before beginning
+    * Make sure there is a lonely start state 
+    * Make sure there is a single accepting state with no exiting transitions.
+    * $\lambda$-transitions are allowed for this step, so we might not have a DFA anymore after these adjustments.
+    
+* Pick any internal state $R$ (not the start or accepting state) and "rip it out".
+    * create or update transitions $A \to B$ when there was $A \to R \to B$.
+</div>
+
+<br><br>
