@@ -700,8 +700,8 @@ by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges
 
 * Worksheet: Section 6 today
 
-  * [HTML](../models-of-computation/regular-langauges.html)
-  * [PDF](../models-of-computation/Models-of-Computation.pdf)
+  * [HTML](models-of-computation/regular-langauges.html)
+  * [PDF](models-of-computation/Models-of-Computation.pdf)
 
 
 <div class = "indent">
