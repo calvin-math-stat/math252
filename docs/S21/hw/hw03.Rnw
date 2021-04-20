@@ -152,7 +152,7 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand[NFA to grammar]{15--17}
 	   \\
 	   \hline
-	   Mon 4/21 & PS 17 & Rosen 13.4 &
+	   Wed 4/21 & PS 17 & Rosen 13.4 &
 	   \mand[regex to NFA]{12ab}
 	   \mand[regex to NFA]{13a}
 	   \\
