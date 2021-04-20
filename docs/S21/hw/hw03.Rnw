@@ -152,12 +152,22 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand[NFA to grammar]{15--17}
 	   \\
 	   \hline
+	   Mon 4/21 & PS 17 & Rosen 13.4 &
+	   \mand[regex to NFA]{12ab}
+	   \mand[regex to NFA]{13a}
+	   \\
+	   & & DFA/NFA $\to$ regex &
+	   Convert the following DFAs or NFAs into equivalent regular expressions
+	   using our algorithm for doing so. Show the intermediate steps:
+	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
+	   in the book!)
+	   \\
+	   \hline
+
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
-	   \mand[regex to NFA]{12ab}
-	   \mand[regex to NFA]{13a}
    \\
    \hline
 	   Fri 4/16 & PS 16 & Rosen 13.4 &
