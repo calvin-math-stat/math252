@@ -162,8 +162,13 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
 	   in the book!)
 	   \\
-	   \hline
+   \hline
+	   Fri 4/23 & PS 18 & Rosen 13.4 &
+	   \mand[pumping lemma]{23, 25}
 
+	   Be sure to write the up carefully.
+	   \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
