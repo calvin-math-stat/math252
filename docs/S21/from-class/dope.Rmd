@@ -884,6 +884,11 @@ with a regular expression.
 
 **Topic of the Day:** Languages that are not regular
 
+* Worksheet: Section 7 today
+
+  * [HTML](models-of-computation/a-language-that-is-not-regular.html)
+  * [PDF](models-of-computation/Models-of-Computation.pdf)
+
 <div class = "indent">
 <div class = "explain" label = "Comments/Hints/Solutions">
 
