@@ -675,6 +675,8 @@ $S$ is new lonely start state.
 
 ## Week 12 {.active}
 
+### Mon 4/19
+
 * Today we add the last arrow to this chart: DFA $\to$ regular expression.
 
     $$
@@ -870,5 +872,114 @@ with a regular expression.
 * Pick any internal state $R$ (not the start or accepting state) and "rip it out".
     * create or update transitions $A \to B$ when there was $A \to R \to B$.
 </div>
+</div>
 
-<br><br>
+<br>
+
+### Wed 4/21
+
+* Read directions carefully for today's assignment.
+
+* Test 3 next Friday.
+
+**Topic of the Day:** Languages that are not regular
+
+<div class = "indent">
+<div class = "explain" label = "Comments/Hints/Solutions">
+
+<div class = "foldable" label = "A language that is not regular"> 
+
+In addition to the in class discussion, you might like to look at page 885 of the text.
+</div>
+
+<div class = "foldable" label = "The Pumping Lemma"> 
+
+<div class = "foldable" label = "Ideas behind the Pumping Lemma"> 
+
+The basic idea used to show that $\{0^n1^n \mid n = 0, 1, 2, ... \}$ is not regular
+can be turned into a lemma that doesn't mention DFAs at all.  
+
+Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recognizes
+$L$.  This machine has some number of states, let's call that number $N$.
+
+Now suppose we have a long string $x$ with more symbols than $N$.  (We will write this 
+$l(x) > N$.  We can break our string into three parts:
+
+* before the loop: $u$
+    * What can we say about the length of $u$?
+    
+* in the loop: $v$
+    * What can we say about the length of $v$?
+    
+* after the loop: $w$.
+
+Explain why each of these strings is in $L$ if and only if $x \in L$.
+
+* $uvw$
+* $uw$
+* $uvvw$
+* $uv^kw$
+
+Putting this all together gives us the **Pumping Lemma**: 
+</div>
+
+<div class = "foldable" label = "The Pumping Lemma -- Statement"> 
+If $L$ is a regular language, then there is a number $N$ such that for any
+string $x$ with $l(x) > N$, we can write $x$ as
+
+$$ 
+x = uvw
+$$
+
+such that
+
+* $l(uv) \le N$,
+* $l(v) > 0$,
+* $x \in L$ if and only if $uv^kw \in L$ for every natural number $k$.
+
+Important things to note:
+
+* The Pumping Lemma says something about *long* strings.  There is some length
+beyond which the $x = uvw$ splitting is guaranteed. It may or may not work for shorter
+strings.
+
+* You do not get to choose $u$, $v$, and $w$.  The Pumping Lemma tells you that
+there is a way to split up $x$, not that every way of splitting up $x$ will work.
+
+* The length constraints on $u$ and $v$ are often important in applications.
+In particular, $l(uv) \le N$.
+
+
+</div>
+
+<div class = "foldable" label = "Pumping Lemma -- Example Application"> 
+
+Let's try using the Pumping Lemma to show that $\{0^n1^n \mid n = 0, 1, \dots \}$ is not
+regular.
+
+Suppose $L$ were regular.
+Let $N$ be the number given by the Pumping Lemma.  Consider $x = 0^N1^N$. 
+
+* There is some way to split up $x$ as $x = uvw$ (because $x$ is long enough), and 
+* $u$ and $v$ consist entirely of 0's, since $l(uw) \le N$.
+
+Now consider the string $uw$.  $uw$ must be in $L$, but $uw$ has fewer 0's than 1's, so
+it can't be in $L$.  This means our assumption that $L$ was regular must be false.
+
+**Note 1:** Anything you can prove using the Pumping Lemma, you can also prove by going
+back to the underlying argument about repeated states (pigeon hole principle), loops,
+etc.  So you can think of the Pumping Lemma as an (optional) alternative way to think
+about these problems.  I don't care which approach you take, as long as you do it correctly.
+Any problem that says "by the Pumping Lemma" may also be done from the underlying argument.
+
+**Note 2:** Using $x = 0^N1^N$ is sufficient since we read more more state than we 
+have read sybmols.  (After reading the first symbol, we have seen the start state and a next
+state.)  But if you prefer to use $x=0^{N+1}1^{N+1}$ just to make the arguement easier,
+that's fine too. 
+<!-- (I switched from $N$ to $N + 1$ when doing it in class to save us a little -->
+<!-- time.) -->
+</div>
+</div>
+</div>
+</div>
+</div>
