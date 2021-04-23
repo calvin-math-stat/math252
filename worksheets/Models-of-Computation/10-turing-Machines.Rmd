@@ -48,8 +48,7 @@ These can further be divided into accepting states and rejecting states.
     * `<new tape symbol>`: any tape symbol
     * `<new state>`: any state
     * `<direction>`: left, right, or stay 
-      *  Some flavors of Turing machine, including the flavor in our Zybook
-      do not allow stay.
+      *  Some flavors of Turing machine do not allow stay.
    
 \newpage
 
@@ -188,7 +187,8 @@ Do this by hand, then check your work using the simulator.
 
 ### Table notation
 
-3. Convert the Turing machine in the table below (Zybook table 4.5.2)
+3. Convert the Turing machine in the table below 
+<!-- (Zybook table 4.5.2) -->
 
 $\delta$ |  a	        |  b	          | *
 -------- | :--------: | :-----------: | :-----------:
@@ -311,7 +311,7 @@ noR     * * l noR
 1 / \ r 1
 ```
 
-## Computing funcitons with a Turing machine
+## Computing functions with a Turing machine
 
 Turing machines can also compute functions.  The output of a Turing
 machine is the tape contents when it halts.
