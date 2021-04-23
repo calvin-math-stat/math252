@@ -169,6 +169,22 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   Be sure to write the up carefully.
 	   \\
 	   \hline
+	  Mon 4/25 & PS 19 & Rosen 13.5 &
+	  \mand[trace TM]{2}
+	  \mand[trace TM]{5}
+	  \extra[trace TM]{1}
+	  \extra[trace TM]{3--4}
+
+	  \mand[design TM]{6}
+	  \mand[design TM]{10}
+	  \extra[design TM]{7--12}
+\\
+	  &&& For problems 6 and 10, describe your Turing machine
+	  using the syntax of one of our two Turing machine simulators.
+	  (You can use a text editor or copy and paste from the
+	  online simulator into a file.)
+	   \\
+	   \hline
 \end{longtable}
 \end{center}
 \label{end}
@@ -185,23 +201,6 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
    \\
    \hline
 	   Mon 4/19 & PS 17 & Rosen 13.4 &
-	   \mand[pumping lemma]{23, 25}
-	   \\
-	   \hline
-	  Mon 5/10 & PS 18 & Rosen 13.5 &
-	  \mand[trace TM]{2}
-	  \mand[trace TM]{5}
-	  \extra[trace TM]{1}
-	  \extra[trace TM]{3--4}
-
-	  \mand[design TM]{6}
-	  \mand[design TM]{10}
-	  \extra[design TM]{7--12}
-\\
-	  &&& For problems 6 and 10, describe your Turing machine
-	  using the syntax of one of our two Turing machine simulators.
-	  (You can use a text editor or copy and paste from the
-	  online simulator into a file.)
 	   \\
 	   \hline
 \end{longtable}
