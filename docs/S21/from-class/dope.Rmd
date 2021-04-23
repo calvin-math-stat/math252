@@ -1001,7 +1001,7 @@ that's fine too.
 * **Topic of the Day**: Intro to Turing Machines
 
   * Worksheet: 
-   [[HTML]](models-of-computation/turing-machiens.html)
+   [[HTML]](models-of-computation/turing-machines.html)
    [[PDF]](models-of-computation/Models-of-Computation.pdf)
 
   *  The goal is to get through Exercise 5. 
