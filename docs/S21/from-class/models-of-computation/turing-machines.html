@@ -430,6 +430,10 @@ Do this by hand, then check your work using the simulator.</p>
 </div>
 <div id="table-notation" class="section level3" number="9.3.3">
 <h3><span class="header-section-number">9.3.3</span> Table notation</h3>
+<p>Some authors like to represent Turing machines with tables. The goal is the same:
+we need to specify the actiion of the machine for any tape symbol and state combination.
+In this table the state and tape symbol are listed in the rows and columns and the action
+in the interior cells.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Convert the Turing machine in the table below
 <!-- (Zybook table 4.5.2) --></li>
@@ -440,7 +444,7 @@ Do this by hand, then check your work using the simulator.</p>
 <th><span class="math inline">\(\delta\)</span></th>
 <th align="center">a</th>
 <th align="center">b</th>
-<th align="center">*</th>
+<th align="center">blank</th>
 </tr>
 </thead>
 <tbody>
@@ -448,13 +452,13 @@ Do this by hand, then check your work using the simulator.</p>
 <td>q0</td>
 <td align="center">(q0, a, R)</td>
 <td align="center">(q1, b, R)</td>
-<td align="center">(qrej, *, L)</td>
+<td align="center">(qrej, blank, L)</td>
 </tr>
 <tr class="even">
 <td>q1</td>
 <td align="center">(q1, a, R)</td>
 <td align="center">(qacc, b, L)</td>
-<td align="center">(qrej, *, L)</td>
+<td align="center">(qrej, blank, L)</td>
 </tr>
 </tbody>
 </table>

@@ -190,13 +190,18 @@ Do this by hand, then check your work using the simulator.
 
 ### Table notation
 
+Some authors like to represent Turing machines with tables.  The goal is the same:
+we need to specify the actiion of the machine for any tape symbol and state combination.
+In this table the state and tape symbol are listed in the rows and columns and the action
+in the interior cells.
+
 3. Convert the Turing machine in the table below 
 <!-- (Zybook table 4.5.2) -->
 
-$\delta$ |  a	        |  b	          | *
+$\delta$ |  a	        |  b	          | blank
 -------- | :--------: | :-----------: | :-----------:
-q0	     | (q0, a, R)	| (q1, b, R)	  | (qrej, *, L)
-q1	     | (q1, a, R)	| (qacc, b, L)	| (qrej, *, L)
+q0	     | (q0, a, R)	| (q1, b, R)	  | (qrej, blank, L)
+q1	     | (q1, a, R)	| (qacc, b, L)	| (qrej, blank, L)
 
 into an ASCII representation for use at
 
