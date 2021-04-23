@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2021-04-22" />
+<meta name="date" content="2021-04-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -273,16 +273,19 @@ work of Hilbert (early 1900’s) and Turing and Church (1930)’s.</p>
 <h2><span class="header-section-number">9.1</span> Definition of a 1-tape Turing Machine (Syntax)</h2>
 <p>A Turing machine consists of the following:</p>
 <ul>
-<li><p><strong>input alphabet</strong>: A finite set of symbols used for inputs.</p></li>
-<li><p><strong>tape alphabet</strong>: Input alphabet plus and at least one additional symbol,
-the <strong>blank symbol</strong>.</p>
+<li><strong>input alphabet</strong>: A finite set of symbols used for inputs.</li>
+<li><strong>tape alphabet</strong>: Input alphabet plus and at least one additional symbol,
+the <strong>blank symbol</strong>.
 <ul>
 <li>It is important that the blank symbol is not one of the input symbols.</li>
 <li>The tape alphabet may have any finite number of additional symbols
 beyond the blank symbol and the input alphabet.</li>
 <li>Traditionally, the blank symbol is denoted <span class="math inline">\(\not\! b\)</span> or
-b or B or  or with an underscore. Zylabs is quirky and uses *.</li>
+b or B or  or with an underscore.</li>
 </ul></li>
+</ul>
+<!-- Zylabs is quirky and uses *. -->
+<ul>
 <li><p><strong>states</strong>: A finite set.</p></li>
 <li><p><strong>initial/start state</strong>: One of the states to start in</p></li>
 <li><p><strong>halting states</strong>: Some of the states are designated as halting state.

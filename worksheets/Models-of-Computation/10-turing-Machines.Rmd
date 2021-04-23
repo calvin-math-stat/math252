@@ -36,7 +36,10 @@ the **blank symbol**.
   * The tape alphabet may have any finite number of additional symbols
   beyond the blank symbol and the input alphabet.
   * Traditionally, the blank symbol is denoted $\not\! b$ or
-  b or B or \textvisiblespace\ or with an underscore. Zylabs is quirky and uses *.
+  b or B or \textvisiblespace\ or with an underscore. 
+  
+<!-- Zylabs is quirky and uses *. -->
+
 * **states**: A finite set.
 * **initial/start state**: One of the states to start in
 * **halting states**: Some of the states are designated as halting state.
