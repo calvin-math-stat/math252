@@ -988,3 +988,69 @@ that's fine too.
 </div>
 </div>
 </div>
+
+### Fri 4/23
+
+* Test 3 next Friday
+
+  * [info sheet](../test-info)
+  * same logitistics as for previous exams (in NH 259 unless you make other arrangements)
+  * covers grammars, regular languages (DFA, NFA, grammar, regular expression) and 
+  Turing machines
+
+* **Topic of the Day**: Intro to Turing Machines
+
+  * Worksheet: 
+   [[HTML]](models-of-computation/turing-machiens.html)
+   [[PDF]](models-of-computation/Models-of-Computation.pdf)
+
+  *  The goal is to get through Exercise 5. 
+  Next time we will learn how to create our own Turing machines.
+
+<div class = "indent">
+<div class = "explain" label = "Comments/Hins/Solutions">
+
+<div class = "foldable" label = "Essential Ingredients"> 
+
+The three essential ingredients are 
+
+1. Read
+2. Write
+3. Remember
+
+Implicit in these is a fourth:
+
+4. Locate/Move
+
+since we need to be able to write in different places and read from different
+places.
+
+The Turing machine model is based on treating these as the fundamental
+operations of calculating (ie, of performing a caclculation). And this 
+matches well both
+
+* pencil-and-paper arithmetic performed by humans, and
+* what happens in a modern computer (which didn't even exist at the time
+Turing machines were first developed).
+
+</div>
+
+
+<div class = "foldable" label = "Exercises in 9.4"> 
+You can check these using the simulator at
+<http://morphett.info/turing/turing.html>.
+</div>
+
+<div class = "foldable" label = "Exercise 4"> 
+If $x\not\in L(M)$, $M$ on input $x$ might halt in a rejecting state or it might
+never halt.
+</div>
+
+<div class = "foldable" label = "Exercise 5"> 
+
+The language consisting of all strings that have an even number of 0's 
+and an even number of 1's.
+
+</div>
+</div>
+</div>
