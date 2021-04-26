@@ -169,18 +169,14 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	   Be sure to write the up carefully.
 	   \\
 	   \hline
-	  Mon 4/25 & PS 19 & Rosen 13.5 &
+	  Mon 4/26 & PS 19 & Rosen 13.5 &
 	  \mand[trace TM]{2}
 	  \mand[trace TM]{5}
 	  \extra[trace TM]{1}
 	  \extra[trace TM]{3--4}
 	   \\
 	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
+	  Wed 4/28 & PS 20 & Rosen 13.5 &
 	  \mand[design TM]{6}
 	  \mand[design TM]{10}
 	  \extra[design TM]{7--12}
@@ -188,9 +184,14 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	  &&& For problems 6 and 10, describe your Turing machine
 	  using the syntax of one of our two Turing machine simulators.
 	  (You can use a text editor or copy and paste from the
-	  online simulator into a file.)
+	  online simulator into a file to save your work.)
    \\
    \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
 	   Fri 4/16 & PS 16 & Rosen 13.4 &
 	   \mand[build NFA]{10}
 	   \mand[Kleene's Thm]{12}

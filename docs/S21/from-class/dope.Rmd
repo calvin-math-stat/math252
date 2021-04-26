@@ -1082,11 +1082,11 @@ for(g in 1:10) {
    [[HTML]](models-of-computation/turing-machines.html)
    [[PDF]](models-of-computation/Models-of-Computation.pdf)
    
-  * Primary focus today: Exercises 6 - 8.
+  * Primary focus today: Exercises 6 - 8 (creating Turing machines).
     * Feel free to revisit Exercises 1 -5 *briefly* if people have questions about how TMs work
+    * Use the simulator and be sure to check your machines on several strings.  (Think
+    about edge cases that would be good to check.)
   * Once you are confident about 6 - 8, take a look at 9 - 11.
-
-
 
 ### Wed 4/28
 
