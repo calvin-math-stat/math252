@@ -673,7 +673,7 @@ $S$ is new lonely start state.
 
 <br><br>    
 
-## Week 12 {.active}
+## Week 12 
 
 ### Mon 4/19
 
@@ -1054,3 +1054,42 @@ and an even number of 1's.
 </div>
 </div>
 </div>
+
+## Week 13 {.active}
+
+### Mon 4/26
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(426202133)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+
+# R %>% filter(grepl("Reidsma|Wietelmann", name))
+```
+
+* Test on Friday
+
+* **Topic of the Day**: Creating Turing Machines
+
+  * Worksheet:
+   [[HTML]](models-of-computation/turing-machines.html)
+   [[PDF]](models-of-computation/Models-of-Computation.pdf)
+   
+  * Primary focus today: Exercises 6 - 8.
+    * Feel free to revisit Exercises 1 -5 *briefly* if people have questions about how TMs work
+  * Once you are confident about 6 - 8, take a look at 9 - 11.
+
+
+
+### Wed 4/28
+
+### Fri 4/30
+
+* **Test 3**
