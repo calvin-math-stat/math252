@@ -161,6 +161,23 @@ grammars (regular, context sensitive, context free).
 
 **Date:** Friday, April 30
 
+
+#### Logistics
+
+The test will be administered in North Hall 259 at our usual class time.  
+
+**If you are unable to take the test in person,**
+[**fill out this form**](https://docs.google.com/forms/d/e/1FAIpQLScTcGaiNbO6jp5I8T1rmYHwGQIRNPgfZg4joktE93XjbMjoXA/viewform?usp=sf_link)
+and we will make other arrangements.
+
+##### What is allowed during the exam?
+
+* You may use a **calculator**, but not your phone or any other devices.
+
+* You may not have other notes, books, etc.
+
+
+
 #### Material Covered
 
 **Grammars:** Components of a grammar (terminals, nonterminals, start symbol,
