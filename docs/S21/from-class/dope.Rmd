@@ -1090,6 +1090,42 @@ for(g in 1:10) {
 
 ### Wed 4/28
 
+* **Last graded assignment** due tonight.
+
+  * What we do next week (regular expressions in python) won't require turning in homework.  
+  (Time for graders to focus on the end of term.)
+  
+  * Note: at the end of the term, I drop a small number of your worst (or missing)
+  problem sets and webwork assignments (usually ~ 3).  That gives everyone a chance to 
+  have been busy, or sick, or forgetful, or whatever, without an impact on your grade.
+
+* **Review session** tomorrow at noon.
+
+* **Topic of the Day**: What Turing Machines can and cannot do
+
+  * Church-Turing Thesis: Computation = Turing Computation
+      * Many Turing Machine flavors are equivalent (Worksheet 10.2)
+         * multiple tapes, 2-dimensional tapes, 1-way tapes
+      * Other models of computation have also been shown to be equivalent to Turing machines
+      * Works for computing functions as well as recognizing languages. (see Worksheet 9.5)
+      
+  * Efficient computation: Polynomial Time Turing Computation
+      * P vs NP (yes, there are non-deterministic Turing machines)
+      
+  * Turing recognizable (aka computably enumerable) vs Turing decidable (aka computable)
+  
+  * **All regular languages are Turing decidable** (from worksheet last time, but also below).
+  
+  * **The "Halting Problem" is not Turing decidable**. (See Worksheet 10.3)
+  
+* **Worksheet:**
+   [[HTML]](models-of-computation/turing-machines.html)
+   [[PDF]](models-of-computation/Models-of-Computation.pdf)
+  * Start with Section 10.3.1
+  * Then do 10.1.1-2 (in either order)
+  * If time remains, work on any of the other problems from sections 9 and 10 that interest you.
+
+
 ### Fri 4/30
 
 * **Test 3**
