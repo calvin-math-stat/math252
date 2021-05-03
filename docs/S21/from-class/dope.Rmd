@@ -1055,7 +1055,7 @@ and an even number of 1's.
 </div>
 </div>
 
-## Week 13 {.active}
+## Week 13 
 
 ### Mon 4/26
 
