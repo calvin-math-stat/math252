@@ -1134,6 +1134,38 @@ for(g in 1:10) {
 
 ### Mon 5/3
 
+* Final Exam
+  * Time
+    * Wed 5/12 @ 1:30 (Section B)
+    * Thu 5/13 @ 9:00 (Section A)
+    * I'll be posting a sign-up sheet if you would prefer to take the test with
+  the other class (or need other arrangements), but we have room capacity issues,
+  so we need to work within that constraint.
+  
+  * Content
+    * The only topics on the final that were not on previous tests are the Halting Problem
+    and programming with regular expressions (today's topic).
+    * Use the study guides from previous tests.
+    
+* Grades
+  * I'm not sure if Test 3 will be graded by Wednesday or not, but it should be graded 
+  sometime this week.
+  
+  * Things to remember
+    * I replace your worst test with your final exam score (if that helps you)
+    * I drop a small number of problem sets and webwork assignments (probably 2 of each).
+    That gives everyone a chance to be busy, sick, forgetful, etc.
+
+  * The easiest way to estimate how you are doing in the course is to take the middle
+  letter grade of your three tests.  If you do at least that well on the final and have been
+  doing homework faithfully, then you should get at least that grade in the course.
+  You can adjust from here if you do better or worse on the final.
+  
+    * Example: B, C+, B- on the tests.  Middle is B-.  If you score a B- on the final,
+    then you will have B (test 1), B- (final replaces test 2), B- (test 3), B- (final).
+    That's 85% of your grade at B- or better.  If you get a B on the final, that turns into
+    65% B, 20% B-, 15% homework, and there is a good chance you get a B in the course
+    
 * **Topic of the Day**: Programming with regular expressions
 
   * Slides: [(Python) Regular Expressions](https://docs.google.com/presentation/d/1yLmE835w4xJJPI0lsY0gcw4wLt91PrmNIQ7dOlvhvWI/edit?usp=sharing)
