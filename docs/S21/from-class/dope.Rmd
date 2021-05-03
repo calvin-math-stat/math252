@@ -1129,3 +1129,33 @@ for(g in 1:10) {
 ### Fri 4/30
 
 * **Test 3**
+
+## Week 14 {.active}
+
+### Mon 5/3
+
+* **Topic of the Day**: Programming with regular expressions
+
+  * Slides: [(Python) Regular Expressions](https://docs.google.com/presentation/d/1yLmE835w4xJJPI0lsY0gcw4wLt91PrmNIQ7dOlvhvWI/edit?usp=sharing)
+
+  * [The regular expression game](http://play.inginf.units.it/#/)
+    * Construct regular expression to match the indicated portions of a page of text.
+    * These tasks seem to mimic the kinds of things you might really do (finding authors
+    in a bibilography, finding MAC addresses in some text, etc.)
+    
+  * [Regex crossword game](https://regexcrossword.com/)
+    * Fill in the crossword with text that matches regex clues.
+    
+  * [Regular expression golf](https://alf.nu/RegexGolf)
+    * Find a short regex that matches everything in one column but doesn't match
+    any portion of anything in the other column.
+    * Some of the hard ones here get pretty hard and not very "natural"
+    * Least useful of the three for learning regex.
+
+* No homework for today's topic.  Instead I have some online regular expression
+games for you to play. (See above.)
+
+### Wed 5/5
+
+* **Review Day**
+  
