@@ -187,7 +187,8 @@ Wed 4/7 & PS 13 & Rosen 13.3 &
 	  online simulator into a file to save your work.)
    \\
    \hline
-never & & Rosen 13.RQ &
+\newpage
+never & Review & Rosen 13.RQ &
    \extra{1--2}
    \extra{3}
    \extra{4}
@@ -205,25 +206,61 @@ never & & Rosen 13.RQ &
    \extra{19--21}
    \extra{23--25}
    \extra{26--27}
-   	   \\
+\\
+\hline
+never & Review &
+	  Rosen 6.RQ &
+	  \extra[counting]{1--2}
+	  \extra[counting]{5}
+	  \extra[PHP]{6--7}
+	  \extra[collections]{13}
+	 \\
+	  &  & Rosen 6.SE & \extra[counting]{1--7}
+	  \extra[fortune cookies]{11}
+	  \extra[round table]{36}
+	  \extra[adisors]{37}
+	  \extra[apples]{38}
+	  \extra[license plate]{42}
+	  % , 24, 29, 32}
+	 \\
+	  &  & Rosen 7.RQ & \extra[probability basics]{1--6}
+	     \extra[E is linear]{9}
+	 \\
+	  &  & Rosen 7.SE & \extra[probability]{1--5}
+	  \extra[expected value]{7a}
+	  \extra[cards in a box]{17}
+	  \extra{23--24}
+	  \extra[aces]{35}
+	  \\
+	 && Rosen 10.SE &
+	 \extra[isomorphic?]{3--5}
+	 \extra[invariants]{29abcf}
+	 \\
+  && Rosen 10.RQ &
+   \extra[types of graph]{1}
+	 \extra[models]{2}
+	 \extra[degree]{3--5}
+	 \extra[graph examples]{6--7}
+	 \extra[bipartite]{8}
+
+	 \extra[graph representation]{9}
+	 \extra[isomorphism]{10}
+	 \extra[connected]{11}
+
+	 \extra[checking isomorphism]{12}
+	 \extra[Euler paths]{13}
+	 \extra[Hamilton paths]{14a}
+
+	 \extra[planar graph]{17}
+	 \extra[Euler's formula]{18}
+	 \extra[Kuratowski's Theorem]{19}
+	 \\
 	   \hline
 \end{longtable}
 \end{center}
 \label{end}
 \end{document}
 
-	   Fri 4/16 & PS 16 & Rosen 13.4 &
-	   \mand[build NFA]{10}
-	   \mand[Kleene's Thm]{12}
-	   \extra[Kleene's Thm]{13}
-	   \extra[lonely start]{20}
-	   \\
-	   & & Rosen 7.SE & \mand[cards]{6ab}
-   \\
-   \hline
-	   Mon 4/19 & PS 17 & Rosen 13.4 &
-	   \\
-	   \hline
 \end{longtable}
 \end{center}
 \label{end}
