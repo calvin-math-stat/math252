@@ -17,15 +17,17 @@ require(scales)
 t1bks <- c(17, 34, 44, 52, 61, 68) %>% rev()
 t2bks <- c(15, 35, 50, 60, 69, 78) %>% rev()
 t3bks <- c(10, 20, 30, 39, 48, 56) %>% rev()
+c(25, 74, 96, 118, 140, 165) / 165 * 144
+fbks  <- c(25, 65, 86, 106, 126, 144) %>% rev()
 
-fbks  <- c(25, 74, 96, 118, 140, 165)  %>% rev()
+
 GS <- 
-  data_frame(
+  tibble(
     Grade = LETTERS[1:4],
     `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
     `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
-    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4)
-    # `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
+    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
+    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
   ) %>% 
   arrange(Grade)
 ```
@@ -55,6 +57,8 @@ kable(GS) %>%
   row_spec(4, bold = F, color = "gray20", background = alpha("forestgreen", 0.3)) %>%
   row_spec(3, bold = F, color = "gray20", background = alpha("limegreen", 0.2))
 ```
+
+Final exam *scores* can be found in Gradescope, but the final exams themselves are not available.
 
 Remember, at the end of the term, if your final exam is better than your worst test, then your final
 exam score will replace your worst test score (making the final exam worth a test + the final).
