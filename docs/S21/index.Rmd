@@ -7,7 +7,7 @@ output:
   html_document:
     includes:
       before_body: header.html
-    css: ../styles/rpruim2020.css
+    css: ../styles/unmaintained.css
     theme: yeti
 ---
 

@@ -1,6 +1,6 @@
 ---
 book_filename: "Models-of-Computation"
-output_dir: "../../docs/S21/from-class/models-of-computation"
+output_dir: "../../docs/S22/from-class/models-of-computation"
 site: bookdown::bookdown_site
 language:
   ui:
