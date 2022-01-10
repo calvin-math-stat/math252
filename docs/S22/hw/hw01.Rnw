@@ -111,7 +111,25 @@ Additional assignments will be filled in over time.
      never & \WW{00} & -- & Intro to WebWork
      \\
      \hline
-  	 Wed 1/12 & PS 1 & Rosen 10.1 &
+  	 Wed 1/12 & miscellaneous &
+	 online &
+	 \begin{enumerate}
+	 \item Visit the class web page at \url{https://rpruim.github.io/m252/S22/}
+	 \item Fill out this \href{
+	 https://docs.google.com/forms/d/e/1FAIpQLSeBgZB5AUEovEBpYHBzM86H5pKjkEvX5MRXGcFQva2cHFSH8g/viewform?usp=sf_link}{pre-course survey}
+	 \item Check that you hae access to important course-related things:
+	 \begin{itemize}
+	 \item Check that you can login to WebWorK using your usual Calvin login and password.
+	 \item Check that you can access \url{https://gradescope.com}. You should also have received
+	 and email invite.
+	 \item Check that you received an email from me addressed to the class.
+	 \end{itemize}
+
+	 If any of these things are not working for you, let me know.
+	 \end{enumerate}
+
+	\\
+  	& PS 1 &  Rosen 10.1 &
 	 \helper{1}
 	 \helper[types of graph]{3,5,7,9}
 	 \mand[types of graph]{4}
@@ -120,9 +138,6 @@ Additional assignments will be filled in over time.
 	 \mand[Fred]{18}
 	 \mand[precedence graph]{33}
 	 \\
-	 & & online & Fill out this \href{
-	 https://docs.google.com/forms/d/e/1FAIpQLSeBgZB5AUEovEBpYHBzM86H5pKjkEvX5MRXGcFQva2cHFSH8g/viewform?usp=sf_link}{pre-course survey}
-	\\
 	\hline
 	 Fri 1/14 & \WW{01} & Rosen 10.2 &
 	 \\
