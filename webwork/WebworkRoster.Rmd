@@ -41,7 +41,8 @@ Roster <-
     last = ifelse(is.na(last), first, last)  # deal with one student with only one name
   )
 
-write_csv(Roster, file = "Math252-S22-roster-clean.csv")
+# done some hand edits so don't resave this.
+# write_csv(Roster, file = "Math252-S22-roster-clean.csv")
     
 Roster <- read.csv("Math252-S22-roster-clean.csv") |>
   tidyr::separate(email, into = c("user", "domain"), sep = "@", remove = FALSE) 

@@ -59,13 +59,17 @@ send me email with the email address you prefer.
 While we are online especially, please **check your email daily**.
 You are responsible for any information communicated via email.
 
+It is very helpful if you **include 252 in the subject line of any email you send me.**
+That helps me locate email from this course in a sometimes overflowing email inbox.
+
+
 ### MS Teams
 
-In addition to using MS Teams for online class sessions, you can use MS Teams to
+In addition to using MS Teams for our class, you can use MS Teams to
 send messages, to meet with other students for study sessions, etc.
 
-I'll be using the General channel for announcements, the Class channel for
-class, and the Group channels for group work.
+I'll usually send class announcements to both our email list and to the general
+channel of our Team.
 
 
 ### Web Pages
