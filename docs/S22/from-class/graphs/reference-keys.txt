@@ -37,5 +37,6 @@ bipartite-graphs
 definition
 examples
 complete-bipartite-graphs
+planar-and-non-planar-graphs
 euler-and-planarity
 kuratowskis-theorem

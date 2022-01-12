@@ -24,7 +24,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,11 +134,8 @@
 <li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
 <li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
 <li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar and Non-planar Graphs</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
-<li class="chapter" data-level="7.2" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
+<li class="chapter" data-level="6.4" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>6.4</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="6.5" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>6.5</b> Kuratowski’s Theorem</a></li>
 </ul></li>
 </ul>
 
@@ -182,13 +179,14 @@
 </ul></li>
 <li><p>A <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.</p>
 <ul>
-<li>Can also be described as a sequence of vertices, each one adjacent to the next.</li>
+<li>If multiple edges are not allowed, this can also be described as a
+sequence of vertices, each one adjacent to the next.</li>
 <li>For directed graphs, we require that the directions of the edges be compatible.</li>
 </ul></li>
 <li><p>A <strong>cycle</strong> is a path that begins and ends at the same vertex.</p></li>
 <li><p>A <strong>connected graph</strong> is one where there is a path between any pair of vertices.</p>
 <ul>
-<li>For a directed graph, we ignore the direction of the edges.</li>
+<li>For a directed graph, we <em>ignore</em> the direction of the edges.</li>
 </ul></li>
 <li><p><span class="math inline">\(H\)</span> is a <strong>subgraph</strong> of <span class="math inline">\(G\)</span> if the vertex set of <span class="math inline">\(H\)</span> is a subset of the vertex
 set of <span class="math inline">\(G\)</span> and the edge set of <span class="math inline">\(H\)</span> is a subset of the edge set of <span class="math inline">\(G\)</span>, and <span class="math inline">\(H\)</span> is a
@@ -224,7 +222,7 @@ degree indicate about a person? A small degree?</p></li>
 </ol></li>
 </ol>
 <div style="page-break-after: always;"></div>
-<ol start="4" style="list-style-type: decimal">
+<ol start="5" style="list-style-type: decimal">
 <li>Consider Figure 8.
 <ol style="list-style-type: lower-alpha">
 <li>Compute the in-degree and the out-degree of each vertex in Figure 8.<br />
