@@ -156,13 +156,7 @@ Additional assignments will be filled in over time.
   	 \mand[isomorphic?]{40}
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-
-	 	 Mon 2/15 & PS 3 & Rosen 10.4 &
+	 	 Fri 1/21 & PS 3 & Rosen 10.4 &
 	 \mand[paths]{2}
 	 \mand[components]{6}
 	 \mand[strong/weak connectivity]{12}
@@ -180,7 +174,8 @@ Additional assignments will be filled in over time.
 	 \extra[isomorphic?]{21, 23}
 	 \\
 	 \hline
-	 Wed 2/17 & PS 4 & Rosen 10.5 &
+	 \newpage
+	 Mon 1/24 & PS 4 & Rosen 10.5 &
 	 \mand[Euler paths/circuits]{2--8 even}
 	 \mand[bridges]{10}
 
@@ -198,6 +193,12 @@ Additional assignments will be filled in over time.
 	 Answers like ``Yes", ``No", and ``17", are rarely sufficient.
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+
 	 Fri 2/19 & PS 5 & Rosen 10.2 &
 	 \mand[bipartite?]{22--25}
 	 \mand[bipartite?]{26}
