@@ -75,12 +75,14 @@ knitr::include_graphics("../images/GraphFig9-4-7.png")
  * A **Hamilton path** is a path that visits every vertex exactly once.
  
 Euler paths are named after Leonid Euler who posed a famous problem about the 
-bridges in Königsberg. Hamilton paths are named after the Irish mathematician
+bridges in Königsberg. Euler is pronounced "Oiler".
+
+Hamilton paths are named after the Irish mathematician
 William Rowan Hamilton, not after the American politician Alexander Hamilton.
 
 ### Can you trace it?
 
-Perhaps you have seen the following type of ``puzzle''. 
+Perhaps you have seen the following type of "puzzle". 
 The goal is to trace the figures without lifting your pencil from 
 the paper and without retracing any of the lines.
 
