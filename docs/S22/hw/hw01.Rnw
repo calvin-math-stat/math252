@@ -193,13 +193,7 @@ Additional assignments will be filled in over time.
 	 Answers like ``Yes", ``No", and ``17", are rarely sufficient.
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-
-	 Fri 2/19 & PS 5 & Rosen 10.2 &
+	 Wed 1/26 & PS 5 & Rosen 10.2 &
 	 \mand[bipartite?]{22--25}
 	 \mand[bipartite?]{26}
 	 \\
@@ -213,8 +207,7 @@ Additional assignments will be filled in over time.
 	 \mand[degree]{3}
 	 \\
 	 \hline
-	 \newpage
-	 Wed 2/24 & PS 6 & Rosen 10.7 &
+	 Fri 1/28 & PS 6 & Rosen 10.7 &
 	 \mand[planar]{6--8}
 	 \mand[Kuratowski]{23--25}
 	 \\
@@ -242,6 +235,11 @@ Additional assignments will be filled in over time.
 	 \extra[Kuratowski's Theorem]{19}
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
 	 Mon 3/1 & \WW{03} & Rosen 6.1 &
 	 \\
 	 \hline
