@@ -193,7 +193,7 @@ Additional assignments will be filled in over time.
 	 Answers like ``Yes", ``No", and ``17", are rarely sufficient.
 	 \\
 	 \hline
-	 Wed 1/26 & PS 5 & Rosen 10.2 &
+	 Fri 1/28 & PS 5 & Rosen 10.2 &
 	 \mand[bipartite?]{22--25}
 	 \mand[bipartite?]{26}
 	 \\
@@ -207,7 +207,7 @@ Additional assignments will be filled in over time.
 	 \mand[degree]{3}
 	 \\
 	 \hline
-	 Fri 1/28 & PS 6 & Rosen 10.7 &
+	 Mon 1/31 & PS 6 & Rosen 10.7 &
 	 \mand[planar]{6--8}
 	 \mand[Kuratowski]{23--25}
 	 \\
