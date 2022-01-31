@@ -135,7 +135,7 @@ Wed 1/19 | Paths in Graphs       | [PDF](graphs/paths-in-graphs.pdf)
 Fri 1/21 | Paths in Graphs       | [PDF](graphs/paths-in-graphs.pdf)
 Mon 1/24 | Bipartite Graphs      | [PDF](graphs/bipartite-planar.pdf)
 Wed 1/26 | Planar, Non-planar Graphs      | [PDF](graphs/planar-and-non-planar-graphs.pdf)
-Fri 1/28 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
+Mon 1/21 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
 
 <!-- * Worksheets: -->
 <!--  [PDF](graphs/Graph-worksheets.pdf) -->
