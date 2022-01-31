@@ -235,18 +235,13 @@ Additional assignments will be filled in over time.
 	 \extra[Kuratowski's Theorem]{19}
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Mon 3/1 & \WW{03} & Rosen 6.1 &
+	 Wed 2/2 & \WW{03} & Rosen 6.1 &
 	 \\
 	 \hline
-	 Tue 3/2 & \WW{04} & Rosen 6.2 &
+	 Fri 2/4 & \WW{04} & Rosen 6.2 &
 	 \\
 	 \hline
-	  Wed 3/2 & PS 7 & Rosen 6.1 &
+	  Mon 2/7 & PS 7 & Rosen 6.1 &
     \mand[license plates]{28}
 	  \mand[bit strings]{48}
 	  \mand[DNA]{42}
@@ -261,10 +256,6 @@ Additional assignments will be filled in over time.
     \mand[balls]{4}
     \mand[party]{40}
   \\
-  & & Rosen 6.3 &
-    \mand[strings]{22}
-    \mand[softball]{26}
- \\
 	 & \WW{05} & Rosen 6.3 &
 	 \\
 	 \hline
@@ -275,6 +266,10 @@ Additional assignments will be filled in over time.
 \end{document}
 
 
+  & & Rosen 6.3 &
+    \mand[strings]{22}
+    \mand[softball]{26}
+ \\
 	 \\
 	 \hline
 	 \newpage
