@@ -161,6 +161,7 @@ Mon 1/24 | Bipartite Graphs      | [PDF](graphs/bipartite-planar.pdf)
 Wed 1/26 | Planar, Non-planar Graphs      | [PDF](graphs/planar-and-non-planar-graphs.pdf)
 Mon 1/31 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
 Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-principle.pdf)
+Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
 
 <!-- * Worksheets: -->
 <!--  [PDF](graphs/Graph-worksheets.pdf) -->
