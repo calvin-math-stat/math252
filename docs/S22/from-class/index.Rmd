@@ -162,7 +162,7 @@ Wed 1/26 | Planar, Non-planar Graphs      | [PDF](graphs/planar-and-non-planar-g
 Mon 1/31 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
 Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-principle.pdf)
 Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
-Mon 2/07 | Donuts                | [PDF](counting-and-probability/donut-problems.pdf)
+Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-problems.pdf)
 
 <!-- * Worksheets: -->
 <!--  [PDF](graphs/Graph-worksheets.pdf) -->
