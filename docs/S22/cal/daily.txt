@@ -867,15 +867,12 @@ Ramsey example: 6 people, show three are mutual friends or enemies [deferred]
 	graph rep: monochrome triangles
 
 ===
+Topic:: Division Principle
 Topic:: Permutations and Combinations
 Read:: Rosen 6.3
 #Vocab:: Sum Rule, Product Rule, bijection principle
 #Vocab:: permutation, r-permutation, combination, r-combination %%
 #	Pascal's triangle, binomial coefficients
-
-answered questions from homework
-
-Ramsey example from above
 
 intro to combinations and permutations
 	3 balls to 10 children if each kid gets at most 1.
@@ -936,12 +933,12 @@ example: like above but with only 6 players
 example: 8 players, 4O, 4D
 	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
 
-===endofcal
+===
+Topic:: Countint Wrap-Up
+Topic:: Donut problems
 
-===03/05/2021
-
+===
 Topic:: Test 1
-
 
 ===
 Topic:: Intro to Probability

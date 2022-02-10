@@ -24,11 +24,25 @@ div.indent {
 </style>
 
 
-## Groups
 
-We will often work in groups. Periodically we will shuffle things up so you get to
-work with new people.
+## Worksheets/Handouts
 
+I'll print and bring worksheets to class, but if you lose one or want to have it in
+electronic format from some reason, you can get it here as well.
+
+<!-- ### Models of Computation -->
+
+<!-- * Worksheets:  -->
+<!--   [PDF](models-of-computation/Models-of-Computation.pdf) -->
+<!--   [HTML](models-of-computation) -->
+
+<!-- ### Counting and Probability -->
+
+<!-- * Worksheets:  -->
+<!--   [PDF](counting-and-probability/Counting-and-Probability.pdf) -->
+<!--   [HTML](counting-and-probability/) -->
+
+<div class = "explain" label = "Before Test 1">
 <div class = "indent">
 <div class = "explain" label = "Groups starting 10 Jan">
 
@@ -130,23 +144,6 @@ for(g in sort(unique(R$group))) {
 </div>
 
 
-## Worksheets/Handouts
-
-I'll print and bring worksheets to class, but if you lose one or want to have it in
-electronic format from some reason, you can get it here as well.
-
-<!-- ### Models of Computation -->
-
-<!-- * Worksheets:  -->
-<!--   [PDF](models-of-computation/Models-of-Computation.pdf) -->
-<!--   [HTML](models-of-computation) -->
-
-<!-- ### Counting and Probability -->
-
-<!-- * Worksheets:  -->
-<!--   [PDF](counting-and-probability/Counting-and-Probability.pdf) -->
-<!--   [HTML](counting-and-probability/) -->
-
 ### Graphs
 
 date     |  Topic                | link(s)
@@ -159,35 +156,67 @@ Wed 1/19 | Paths in Graphs       | [PDF](graphs/paths-in-graphs.pdf)
 Fri 1/21 | Paths in Graphs       | [PDF](graphs/paths-in-graphs.pdf)
 Mon 1/24 | Bipartite Graphs      | [PDF](graphs/bipartite-planar.pdf)
 Wed 1/26 | Planar, Non-planar Graphs      | [PDF](graphs/planar-and-non-planar-graphs.pdf)
+
+### Counting and Probability
+
+date     |  Topic                | link(s)
+-------- | --------------------- | ------------------------------------------
 Mon 1/31 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
 Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-principle.pdf)
 Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
 Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-problems.pdf)
 
-<!-- * Worksheets: -->
-<!--  [PDF](graphs/Graph-worksheets.pdf) -->
-<!--  [HTML](graphs/) -->
- 
- <!-- * [Notes from Professor Scofield](ScofieldPlanarityNotes.pdf) -->
+</div>
 
-<!-- * Find the Longest Path -->
+<div class = "explain" label = "Between Test 1 and Test 2">
 
-<!--     <iframe width="560" height="315" src="https://www.youtube.com/embed/a3ww0gwEszo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+### Groups
 
-<!-- ### Models of Computation -->
+We will often work in groups. Periodically we will shuffle things up so you get to
+work with new people.
 
-<!-- * Worksheets:  -->
-<!--   [PDF](models-of-computation/Models-of-Computation.pdf) -->
-<!--   [HTML](models-of-computation/) -->
-  
-<!-- * Regular Exrpessions in Python -->
+<div class = "explain" label = "Groups starting 11 Feb">
 
-<!--     * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTNkq3iAo6ThK8_LJUE8z-KUczPj9hT7rZcir1cd_9cM-iZw55XkYXXOKZnTsl3hLw3I29cFzcH8W3P/pub?start=false&loop=false&delayms=3000) -->
-<!--     * Thonny -- easy self-contained python -->
-<!--         * [download Thonny here](https://thonny.org/) -->
-<!--     * [Online python](https://repl.it/languages/python3) -->
-<!--     * [Regular Expression Game](http://play.inginf.units.it/) -->
-    
+
+```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
+set.seed(1102)
+n_groups <- function(x) {
+  ifelse(x > 18, (x+3) %/% 4, x %/% 3)
+}  
+
+Roster <- read.csv('../../../webwork/Math252-S22-roster-clean2.csv') %>%
+  mutate(name = paste(first, last))
+
+R <- 
+  mosaic::shuffle(Roster) |>
+  group_by(section) |>
+  mutate(group = rep(1:(n_groups(n())), length.out = n())) |>
+  mutate(group = paste0(section, group)) 
+         
+for(g in sort(unique(R$group))) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+</div>
+### Counting and Probability
+
+date     |  Topic                | link(s)
+-------- | --------------------- | ------------------------------------------
+Mon 1/31 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
+Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-principle.pdf)
+Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
+Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-problems.pdf)
+Fri 2/11 | Probability           | [PDF](counting-and-probability/probability.pdf)
+Mon 2/11 | Probability (cont'd)  | [PDF](counting-and-probability/probability.pdf)
+
+
+<!-- Wed 2/16 | Conditional Probability 1 | [PDF](counting-and-probability/conditional-probability.pdf) -->
+<!-- Fri 2/18 | Conditional Probability 2 | [PDF](counting-and-probability/probability-trees-and-bayes.pdf) -->
+<!-- Mon 2/21 | Random Variables      | [PDF](counting-and-probability/random-variables.pdf) -->
+<!-- Wed 2/23 | Expected Value        | [PDF](counting-and-probability/expected-value.pdf) -->
+
+
   
 <!-- ### Langauges, Grammars, Machines -->
 
@@ -208,35 +237,7 @@ Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-probl
 <!-- 04/09 | [Automata](Automata.pdf) -->
 <!-- 04/06 | [Grammars](Grammars.pdf) -->
 
-<!-- ### Counting and Probability -->
-
-<!-- Date  | Handout -->
-<!-- ----- | --------------------------------------------------- -->
-<!-- 03/25 | [Variance](Probability-Variance.pdf) -->
-<!-- 03/16 | [Linearity of Expected Value](Probability-E-is-Linear.pdf) -->
-<!-- 03/14 | [Expected Value](Probability-Expected-Value.pdf) -->
-<!-- 03/12 | [Random Variables](Probability-Random-Variables.pdf) -->
-<!-- 03/10 | [More Probability](Probability-Bayes.pdf) -->
-<!-- 03/07 | [Conditional Probaility](Probability-Conditional.pdf) -->
-<!-- 03/05 | [Probaility Basics](Probability.pdf) -->
-<!-- 02/23 | [Counting Donuts](Counting-Donut.pdf) -->
-<!-- 02/21 | [Division Principe](Counting-Division.pdf) -->
-<!-- 02/19 | [Pigeonhole Principle](Counting-Pigeonhole.pdf) -->
-<!-- 02/16 | [Counting Problems](Counting-Basic.pdf) -->
-
-
-<!-- ### Graphs -->
-
-<!-- Date  | Handout -->
-<!-- ----- | --------------------------------------------------- -->
-<!-- 02/03 | [Intro to Graphs](Graphs-Intro.pdf) -->
-
-<!-- 02/01 | [More Graphs](Graphs02.pdf) -->
-<!-- 02/04 | [Graph Representations, Graph Isomorphism](Graphs03.pdf) -->
-<!-- 02/06 | [Paths in Graphs](Graphs-Paths.pdf) -->
-<!-- 02/08 | [Bipartite and Planar Graphs](Graphs-Bipartite-Planar.pdf) -->
-<!-- 02/11 | Euler Paths: [[worksheet]](Graphs-Euler.pdf) [[long version]](Graphs-Euler.html) -->
-
+</div>
 <br>
 
 ------------
