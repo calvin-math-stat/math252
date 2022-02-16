@@ -1,0 +1,116 @@
+---
+title: "Probability Solutions"
+author: "Math 252"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  comment = NA)
+```
+
+
+### 4: Urn
+
+```{r}
+choose(3, 2) +       # pick 2 red balls
+  choose(5, 2) /     # or pick two blue balls
+  choose(8, 2)       # pick 2 of the 8 balls
+```
+
+### 5: Dice
+
+There are $6 \cdot 6 = 36$ possible equally likely rolls.  Four of them sum to 5, so 4/36.
+
+### 6. Smaller Dice
+
+$4/16$
+
+### 7. 6 or Doubles
+
+There are 6 ways to get doubles.  There are 5 ways to get a 6 ($1+5, 2+4, 3+3, 4+2, 5+1$), but notice that $3 + 3$
+is in both lists, so we have $6 + 5 - 1$ ways to get a sum of six or doubles.
+
+Answer; $10 / 36$
+
+### 8. Lotto
+
+Number of lotto tickets: $10^3 = 1000$.
+
+Probabiliyt of big prize: $1/1000$.
+
+Probability of small prize: $6/1000 - 1/1000 = 5/ 1000$. (There are $3 \cdot 2 \cdot 1$ ways to order three different numbers, but one of those
+wins the big prize.)
+
+If you pick 7-7-7, you can only win the big prize. (In the real lottery, your big prize is bigger to make up for 
+not having a chance to win the smaller prize.)
+
+### 9. Flush
+
+```{r}
+choose(4, 1) *       # pick a suit
+  choose(13, 5) /    # pick 5 cards of that suit
+  choose(52, 5)      # pick 5 cards from teh 52-card deck
+```
+
+### 10. 4-of-a-kind
+
+
+```{r}
+choose(13, 1) *      # pick a number to have 4 of
+  choose(4, 4) *     # pick all four of that number
+  choose(12, 1) *    # pick a number to have 1 of
+  choose(4, 1) /     # pick 1 of those 4 cards
+  choose(52, 5)      # pick 5 cards from teh 52-card deck
+```
+
+### 11, Random Bit String
+
+Only one string doesn't have any 0's. So using the complement rule, we have 
+
+```{r}
+1 - 1 / 2^8
+```
+
+### 12. Yahtzee.
+
+All numbers match:  
+
+```{r}
+6 / 6^5
+```
+
+At least 2 match = not all different, so
+
+```{r}
+1 - (6 * 5 * 4 * 3 * 2 * 1) / 6^5
+```
+
+### 13. Loaded Dice
+
+If six is twice as likely as the rest, solve $ 5p + 2p = 1$ to get the probbility of rolling a 1.  $p - 1/7$.
+
+Probability of rolling a 6 is $2/7$.
+
+Probability of rolling doubles: $5 \cdot \frac17 \cdot \frac17 + \frac27 \cdot \frac27 = `r round(9/49, 4)`$
+
+### 15. More Lottery
+
+```{r}
+# a. 
+1 / choose(40, 6) 
+choose(6,6) * choose(34, 0) / choose(40, 6) 
+
+# b
+choose(6, 5) * choose(34, 1) / choose(40, 6)
+```
+
+```{r echo = FALSE}
+dplyr::tibble(correct = 6:0, 
+              numerator = choose(6, correct) *choose(34, 6 - correct),
+              probability = choose(6, correct) *choose(34, 6 - correct) / choose(40, 6)
+) |>
+  pander::pander()
+
+```
