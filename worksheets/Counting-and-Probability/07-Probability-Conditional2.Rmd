@@ -98,9 +98,9 @@ Miller's test for primality of a number $n$ uses arithmetic
      select b at random with 1 < b < n
      if (MillersTest(n, b) ==  "composite") {
        return("composite (for sure)")
-     }
+     } 
      return("prime (well, probably)")
-   }
+   } 
  }
 ```
 
@@ -142,18 +142,18 @@ is roughly equally likely to be selected.) For the questions below, assume that
 the probability is exactly $1/m$. That should be a good approximation for good
 hash functions.
 
-a. If a hash function is mapping to 20 storage locations, what is the
-    probability that we can place 4 keys without any collisions?  (That is,
+a. A hash function is mapping to 20 storage locations. What is the
+    probability that we can place 4 keys no collisions?  (That is,
     what is the probability that the first four hash values will all be
     different.)
 
-b. If a hash function is mapping to 50 storage locations, what is the
-    probability that we can place 10 keys without any collisions?  (That is,
+b. A hash function is mapping to 50 storage locations. What is the
+    probability that we can place 10 keys no collisions?  (That is,
     what is the probability that the first ten hash values will all be
     different.)
 
 c. If a hash function is mapping to 300 storage locations, what is the
-    probability that we can place 25 keys without any collisions?
+    probability that we can place 25 keys no collisions?
 
 d. Make up a similar problem of your own with a different number of storage
     locations and a different number of keys to place.

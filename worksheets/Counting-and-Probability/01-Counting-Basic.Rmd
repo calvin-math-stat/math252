@@ -101,7 +101,6 @@ of Valentine hearts he picked up cheap on February 15.
 <!-- ``` -->
 
 
-\iffalse
 \newpage
 
 <br>
@@ -145,8 +144,6 @@ of Valentine hearts he picked up cheap on February 15.
     b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
     = `r 1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1`
 </div>    
-\fi
- 
  <!-- 13. See book. -->
  
 \newpage

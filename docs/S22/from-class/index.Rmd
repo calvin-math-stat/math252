@@ -210,7 +210,7 @@ Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-probl
 Fri 2/11 | Probability           | [PDF](counting-and-probability/probability.pdf)
 Mon 2/11 | Probability (cont'd)  | [PDF](counting-and-probability/probability.pdf)
 Wed 2/16 | Conditional Probability 1 | [PDF](counting-and-probability/conditional-probability.pdf)
-<!-- Fri 2/18 | Conditional Probability 2 | [PDF](counting-and-probability/probability-trees-and-bayes.pdf) -->
+Fri 2/18 | Conditional Probability 2 | [PDF](counting-and-probability/probability-trees-and-bayes.pdf)
 <!-- Mon 2/21 | Random Variables      | [PDF](counting-and-probability/random-variables.pdf) -->
 <!-- Wed 2/23 | Expected Value        | [PDF](counting-and-probability/expected-value.pdf) -->
 
