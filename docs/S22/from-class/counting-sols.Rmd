@@ -2,8 +2,8 @@
 title: "Probability Solutions"
 author: "Math 252"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,9 +16,9 @@ knitr::opts_chunk$set(
 ### 4: Urn
 
 ```{r}
-choose(3, 2) +       # pick 2 red balls
-  choose(5, 2) /     # or pick two blue balls
-  choose(8, 2)       # pick 2 of the 8 balls
+(choose(3, 2) +       # pick 2 red balls
+  choose(5, 2)) /     # or pick two blue balls
+  choose(8, 2)        # pick 2 of the 8 balls
 ```
 
 ### 5: Dice

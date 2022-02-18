@@ -172,10 +172,10 @@ pre code {
 
 <div id="urn" class="section level3">
 <h3>4: Urn</h3>
-<pre class="r"><code>choose(3, 2) +       # pick 2 red balls
-  choose(5, 2) /     # or pick two blue balls
-  choose(8, 2)       # pick 2 of the 8 balls</code></pre>
-<pre><code>[1] 3.357143</code></pre>
+<pre class="r"><code>(choose(3, 2) +       # pick 2 red balls
+  choose(5, 2)) /     # or pick two blue balls
+  choose(8, 2)        # pick 2 of the 8 balls</code></pre>
+<pre><code>[1] 0.4642857</code></pre>
 </div>
 <div id="dice" class="section level3">
 <h3>5: Dice</h3>
