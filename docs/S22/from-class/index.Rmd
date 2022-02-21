@@ -141,6 +141,7 @@ for(g in sort(unique(R$group))) {
 ```
 
 </div>
+
 </div>
 
 
@@ -199,6 +200,30 @@ for(g in sort(unique(R$group))) {
 ```
 
 </div>
+<div class = "explain" label = "Groups starting 21 Feb">
+
+```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
+set.seed(221)
+n_groups <- function(x) {
+  ifelse(x > 18, (x+3) %/% 4, x %/% 3)
+}  
+
+Roster <- read.csv('../../../webwork/Math252-S22-roster-clean2.csv') %>%
+  mutate(name = paste(first, last))
+
+R <- 
+  mosaic::shuffle(Roster) |>
+  group_by(section) |>
+  mutate(group = rep(1:(n_groups(n())), length.out = n())) |>
+  mutate(group = paste0(section, group)) 
+         
+for(g in sort(unique(R$group))) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+</div>
+
 ### Counting and Probability
 
 date     |  Topic                | link(s)
@@ -211,8 +236,8 @@ Fri 2/11 | Probability           | [PDF](counting-and-probability/probability.pd
 Mon 2/11 | Probability (cont'd)  | [PDF](counting-and-probability/probability.pdf)
 Wed 2/16 | Conditional Probability 1 | [PDF](counting-and-probability/conditional-probability.pdf)
 Fri 2/18 | Conditional Probability 2 | [PDF](counting-and-probability/probability-trees-and-bayes.pdf)
-<!-- Mon 2/21 | Random Variables      | [PDF](counting-and-probability/random-variables.pdf) -->
-<!-- Wed 2/23 | Expected Value        | [PDF](counting-and-probability/expected-value.pdf) -->
+Mon 2/21 | Random Variables      | [PDF](counting-and-probability/random-variables.pdf)
+Wed 2/23 | Expected Value        | [PDF](counting-and-probability/expected-value.pdf)
 
 
   

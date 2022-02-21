@@ -148,15 +148,7 @@ Additional assignments will be filled in over time.
 	 \extra[birth day]{20}
 	 \\
 	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Fri 3/19 & \WW{09} & Rosen 7 & Probability
-	 \\
-	 \hline
-	 Mon 3/22 &  PS 9 & Rosen 7.2 &
+	 Wed 2/23 &  PS 9 & Rosen 7.2 &
 	 \mand[odd one out]{29}
 	 \\
 	 & & Rosen 7.3 &
@@ -175,7 +167,14 @@ Additional assignments will be filled in over time.
 	 \extra[Monty Hall]{15}
 	 \\
 	   \hline
-	 Wed 3/24 & PS 10 & Rosen 7.4 &
+	 Fri 2/25 & \WW{09} & Rosen 7 & Probability
+	 \\
+	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+	 Mon 3/7 & PS 10 & Rosen 7.4 &
 	 \helper{1}
 	 \mand[rolling 6s]{3}
 	 \mand[biased coin]{4}
@@ -184,9 +183,10 @@ Additional assignments will be filled in over time.
 	 \mand[three dice]{8}
 	 \\
 	   \hline
-	 Fri 3/26 & \WW{10} & Rosen 7 & probability review
+	 Wed 3/9 & \WW{10} & Rosen 7 & probability review
 	 \\
 	 \hline
+
 	 Mon 3/29 & PS 11 & Rosen 13.1 &
    \mand[sentences]{1ad}
 	 \extra{2}
