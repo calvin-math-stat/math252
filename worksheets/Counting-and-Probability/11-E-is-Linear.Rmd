@@ -99,6 +99,8 @@ Use the table above to answer the following questions.
 
 7. Now compute $\E(X)$, $\E(Y)$, and $\E(X + Y)$.    
 
+\newpage
+
 ## Linearity of Expected Value
 
 **Linearity Theorem for Expected Value.**
