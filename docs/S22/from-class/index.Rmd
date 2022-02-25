@@ -238,6 +238,7 @@ Wed 2/16 | Conditional Probability 1 | [PDF](counting-and-probability/conditiona
 Fri 2/18 | Conditional Probability 2 | [PDF](counting-and-probability/probability-trees-and-bayes.pdf)
 Mon 2/21 | Random Variables      | [PDF](counting-and-probability/random-variables.pdf)
 Wed 2/23 | Expected Value        | [PDF](counting-and-probability/expected-value.pdf)
+Fri 2/25 | More Expected Value   | [PDF](counting-and-probability/more-expected-value.pdf)
 
 
   
