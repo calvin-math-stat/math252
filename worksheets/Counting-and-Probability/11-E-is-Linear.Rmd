@@ -133,12 +133,11 @@ probability table.  What are the possible values of $X$?]
 13. Let $X \sim {\sf Binom}(n, p)$.  What is $\E(X)$?  [Hint: Use the previous
 problem and the Linearity Theorem.  How can you write $X$ as a sum?]
 
-14. Can you prove the linearity theorem?  [For part b, you may restrict your attention to
+14. What is the expected number of diamonds in a 5-card hand dealt from a standard deck?
+
+15. If you roll 5 4-sided dice, what is the expected number of 4s rolled?
+
+16. If you roll 5 standard dice, what is the expected number of unique numbers rolled?
+
+17. Can you prove the linearity theorem?  [For part b, you may restrict your attention to
 a sum of two random variables.]
-
-15. What is the expected number of diamonds in a 5-card hand dealt from a standard deck?
-
-16. If you roll 5 4-sided dice, what is the expected number of 4s rolled?
-
-17. If you roll 5 standard dice, what is the expected number of unique numbers rolled?
-
