@@ -1,0 +1,44 @@
+---
+title: "Probability Review"
+author: "Math 252"
+output:
+  html_document:
+    theme: yeti
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\E{\operatorname{E}}
+
+1. Suppose $p(A) = 0.4$, $p(B) = 0.3$, and $P(A \mid B) = 0.2$.
+
+    a. Are $A$ and $B$ independent?  How do you know?
+    a. Are $A$ and $B$ mutually exclusive?  How do you know?
+    a. What is $p(A \cap B)$?
+    a. What is $p(A \cup B)$?
+    a. What is $p(B \mid A)$?
+    
+2. Can two events be both mutually exclusive and independent?  If so, give an example.
+If not, explain why not.
+    
+
+1. Let $X \sim {\sf Binom}(n, p)$.  What is $\E(X)$?  
+
+    [Hint: Use the  Linearity Theorem.  How can you write $X$ as a sum?]
+
+1. What is the expected number of diamonds in a 5-card hand dealt from a standard deck?
+
+1. A state issues license plates with 3 letters followed by 3 digits. I random license
+plate configuration is selected, what is the probability that one of the letters or
+digits is repeated?
+
+1. If you roll 5 4-sided dice, what is the expected number of 4s rolled?
+
+1. If you roll 5 standard dice, what is the expected number of distinct numbers rolled? [Example:
+if you roll 1, 1, 3, 4, 5; then there only 4 distinct numbers.]
+
+1. Can you prove the linearity theorem?  [For part b, you may restrict your attention to
+a sum of two random variables.]
