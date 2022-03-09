@@ -44,10 +44,10 @@ We can denote this as $S\in V$.
     * so very symbol is either terminal or nonterminal
     * The start symbol is a terminal in some languages and a nonterminal in others
   
-* **production rules** ($P$): $P \subseteq (V^*-N^*) \times V^*$
+* **production rules** ($P$): $P \subseteq (V^*-T^*) \times V^*$
 
-    * usually write elements of $P$ as $u \to v$ rather than $(u, v)$.
-    * $u$: $V^*-N^*$ says that the lefthand side of the rule ($u$) must 
+    * usually we write elements of $P$ as $u \to v$ rather than $(u, v)$.
+    * $u$: $V^*-T^*$ says that the lefthand side of the rule ($u$) must 
     **contain at least one nonterminal**.
     * $v$: The righthand side can be any combinaton of terminals and nonterminals 
     (including the empty string).
@@ -80,6 +80,8 @@ production rules:
 * $S \to b$
 * $A \to aa$
 
+\newpage
+
 **Grammar 3** ($G_3$):
 alphabet: $\{S, 0, 1\}$, 
 terminals: $\{0,1\}$,
@@ -89,7 +91,6 @@ production rules:
 * $S \to 11S$
 * $S \to 0$
 
-\newpage
 
 **Grammar 4** ($G_4$):
 alphabet: $\{A, B, C, D, a, b, c\}$, 
