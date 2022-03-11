@@ -271,6 +271,7 @@ Mon 3/7  | Probability Wrap-Up   | [PDF](probability-wrapup.pdf)
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
 Wed 3/9  | Grammars              | [PDF](models-of-computation/alphabets-languages-and-grammars.pdf)
+Fri 3/11 | Types of Grammars     | [PDF](models-of-computation/types-of-grammars.pdf)
 
 <!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
 <!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
