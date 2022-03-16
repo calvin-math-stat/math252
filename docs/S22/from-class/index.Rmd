@@ -141,8 +141,6 @@ for(g in sort(unique(R$group))) {
 
 </div>
 
-</div>
-
 
 ### Graphs
 
@@ -166,6 +164,7 @@ Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-pri
 Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
 Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-problems.pdf)
 
+</div>
 </div>
 
 <div class = "explain" label = "Between Test 1 and Test 2">
