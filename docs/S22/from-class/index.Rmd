@@ -273,6 +273,49 @@ date     |  Topic                | link(s)
 Wed 3/9  | Grammars              | [PDF](models-of-computation/alphabets-languages-and-grammars.pdf)
 Fri 3/11 | Types of Grammars     | [PDF](models-of-computation/types-of-grammars.pdf)
 
+</div>
+
+<div class = "explain" label = "After Test 2">
+
+### Groups
+
+We will often work in groups. Periodically we will shuffle things up so you get to
+work with new people.
+
+<div class = "explain" label = "Groups starting 16 Mar">
+
+
+```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
+set.seed(1603)
+n_groups <- function(x) {
+  ifelse(x > 18, (x+3) %/% 4, x %/% 3)
+}  
+
+Roster <- read.csv('../../../webwork/Math252-S22-roster-clean2.csv') %>%
+  mutate(name = paste(first, last))
+
+R <- 
+  mosaic::shuffle(Roster) |>
+  group_by(section) |>
+  mutate(group = rep(1:(n_groups(n())), length.out = n())) |>
+  mutate(group = paste0(section, group)) 
+         
+for(g in sort(unique(R$group))) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+</div>
+
+### Langauges, Grammars, Machines
+
+date     |  Topic                | link(s)
+-------- | --------------------- | ------------------------------------------
+Wed 3/9  | Grammars              | [PDF](models-of-computation/alphabets-languages-and-grammars.pdf)
+Fri 3/11 | Types of Grammars     | [PDF](models-of-computation/types-of-grammars.pdf)
+Wed 3/16 | Automata              | [PDF](models-of-computation/finite-state-automata.pdf)
+Fri 3/18 | Automata              | [PDF](models-of-computation/finite-state-automata.pdf)
+
 <!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
 <!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
 <!-- 05/04 | [Turing Machine specification](http://www.calvin.edu/~rpruim/courses/m156/F16/TM/tmdoc.shtml) -->
@@ -284,8 +327,6 @@ Fri 3/11 | Types of Grammars     | [PDF](models-of-computation/types-of-grammars
 <!-- 04/23 | [Regular Grammars](Regular-Grammars.pdf) -->
 <!-- 04/19 | [Regular Languages](RegularLanguages.pdf) -->
 <!-- 04/14 | [Regular Languages](RegularLanguages.pdf) -->
-<!-- 04/11 | [Automata](Automata.pdf) -->
-<!-- 04/09 | [Automata](Automata.pdf) -->
 <!-- 04/06 | [Grammars](Grammars.pdf) -->
 
 </div>
