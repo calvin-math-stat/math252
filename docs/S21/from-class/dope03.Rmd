@@ -332,6 +332,7 @@ without a MAXINT.)
 \def\emptystring{\lambda}
 
 <div class = "indent">
+\def\emptystring{\lambda}
 <div class = "explain" label = "Comments/Hints/Solutions">
 
 
