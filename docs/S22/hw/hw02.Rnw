@@ -205,32 +205,6 @@ Additional assignments will be filled in over time.
 	 \\
 	 \hline
 
-	 Mon 3/29 & PS 11 & Rosen 13.1 &
-   \mand[sentences]{1ad}
-	 \extra{2}
-	 \helper{3}
-	 \mand{4}
-	 \extra{5}
-	 \mand{6a}
-	 \mand{9}
-	 \helper{13}
-	 \mand{14bd}
-	 \extra{15}
-	 \\
-	 \hline
-	   Wed 3/31 & PS 12 & Rosen 13.1 &
-	    \mand[types of grammars]{19}
-	    \mand[palindromes]{20}
-	    \mand[union]{21a}
-	    \mand[derivation trees]{24ab}
-	   %
-	   % \mand[BNF]{28}
-	   % \mand[BNF]{31ab}
-	   % \mand[EBNF]{34}
-
-	    Be sure to provide an explanation for problem 19.
-	 \\
-	 \hline
 \end{longtable}
 \end{center}
 \label{end}
