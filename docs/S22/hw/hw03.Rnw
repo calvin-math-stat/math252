@@ -124,10 +124,23 @@ Additional assignments will be filled in over time.
 	 \mand{14bd}
 	 \extra{15}
 
-	    \mand[types of grammars]{19}
+	 \mand[types of grammars]{19}
+
+	 Be sure to provide an explanation for problem 19.
 	 \\
 	 \hline
-
+	 Mon 3/21 & PS 12 & Rosen 13.1 &
+	    \mand[palindromes]{20}
+	    \mand[union]{21a}
+	    \mand[derivation trees]{24ab}
+	    \\
+    &  & Rosen 13.3 &
+	   \helper[testing strings]{11}
+	   \mand[testing strings]{12}
+	   \mand[what langauge?]{16--17}
+	   \mand[create DFA]{25--26}
+	   \\
+	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
@@ -135,22 +148,13 @@ Additional assignments will be filled in over time.
 
 
 	   Wed 3/31 & PS 12 & Rosen 13.1 &
-	    \mand[palindromes]{20}
-	    \mand[union]{21a}
-	    \mand[derivation trees]{24ab}
 	   %
 	   % \mand[BNF]{28}
 	   % \mand[BNF]{31ab}
 	   % \mand[EBNF]{34}
 
-	    Be sure to provide an explanation for problem 19.
 	 \\
 	 \hline
-Wed 4/7 & PS 13 & Rosen 13.3 &
-	   \helper[testing strings]{11}
-	   \mand[testing strings]{12}
-	   \mand[what langauge?]{16--17}
-	   \mand[create DFA]{25--26}
    \\
    \hline
 	   Fri 4/9 & PS 14 & Rosen 13.3 &
