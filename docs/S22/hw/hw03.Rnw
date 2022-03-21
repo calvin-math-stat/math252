@@ -151,6 +151,8 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA, NFA]{55--56}
 
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
+	   \\
+	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
