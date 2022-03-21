@@ -141,6 +141,16 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA]{25--26}
 	   \\
 	   \hline
+	 Fri 3/25 & PS 13 & Rosen 13.3 &
+	   \mand[what langauge?]{19--20}
+	   \extra[create DFA]{32}
+	   \mand[create DFA]{34}
+	   \mand[create NFA]{36}
+	   \mand[what langauge?]{45--46}
+	   \extra[what langauge?]{47}
+	   \mand[create DFA, NFA]{55--56}
+
+	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
 	 \end{longtable}
     \end{center}
     \label{end}
@@ -158,15 +168,6 @@ Additional assignments will be filled in over time.
    \\
    \hline
 	   Fri 4/9 & PS 14 & Rosen 13.3 &
-	   \mand[what langauge?]{19--20}
-	   \extra[create DFA]{32}
-	   \mand[create DFA]{34}
-	   \mand[create NFA]{36}
-	   \mand[what langauge?]{45--46}
-	   \extra[what langauge?]{47}
-	   \mand[create DFA, NFA]{55--56}
-
-	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
    \\
    \hline
 	   Wed 4/14 & PS 15 & Rosen 13.3 &
