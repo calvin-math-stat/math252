@@ -7,7 +7,9 @@ docs/S21/from-class/online/
 docs/S21/from-class/testing*
 docs/S21/from-class/Blank*
 
-docs/S22/from-class/counting-and-probality
+docs/S22/from-class/counting-and-probability
+docs/S22/from-class/*/libs/
+docs/S22/from-class/*/*html
 
 
 # these are generated from Rnw
