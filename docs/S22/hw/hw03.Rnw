@@ -151,6 +151,18 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA, NFA]{55--56}
 
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
+   \\
+   \hline
+	   Mon 3/28 & PS 14 & Rosen 13.3 &
+	   \mand[NFA to DFA]{52--54}
+	   \\
+	   & & Rosen 13.4 &
+	   \extra{1}
+	   \mand[describe in words]{2abde}
+	   \extra{3}
+	   \mand[does it belong?]{4}
+	   \mand[regex]{6}
+	   \extra[regex]{7}
 	   \\
 	   \hline
 	 \end{longtable}
@@ -170,18 +182,6 @@ Additional assignments will be filled in over time.
    \\
    \hline
 	   Fri 4/9 & PS 14 & Rosen 13.3 &
-   \\
-   \hline
-	   Wed 4/14 & PS 15 & Rosen 13.3 &
-	   \mand[NFA to DFA]{52--54}
-	   \\
-	   & & Rosen 13.4 &
-	   \extra{1}
-	   \mand[describe in words]{2abde}
-	   \extra{3}
-	   \mand[does it belong?]{4}
-	   \mand[regex]{6}
-	   \extra[regex]{7}
    \\
    \hline
 	   Mon 4/19 & PS 16 & Rosen 13.4 &
