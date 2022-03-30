@@ -340,6 +340,7 @@ Fri 3/18 | Nondeterministic Automata | [PDF](models-of-computation/nfa.pdf)
 Fri 3/25 | DFA vs NFA            | [PDF](models-of-computation/dfa-v-nfa.pdf)
 Fri 3/25 | Regular Expressions and Languages | [PDF](models-of-computation/regular-expressions-and-languages.pdf)
 Mon 3/28 | Regular Expression -> NFA | [PDF](models-of-computation/regex-to-nfa.pdf)
+Wed 3/30 | Regular Grammars and Automata | [PDF](models-of-computation/regular-grammars-and-automata.pdf)
 <!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
 <!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
 <!-- 05/04 | [Turing Machine specification](http://www.calvin.edu/~rpruim/courses/m156/F16/TM/tmdoc.shtml) -->
