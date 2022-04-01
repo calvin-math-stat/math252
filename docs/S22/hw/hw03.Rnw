@@ -169,6 +169,12 @@ Additional assignments will be filled in over time.
 	   \mand[grammar to NFA]{14abc}
 	   \\
 	   \hline
+	   Mon 4/4 & PS 16 & Rosen 13.4 &
+	   \mand[NFA to grammar]{15--17}
+	   \mand[regex to NFA]{12ab}
+	   \mand[regex to NFA]{13a}
+	   \\
+	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
@@ -176,13 +182,9 @@ Additional assignments will be filled in over time.
 
 
    \hline
-	   Mon 4/4 & PS 16 & Rosen 13.4 &
-	   \mand[NFA to grammar]{15--17}
 	   \\
 	   \hline
 	   Wed 4/21 & PS 17 & Rosen 13.4 &
-	   \mand[regex to NFA]{12ab}
-	   \mand[regex to NFA]{13a}
 	   \\
 	   & & DFA/NFA $\to$ regex &
 	   Convert the following DFAs or NFAs into equivalent regular expressions
