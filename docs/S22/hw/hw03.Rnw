@@ -175,6 +175,15 @@ Additional assignments will be filled in over time.
 	   \mand[regex to NFA]{13a}
 	   \\
 	   \hline
+	   Wed 4/6 & PS 17 & Rosen 13.4 &
+	   \\
+	   & & DFA/NFA $\to$ regex &
+	   Convert the following DFAs or NFAs into equivalent regular expressions
+	   using our algorithm for doing so. Show the intermediate steps:
+	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
+	   in the book!)
+	   \\
+	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
@@ -182,15 +191,6 @@ Additional assignments will be filled in over time.
 
 
    \hline
-	   \\
-	   \hline
-	   Wed 4/21 & PS 17 & Rosen 13.4 &
-	   \\
-	   & & DFA/NFA $\to$ regex &
-	   Convert the following DFAs or NFAs into equivalent regular expressions
-	   using our algorithm for doing so. Show the intermediate steps:
-	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
-	   in the book!)
 	   \\
    \hline
 	   Fri 4/23 & PS 18 & Rosen 13.4 &
