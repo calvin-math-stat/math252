@@ -184,40 +184,22 @@ Additional assignments will be filled in over time.
 	   in the book!)
 	   \\
 	   \hline
-	 \end{longtable}
-    \end{center}
-    \label{end}
-    \end{document}
-
-
-   \hline
-	   \\
-   \hline
-	   Fri 4/23 & PS 18 & Rosen 13.4 &
-	   \mand[pumping lemma]{23, 25}
-
-	   Be sure to write the up carefully.
-	   \\
-	   \hline
-	  Mon 4/26 & PS 19 & Rosen 13.5 &
+	  Mon 4/11 & PS 18 & Rosen 13.5 &
 	  \mand[trace TM]{2}
 	  \mand[trace TM]{5}
 	  \extra[trace TM]{1}
 	  \extra[trace TM]{3--4}
-	   \\
-	   \hline
-	  Wed 4/28 & PS 20 & Rosen 13.5 &
+
 	  \mand[design TM]{6}
 	  \mand[design TM]{10}
 	  \extra[design TM]{7--12}
 \\
 	  &&& For problems 6 and 10, describe your Turing machine
-	  using the syntax of one of our two Turing machine simulators.
+	  using the syntax of our Turing machine simulator.
 	  (You can use a text editor or copy and paste from the
 	  online simulator into a file to save your work.)
    \\
    \hline
-\newpage
 never & Review & Rosen 13.RQ &
    \extra{1--2}
    \extra{3}
@@ -238,6 +220,20 @@ never & Review & Rosen 13.RQ &
    \extra{26--27}
 \\
 \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
+
+
+   \hline
+	   Fri 4/23 & PS 18 & Rosen 13.4 &
+	   \mand[pumping lemma]{23, 25}
+
+	   Be sure to write the up carefully.
+	   \\
+	   \hline
+\newpage
 never & Review &
 	  Rosen 6.RQ &
 	  \extra[counting]{1--2}
