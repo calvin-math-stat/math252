@@ -351,6 +351,12 @@ for(g in sort(unique(R$group))) {
 ```
 </div>
 
+<div class = "explain" label = "Groups starting 11 Apr">
+
+Choose your own groups!
+
+</div>
+
 ### Langauges, Grammars, Machines
 
 date     |  Topic                | link(s)
@@ -366,6 +372,7 @@ Mon 3/28 | Regular Expression -> NFA | [PDF](models-of-computation/regex-to-nfa.
 Wed 3/30 | Regular Grammars and Automata | [PDF](models-of-computation/regular-grammars-and-automata.pdf)
 04/04 | DFA to regex | [PDF](models-of-computation/dfa-to-regex.pdf), [notes](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf)
 04/06 | Turing Machines | [PDF](models-of-computation/turing-machines.pdf), [simulator](http://morphett.info/turing/turing.html) 
+04/11 | A language that is not regular | [PDF](models-of-computation/not-regular.pdf)
 
 <!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
 <!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
