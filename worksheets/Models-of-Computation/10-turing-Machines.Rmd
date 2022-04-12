@@ -53,7 +53,6 @@ These can further be divided into accepting states and rejecting states.
     * `<direction>`: left, right, or stay 
       *  Some flavors of Turing machine do not allow stay.
    
-\newpage
 
 ## Execution of a Turing Machine program (Semantics)
 
@@ -63,10 +62,8 @@ At the start of the execution, the input is written on the tape,
 the read/write head is located at the left most symbol of the input,
 and all cells that don't contain part of the input contain the blank symbol.
 The tape may be **1-way infinite**, in which case there is a left end to the tape,
-or **2-way infinite**, extening infinitely in both directions.
-
-Our Zybook shows some examples of 1-way infinite tapes.  Here is a picture 
-of a 2-way infinite tape.
+or **2-way infinite**, extending infinitely in both directions.
+Here is a picture of a 2-way infinite tape.
 
 ```{r, echo = FALSE, out.width = "40%", fig.align = "center"}
 knitr::include_graphics("../images/TM-Fig-12-5-1.png")
@@ -91,14 +88,13 @@ Otherwise it runs forever.
 
 ## ASCII Representations of Turing Machines
 
-There are several websites that provide Turing machine simulators. Here are 
-a few:
+There are several websites that provide Turing machine simulators. Here are two:
 
-* <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/> 
+<!-- * <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/>  -->
 
-    * My favorite,
-but no longer usable since it was written in java by Calvin student Eliot Eschelman
-back when java applets were still a thing.
+<!--     * My favorite, -->
+<!-- but no longer usable since it was written in java by Calvin student Eliot Eschelman -->
+<!-- back when java applets were still a thing. -->
 
 * <http://morphett.info/turing/turing.html> 
 
@@ -122,7 +118,6 @@ They are all pretty similar but differ in
 * The order in which the 5 parts of an instruction are given
 * Which of various variations on the Turing machine theme they support (and how you tell the simulator which flavor to use).
 
-\newpage
 
 
 ### Example 1 (13.5.1 in Rosen 7)
@@ -148,12 +143,9 @@ s2 1 0 r halt
 of the Turing machine when it halts.  
 Do this by hand, then check your work using the simulator.
 
-    a. $\lambda$
-    b. 01
-    b. 0101
-    b. 010110
-    b. 001
+\hfill a. $\lambda$ \hfill  b. 01 \hfill  c. 0101 \hfill  d. 010110  \hfill  e. 001 \hfill
 
+\newpage
 
 ### Example 2
 
@@ -186,7 +178,6 @@ Do this by hand, then check your work using the simulator.
     c. 01111
     d. 01110
 
-\newpage
 
 ### Table notation
 
@@ -203,11 +194,12 @@ $\delta$ |  a	        |  b	          | blank
 q0	     | (q0, a, R)	| (q1, b, R)	  | (qrej, blank, L)
 q1	     | (q1, a, R)	| (qacc, b, L)	| (qrej, blank, L)
 
-into an ASCII representation for use at
+into an ASCII representation for use at <http://morphett.info/turing/turing.html>.
 
-a. <http://morphett.info/turing/turing.html>
-b. <https://turingmachinesimulator.com/> 
+<!-- b. <https://turingmachinesimulator.com/>  -->
     
+
+\newpage
 
 ## The language recognized by a Turing Machine
 
@@ -263,8 +255,8 @@ start  _ _ r halt-reject
 
 
 7. Design a Turing machine that recognizes
-$\{0^n1^n \mid n \ge 0\}$.  This shows that Turing machines
-can recognize languages that are not regular.
+$\{0^n1^n \mid n \ge 0\}$.  
+<!-- This shows that Turing machines can recognize languages that are not regular. -->
 
 ```{r include = FALSE, eval = FALSE}
 ; in style of <http://morphett.info/turing/turing.html>
