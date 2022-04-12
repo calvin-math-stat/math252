@@ -287,12 +287,4 @@ never & Review &
 \label{end}
 \end{document}
 
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-	  Wed 5/2 & PS 15 & &
-	  Prepare for Test 3.  Here are some problems you might look at.
-	  \\
-\end{document}
 
