@@ -1151,10 +1151,7 @@ Lottery
 ===03/07/2022
 Topic:: Probability Wrap-Up
 
-===03/14/2022
-Topic:: Test 2
-
-===endofcal
+===
 Topic:: Grammars and Languages
 
 Language over V
@@ -1225,30 +1222,36 @@ BNF
 	examples on page 855
 	web page showing complete BNF description of java
 
-===
+===03/14/2022
 Topic:: Test 2
 
 ===
-Topic:: NFA and DFA
-
-
-===
-Topic:: NFA and DFA
+Topic:: Automata
 
 ===
-Topic:: Regular Langauges
+Topic:: Nondeterminsim
 
 ===
-Topic:: Regular Languages
+Topic:: Nondeterminsim
 
 ===
 advising
 
 ===
-Topic:: Regular Expressions in Python
+Topic:: DFA vs NFA
+Topic:: Regular Expressions and Languages
 
 ===
-Topic:: A language that isn't regular
+Topic:: Regular Expression -> NFA
+
+===
+Topic:: Regular Grammars and Automata
+
+===
+Topic:: Regular Grammars and Automata
+
+===
+Topic:: DFA -> regex
 
 ===
 
@@ -1533,11 +1536,15 @@ sketch of 2 tapes equiv to 1 tape
 Topic:: Turing Machines
 
 ===
-Topic:: Turing Machines
+Topic:: A language that isn't regular
 
-===
-Topic:: Turing Machine Variants
-Topic:: Halting Problem
+===4/13/2022
+
+Topic:: Test 3
+
+===4/20/2022
+Topic:: Python Regular expressions
+
 
 ===endofcal
 
@@ -1653,219 +1660,6 @@ final example: anagram program (word length w, dictionary size d)
 
 
 
-===skip
-Topic:: Trees
-Read:: Rosen 10.1
-
-chromatic number examples
-	cycles (based on parity)
-	Qn (can be done with two colors)
-		note: two-colorable = bipartite
-		what are the "parts" of Qn?  (even number of 0's vs odd number of 0's)
-	wheels (left for an assignment)
-
-Applications of graph coloring
-	coloring maps
-		reason for name
-		was known for a long time that all planar graphs can be 5-colored
-		conjectured that all could be 4-colored
-		4-color theorem proved in 1970's using a computer to automate
-			checking many cases
-
-	scheduling exams
-	assigning tv frequencies
-
-Def of tree: an undirected, connected graph with no cylces
-	includes no loops, no multiple edges, so trees are simple graphs
-
-	identify trees in problems 1 and 2 on page 641, 642
-
-Thm: an undirected graph is a tree iff
-		between any pair of vertices there is exactly one simple path
-
-	Pf: =>: there will be a path because of connected
-		    shortest path will be simple
-		    if there were two paths, there would be a cycle
-
-		<=: existence of paths implies connected
-			a cycle would imply two paths (split cycle in half)
-			a loop implies two paths from x to y where y has loop
-
-Rooted trees
-	if we pick one vertex and call it the root, we have a rooted tree
-	since there is a unique simple path from root to any other vertex, we
-		can use this to assign directions to each edge
-
-	do a couple of examples (pick different roots from same graph
-
-	intro to tree terminology
-
-===skip
-Topic:: Tree Applications
-Read:: Rosen 10.2
-
-tree terminology
-	parent, child, sibling, anscestor, descendant
-	leaf (=childless), internal vertex (=parent)
-	subtree: vertex together with all descendants (and edges incident to them)
-
-	m-ary: at most m children
-	full m-ary: all internal vertices have exactly m children
-
-	ordered rooted tree: children of each internal node have order
-		left and right children if tree is binary
-		gives rise to left and right subtrees
-
-	check terminology using problem 9.1.3 on page 642
-
-
-example applications
-	file systems
-	saturated hydrocarbons:
-		4 C each with degree 4; H each have degree 1
-			how many H's?  how many edges?
-				edges: 4(4) - double counting = 16 - 3 = 13
-				1 - 13 + v = 2, so v = 14
-
-			C4H10 (butane)
-				make at least two possible graphs
-
-		in general if there are k C's, then e = 4k - (k-1) = 3k+1
-			v = 2 + e - r = 2 + 3k + 1 - 1 = 3k + 2
-			3k+2 - k = 2k+2 H's
-
-		different tree structures lead to different isomers of the hydrocarbon
-			only two for C4H10
-
-
-Thm: a tree with n vertices has n-1 edges
-
-	Pf: euler characteristic with r = 1
-
-Thm: a full m-ary tree with i internal vertices has mi+1 vertices
-
-	Pf: mi children, plus 1 root
-
-Cor: in a full m-ary tree v = mi+1 = i + l, so if we know any two
-		of v, m, i, l we can solve for the other two
-
-Cor: in a full binary tree v = 2i+1 = i + l, so l = i + 1
-
-Example: Chain letter; each person sends to four people or none.
-			When 100 people have received a letter but not sent one,
-			how many people have received a letter?
-
-
-More definitions
-	level: length of path from root
-	height: max level
-	balanced: all leaves at one of two levels (h or h-1 where h is the height)
-
-
-===skip
-Topic:: More Tree Examples
-Read:: Rosen 10.2
-
-Thm: at most m^h leaves in an m-ary tree of height h
-
-	Pf: induction (delete root and look at subtrees)
-
-Cor: h > log_m l
-
-Binary Search Trees
-	example
-
-	adding dummy nodes to make tree full adds at most 1 to the height
-
-	h > log_2 l, so worst case will take at least log(n) to insert or
-		remove from tree
-
-	if unbalanced, the height might be much worse
-
-	BSTs should be "balanced as we go" to improve the efficiency
-
-weighing 8 coins to find one that is light
-	3-ary tree
-	leaves = know which coin is light
-	must have at least 7 leaves
-	so height must be at least log_3(8) = 2
-
-	start with 3 v 3 and make decision tree
-
-	can we do 9 coins?
-		yes, small modification of previous example
-
-	10 coins must require at least 3 weighings
-
-===skip
-Topic:: Sorting, Prfeix Codes, Spanning Trees
-Read:: Rosen 10.3, 10.4
-
-Sorting algorithms
-	can represent as a binary decision tree
-	each of the n! orders must appear as a leaf of the tree
-	so height of tree is at least log(n!) = Theta(n log n)
-
-	same holds for average case, since more than half of leaves are in
-		higher levels of the tree
-
-Prefix Codes
-	self-termination idea
-		ascii is self-terminating because we know the number of bits used for
-			each character
-		could perhaps do better if we recoded things
-			letters that occur frequently should have short codes
-		need to be able to parse: self-termination
-			if we use both 0 and 1 we can only code two characters
-			in fact if we use 0 as a code, all other codes are "unary plus 1"
-		prefex-free might be a better name: no code string is the
-			prefix of another code string
-
-	examples: 01, 10, 001 is ok.
-			  00, 10, 11, 010 is ok.
-
-	good codes can be represented as desicion trees
-
-Huffman codes
-	want to make a prefix code that will result in an encoding
-	of a file that is as short as possible (data compression)
-
-	idea: build the decision tree with less frequent characters
-		at higher levels
-
-	can be improved if we encode not just individual characters but blocks of
-	characters.
-
-Spanning Trees = subgraphs that are trees and contain all vertices
-	n vertices, n-1 edges
-
-	depth-first and breadth-first search each produce a spanning tree
-
-===skip
-Topic:: Minimum Spanning Trees
-Read:: Rosen 10.5
-
-Defs
-	weighted edges
-	minimum spanning tree
-
-get student ideas about how to find it
-	interesting feature: 3 different greedy algorithms all work
-
-
-Prim's algorithm
-	keep adding min weight edge that is
-		- connected
-		- doesn't create a cycle
-
-Kruskall's algorithm
-	keep adding min weight edge that is
-		- doesn't create a cycle
-
-Sollin's algorithm [homework problems]
-
-
-===endofcal
 
 
 ===
