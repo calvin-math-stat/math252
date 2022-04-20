@@ -220,19 +220,24 @@ never & Review & Rosen 13.RQ &
    \extra{26--27}
 \\
 \hline
+   \hline
+	   Fri 4/22 & PS 19 & Rosen 13.4 &
+	   \extra[pumping lemma]{23, 25}
+
+	   Python regular expressions: Be sure to use the online tools suggested in
+	   class to get familiar with how regular expressions work in Python. (They work
+	   very similarly in other programming languages -- we are just picking Python
+	   to have one concrete example.)
+
+	   Be sure to write up the pumping lemma problems carefully.
+	   \\
+	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
     \end{document}
 
 
-   \hline
-	   Fri 4/23 & PS 18 & Rosen 13.4 &
-	   \mand[pumping lemma]{23, 25}
-
-	   Be sure to write the up carefully.
-	   \\
-	   \hline
 \newpage
 never & Review &
 	  Rosen 6.RQ &

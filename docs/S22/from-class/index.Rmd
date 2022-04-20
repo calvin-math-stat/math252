@@ -373,13 +373,37 @@ Wed 3/30 | Regular Grammars and Automata | [PDF](models-of-computation/regular-g
 04/04 | DFA to regex | [PDF](models-of-computation/dfa-to-regex.pdf), [notes](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf)
 04/06 | Turing Machines | [PDF](models-of-computation/turing-machines.pdf), [simulator](http://morphett.info/turing/turing.html) 
 04/11 | A language that is not regular | [PDF](models-of-computation/not-regular.pdf)
+05/07 | Regular expressions in python | [slides](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) 
+
+<div class = "explain" label = "Regex games, puzzles, etc.">
+
+You can use these to practice your regular expressions.
+
+* [The regular expression game](http://play.inginf.units.it/#/)
+    * Construct regular expressions to match the indicated portions of a page of text.
+    * These tasks seem to mimic the kinds of things you might really do (finding authors
+    in a bibilography, finding MAC addresses in some text, etc.)
+    
+
+* [regex 101](https://regex101.com/) 
+
+    * [regex 101 quiz](https://regex101.com/quiz)
+
+* [Regex crossword game](https://regexcrossword.com/)
+    * Fill in the crossword with text that matches regex clues.
+    
+* [Regular expression golf](https://alf.nu/RegexGolf)
+    * Find a short regex that matches everything in one column but doesn't match
+    any portion of anything in the other column.
+    * Some of the hard ones here get pretty hard and not very "natural"
+    * Least useful of the three for learning regex.
+
+* No homework for today's topic.  Instead I have some online regular expression
+games for you to play. (See above.)
+
+</div>
 
 <!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
-<!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
-<!-- 04/30 | [Turing Machine Simulator](http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/) -->
-<!-- 04/25 | [Regular Languages Wrap-Up](Regular-WrapUp.pdf) -->
-<!-- 04/23 | [Regular Grammars](Regular-Grammars.pdf) -->
-
 <div class = "explain" label = "Some Comments/Hints/Solutions">
 <div class = "indent">
 \def\emptystring{\lambda}
