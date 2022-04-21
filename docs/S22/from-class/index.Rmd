@@ -377,7 +377,9 @@ Wed 3/30 | Regular Grammars and Automata | [PDF](models-of-computation/regular-g
 
 <div class = "explain" label = "Regex games, puzzles, etc.">
 
-You can use these to practice your regular expressions.
+Note: You don't have to turn in any homework for Python regular expressions, but you should 
+work through some of these games and tutorials to hone your skills. 
+*This topic will be  included on the final exam.*
 
 * [The regular expression game](http://play.inginf.units.it/#/)
     * Construct regular expressions to match the indicated portions of a page of text.
@@ -391,6 +393,7 @@ You can use these to practice your regular expressions.
 
 * [Regex crossword game](https://regexcrossword.com/)
     * Fill in the crossword with text that matches regex clues.
+    * This forces you to work backwards, the regular expression are given
     
 * [Regular expression golf](https://alf.nu/RegexGolf)
     * Find a short regex that matches everything in one column but doesn't match
