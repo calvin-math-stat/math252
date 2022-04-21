@@ -209,51 +209,58 @@ expression.  (We will say something more about these later.)
 
 **Date/Time:** 1:30 pm on Wednesday, April 27 or 9 am on Thursday, April 28.
 
-<!-- * Use this [sign up sheet](https://docs.google.com/forms/d/e/1FAIpQLSdzTLw97yIrneWvpSAj0t-fa2SGHeqjca7cuAAThCR0XGS13w/viewform?usp=sf_link)  -->
-<!-- to tell me which time you plan to take the exam. -->
+* Use this [sign up sheet](https://docs.google.com/forms/d/e/1FAIpQLSd1PfHX6fL8lSok-E738d_9yszlUiLdKip1MV0Aop6K-nYhXQ/viewform?usp=sf_link)
+to tell me which time you plan to take the exam.
 
-<!-- #### Logistics -->
 
-<!-- #### Material Covered -->
+#### Material Covered
 
-<!-- The exam will cover topics from the entire semester. In addition to the topics -->
-<!-- listed above for each test, the following topics are also included: -->
+The exam will cover topics from the entire semester. In addition to the topics
+listed above for each test, the following topics are also included:
 
-<!-- * **Applied (extended) regular expressions**  -->
-<!-- (at the level of the slides we used and the regular expression game). -->
-<!--     * You should be able to write extended regular expressions as they appear in languages like Python.  (These are similar in most modern languages.) -->
-<!--     * You should recognize Python commands like `re.search()`, `re.findAll()`, `re.sub()`,  -->
-<!--     etc. (The specific command names and syntax will be different in each language, -->
-<!--     but the key ideas of finding one match, finding all matches, and make substitutions -->
-<!--     are fundamental to using regular expressions.) -->
-<!-- * **Turing Computation**: Definition of Turing machine, tracing Turing machines, -->
-<!-- designing Turing machines, Turing computable languages, all regular languages -->
-<!-- are Turing computable, Halting Problem. -->
+* **Python regular expressions**
+(at the level of the slides we used and the regular expression game).
+    * You should be able to write a Python regular expression for a specified task.
+    * You should recognize Python commands like `re.search()`, `re.findAll()`, `re.sub()`,
+    etc.  and be able to figure out what they return.
+    * Note: I will make it clear when you may use a Python regular expression (which includes 
+    a number of extras not included in our definition of regular expressions. If it doesn't 
+    say "Python regular expression", you should only use concatenation, Kleene star and union.
 
-<!-- #### Example problem -->
+* **The Pumping Lemma** and showing that a language is *not* regular.
 
-<!-- Here is a question that could have been (an nearly was) on test 3.  -->
-<!-- Since I wrote it, I thought I'd give it to you as a practice problem. -->
+* **Turing Computation**: This was on the list for test 3, but didn't actually
+end up on the test.  Don't forget about this topic just because it wasn't on
+that test.
 
-<!-- 1. We learned an algorithm for converting any DFA into a regular expression. -->
-<!-- This problem asks you a few questions about that algorithm. -->
+### Review Session
 
-<!--     a. In the first phase of the algorithm, we must modify the automaton to make -->
-<!--     sure it satisfies some properties that are necessary for the algorithm to work -->
-<!--     correctly. What are those properties? -->
+I'm currently planning to offer a review session noon-1:15 on Tuesday.
 
-<!--     b. Demonstrate how to do the first phase using the DFA below. -->
+### Review Questions
 
-<!--     ```{r echo = FALSE, out.width="50%", fig.align = "center"} -->
-<!--     knitr::include_graphics("test3-fig1.png") -->
-<!--     ``` -->
+As you prepare for the final exam, you can post questions [here](https://docs.google.com/document/d/1rkcFS_7KbQKj12Eea-_CVhLn6vj4jhxJJoPokWlAnpo/edit?usp=sharing). Add your initials after
+the question. If you see a question that you would also like to ask, add your initials.
+If you later figure it out on your own, you can delete your initials.
 
-<!--     c. In the second phase, states are ``ripped out" of a GNFA until -->
-<!-- only two states remain.  Using that process, show what happens -->
-<!-- when state $a$ is ripped out of the GNFA shown below. -->
-<!-- (You don't have to complete the process, just do this one step.) -->
+I can't promise to answer every question posted, but I may be able to answer some in the document
+and may use others at the review session. I'll likely prioritize questions that several people
+have tagged with their initials.
 
-<!--     ```{r echo = FALSE, out.width="50%", fig.align = "center"} -->
-<!--     knitr::include_graphics("test3-fig2.png") -->
-<!--     ``` -->
+### Some advice on how to study
 
+Here are soem things you may find useful as your prepare for the final.
+
+1. Go back over your three tests to make sure you (a) remember how to do what you were able to then and (b) figure out how to do the things you could not do then.
+
+2. Go through the topics lists for each test (above) and mark the ones you espcialy need to review.
+Cross them off the list once your review is complete.
+
+3. Use the homework problems as practice.  You might focus especially on the ones in square brackets,
+especially the one in the review questions and supplemental exercises at the end of the chapters.
+
+4. Create review sheets that help you organize the material in a way that works for you.
+
+5. Use the [final exam question document](https://docs.google.com/document/d/1rkcFS_7KbQKj12Eea-_CVhLn6vj4jhxJJoPokWlAnpo/edit?usp=sharing) to record questions.
+
+6. Come to the review session.
