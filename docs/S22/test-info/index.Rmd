@@ -17,6 +17,7 @@ require(scales)
 t1bks <- c(17, 33, 42, 51, 60, 67) |> rev() # 67 was max possible; 65 max obtained
 t2bks <- c(18, 36, 50, 62, 74, 84) |> rev() # 84 was max possibl; 81 was obtained
 t3bks <- c(15, 30, 40, 50, 61, 72) |> rev()
+fbks  <- c(25, 67, 88, 108, 128, 146)  |> rev() # max acheived 144; max possible 146
 
 c(25, 74, 96, 118, 140, 165) / 165 * 144
 fbks  <- c(25, 65, 86, 106, 126, 144) %>% rev()
@@ -27,8 +28,8 @@ GS <-
     Grade = LETTERS[1:4],
     `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
     `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
-    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4)
-    # `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
+    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
+    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
   ) %>% 
   arrange(Grade)
 ```
