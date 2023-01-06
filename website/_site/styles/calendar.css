@@ -1,0 +1,105 @@
+
+span.bigger {font-size: larger}
+span.smaller {font-size: smaller}
+
+span.topic, span.Topic {
+	color: black;
+	font-size: medium;
+	font-weight: bold;
+/* #	font-variant: small-caps; */
+}
+
+span.topic a:link, span.topic a:visited{
+	color: blue;
+}
+
+span.Topic a:link, span.topic a:visited{
+	color: blue;
+}
+
+span.reading, span.Reading {
+	font-style: italic;
+	color: #36c;
+}
+span.reading a:link, span.reading a:visited {
+	color: blue;
+}
+span.Reading a:link, span.reading a:visited {
+	color: blue;
+}
+
+span.vocab {
+	color: purple;
+}
+
+span.notes {
+	color: green;
+}
+
+span.Note {
+	color: green;
+}
+
+span.activity {
+	color: #c63;
+}
+span.Activity {
+	color: #c63;
+}
+span.activity a:link, span.activity a:visited{
+	color: brown;
+}
+
+span.Activity a:link, span.activity a:visited{
+	color: brown;
+}
+span.due {
+	/* color: #969; */
+	color: red;
+}
+span.due a:link, span.due a:visited{
+	color: red;
+}
+
+td {
+	color: #000;
+	/* background: #fff; */
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+body td {
+	color: #000;
+	background: #ccc;
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+body td.odd{
+	color: #000;
+	background: #fff;
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+body td.even{
+	color: #000;
+	background: #ccc;
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th{
+	color: #000;
+	/* background: #fff; */
+	font-family: sans-serif, arial, helvetica, verdana;
+	}
+
+
+
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+}

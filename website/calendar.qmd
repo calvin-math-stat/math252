@@ -1,0 +1,26 @@
+---
+pagetitle: "Calendar -- M252/S23"
+css: styles/calendar.css
+---
+
+```{r, setup, include = FALSE}
+library(daily)
+```
+
+
+```{r, results = 'asis', echo = FALSE}
+daily2html(
+  "daily.txt", 
+  start = lubridate::mdy("01/9/2023"), 
+  end   = lubridate::mdy("05/01/2023"), 
+  show = 2:6, 
+  items = c("Topic", "Read", "R", "Due", "Note")) |>
+  cat()
+```
+
+
+```{r, fig.width = 10, fig.height = 10, eval = FALSE, include = FALSE}
+calendar("daily.txt", mask = c(2,4,6),
+         start = lubridate::mdy("01/9/2023")) |>
+  gg_calendar(show = 2:6) 
+```
