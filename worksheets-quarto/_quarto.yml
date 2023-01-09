@@ -10,6 +10,7 @@ book:
   title: "Worksheets for Math 252"
   author: "Randall Pruim"
   date: last-modified
+  date-format: YYYY/mm/DD HH:mm
   chapters:
     - index.qmd
     - part: "Graphs"
