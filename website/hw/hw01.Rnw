@@ -114,7 +114,7 @@ Additional assignments will be filled in over time.
 	 online &
 	 \begin{enumerate}
 	 \item Visit the class web page at \url{https://calvin-m252-s23.netlify.app/}
-	 \item Fill out this \href{ }{pre-course survey}
+	 \item Fill out this \href{https://docs.google.com/forms/d/e/1FAIpQLScJmAENQMeK39IP8pa5kGPDE6Gos6v21_PcfUkL0MSzTemSbg/viewform?usp=sf_link}{pre-course survey}
 	 \item Check that you have access to important course-related things:
 	 \begin{itemize}
 	 \item Check that you can login to \href{https://webwork.calvin.edu/webwork2/}{WebWork} using your usual Calvin login and password.
