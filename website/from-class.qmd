@@ -18,6 +18,7 @@ div.indent {
 }
 </style>
 
+
 ## Worksheets/Handouts
 
 I'll print and bring worksheets to class, but if you lose one or want to have it in
