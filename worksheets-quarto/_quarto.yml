@@ -1,0 +1,37 @@
+project:
+  type: book
+  preview:
+    port: 5252
+  resources:
+    - from-class
+
+book:
+  downloads: pdf
+  title: "Worksheets for Math 252"
+  author: "Randall Pruim"
+  date: last-modified
+  chapters:
+    - index.qmd
+    - part: "Graphs"
+      chapters:
+        - graphs/01-Graphs-Intro.qmd
+        - graphs/02-Graphs02.qmd
+        - graphs/03-Graphs-Representations.qmd
+        - graphs/04-Graph-Isomorphism.qmd
+        - graphs/05-Graphs-Paths.qmd
+        - graphs/06-Graphs-Bipartite-Planar.qmd
+#        - graphs/07-Graphs-Euler.qmd
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+    fontsize: 10pt
+    include-before-body: before_body.tex
+    include-in-header: preample.tex
+    toc-depth: 2
+    geometry:
+      - "margin = 0.7in"
+      - "top = 0.5in"
+      - "bottom = 0.9in"

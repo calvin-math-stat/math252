@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+These exercises were assembled to accompany a Discrete Mathematics course
+at Calvin University. 
+
