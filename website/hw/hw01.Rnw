@@ -127,9 +127,11 @@ Additional assignments will be filled in over time.
 	 \end{enumerate}
 
 	\\
-  	& PS 1 &  Rosen 10.1 &
+  	& PS 1 &  Rosen 10.1 & Submit the unbracketed problems via Gradescope
+
 	 \helper{1}
 	 \helper[types of graph]{3,5,7,9}
+
 	 \mand[types of graph]{4}
 	 \mand[types of graph]{8}
 	 \mand[intersection graph]{13}
@@ -137,7 +139,7 @@ Additional assignments will be filled in over time.
 	 \mand[precedence graph]{33}
 	 \\
 	\hline
-	 Fri 1/13 & \WW{01} & Rosen 10.2 &
+	 Fri 1/13 & \WW{01} & Rosen 10.2 & Do these problems in WebWork.
 	 \\
 	 \hline
 	 Mon 1/16 & \WW{02} & Rosen 10.3 &

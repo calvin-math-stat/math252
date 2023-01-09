@@ -42,7 +42,7 @@ electronic format for some reason, you can get it here as well.
 #### Groups starting 9 Jan
 
 ```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
-set.seed(110)
+set.seed(109)
 n_groups <- function(x) {
   ifelse(x > 18, (x+3) %/% 4, x %/% 3)
 }  
@@ -77,7 +77,7 @@ for(g in sort(unique(R$group))) {
 
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
-Mon 1/10 | Intro to Graphs       | [PDF](graphs/intro-to-graphs.pdf)
+Mon 1/10 | Intro to Graphs       | [PDF](/from-class/graphs-01.pdf)
 
 ```{block}
 #| include: false
