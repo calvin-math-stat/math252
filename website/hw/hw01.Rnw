@@ -117,7 +117,7 @@ Additional assignments will be filled in over time.
 	 \item Fill out this \href{https://docs.google.com/forms/d/e/1FAIpQLScJmAENQMeK39IP8pa5kGPDE6Gos6v21_PcfUkL0MSzTemSbg/viewform?usp=sf_link}{pre-course survey}
 	 \item Check that you have access to important course-related things:
 	 \begin{itemize}
-	 \item Check that you can login to \href{https://webwork.calvin.edu/webwork2/}{WebWork} using your usual Calvin login and password.
+	 \item Check that you can login to \href{https://webwork.calvin.edu/webwork2/Mgmt535-S23-Pruim/}{WebWork} using your usual Calvin login and password.
 	 \item Check that you can access \url{https://gradescope.com}. You should also have received
 	 and email invite.
 	 \item Check that you received an email from me addressed to the class.

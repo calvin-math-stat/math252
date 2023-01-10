@@ -17,7 +17,7 @@
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
 
-\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S22-Pruim/WW#1}{WW#1}}
+\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S23-Pruim/WW#1}{WW#1}}
 
 \newif\ifanswers
 \answerstrue
@@ -63,7 +63,7 @@
 \pagestyle{fancy}
 
 \chead{}
-\lhead{Math 252 -- Spring 2022}
+\lhead{Math 252 -- Spring 2023}
 \rhead{\thepage/\pageref{end}}
 \lfoot{}
 \cfoot{Created \today\ --- See web site for most current version.}
