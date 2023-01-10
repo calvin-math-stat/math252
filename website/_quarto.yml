@@ -19,6 +19,8 @@ website:
         text: Test Info
       - href: from-class.qmd
         text: From Class
+      - href: calendar.qmd
+        text: Calendar
       - href: https://webwork.calvin.edu/webwork2/Math252-S23-Pruim/
         text: Webwork
       - href: https://gradescope.com/
