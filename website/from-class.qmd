@@ -78,7 +78,8 @@ for(g in sort(unique(R$group))) {
 
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
-Mon 1/10 | Intro to Graphs       | [PDF](/from-class/graphs-01.pdf)
+Mon 1/9  | Intro to Graphs       | [PDF](/from-class/graphs-01.pdf)
+Wed 1/11 | More Graphs           | [PDF](/from-class/graphs-02.pdf)
 
 ```{block}
 #| include: false
