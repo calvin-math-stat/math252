@@ -80,6 +80,7 @@ date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
 Mon 1/9  | Intro to Graphs       | [PDF](/from-class/graphs-01.pdf)
 Wed 1/11 | More Graphs           | [PDF](/from-class/graphs-02.pdf)
+Wed 1/13 | Representing Graphs   | [PDF](/from-class/graphs-03.pdf)
 
 ```{block}
 #| include: false
