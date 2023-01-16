@@ -145,12 +145,6 @@ Additional assignments will be filled in over time.
 	 Mon 1/16 & \WW{02} & Rosen 10.3 &
      \\
      \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-
    Wed 1/19 & PS 2 & Rosen 10.3 &
   	 \mand[special graphs]{9ace}
   	 \extra[adjacency matrix]{10--11}
@@ -180,6 +174,12 @@ Additional assignments will be filled in over time.
 	 \extra[isomorphic?]{21, 23}
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+
 	 \newpage
 	 Mon 1/24 & PS 4 & Rosen 10.5 &
 	 \mand[Euler paths/circuits]{2--8 even}
