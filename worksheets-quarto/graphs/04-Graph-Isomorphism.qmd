@@ -1,8 +1,13 @@
+---
+fig-align: center
+fig-cap-location: top
+---
 
 ```{r setup-graphiso, include=FALSE}
 knitr::opts_chunk$set(
   echo = FALSE, 
   out.width = "40%")
+
 ```
 
 
@@ -36,10 +41,9 @@ is indeed an isomorphism?
 
     b. Is there more than one isomorphism?  If so, give another one.
 
-```{r, echo = FALSE, fig.align = "center", out.width = "25%"}
-knitr::include_graphics("images/GraphEx-9-3-39.png")
-```
+![](images/GraphEx-9-3-39.png){width="40%" fig-align="center"}
 
+{{< pagebreak >}}
 
 ## Showing graphs are not isomorphic
 
@@ -75,28 +79,29 @@ isomorphic, but you can use graph invariants to help narrow the search.
 
 3. Explain why each of the following pairs of graphs is not isomorphic.
 
-```{r, echo = FALSE, out.width = "45%"}
-knitr::include_graphics("images/GraphFig-9-3-9.png")
-knitr::include_graphics("images/GraphFig-9-3-10.png")
-```
+::: {layout-ncol=2}
+![a](images/GraphFig-9-3-9.png){fig-height="10%"}
+
+![b](images/GraphFig-9-3-10.png)
+
+:::
+
+{{< pagebreak >}}
 
 ## Isomorphic or not?
 
 4. For each pair, determine whether the graphs are isomorphic.  Be sure to explain how you know.
 
-```{r, echo = FALSE, out.width = "45%"}
-knitr::include_graphics("images/GraphFig-9-3-12.png")
-knitr::include_graphics("images/GraphEx-9-3-63.png")
-```
 
+::: {layout-ncol=2}
 
----------
+![a](images/GraphFig-9-3-12.png)
 
+    
+![b](images/GraphEx-9-3-63.png)
 
-```{r, echo = FALSE, out.width = "45%"}
-knitr::include_graphics("images/GraphEx-9-3-43.png")
-knitr::include_graphics("images/GraphEx-9-3-37.png")
-```
+    
+![c](images/GraphEx-9-3-43.png)
 
-
-{{< pagebreak >}}
+![d](images/GraphEx-9-3-37.png)
+:::

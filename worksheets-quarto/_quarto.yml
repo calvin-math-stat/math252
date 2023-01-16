@@ -32,6 +32,7 @@ format:
     include-before-body: before_body.tex
     include-in-header: preample.tex
     toc-depth: 2
+    fig-pos: 'h'
     geometry:
       - "margin = 0.7in"
       - "top = 0.5in"
