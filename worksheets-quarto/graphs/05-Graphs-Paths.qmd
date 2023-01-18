@@ -124,12 +124,10 @@ knitr::include_graphics("images/Nine-Graphs.png")
  
 <!-- Do this adding *as few vertices as possible* (but no fewer). -->
 
- 11. Fill in the table below for the graphs above.
-Do you notice any patterns?
-Can you make any conjectures?
-Can you prove any of the conjectures?
-(Note: an even vertex is a vertex with even degree.
-An odd vertex is a vertex with odd degree.)
+11. Fill in the table below for the graphs above.
+Do you notice any patterns? Can you make any conjectures?
+Can you prove any of the conjectures? 
+(Note: an even vertex is a vertex with even degree. An odd vertex is a vertex with odd degree.)
 
 Graph | number of even verticies | number of odd vertices | total degree | number of vertices  | number of edges     | number of regions    | Euler path? | Euler circuit?
 :-----:|-------:|:------:|:------:|:---------:|:----------:|:--------:|:-------:|:-------:
@@ -151,8 +149,6 @@ Graph | number of even verticies | number of odd vertices | total degree | numbe
 8        |          |        |           |           |            |       |           
          |          |        |           |           |            |       |           
 9        |          |        |           |           |            |       |           
-         |          |        |           |           |            |       |           
-
 
 {{< pagebreak >}}
 
