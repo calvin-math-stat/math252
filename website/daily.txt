@@ -715,7 +715,7 @@ Analysis of Complexity of Euler Path/Circuit Detection Algorithms
 		Adj List:   O(|E|) = O(|V|*|V|)
 			better in sparser graphs
 
-===endofcal
+===
 Topic:: Basic Counting
 Read:: Rosen 6.1
 #Vocab:: Sum Rule, Product Rule, bijection principle
@@ -936,7 +936,7 @@ example: 8 players, 4O, 4D
 	C(8,4) * C(4,4) = 8*7*6*5/4*3*2*1 = 7*2*5 = 70
 
 ===
-Topic:: Countint Wrap-Up
+Topic:: Counting Wrap-Up
 Topic:: Donut problems
 
 ===
@@ -1150,9 +1150,11 @@ Yahtzee
 Lottery
 	Daily 3 / Daily 4
 
-===03/07/2022
+
+===03/06/2023
 Topic:: Probability Wrap-Up
 
+===endofcal
 ===
 Topic:: Grammars and Languages
 
@@ -1223,6 +1225,8 @@ checking if a particular string is in a language
 BNF
 	examples on page 855
 	web page showing complete BNF description of java
+
+===endofcal
 
 ===03/14/2022
 Topic:: Test 2
