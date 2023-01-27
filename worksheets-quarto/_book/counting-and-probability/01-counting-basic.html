@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.242">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Worksheets for Math 252 - 7&nbsp; Some Counting Problems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../graphs/06-Graphs-Bipartite-Planar.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Some Counting Problems</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Worksheets for Math 252</a> 
+        <div class="sidebar-tools-main">
+    <a href="../Worksheets-for-Math-252.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Graphs</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/01-Graphs-Intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/02-Graphs02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">More Graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/03-Graphs-Representations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Graph Representations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/04-Graph-Isomorphism.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Graph Isomorphism</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/05-Graphs-Paths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Paths in Graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graphs/06-Graphs-Bipartite-Planar.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bipartite Graphs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Counting and Probability</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../counting-and-probability/01-counting-basic.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">| label = “setup-basic”,</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Some Counting Problems</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Each of these problems involves determining how many of something there are. For most, there will be too many to simply make a list and count them off, so you will need to “count without counting”. As you go along, make a list of important counting principles you are using.</p>
+<ol type="1">
+<li><p>There are 32 microcomputers in a computer center. Each microcomputer has 24 ports. How many different ports to a microcomputer in the center are there?</p></li>
+<li><p>A new company with just two employees, Sanchez and Patel, rents a floor of a building with 12 offices. How many ways are there to assign different offices to these two employees?</p></li>
+<li><p>The chairs of an auditorium are labeled with a letter (indicating the row) and a positive integer not exceeding 100 (indicating the seat within the row). Give an upper bound on the number of seats in the auditorium.</p></li>
+<li><p>How many bitstrings of length 8 are there?</p></li>
+<li><p>How many bitstrings of length 8 either start with a 1 or end with a 1?</p></li>
+</ol>
+<!-- do it two ways: -->
+<!--     inclusion-exclusion -->
+<!--     count compliment -->
+<ol start="6" type="1">
+<li><p>A state issues license plates that consist of three letters followed by three numbers. How many such plates are there?</p></li>
+<li><p>A graph isomorphism is a 1-1 and onto function from the vertices in one graph to the vertices in another (that additionally preserves edges). You decide to write a little program that will check each 1-1 and onto function to see if it an isomorphism.</p>
+<p>If your graphs have <span class="math inline">\(n\)</span> vertices, how many such functions must you check?</p></li>
+<li><p>Now you modify your graph isomorphism algorithm so that it only tries bijections (1-1 and onto functions) that respect the degrees of the vertices. If the degree sequences of two graphs are both <span class="math inline">\((5, 5, 4, 4, 4, 3, 3, 2)\)</span>, how many functions must you check? How much better is this than your previous algorithm (on these two graphs)?</p></li>
+<li><p>Let’s use the following coding scheme to describe possible telephone numbers.</p>
+<ul>
+<li>let X denote a digit that can take on any integer value 0 – 9;</li>
+<li>let N denote a digit that can take on values 2 – 9</li>
+<li>let Y denote a digit that can only take on values 0 or 1.</li>
+</ul>
+<p>&nbsp;</p>
+<ol type="a">
+<li><p>In the scheme used in the 1960’s, telephone numbers had to have the form NYX-NNX-XXXX. How many such phone numbers are there?</p></li>
+<li><p>A new scheme (<em>The North American Numbering Plan</em>) was introduced that required telephone numbers have the form NXX-NXX-XXXX. How many more phone numbers are available in the new scheme?</p></li>
+</ol></li>
+</ol>
+<!-- telephone numbers: X=[0..9], Y=[01], N=[2..9] -->
+<!-- old system: NYX-NNX-XXXX    8^3 * 2 * 10^6  = 1 024 000 000 -->
+<!-- new system: NXX-NXX-XXXX    8^2 * 10^8  = 6 400 000 000   -->
+<ol start="10" type="1">
+<li>How many password of length 6, 7, or 8 are there if the passwords must be alpha-numeric, capitalization doesn’t matter, and there must be at least one digit?</li>
+</ol>
+<!-- 36^6 - 26^6 + 36^7 - 26^7 + 36^8- 26^8 -->
+<ol start="11" type="1">
+<li>In the previous example, how many passwords are there if the first character must be a letter?</li>
+</ol>
+<!-- 26 * (36^5 - 26^5) + ... -->
+<ol start="12" type="1">
+<li><p>Professor Pruim puts the names of 30 students into a hat. He draws one out and gives that person a chocolate bar. Then he draws out another name, and gives that person a bag of M and M’s. Finally, he draws out a third name and gives that person a bag of Valentine hearts he picked up cheap on February 15.</p>
+<ol type="a">
+<li><p>How many different ways can the prizes be distributed?</p></li>
+<li><p>If you are one of the 30 students, how many of those ways include you getting a prize?</p></li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+<!-- 13. Below is a description of IPv4 addresses. -->
+<!-- ```{r, echo = FALSE, fig.align = "center"} -->
+<!-- knitr::include_graphics("images/ipv4-prob.png") -->
+<!-- knitr::include_graphics("images/ipv4.png") -->
+<!-- ``` -->
+<div style="page-break-after: always;"></div>
+<br>
+<div class="explain" label="Show Solutions/Answers">
+<p><br></p>
+<p><strong>Answers/Solutions</strong></p>
+<ol type="1">
+<li><p><code>32 * 24</code> = 768.</p></li>
+<li><p><code>12 * 11</code> = 132.</p></li>
+<li><p><code>26 * 100 = 2600</code></p></li>
+<li><p><span class="math inline">\(2^8 =\)</span> 256</p></li>
+<li><p>Three ways:</p>
+<ol type="a">
+<li><p>only bad thing is beginning AND ending with 0, so <span class="math inline">\(2^8 - 2^6\)</span> = 192.</p></li>
+<li><p>Start with 1 or end with 1 but not both: <span class="math inline">\(2^7 + 2^7 - 2^6\)</span> = 192</p></li>
+<li><p>Three ways to start/end (0-1, 1-0, or 1-1), and <span class="math inline">\(2^6\)</span> ways to fill in the middle six bits: <span class="math inline">\(3 \cdot 2^6 = 192\)</span>.</p></li>
+</ol></li>
+<li><p><span class="math inline">\(10^3 \cdot 26^3 =\)</span> 17576000</p></li>
+<li><p><span class="math inline">\(n!\)</span></p></li>
+<li><p><span class="math inline">\(2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1\)</span> = 24. (<span class="math inline">\(8!\)</span> = 40320, so that’s a pretty big speed up.)</p></li>
+<li><p>See book.</p></li>
+<li><p><span class="math inline">\(36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =\)</span> 2684483063360</p></li>
+<li><p><code>26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)</code> = 1878468937280</p></li>
+<li><ol type="a">
+<li><code>30 * 29 * 28</code> = 24360</li>
+<li><code>1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1</code> = <code>30 * 29 * 28 - 29 * 28 * 27</code> = 2436</li>
+</ol></li>
+</ol>
+</div>
+<p><!-- 13. See book. --></p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../graphs/06-Graphs-Bipartite-Planar.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Bipartite Graphs</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

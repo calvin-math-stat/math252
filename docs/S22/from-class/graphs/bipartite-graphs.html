@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Bipartite Graphs | Graphs</title>
   <meta name="description" content="6 Bipartite Graphs | Graphs" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Bipartite Graphs | Graphs" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2022-02-18" />
+<meta name="date" content="2023-01-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="paths-in-graphs.html"/>
 <link rel="next" href="planar-and-non-planar-graphs.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -157,16 +156,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bipartite-graphs" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Bipartite Graphs</h1>
-<div id="definition" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Definition</h2>
+<div id="bipartite-graphs" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Bipartite Graphs<a href="bipartite-graphs.html#bipartite-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="definition" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Definition<a href="bipartite-graphs.html#definition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A simple graph <span class="math inline">\(G\)</span> is <strong>biparatite</strong> if its vertices can be partitioned into two disjoint
 subsets <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span> and every edge connects a vertex in <span class="math inline">\(V_1\)</span> with a vertex in <span class="math inline">\(V_2\)</span>.
 The pair <span class="math inline">\(\langle V_1, V_2 \rangle\)</span> is called a <strong>bipartition</strong> of <span class="math inline">\(G\)</span>.</p>
 </div>
-<div id="examples" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Examples</h2>
+<div id="examples" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Examples<a href="bipartite-graphs.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Which of the following are bipartite?</li>
 </ol>
@@ -184,8 +183,8 @@ not, explain why not.</p></li>
 your algorithm?</p></li>
 </ol>
 </div>
-<div id="complete-bipartite-graphs" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Complete Bipartite Graphs</h2>
+<div id="complete-bipartite-graphs" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Complete Bipartite Graphs<a href="bipartite-graphs.html#complete-bipartite-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A complete biparite graph <span class="math inline">\(K_{m,n}\)</span> has two disjoint sets of vertices <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span>
 with <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> elements. There is an edge between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> if and only if
 <span class="math inline">\(x \in V_1\)</span> and <span class="math inline">\(y \in V_2\)</span> or <span class="math inline">\(x \in V_2\)</span> and <span class="math inline">\(y \in V_1\)</span>.</p>
@@ -263,7 +262,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

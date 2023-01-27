@@ -115,7 +115,7 @@ that is homeomorphic to either $K_5$ or $K_{3,3}$.
     here are some things you could try.
 
     a. Frist, decide whether you are looking for a version of $K_5$ or 
-    a version of of $K_3,3$ inside the Petersen graph. 
+    a version of of $K_{3,3}$ inside the Petersen graph. 
     (It's pretty easy to give an argument that one of these two will not work.
     Identifying which graph to work with will  save you going down a wrong path 
     right from the start.)

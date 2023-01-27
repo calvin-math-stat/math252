@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Planar and Non-planar Graphs | Graphs</title>
   <meta name="description" content="7 Planar and Non-planar Graphs | Graphs" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Planar and Non-planar Graphs | Graphs" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="R Pruim" />
 
 
-<meta name="date" content="2022-02-18" />
+<meta name="date" content="2023-01-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="bipartite-graphs.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -157,12 +156,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="planar-and-non-planar-graphs" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Planar and Non-planar Graphs</h1>
+<div id="planar-and-non-planar-graphs" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Planar and Non-planar Graphs<a href="planar-and-non-planar-graphs.html#planar-and-non-planar-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A graph is a <strong>planar graph</strong> if it can be drawn in the plane with no edge crossings.
 [Note: You may need to rearrange the vertices and edges to avoid crossings.]</p>
-<div id="euler-and-planarity" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Euler and Planarity</h2>
+<div id="euler-and-planarity" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Euler and Planarity<a href="planar-and-non-planar-graphs.html#euler-and-planarity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We have already seen <strong>Euler’s Formula for Planar Graphs</strong>:</p>
 <p><span class="math display">\[v - e + r = 1 + \mbox{number of connected components} \;,\]</span>
 where <span class="math inline">\(v\)</span> is the number of vertices, <span class="math inline">\(e\)</span> the number of edges and <span class="math inline">\(r\)</span> the number of
@@ -187,8 +186,8 @@ regions.</p>
 </ol>
 <div style="page-break-after: always;"></div>
 </div>
-<div id="kuratowskis-theorem" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Kuratowski’s Theorem</h2>
+<div id="kuratowskis-theorem" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Kuratowski’s Theorem<a href="planar-and-non-planar-graphs.html#kuratowskis-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The proof of the following theorem is too involved for this course, but it turns
 out that all nonplanar graphs contain a “homeomorphic copy” of either <span class="math inline">\(K_{5}\)</span> or <span class="math inline">\(K_{3,3}\)</span>.</p>
 <p><strong>Kuratowski’s Theoerm:</strong>
@@ -215,7 +214,7 @@ subdivisions on your graph.</p></li>
 here are some things you could try.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Frist, decide whether you are looking for a version of <span class="math inline">\(K_5\)</span> or
-a version of of <span class="math inline">\(K_3,3\)</span> inside the Petersen graph.
+a version of of <span class="math inline">\(K_{3,3}\)</span> inside the Petersen graph.
 (It’s pretty easy to give an argument that one of these two will not work.
 Identifying which graph to work with will save you going down a wrong path
 right from the start.)</p></li>
@@ -243,13 +242,6 @@ make sure the you have the correct structure for <span class="math inline">\(K_5
 
 </div>
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
@@ -316,7 +308,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
