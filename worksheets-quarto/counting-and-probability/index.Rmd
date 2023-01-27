@@ -1,0 +1,52 @@
+---
+title: "Counting and Probability"
+author: "R Pruim"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook: 
+    css: ../folding.css
+  bookdown::pdf_book: default
+
+---
+
+```{r skip, eval = FALSE, include = FALSE}
+
+      "06-Probability-Conditional.Rmd",
+      "07-Probability-Conditional2.Rmd",
+      "08-Probability-Bayes.Rmd",
+      "09-Random-Variables.Rmd",
+      "10-Expected-Value.Rmd",
+      "11-E-is-Linear.Rmd",
+      "12-Variance.Rmd"]
+```
+
+<script src = "../folding.js">
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+```
+
+\newpage
+
+# Preface {-}
+
+These exercises were assembled to accompany a Discrete Mathematics course
+at Calvin University. 
+
+
+<!-- Some macros to make mathematics easier -->
+
+\newcommand{\Prob}{p}
+\newcommand{\intersect}{\;\cap\;}
+\newcommand{\union}{\operatorname{\cup}}
+\newcommand{\E}{\operatorname{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\SD}{\operatorname{SD}}
+\newcommand{\Binom}{\textsf{Binom}}
+
+
+\newpage
+

@@ -134,26 +134,26 @@ for(g in sort(unique(R$group))) {
 ```{block}
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
-Mon 1/9  | Intro to Graphs       | [PDF](/from-class/graphs-01.pdf)
-Wed 1/11 | More Graphs           | [PDF](/from-class/graphs-02.pdf)
-Wed 1/13 | Representing Graphs   | [PDF](/from-class/graphs-03.pdf)
-Mon 1/16 | Graph Isomorphism     | [PDF](/from-class/graphs-04.pdf)
-Wed 1/18 | Paths in Graphs       | [PDF](/from-class/graphs-05.pdf)
-Fri 1/20 | Paths in Graphs       | [PDF](/from-class/graphs-05.pdf)
-Mon 1/23 | Bipartite Graphs      | [PDF](/from-class/graphs-06.pdf)
-Wed 1/25 | Planar Graphs         | [PDF](/from-class/graphs-07.pdf)
+Mon 1/9  | Intro to Graphs       | [PDF](/from-class/01-graphs.pdf)
+Wed 1/11 | More Graphs           | [PDF](/from-class/02-graphs.pdf)
+Wed 1/13 | Representing Graphs   | [PDF](/from-class/03-graphs.pdf)
+Mon 1/16 | Graph Isomorphism     | [PDF](/from-class/04-graphs.pdf)
+Wed 1/18 | Paths in Graphs       | [PDF](/from-class/05-graphs.pdf)
+Fri 1/20 | Paths in Graphs       | [PDF](/from-class/05-graphs.pdf)
+Mon 1/23 | Bipartite Graphs      | [PDF](/from-class/06-graphs.pdf)
+Wed 1/25 | Planar Graphs         | [PDF](/from-class/07-graphs.pdf)
 ```
 
 ```{block}
-#| include: false
+#| include: true
 ### Counting and Probability
 
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
-Mon 1/31 | Some Counting Problems | [PDF](counting-and-probability/some-counting-problems.pdf)
-Wed 2/02 | Pigeon Hole Principle | [PDF](counting-and-probability/pigeonhole-principle.pdf)
-Fri 2/04 | Division Principle    | [PDF](counting-and-probability/division-principle.pdf)
-Mon 2/07 | Donuts                | [PDF](counting-and-probability/counting-problems.pdf)
+Fri 1/27 | Some Counting Problems | [PDF](/from-class/08-counting.pdf)
+Wed 2/01 | Pigeon Hole Principle | [PDF](/from-class/09-counting.pdf)
+Fri 2/03 | Division Principle    | [PDF](/from-class/10-counting.pdf)
+Mon 2/06 | Donuts                | [PDF](/from-class/11-counting.pdf)
 ```
 
 :::

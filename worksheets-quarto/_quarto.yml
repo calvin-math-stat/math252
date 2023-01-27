@@ -22,10 +22,11 @@ book:
         - graphs/05-Graphs-Paths.qmd
         - graphs/06-Graphs-Bipartite-Planar.qmd
 #        - graphs/07-Graphs-Euler.qmd
+    - part: "Counting and Probability"
+      chapters:
+        - counting-and-probability/01-counting-basic.qmd
 
 format:
-  html:
-    theme: cosmo
   pdf:
     documentclass: scrreprt
     fontsize: 10pt
@@ -37,3 +38,5 @@ format:
       - "margin = 0.7in"
       - "top = 0.5in"
       - "bottom = 0.9in"
+  html:
+    theme: cosmo

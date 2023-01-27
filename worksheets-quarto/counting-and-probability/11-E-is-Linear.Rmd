@@ -1,0 +1,145 @@
+
+\newpage
+
+# More Expected Value
+
+## Transformations and Sums
+
+### Transformations
+
+If $X$ is a random variable and $f$ is a function, then $f(X)$ is a new random variable
+such that
+
+$$
+\Prob(f(X) = b) = \sum_{\{a \mid f(a) = b\}} \Prob(X = a)
+$$
+
+This is actually much simpler than it looks.  Basically, we just transform each possible value 
+$k$ that $X$ can take into $f(k)$ and then collapse any cells in the probability table that end
+up having the same value.
+
+**Example.**
+Below is a probability table for $X$. 
+Let's create probability table for $X^2$.
+
+value        |    1   |   2   |   3   |   4
+:----------: | :----: | :---: | :---: | :---:
+probability  |  0.1   |  0.2  |  0.3  |  0.4
+
+To do that, we simply square each of the values:
+
+value        |    1   |   4   |   9   |   16
+:----------: | :----: | :---: | :---: | :---:
+probability  |  0.1   |  0.2  |  0.3  |  0.4
+
+The probabilities remain unchanged.  The probability that $X = 3$ is 0.3, and in
+that case, $X^2 = 9$, so the probability that $X^2 = 9$ is also 0.3.  (Note:
+It is important here that there are no other ways to get $X^2 = 9$ for this random 
+variable. If $X$ could be -3, we would add in that probability as well.)
+
+
+OK.  Your turn.
+
+1. Using the probability table for $X$ in the example, 
+create a probability table for $5-X$.
+
+
+\vfill
+
+2. Below is a probability table for $X$.  Create probability table for $X^2$ and $2X + 3$.
+
+value        |   -1   |   0   |   1  
+:----------: | :----: | :---: | :---: 
+probability  |  0.2   |  0.5  |  0.3
+
+
+\vfill
+
+
+3. Below is a probability table for $X$.  Create probability tables for $X^2$ and for $2X$.
+
+value        |    0   |   1   
+:----------: | :----: | :---: 
+probability  |  0.7   |  0.3 
+
+
+\vfill
+
+
+\newpage
+
+### Sums
+
+Consider a process that produces multiple numerical outcomes.  (Example: roll a
+red die and a blue die.  The number on the red die is one numerical result, the
+number on the blue die is a second numerical result.)  We can represent[^land]
+
+[^land]: $\land$ is mathematical notation for "and".
+
+$$
+\Prob(X = a \land Y = b)
+$$
+
+with a function of $a$ and $b$ or with a two-way table like this one:
+
+\phantom{x}  | X = 1  | X = 2  | X = 3
+-------------| :----: | :----: | :----:
+Y = 1        |  0.10  |  0.10  |  0.25
+Y = 2        |  0.10  |  0.05  |  0.10
+Y = 3        |  0.10  |  0.15  |  0.05
+
+Use the table above to answer the following questions.
+
+4. What is $\Prob(X = 3 \land  Y = 2)$? What is $\Prob(X = 3)$?  What is $\Prob(Y = 2)$?
+
+5. What is $\Prob(X = Y)$?  What is $\Prob(X > Y)$?
+
+6. Create three probability tables, one for 
+   $X$, one for $Y$, and one for $X + Y$.  [Hint: Start by determining the possible values.]
+
+7. Now compute $\E(X)$, $\E(Y)$, and $\E(X + Y)$.    
+
+\newpage
+
+## Linearity of Expected Value
+
+**Linearity Theorem for Expected Value.**
+Expected value is linear in the following senses:
+
+ a.  $\E(aX + b) = a \E(X) + b$
+ 
+ b. $\E(X_1 + X_2 + X_3 + \cdots + X_n) = \E(X_1) + \E(X_2) + \E(X_3) + \cdots + \E(X_n)$
+ 
+### Exercises
+
+8. Let's make sure we understand what the linearity theorem says before moving on.
+
+      a. If $\E(X) = 20$, what are $\E(3X + 2)$ and $\E(2X - 3)$?
+      b. If $\E(X) = 5$ and $\E(Y) = 2$, what are $\E(X + Y)$ and $\E(X - Y)$?
+      c. Are your results for #7 consistent with the theorem?  Explain.
+
+9. Let $S$ be the sum on two fair 4-sided dice.  Compute $\E(S)$ two ways: (a) by creating
+a probability table for $S$, and (b) by writing $S = X + Y$ and using the Linearity Theorem.
+
+10. What is the expected value of the sum of two fair 6-sided dice?  (You only have to do 
+this one one way.)
+
+11. Here is a more interesting example.  Suppose 5 people put their names into a hat.
+Then each person pull one name out.  Let $X$ be the number of people who draw their own name.
+What is $\E(X)$?  How would the answer change if 10 people put their names into the hat?
+20?  1? [Hint: How can you write $X$ as a sum?]
+
+12. Let $X \sim {\sf Binom}(1, p)$.  What is $\E(X)$?  What is $\E(X^2)$? [Hint: Make a 
+probability table.  What are the possible values of $X$?]
+
+13. Let $X \sim {\sf Binom}(n, p)$.  What is $\E(X)$?  [Hint: Use the previous
+problem and the Linearity Theorem.  How can you write $X$ as a sum?]
+
+14. What is the expected number of diamonds in a 5-card hand dealt from a standard deck?
+
+15. If you roll 5 4-sided dice, what is the expected number of 4s rolled?
+
+16. If you roll 5 standard dice, what is the expected number of unique numbers rolled?
+
+17. Can you prove the linearity theorem?  [For part b, you may restrict your attention to
+a sum of two random variables.]
