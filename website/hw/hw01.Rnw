@@ -239,12 +239,6 @@ Additional assignments will be filled in over time.
 	 \extra[Kuratowski's Theorem]{19}
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-
 	 Wed 2/2 & \WW{03} & Rosen 6.1 &
 	 \\
 	 \hline
