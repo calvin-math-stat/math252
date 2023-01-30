@@ -128,6 +128,28 @@ for(g in sort(unique(R$group))) {
 ::::
 
 
+::::{.callout-note collapse="true"}
+#### Groups starting 01 Feb
+
+```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
+set.seed(201)
+n_groups <- function(x) {
+  ifelse(x > 18, (x+3) %/% 4, x %/% 3)
+}  
+
+R <- 
+  mosaic::shuffle(Roster) |>
+  group_by(section) |>
+  mutate(group = rep(1:(n_groups(n())), length.out = n())) |>
+  mutate(group = paste0(section, group)) 
+         
+for(g in sort(unique(R$group))) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(short_name), collapse = ", "), "\n"))
+}
+```
+::::
+
+
 
 ### Graphs
 
@@ -150,7 +172,8 @@ Wed 1/25 | Planar Graphs         | [PDF](/from-class/07-graphs.pdf)
 
 date     |  Topic                | link(s)
 -------- | --------------------- | ------------------------------------------
-Fri 1/27 | Some Counting Problems | [PDF](/from-class/08-counting.pdf)
+Mon 1/30 | Some Counting Problems | [PDF](/from-class/08-counting.pdf)
+Mon 1/30 | Some Counting Problems (solutions) | [PDF](/from-class/08-counting-sols.pdf)
 Wed 2/01 | Pigeon Hole Principle | [PDF](/from-class/09-counting.pdf)
 Fri 2/03 | Division Principle    | [PDF](/from-class/10-counting.pdf)
 Mon 2/06 | Donuts                | [PDF](/from-class/11-counting.pdf)
