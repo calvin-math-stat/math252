@@ -25,6 +25,9 @@ book:
     - part: "Counting and Probability"
       chapters:
         - counting-and-probability/01-counting-basic.qmd
+        - counting-and-probability/02-counting-pigeonhole.qmd
+        # - counting-and-probability/03-counting-division.qmd
+        # - counting-and-probability/04-counting-donuts.qmd
 
 format:
   pdf:
