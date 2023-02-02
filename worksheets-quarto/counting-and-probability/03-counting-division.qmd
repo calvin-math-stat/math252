@@ -55,8 +55,6 @@ division principle.
     c. How many different ways can the class be put into 5 groups of 4? How does this question
     differ from part a?
  
-\newpage  
-  
   
   
   
