@@ -63,7 +63,7 @@ kable(GS) %>%
 
 ## Test 1
 
-**Date:** 8 March
+**Date:** 8 Feb
 
 **Material Covered**: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.3).  This corresponds to worksheets 1 -- 11.
 
