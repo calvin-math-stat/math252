@@ -28,6 +28,14 @@ book:
         - counting-and-probability/02-counting-pigeonhole.qmd
         - counting-and-probability/03-counting-division.qmd
         - counting-and-probability/04-counting-donuts.qmd
+        - counting-and-probability/05-probability.qmd
+        - counting-and-probability/06-probability-conditional.qmd
+        - counting-and-probability/07-probability-conditional2.qmd
+        - counting-and-probability/08-probability-bayes.qmd
+        - counting-and-probability/09-random-variables.qmd
+        - counting-and-probability/10-expected-value.qmd
+        - counting-and-probability/11-E-is-linear.qmd
+        # - counting-and-probability/12-variance.qmd
 
 format:
   pdf:
