@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4252
+  resources:
+    - hw/*.pdf
+
+website:
+  title: "Math 252 - S23"
+  favicon: m252.png
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: hw.qmd
+        text: Homework
+      - href: test-info.qmd
+        text: Test Info
+      - href: from-class.qmd
+        text: From Class
+      - href: calendar.qmd
+        text: Calendar
+      - href: https://webwork.calvin.edu/webwork2/Math252-S23-Pruim/
+        text: Webwork
+      - href: https://gradescope.com/
+        text: Gradescope
+
+format:
+  html:
+    title-block-banner-true: black
+    strip-comments: true
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -3,6 +3,7 @@
 ```{r setup-bipartite-planar, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 # Bipartite Graphs
 
 ## Definition
@@ -46,14 +47,14 @@ knitr::include_graphics("../images/bipartite-graphs.png")
 
 \newpage
 
-# Planar Graphs
+# Planar and Non-planar Graphs
 
 A graph is a **planar graph** if it can be drawn in the plane with no edge crossings.
-[Note: You may need to rearrange the vertices to avoid crossings.]
+[Note: You may need to rearrange the vertices and edges to avoid crossings.]
 
 ## Euler and Planarity
 
-We have already seen that for planar graphs,
+We have already seen **Euler's Formula for Planar Graphs**:
 
 $$v - e + r = 1 + \mbox{number of connected components} \;,$$
 where $v$ is the number of vertices, $e$ the number of edges and $r$ the number of 
@@ -61,17 +62,24 @@ regions.
 
 In particular, for a connected graph we have $v - e + r = 2$.
 
- 1. Show that the following are planar.
+1. Show that the following are planar.
     a. $K_{2,2}$ 
     a. $K_{2,3}$ 
     a. $K_{2,4}$
-    a. Is $K_{2,n}$ planar for every $n$?  
     
- 2. Use Euler's formula to show that $K_5$ is not planar.  (Hint: how many regions
- would $K_5$ have it if were planar? Why is that problematic?)
+2. Is $K_{2,n}$ planar for every $n$?  
+    
+3. Use Euler's formula to show that $K_5$ is not planar. 
  
- 3. Use Euler's formula to show that $K_{3,3}$ is not planar.
- 
+    a. How many vertices does $K_5$ have?
+    b. How many edges does $K_5$ have?
+    c. If $K_5$ were planar, how many regions would it have?
+    d. Show that $K_5$ can't have that number of regions, so it must not be planar.
+    
+4. Use Euler's formula to show that $K_{3,3}$ is not planar.
+
+\newpage
+
 ## Kuratowski's Theorem
 
 The proof of the following theorem is too involved for this course, but it turns 
@@ -81,23 +89,61 @@ out that all nonplanar graphs contain a "homeomorphic copy" of either $K_{5}$ or
 A graph $G$ is nonplanar if and only if it contains a subgraph $H$ 
 that is homeomorphic to either $K_5$ or $K_{3,3}$.
 
-  * two graphs are **homeomorphic** if they can each be obtained from the 
-  same graph by a sequence of elementary subdivisions.
-  
   * an **elementary subdivision** of a graph $G$ removes one edge $(u, v)$ and 
-  adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$.
+  adds a new vertex $n$ and two new edges $(u,n)$ and $(v,n)$. 
   
- 4. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
+  * a **subdivision** of a graph $G$ is the result of performing 0 or more
+  elementary subdivisions, starting from $G$.
+  
+  * two graphs are **homeomorphic** if some subdivision of one is isomorphic
+  to some subdivision of the other.
+  
+  <!-- That's a fancy way -->
+  <!-- of saying "place an extra vertex in the middle of an edge to turn it into  -->
+  <!-- two edges". -->
+  
+5. Create a graph with 5 vertices and 7 edges.  Now perform three elementary 
  subdivisions on your graph.
  
- 5. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
+6. Describe what an elementary subdivision is in simple words a kindergarterner could understand.
 
- 6. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
+7. Explain why two homeomorphic graphs are either both planar or both nonplanar. 
 
- 7. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
+8. Use Kuratowski's Theorem to show that the Petersen graph is nonplanar.
+
+    There is more than one way to do this, but if you are having trouble,
+    here are some things you could try.
+
+    a. Frist, decide whether you are looking for a version of $K_5$ or 
+    a version of of $K_{3,3}$ inside the Petersen graph. 
+    (It's pretty easy to give an argument that one of these two will not work.
+    Identifying which graph to work with will  save you going down a wrong path 
+    right from the start.)
+    
+    b. Now see if you can identify 
+    
+        * the 5 or 6 vertices in the Petersen graph that will corresponsd to 
+        the vertices in $K_5$ or $K_{3,3}$. 
+        * any vertices or edges that you will remove from the Petersen graph. (We only
+        need to work with a subgraph, so we are allowed to remove things if they 
+        get in the way.)
+        * any vertices in the Petersen graph that will remain, but not be one 
+        of the vertides corresponding to $K_5$ or $K_{3,3}$. These must be 
+        the vertices invovled in subdivisions.
+        
+        There may be some trial and error involved here.
+        
+    c. When you think have identified everything correctly, double check to
+    make sure the you have the correct structure for $K_5$ or $K_{3,3}$.
+    
  
 ```{r, echo = FALSE, fig.align = "center", out.width = "25%"}
+# URL to vido showing homeomorphism
+url <-
+  "https://www.youtube.com/watch?v=SbjIdEbd754&ab_channel=FirstYearMathematicsandStatisticsUNSW"
 knitr::include_graphics("../images/Graph-Peterson.png")
 ```
+
+9. Show that the Petersen graph is not planar *without* using Kuratowski's Theorem.
  
 \newpage

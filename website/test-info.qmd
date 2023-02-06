@@ -1,0 +1,268 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(dplyr)
+require(tidyr)
+require(kable)
+require(kableExtra)
+require(scales)
+t1bks <- c(17, 33, 42, 51, 60, 67) |> rev() # 67 was max possible; 65 max obtained
+t2bks <- c(18, 36, 50, 62, 74, 84) |> rev() # 84 was max possibl; 81 was obtained
+t3bks <- c(15, 30, 40, 50, 61, 72) |> rev()
+fbks  <- c(25, 67, 88, 108, 128, 146)  |> rev() # max acheived 144; max possible 146
+
+c(25, 74, 96, 118, 140, 165) / 165 * 144
+fbks  <- c(25, 65, 86, 106, 126, 144) %>% rev()
+
+
+GS <- 
+  tibble(
+    Grade = LETTERS[1:4],
+    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
+    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
+    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
+    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
+  ) %>% 
+  arrange(Grade)
+```
+
+# Test Information
+
+Information about tests will be posted here shortly before each test.
+
+## Black out date requests
+
+You can request that we not have a test on a particular day by filling out 
+[**this form**](https://docs.google.com/forms/d/e/1FAIpQLScn4hhG5uequ42Hk-t464z1sjl0Y4eMRLNV_1qnuaQUvVlyaA/viewform?usp=sf_link)
+I can't promise to satisfy all requests, but I'll do what I can to work with the data.
+
+<!-- ### Grading -->
+
+<!-- Here are the grading scales used for each of our tests and the final. These -->
+<!-- scales will give some idea how you are doing, but the actual test scores are -->
+<!-- used to compute grades at the end of the term. -->
+
+```{r }
+#| include: false
+#| eval: false
+kable(GS) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F) %>%
+  row_spec(1, bold = F, color = "gray20", background = alpha("steelblue", 0.3)) %>%
+  row_spec(2, bold = F, color = "gray20", background = alpha("navy", 0.3)) %>%
+  row_spec(4, bold = F, color = "gray20", background = alpha("forestgreen", 0.3)) %>%
+  row_spec(3, bold = F, color = "gray20", background = alpha("limegreen", 0.2))
+```
+
+<!-- Final exam *scores* can be found in Gradescope, but the final exams themselves are not available. -->
+
+<!-- Remember, at the end of the term, if your final exam is better than your worst test, then your final -->
+<!-- exam score will replace your worst test score (making the final exam worth a test + the final). -->
+
+
+## Test 1
+
+**Date:** 8 March
+
+**Material Covered**: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.3).  This corresponds to worksheets 1 -- 11.
+
+#### Logistics
+
+The test will be administered in our classroom (NH 259). You will have
+50 minutes for the test (we need to clear the room for the next class).
+If you are unable to take the test in the classroom, contact me and we will
+make other arrangements.
+
+#### Topics
+
+**Graphs:**
+modeling with graphs (what do edges and vertices represent?);
+types of graphs(directed, undirected, self-loops, etc., etc.);
+graph terminology (examples: vertex, edge, adjacent, degree, bipartite, path, connected,
+connected component);
+graph representations (adjacency matrix, incidence matrix, edge list, adjacency list);
+graph isomorphism; graph invariants;
+Euler paths and circuits; Hamilton paths and circuits;
+planar graphs; Euler's formula; Kuratowski's Theorem;
+homeomorphic graphs and subdivisions;
+proving a graph is not planar *without* using Kuratowski's Theorem (like we did for
+$K_{5}$ and $K_{3,3,}$)^[Note: this also means not using any other "formulas" that
+you do not prove other than Euler's formula.];
+proving a graph is not planar using Kuratowski's Theorem.
+
+**Counting:**
+bijection principle (no double counting, no skipping);
+multiplication principle; addition principle; subtraction principle;
+inclusion-exclusion;
+division principle;
+pigeonhole principle;
+permutations and combinations;
+binomial coefficients;
+the "donut problems".
+
+---
+
+## Test 2
+
+**Date:** TBD
+<!-- **Date:** Monday, March 14 -->
+
+<!-- **Material Covered**: -->
+<!-- Counting and Probability (Rosen 6 and 7) -->
+
+
+
+<!-- #### Topics -->
+
+<!-- **Counting:** -->
+<!-- Bijection principle (no double counting, no skipping); -->
+<!-- multiplication principle; -->
+<!-- addition principle;  division principle; -->
+<!-- inclusion-exclusion; -->
+<!-- (permutations and combinations);  -->
+<!-- binomial coefficients; -->
+<!-- "donut" problems. -->
+
+<!-- **Probability:** -->
+<!-- Definition of finite probability and applications involving counting problems; -->
+<!-- empirical vs theoretical probability; -->
+<!-- 3 probability axioms; -->
+<!-- complement rule; -->
+<!-- equally likely rule; -->
+<!-- union rule; -->
+<!-- conditional probability; -->
+<!-- multiplication rule; -->
+<!-- independence; -->
+<!-- Bayes probability (e.g., false positives and false negatives); -->
+<!-- probability trees (optional); -->
+<!-- random variables; -->
+<!-- expected value of a random variable; -->
+<!-- linearity of expected value; -->
+<!-- Binomial distributions. -->
+
+
+<!-- --- -->
+
+## Test 3
+
+**Date:** TBD
+
+<!-- **Date:** Wed, April 13 -->
+
+
+<!-- #### Material Covered -->
+
+<!-- **Grammars:** Components of a grammar (terminals, nonterminals, start symbol, -->
+<!-- production rules, etc.), derivations, language generated by a grammar, types of -->
+<!-- grammars (regular, context sensitive, context free). -->
+
+<!-- **Automata:** Components of an automaton (input alphabet, states, start state, -->
+<!-- final states, transition function), DFA, NFA, language recognized by -->
+<!-- an automaton, building up a complex automaton from component -->
+<!-- automata; . -->
+
+<!-- **Regular expressions:** Notation, three base cases and three operations, language -->
+<!-- represented by a regular expression. -->
+
+<!-- **Regular languages:** Equivalence of regular expressions, regular grammars, -->
+<!-- DFAs, and NFAs.  You should know how to do the following conversions: -->
+<!-- DFA $\to$ NFA; -->
+<!-- NFA $\to$ DFA; -->
+<!-- regular expression $\to$ NFA; -->
+<!-- regular grammar $\to$ NFA; -->
+<!-- NFA $\to$ regular grammar; -->
+<!-- DFA/NFA $\to$ regular expression. -->
+
+<!-- Basically, you should know all the arrows on this diagram: -->
+
+<!-- $$ -->
+<!-- \Large -->
+<!-- \begin{array}{ccccccc} -->
+<!-- \mathrm{DFA} & \longleftrightarrow & \mathrm{NFA} & \longrightarrow & \lambda\mathrm{-NFA} & \longrightarrow & \mathrm{GNFA} \\ -->
+<!-- && \downarrow \uparrow & \nwarrow  &  & \swarrow  \\ -->
+<!-- & & \mathrm{regular}& & \mathrm{regular} \\ -->
+<!-- & & \mathrm{grammar}& & \mathrm{expression} -->
+<!-- \end{array} -->
+<!-- $$ -->
+
+
+<!-- **Turing Machines:** -->
+<!-- Definition of Turing machine, tracing Turing machines, -->
+<!-- designing Turing machines, Turing computable languages, all regular languages -->
+<!-- are Turing computable. -->
+
+<!-- **Showing languages are not regular (Pumping Lemma)** -->
+<!-- Halting Problem. -->
+
+
+<!-- Note: -->
+
+<!-- * Some of you may have seen extended regular expressions that include additional -->
+<!-- operators like $+$. These are **not** included in our definition of regular -->
+<!-- expression.  (We will say something more about these later.) -->
+
+<!-- --- -->
+
+## Final Exam
+
+**Date/Time:** 1:30 pm on Wednesday, April 26 or 9 am on Thursday, April 27.
+
+* As long as there is enough space in our classroom, I'll allow you to pick between to the two times.
+We'll deal with those logistics in the last week or two of the semester.
+
+<!-- * Use this [sign up sheet](https://docs.google.com/forms/d/e/1FAIpQLSd1PfHX6fL8lSok-E738d_9yszlUiLdKip1MV0Aop6K-nYhXQ/viewform?usp=sf_link) -->
+<!-- to tell me which time you plan to take the exam. -->
+
+
+<!-- #### Material Covered -->
+
+<!-- The exam will cover topics from the entire semester. In addition to the topics -->
+<!-- listed above for each test, the following topics are also included: -->
+
+<!-- * **Python regular expressions** -->
+<!-- (at the level of the slides we used and the regular expression game). -->
+<!--     * You should be able to write a Python regular expression for a specified task. -->
+<!--     * You should recognize Python commands like `re.search()`, `re.findAll()`, `re.sub()`, -->
+<!--     etc.  and be able to figure out what they return. -->
+<!--     * Note: I will make it clear when you may use a Python regular expression (which includes  -->
+<!--     a number of extras not included in our definition of regular expressions. If it doesn't  -->
+<!--     say "Python regular expression", you should only use concatenation, Kleene star and union. -->
+
+<!-- * **The Pumping Lemma** and showing that a language is *not* regular. -->
+
+<!-- * **Turing Computation**: This was on the list for test 3, but didn't actually -->
+<!-- end up on the test.  Don't forget about this topic just because it wasn't on -->
+<!-- that test. -->
+
+<!-- ### Review Session -->
+
+<!-- I'm currently planning to offer a review session noon-1:15 on Tuesday. -->
+
+<!-- ### Review Questions -->
+
+<!-- As you prepare for the final exam, you can post questions [here](https://docs.google.com/document/d/1rkcFS_7KbQKj12Eea-_CVhLn6vj4jhxJJoPokWlAnpo/edit?usp=sharing). Add your initials after -->
+<!-- the question. If you see a question that you would also like to ask, add your initials. -->
+<!-- If you later figure it out on your own, you can delete your initials. -->
+
+<!-- I can't promise to answer every question posted, but I may be able to answer some in the document -->
+<!-- and may use others at the review session. I'll likely prioritize questions that several people -->
+<!-- have tagged with their initials. -->
+
+<!-- ### Some advice on how to study -->
+
+<!-- Here are soem things you may find useful as your prepare for the final. -->
+
+<!-- 1. Go back over your three tests to make sure you (a) remember how to do what you were able to then and (b) figure out how to do the things you could not do then. -->
+
+<!-- 2. Go through the topics lists for each test (above) and mark the ones you espcialy need to review. -->
+<!-- Cross them off the list once your review is complete. -->
+
+<!-- 3. Use the homework problems as practice.  You might focus especially on the ones in square brackets, -->
+<!-- especially the one in the review questions and supplemental exercises at the end of the chapters. -->
+
+<!-- 4. Create review sheets that help you organize the material in a way that works for you. -->
+
+<!-- 5. Use the [final exam question document](https://docs.google.com/document/d/1rkcFS_7KbQKj12Eea-_CVhLn6vj4jhxJJoPokWlAnpo/edit?usp=sharing) to record questions. -->
+
+<!-- 6. Come to the review session. -->

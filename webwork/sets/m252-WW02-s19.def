@@ -1,0 +1,74 @@
+assignmentType      = default
+openDate          = 02/06/2019 at 05:50pm EST
+reducedScoringDate = 12/31/1969 at 07:00pm EST
+dueDate           = 02/08/2019 at 11:59am EST
+answerDate        = 02/08/2019 at 01:59pm EST
+enableReducedScoring = N
+paperHeaderFile   = defaultHeader
+screenHeaderFile  = defaultHeader
+description       = 
+restrictProbProgression = 0
+emailInstructor   = 0
+
+problemListV2 
+problem_start
+problem_id = 1
+source_file = SDSU/math250/set33_GraphIsomorphism/adjacency_list.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+problem_start
+problem_id = 2
+source_file = SDSU/math250/set33_GraphIsomorphism/adjacency_matrix.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+problem_start
+problem_id = 3
+source_file = SDSU/math250/set33_GraphIsomorphism/incidence_matrix.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+problem_start
+problem_id = 4
+source_file = SDSU/math250/set32_GraphTerminology/describe_vertex.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+problem_start
+problem_id = 5
+source_file = SDSU/math250/set32_GraphTerminology/graphic_sequence.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+problem_start
+problem_id = 6
+source_file = Library/Westmont/EoDM3/Inquiry_2_6/iprob2_17/iprob2_17.pg
+value = 1
+max_attempts = -1
+showMeAnother = -1
+prPeriod = -1
+counts_parent_grade = 0
+att_to_open_children = 0 
+problem_end
+

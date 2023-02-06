@@ -1,0 +1,219 @@
+---
+pagetitle: 'M252: 4/20/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Monday, April 20: Regular Expression -> NFA
+
+#### Homework 
+
+* due Today: PS 14 (submit via [gradescope](https://gradescope.com))
+* due Friday: PS 15 (submit via [gradescope](https://gradescope.com))
+* No class on Wednesday (advising day)
+    
+#### When is Test 2 going to be?
+
+It looks like a solution will be in place for us to have any time after this
+week. So we need to pick a date. I'd like to suggest 
+
+* **Wedensday, April 29** or
+* **Friday, April 1**.
+
+I'm assuming the previously supplied black out dates are not of much use anymore, 
+so **fill out the poll in Teams (today)** to let me know how those dates work for you.
+    
+#### What we are learning today
+
+Last time we learned that NFAs and DFAs are equivalent.  Today we will
+learn that any language that can be represented by a regular expression
+can also be recognized by an NFA.
+
+$$
+\Large
+\begin{array}{ccc}
+\mathrm{DFA} & \stackrel{4/17}{\longleftrightarrow} & \mathrm{NFA} \\
+& \nearrow & \\
+\mathrm{regular} &&\\
+\mathrm{expression}  &&
+\end{array}
+$$
+
+
+Eventually, we want to add regular grammars to our picture, and add some more arrows.
+
+$$
+\Large
+\begin{array}{ccc}
+\mathrm{DFA} & \stackrel{4/17}\longleftrightarrow & \mathrm{NFA} \\
+& \nearrow & \\
+\mathrm{regular}& & \mathrm{regular} \\
+\mathrm{expression}& & \mathrm{grammar} 
+\end{array}
+$$
+
+We will see that all of these are equivalent.  The languages recognized/generated/expressed
+by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges**.
+
+
+#### Worksheet
+
+We will cover Section 4.3.
+
+* [HTML](../models-of-computation/regular-expressions-and-languages.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+But before we begin, let's go back and think about an exercise from last time.
+
+
+<div class = "foldable" label = "Exercise 3.6.21">
+Last time we created an equivalent DFA by drawing its graph.
+This time, I'll demonstrate another way to keep track of the work involved
+using a transition table rather than a graph. I'll try to remember to
+record this so those of you not in class (or wanting to rewatch it) 
+can view it in Teams.
+
+To create a transition table for a DFA, we need to show for each combination
+of a state and an input symbol which state we transition to.  (Since it is
+a DFA, there will be just one state. But the states of the DFA are 
+subsets of states from the NFA.  I'll show the table here using two 
+different notations, one that makes the sets explicit and one that
+is a little terser.)
+
+
+The transition tables are here for reference, but you should watch the video
+to see how these are created step-by-step.
+
+<div class = "foldable" label = "transition table">
+
+\def\set#1{\{#1\}}
+
+Explicit sets version:
+
+  state            |      0      |       1     
+:----------------: | :---------: | :----------:
+$\set{A}$ (start)  | $\set{A, C}$  | $\set{B}$
+$\set{A, C}$       | $\set{A, C}$  | $\set{B, D}$
+$\set{B}$          | $\set{A, C}$  | $\set{C}$
+$\set{B,D}$        | $\set{B, D}$  | $\set{A,C}$
+$\set{C}$          | $\set{C}$     | $\set{D}$
+$\set{D}$          | $\set{D}$     | $\set{A}$
+
+Terser version:
+
+  state            |      0      |       1     
+:----------------: | :---------: | :----------:
+$A$ (start)        | $AC$        | $B$
+$AC$               | $AC$        | $BD$
+$B$                | $AC$        | $C$
+$BD$               | $BD$       | $AC$
+$C$                | $C$         | $D$
+$D$                | $D$         | $A$
+
+Once we get to this point, it is easy to draw the graph if we like.  We know the
+6 states that are required, and we can use the chart to decide where the arrows
+go. (Note: the transition table is a complete description of the DFA, so
+the graph is not necessary -- unless asked for.)
+</div>
+</div>
+
+#### Comments/Hints/Solutions
+
+\def\emptystring{\lambda}
+
+
+<div class = "foldable" label = "Exercise 4.3.1-3">
+You should be able to create these simple machines pretty easily.  (They are easier 
+that some of the other examples we have seen.) The important thing here is that these
+are important examples of regular expressions, and we want to show that all regular
+expressions can be convereted into an equivalent NFA.
+
+You can see the solutions on page 881 of the text.
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.4">
+Add a new start state to the machine. What transitions should go out from this new state?
+Should it be an accepting state? How do you decide?
+
+<div class = "foldable" label = "Example">
+```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+knitr::include_graphics('../images/NFA4-lonely.png')
+```
+</div>
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.5">
+See pages 881-882 in the text for an explanation and illustration.
+Make sure you understand the big idea for each one, then see if there are any
+smaller details that are important to remember.
+
+Big idea:
+
+* $AB$: Hook up the machines "one after the other", and provide a way to get from the
+first to the second whenever you could have gone to an accepting state in the first machine.
+
+One note: Below the illustration for $AB$ it says
+"Transition from $s_B$ in $M_B$ produces a transition from $s_{AB} = s_A$."
+This transition should only be added **if the start state for $M_A$ is an accepting state.**
+In that case, we need to be able to recognize $\lambda w = w$ for any $w \in B = L(M_B)$.
+But if the start state for $M_A$ is not accepting, then $\lambda \not\in A$, and we do 
+not want to recognize these strings (unless they can be split some other way into a 
+first part from $A$ and a second part from $B$>)
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.6">
+See pages 881-882 in the text for an explanation and illustration.
+Make sure you understand the big idea for each one, then see if there are any
+smaller details that are important to remember.
+
+Big idea:
+
+* $A \union B$: Hook up the machines "in parallel".  Add a new start state and use it to make 
+a first decision about which machine to use.
+
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.7">
+See pages 881-882 in the text for an explanation and illustration.
+Make sure you understand the big idea for each one, then see if there are any
+smaller details that are important to remember.
+
+Big idea:
+
+* $A^*$: Provide a way to "start over" any time you could have reached an accepting state.
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.10">
+This illustration is on page i883 of the text:
+
+```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
+knitr::include_graphics("../images/NFA-Fig-12-4-3.png")
+```
+</div>
+
+<div class = "foldable" label = "Exercise 4.3.11">
+Every language recognized by an NFA is also recognized by a DFA.
+How can you create a DFA that recognizes the complement?
+Why is it easier to do this with a DFA than with an NFA?
+</div>
+
+<br><br>

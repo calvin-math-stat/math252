@@ -4,6 +4,10 @@ author: "R Pruim"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 bibliography: models-of-computation.bib
+output: 
+  bookdown::pdf_book: default
+  bookdown::gitbook: default
+
 
 ---
 
@@ -30,6 +34,9 @@ at Calvin College.
 \newcommand{\Var}{\operatorname{Var}}
 \newcommand{\SD}{\operatorname{SD}}
 \newcommand{\Binom}{\textsf{Binom}}
+\newcommand{\mybold}[1]{\boldsymbol{#1}}
+
+<!-- $\bm A \boldmath B \boldsymbol C \mathbf D \mybold{E} \boldsymbol{F}$ -->
 
 
 \newpage

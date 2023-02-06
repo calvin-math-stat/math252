@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 More Graphs | Graphs</title>
+  <meta name="description" content="2 More Graphs | Graphs" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 More Graphs | Graphs" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 More Graphs | Graphs" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2022-01-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-graphs.html"/>
+<link rel="next" href="graph-representations.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html"><i class="fa fa-check"></i><b>1</b> Introduction to Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graphs"><i class="fa fa-check"></i><b>1.1</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-flavors"><i class="fa fa-check"></i><b>1.1.1</b> Graph flavors</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-representation"><i class="fa fa-check"></i><b>1.1.2</b> Graph Representation</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#labeled-graphs"><i class="fa fa-check"></i><b>1.1.3</b> Labeled Graphs</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#graph-models"><i class="fa fa-check"></i><b>1.1.4</b> Graph Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-graphs.html"><a href="introduction-to-graphs.html#bonus-problem"><i class="fa fa-check"></i><b>1.2</b> Bonus Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="more-graphs.html"><a href="more-graphs.html"><i class="fa fa-check"></i><b>2</b> More Graphs</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="more-graphs.html"><a href="more-graphs.html#some-example-graphs"><i class="fa fa-check"></i><b>2.1</b> Some Example Graphs</a></li>
+<li class="chapter" data-level="2.2" data-path="more-graphs.html"><a href="more-graphs.html#some-terminology"><i class="fa fa-check"></i><b>2.2</b> Some Terminology</a></li>
+<li class="chapter" data-level="2.3" data-path="more-graphs.html"><a href="more-graphs.html#some-questions"><i class="fa fa-check"></i><b>2.3</b> Some Questions</a></li>
+<li class="chapter" data-level="2.4" data-path="more-graphs.html"><a href="more-graphs.html#nfl"><i class="fa fa-check"></i><b>2.4</b> NFL</a></li>
+<li class="chapter" data-level="2.5" data-path="more-graphs.html"><a href="more-graphs.html#some-special-graphs"><i class="fa fa-check"></i><b>2.5</b> Some special graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="graph-representations.html"><a href="graph-representations.html"><i class="fa fa-check"></i><b>3</b> Graph Representations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="graph-representations.html"><a href="graph-representations.html#representations-of-graphs"><i class="fa fa-check"></i><b>3.1</b> 4 Representations of Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="graph-representations.html"><a href="graph-representations.html#edge-lists"><i class="fa fa-check"></i><b>3.1.1</b> Edge Lists</a></li>
+<li class="chapter" data-level="3.1.2" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-lists"><i class="fa fa-check"></i><b>3.1.2</b> Adjacency Lists</a></li>
+<li class="chapter" data-level="3.1.3" data-path="graph-representations.html"><a href="graph-representations.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.1.3</b> Adjacency Matrix</a></li>
+<li class="chapter" data-level="3.1.4" data-path="graph-representations.html"><a href="graph-representations.html#incidence-matrix"><i class="fa fa-check"></i><b>3.1.4</b> Incidence Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="graph-representations.html"><a href="graph-representations.html#representation-to-graphs"><i class="fa fa-check"></i><b>3.2</b> Representation to Graphs</a>
+<ul>
+<li class="chapter" data-level="" data-path="graph-representations.html"><a href="graph-representations.html#variations-on-the-theme"><i class="fa fa-check"></i>Variations on the theme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="graph-representations.html"><a href="graph-representations.html#graph-to-representation"><i class="fa fa-check"></i><b>3.3</b> Graph to representation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html"><i class="fa fa-check"></i><b>4</b> Graph Isomorphism</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-isomorphic"><i class="fa fa-check"></i><b>4.1</b> Showing graphs are isomorphic</a></li>
+<li class="chapter" data-level="4.2" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#showing-graphs-are-not-isomorphic"><i class="fa fa-check"></i><b>4.2</b> Showing graphs are not isomorphic</a></li>
+<li class="chapter" data-level="4.3" data-path="graph-isomorphism.html"><a href="graph-isomorphism.html#isomorphic-or-not"><i class="fa fa-check"></i><b>4.3</b> Isomorphic or not?</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html"><i class="fa fa-check"></i><b>5</b> Paths in Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#definition-of-a-path"><i class="fa fa-check"></i><b>5.1</b> Definition of a path</a>
+<ul>
+<li class="chapter" data-level="" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#questions"><i class="fa fa-check"></i>Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#paths-and-isomorphism"><i class="fa fa-check"></i><b>5.2</b> Paths and Isomorphism</a></li>
+<li class="chapter" data-level="5.3" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#euler-and-hamilton-paths"><i class="fa fa-check"></i><b>5.3</b> Euler and Hamilton Paths</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#can-you-trace-it"><i class="fa fa-check"></i><b>5.3.1</b> Can you trace it?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#relationships-in-graphs"><i class="fa fa-check"></i><b>5.4</b> Relationships in Graphs</a></li>
+<li class="chapter" data-level="5.5" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#connectedness"><i class="fa fa-check"></i><b>5.5</b> Connectedness</a></li>
+<li class="chapter" data-level="5.6" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6</b> Königsberg Bridge Problem</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#original-version"><i class="fa fa-check"></i><b>5.6.1</b> Original Version</a></li>
+<li class="chapter" data-level="5.6.2" data-path="paths-in-graphs.html"><a href="paths-in-graphs.html#extentions-to-the-königsberg-bridge-problem"><i class="fa fa-check"></i><b>5.6.2</b> Extentions to the Königsberg bridge problem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html"><i class="fa fa-check"></i><b>6</b> Bipartite Graphs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#definition"><i class="fa fa-check"></i><b>6.1</b> Definition</a></li>
+<li class="chapter" data-level="6.2" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#examples"><i class="fa fa-check"></i><b>6.2</b> Examples</a></li>
+<li class="chapter" data-level="6.3" data-path="bipartite-graphs.html"><a href="bipartite-graphs.html#complete-bipartite-graphs"><i class="fa fa-check"></i><b>6.3</b> Complete Bipartite Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html"><i class="fa fa-check"></i><b>7</b> Planar and Non-planar Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#euler-and-planarity"><i class="fa fa-check"></i><b>7.1</b> Euler and Planarity</a></li>
+<li class="chapter" data-level="7.2" data-path="planar-and-non-planar-graphs.html"><a href="planar-and-non-planar-graphs.html#kuratowskis-theorem"><i class="fa fa-check"></i><b>7.2</b> Kuratowski’s Theorem</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Graphs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="more-graphs" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> More Graphs</h1>
+<div id="some-example-graphs" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Some Example Graphs</h2>
+<p><img src="images/GraphFigs-9-6-9-7.png" width="537" style="display: block; margin: auto;" /></p>
+<p><img src="images/GraphFigs-9-8-9-9.png" width="444" style="display: block; margin: auto;" /></p>
+<p><img src="images/GraphFig-9-11.png" width="188" style="display: block; margin: auto;" /></p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="some-terminology" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Some Terminology</h2>
+<ul>
+<li><p>Two vertices are <strong>adjacent</strong> if they are connected by an edge.</p></li>
+<li><p>Two edges are <strong>incident</strong> if they share a vertex.</p>
+<ul>
+<li>For directed graphs, one edge must point into the vertex and one out.</li>
+</ul></li>
+<li><p>The <strong>degree</strong> of a vertex in an undirected graph is the number of edges that include the vertex;</p>
+<ul>
+<li>Self-loops (if they are allowed) contribute 2 to the degree.</li>
+<li>For a directed graph, we can talk about <strong>in-degree</strong>, <strong>out-degree</strong>, and
+<strong>total degree</strong>.</li>
+</ul></li>
+<li><p>A <strong>path</strong> in a graph is a sequence of edges, each one incident to the next.</p>
+<ul>
+<li>Can also be described as a sequence of vertices, each one adjacent to the next.</li>
+<li>For directed graphs, we require that the directions of the edges be compatible.</li>
+</ul></li>
+<li><p>A <strong>cycle</strong> is a path that begins and ends at the same vertex.</p></li>
+<li><p>A <strong>connected graph</strong> is one where there is a path between any pair of vertices.</p>
+<ul>
+<li>For a directed graph, we ignore the direction of the edges.</li>
+</ul></li>
+<li><p><span class="math inline">\(H\)</span> is a <strong>subgraph</strong> of <span class="math inline">\(G\)</span> if the vertex set of <span class="math inline">\(H\)</span> is a subset of the vertex
+set of <span class="math inline">\(G\)</span> and the edge set of <span class="math inline">\(H\)</span> is a subset of the edge set of <span class="math inline">\(G\)</span>, and <span class="math inline">\(H\)</span> is a
+graph.</p></li>
+</ul>
+</div>
+<div id="some-questions" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Some Questions</h2>
+<p>These questions will help make sure you understand the terminology above.</p>
+<ol style="list-style-type: decimal">
+<li><p>In figure 6, which species compete with squirrels?</p></li>
+<li><p>Make a table showing the degree of each vertex in Figure 7. What does a large
+degree indicate about a person? A small degree?</p></li>
+<li><p>Consider the graph in Figure 6.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute the degree of each vertex in Figure 6.<br />
+</li>
+<li>Now add up all the degrees.<br />
+</li>
+<li>How many edges are in the graph?<br />
+</li>
+<li>How is the sum of all the degrees related to the number of edges in the graph? Why? Does this hold for all graphs?<br />
+</li>
+<li>This result is called the <strong>Handshaking Theorem</strong>. Why does it have that name?</li>
+</ol></li>
+<li><p>In Figure 9, assume that <span class="math inline">\(a \to b\)</span> means team <span class="math inline">\(a\)</span> defeated team <span class="math inline">\(b\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute the in-degree and out-degree of each team in Figure 9.<br />
+</li>
+<li>What do these numbers tell us about the teams?<br />
+</li>
+<li>Who is the winner of the Round-Robin tournament in Figure 9?</li>
+</ol></li>
+</ol>
+<div style="page-break-after: always;"></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Consider Figure 8.
+<ol style="list-style-type: lower-alpha">
+<li>Compute the in-degree and the out-degree of each vertex in Figure 8.<br />
+</li>
+<li>Add up all the in-degrees.<br />
+</li>
+<li>Now add up all the out-degrees.<br />
+</li>
+<li>What do you notice? Will this hold for all directed graphs, or is this graph special?</li>
+</ol></li>
+<li>What is the longest path you can find in Figure 8? What does it represent in terms of the model?</li>
+</ol>
+</div>
+<div id="nfl" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> NFL</h2>
+<p>From 1961 through 1977 the NFL (National Football League) had a 14-game season.
+Until 1976, when two new teams were added, there were 13 teams in each of 2
+conferences. The NFL wanted a schedule were each team would play 11 games
+against other teams in their conference and 3 games against teams from the other
+conference.</p>
+<p>Suppose we create such a schedule for the NFL.
+Consider the part of the schedule that includes only the 13 NFC teams.
+We can represent this as a directed graph (road team <span class="math inline">\(\to\)</span> home team). (This graph
+would be a subgraph of the graph for the entire schedule.)</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>How many vertices does this graph have?</p></li>
+<li><p>What is the total degree of each vertex? Why?</p></li>
+<li><p>What is the sum of all the total degrees?</p></li>
+<li><p>How many edges does this graph have? Why is this impossible?</p></li>
+</ol>
+<p>So a little bit of graph theory shows that the NFL’s desired schedule is not possible.</p>
+</div>
+<div id="some-special-graphs" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Some special graphs</h2>
+<ul>
+<li><span class="math inline">\(K_n\)</span>, the complete graph with <span class="math inline">\(n\)</span> vertices.
+<ul>
+<li>simple graph with every possible edge.</li>
+</ul></li>
+<li><span class="math inline">\(C_n\)</span>, the cycle with <span class="math inline">\(n\)</span> vertices.
+<ul>
+<li>simple graph that consists of a single cycle connecting all the vertices
+and no other edges.</li>
+</ul></li>
+<li><span class="math inline">\(W_n\)</span>, the wheel with <span class="math inline">\(n + 1\)</span> vertices.
+<ul>
+<li>Formed by adding 1 vertex to <span class="math inline">\(C_n\)</span> and an edge between the new vertex and all the vertices in <span class="math inline">\(C_n\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(Q_n\)</span>, the <span class="math inline">\(n\)</span>-dimensional cube.
+<ul>
+<li>vertices: bit strings with <span class="math inline">\(n\)</span> bits</li>
+<li>edges: two vertices are adjacent if and only if their bit strings
+differ in exactly one position.</li>
+</ul></li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Draw <span class="math inline">\(K_5\)</span>. How many edges does <span class="math inline">\(K_5\)</span> have? How many edges does <span class="math inline">\(K_n\)</span> have?</p></li>
+<li><p>Draw <span class="math inline">\(C_5\)</span>. How many edges does <span class="math inline">\(C_5\)</span> have? How many edges does <span class="math inline">\(C_n\)</span> have?</p></li>
+<li><p>Draw <span class="math inline">\(W_5\)</span>. How many edges does <span class="math inline">\(W_5\)</span> have? How many edges does <span class="math inline">\(W_n\)</span> have?</p></li>
+<li><p>How many vertices does <span class="math inline">\(Q_3\)</span> have? How many edges does <span class="math inline">\(Q_3\)</span> have? Draw <span class="math inline">\(Q_3\)</span>.</p></li>
+<li><p>How many vertices does <span class="math inline">\(Q_4\)</span> have? How many edges does <span class="math inline">\(Q_4\)</span> have?</p></li>
+<li><p>In Figure 7 there is a subgraph that is a <span class="math inline">\(K_4\)</span>. List its vertices. Is there a subgraph that is a <span class="math inline">\(K_5\)</span>? How do you know?</p></li>
+</ol>
+<div style="page-break-after: always;"></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graph-representations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Graph-worksheets.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

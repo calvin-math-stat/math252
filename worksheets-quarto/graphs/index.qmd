@@ -1,0 +1,25 @@
+---
+title: "Graphs"
+author: "R Pruim"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook: default
+  bookdown::pdf_book: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+
+```
+
+{{< pagebreak >}}
+
+# Preface {-}
+
+These exercises were assembled to accompany a Discrete Mathematics course
+at Calvin University. 
+
+{{< pagebreak >}}
+

@@ -1,0 +1,181 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ../../../styles/rpruim2017a.css
+---
+
+## Welcome to Online Math 252
+
+As we discussed in class before moving online, some parts of what we do in class
+will be tricky to mimic online.  But I have some ideas, and we will refine
+them as we go along.
+
+* For each class day, I'll prepare a **Daily Dope Sheet**[^dope] that will let you know
+what's up for the day.
+
+[^dope]: If you are not familiar with the various meanings of the word dope,
+here are some from Websters' online dictionary: 
+
+    a. *n.* information, especially from a reliable source [eg, the inside dope];
+    b. *v.* to figure out -- usually used with out; 
+    c. *adj.* excellent.
+    
+    I hope all three apply.
+
+* **I'll try to break things up a bit** and include some hints and solutions
+along the way so you can check and see how you are doing. 
+<br><br>
+
+    This will be a bit like those interruptions I do in class -- except that I
+    won't be directly responding to you, I'll be trying to anticipate.
+
+    
+* You can **use MS Teams to post questions**. 
+<br><br>
+
+    I'll try to monitor this more closely during our usual class time (11:30-1:30
+MWF), and I encrouage you to keep the routine of working at those times.
+
+* **Hints & Solutions**.
+<br><br>
+
+    Be sure to make a good attempt at solving a problem before immediately
+looking for a hint or a solution, but don't spend too much time either.
+If there is a hint, give that a try before jumping to the solution. All 
+this will help you learn better and remember things longer.
+
+* Remember, **the goal is not to "finish the worksheet" but to learn** 
+the material.
+<br><br>
+
+    In class, you probably don't always do every problem. That's partly because you
+work at different speeds, and I want to make sure everyone can use class
+time effectively.  You will probably be a little slower on your own (without
+your group and without me there), so give **yourself 60-90 *focused* minutes**
+to work on the worksheet. Feel free to split it into two segments if that works better for you. Then try some homework. It's fine to go back 
+and forth between the two after you have worked on the worksheet for awhile.
+
+* Remember, 
+**the purpose of homework is not to "get the answer right" but to learn** (and
+to find out what you have and have not already learned).
+<br><br>
+
+    Of course, you should be trying to get the answers
+correct, and getting them correct can be a good indication that you
+are understanding things. But simply guessing a lot of times in WebWork
+until you stumble upon a correct solution or asking a friend for the answer
+probably isn't that helpful. And if you have a right answer but don't really
+understand how you got it, you should probably ask.
+
+* **Don't forget about your book.** 
+<br><br>
+
+    Some of you have probably used it very little, 
+but the book also has a description of the things we are studying (and many of
+the worksheet exercises are based on examples in the book).
+
+* Did you read all of this?  If so, use [this
+form](https://docs.google.com/forms/d/e/1FAIpQLSdCZnhlBFEeW64BEL_87xY7H4sWxO9NUTm0yERRdMhc8eH4Kw/viewform?usp=sf_link)
+to send me a photo of you doing something that makes you happy by 11:59 pm on
+March 16 and get one bonus point on the next test.
+
+## Frequently Asked Questions
+
+I'll keep some answers here to frequently asked questions.
+
+#### When do we start?
+
+I expect to have things ready to go by class time Monday, March 16 (ie, 11:30 am),
+probably sooner.  You have a **Webwork assignment due Monday** (pushed back from
+Friday), so I guess we are already going.  I encourage you to set aside time
+between 11:30 and 1:30 on Monday for this course.  I’ll be online monitoring our
+Team and we can figure out the new normal together.  More details coming.
+
+#### Do I need to be online at 11:30 (or 12:30) every Monday, Wednesday, and Friday?
+
+I won't give a definitive answer to this until we have gotten through the first couple days,
+and there may be reasons why those times don't work well for some of you. But I encourage you
+to dedicate your normal class time (or some time between 11:30 and 1:30) to this class. 
+That will keep you on schedule and in a routine and I should be able to reply to queries most
+quickly at those times.
+
+#### Should I install the MS Teams App?
+
+Probably. You can use teams in a browser, but it is nicer to use the app for your desktop, laptop,
+tablet, or phone. 
+
+Note: Video in MS Teams is a bit of a battery hog, so you might want to be plugged in when you 
+are using video.
+
+#### How can I work with others?
+
+I encourage you to find ways to work together on worksheets and homework, and
+I’m exploring some ways to facilitate that online. 
+
+* I have set up several **channels in MS Teams** called Study Group 1, Study
+Group 2, etc. You may "meet" in one of those any time. If you want to record
+your session, you can do that by clicking on the video camera icon near the
+bottom of the channel. Keep in mind that anyone in the class has access
+to these channels.
+
+* If you want a **dedicated channel** just for you and a few others (perhaps your
+table group from our in-class session), send me the email addresses of your
+group and I think I can create a channel just for your group.
+
+* You can **post questions in the other channels**. Please pick the most appropriate channel
+for your question and let me know if I need to create a new channel. Anyone in the class
+can see your question and post an reply. For homework questions, replies should not completely
+solve a problem for someone else. For the worksheets, treat this like our in-class time, and 
+feel free to help each other out.
+
+**If you are on campus** and
+work together, please be mindful of keeping your distance and using good hygiene
+habits.  It’s up to us to keep this as controlled as possible.  Err on the side
+of caution.  Being extra cautious costs relatively little.  Consider meeting
+online even if you are all on campus.
+
+#### What about our next test?
+
+Several of you asked about this.  We had planned to have a test the last class
+day before Easter.  My current plan to to push that back.
+
+*I do not expect we will have a test before Easter.*  
+
+If we are all back on campus after Easter, the test will likely be soon after
+our return. That will be logistically the easiest. If our time online is
+extended, we'll adjust as we find out more. It is possible that we will just
+have 2 tests instead of 3 or that we do a test online somehow, but I don’t think
+now is the time to figure that out.
+
+#### What if I get sick?
+
+I expect you are getting information from Student Life and/or your families
+about how to get health care and reporting symptoms.  As far as this class goes,
+let me know if you get sick and we’ll figure out the best way to proceed.
+
+#### Will you be on campus?
+
+From the survey, I see that more than half of you are on campus this week.  I do
+not plan to be on campus to meet with students while our class in online.  My
+wife and son both are in treatment for cancer, so we are being extra careful
+right now.  (I made a grocery run this morning wearing my stylish surgical
+gloves, so we are good to stay home for quite some time.)  I’m looking forward
+to seeing you all in person once things settle down.
+
+#### What is the best way to contat you?
+
+* If your question is one of general interest, try posting in the appropriate MS Teams channel.
+
+* If your question is about you specifically, send me an email or message me in MS Teams. 
+
+* If your question is about a webwork problem, it is probably easiest to use
+WebWork to send me an email since that gives me access to your version of the
+problem.
+
+#### How do I submit pencil and paper homework?
+
+My plan is to do this via moodle. Your first pencil and paper assignment isn't due until
+Friday, March 20. That will give us a few days to get organized and will give the graders and me
+time over spring break to figure out how to process things.

@@ -9,36 +9,45 @@ Since languages are sets, we can use set operations like $\cup$ and $\cap$ to cr
 But there are some additional operations that we will use.
 
 * concatenation of strings: $xy$ is the concetanation of strings $x$ and $y$ ($x$ followed by $y$)
+
 * concatenation of sets: $AB = \{ xy \mid x \in A \land y \in B \}$
+
 * power: $A^0 = \emptyset$; $A^1 = A$; $A^{n+1} = A^n A$.  (Power is iterated concatenation.)
+
 * Kleene star: $\displaystyle A^* = \cup_{n = 0}^{\infty} \; A^n$
 
-1. Which of these strings belong to $\{0, 01\}^*$?
+1. What strings belong to $\{0, 01\}^2$?
+
+2. Which of these strings belong to $\{0, 01\}^*$?
 
     a. 01001
     b. 10110
     c. 00010
 
-2. Which of these strings belong to $\{101, 111, 11\}^*$?
+3. Which of these strings belong to $\{101, 111, 11\}^*$?
 
     a. 1010111
     b. 1011011
     c. 1110111
     d. 11110111
-    
+
+\newpage
+
 ## Regular Expressions
+
+Regular expression are a type of shorthand notation for representing certain types of sets.
 
 ### Syntax
 
 A regular expression over an input alphabet $I$ is defined recursively.
 
-* $\bm{\emptyset}$ and $\bm{\lambda}$ and regular expressions.
-* $\bm{x}$ is a regular expression for each $i \in I$.
-* If $\bm{A}$ and $\bm{B}$ are regular expressions, then
+* $\mybold{\emptyset}$ and $\mybold{\lambda}$ and regular expressions.
+* $\mybold{x}$ is a regular expression for each $i \in I$.
+* If $\mybold{A}$ and $\mybold{B}$ are regular expressions, then
 
-    * $\bm{A}^*$ is a regular expression
-    * $(\bm{A} \cup \bm{B})$ is a regular expression
-    * $(\bm{AB})$ is a regular expression
+    * $\mybold{A}^*$ is a regular expression
+    * $(\mybold{A} \cup \mybold{B})$ is a regular expression
+    * $(\mybold{A}\mybold{B})$ is a regular expression
   
 <!-- Figures created with http://madebyevan.com/fsm/ -->
 
@@ -46,41 +55,41 @@ A regular expression over an input alphabet $I$ is defined recursively.
 
 Each regular expression represents a language as follows.
 
-* $\bm{\emptyset}$ represents the empty langauge: $\emptyset$
-* $\bm{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
-* For each $x \in I$, $\bm{x}$ represents the language containing only $x$: $\{x \}$
-* If $\bm{A}$ and $\bm{B}$ are regular expressions representing languages $A$ and $B$, then
-    * $(\bm{AB})$ represents $AB$
-    * $(\bm{A \cup B})$ represents $A \cup B$ \hfill 
+* $\mybold{\emptyset}$ represents the empty langauge: $\emptyset$
+* $\mybold{\lambda}$ represents language that contains only the empty string: $\{\lambda\}$
+* For each $x \in I$, $\mybold{x}$ represents the language containing only $x$: $\{x \}$
+* If $\mybold{A}$ and $\mybold{B}$ are regular expressions representing languages $A$ and $B$, then
+    * $(\mybold{A}\mybold{B})$ represents $AB$
+    * $(\mybold{A} \cup \mybold{B})$ represents $A \cup B$ \hfill 
     [Note: This is often written `(A|B)` in programming languages.]
-    * $\bm{A}^*$ represents $A^*$  \hfill 
+    * $\mybold{A}^*$ represents $A^*$  \hfill 
     [Note: This is often written as `A*` in programming languages.]
     
 The langauges represented by regular expressions are called **regular languages** (how creative).
 
-\newpage
-
-3. In Rosen 7, the definition of regular expression is missing boldface
+4. In Rosen 7, the definition of regular expression is missing boldface
 in a couple places.  Find them.
 
 ```{r echo=FALSE, out.width = "60%", fig.align = "center"}
 knitr::include_graphics("../images/regex-def.png")
 ```
 
-4. What is the difference between $\bm{1}$ and $1$?
-between $\bm{\lambda}$ and $\lambda$?
-between $\bm{\emptyset}$ and $\emptyset$?
+5. What is the difference between $\mybold{1}$ and $1$?
+between $\mybold{\lambda}$ and $\lambda$?
+between $\mybold{\emptyset}$ and $\emptyset$?
 
-5. Describe in words the languages represented by each of these regular expressions: 
+6. Describe in words the languages represented by each of these regular expressions: 
 
-    \ a. $\bm{10^*} \quad$ b. $\bm{(10)^*}\quad$ c. $\bm{0 \cup 01}\quad$ d. $\bm{0^* \cup 01}\quad$ e. $\bm{0 (0 \cup 1)^*}\quad$ f. $\bm{(0 \cup 01)^*}\quad$
+    \ a. $\mybold{10^*} \quad$ b. $\mybold{(10)^*}\quad$ c. $\mybold{0 \cup 01}\quad$ d. $\mybold{0^* \cup 01}\quad$ e. $\mybold{0 (0 \cup 1)^*}\quad$ f. $\mybold{(0 \cup 01)^*}\quad$
 
-6. Can each of the languages above be recongized by an NFA? a DFA?
+7. Can each of the languages above be recognized by an NFA? a DFA?
 
-7. What would we need to do to show that every regualar language can be recognized by an NFA?
+8. What would we need to do to show that every regualar language can be recognized by an NFA?
 Give it a try and see how far you get.  Which parts are easy? Which are trickier? Why?
 
 \vfill
+
+\newpage
 
 ## Recognizing Regular Languages with NFAs
 
@@ -88,24 +97,41 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 
 2. Show that the language $\{\lambda\}$ is recognized by an NFA.
 
-3. Show that if $a \in I$, then the langauge $\{a \}$ is recognized by an NFA.
+3. Show that if $a \in I$, then the language $\{a \}$ is recognized by an NFA.
+
+4. An NFA is said to have a **lonely start state** if there are no transitions
+into the start state.
+
+    a. Contruct an NFA with a lonely start state that is equivalent to the 
+    NFA below.
+    
+    ```{r, echo = FALSE, out.width = "50%", fig.align = "center"}
+    knitr::include_graphics('../images/DFA-NFA/NFA4.png')
+    ```
+    
+    b. Explain why every NFA is equivalent to an NFA with a lonely start state.
+    That is, describe how to convert any NFA into an equivalent NFA with
+    a lonely start state.
 
 4. Show that if $A$ and $B$ are each recognized by an NFA, then $AB$ is, too.
 
-    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
-    build a new NFA that recognizes $AB$?]
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  You may 
+    assume each has a lonely start state if that is useful.
+    How can you use them to build a new NFA that recognizes $AB$?]
 
 5. Show that if $A$ and $B$ are each recognized by an NFA, then $A \cup B$ is, too.
 
-    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$.  How can you use them to
-    build a new NFA that recognizes $A \cup B$?]
+    [Hint: Let $N_A$ and $N_B$ be the NFAs that recognize $A$ and $B$. 
+    You may assume each has a lonely start state if that is useful.
+    How can you use them to build a new NFA that recognizes $A \cup B$?]
     
 6. Show that if $A$ is recognized by an NFA, then $A^*$ is, too.
 
-    [Hint: Let $N_A$ be the NFA that recognizes $A$ How can you use it to
-    build a new NFA that recognizes $A \cup B$?]
+    [Hint: Let $N_A$ be the NFA that recognizes $A$. 
+    You may assume it has a lonely start state if that is useful.
+    How can you use it to build a new NFA that recognizes $A^*$?]
     
-7. Explain how 1--6 above show that every regular language is recognized by an NFA.
+7. Explain how 1--7 above show that every regular language is recognized by an NFA.
 
 8. Explain how 7 implies that every regular language is recognized by a DFA.
 
@@ -113,13 +139,13 @@ Give it a try and see how far you get.  Which parts are easy? Which are trickier
 computer program to do the translation from regular expression to NFA), and it
 provides a proof that all regular languages can be recognized by an NFA. But it
 might produce an NFA with more states than is minimally required. Create an NFA
-that recognizes $\bm{1}^* \cup \bm{01}$.  Do this two ways:
+that recognizes $\mybold{1}^* \cup \mybold{01}$.  Do this two ways:
   
     a. Following the steps outlined in 1--6.
     b. Any way you like, but using fewer states than in part a.
-    c. What is the smallest (fewest states) NFA you can find that recognizes $\bm{1}^* \cup \bm{01}$?
+    c. What is the smallest (fewest states) NFA you can find that recognizes $\mybold{1}^* \cup \mybold{01}$?
 
-10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^C$) 
+10. Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^c$) 
 is too.
 
     [Hint: There is an easy way and a hard way -- use the easy way.]
@@ -161,14 +187,22 @@ is too.
 \newpage
 
 
-## Solution to problem 4.3.9
+<!-- ## Solution to problem 4.3.9 -->
 
-```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
-knitr::include_graphics("../images/NFA-Fig-12-4-3.png")
-```
+<!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
+<!-- knitr::include_graphics("../images/NFA-Fig-12-4-3.png") -->
+<!-- ``` -->
 
 <!-- Regular -> NFA -> DFA -> complement has DFA -> complement has NFA -->
 
 
 
+<!-- regex to epsilon NFA -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/RYNN-tb9WxI?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+<!-- epsilon NFA to DFA -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/taClnxU-nao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 

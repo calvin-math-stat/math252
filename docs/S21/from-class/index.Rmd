@@ -1,0 +1,31 @@
+---
+title: "From Class"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.html
+    css: ../../styles/unmaintained.css
+---
+
+
+## Dope Sheets
+
+To keep us organized, I plan to create a **daily dope sheet**[^dope]
+for each day that provides the most important information and links
+for the day.
+   
+[ link to old dope sheets has been removed. ]
+
+
+[^dope]: If you are not familiar with the various meanings of the word dope,
+here are some from Websters' online dictionary:
+
+    a. *n.* information, especially from a reliable source [eg, the inside dope];
+    b. *v.* to figure out -- usually used with out;
+    c. *adj.* excellent.
+
+    I hope all three apply.
+
+

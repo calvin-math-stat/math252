@@ -1,0 +1,369 @@
+---
+title: ""
+pagetitle: "M252 Dope"
+output: 
+  html_document:
+    theme: yeti
+    toc: false
+    toc_float: true
+    toc_depth: 4
+    css: ['../../styles/rpruim2020.css', '../../styles/folding.css']
+    includes:
+      before_body: ../header.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(qrcode)
+library(mosaic)
+library(rjp)
+library(tidyr)
+set.seed(123)
+spaces <- function(n) {
+  paste(rep(" ", n), collapse = "")
+}
+Roster <- read.csv('../../../grades/S21/Math252-S21-roster-clean.csv') %>%
+  mutate(name = paste(first, last))
+```
+
+<script src="../../styles/folding.js"></script>
+
+<style>
+div.indent {
+  margin: 0 0 0 25px;
+}
+</style>
+
+\def\prob{\operatorname{P}}
+\def\Prob{\operatorname{P}}
+\def\tand{\operatorname{and}}
+\def\tor{\operatorname{or}}
+\def\tif{\operatorname{if}}
+\def\intersect{\operatorname{and}}
+\def\union{\operatorname{or}}
+
+
+# Dope Sheets (Weeks 1 - 5) {.tabset}
+
+**dope**[^webster]
+
+* *n.* information, especially from a reliable source [the inside dope];  
+* *v.* figure out -- usually used with out;                              
+* *adj.* excellent
+
+[^webster]: Definitions selected from Webster's online dictionary  
+
+Here's where you can come to find out what's up each day. Homework 
+assignments are available on the [**homework page**](../hw/). 
+
+And here is a link to the 
+[**Progress Log**](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
+we will often use when working in groups on Teams.
+
+## Week 1 
+
+### Wed 2/3
+
+* Welcome to Math 252!
+
+* **Topic of the Day**: Intro to Graphs
+
+  * Worksheet:  [[PDF]](graphs/intro-to-graphs.pdf)
+  
+  <!-- [[HTML]](graphs/introduction-to-graphs.html)  -->
+  
+* [Homework](../hw/) due Friday
+
+  * Officially due at 11:59 pm, but you should attempt to have it done before class.
+  * Submit via [Gradescope](https:://gradescope.com) -- details on [the homework page](../hw)
+
+  
+### Fri 2/5
+
+* Meet in Teams
+
+* Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(205)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+* **Topic of the Day:** More about Graphs
+
+  * Worksheet: [[PDF]](graphs/more-graphs.pdf)
+  
+    * If you print this out, I recommend printing 1-sided, or printing the first page separate from the other two.
+    That will make it easier to work with (less page flipping).
+    
+    * Keep track of your group's progress with this 
+    [Progress Log](https://docs.google.com/spreadsheets/d/1uPQf12t707jXYaEEGgfD5jWbOhp5EjynERKDuNIji0E/edit?usp=sharing) 
+     
+
+## Week 2 
+
+### Mon 2/8
+
+* Meet in Teams
+
+* Same groups as Friday
+
+* **Topic of the Day**: Representing Graphs
+
+  * Worksheet: 
+  [[PDF](graphs/graph-representations.pdf)]
+  [[HTML](graphs/graph-representations.html)]
+  
+* WebWork assignments due tonight and Wednesday night
+
+### Wed 2/10
+
+* Meet in Teams
+
+* Same groups as Friday
+
+* **Topic of the Day**: Graph Isomorphism
+
+  * Worksheet: 
+  [[PDF](graphs/graph-isomorphism.pdf)]
+  [[HTML](graphs/graph-isomorphism.html)]
+  
+* WW2 due tonight, PS 2 on Monday.
+
+<div class = "indent">
+<div class = "explain" label = "Show some comments on the worksheet">
+In problem 2, the two matrices are **not** graph invariants.  The problem is
+that for the matrices to match, the order of the vertices (and edges in the case
+of an incidence matrix) must line up according to the isomorphism. If they don't,
+you may have different matrices even though the graphs are isomorphic.  (In fact, you
+can get different matrices for the same graph if you just change the order of the vertices.)
+
+In problem 3, here is one way to show the second pair are not isomorphic:
+Consider $x$ and $y$.  They are adjacent and each has degree 2.  But there is no pair 
+of adjacent vertices with degree 2 in graph G. (There are other ways to show that these 
+graphs are not isomorphic as well.)
+
+In problem 4, 
+
+* The second pair are directed graphs.  Be sure to make the directions match when looking
+for an isomorphism.  In-degree and out-degree can be useful for directed graphs.
+
+* The third pair is challenging.  Both graphs are 3-regular (meaning every vertex has
+degree 3, so degree alone doesn't help you).
+</div>
+</div>
+<br>
+
+### Fri 2/12
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(212)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name), collapse = ", "), "\n"))
+}
+```
+
+* Reminder: 
+You can request that we not have a test on a particular day by filling out 
+[**this form**](https://docs.google.com/forms/d/e/1FAIpQLSdZxGUTSv8ie4itR0ErnRDpfEVtxWS5t2noU0cxnye0GgvVbQ/viewform?usp=sf_link).
+
+* **Topic of the Day**: Paths in Graphs
+
+  * Worksheet: 
+  [[PDF](graphs/paths-in-graphs.pdf)]
+  [[HTML](graphs/paths-in-graphs.html)]
+
+* PS 2 due tonight; PS 3 due Monday -- Submit via GradeScope
+
+```{r, include = FALSE}
+library(networkD3)
+G <- data.frame(
+  from = rep(1:10, each = 3),
+  to = c(2,5,10, 1,3,9, 2,8,4, 3,7,5, 1,4,6, 5,8,9, 4,6,9, 6,3,10, 
+         2,6,7, 1,8,6)
+)
+simpleNetwork(G, height="100px", width="100px", charge = 0)
+```
+
+## Week 3 
+
+### Mon 2/15
+
+* **Topics of the Day**: 
+
+  * Euler's Formula for Planar Graphs
+  * Euler paths
+  * Bipartite Graphs
+
+* Worksheets: 
+  
+  * Paths in Graphs (continued from last time): 
+  [[PDF](graphs/paths-in-graphs.pdf)]
+  [[HTML](graphs/paths-in-graphs.html)]
+  
+  * Bipartite Graphs (new): 
+  [[PDF](graphs/bipartite-graphs.pdf)]
+  [[HTML](graphs/bipartite-graphs.html)]
+  
+* Problem Set due each day this week
+
+### Wed 2/17
+
+* **Announcements**
+
+  * Test 1 will be on Friday, March 5 (day after advising day)
+
+* **Topics of the Day**
+
+  * **Bipartite Graphs**: 
+  [[PDF](graphs/bipartite-graphs.pdf)]
+  [[HTML](graphs/bipartite-graphs.html)]
+  
+    * Complete this worksheet and be sure to check with me about the algorithm
+  for determining if a graph is bipartite.
+  
+  * **Planar and Non-Planar Graphs**:
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
+  [[HTML]](graphs/planar-and-non-planar-graphs.html)
+  
+    * Work through question 3.
+  
+  * Check with me if your group has questions about any of the recent 
+  graph things
+  
+### Fri 2/19
+
+* **Test 1** will be two weeks from today.  More info next week.
+
+  * [Google Doc](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing) where you can post questions
+  
+    * I'll take a look at these before Monday and spend some time on them if needed
+    before moving on to our next unit (Counting and Probability)
+    
+    * I will likely schedule a review session on March 4 (advising day).  That will
+    be another opportunity to answer questions from this list.
+    
+    * I'll add additional sections next week.
+    
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(2192021)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+* **Planar and Non-Planar Graphs**:
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
+  [[HTML]](graphs/planar-and-non-planar-graphs.html)
+
+## Week 4 
+
+### Mon 2/22
+
+* **Planar and Non-Planar Graphs**:
+  [[PDF](graphs/planar-and-non-planar-graphs.pdf)]
+  [[HTML]](graphs/planar-and-non-planar-graphs.html)
+  
+* Graphs Wrap-up
+
+### Wed 2/24
+
+* New Groups
+
+```{r echo = FALSE, results = "asis", include = TRUE}
+set.seed(2242021)
+R <- shuffle(Roster) %>% group_by(section) %>% 
+  mutate(group = rep(1:5, length.out = n())) %>%
+  mutate(group = ifelse(section == "B", group + 5, group))
+         
+for(g in 1:10) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(name) %>% sort(), collapse = ", "), "\n"))
+}
+```
+
+
+* **Topic of the day**: Counting without counting
+  * Worksheet: 
+  [[HTML]](counting-and-probability/some-counting-problems.html)
+  [[PDF]](counting-and-probability/some-counting-problems.pdf)
+
+### Fri 2/26
+
+* [Test 1 Info](../test-info/index.html) is available on the test info page.
+
+    * Review session next Thursday at noon (via Teams)
+
+* [Homework](../hw/) notes
+
+    * All homework due before Test 1 has been posted.
+    * WW 4 is due on **Tuesday** next week (but you can do it sooner if you like).
+    * I can't promise that the last problem set will be graded before the test (that 
+    will depend on our graders' schedules), but you should have feedback from 
+    everything else.
+    
+* Wrap-up from last time: 4 Counting Principles
+    * Multiplication Principle
+    * Addition Principle
+    * Subtraction Principle
+    * Inclusion-Exclusion
+
+* **Topic of the day**: The Pigeonhole Principle
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/pigeonhole-principle.html)
+  [[PDF]](counting-and-probability/pigeonhole-principle.pdf)
+
+## Week 5 
+
+### Mon 3/1
+
+* Test on Friday
+  * Review session Thursday at noon (via Teams)
+ 
+* Homework due Monday, Tuesday, and Wednesday this week
+
+* **Topic of the Day**: The Division Principle
+
+  * Worksheet: 
+  [[HTML]](counting-and-probability/division-principle.html)
+  [[PDF]](counting-and-probability/division-principle.pdf)
+
+### Wed 3/3
+
+* Test on Friday
+  * Review session Thursday at noon (via Teams)
+    * Post questions [**here**](https://docs.google.com/document/d/1-vsGGT8mtMtXU9cPdLSW4YlpvSdw6c9XftEAL7Hy_B0/edit?usp=sharing)
+  * Contact me TODAY if you are able to take the test in our classroom (NH 259) 
+  at the regular time.  (Of course, if something like a COVID quarantine comes up, we'll
+  adjust.)
+  
+* **Topic of the Day**: The Division (and other) Principles
+
+  * More practice with counting problems
+  * Binomial coefficients can help simplify your thought process
+  * Worksheet: 
+  [[HTML]](counting-and-probability/counting-problems.html)
+  [[PDF]](counting-and-probability/counting-problems.pdf)
+
+### Fri 3/5
+
+* **Test 1**
+  * In NH 259 (for most of you)

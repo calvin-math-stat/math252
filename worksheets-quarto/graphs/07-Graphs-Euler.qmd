@@ -1,0 +1,142 @@
+
+# Euler Paths
+
+```{r setup-euler-graphs, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+long = FALSE
+```
+
+```{r, include = long, results = 'asis', echo = FALSE}
+cat("### A Simple Graph Class\n\n")
+```
+
+```{python, include = long}
+from collections import defaultdict
+
+# Graph class based on edgelist rep
+
+class Graph:
+  def __init__(self, E):
+    self.edge_list = E
+
+  def show(self):
+    print self.edge_list
+  
+  def degrees(self):
+    degrees = defaultdict(int)
+    for e in self.edge_list:
+      degrees[e[0]] = degrees[e[0]] + 1
+      degrees[e[1]] = degrees[e[1]] + 1
+    return degrees
+      
+  def num_edges(self):
+    return len(self.edge_list)
+    
+  def some_vertex(self):
+    return self.edge_list[0][0]  # return first verex on first edge
+    
+  def adjacent_vertex(self, x):
+    for (u, v) in self.edge_list:
+      if u == x:
+        return(v)
+      if v == x:
+        return(u)
+    return(None)
+      
+  def delete_edge(self, edge):
+    if edge in self.edge_list:
+      self.edge_list.remove(edge)
+    if edge[::-1] in self.edge_list:
+      self.edge_list.remove(edge[::-1])
+```
+
+## An Euler Path Algorithm
+
+Here is python code for an Euler path algorithm.
+
+```{python}
+# find an Euler path/circuit or report there is none.
+# this version assumes (without checking) that the graph is connected.
+
+def euler_path(graph, verbose = False):
+  degrees = graph.degrees()
+  odd_vertices = [v for v in degrees.keys() if degrees[v] % 2 == 1]
+  
+  if len(odd_vertices) == 2:
+    v_init = odd_vertices[0]
+  elif len(odd_vertices) == 0:
+    v_init = graph.some_vertex()
+  else:
+    return(None)
+    
+  stack = [v_init]
+  path = []
+  
+  while stack:
+    if verbose:
+      print "stack =", stack, " path =", path
+    u = stack[-1]
+    v = graph.adjacent_vertex(u)
+    if v:
+      stack.append(v)
+      graph.delete_edge((u,v))
+    else:
+      # move vertex from stack to path
+      path.append(stack.pop())
+  return(path)
+```
+
+{{< pagebreak >}}
+
+### Examples
+
+```{python}
+verbose = False
+G1 = Graph([(1,2), (1,3), (1,4), (1,5), (2,3), (2,5), 
+            (2,6), (3,4), (3,5), (4,5), (4,6)])
+print euler_path(G1, verbose = verbose)
+```
+
+```{python}
+G2 = Graph([(1,2), (1,3), (1,4), (2,3), (2,5), 
+            (2,6), (3,4), (3,5), (4,5), (4,6)])
+print euler_path(G2, verbose = verbose)
+```
+
+```{python}
+G3 = Graph([(1,2), (1,3), (1,4), (2,3), (2,5), (2,6), 
+            (3,4), (3,5), (4,5), (4,6), (5,6), (3,7)])
+print euler_path(G3, verbose = verbose)
+```
+
+
+### Questions
+
+ 1. What would the output of `euler_path(G1, verbose = True)` be?  
+ 
+    (For this question, you may assume that `adjacent_vertex()` will return the 
+ smallest numbered adjacent vertex and `some_vertex()` the smallest numbered 
+ vertex in the graph.)
+ 
+ 2. Pick a graph representation (edge list, adjacency list, adjacency matrix,
+ incidence matrix) and determine the effiicency of each method of the `Graph` class
+ used in this algorithm.
+
+    (For this question, you do not need to return any particular vertex from
+ `adjacent_vertex()` or `some_vertex()`.  Which vertex does you algorithm choose?)
+ 
+ 3. For your graph representation, determine the efficiency of the algorithm.  
+ Be sure to consider the efficiency of the methods in the `Graph` class.
+ 
+ 4. Repeat questions 2 and 3 for other representations.
+ 
+ 5. What happens in this algorithm if the graph provided is not connected?
+ 
+ 6. Can this algorithm handle multi-edges and self loops?
+ 
+ 7. Will the algorithm work for directed graphs?
+ 
+ 8. This algorithm assumes the graph is connected.  What is the efficiency of checking
+ that a graph is connected?
+ 
+{{< pagebreak >}} 

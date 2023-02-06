@@ -1,6 +1,42 @@
+grades/
+
+
+docs/S21/from-class/images/
+docs/S21/from-class/*/libs/
+docs/S21/from-class/online/
+docs/S21/from-class/testing*
+docs/S21/from-class/Blank*
+
+docs/S22/from-class/counting-and-probability
+docs/S22/from-class/*/libs/
+docs/S22/from-class/*/*html
+
+
+# these are generated from Rnw
+docs/*/hw/hw01.tex
+docs/*/hw/hw02.tex
+docs/*/hw/hw03.tex
+docs/*/from-class/*/*.tex
+
+.DS_store
+
+
+docs/S20/from-class/images/
+docs/S20/from-class/online/exams-testing*
+docs/S20/from-class/*/libs/
+
+docs/S19/from-class/SLO*
+
+# recordings not needed in repo
+*.mkv
+docs/*/from-class/online/recordings/2020*.mp4
+
 # History files
 .Rhistory
 .Rapp.history
+
+# R project files
+*.Rproj
 
 # Session Data files
 .RData

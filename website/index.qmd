@@ -1,0 +1,128 @@
+---
+pagetitle: "Math252 / S23"
+title: Math 252
+subtitle: Discrete Mathematics 
+description: Spring 2023
+title-block-banner: true
+
+---
+
+
+### Instructor
+
+Randall Pruim  
+office: North Hall 284   
+phone: (616) 526-7113 (but email is better)  
+E-mail: [`rpruim@calvin.edu`](mailto:rpruim@calvin.edu)
+
+### Time/Location
+
+* **Section A:** Monday, Wednesday, Friday 12:00 - 12:50, in North Hall 259
+* **Section B:** Monday, Wednesday, Friday 1:00 - 1:50, in North Hall 259
+
+
+### Office Hours
+
+There will likely be some excepions, but it looks like my regular office hours will be Monday, Wednesday, and 
+Friday at 4pm.  If you I'm not in my office, look in NH 276 (I teach a class in there just before and might still be talking to students there) or NH 282 (the Reading Room across from my office).
+
+If those times don't work for you, catch me at class or send me an email to
+figure out some other option. (Include some information about your availability
+if you send an email.)
+
+## Course Objectives 
+
+The student who successfully completes this class should be able to
+
+1. Describe and analyze algorithms that use graphs.
+2. Apply counting techniques to determine the size of finite sets and to compute probabilities (including conditional probabilities) of events.
+3. Compute and interpret the mean and variance of a discrete random variable.
+4. Identify problems that can and cannot be solved with various models of computation.
+
+## Internet Resources
+
+### Email
+
+I will maintain an email list of all students registered in this class 
+and will occasionally use it to distribute information and reminders of 
+various things pertaining to this course. 
+If you prefer to read your email from an account other than your Calvin 
+student account and do not have it set up to forward automatically, 
+send me email with the email address you prefer.
+
+You are responsible for any information communicated via email.
+
+It is very helpful if you **include 252 in the subject line of any email you send me.**
+That helps me locate email from this course in a sometimes overflowing email inbox.
+
+### MS Teams
+
+I've set up a Microsoft Team for our class.  If we need to move online, we'll
+use that Team for our class sessions. Students in quarantine or isolation can meet
+in Teams to work through the class worksheet together, if they like.
+
+I'll usually send class announcements to
+both our email list and to the general channel of our Team. 
+
+
+### Web Pages
+
+In addition to this home page, 
+I will also maintain a list of web resources pertaining to this course.
+**You are responsible for any information appearing on the course web pages.**
+Items I have prepared and maintain online include
+
+* a [calendar](calendar.qmd) of daily topics, exams, etc.
+* a list of [homework](hw.qmd) assignments and due dates.
+* information about [tests and exams](test-info.qmd) (appearing shortly before each test date).
+
+For quick access to these and other resources, see the navigation
+bar at the top of this page.
+
+## Other Important Information
+
+### See me
+
+If you are having difficulty with any portion of the course, 
+do not hesitate to see me.
+Do this as soon as possible, certainly well in advance of any
+deadlines (like tests) so that we can work to fix the problem. 
+
+### Textbook
+
+The required text for this course is 
+*Discrete Mathematics and Its Applications (7th edition)* by Ken Rosen.
+
+###  Grading
+
+Grading will be based on the following approximate weighting: 
+
+* Homework, etc: 15%
+* Tests (3): 60%
+* Final Exam: 25%
+
+#### Tests 
+
+Tests should be taken when they are scheduled.
+I do not generally offer make-up, alternate or late tests. 
+Instead, if you miss one test (for any reason) or if your final exam 
+score is better than your worst test, then your final exam score will be
+substituted for that test.
+
+
+### Special Circumstances 
+
+Calvin University is committed to providing access to all students. If you are a
+student with a documented disability, please notify a disability coordinator in
+the Center for Student Success (located in Spoelhof University Center 360). If
+you have an accommodation memo, please come talk to me in the first two weeks of
+class.
+
+Occasionally there are special circumstances that require that the rules
+and guidelines above be adjusted for a particular student. 
+In such cases, it is the responsibility of the student to inform me 
+of the situation **as soon as possible**, so that the appropriate
+arrangements can be made.  This includes, but is not limited to, 
+students with documented disabilities.
+
+

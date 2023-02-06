@@ -1,9 +1,18 @@
 ---
 book_filename: "Graph-worksheets"
-output_dir: "../../docs/S19/from-class/graphs"
+output_dir: "../../docs/S22/from-class/graphs"
 site: bookdown::bookdown_site
 language:
   ui:
     chapter_name: ""
 delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "01-Graphs-Intro.Rmd",
+            "02-Graphs02.Rmd",
+            "03-Graphs-Representations.Rmd",
+            "04-Graph-Isomorphism.Rmd",
+            "05-Graphs-Paths.Rmd",
+            "06-Graphs-Bipartite-Planar.Rmd"
+            # "07-Graphs-Euler.Rmd"
+            ]
 ---

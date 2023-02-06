@@ -1,0 +1,63 @@
+---
+pagetitle: "Math 252 HW"
+---
+
+# Homework
+
+## Assignments
+
+Information about problem sets will be posted here as it become available.
+ 
+* [Problem Sets due before Test 1](hw/hw01.pdf)
+ 
+* [Problem Sets due between Test 1 and Test 2](hw/hw02.pdf)
+ 
+* [Problem Sets due after Test 2](hw/hw03.pdf)
+
+## Deadlines
+
+Assignments will typically be due at 11:59 pm on the date they are due.
+
+## WebWorK
+
+WebWorK assignments are completed online and auto-graded. 
+Problems can be attempted multiple times. This gives you a chance to get
+some immediate feedback.
+
+## Gradescope
+
+You should already have received an invitation to Gradescope.
+Gradescope (<https://www.gradescope.com/>) is a system for submitting homework.
+Basically you scan your hand-written work to a PDF or upload PDFs that you create some
+other way (Word, RStudio, etc.)  Gradescope provides a nice grading interface and has
+the potential to give you better feedback than most other systems I have seen.
+
+Some instructions/tutorials
+
+* [How to submit a PDF to Gradescope](https://www.youtube.com/watch?v=KMPoby5g_nE)
+
+* Note: Please take two important steps to make grading work as smoothly as possible.
+  
+  * Submit your work **as a single PDF**.  Gradescope allows you to submit other types of files, but they are 
+  harder to work with for the grader.  If you work in RStudio or Word, simply save your work as a PDF.
+  Hand-written work can be converted to PDF using one of many online tools or an MFD on campus.
+  Here are a couple examples of ways to create PDFs.
+  
+    * [Using Evernote Scannable](https://gradescope-static-assets.s3.amazonaws.com/help/submitting_hw_guide.pdf)
+    
+    * [Using OneDrive](https://lms.unimelb.edu.au/students/student-guides/gradescope-converting-images-to-pdf)
+ 
+    * If you have multiple PDFs, please combine them into one PDF before submitting. There are
+ several ways to do this.  Here is an online tool that can combine files of various types, including PDFs:
+ 
+      * <https://combinepdf.com/>
+ 
+ * Identify which pages of your submission have work for each problem. 
+ This way, it is much easier to grade one problem at a time without spending lots 
+ of time trying to locate your work.
+ 
+* You probably want to keep your work in order, but that isn't technically
+necessary, provided you identify the pages associated with each problem.  In
+particular, if you do some work in R and some with pencil-and-paper, you just
+need to idenfify what is where.
+

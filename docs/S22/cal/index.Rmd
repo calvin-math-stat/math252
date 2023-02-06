@@ -1,0 +1,33 @@
+---
+title: "Calendar -- Spring 2022"
+author: ""
+date: ""
+output:
+  html_document:
+    theme: yeti
+    includes:
+      before_body: ../header.html
+    css: ../../styles/rpruim2020.css
+---
+
+```{r, setup, include = FALSE}
+library(daily)
+```
+
+
+```{r, results = 'asis', echo = FALSE}
+daily2html(
+  "daily.txt", 
+  start = lubridate::mdy("01/10/2022"), 
+  end   = lubridate::mdy("04/29/2022"), 
+  show = 2:6, 
+  items = c("Topic", "Read", "R", "Due", "Note")) |>
+  cat()
+```
+
+
+```{r, fig.width = 10, fig.height = 10, eval = FALSE, include = FALSE}
+calendar("daily.txt", mask = c(2,4,6),
+         start = lubridate::mdy("01/10/2022")) |>
+  gg_calendar(show = 2:6) 
+```

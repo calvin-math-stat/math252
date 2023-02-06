@@ -48,7 +48,7 @@ If you prefer to install a simple versions of python locally, try Thonny.
 
 If you can run the following and get the same output, you should be OK.
 
-```{python, engine.path = '/usr/local/bin/python3'}
+```{python, engine.path = '/Users/rpruim/Library/r-miniconda/bin/python3'}
 import re
 import requests
 # Download St. Augustine’s confessions from CCEL and print it

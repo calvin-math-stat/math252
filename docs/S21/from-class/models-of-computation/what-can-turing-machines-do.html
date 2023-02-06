@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 What Can Turing Machines Do? | Modeling Computation</title>
+  <meta name="description" content="10 What Can Turing Machines Do? | Modeling Computation" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 What Can Turing Machines Do? | Modeling Computation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 What Can Turing Machines Do? | Modeling Computation" />
+  
+  
+  
+
+<meta name="author" content="R Pruim" />
+
+
+<meta name="date" content="2021-04-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="turing-machines.html"/>
+
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html"><i class="fa fa-check"></i><b>1</b> Alphabets, Languages, and Grammars</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#terminology"><i class="fa fa-check"></i><b>1.1</b> Terminology</a>
+<ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#phrase-structure-grammars"><i class="fa fa-check"></i><b>1.2</b> (Phrase-Structure) Grammars</a>
+<ul>
+<li class="chapter" data-level="" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="1.2.1" data-path="alphabets-languages-and-grammars.html"><a href="alphabets-languages-and-grammars.html#derivations-and-languages"><i class="fa fa-check"></i><b>1.2.1</b> Derivations and Languages</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="types-of-grammars.html"><a href="types-of-grammars.html"><i class="fa fa-check"></i><b>2</b> Types of Grammars</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="types-of-grammars.html"><a href="types-of-grammars.html#backus-naur-form-bnf-for-context-free-grammars"><i class="fa fa-check"></i><b>2.1</b> Backus-Naur Form (BNF) for Context Free Grammars</a>
+<ul>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-algol-60-identifier"><i class="fa fa-check"></i>BNF for ALGOL 60 identifier</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-for-signed-integer"><i class="fa fa-check"></i>BNF for signed integer</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#bnf-specification-for-java"><i class="fa fa-check"></i>BNF specification for Java</a></li>
+<li class="chapter" data-level="" data-path="types-of-grammars.html"><a href="types-of-grammars.html#exercises-2"><i class="fa fa-check"></i>Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="finite-state-automata.html"><a href="finite-state-automata.html"><i class="fa fa-check"></i><b>3</b> Finite State Automata</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="finite-state-automata.html"><a href="finite-state-automata.html#graph-representation"><i class="fa fa-check"></i><b>3.1</b> Graph Representation</a></li>
+<li class="chapter" data-level="3.2" data-path="finite-state-automata.html"><a href="finite-state-automata.html#extended-transition-function"><i class="fa fa-check"></i><b>3.2</b> Extended transition function</a></li>
+<li class="chapter" data-level="3.3" data-path="finite-state-automata.html"><a href="finite-state-automata.html#language-recognition"><i class="fa fa-check"></i><b>3.3</b> Language Recognition</a></li>
+<li class="chapter" data-level="3.4" data-path="finite-state-automata.html"><a href="finite-state-automata.html#equivalent-automata-and-grammars"><i class="fa fa-check"></i><b>3.4</b> Equivalent Automata and Grammars</a></li>
+<li class="chapter" data-level="3.5" data-path="finite-state-automata.html"><a href="finite-state-automata.html#nondeterministic-automata"><i class="fa fa-check"></i><b>3.5</b> Nondeterministic Automata</a></li>
+<li class="chapter" data-level="3.6" data-path="finite-state-automata.html"><a href="finite-state-automata.html#the-equivalence-of-dfa-and-nfa."><i class="fa fa-check"></i><b>3.6</b> The Equivalence of DFA and NFA.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html"><i class="fa fa-check"></i><b>4</b> Regular Expressions and Languages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#operations-on-languages"><i class="fa fa-check"></i><b>4.1</b> Operations on Languages</a></li>
+<li class="chapter" data-level="4.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#regular-expressions"><i class="fa fa-check"></i><b>4.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#syntax"><i class="fa fa-check"></i><b>4.2.1</b> Syntax</a></li>
+<li class="chapter" data-level="4.2.2" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#semantics"><i class="fa fa-check"></i><b>4.2.2</b> Semantics</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="regular-expressions-and-languages.html"><a href="regular-expressions-and-languages.html#recognizing-regular-languages-with-nfas"><i class="fa fa-check"></i><b>4.3</b> Recognizing Regular Languages with NFAs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html"><i class="fa fa-check"></i><b>5</b> Regular Grammars and Automata</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#grammars-to-automata"><i class="fa fa-check"></i><b>5.1</b> Grammars to Automata</a></li>
+<li class="chapter" data-level="5.2" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#automata-to-grammars"><i class="fa fa-check"></i><b>5.2</b> Automata to Grammars</a></li>
+<li class="chapter" data-level="5.3" data-path="regular-grammars-and-automata.html"><a href="regular-grammars-and-automata.html#some-review"><i class="fa fa-check"></i><b>5.3</b> Some Review</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regular-langauges.html"><a href="regular-langauges.html"><i class="fa fa-check"></i><b>6</b> Regular Langauges</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="regular-langauges.html"><a href="regular-langauges.html#equivalent-representations"><i class="fa fa-check"></i><b>6.1</b> Equivalent Representations</a></li>
+<li class="chapter" data-level="6.2" data-path="regular-langauges.html"><a href="regular-langauges.html#dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2</b> DFA to Regular Expression</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="regular-langauges.html"><a href="regular-langauges.html#gnfa-generalied-nfa"><i class="fa fa-check"></i><b>6.2.1</b> GNFA (Generalied NFA)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="regular-langauges.html"><a href="regular-langauges.html#algorithm-for-converting-dfa-to-regular-expression"><i class="fa fa-check"></i><b>6.2.2</b> Algorithm for converting DFA to Regular Expression</a></li>
+<li class="chapter" data-level="6.2.3" data-path="regular-langauges.html"><a href="regular-langauges.html#examples-1"><i class="fa fa-check"></i><b>6.2.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="regular-langauges.html"><a href="regular-langauges.html#review-problems"><i class="fa fa-check"></i><b>6.3</b> Review problems</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="a-language-that-is-not-regular.html"><a href="a-language-that-is-not-regular.html"><i class="fa fa-check"></i><b>7</b> A language that is not regular</a></li>
+<li class="chapter" data-level="8" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html"><i class="fa fa-check"></i><b>8</b> Regular Expressions in Python</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#getting-your-python-environment-working"><i class="fa fa-check"></i><b>8.1</b> Getting your python environment working</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#repl.it"><i class="fa fa-check"></i><b>8.1.1</b> repl.it</a></li>
+<li class="chapter" data-level="8.1.2" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#thonny"><i class="fa fa-check"></i><b>8.1.2</b> Thonny</a></li>
+<li class="chapter" data-level="8.1.3" data-path="regular-expressions-in-python.html"><a href="regular-expressions-in-python.html#testing-your-python-setup"><i class="fa fa-check"></i><b>8.1.3</b> Testing your python setup</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="turing-machines.html"><a href="turing-machines.html"><i class="fa fa-check"></i><b>9</b> Turing Machines</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="turing-machines.html"><a href="turing-machines.html#definition-of-a-1-tape-turing-machine-syntax"><i class="fa fa-check"></i><b>9.1</b> Definition of a 1-tape Turing Machine (Syntax)</a></li>
+<li class="chapter" data-level="9.2" data-path="turing-machines.html"><a href="turing-machines.html#execution-of-a-turing-machine-program-semantics"><i class="fa fa-check"></i><b>9.2</b> Execution of a Turing Machine program (Semantics)</a></li>
+<li class="chapter" data-level="9.3" data-path="turing-machines.html"><a href="turing-machines.html#ascii-representations-of-turing-machines"><i class="fa fa-check"></i><b>9.3</b> ASCII Representations of Turing Machines</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="turing-machines.html"><a href="turing-machines.html#example-1-13.5.1-in-rosen-7"><i class="fa fa-check"></i><b>9.3.1</b> Example 1 (13.5.1 in Rosen 7)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="turing-machines.html"><a href="turing-machines.html#example-2"><i class="fa fa-check"></i><b>9.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="9.3.3" data-path="turing-machines.html"><a href="turing-machines.html#table-notation"><i class="fa fa-check"></i><b>9.3.3</b> Table notation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="turing-machines.html"><a href="turing-machines.html#the-language-recognized-by-a-turing-machine"><i class="fa fa-check"></i><b>9.4</b> The language recognized by a Turing Machine</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="turing-machines.html"><a href="turing-machines.html#designing-a-turing-machine"><i class="fa fa-check"></i><b>9.4.1</b> Designing a Turing Machine</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="turing-machines.html"><a href="turing-machines.html#computing-functions-with-a-turing-machine"><i class="fa fa-check"></i><b>9.5</b> Computing functions with a Turing machine</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="turing-machines.html"><a href="turing-machines.html#neat-computation"><i class="fa fa-check"></i><b>9.5.1</b> Neat computation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html"><i class="fa fa-check"></i><b>10</b> What Can Turing Machines Do?</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#turing-computable-languages"><i class="fa fa-check"></i><b>10.1</b> Turing Computable Languages</a></li>
+<li class="chapter" data-level="10.2" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#variations-on-the-turing-machine"><i class="fa fa-check"></i><b>10.2</b> Variations on the Turing Machine</a></li>
+<li class="chapter" data-level="10.3" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#the-halting-problem"><i class="fa fa-check"></i><b>10.3</b> The Halting Problem</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#the-halting-problem-is-not-turing-computable-sketch"><i class="fa fa-check"></i><b>10.3.1</b> The Halting Problem is not Turing Computable (sketch)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#running-time-of-a-turing-machine"><i class="fa fa-check"></i><b>10.4</b> Running time of a Turing machine</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="what-can-turing-machines-do.html"><a href="what-can-turing-machines-do.html#p-and-np"><i class="fa fa-check"></i><b>10.4.1</b> P and NP</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling Computation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-can-turing-machines-do" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> What Can Turing Machines Do?</h1>
+<div id="turing-computable-languages" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Turing Computable Languages</h2>
+<p>A language <span class="math inline">\(L\)</span> is <strong>Turing computable</strong> (also called <strong>decidable</strong>)
+if it is recognized by some Turing machine <strong>that always halts</strong>, that is,</p>
+<ul>
+<li><span class="math inline">\(L = L(M)\)</span> for some Turing machine <span class="math inline">\(M\)</span>.</li>
+<li><span class="math inline">\(M\)</span> halts on every input.
+(If <span class="math inline">\(x\in L\)</span>, them <span class="math inline">\(M\)</span> halts in an accepting state on input <span class="math inline">\(x\)</span>.
+If <span class="math inline">\(x \not\in L\)</span>, then <span class="math inline">\(M\)</span> halts in a rejecting state on input <span class="math inline">\(x\)</span>.)</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Show that every regular language is Turing computable.</p>
+<p>[Hint: What must you do to demonstrate this?]</p></li>
+<li><p>Construct a Turing Machine that recognizes the same language
+as this DFA, using your method from the previous problem.</p></li>
+</ol>
+<p><img src="../images/Rosen13RQ-7.png" width="40%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="variations-on-the-turing-machine" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Variations on the Turing Machine</h2>
+<p>There are many variations on the Turing machine. Here are some
+examples.</p>
+<ul>
+<li><p>Instead of having a single tape, a Turing machine can have multiple tapes.</p></li>
+<li><p>Instead of being 2-way infinite, the tape(s) can have a left end.
+These are called 1-way infinite tapes.</p></li>
+<li><p>Turing machines may be required to move the head at each step (so “stay” is
+not an option).</p></li>
+<li><p>Multi-track tapes aren’t really a variation, but a handy way of thinking about
+a tape alphabet. (And some simulators makes this easy to do.) Since the tape alphabet
+may be anything, if we want to simulate writing two symbols from <span class="math inline">\(A\)</span>, we can use a
+tape alphabet of <span class="math inline">\(A \times A\)</span> or even <span class="math inline">\(A \cup (A \times A)\)</span>.
+One element of <span class="math inline">\(A \times A\)</span> represents two elements
+from <span class="math inline">\(A\)</span> (one on the “top track” and one on the “bottom track”).</p></li>
+<li><p>Instead of having a 1-dimensional tape, a tape can be a
+2-dimensional grid of cells. The read/write head can move up
+and down in addition to left and right.</p></li>
+</ul>
+<p>Each of these variations is equivalent to the standard Turing
+machine with one 2-way infinite tape. So are many other models of
+computation. This has led to the so-called <strong>Church-Turing Thesis</strong>.
+Here is one statement of that thesis:</p>
+<blockquote>
+<p>A function on the natural numbers is computable by a human being following an algorithm, ignoring resource limitations, if and only if it is computable by a Turing machine.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Write a 2-tape Turing machine to do parenthesis matching. It should run much
+faster than a 1-tape Turing machine for the same task. How will you take
+advantage of the second tape?</p></li>
+<li><p>Give a high level description of how to convert a Turing
+machine with 2-way infinite tape into a Turing machine with a
+1-way infinite tape.</p></li>
+<li><p>Give a high level description of how to convert a 2-tape
+machine into a 1-tape machine.</p></li>
+</ol>
+<!-- 5. **Nested Parens**  -->
+<!-- Write a Turing machine recognizes all strings that use the  -->
+<!-- input alphabet $\{(, ), *\}$ and the parentheses are properly -->
+<!-- nested.  (The asterisks may be anywhere.) -->
+<!--     a. First try this with a two-tape machine. -->
+<!--     b. Then try this with one two-track tape. -->
+<!--     c. For an extra challenge, try doing it with a one-tape machine -->
+<!--     with tape alphabet $\{(, ), *, \# \}$ -->
+<div style="page-break-after: always;"></div>
+</div>
+<div id="the-halting-problem" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> The Halting Problem</h2>
+<p>The <strong>Halting Problem</strong> is a famous example of a language that is not Turing computable.
+By the <strong>Church-Turing Thesis</strong>, this would mean it is not computable by any means.</p>
+<p>Why is it called the Halting <em>Problem</em>, you ask, instead of the Halting <em>Language</em>?
+This goes back to a description of languages as answers to yes/no questions. Each such
+problem (ie, language) an be described by an <strong>instance</strong> and a <strong>question</strong>. Here are
+some examples:</p>
+<p><strong>Euler</strong></p>
+<ul>
+<li>Instance: A Graph <span class="math inline">\(G\)</span></li>
+<li>Question: Does <span class="math inline">\(G\)</span> have an Euler Circuit?</li>
+</ul>
+<p><strong>3-Colorability</strong></p>
+<ul>
+<li>Instance: A Graph <span class="math inline">\(G\)</span></li>
+<li>Question: Is <span class="math inline">\(G\)</span> 3-colorable? (Can we color the vertices with 3 colors so that
+no adjacent vertices are the same color.)</li>
+</ul>
+<p><strong>SAT</strong></p>
+<ul>
+<li>Instance: A first order logical formula <span class="math inline">\(\varphi\)</span> (made with <span class="math inline">\(\land\)</span>, <span class="math inline">\(\lor\)</span>, <span class="math inline">\(\neg\)</span> and some
+logical variables).</li>
+<li>Question: Is <span class="math inline">\(\varphi\)</span> satisfiable? (Can we set the variables to TRUE/FALSE in a way
+that makes the entire formula true?)</li>
+</ul>
+<p>Implicit in each of these descriptions is some encoding scheme by which the objects
+mentioned in the instance are coded as bit strings. Typically, if we are only interested
+in whether a problem is Turing computable or not, it does not matter which coding scheme
+is used as long as it is systematic.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>An entire book <span class="citation">(Garey and Johnson 1979)</span> of such problems (and whether or not they were NP-complete) was produced in
+the 1970’s by Garey and Johnson and popularized this description. So you will see languages
+referred to as problems throughout the CS literature.</p>
+<p><strong>Halting Problem</strong></p>
+<ul>
+<li>Instance: A Turing Machine <span class="math inline">\(M\)</span> and an input string <span class="math inline">\(x\)</span>.</li>
+<li>Question: Does <span class="math inline">\(M\)</span> halt on input <span class="math inline">\(x\)</span>? (This is written <span class="math inline">\(M(x) \downarrow\)</span>.)</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<div id="the-halting-problem-is-not-turing-computable-sketch" class="section level3" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> The Halting Problem is not Turing Computable (sketch)</h3>
+<p>Here is a high level sketch of the proof that the Halting Problem is not
+Turing computable.</p>
+<ol style="list-style-type: decimal">
+<li><p>Choose particular encoding of a Turning machines as binary strings.
+(This can clearly be done since our Turing machine simulators do this using
+ASCII strings and ASCII can be encoded in binary.)</p>
+<ul>
+<li>Decision problems typically envolve specifying an encoding.
+For EULER and 3-COLORABILITY, we would need to specify how we encode
+our graphs, for example. The details of the encoding matter
+very little as long as we can extract the information we need.</li>
+</ul></li>
+<li><p>Code instances of the Halting Problem as <span class="math inline">\(\langle M \rangle\#\langle x \rangle\)</span>, <span class="math inline">\(\langle M \rangle\)</span>
+is the encoding of <span class="math inline">\(M\)</span> and <span class="math inline">\(\langle x \rangle\)</span> is a binary encoding of its input <span class="math inline">\(x\)</span>.</p>
+<ul>
+<li>The only important thing here is that we can tell where the
+encoding for the machine halts and the encoding for the input begins.</li>
+</ul></li>
+<li><p>Suppose the Halting Problem is Turing Computable by a machine <span class="math inline">\(H\)</span>. Let’s use it
+to build a new machine <span class="math inline">\(K\)</span> that works as follows.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>on input <span class="math inline">\(x\)</span>, create tape contents <span class="math inline">\(x\#x\)</span> and move the tape head back
+to the left end of the tape. We can do this by moving back and
+forth on our tape to copy one symbol at a time – sort of like our parenthesis
+matching machine.</p></li>
+<li><p>Now run machine <span class="math inline">\(H\)</span> with two modifications.</p>
+<ol style="list-style-type: lower-roman">
+<li><p>change all accepting states to the state LOOP and and add the instruction</p>
+<pre><code>LOOP * * r *   ; this will cause the machine to move right forever.</code></pre></li>
+<li><p>Change all rejecting states into accepting states.</p></li>
+</ol></li>
+</ol></li>
+</ol>
+<p>So that’s our high level description of the Turing machine <span class="math inline">\(K\)</span>. How does this help us?
+Let’s consider <span class="math inline">\(H(\langle K \rangle\#\langle K \rangle\)</span>). (We’re going to show the <span class="math inline">\(H\)</span> gets the wrong answer.)</p>
+<div id="exercises-3" class="section level4 unnumbered">
+<h4>Exercises</h4>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Suppose <span class="math inline">\(H(\langle K \rangle\#\langle K \rangle)\)</span> accepts.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What does this tell us about <span class="math inline">\(K\)</span> because of how <span class="math inline">\(H\)</span> is defined?</p></li>
+<li><p>What does this tell us about <span class="math inline">\(K\)</span> because of how we defined <span class="math inline">\(K\)</span>?</p>
+<p><!-- * $K$ on input $\enc{K}$ should halt, but -->
+<!-- * $K$ on input $\enc{K}$ runs for ever because of 3.b.i. --></p></li>
+</ol></li>
+<li><p>Suppose <span class="math inline">\(H(\langle K \rangle\#\langle K \rangle)\)</span> rejects.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What does this tell us about <span class="math inline">\(K\)</span> because of how <span class="math inline">\(H\)</span> is defined?</p></li>
+<li><p>What does this tell us about <span class="math inline">\(K\)</span> because of how we defined <span class="math inline">\(K\)</span>?</p>
+<p><!-- * $K$ on input $\enc{K}$ must never halt, but -->
+<!-- * $K$ on input $\enc{K}$ will halt and accept because of 3.a. --></p></li>
+</ol></li>
+<li><p>Combine these results to explain why the Halting Problem is not
+Turing Computable.</p></li>
+</ol>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div id="running-time-of-a-turing-machine" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Running time of a Turing machine</h2>
+<p>The running time of a Turing machine on input <span class="math inline">\(x\)</span> is the number
+of steps before it halts. The conversions above typically change
+the running time, but machines that run in polynomial time are
+converted into machines that run in polynomial time (typically
+with a different degree polynomial).</p>
+<div id="p-and-np" class="section level3" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> P and NP</h3>
+<p>This provides a formal definition of the famous set <span class="math inline">\(P\)</span>. <span class="math inline">\(P\)</span> is the
+set of all languages that can be recognized by a Turing machine
+in polynomial time, that is, the number of steps the machine takes
+on an input of length <span class="math inline">\(n\)</span> is bounded by <span class="math inline">\(p(n)\)</span> for some polynomial <span class="math inline">\(p\)</span>.</p>
+<p>A <strong>non-deterministic Turing machine</strong> can have multiple transitions
+from the same state/tape contents configuration. A non-deterministic
+TM accepts an input <span class="math inline">\(x\)</span> if there is a way of choosing transitions
+that causes the machine to halt in a halting state. (This is similar
+to how non-deterministic automata were defined). <span class="math inline">\(NP\)</span> is the set of
+all languages that can be recognized by a non-deterministic
+Turing machine in polynomial time.</p>
+<p>The “<span class="math inline">\(P\)</span> vs. <span class="math inline">\(NP\)</span> question” is whether <span class="math inline">\(P\)</span> and <span class="math inline">\(NP\)</span> are the same
+or different. To date, this question is unresolved.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
+<!-- modified to also accept empty string -->
+<!-- ``` -->
+<!-- ATM -->
+<!-- Example Turing Machine -->
+<!-- 0 1 // input alphabet, note such comments are permitted at the end of the line -->
+<!-- 0 1 X Y B // tape alphabet -->
+<!-- 1 // number of tapes -->
+<!-- 1 // number of tracks on tape 0 -->
+<!-- 2 // tape 0 is 2-way infinite -->
+<!-- q0 // the initial state -->
+<!-- q4 // final state -->
+<!-- q0 B q4 B S -->
+<!-- q0 0 q1 X R -->
+<!-- q0 Y q3 Y R -->
+<!-- q1 0 q1 0 R -->
+<!-- q1 1 q2 Y L -->
+<!-- q1 Y q1 Y R -->
+<!-- q2 0 q2 0 L -->
+<!-- q2 X q0 X R -->
+<!-- q2 Y q2 Y L -->
+<!-- q3 Y q3 Y R -->
+<!-- q3 B q4 B R -->
+<!-- end // required -->
+<!-- ``` -->
+<!-- TM for {0^n1^n} -->
+<!-- 0 * * * q0 -->
+<!-- q0 _ _ * halt-accept -->
+<!-- q0 0 X r q1 -->
+<!-- q0 Y Y r q3 -->
+<!-- q1 0 0 r q1 -->
+<!-- q1 1 Y l q2 -->
+<!-- q1 Y Y r q1 -->
+<!-- q2 0 0 l q2 -->
+<!-- q2 X X r q0 -->
+<!-- q2 Y Y l q2 -->
+<!-- q3 Y Y r q3 -->
+<!-- q3 _ _ r halt-accept -->
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Garey:1979" class="csl-entry">
+Garey, M. R., and David S. Johnson. 1979. <em>Computers and Intractability: <span>A</span> Guide to the Theory of NP-Completeness</em>. W. H. Freeman.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The coding scheme can affect the efficiency of a Turing machine computation. Generally
+it is required that the encoding be reasonably efficient and not bloated or wasteful of space.<a href="what-can-turing-machines-do.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Solving this could make you both rich and famous.<a href="what-can-turing-machines-do.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="turing-machines.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Models-of-Computation.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

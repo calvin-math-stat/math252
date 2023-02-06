@@ -1,0 +1,62 @@
+---
+title: "Create WebWork Roster"
+author: "Math 252"
+date: "1/31/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(webwork)
+require(mosaic)
+require(tidyr)
+require(readxl)
+require(readr)
+```
+
+```{r}
+# Roster <- read_excel("M252S18roster.xlsx") 
+# Roster <- read_csv("Roster_MATH-252-A_1_28_2019_5_35 PM.csv") %>%
+#  bind_rows(read_csv("Roster_MATH-252-B_1_28_2019_5_35 PM.csv")) %>%
+
+# Roster <- read_csv("section-rosters_MATH-252-A_1_31_2020_10_39 AM.csv") %>%
+#   bind_rows(read_csv("section-rosters_MATH-252-B_1_31_2020_10_39 AM.csv")) %>%
+  # setNames(c("student", "id", "class", "email"))  %>%
+  # tidyr::separate(student, into = c("last", "first"), sep = ",", remove = FALSE) %>%
+
+# Roster <- 
+#   read_csv("section-rosters_MATH-252-A_1_6_2022_9_20 AM.csv") |>
+#   mutate(section = "A") |>
+#   bind_rows(
+#     read_csv("section-rosters_MATH-252-B_1_6_2022_9_20 AM.csv") |>
+#       mutate(section = "B")) |>
+#   setNames(c("student", "id", "class", "email", "section"))  |>
+#   tidyr::separate(student, into = c("first", "middle", "last"), sep = " ", 
+#                   remove = FALSE, extra = "merge") |>
+#   mutate(
+#     last = ifelse(is.na(last), middle, last),
+#     middle = ifelse(middle == last, NA, middle)
+#   ) |>
+#   mutate(
+#     last = ifelse(is.na(last), first, last)  # deal with one student with only one name
+#   )
+
+Roster <- readxl::read_excel("../grades/S23/Rosters-Spring2023.xlsx") |>
+  rename(first = `Preferred First Name`) |>
+  rename(last = `Last Name`) |>
+  rename(email = `Primary Institutional Email Address`) |>
+  rename(name = `Student`) |>
+  rename(id = `Student ID`) |>
+  separate(`Course Section`, into = c('course', 'section', 'title'), sep = "\\s*-\\s*", remove = FALSE) |>
+  mutate(short_name = paste(first, substr(last, 1, 1))) |>
+  filter(course == "MATH 252") |>
+  tidyr::separate(email, into = c("user", "domain"), sep = "@", remove = FALSE) 
+
+WWRoster <- 
+  with(Roster, 
+       webwork::ww_roster(
+         email = email, user = user, id = id, last_name = last,
+         first_name = first, comment = id, section = section))
+write.csv(WWRoster, row.names = FALSE, file = "wwRoster-m252-s23.lst")
+```
+  

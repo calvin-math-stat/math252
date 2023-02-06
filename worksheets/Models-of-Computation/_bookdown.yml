@@ -1,6 +1,6 @@
 ---
 book_filename: "Models-of-Computation"
-output_dir: "../../docs/S19/from-class/models-of-computation"
+output_dir: "../../docs/S22/from-class/models-of-computation"
 site: bookdown::bookdown_site
 language:
   ui:
@@ -12,9 +12,10 @@ rmd_files: ["index.Rmd",
             "03-Automata.Rmd",
             "04-Regex.Rmd",
             "05-Regular-Grammars.Rmd",
-            "06-Regular-WrapUp.Rmd",
-            "07-DFA-to-regex.Rmd",
-            "08-Python-regex.Rmd",
+            "06-DFA-to-regex.Rmd",
+            "07-Nonregular-Language.Rmd",
             "10-Turing-Machines.Rmd"
       ]
 ---
+
+# "08-Python-regex.Rmd",

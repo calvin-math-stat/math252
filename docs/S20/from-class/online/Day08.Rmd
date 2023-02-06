@@ -1,0 +1,109 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Monday, April 13: (Determinisitic) Finite State Automata 
+
+### aka (Deterministic) Finite State Machines
+
+#### Homework 
+
+* due Today: PS 11 (submit via [gradescope](https://gradescope.com))
+* due Wednesday: PS 12 (submit via [gradescope](https://gradescope.com))
+    
+#### Stuff to do
+
+The last two days we have learned about grammars. Today we are going to 
+learn about **Finite State Automata** (singular of automata is automaton).
+
+In place of our usual worksheet, today we are going to work through 
+
+* [Section 4.4 of our Zybook](https://learn.zybooks.com/zybook/CALVINMATH252PruimSpring2020/chapter/4/section/4)
+
+You will need to set up your account following the instructions sent by email
+and posted in Teams.
+
+As you go through this section,
+
+* Do the **Participation Activities** as you come to them. 
+You will get immediate feedback about whether your answers are correct.
+
+* Do the **Additional Exercises** at the end of the section. These are similar to 
+the kinds of activities I would put on a worksheet.
+
+    * The most important ones *for what we will be doing in the coming days* 
+    are Exercises 4.4.3 and 4.4.4.  Feel free to do those
+    before you do Exercises 4.3.1 and 4.3.2, if you like.
+
+The Zybook does not mention extended transition functions, choosing to simply
+express this concept in words each time it arises. See the worksheet (links
+below) for the notation Rosen uses for this.
+
+#### Note about notation
+
+The Zybook and the Rosen text use different letters to denote the same things.
+The letters are not as important as the ideas. Here is a table to help you
+translate. I've included the notation used in the Wikipedia article on DFAs
+just to show you another notation that is used.
+
+concept                | Zybook notation      | Rosen notation      | Wikipedia notation
+---------------------- | :------------------: | :-----------------: | :----------------------
+&nbsp;                 | finite state machine | finite state automaton | finite automaton
+transition function    | $\delta$             | $f$ (or $f$ and $g$)   | $\delta$
+extended transition function    | none        | $f^*$                  | $\hat\delta$
+set of states          | $Q$                  | $S$                    | $Q$
+start state (usually)  | $q_0$                | $s_0$                  | $q_0$
+accepting/final states | $A$                  | $F$                    | $F$
+input alphabet         | $I$                  | $I$                    | $\Sigma$
+output alphabet        | $O$                  | $O$                    | not discussed in DFA article
+
+It is very important that you understand each of the concepts in this table. The
+specific notation is less crucial.
+
+In my experience, the Zybook $\delta, Q$ notation is more common than the Rosen
+$f, S$ notation. But there are variations in notation and you just need to check
+what notation each author is using. I prefer the name **accepting state** to 
+final state because it describes better what it does, but you will see both names.
+(Wikipedia calls them accepting states, but then use $F$ for the notation!)
+
+You will see both finite state machine and finite state automaton used, but
+automaton is probably more common, especially when abbreviated as DFA or NFA.
+(We'll learn about what the D and N refer to later.)
+
+
+#### Worksheet?
+
+I'll leave a worksheet available (sections 3.1-3.3) in case you want additional
+practice or to see things written in Rosen notation.  If you finish the Zybook 
+section in less than 50 minutes, do some of the exercises in Section 3.3 on the worksheet.
+
+* [HTML](../models-of-computation/finite-state-automata.html)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+Note: The worksheet does not
+cover automata with output, but the Zybook does.
+
+#### Comments/Hints/Solutions
+
+Several of the exercises in the Zybook will give you immediate feedback.
+
+<br><br>

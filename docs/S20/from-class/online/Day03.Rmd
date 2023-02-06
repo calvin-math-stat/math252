@@ -1,0 +1,214 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Friday, March 20
+
+#### Homework 
+
+* due Tuesday, March 24 (11:59pm Eastern): WW 8 and PS 7
+    * submit PS 7 via Moodle
+    * Note: Moodle will have some downtime for upgrades over break.  Last I heard,
+    this will be sometime on Monday.
+    
+* due Wednesday, April 1: WW 9
+    * I've set this to turn on Monday, March 30.  The intent is to get your brain
+      warmed up again after a little break. (Yes, I'm forcing you to put this off and 
+      not do it during break.)
+      
+* due Friday, April 3: WW 10 and PS 8 
+
+    * If you are desperate for something to do over break (and we might all be),
+    you can start working on PS 8.  But you don't have to do that.  There will be time
+    after break.
+
+#### Stuff to do
+
+1. Get today's worksheets. We'll be working mainly on Section 8 (Random Variables) 
+
+    * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
+    * [HTML -- section 8](../counting-and-probability/random-variables.html)
+    * [HTML -- section 7](../counting-and-probability/probability-trees-and-bayes.html)
+
+2. Sections 8: Introduction to Random Variables
+
+    Note: You have already seen a little bit of random variable notation
+    in one of your WebWork problems. The main ideas are pretty simple:
+    
+    * A random variable is a random process that results in a number.
+    * We can describe events using mathematical notation like $X = 2$ or 
+      $X \ge 4$ and ask the probability that these events happen.
+    * We can describe random variables either with tables or functions.
+    * Binomial random variables are a special, important use case.
+        
+    More details on the worksheet.
+
+3. If you finish up Section 8, you can go back and take a look at Sections 7.4
+(Random Primaility Testing) and 7.5 (Hashing) to see some applications of
+probability to computer science. There isn't any new probability there, just
+some nice examples of the things we have been doing.
+
+    * If you haven't heard of RSA, no worries. That's just an application that needs to
+    identify large prime numbers and gives some additional context for why primality 
+    testing is important for cryptography.
+    
+4. Some hints/solutions/discussion below.
+
+#### Comments/Hints/Solutions
+
+Check our MS Team channels as well.
+
+
+<div class = "explain" label = "8.2: Probability Tables">
+<div class = "explain" label = "Exercise 8.2.1">
+The must sum to 1. The probabilities of all possibilities must always sum to 1.
+</div>
+
+
+<div class = "explain" label = "Exercise 8.2.2">
+$p(X = 2) = 0.3$
+</div>
+
+
+<div class = "explain" label = "Exercise 8.2.3">
+$p(X > 2) = p(X = 3) + p(X = 4) = 0.2 + 0.1 = 0.3$
+</div>
+
+<div class = "explain" label = "Exercise 8.2.4">
+$p(X = 2) + p(X = 4) = 0.3 + 0.1 = 0.4$
+</div>
+
+<div class = "explain" label = "Exercise 8.2.5">
+The possible values are 0, 1, 2, 3, or 4.  (Don't forget 0.)
+
+$p(X = 2) = \binom{4}{2} 0.5^4 = `r choose(4,2) * 0.5^4`$  (Why $\binom{4}{2}$?)
+
+You should be able to work out the other four probabilities.  Be sure they sum to 1.
+</div>
+
+<div class = "explain" label = "Exercise 8.2.6">
+The possible values are 0, 1, 2, and 3.
+
+There are only 16 possible die rolls. There are two ways you could approach this.
+
+* For each of the 16, determine what the value of $X$ will be.
+* For each possible value, ask yourself how many of the 16 rolls give you that value.
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.7">
+
+Some hints:
+
+* Your probabilities should sum to 1.
+* Make sure that you are always creating a full 5-card hand.
+* It is probably easiest to work with [unordered hands](ordered-vs-unordered-hands.mp4).
+</div>
+</div>
+
+
+<div class = "explain" label = "8.3 Probability Functions">
+<div class = "explain" label = "Exercise 8.2.7">
+
+$\prob(Y = 3) = 3/10 = 0.3$.
+
+The table can be constructed by computing the probabilities for each of $y=1$,
+$y=2$, $y=3$, and $y=4$.
+
+value of $Y$ | 1   |  2  | 3   |  4
+------------ | --- | --- | --- | ---
+probability  | 0.1 | 0.2 | 0.3 | 0.4 
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.9">
+
+$\prob(F = 1) = 1/2$ since that's the probability of flipping a head on the first toss.
+
+$F = 2$ means the first toss is a tail and the second is a head. The coin tosses
+are independent, so we can multiple probabilities. Similarly for $F=3$ we must flip
+TTH, etc.
+
+The possible values of $F$ are any positive integer, and you shoud be able to
+get a formula pretty easily once you see the examples for $F=1$, $F=2$, $F=3$, etc.
+</div>
+
+<div class = "explain" label = "Exercise 8.2.10">
+Possible values: 0 through $n$ (inclusive).  Don't forget about 0.
+
+We can get the probability using the same kind of reasoning we used to
+count the total number of bit strings of a certain length and the 
+number of bitstrings with a certain number of 1's. Now it is heads and 
+tails instead of 0s and 1s.
+
+$\prob(X = k) = \frac{???}{2^n}$.  Can you fill in the question marks?  (Hint: 
+Use binomial coefficients, aka the choose function.)
+
+We will see a different way to think about this in the next problem. (It's fine 
+if you use that way already here.)
+</div>
+
+<div class = "explain" label = "Exercise 8.2.11">
+
+a. $\prob(X = 1) = 0.75$
+b. $\prob(X = 1) = \prob(HT) + \prob(TH) = 2 (0.75) (0.25)$
+c. Hint: think about the types of coin toss patterns that lead to each value of
+$X$. How many are there? What is the probability of each one?
+
+
+</div>
+
+<div class = "explain" label = "Exercise 8.2.11d">
+d. ${\prob(X = x) = \binom{n}{x} p^x (1-p)^{n-x}}$ 
+
+  * $\binom{n}{x}$: The heads can be in any $x$ of the $n$ positions. 
+  * $p^x$: we need $x$ heads and each has probability $p$.
+  * $(1-p)^{n-x}$: we need $n - x$ tails and each has probability $1-p$.
+  * We get to multiply probabilities becase the coin tosses are independent.
+    
+Note: When $p = 1/2$, then $p^x (1-p)^{n-x} = (1/2)^n$.
+</div>
+
+<div class = "explain" label = "Exercise 8.4.12 & 8.4.13">
+Use the formula in the preceeding problem to fill in the tables.
+</div>
+</div>
+
+<div class = "explain" label = "Random Primaility Testing">
+
+a. Since $n$ is prime, `MillersTest(n, b)` will never say "composite", so the `PrimeTest(n)` will
+always return "prime (well, probably)".  
+
+b. At each pass through the loop, the probability of `MillersTest(n, b)` returning "composite"
+is greater than 3/4, so the probability of continuing to the next pass through the loop is 
+less than 1/4.  The probability of doing this 5 times is 
+$\le (1/4)^5 \approx `r round(0.25^5, 5)`$.
+
+Read more about this problem on page 464.
+</div>
+
+<div class = "explain" label = "Hashing">
+Read about this problem on page 462.
+</div>
+
+
+<br>
+<br>
+

@@ -1,0 +1,295 @@
+
+
+
+\documentclass{scrartcl}
+\usepackage[margin=.5in,top=.5in,bottom=.3in,includehead,includefoot]{geometry}
+\renewcommand{\arraystretch}{1.5}
+
+%\parindent=0pt
+\parskip=3pt
+
+
+%\usepackage{mathpple}
+%\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{sfsect}
+\usepackage{longtable}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+
+\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S23-Pruim/WW#1}{WW#1}}
+
+\newif\ifanswers
+\answerstrue
+\answersfalse
+
+\def\blank#1{%
+\ifanswers
+\underline{{\large \sc #1}}
+\else
+\underline{\phantom{\Large \ \ \ \sc #1 \ \ \ }}
+\fi
+}
+
+\def\dd#1{\medskip\noindent\textbf{\large #1}}
+\def\be{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+
+\def\hwn#1{\relax}
+\def\hwn#1{\ {\tiny (#1)}}
+\def\hwn#1{$_{\mbox{\ \tiny #1}}$}
+\def\hwn#1{~{\tiny #1}}
+
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage[colorlinks = true, urlcolor = blue]{hyperref}
+\include{myabbrev}
+
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}}}
+\newcommand{\myunderline}[1]{\uline{\phantom{Ay}#1\phantom{Ay}}}
+
+\newcommand{\helper}[2][\relax]{(#2)\hwn{#1}}
+\newcommand{\extra}[2][\relax]{[#2]\hwn{#1}}
+\newcommand{\opt}[2][\relax]{\{#2\}\hwn{#1}}
+\newcommand{\mand}[2][\relax]{\textbf{\large #2}\hwn{#1}}
+
+\begin{document}
+
+
+\pagestyle{fancy}
+
+\chead{}
+\lhead{Math 252 -- Spring 2023}
+\rhead{\thepage/\pageref{end}}
+\lfoot{}
+\cfoot{Created \today\ --- See web site for most current version.}
+\rfoot{}
+
+\begin{center}
+  \large
+\subsection*{Problem Sets After Test 2}
+
+\end{center}
+
+
+\textit{Only turn in problems that are \textbf{not} bracketed.}
+Bracketed problems are additional problems you can look at.
+Round brackets indicate problems that may help you with problems that
+are assigned; square brackets are additional problems on material
+that you should know, but you are not required to write up solutions;
+curly brackets are truly optional and may contain extra nuggets that you
+will not be required to know but may be interested in.
+
+Additional assignments will be filled in over time.
+
+\bigskip
+
+\begin{center}
+
+\iftrue
+
+\begin{longtable}{|c|l|}
+  \hline
+  notation & meaning \\
+  \hline
+  unbracketed & assigned problem -- turn these in for grading \\
+  $()$ & helper/warm-up problem  \\
+  $[]$ & additional problems (you are responsible for content, but don't turn them in) \\
+  \{\} & covers optional material \\
+  \hline
+\end{longtable}
+\fi
+
+\bigskip
+
+
+\begin{longtable}{|c|c|c|p{4.3in}|}
+  \hline
+  Due & Task & Source & Problems \\
+  \hline\hline
+  \endhead
+	 Fri 3/18 & PS 11 & Rosen 13.1 &
+   \mand[sentences]{1ad}
+	 \extra{2}
+	 \helper{3}
+	 \mand{4}
+	 \extra{5}
+	 \mand{6a}
+	 \mand{9}
+	 \helper{13}
+	 \mand{14bd}
+	 \extra{15}
+
+	 \mand[types of grammars]{19}
+
+	 Be sure to provide an explanation for problem 19.
+	 \\
+	 \hline
+	 Mon 3/21 & PS 12 & Rosen 13.1 &
+	    \mand[palindromes]{20}
+	    \mand[union]{21a}
+	    \mand[derivation trees]{24ab}
+	    \\
+    &  & Rosen 13.3 &
+	   \helper[testing strings]{11}
+	   \mand[testing strings]{12}
+	   \mand[what langauge?]{16--17}
+	   \mand[create DFA]{25--26}
+	   \\
+	   \hline
+	 Fri 3/25 & PS 13 & Rosen 13.3 &
+	   \mand[what langauge?]{19--20}
+	   \extra[create DFA]{32}
+	   \mand[create DFA]{34}
+	   \mand[create NFA]{36}
+	   \mand[what langauge?]{45--46}
+	   \extra[what langauge?]{47}
+	   \mand[create DFA, NFA]{55--56}
+
+	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
+   \\
+   \hline
+	   Wed 3/30 & PS 14 & Rosen 13.3 &
+	   \mand[NFA to DFA]{52--54}
+	   \\
+	   & & Rosen 13.4 &
+	   \extra{1}
+	   \mand[describe in words]{2abde}
+	   \extra{3}
+	   \mand[does it belong?]{4}
+	   \mand[regex]{6}
+	   \extra[regex]{7}
+	   \\
+	   \hline
+	   Fri 3/31 & PS 15 & Rosen 13.4 &
+	   \mand[grammar to NFA]{14abc}
+	   \\
+	   \hline
+	   Mon 4/4 & PS 16 & Rosen 13.4 &
+	   \mand[NFA to grammar]{15--17}
+	   \mand[regex to NFA]{12ab}
+	   \mand[regex to NFA]{13a}
+	   \\
+	   \hline
+	   Wed 4/6 & PS 17 & Rosen 13.4 &
+	   \\
+	   & & DFA/NFA $\to$ regex &
+	   Convert the following DFAs or NFAs into equivalent regular expressions
+	   using our algorithm for doing so. Show the intermediate steps:
+	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
+	   in the book!)
+	   \\
+	   \hline
+	  Mon 4/11 & PS 18 & Rosen 13.5 &
+	  \mand[trace TM]{2}
+	  \mand[trace TM]{5}
+	  \extra[trace TM]{1}
+	  \extra[trace TM]{3--4}
+
+	  \mand[design TM]{6}
+	  \mand[design TM]{10}
+	  \extra[design TM]{7--12}
+\\
+	  &&& For problems 6 and 10, describe your Turing machine
+	  using the syntax of our Turing machine simulator.
+	  (You can use a text editor or copy and paste from the
+	  online simulator into a file to save your work.)
+   \\
+   \hline
+never & Review & Rosen 13.RQ &
+   \extra{1--2}
+   \extra{3}
+   \extra{4}
+   \extra{5a}
+   \extra{6a--12}
+   \extra{15}
+   \extra{17}
+   \extra{19}
+   \\
+   & & Rosen 13.SE &
+   \extra{3}
+   \extra{7}
+   \extra{8}
+   \extra{9}
+   \extra{19--21}
+   \extra{23--25}
+   \extra{26--27}
+\\
+\hline
+   \hline
+	   Fri 4/22 & PS 19 & Rosen 13.4 &
+	   \extra[pumping lemma]{23, 25}
+
+	   Python regular expressions: Be sure to use the online tools suggested in
+	   class to get familiar with how regular expressions work in Python. (They work
+	   very similarly in other programming languages -- we are just picking Python
+	   to have one concrete example.)
+
+	   Be sure to write up the pumping lemma problems carefully.
+	   \\
+	   \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
+
+
+\newpage
+never & Review &
+	  Rosen 6.RQ &
+	  \extra[counting]{1--2}
+	  \extra[counting]{5}
+	  \extra[PHP]{6--7}
+	  \extra[collections]{13}
+	 \\
+	  &  & Rosen 6.SE & \extra[counting]{1--7}
+	  \extra[fortune cookies]{11}
+	  \extra[round table]{36}
+	  \extra[adisors]{37}
+	  \extra[apples]{38}
+	  \extra[license plate]{42}
+	  % , 24, 29, 32}
+	 \\
+	  &  & Rosen 7.RQ & \extra[probability basics]{1--6}
+	     \extra[E is linear]{9}
+	 \\
+	  &  & Rosen 7.SE & \extra[probability]{1--5}
+	  \extra[expected value]{7a}
+	  \extra[cards in a box]{17}
+	  \extra{23--24}
+	  \extra[aces]{35}
+	  \\
+	 && Rosen 10.SE &
+	 \extra[isomorphic?]{3--5}
+	 \extra[invariants]{29abcf}
+	 \\
+  && Rosen 10.RQ &
+   \extra[types of graph]{1}
+	 \extra[models]{2}
+	 \extra[degree]{3--5}
+	 \extra[graph examples]{6--7}
+	 \extra[bipartite]{8}
+
+	 \extra[graph representation]{9}
+	 \extra[isomorphism]{10}
+	 \extra[connected]{11}
+
+	 \extra[checking isomorphism]{12}
+	 \extra[Euler paths]{13}
+	 \extra[Hamilton paths]{14a}
+
+	 \extra[planar graph]{17}
+	 \extra[Euler's formula]{18}
+	 \extra[Kuratowski's Theorem]{19}
+	 \\
+	   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
+

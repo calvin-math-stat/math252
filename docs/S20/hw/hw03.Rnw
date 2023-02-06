@@ -1,0 +1,164 @@
+
+
+
+\documentclass{scrartcl}
+\usepackage[margin=.5in,top=.5in,bottom=.3in,includehead,includefoot]{geometry}
+\renewcommand{\arraystretch}{1.5}
+
+%\parindent=0pt
+\parskip=3pt
+
+
+%\usepackage{mathpple}
+%\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{sfsect}
+\usepackage{longtable}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+
+\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S20-Pruim/WW#1}{WW#1}}
+
+\newif\ifanswers
+\answerstrue
+\answersfalse
+
+\def\blank#1{%
+\ifanswers
+\underline{{\large \sc #1}}
+\else
+\underline{\phantom{\Large \ \ \ \sc #1 \ \ \ }}
+\fi
+}
+
+\def\dd#1{\medskip\noindent\textbf{\large #1}}
+\def\be{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+
+\def\hwn#1{\relax}
+\def\hwn#1{\ {\tiny (#1)}}
+\def\hwn#1{$_{\mbox{\ \tiny #1}}$}
+\def\hwn#1{~{\tiny #1}}
+
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage[colorlinks = true, urlcolor = blue]{hyperref}
+\include{myabbrev}
+
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}}}
+\newcommand{\myunderline}[1]{\uline{\phantom{Ay}#1\phantom{Ay}}}
+
+\newcommand{\helper}[2][\relax]{(#2)\hwn{#1}}
+\newcommand{\extra}[2][\relax]{[#2]\hwn{#1}}
+\newcommand{\opt}[2][\relax]{\{#2\}\hwn{#1}}
+\newcommand{\mand}[2][\relax]{\textbf{\large #2}\hwn{#1}}
+
+\begin{document}
+
+
+\pagestyle{fancy}
+
+\chead{}
+\lhead{Math 252 -- Spring 2020}
+\rhead{\thepage/\pageref{end}}
+\lfoot{}
+\cfoot{Created \today\ --- See web site for most current version.}
+\rfoot{}
+
+\begin{center}
+  \large
+%  Mathematics \& Statistics 156
+%
+%  Fall 2016
+%
+\subsection*{Problem Sets After Test 2}
+
+\end{center}
+
+
+\textit{Only turn in problems that are \textbf{not} bracketed.}
+Bracketed problems are additional problems you can look at.
+Round brackets indicate problems that may help you with problems that
+are assigned; square brackets are additional problems on material
+that you should know, but you are not required to write up solutions;
+curly brackets are truly optional and may contain extra nuggets that you
+will not be required to know but may be interested in.
+
+Additional assignments will be filled in over time.
+
+\bigskip
+
+\begin{center}
+
+\iftrue
+
+\begin{longtable}{|c|l|}
+  \hline
+  notation & meaning \\
+  \hline
+  unbracketed & assigned problem -- turn these in for grading \\
+  $()$ & helper/warm-up problem  \\
+  $[]$ & additional problems (you are responsible for content, but don't turn them in) \\
+  \{\} & covers optional material \\
+  \hline
+\end{longtable}
+\fi
+
+\bigskip
+
+
+\begin{longtable}{|c|c|c|p{4.3in}|}
+  \hline
+  Due & Task & Source & Problems \\
+  \hline\hline
+  \endhead
+	   Wed 5/6 & PS 17 & Rosen 13.4 &
+	   \mand[pumping lemma]{23, 25}
+	   \\
+	   \hline
+	  Mon 5/10 & PS 18 & Rosen 13.5 &
+	  \mand[trace TM]{2}
+	  \mand[trace TM]{5}
+	  \extra[trace TM]{1}
+	  \extra[trace TM]{3--4}
+
+	  \mand[design TM]{6}
+	  \mand[design TM]{10}
+	  \extra[design TM]{7--12}
+\\
+	  &&& For problems 6 and 10, describe your Turing machine
+	  using the syntax of one of our two Turing machine simulators.
+	  (You can use a text editor or copy and paste from the
+	  online simulator into a file.)
+	   \\
+	   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+	  Wed 5/2 & PS 15 & &
+	  Prepare for Test 3.  Here are some problems you might look at.
+	  \\
+   & & Rosen 12.RQ &
+   \extra{1--2}
+   \extra{4}
+   \extra{5a}
+   \extra{6a--12}
+   \extra{15}
+   \\
+   & & Rosen 12.SE &
+   \extra{3}
+   \extra{7}
+   \extra{8}
+   \extra{9}
+   \extra{19--21}
+   \extra{23--25}
+   \extra{26--27}
+   	   \\
+	   \hline
+\end{document}
+

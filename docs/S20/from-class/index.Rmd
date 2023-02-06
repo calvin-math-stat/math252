@@ -1,0 +1,204 @@
+---
+title: "From Class"
+author: ""
+date: ""
+output:
+  html_document:
+    includes:
+      before_body: ../header.shtml
+    css: ../../styles/unmaintained.css
+---
+
+
+## Moving Online
+
+While we are online, things may evolve some as we all get better at using online tools (and
+abandon things that don't work as well as we had hoped). 
+But here are some things you should know.
+
+1. **The course website is still the main starting point for information.**
+I'll put links to other resources here.
+
+2. We will still have both **webwork assignments and problem sets**. 
+Problem sets will be submitted via moodle. Grading may be a little more challenging, so have
+some patience with our graders as they get this figured out.
+
+3. To keep you organized, I plan to create a **daily dope sheet**[^dope]
+for each day that 
+
+    a. outlines what is due that day and what upcoming assignments are,
+    b. provides a step-by-step of what you need to do for that day, and
+    c. includes links to resources you may need.
+    
+[^dope]: If you are not familiar with the various meanings of the word dope,
+here are some from Websters' online dictionary: 
+
+    a. *n.* information, especially from a reliable source [eg, the inside dope];
+    b. *v.* to figure out -- usually used with out; 
+    c. *adj.* excellent.
+    
+    I hope all three apply.
+
+
+4. We will continue to use **worksheets** (links below and in the daily dope
+sheets), but there will be some additional resources as well.
+    
+4. WW and PS assignments will be maintained on the **homework page** just as before.
+
+<!-- 5. You can post questions on [**Piazza**](https://piazza.com/calvin/spring2020/math252/home) -->
+
+<!--     a. Find our class page at: https://piazza.com/calvin/spring2020/math252/home.  You should  -->
+<!--     have received an invitation to join our class. Let me know if you -->
+<!--     have any trouble joining. -->
+
+<!--     a. At least while the class is online (and perhaps beyond), we will be using -->
+<!-- **Piazza for class discussion**. The system is highly catered to getting you -->
+<!-- help fast and efficiently from classmates or instructors. Rather than emailing -->
+<!-- questions to me, I encourage you to post your questions on Piazza. Although I -->
+<!-- have only used Piazza a little bit, here are some of the advantages I see. -->
+
+<!--         * It is used in some other CS courses, so some of you will be familiar with it -->
+<!-- already, and others of you will use it in the future. It comes recommended by  -->
+<!-- several instructors in CS. -->
+
+<!--         * Conversations can be organized by themes.  -->
+
+<!--             I've created a number of "folders" (they function more like tags than -->
+<!--     folder), and you will need to select one for each new converstaion. This -->
+<!--     will make it easier for all of us to find things and keep organized. -->
+
+<!--             I've  created several "folders" already, include some that are targeted at -->
+<!--     specific topics (like `probability-5`, which means things related to the -->
+<!--     topic of worksheet 5, on probability). Let me know if you think I should add -->
+<!--     some additional folders. -->
+
+<!--     * The system that has been used the most by students (moodles discussion forums) -->
+<!-- was rated pretty low in the survey. I took that to mean: "Please avoid." -->
+
+<!--     * I've been told that the search mechanism works quite well -- that will make also help us find stuff. -->
+
+<!--     * I can go in an mark responses as "approved" or "official", so you can know that a response -->
+<!-- is good, even if it didn't originally come from me. -->
+
+<!-- If you have any problems or feedback for the developers, email `team@piazza.com`. -->
+
+## Daily Dope Sheets
+
+This will collect together the things you need (and need to know) for
+each day.
+
+* [Day 19 online -- May 11](online/Day19.html)
+* [Day 18 online -- May 8](online/Day18.html)
+* [Day 17 online -- May 6](online/Day17.html)
+* [Day 16 online -- May 4](online/Day16.html)
+* Day 15 online -- May 1 -- Test 2 
+* [Day 14 online -- April 29 -- Review Day](online/Day14.html)
+* [Day 13 online -- April 27](online/Day13.html)
+* [Day 12 online -- April 24](online/Day12.html)
+* [Day 11 online -- April 20](online/Day11.html)
+* [Day 10 online -- April 17](online/Day10.html)
+* [Day 9 online -- April 15](online/Day09.html)
+* [Day 8 online -- April 13](online/Day08.html)
+* [Day 7 online -- April 8](online/Day07.html)
+* [Day 6 online -- April 6](online/Day06.html)
+* [Day 5 online -- April 3](online/Day05.html)
+* [Day 4 online -- April 1](online/Day04.html)
+* [Day 3 online -- March 20](online/Day03.html)
+* [Day 2 online -- March 18](online/Day02.html)
+* [Day 1 online -- March 16](online/Day01.html)
+
+## Worksheets/Handouts
+
+### Models of Computation
+
+* Worksheets: 
+  [PDF](models-of-computation/Models-of-Computation.pdf)
+  [HTML](models-of-computation)
+
+### Counting and Probability
+
+* Worksheets: 
+  [PDF](counting-and-probability/Counting-and-Probability.pdf)
+  [HTML](counting-and-probability/)
+
+### Graphs
+
+ * Worksheets: 
+ [PDF](graphs/Graph-worksheets.pdf) 
+ [HTML](graphs/)
+ <!-- * [Notes from Professor Scofield](ScofieldPlanarityNotes.pdf) -->
+ 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/a3ww0gwEszo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!-- ### Models of Computation -->
+
+<!-- * Worksheets:  -->
+<!--   [PDF](models-of-computation/Models-of-Computation.pdf) -->
+<!--   [HTML](models-of-computation/) -->
+  
+<!-- * Regular Exrpessions in Python -->
+
+<!--     * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTNkq3iAo6ThK8_LJUE8z-KUczPj9hT7rZcir1cd_9cM-iZw55XkYXXOKZnTsl3hLw3I29cFzcH8W3P/pub?start=false&loop=false&delayms=3000) -->
+<!--     * Thonny -- easy self-contained python -->
+<!--         * [download Thonny here](https://thonny.org/) -->
+<!--     * [Online python](https://repl.it/languages/python3) -->
+<!--     * [Regular Expression Game](http://play.inginf.units.it/) -->
+    
+  
+<!-- ### Langauges, Grammars, Machines -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 05/07 | [Python regex project description](Python-tidy-project.html) -->
+<!-- 05/07 | [Regular expressions in python](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing) -->
+<!-- 05/04 | [Turing Machine specification](http://www.calvin.edu/~rpruim/courses/m156/F16/TM/tmdoc.shtml) -->
+<!-- 04/30 | [Turing Machine Simulator](http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/) -->
+<!-- 04/30 | [Turing Machines worksheet](Turing-Machines.pdf) -->
+<!-- 04/27 | [DFA to regex conversion worksheet](DFA-to-regex.pdf) -->
+<!-- 04/27 | [DFA to regex conversion notes](https://courses.engr.illinois.edu/cs374/fa2017/extra_notes/01_nfa_to_reg.pdf) -->
+<!-- 04/25 | [Regular Languages Wrap-Up](Regular-WrapUp.pdf) -->
+<!-- 04/23 | [Regular Grammars](Regular-Grammars.pdf) -->
+<!-- 04/19 | [Regular Languages](RegularLanguages.pdf) -->
+<!-- 04/14 | [Regular Languages](RegularLanguages.pdf) -->
+<!-- 04/11 | [Automata](Automata.pdf) -->
+<!-- 04/09 | [Automata](Automata.pdf) -->
+<!-- 04/06 | [Grammars](Grammars.pdf) -->
+
+<!-- ### Counting and Probability -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 03/25 | [Variance](Probability-Variance.pdf) -->
+<!-- 03/16 | [Linearity of Expected Value](Probability-E-is-Linear.pdf) -->
+<!-- 03/14 | [Expected Value](Probability-Expected-Value.pdf) -->
+<!-- 03/12 | [Random Variables](Probability-Random-Variables.pdf) -->
+<!-- 03/10 | [More Probability](Probability-Bayes.pdf) -->
+<!-- 03/07 | [Conditional Probaility](Probability-Conditional.pdf) -->
+<!-- 03/05 | [Probaility Basics](Probability.pdf) -->
+<!-- 02/23 | [Counting Donuts](Counting-Donut.pdf) -->
+<!-- 02/21 | [Division Principe](Counting-Division.pdf) -->
+<!-- 02/19 | [Pigeonhole Principle](Counting-Pigeonhole.pdf) -->
+<!-- 02/16 | [Counting Problems](Counting-Basic.pdf) -->
+
+
+<!-- ### Graphs -->
+
+<!-- Date  | Handout -->
+<!-- ----- | --------------------------------------------------- -->
+<!-- 01/30 | [Intro to Graphs](Graphs-Intro.pdf) -->
+<!-- 02/01 | [More Graphs](Graphs02.pdf) -->
+<!-- 02/04 | [Graph Representations, Graph Isomorphism](Graphs03.pdf) -->
+<!-- 02/06 | [Paths in Graphs](Graphs-Paths.pdf) -->
+<!-- 02/08 | [Bipartite and Planar Graphs](Graphs-Bipartite-Planar.pdf) -->
+<!-- 02/11 | Euler Paths: [[worksheet]](Graphs-Euler.pdf) [[long version]](Graphs-Euler.html) -->
+
+<br>
+
+------------
+
+
+## Other Resources
+
+Date  | Resource
+----- | ---------------------------------------------------
+02/03 | [Wikipedia's page of graph terminology](https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms)

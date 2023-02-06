@@ -1,0 +1,18 @@
+
+\newpage
+
+# A language that is not regular
+
+Since we now have several equivalent ways to show that a langauge is regular,
+we also have several ways to show that a languages is not regular.
+
+Here is a language that is not regular:  $L = \{0^n1^n \mid n = 0, 1, 2, ...\}$.
+
+1. What are our options for showing the language is not regular?
+
+2. Which do you think will be easiest?
+
+3. See if you can give a convincing argument that $L$ is not regular.
+
+4. What other languages can you construct that are not regular using the same
+basic idea idea?

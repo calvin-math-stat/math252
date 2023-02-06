@@ -33,22 +33,28 @@ division principle.
     a. How many ways can the coach select the five players to start the game?  (Positions
     don't matter.)
     
-    b. How many ways can the coach select one center, two forwards, and two guards?  (That is, the positions matter.)
+    b. How many ways can the coach select one player to be center, two to be forwards, and two to 
+    be guards?  (That is, the positions matter, but any player may play any position.)
     
+    c. Now suppose the team has 3 centers, 5 forwards and 4 guards.  How many ways can the 
+    coach select one of the centers, two of the forwards, and two of the guards? 
     
 4. How many 5-card poker hands can be dealt from a standard 52-card deck?
   
-5. A class of 36 gets into groups of 4 to work on some problems. 
+6. How many bit strings of length 8 have exactly three 1's?
+  
+7. How many "words" can you make with the letters in MISSISSIPPI?  (The "words" 
+  do not need to be real words -- just sequences of letters.)
+  
+5. A class of 20 gets into groups of 4 to work on some problems. 
   
     a. How many such groups of 4 are there?
   
     b. You get to work with 3 other people. How many such groups of 3 are there?
+    
+    c. How many different ways can the class be put into 5 groups of 4? How does this question
+    differ from part a?
  
-6. How many bit strings of length 8 have exactly three 1's?
-  
-7. How many "words" can you make with the letters in MISSISSIPPI?  (The "words" 
-  do not need to be real words.)
-  
 \newpage  
   
   

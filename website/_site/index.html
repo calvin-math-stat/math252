@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Spring 2023">
+
+<title>Math252 / S23</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./m252.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Math 252 - S23</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./hw.html">
+ <span class="menu-text">Homework</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./test-info.html">
+ <span class="menu-text">Test Info</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./from-class.html">
+ <span class="menu-text">From Class</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./calendar.html">
+ <span class="menu-text">Calendar</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://webwork.calvin.edu/webwork2/Math252-S23-Pruim/">
+ <span class="menu-text">Webwork</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://gradescope.com/">
+ <span class="menu-text">Gradescope</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Math 252</h1>
+            <p class="subtitle lead">Discrete Mathematics</p>
+                  <div>
+        <div class="description">
+          Spring 2023
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructor" id="toc-instructor" class="nav-link active" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#timelocation" id="toc-timelocation" class="nav-link" data-scroll-target="#timelocation">Time/Location</a></li>
+  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours">Office Hours</a></li>
+  <li><a href="#course-objectives" id="toc-course-objectives" class="nav-link" data-scroll-target="#course-objectives">Course Objectives</a></li>
+  <li><a href="#internet-resources" id="toc-internet-resources" class="nav-link" data-scroll-target="#internet-resources">Internet Resources</a>
+  <ul class="collapse">
+  <li><a href="#email" id="toc-email" class="nav-link" data-scroll-target="#email">Email</a></li>
+  <li><a href="#ms-teams" id="toc-ms-teams" class="nav-link" data-scroll-target="#ms-teams">MS Teams</a></li>
+  <li><a href="#web-pages" id="toc-web-pages" class="nav-link" data-scroll-target="#web-pages">Web Pages</a></li>
+  </ul></li>
+  <li><a href="#other-important-information" id="toc-other-important-information" class="nav-link" data-scroll-target="#other-important-information">Other Important Information</a>
+  <ul class="collapse">
+  <li><a href="#see-me" id="toc-see-me" class="nav-link" data-scroll-target="#see-me">See me</a></li>
+  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#special-circumstances" id="toc-special-circumstances" class="nav-link" data-scroll-target="#special-circumstances">Special Circumstances</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="instructor" class="level3">
+<h3 class="anchored" data-anchor-id="instructor">Instructor</h3>
+<p>Randall Pruim<br>
+office: North Hall 284<br>
+phone: (616) 526-7113 (but email is better)<br>
+E-mail: <a href="mailto:rpruim@calvin.edu"><code>rpruim@calvin.edu</code></a></p>
+</section>
+<section id="timelocation" class="level3">
+<h3 class="anchored" data-anchor-id="timelocation">Time/Location</h3>
+<ul>
+<li><strong>Section A:</strong> Monday, Wednesday, Friday 12:00 - 12:50, in North Hall 259</li>
+<li><strong>Section B:</strong> Monday, Wednesday, Friday 1:00 - 1:50, in North Hall 259</li>
+</ul>
+</section>
+<section id="office-hours" class="level3">
+<h3 class="anchored" data-anchor-id="office-hours">Office Hours</h3>
+<p>There will likely be some excepions, but it looks like my regular office hours will be Monday, Wednesday, and Friday at 4pm. If you I’m not in my office, look in NH 276 (I teach a class in there just before and might still be talking to students there) or NH 282 (the Reading Room across from my office).</p>
+<p>If those times don’t work for you, catch me at class or send me an email to figure out some other option. (Include some information about your availability if you send an email.)</p>
+</section>
+<section id="course-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="course-objectives">Course Objectives</h2>
+<p>The student who successfully completes this class should be able to</p>
+<ol type="1">
+<li>Describe and analyze algorithms that use graphs.</li>
+<li>Apply counting techniques to determine the size of finite sets and to compute probabilities (including conditional probabilities) of events.</li>
+<li>Compute and interpret the mean and variance of a discrete random variable.</li>
+<li>Identify problems that can and cannot be solved with various models of computation.</li>
+</ol>
+</section>
+<section id="internet-resources" class="level2">
+<h2 class="anchored" data-anchor-id="internet-resources">Internet Resources</h2>
+<section id="email" class="level3">
+<h3 class="anchored" data-anchor-id="email">Email</h3>
+<p>I will maintain an email list of all students registered in this class and will occasionally use it to distribute information and reminders of various things pertaining to this course. If you prefer to read your email from an account other than your Calvin student account and do not have it set up to forward automatically, send me email with the email address you prefer.</p>
+<p>You are responsible for any information communicated via email.</p>
+<p>It is very helpful if you <strong>include 252 in the subject line of any email you send me.</strong> That helps me locate email from this course in a sometimes overflowing email inbox.</p>
+</section>
+<section id="ms-teams" class="level3">
+<h3 class="anchored" data-anchor-id="ms-teams">MS Teams</h3>
+<p>I’ve set up a Microsoft Team for our class. If we need to move online, we’ll use that Team for our class sessions. Students in quarantine or isolation can meet in Teams to work through the class worksheet together, if they like.</p>
+<p>I’ll usually send class announcements to both our email list and to the general channel of our Team.</p>
+</section>
+<section id="web-pages" class="level3">
+<h3 class="anchored" data-anchor-id="web-pages">Web Pages</h3>
+<p>In addition to this home page, I will also maintain a list of web resources pertaining to this course. <strong>You are responsible for any information appearing on the course web pages.</strong> Items I have prepared and maintain online include</p>
+<ul>
+<li>a <a href="./calendar.html">calendar</a> of daily topics, exams, etc.</li>
+<li>a list of <a href="./hw.html">homework</a> assignments and due dates.</li>
+<li>information about <a href="./test-info.html">tests and exams</a> (appearing shortly before each test date).</li>
+</ul>
+<p>For quick access to these and other resources, see the navigation bar at the top of this page.</p>
+</section>
+</section>
+<section id="other-important-information" class="level2">
+<h2 class="anchored" data-anchor-id="other-important-information">Other Important Information</h2>
+<section id="see-me" class="level3">
+<h3 class="anchored" data-anchor-id="see-me">See me</h3>
+<p>If you are having difficulty with any portion of the course, do not hesitate to see me. Do this as soon as possible, certainly well in advance of any deadlines (like tests) so that we can work to fix the problem.</p>
+</section>
+<section id="textbook" class="level3">
+<h3 class="anchored" data-anchor-id="textbook">Textbook</h3>
+<p>The required text for this course is <em>Discrete Mathematics and Its Applications (7th edition)</em> by Ken Rosen.</p>
+</section>
+<section id="grading" class="level3">
+<h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<p>Grading will be based on the following approximate weighting:</p>
+<ul>
+<li>Homework, etc: 15%</li>
+<li>Tests (3): 60%</li>
+<li>Final Exam: 25%</li>
+</ul>
+<section id="tests" class="level4">
+<h4 class="anchored" data-anchor-id="tests">Tests</h4>
+<p>Tests should be taken when they are scheduled. I do not generally offer make-up, alternate or late tests. Instead, if you miss one test (for any reason) or if your final exam score is better than your worst test, then your final exam score will be substituted for that test.</p>
+</section>
+</section>
+<section id="special-circumstances" class="level3">
+<h3 class="anchored" data-anchor-id="special-circumstances">Special Circumstances</h3>
+<p>Calvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a disability coordinator in the Center for Student Success (located in Spoelhof University Center 360). If you have an accommodation memo, please come talk to me in the first two weeks of class.</p>
+<p>Occasionally there are special circumstances that require that the rules and guidelines above be adjusted for a particular student. In such cases, it is the responsibility of the student to inform me of the situation <strong>as soon as possible</strong>, so that the appropriate arrangements can be made. This includes, but is not limited to, students with documented disabilities.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

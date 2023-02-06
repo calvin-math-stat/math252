@@ -1,0 +1,287 @@
+
+
+
+\documentclass{article}
+\usepackage[margin=.5in,top=.5in,bottom=.3in,includehead,includefoot]{geometry}
+\renewcommand{\arraystretch}{1.5}
+
+%\parindent=0pt
+\parskip=3pt
+
+
+%\usepackage{mathpple}
+%\usepackage{fullpage}
+\usepackage{alltt}
+\usepackage{sfsect}
+\usepackage{longtable}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+
+\def\WW#1{\href{https://mathwebwork.cs.calvin.edu/webwork2/Math252-S22-Pruim/WW#1}{WW#1}}
+
+\newif\ifanswers
+\answerstrue
+\answersfalse
+
+\def\blank#1{%
+\ifanswers
+\underline{{\large \sc #1}}
+\else
+\underline{\phantom{\Large \ \ \ \sc #1 \ \ \ }}
+\fi
+}
+
+\def\dd#1{\medskip\noindent\textbf{\large #1}}
+\def\be{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+
+\def\hwn#1{\relax}
+\def\hwn#1{\ {\tiny (#1)}}
+\def\hwn#1{$_{\mbox{\ \tiny #1}}$}
+\def\hwn#1{~{\tiny #1}}
+
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage[colorlinks = true, urlcolor = blue]{hyperref}
+\include{myabbrev}
+
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}}}
+\newcommand{\myunderline}[1]{\uline{\phantom{Ay}#1\phantom{Ay}}}
+
+\newcommand{\helper}[2][\relax]{(#2)\hwn{#1}}
+\newcommand{\extra}[2][\relax]{[#2]\hwn{#1}}
+\newcommand{\opt}[2][\relax]{\{#2\}\hwn{#1}}
+\newcommand{\mand}[2][\relax]{{\bf \large #2}\hwn{#1}}
+
+\begin{document}
+
+
+\pagestyle{fancy}
+
+\chead{}
+\lhead{Math 252 -- Spring 2022}
+\rhead{\thepage/\pageref{end}}
+\lfoot{}
+\cfoot{Created \today\ --- See web site for most current version.}
+\rfoot{}
+
+\begin{center}
+  \large
+\subsection*{Problem Sets Between Test 1 and Test 2}
+
+\end{center}
+
+
+\textit{Only turn in problems that are \textbf{not} bracketed.}
+Bracketed problems are additional problems you can look at.
+Round brackets indicate problems that may help you with problems that
+are assigned; square brackets are additional problems on material
+that you should know, but you are not required to write up solutions;
+curly brackets are truly optional and may contain extra nuggets that you
+will not be required to know but may be interested in.
+
+Additional assignments will be filled in over time.
+
+\bigskip
+
+\begin{center}
+
+\iftrue
+
+\begin{longtable}{|c|l|}
+  \hline
+  notation & meaning \\
+  \hline
+  unbracketed & assigned problem -- turn these in for grading \\
+  $()$ & helper/warm-up problem  \\
+  $[]$ & additional problems (you are responsible for content, but don't turn them in) \\
+  \{\} & covers optional material \\
+  \hline
+\end{longtable}
+\fi
+
+\bigskip
+
+
+\begin{longtable}{|c|c|c|p{4.3in}|}
+  \hline
+  Due & Task & Source & Problems \\
+  \hline\hline
+  \endhead
+	 Wed 2/16 & \WW{06} & Rosen 7 & Probability
+	 \\
+	   \hline
+	 Fri 2/18 & \WW{07} & Rosen 7 & Probability
+	 \\
+	   \hline
+	 Mon 2/21 & \WW{08} & Rosen 7 & Probability
+
+	 Note: $A^c = \overline A$ denotes the complement of $A$.  For events, you
+	 can also write this as ``not A".
+	 \\
+	 & PS 8 & Rosen 7.1 &
+	 \mand[lottery]{26b}
+	 \mand[super lottery]{28}
+
+	 \extra{1-33 odd}
+	 \extra[lottery]{30}
+	 \extra[April]{4}
+	 \extra[A or $\heartsuit$]{6}
+	 \extra[$\heartsuit$A]{8}
+	 \extra[straight flush]{18}
+	 \extra[roulette]{35}
+	 \\
+	 & & Rosen 7.2 &
+	 \mand[permutation events]{8}
+	 \mand[bit strings]{25}
+	 \mand[children]{28}
+	 \mand[children]{31b}
+
+	 \extra{1}
+	 \extra[loaded die]{2}
+	 \helper[permutation events]{5--7}
+	 \extra[birth month]{19}
+	 \extra[birth day]{20}
+	 \\
+	   \hline
+	 Wed 2/23 &  PS 9 & Rosen 7.2 &
+	 \mand[odd one out]{29}
+	 \\
+	 & & Rosen 7.3 &
+	 \helper{1}
+	 \helper{3}
+	 \helper{5}
+
+	 \mand{2}
+	 \mand{4}
+	 \mand[steroids]{6}
+
+	 \extra[rare disease]{8}
+	 \extra[HIV]{9}
+	 \extra{13}
+	 \extra{14}
+	 \extra[Monty Hall]{15}
+	 \\
+	   \hline
+	 Fri 2/25 & \WW{09} & Rosen 7 & Probability
+	 \\
+	 \hline
+	 Wed 3/9 & PS 10 & Rosen 7.4 &
+	 \helper{1}
+	 \mand[rolling 6s]{3}
+	 \mand[biased coin]{4}
+	 \extra[loaded die]{5}
+	 \mand[test score]{7}
+	 \mand[three dice]{8}
+	 \\
+	 & & Rosen 6.SE &
+	 \mand[donut-like]{1--2}
+	 \\
+	 & & Rosen 7.SE &
+	 \mand{24}
+	 \\
+	 \hline
+	 Fri 3/11 & \WW{10} & Rosen 6--7 & Probability
+	 \\
+	   Review & --  & Rosen 6.RQ & \extra{1--2, 5, 8} % --12}
+	 \\
+	  &  & Rosen 6.SE & \extra{1--7} % , 24, 29, 32}
+	 \\
+	  &  & Rosen 7.RQ & \extra{1--6, 11}
+	 \\
+	  &  & Rosen 7.SE & \extra{1--5, 7a, 17, 23}
+	 \\
+	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+	   \hline
+	 Wed 3/9 & \WW{10} & Rosen 7 & probability review
+	 \\
+	 \hline
+
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+	   Wed 4/15 & PS 12 & Rosen 13.3 &
+	   \helper[testing strings]{11}
+	   \mand[testing strings]{12}
+	   \mand[what langauge?]{16--17}
+	   \mand[create DFA]{25--26}
+   \\
+   \hline
+	   Fri 4/17 & PS 13 & Rosen 13.3 &
+	   \mand[what langauge?]{19--20}
+	   \extra[create DFA]{32}
+	   \mand[create DFA]{34}
+	   \mand[create NFA]{36}
+	   \mand[what langauge?]{45--46}
+	   \extra[what langauge?]{47}
+	   \mand[create DFA, NFA]{55--56}
+
+	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
+   \\
+   \hline
+	   Mon 4/20 & PS 14 & Rosen 13.3 &
+	   \mand[NFA to DFA]{52--54}
+	   \\
+	   & & Rosen 13.4 &
+	   \extra{1}
+	   \mand[describe in words]{2abde}
+	   \extra{3}
+	   \mand[does it belong?]{4}
+	   \mand[regex]{6}
+	   \extra[regex]{7}
+   \\
+   \hline
+	   Fri 4/24 & PS 15 & Rosen 13.4 &
+	   \mand[build NFA]{10}
+	   \mand[Kleene's Thm]{12}
+	   \extra[Kleene's Thm]{13}
+	   \extra[lonely start]{20}
+	   \\
+	   & & Rosen 7.SE & \mand[cards]{6ab}
+   \\
+   \hline
+	   Mon 4/27 & PS 16 & Rosen 13.4 &
+	   \mand[grammar $\to$ NFA]{14abc}
+	   \mand[NFA $\to$ grammar]{15--16}
+	   \extra[NFA $\to$ grammar]{17}
+	   \\
+	   & & Rosen 7.3 & \mand[flu test]{10}
+	   \\
+	   & & Rosen 7.SE & \mand[large/small]{24}
+	 \\
+	 \hline
+
+	    & & Rosen 13.RQ &
+   \extra{1--2}
+   \extra{4}
+   \extra{5a}
+   \extra{6a--12}
+   % \extra{15}
+   \\
+   & & Rosen 13.SE &
+   % \extra{3}
+   \extra{7}
+   \extra{8}
+   % \extra{9}
+   \extra{19--21}
+   \extra{23--25}
+   % \extra{26--27}
+	 \\
+	 \hline
+   Mon 4/6 & PS 9 & Rosen 7.4 &
+	   \mand[pumping lemma]{22, 24, 25}
+	 \mand[lottery]{6}
+	 \mand[dice]{10}
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}

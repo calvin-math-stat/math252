@@ -1,6 +1,6 @@
 ---
 book_filename: "Counting-and-Probability"
-output_dir: "../../docs/S19/from-class/counting-and-probability"
+output_dir: "../../docs/S22/from-class/counting-and-probability"
 site: bookdown::bookdown_site
 language:
   ui:
@@ -15,6 +15,7 @@ rmd_files: ["index.Rmd",
       "06-Probability-Conditional.Rmd",
       "07-Probability-Conditional2.Rmd",
       "09-Random-Variables.Rmd",
-      "10-Expected-Value.Rmd"
+      "10-Expected-Value.Rmd",
+      "11-E-is-Linear.Rmd"
       ]
 ---

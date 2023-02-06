@@ -1,0 +1,78 @@
+---
+title: "Tests with RPnow"
+output: 
+  html_document:
+    css: ['../../styles/rpruim2017a.css', '../../styles/folding.css']
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Some Notes on Homework
+
+These are based on some comments from the graders. You can find your graded assignments in 
+gradescope.
+
+### PS 10
+
+* Mostly this went well.
+
+* #14 gave people the most trouble. 
+According to the grader: 
+"Problem 14 was one of the more challenging ones for the students, particularly
+because they didn't fully encapsulate the desired bitstrings in their
+productions. Many had trouble understanding part (b), since it asks for strings
+that start with 00 and end with one or more 1's; many didn't see that the string
+could have any number of digits between the 00 and the last 1, so their strings
+looked like 001, 001111, etc. and did not include 001010111, 0000101, etc."
+
+
+### PS 11
+
+* In #19: Note that type 1 grammars may have a rule $S \to \lambda$.  But then they may
+not have $S$ on the right side of any of the rules.
+
+* In #20: Mostly this went OK, but some of you had errors you didn't detect.
+Validating on a few example strings can help with "debugging" a grammar (or a machine or a 
+regular expression).
+
+* In #21: The grader noted that many of you added the correct new production rules, but
+didn't mention what the new start non-terminal was. Technically, to specifiy a grammar you need
+specify:
+  * What the terminals and not terminals are.
+  * Which non-terminal is the start non-terminal.
+  * The production rules.
+
+### PS 12
+
+A couple notes here:
+
+* Make sure you indicate which state(s) is/are accepting states.
+* Don't forget about $\lambda$ -- make sure your machine or language description does the 
+correct thing on the empty string.
+
+### PS 13
+
+* Most mistakes came from creating DFAs and NFAs: 
+  * Make sure your machine is a DFA.  That means that every state must have *exactly one* 
+  out-going transition for each input symbol.
+  * The empty set is a set.  If the NFA has nowhere to go, the DFA will go to a state
+  corresponding to the empty set.
+  * Don't forget about self-loops -- including self-loops from the "empty state" to itself.
+* Mostly people are doing better at describing the langauges recognized by
+  finite state machines. But it is a good idea to test a couple of example strings to make 
+  sure you haven't overlooked anything.
+  
+### PS 14
+
+* For #6d: Note that 100, 00 are in the language and 0 is not.  Many of your machines 
+were incorrect on those strings.
+
+* For #6e: Note that a string with an even number of 1's may have any number of 0's.
+
+* For converting from NFA to DFA, make sure your resulting machine is a DFA. 
+There must be exactly one transition out of each state for each input symbol.
+Also, make sure that you indicate which states are the accepting states.

@@ -1,0 +1,176 @@
+---
+pagetitle: 'M252: 5/08/2020'
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggformula)
+library(dplyr)
+theme_set(theme_bw())
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+\def\To{\Rightarrow}
+\def\mybold#1{\boldsymbol{#1}}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Friday, May 8: Designing Turing Machines
+
+#### Homework
+
+* Due today:  Nothing!
+* Due Monday:  PS 18 (submit via [gradescope](https://gradescope.com))
+
+#### A Note on scanning gradescope submissions
+
+While grading Test 2, it became clear that using
+some sort of scanning software rather than a simple photograph makes things
+much easier to work with and more legible.  
+**I recommend that you all use scanning software rather than plain photos going forward, including on the final exam.**  Some examples include
+
+* Used by several students in our class
+    * [CamScanner](https://www.camscanner.com/)
+* Recommended by gradescope
+    * [Evernote Scannable](https://evernote.com/products/scannable) for iOS devices
+    * [Genius Scan](https://thegrizzlylabs.com/genius-scan/) for Android
+    
+* Another one I've heard about
+    * [MS Office Lens](https://play.google.com/store/apps/details?id=com.microsoft.office.officelens)
+    
+If you have used something else, let me know and I'll add it to the list.
+
+#### Worksheets
+
+Models of Computation
+
+* [HTML](../models-of-computation/turing-machines)
+* [PDF](../models-of-computation/Models-of-Computation.pdf)
+
+Last time we learned how to trace the behavior of a Turing machine program
+and how Turing machines can be used to recognize languages.
+
+Today we will practice creating Turing machines to preform specified tasks.
+Start with Exercise 6.
+
+Some advice: before starting to type in the code for a Turing machine,
+
+* Think about what it would look like to watch the Turing machine;
+* Define *states* that identify phases of the Turing machine action -- 
+choose good names for them;
+* Then figure out what the machine needs to do when it encounters
+different symbols in each of the states.
+
+### Solutions/Hints/etc.
+
+<div class = "foldable" label = "Exercise 6"> 
+
+Here are two Turing machines that recognizes 
+$(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$
+
+This is Example 13.5.2 in Rosen 7
+
+```
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+; s0 is initial state in Rosen
+0  * * * s0
+s0 0 0 r s1 
+s0 1 1 r s1 
+s1 0 0 r s2
+s1 1 1 r halt-accept-s3 
+s2 0 0 r s2
+s0 _ 0 r s2
+s1 _ 0 r s2
+```
+
+Here is a similar machine with better names for the states.
+
+```
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0      * * * start
+start  * * r second 
+second 1 1 r halt-accept
+second 0 0 r halt-reject
+second _ _ l halt-reject   
+start  _ _ r halt-reject
+```
+
+Note: This machine is unusual in that it doesn't have to read the
+entire input to know the answer.
+
+</div>
+
+<div class = "foldable" label = "Exercise 7"> 
+See Rosen, page 891-892.
+</div>
+
+<div class = "foldable" label = "Exercise 8"> 
+
+Here is a Turing machine that has input
+alphabet $\{$ `(`, `)`, `0`, `1`, `+` $\}$ 
+and recognizes strings where the parentheses are properly nested.
+Here is how to think about the states:
+
+* searchR: scanning right looking for a )
+* searchL: scanning left looking for a (
+* noR: scanning left to make sure there are no unmatched ('s since we 
+are out of )'s.
+
+Note the use of the wild card to shorten the code. (It also makes this
+more general that specified. You could use other symbols in addition to
+`0`, `1`, and `+`, since they all get caught by the wildcard.) 
+
+Note: `*` has a special meaning for the simulator at
+<http://morphett.info/turing/turing.html>, so you can't use it as part of the
+tape alphabet.
+
+```
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0      * * * searchR
+searchR ) ] l searchL 
+searchR _ _ l noR 
+searchR * * r noR 
+searchL ( [ r searchR
+searchL _ _ r halt-reject  ; no ( for some )
+searchL * * l searchL
+noR     _ _ r halt-accept  ; no ( either
+noR     ( ( r halt-reject  ; extra (
+noR     * * l noR
+```
+
+Here is a version that only uses 2 states, but isn't as easy to understand.
+As is, it also doesn't handle anything other than parentheses.  But it could 
+be modified to skip over digits and operators.
+
+```
+; in style of <http://morphett.info/turing/turing.html>
+; state symbol symbol direction state
+0 _ Y r halt
+0 ( { r 1
+0 ) N r halt
+0 \ / l 0
+0 / \ r 0
+1 ( [ r 1
+1 ) / l 1
+1 [ \ r 1
+1 _ N r halt
+1 { \ r 0
+1 \ / l 1
+1 / \ r 1
+```
+
+</div>

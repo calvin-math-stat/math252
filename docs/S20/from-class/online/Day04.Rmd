@@ -1,0 +1,257 @@
+---
+output: 
+  html_document:
+    includes:
+      before_body: ../../header.shtml
+    css: ['../../../styles/rpruim2017a.css', '../../../styles/folding.css']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\def\prob{p}
+\def\Prob{p}
+\def\intersect{\cap}
+\def\union{\cup}
+
+
+<script src="../../../styles/folding.js"></script>
+
+### Daily Dope Sheet 
+
+## Wednesday, April 1 -- Expected Value
+
+#### A Note on tests
+
+The Mathematics and Statistics Department is still coordinating efforts with the
+University to figure out the best procedures for tests for the rest of the
+semester. I'll hold off deciding whether there will be one more test or two
+(plus a final) and setting the date for test 2 until I learn more. But the soonest we
+will have another test is April 13 (after Easter).
+
+#### Homework 
+
+* due Wednesday, April 1: WW 9
+      
+* due Friday, April 3: WW 10 and PS 8 
+    * Submit PS 8 via <https://gradescope.com>. Let me know if you did not get an invite 
+    to our class.
+    * Here's how to do it.
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KMPoby5g_nE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Stuff to do
+
+1. Get today's worksheets. We'll be working mainly on Section 9 (Expected Value)
+
+    * [PDF](../counting-and-probability/Counting-and-Probability.pdf) 
+    * [HTML -- section 9](../counting-and-probability/expected-value.html)
+
+2. Expected Value
+
+    * The most important things today: 
+        * Understanding how to calculate expected value for a discrete random variable
+        * Understanding what expected value tells you about a random varaible.
+    * Be sure to complete Exercise 1 - 12.  
+    * Exercises 13 and 14 are bonus problems which are a little trickier.  But if things 
+    are going well, you might like to give them a try.  (13 is easier than 14.)
+
+
+#### Comments/Hints/Solutions
+
+Check our MS Team channels as well.
+
+
+<div class = "explain" label = "GPA">
+
+Because it's April 1, and because puppies make people happy, meet my dog Taz:
+
+```{r echo = FALSE, out.width = "300", fig.align = "center"}
+knitr::include_graphics("Taz-2020-04-01.jpg")
+```
+
+If you every hear barking in the background during class, that's Taz.  She sometimes 
+can't tell the difference between play time and class time.
+
+<div class = "explain" label = "Exercise 9.1">
+The student got more A's than C's, so the average should be higher than a B.
+</div>
+
+<div class = "explain" label = "Exercise 9.2">
+Add up the 10 grades and divide by 10 -- just like you learned in grade school:
+$$
+\frac{4 + 4 + 4 + 4 + 4 + 3 + 3 + 3 + 3 + 2}{10}
+$$
+</div>
+
+<div class = "explain" label = "Exercise 9.3">
+Here's the algebra.  The big numbers are the ones that fill in the blanks.
+\begin{align*}
+\mbox{GPA} &= 
+\frac{4 + 4 + 4 + 4 + 4 + 3 + 3 + 3 + 3 + 2}{10} \\
+&=
+\frac{5 \cdot 4}{10} + \frac{3 \cdot 4}{10} +\frac{1 \cdot 2}{10} \\
+& =  4 \cdot \frac{\Large{5}}{10} + 3 \cdot \frac{\Large{4}}{10} + 2 \cdot \frac{\Large{1}}{10}
+\end{align*}
+
+</div>
+
+<div class = "explain" label = "Exercise 9.4">
+
+value         |   4   |   3   |   2   
+-------------:|:-----:|:-----:|:-------
+probability   |  5/10 |  4/10 |  1/10
+</div>
+
+<div class = "explain" label = "Exercise 9.5">
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//gpa-expected-value.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+</div>
+
+<div class = "explain" label = "Exercise 9.6">
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-from-table.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+<div class = "explain" label = "Exercise 9.7">
+First we create the probability table:
+
+value         |   0   |   1   |   2    |   3
+-------------:|:-----:|:-----:|:------:|:------
+probability   |  1/8  |  3/8  |  3/8   |  1/8
+
+From this we get the expected value as **"sum of values times probabilities"**:
+
+$$
+\mbox{expected value} = 0 \cdot \frac18 + 1 \cdot \frac38 + 2 \cdot \frac38 + 3 \cdot \frac18 = \frac{12}{8} = 1.5
+$$
+This makes sense: 1.5 is half of 3 and we should get half as many heads as flips (on average).
+</div>
+
+<div class = "explain" label = "Exercise 9.8">
+The mathematical notation for "sum of values times probabilities" is 
+
+$$
+\sum_{x} x \cdot \Prob(X = x)
+$$
+where the sum is over all possible values of $x$.
+
+If you don't like using both upper and lower case X (and keeping track of which goes where), you
+could use a different letter, like this:
+
+$$
+\sum_{k} k \cdot \Prob(X = k)
+$$
+Now $k$ runs over all possible values of the random variable.
+
+Or you can think in terms of pseudo code:
+
+```
+def expected_value(values, prob): 
+  ev = 0
+  for v in values: 
+    ev = ev + v * prob(v)
+  return ev
+```
+
+If you work in R (a programming language for statistics), this is super easy:
+
+```{r}
+values = c(0, 1, 2, 3)
+probs = c(1/8, 3/8, 3/8, 1/8)
+sum(values * probs)
+```
+
+</div>
+
+<div class = "explain" label = "Exercise 9.9">
+<video width="600" controls>
+  <source src="https://rpruim.github.io/m252-recordings/probability//exp-value-raffle.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+<div class = "explain" label = "Exercise 9.10">
+There are $4 \cdot 4 = 16$ equally likely rolls of the two dice.  We can get our 
+probability table by counting up how many combinations give each difference.
+
+value         |   0   |   1   |   2    |   3
+-------------:|:-----:|:-----:|:------:|:------
+probability   | 4/16  | 6/16  |  4/16  |  2/16
+
+From here the expected value is (as always) the sum of values times probabilities.
+
+expected value = $0 \cdot \frac{4}{16} + 1 \cdot \frac{6}{16} + 2 \cdot \frac{4}{16} + 3 \cdot \frac{2}{16}$
+
+</div>
+
+<div class = "explain" label = "Exercise 9.11">
+
+Start by filling in this table
+
+number of diamonds |   0   |   1   |   2    |   3   |   4
+------------------:|:-----:|:-----:|:------:|:-----:|:------
+probability        |   ??  |   ??  |   ??   |   ??  |  ??
+
+Here's one example: $\displaystyle P(D = 2) = \frac{\binom{13}{2} \binom{39}{3}}{\binom{52}{5}}$
+
+Fill in the rest of the tale and then "sum of values times probabilities".
+
+```{r include = FALSE}
+x = 0:4
+ExpVal = sum( x * choose(13, x) * choose(39, 5-x) / choose(52, 5) )
+```
+
+You should get `r ExpVal`
+</div>
+
+<div class = "explain" label = "Exercise 9.12">
+
+```{r include = FALSE}
+vals <- 0:5
+probs <- dbinom(vals, 5, 1/6)
+exp_sixes <- sum(vals * probs)
+f <- as.character(mosaic::fractions(exp_sixes))
+```
+
+Answer: `r exp_sixes` = `r f`.
+
+Do you see why you should have expected that answer?
+</div>
+
+<div class = "explain" label = "Exercise 9.13">
+
+```{r, include = FALSE}
+vals <- 1:4
+probs <- diff(c(0, choose(4,vals) * choose(vals*13, 5) / choose(52, 5))); probs
+sum(probs)
+exp_suits <- sum(vals * probs); exp_suits
+```
+
+Answer: `r exp_suits`.
+
+Hint: Be careful not to overcount. Do your probabilities add up to 1?
+
+Taz says if you got this one, you deserve a nap:
+
+```{r echo = FALSE, out.width = "400", fig.align = "center"}
+knitr::include_graphics("Taz-nap.jpg")
+```
+
+</div>
+
+<div class = "explain" label = "Exercise 9.14">
+You will have to be especially careful to avoid (or adjust for) double counting here.
+This is a challenging problem (given what we currently know).
+
+Answer: `r 6 * (1 - (5/6)^5)`.
+
+</div>
+
+<br><br>

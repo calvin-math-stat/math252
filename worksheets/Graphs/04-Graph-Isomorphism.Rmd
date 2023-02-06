@@ -21,6 +21,9 @@ The function $f$ is called an **isomorphism**.
 
 (For graphs that allow multi-edges, we require that the number of edges be the same.)
 
+More informally, **to show that two graphs are isomorphic, we must show how to match up
+vertices in one graph with vertices in the other so that edges are preserved.**
+
 ## Showing graphs are isomorphic
 
 When graphs are isomorphic, we can demonstrate this by providing the isomorphism.

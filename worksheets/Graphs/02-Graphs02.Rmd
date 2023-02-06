@@ -1,18 +1,24 @@
+---
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
 
 # More Graphs
  
 ## Some Example Graphs
 
-```{r echo = FALSE, fig.align = "center"}
-knitr::include_graphics("../images/GraphFigs-9.6-9.7.png") 
+```{r graphs02-example01, echo = FALSE, fig.align = "center"}
+knitr::include_graphics("images/GraphFigs-9-6-9-7.png") 
 ```
 
-```{r echo = FALSE, fig.align = "center"}
-knitr::include_graphics("../images/GraphFigs-9.8-9.9.png")
+```{r graphs02-example02, echo = FALSE, fig.align = "center"}
+knitr::include_graphics("images/GraphFigs-9-8-9-9.png")
 ```
 
-```{r echo = FALSE, fig.align = "center"}
-knitr::include_graphics("../images/GraphFig-9.11.png")
+```{r graphs02-example03, echo = FALSE, fig.align = "center"}
+knitr::include_graphics("images/GraphFig-9-11.png")
 ```
 
 \newpage 
@@ -29,13 +35,14 @@ knitr::include_graphics("../images/GraphFig-9.11.png")
   **total degree**.
   
   * A **path** in a graph is a sequence of edges, each one incident to the next.
-    * Can also be described as a sequence of vertices, each one adjacent to the next.
+    * If multiple edges are not allowed, this can also be described as a 
+    sequence of vertices, each one adjacent to the next.
     * For directed graphs, we require that the directions of the edges be compatible.
     
   * A **cycle** is a path that begins and ends at the same vertex.
   
   * A **connected graph** is one where there is a path between any pair of vertices.
-      * For a directed graph, we ignore the direction of the edges.
+      * For a directed graph, we *ignore* the direction of the edges.
 
   * $H$ is a **subgraph** of $G$ if the vertex set of $H$ is a subset of the vertex
   set of $G$ and the edge set of $H$ is a subset of the edge set of $G$, and $H$ is a
@@ -58,18 +65,21 @@ These questions will help make sure you understand the terminology above.
     d. How is the sum of all the degrees related to the number of edges in the graph?  Why?  Does this hold for all graphs?  
     e. This result is called the **Handshaking Theorem**.  Why does it have that name?  
  
- 3. In Figure 9, assume that $a \to b$ means team $a$ defeated team $b$.   
+ 4. In Figure 9, assume that $a \to b$ means team $a$ defeated team $b$.   
     a. Compute the in-degree and out-degree of each team in Figure 9.    
     b. What do these numbers tell us about the teams?   
     c. Who is the winner of the Round-Robin tournament in Figure 9? 
- 
- 4. Consider Figure 8.
+
+\newpage
+
+
+ 5. Consider Figure 8.
     a. Compute the in-degree and the out-degree of each vertex in Figure 8.  
     b. Add up all the in-degrees.    
-    c. Now add up all the out degrees.    
+    c. Now add up all the out-degrees.    
     d. What do you notice?  Will this hold for all directed graphs, or is this graph special?
     
- 5. What is the longest path you can find in Figure 8?  What does it represent in terms of the model?
+ 6. What is the longest path you can find in Figure 8?  What does it represent in terms of the model?
  
 ## NFL 
 
