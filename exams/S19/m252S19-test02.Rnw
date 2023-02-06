@@ -1,0 +1,777 @@
+
+\documentclass[10pt]{article}
+\usepackage[answerdelayed]{problems}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includehead]{geometry}
+\usepackage{probstat}
+\usepackage{fancyhdr}
+%\input myabbrev
+%\input mysym
+\def\Prob{p}
+
+<<include = FALSE>>=
+test_version <- 4
+test_letter <- LETTERS[test_version]
+library(mosaic)
+@
+
+\newif\ifversionFive
+\versionFivetrue
+
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 252/S19: Test 2 \Sexpr{test_letter}}
+\rhead{\sf \thepage}
+\cfoot{}
+
+
+\begin{document}
+\noindent {\sf Math 252}
+
+
+\noindent {\sf Spring 2019 \hfill Name \rule{2.5in}{.5pt} \ \ Section: A \ \ B }
+
+\bigskip
+\centerline{\sf \Large Test 2}
+
+
+
+\noindent \textbf{Instructions}
+
+\begin{enumerate}
+\item
+As you do the problems on this test, be sure to show your work.
+\item
+If you use your calculator, enter both what you typed into your calculator
+and the result.
+\item
+If you round, round late and show the value (3 or 4 significant digits) both before and after rounding.
+\end{enumerate}
+
+\bigskip
+\bigskip
+
+<<include = FALSE>>=
+options(scipen = 1000)
+probAonly <- c(0.4, 0.3, 0.4, 0.4, 0.1)
+probBonly <- c(0.3, 0.1, 0.1, 0.1, 0.2)
+probAintB <- c(0.1, 0.3, 0.1, 0.2, 0.3)
+probA <- probAonly + probAintB
+probB <- probBonly + probAintB
+BasicProb <-
+  dplyr::tibble(
+    probAUB = probA + probB - probAintB,
+    probAgivenB = probAintB / probB,
+    probBgivenA = probAintB / probA,
+  )
+BasicProb
+@
+
+\begin{problem}
+Suppose
+$\Prob(A) = \Sexpr{probA[test_version]}$,
+$\Prob(B) = \Sexpr{probB[test_version]}$,
+and
+$\Prob(A \intersect B) = \Sexpr{probAintB[test_version]}$.
+
+\begin{enumerate}
+\item
+What is $\Prob(A \union B)$?
+\vfill
+
+\item
+What is $\Prob(A \mid B)$?
+\vfill
+
+\item
+What is $\Prob(B \mid A)$?
+\vfill
+
+\item
+Are events $A$ and $B$ \textbf{independent}? Explain how you know.
+\vfill
+
+\item
+Are events $A$ and $B$ \textbf{mutually exclusive}? Explain how you know.
+\vfill
+
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+<<>>=
+BasicProb
+@
+
+\end{solution}
+
+<<include = FALSE>>=
+n_dice <- c(10, 11, 12, 13, 14)
+n_six  <- c(3, 4, 4, 3, 4)
+@
+\begin{problem}
+Terry rolls \Sexpr{n_dice[test_version]} standard (six-sided) dice.  What is the probability
+that Terry rolls \textbf{exactly \Sexpr{n_six[test_version]}} 6's?
+\vfill
+\vfill
+\end{problem}
+
+\begin{solution}
+<<>>=
+dplyr::tibble(
+  n_dice = n_dice,
+  n_six  = n_six,
+  prob   = dbinom(n_six, n_dice, 1/6),
+  prob2  = choose(n_dice, n_six) * (1/6)^n_six * (5/6)^(n_dice - n_six))
+@
+\end{solution}
+
+<<include = FALSE>>=
+n <- c( 10,  15,   12,   12, 15)
+p <- c(0.3, 0.4, 0.25, 0.75, 0.2)
+k <- c(5, 6, 4, 10, 4)
+@
+
+\newpage
+
+\begin{problem}
+Each of these problems deals with probabilities when
+\textbf{four 4-sided dice} are rolled.
+\begin{enumerate}
+\item How many dice are being rolled?
+\vfill
+\item How many sides does each die have?
+\vfill
+\item
+What is the probability that the four numbers rolled
+will \textbf{all be the same}?
+\vfill
+\vfill
+\item
+What is the probability that the four numbers rolled will
+be \textbf{distinct}? (four different numbers, no repetitions)
+\vfill
+\vfill
+\item
+What is the probability that at least one 1 and at least one 2 are rolled?
+\vfill
+\vfill
+% \item
+% If at least one 1 and at least one 2 are rolled,
+% what is the probability that all four numbers will be distinct?
+% \vfill
+% \vfill
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+<<>>=
+# all the same
+4 / 4^4
+# all distinct
+4*3*2*1 / 4^4
+# P(A) = P(at least one 1) = 1 - P(no 1's)
+1 - (3/4)^4
+# P(A and B) = P(A) + P(B) - P(A union B)
+# = P(at least 1 1) + P(at least 1 2) - (1  - P(no 1's and no 2's))
+(1 - (3/4)^4) * 2 - (1 - (1/2)^4)
+(1 - (3/4)^4) * 2 - (1 - (1/2)^4) %>% fractions
+@
+
+
+\end{solution}
+
+
+\newpage
+
+\begin{problem}
+The Sieben Siegel (Seven Seals) card game uses a non-standard deck.
+The deck has \textbf{fifteen numbers} (1 -- 15) in each of
+\textbf{five colors} (red, green, blue, yellow, and purple).
+\begin{enumerate}
+\item
+How many cards are in the deck?
+
+\vfill
+
+\item
+If you are dealt six cards, what is the probability that they are
+\textbf{all the same color}?
+\vfill
+\ifversionFive
+\item
+If you are dealt six cards, what is the probabiilty that you have
+\textbf{two trios}? (3 of one kind and 3 of another kind)
+\else
+\item
+If you are dealt six cards, what is the probabiilty that you have
+\textbf{3 pairs}?
+(2 of one kind, 2 of a different kind, and 2 of a third kind)
+\fi
+\vfill
+\ifversionFive
+\item
+If you are dealt six cards, what is the probabilty that you have
+\textbf{3-of-a-kind}?
+(3-of-a-kind means that 3 cards are the same number,
+and the other three are different from each other and from the three that match.)
+\else
+\item
+If you are dealt six cards, what is the probabilty that you have
+\textbf{4-of-a-kind}?
+(4-of-a-kind means that 4 cards are the same number, and the other two are different from each other and from the four that match.)
+\fi
+\vfill
+\end{enumerate}
+Go back and make sure you didn't slip back into standard deck mode anywhere.
+\end{problem}
+
+\begin{solution}
+<<>>=
+15 * 5
+# 3 pairs
+choose(15,3) * choose(5,2) * choose(5,2) * choose(5,2) / choose(75, 6)
+# 2 trios
+choose(15,2) * choose(5,3) * choose(5,3) / choose(75, 6)
+# 4-of-a-kind
+choose(15,1) * choose(5,4) * choose(14,2) * choose(5,1) * choose(5,1) / choose(75, 6)
+# 3-of-a-kind
+choose(15,1) * choose(5,3) * choose(14,3) * choose(5,1) * choose(5,1) * choose(5,1) / choose(75, 6)
+@
+\end{solution}
+
+
+\newpage
+
+
+\begin{problem}
+  Consider the following game.  A player rolls two \textbf{fair four-sided}
+  dice and wins the difference between the two values.  Here are a few examples:
+
+  \begin{center}
+    \begin{tabular}{cc}
+      \hline
+      roll & $W$ \\
+      \hline
+      $(2,2)$  & $0$ \\
+      $(3,2)$  & $1$ \\
+      $(2,4)$  & $2$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+% (So a roll of two 2's wins nothing, but a roll of one 2 and one
+% 4 wins \$2.)
+Let the random variable $W$ be the amount won in a single play of the game.
+\begin{enumerate}
+\item
+Here is the probability table for $W$.
+
+	\begin{center}
+		\large
+		\begin{tabular}{|l||c|c|c|c|}
+			\hline
+			Value of $W$ & 0 & 1 & 2 & 3 \\
+			\hline
+			\hline
+			Probability & 1/4 & 3/8 & 1/4 & 1/8 \\
+			% Probability & \ \ \ \ \ \ \ \ \ \ \  & \ \ \ \ \ \ \ \ \ \ \  & \ \ \ \ \ \ \ \ \ \ \  & \ \ \ \ \ \ \ \ \ \ \  \\
+			\hline
+	\end{tabular}
+	\end{center}
+	Explain why $\Prob(W = 3) = 1/8$.
+	\vfill
+\item What is $\Prob(W > 1)$?
+\vfill
+\item
+What is the expected value of $W$?
+% What is the expected winnings per play (i.e., the expected value of $W$)?
+\vfill
+ \item
+ What does the expected value of $W$ tell us about the game? (That is,
+ how do you interpret the number you just calculated?)
+ \vfill
+
+ % If you have to pay \$1 for each roll to play, would
+ % you expect to make money or lose money in the long run?
+ % How much?  (Note: if you pay \$1 to play and then
+ % roll $(1,2)$, you break even.)
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+<<include = FALSE>>=
+ag <- c(4, 3, 9, 9, 11)
+cm <- c(9, 9, 4, 3, 5)
+
+ag <- c(11, 5, 4, 3, 9, 9, 11)
+cm <- c(5, 11, 9, 9, 4, 3, 5)
+@
+
+\begin{problem}
+Calvin has three hats.  Each hat contains some maroon and some gold marbles.
+\begin{itemize}
+\item
+Hat A has 1 maroon and \Sexpr{ag[test_version]} gold.
+\item
+Hat B has 1 maroon and 1 gold.
+\item
+Hat C has \Sexpr{cm[test_version]} maroon and 1 gold.
+\end{itemize}
+Calvin randomly selects a hat (with equal probability) and then randomly selects
+a marble from that hat.
+
+\begin{enumerate}
+\item
+  Alltogether, there are \Sexpr{(4 + ag + cm)[test_version]} marbles.
+  Explain why they are not equally likely to be selected.
+\vfill
+\vfill
+
+\item
+  What is the probability that the marble selected comes from hat $A$?
+\vfill
+\vfill
+
+\item
+  What is the probability that the selected marble is the maroon marble
+  in hat A?
+\vfill
+\vfill
+
+\item
+  What is the probability that the selected marble is maroon (from any hat)?
+\vfill
+\vfill
+
+\item
+If the marble selected is maroon, what is the probability that the hat selected
+is hat A?
+
+\vfill
+\vfill
+\vfill
+\item
+  Let $M$ be the event that the marble selected is marroon.
+  Let $A$ be the event that the hat selected is hat A.
+  Circle the correct notation for the probabilities in parts b -- e above.
+
+  \begin{center}
+    \large
+    \begin{tabular}{lcccccc}
+      part b:& $\Prob(A)$ & $\Prob(M)$ & $\Prob(A \cap M)$ & $\Prob(A \cup M)$ & $\Prob(A \mid M)$ & $\Prob(M \mid A)$
+      \\[7mm]
+      part c: & $\Prob(A)$ & $\Prob(M)$ & $\Prob(A \cap M)$ & $\Prob(A \cup M)$ & $\Prob(A \mid M)$ & $\Prob(M \mid A)$
+      \\[7mm]
+      part d: & $\Prob(A)$ & $\Prob(M)$ & $\Prob(A \cap M)$ & $\Prob(A \cup M)$ & $\Prob(A \mid M)$ & $\Prob(M \mid A)$
+      \\[7mm]
+      part e: & $\Prob(A)$ & $\Prob(M)$ & $\Prob(A \cap M)$ & $\Prob(A \cup M)$ & $\Prob(A \mid M)$ & $\Prob(M \mid A)$
+    \end{tabular}
+  \end{center}
+% \item
+% What does it mean to say that two events are independent?
+% Are the events $M$ and $A$ independent?
+% \vfill
+%
+% \item
+% What does it mean to say that two events are mutually exclusive?
+% Are the events $M$ and $A$ mutually exclusive?
+% \vfill
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+<<include = FALSE>>=
+options(scipen = 1000)
+prize <-  c(3200, 360, 0)
+prob <- c(1/10000, 1/2500, 9995/10000)
+denom <- 1/prob
+
+E <- sum(prize * prob); E
+@
+
+
+\newpage
+\centerline{\textbf{Space for additional work.}}
+
+
+
+\newpage
+
+\section*{Solutions Problems}
+
+\shipoutSolutions
+
+\newpage
+
+\section*{Unused Problems}
+
+\begin{problem}
+Let $X \sim \Binom(\Sexpr{n[test_version]}, \Sexpr{p[test_version]})$.
+%\begin{enumerate}
+%\item
+What is $\Prob(X = \Sexpr{k[test_version]})$?
+\vfill
+%\item
+%What is $\E(X)$?
+%\vfill
+%\end{enumerate}
+\end{problem}
+
+\begin{solution}
+<<>>=
+dplyr::data_frame(
+  n = n,
+  p = p,
+  k = k,
+  prob = dbinom(k, n, p),
+  E = n * p
+)
+@
+\end{solution}
+
+
+\begin{problem}
+\textsc{Dice.}
+\begin{enumerate}
+\item
+If you roll three standard dice (6 sides, each with equal probability),
+what is the probability that all three numbers will be the same?
+\vfill
+\item
+If you roll three standard dice,
+what is the probability that the three numbers rolled will
+be distinct (4 different numbers, no repetitions)?
+\vfill
+\item
+If you roll three standard dice,
+what is the probability that \textbf{at least one} of the numbers rolled is a \textbf{six}?
+\vfill
+\item
+If you roll three standard dice, what is the probability that
+\textbf{exactly one} of the numbers rolled is a \textbf{six}?
+\vfill
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+One of the variations of the the Michigan Lottery Daily 4 game has two possible prizes.
+The big prize is \$\Sexpr{prize[1]}.  The probability of winning this prize is $1/\Sexpr{denom[1]}$.
+The smaller prize is \$\Sexpr{prize[2]}.
+The probability of winning this prize is $1/\Sexpr{denom[2]}$.\footnote{%
+This information is available on their website in a different form -- and has some errors because they
+mix up odds and probability.  I've fixed those errors here.}
+Of course, if you don't win one of those prizes, you get nothing.
+
+Let $W$ be the amount of money won from one of these lottery tickets.
+
+\begin{enumerate}
+\item What is $\Prob(W = 0)$?
+\vfill
+
+\item What is the expected value of $W$?
+\vfill
+
+\item What does the expected value of $W$ tell us about this lottery game.  (Note: It costs \$1 to buy
+one of these tickets).
+\vfill
+
+\item What is the variance of $W$?
+\vfill
+
+\end{enumerate}
+
+
+
+
+\end{problem}
+
+
+
+
+
+\vfill
+
+\begin{problem}
+The Five Crowns card game uses a non-standard deck.  The deck has \textbf{five suits} (clubs, diamonds, hearts,
+spades, and stars).  Each suit has \textbf{11 kinds} (3 through King, there are no aces and no 2's).
+There are also jokers, but for this problem they have been removed.
+That leaves a deck with \textbf{55 cards}.
+\begin{enumerate}
+\item
+If you are dealt six cards, what is the probability that they are all the same suit?
+\vfill
+\ifversionFive
+\item
+If you are dealt six cards, what is the probabiilty that you have two trios? (3 of one kind and 3 of another kind)
+\else
+\item
+If you are dealt six cards, what is the probabiilty that you have 3 pairs? (2 of one kind,
+2 of a different kind, and 2 of a third kind)
+\fi
+\vfill
+\ifversionFive
+\item
+If you are dealt six cards, what is the probabilty that you have 3-of-a-kind?  (3-of-a-kind
+means that 3 cards are the same kind, and the other three are different from each other and
+from the 3 that match.)
+\else
+\item
+If you are dealt six cards, what is the probabilty that you have 4-of-a-kind?  (4-of-a-kind
+means that 4 cards are the same kind, and the other two are different from each other and
+from the 4.)
+\fi
+\vfill
+\end{enumerate}
+Go back and make sure you didn't slip back into standard deck mode anywhere.
+\end{problem}
+
+\begin{solution}
+<<>>=
+choose(5,1) * choose(11,6) / choose(55, 6)
+# 3 pairs
+choose(11,3) * choose(5,2) * choose(5,2) * choose(5,2) / choose(55, 6)
+# 2 trios
+choose(11,2) * choose(5,3) * choose(5,3) / choose(55, 6)
+# 4-of-a-kind
+choose(11,1) * choose(5,4) * choose(10,2) * choose(5,1) * choose(5,1) / choose(55, 6)
+# 3-of-a-kind
+choose(11,1) * choose(5,3) * choose(10,3) * choose(5,1) * choose(5,1) * choose(5,1) / choose(55, 6)
+@
+\end{solution}
+
+
+<<include = FALSE>>=
+ag <- c(4, 3, 9, 9, 11)
+cm <- c(9, 9, 4, 3, 5)
+@
+
+
+\begin{problem}
+A fair coin is flipped 6 times.
+\begin{enumerate}
+\item
+	What is the probability that there are exactly 4 heads?
+	\vfill
+\item
+	What is the probability that there are at least 4 heads?
+	\vfill
+\item
+	What is the probability that there are at least 4 {\em consecutive} heads?
+	\vfill
+%\item
+%	Given that there are at least four heads, what is the probability that there
+%	are at least four {\em consecutive} heads?
+%	\vfill
+\end{enumerate}
+\end{problem}
+
+\vfill
+
+
+\begin{problem}
+{\sc ABC-123 Lottery.}
+Consider the following lottery type game:
+A player selects (in order)
+three {\em distinct} letters from A to Z and
+three {\em distinct} digits from 0 to 9.
+(Examples: one lottery ticket would be AZD-924, another would be ADZ-492.
+On the other hand,
+ABA-012 is not a legal ticket because A is repeated
+and 123-ABC is not a legal ticket because the numbers come first.)
+Later, the lottery commission draws three distinct letters and three distinct
+digits at random and in order.
+\begin{itemize}
+\item
+If all the numbers and letters match in order,
+then the player wins \$1,000,000.
+\item
+If all the numbers and letters match but are not in the correct order,
+then the player wins \$100,000.
+\item
+If the all the letters match (not necessarily in order), but the numbers
+do not, then the player wins \$1,000;
+\item
+If the all the numbers match (not necessarily in order), but the letters
+do not, then the player wins a prize of \$10;
+\end{itemize}
+
+\begin{enumerate}
+\item
+Fill in the following table:
+% [I will give values for selected
+% cells if you are stuck, or can't get all of them.]
+
+\begin{center}
+\Large
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+amount won & 1,000,000 & 100,000 & 1000 & 10 & 0 \\
+\hline
+\hline
+probability &
+\phantom{XXXXXXX} &
+\phantom{XXXXXXX} &
+\phantom{XXXXX} &
+\phantom{XXXXX} &
+\phantom{XXXXX} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+
+\item
+Determine the {\bf expected value} of the amount won from one lottery ticket.
+[This will be graded based on your
+answers to the questions above, even if they are incorrect, so be
+sure to show your work.]
+
+\vfill
+\vfill
+\item
+How much must the lottery charge per play to avoid losing money at
+this game?
+\vfill
+\item
+%(Extra credit.)
+For which kind of prize should the lottery commission
+expect to pay out the most money?  Explain.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+<<>>=
+vals <- c(1000000, 100000, 1000, 10, 0)
+plays <- (26*25*24*10*9*8); plays
+probs <- 1/plays * c(
+  1,                             # perfect match (in order)
+  3 * 2 * 1 * 3 * 2 * 1 - 1,     # correct but in wrong order
+  3 * 2 * 1 * (10 * 9 * 8 - 3 * 2 * 1),   # letters correct, numbers not
+  3 * 2 * 1 * (26 * 25 * 24 - 3 * 2 * 1) # numbers correct, letters not
+)
+probs <- c(probs, 1 - sum(probs)); probs
+probs * plays
+sum(probs * vals)
+probs * vals
+@
+\end{solution}
+
+
+\begin{problem}
+Binomial coeffcients.
+\begin{enumerate}
+\item
+  Show how to calculate $C(10,3) = \binom{10}{3} = $ \textbf{without a
+    calculator. Show your work.}
+\vfill
+\item
+Write a counting problem for which $\binom{10}{3}$ gives the anwer.
+(Keep your problem simple.)
+\vfill
+\end{enumerate}
+\end{problem}
+\begin{problem}
+This problem is about permutations of the 6-element set $A = \set{1,2,3,4,5,6}$
+\begin{enumerate}
+\item
+Put the following permutations in lexicographical order:
+135246, 124536, 145326, 145362.
+\vfill
+\item
+	List the next {\bf FOUR} permutations in lexicographical order after 124653.
+\vfill
+\end{enumerate}
+\iffalse
+	Now let's do a lexicographical ordering of 4-combinations from the 6-element set
+	$A = \set{1,2,3,4,5,6}$.  Assume the same coding scheme that we discussed in class.
+\begin{enumerate}
+\item
+	List the next {\bf FOUR} combinations in lexicographical order
+	after 1245.
+	\vfill
+\item
+	What is the {\bf last} combination is lexicographical order.
+	\vfill
+\end{enumerate}
+\fi
+\end{problem}
+
+
+
+\begin{problem}
+Sums.
+\begin{enumerate}
+%\item
+%\label{part:geometric}
+%Give a formula that allows for easy computation of
+%$\sum_{i=0}^{n} r^i = 1 + r + r^2 + \cdots + r^n$.
+%\vfill
+\item
+Express the following sum using $\sum$ notation:
+\[
+5 + 7 + 9 + 11 + 13 + \cdots 5005
+\]
+\item
+Express the following sum using $\sum$-notation:
+$$
+s(n) = 3 + 6 + 12 + \cdots + 3 \cdot 2^n
+$$
+\vfill
+
+\item
+Express the value of $s(n)$ without using $\cdots$ or
+$\sum$-notation.
+\vfill
+
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+A standard deck of cards has 52 cards (4 suits of 13 kinds each).
+In 5-card poker, two pairs is 2 of one kind of card, 2 of another kind, and
+1 of a third kind (so that it doesn't become a full house).
+(e.g.
+$5\heartsuit$,
+$5\clubsuit$,
+$8\diamondsuit$,
+$8\spadesuit$,
+$2\spadesuit$)
+What is the probability of being dealt 2 pairs?
+\end{problem}
+\vfill
+\vfill
+
+
+
+\begin{problem}
+A bagel shop has 6 types of bagels.
+%\begin{enumerate}
+%\item
+How many ways are there to select a ten bagels?
+\vfill
+
+%\item
+%If 12 bagels are chosen at random, what is the probability
+%that there is at least one bagel of each type?
+%\end{enumerate}
+\end{problem}
+
+
+\end{document}

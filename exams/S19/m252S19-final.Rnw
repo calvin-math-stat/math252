@@ -1,0 +1,796 @@
+
+
+\documentclass[10pt]{article}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+\usepackage[answerdelayed,lastexercise]{problems}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+\usepackage{probstat}
+\usepackage{fancyhdr}
+\usepackage{alltt}
+\usepackage{multicol}
+%\usepackage[nogin]{Sweave}
+
+%\input myabbrev
+%\input mysym
+
+\newif\ifversionCD
+\versionCDfalse
+\versionCDtrue
+
+\newif\ifversionA
+\versionAfalse
+\versionAtrue
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 252/S19 \ifversionCD \ifversionA C \else D \fi \else \ifversionA A \else B \fi \fi: Final Exam}
+\rhead{\sf \thepage}
+\cfoot{}
+
+
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\noindent {\sf Math 252 \ifversionCD \ifversionA C \else D \fi \else \ifversionA A \else B \fi \fi}
+
+\noindent {\sf Spring 2019 \hfill Name \rule{2.5in}{.5pt} } Section:  A \ \ B
+
+\bigskip
+\centerline{\sf \Large Final Exam}
+
+
+\bigskip
+
+<<include = FALSE>>=
+test_version = 1
+test_letter = LETTERS[test_version]
+library(dplyr)
+library(mosaic)
+knitr::knit_engines$set(python = reticulate::eng_python)
+# knitr::opts_chunk$set(engine.path = list(
+#   python = '/usr/local/bin/python3'
+# ))
+@
+
+\begin{problem}
+Answer the following questions about the graph below.
+
+\medskip
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+\ifversionA
+\begin{tikzpicture}[thick,scale=0.7]%
+  \foreach \base in {90 + 2 * 60} {
+  \draw (\base:2)     node{} -- (\base+180:2) node{};
+  \draw (\base-60:2)  node{} -- (\base-120:2) node{};
+  \draw (\base:2)     node{} -- (\base+60:2)  node{};
+  \draw (\base+60:2)  node{} -- (\base+120:2) node{};
+  \draw (\base+60:2)  node{} -- (\base-60:2)  node{};
+  \draw (\base+120:2) node{} -- (\base-120:2) node{};
+  \draw (\base-60:2)  node{} -- (\base+180:2) node{};
+  }
+  \draw \foreach \x in {1,2,...,6} { (90 - \x * 60:2.4) node[fill=none,draw=none]{\x} };
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[thick,scale=0.7]%
+  \foreach \base in {90 - 1 * 60} {
+  \draw (\base:2)     node{} -- (\base+180:2) node{};
+  \draw (\base-60:2)  node{} -- (\base-120:2) node{};
+  \draw (\base:2)     node{} -- (\base+60:2)  node{};
+  \draw (\base+60:2)  node{} -- (\base+120:2) node{};
+  \draw (\base+60:2)  node{} -- (\base-60:2)  node{};
+  \draw (\base+120:2) node{} -- (\base-120:2) node{};
+  \draw (\base-60:2)  node{} -- (\base+180:2) node{};
+  }
+  \draw \foreach \x in {1,2,...,6} { (90 - \x * 60:2.4) node[fill=none,draw=none]{\x} };
+\end{tikzpicture}
+
+\fi
+
+\begin{enumerate}
+  \item
+    What is an Euler circuit?
+    \vfill
+  \item
+    Does the graph have an Euler circuit?  How do you know?
+  \vfill
+  \item
+    Does the graph have an Euler path that is not a circuit?  How do you know?
+  \vfill
+\ifversionA
+  \item
+    Is the graph planar?  How do you know?
+    \vfill
+  \item
+    Is the graph bipartite?  How do you know?
+    \vfill
+
+\else
+
+  \item
+    Is the graph bipartite?  How do you know?
+    \vfill
+  \item
+    Is the graph planar?  How do you know?
+    \vfill
+\fi
+
+%     What is a Hamilton circuit?
+% \vfill
+%   \item
+%     Does the graph have a Hamilton circuit?  How do you know?
+%   \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Draw a simple graph with \ifversionCD 6 \else 7 \fi vertices, each of which has degree 4.
+\vfill
+\end{problem}
+
+\begin{problem}
+  Explain why it is impossible to draw a simple graph with 7 vertices,
+  each of degree 3.
+\vfill
+\end{problem}
+
+\begin{problem}
+Give an example of a graph that is \textbf{not a planar graph}
+and explain how you know it is not planar.
+\textbf{Do not use Kuratowski's Theorem.}
+\end{problem}
+
+\vfill
+\vfill
+
+\newpage
+
+
+\begin{problem}
+{\bf How many isomorphisms} are there between the following two graphs?
+{\bf Explain.}
+\medskip
+
+(If you do not know exactly how many there are, tell me
+as much as you know about how many there are.
+Examples: There is at least 1; there are at most 3, etc.)
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=6pt]
+\ifversionA
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw ( 90:2) node{} -- (-20:2) node{};
+  \draw ( 90:2) node{} -- (200:2) node{};
+  \draw ( 90:2) node{} -- (-65:2) node{};
+  \draw ( 90:2) node{} -- (245:2) node{};
+  \draw ( 20:2) node{} -- (-20:2) node{};
+  \draw (-20:2) node{} -- (200:2) node{};
+  \draw (200:2) node{} -- (160:2) node{};
+  \draw (160:2) node{} -- ( 20:2) node{};
+  \draw (245:2) node{} -- ( 20:2) node{};
+  \draw (160:2) node{} -- ( -65:2) node{};
+  \draw (90:2.4) node[draw=none, fill=none]{a};
+  \draw (20:2.4) node[draw=none, fill=none]{b};
+  \draw (-20:2.4) node[draw=none, fill=none]{c};
+  \draw (-65:2.4) node[draw=none, fill=none]{d};
+  \draw (245:2.4) node[draw=none, fill=none]{e};
+  \draw (160:2.4) node[draw=none, fill=none]{g};
+  \draw (200:2.4) node[draw=none, fill=none]{f};
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw (180 + 90:2) node{} -- (180 + -20:2) node{};
+  \draw (180 + 90:2) node{} -- (180 + 200:2) node{};
+  \draw (180 + 90:2) node{} -- (180 + -65:2) node{};
+  \draw (180 + 90:2) node{} -- (180 + 245:2) node{};
+  \draw (180 + 20:2) node{} -- (180 + -20:2) node{};
+  \draw (180 + -20:2) node{} -- (180 + 200:2) node{};
+  \draw (180 + 200:2) node{} -- (180 + 160:2) node{};
+  \draw (180 + 160:2) node{} -- (180 +  20:2) node{};
+  \draw (180 + 245:2) node{} -- (180 +  20:2) node{};
+  \draw (180 + 160:2) node{} -- (180 +  -65:2) node{};
+  \draw (180 + 90:2.4) node[draw=none, fill=none]{d};
+  \draw (180 + 20:2.4) node[draw=none, fill=none]{e};
+  \draw (180 + -20:2.4) node[draw=none, fill=none]{f};
+  \draw (180 + -65:2.4) node[draw=none, fill=none]{g};
+  \draw (180 + 245:2.4) node[draw=none, fill=none]{a};
+  \draw (180 + 200:2.4) node[draw=none, fill=none]{b};
+  \draw (180 + 160:2.4) node[draw=none, fill=none]{c};
+\end{tikzpicture}
+\fi
+\hfill
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw (90+ 0:2) node{} -- (90+ 72:2) node{};
+  \draw (90+72:2) node{} -- (90+2*72:2) node{};
+  \draw (90+2*72:2) node{} -- (90+3*72:2) node{};
+  \draw (90+3*72:2) node{} -- (90+4*72:2) node{};
+  \draw (90+4*72:2) node{} -- (90+5*72:2) node{};
+  \draw (0:0.8) node{} -- (180:.8) node{};
+  \draw (0:0.8) node{} -- (90:2) node{};
+  \draw (180:0.8) node{} -- (90:2) node{};
+  \draw (0:0.8) node{} -- (90+2*72:2) node{};
+  \draw (90+3*72:2) node{} -- (180:.8) node{};
+  \draw (90:2.4) node[draw=none, fill=none]{1};
+  \draw (90+72:2.4) node[draw=none, fill=none]{5};
+  \draw (90+2*72:2.4) node[draw=none, fill=none]{4};
+  \draw (90-2*72:2.4) node[draw=none, fill=none]{3};
+  \draw (90-1*72:2.4) node[draw=none, fill=none]{2};
+  \draw (0:1.2) node[draw=none, fill=none]{6};
+  \draw (180:1.2) node[draw=none, fill=none]{7};
+\end{tikzpicture}
+
+\vfill
+\vfill
+\vfill
+\end{problem}
+
+\begin{problem}
+Show how to compute
+\ifversionCD
+\ifversionA $C(13,3) = \binom{13}{3}$ \else
+            $C(10,5) = \binom{10}{5}$ \fi
+\else
+\ifversionA $C(12,4) = \binom{12}{4}$ \else
+            $C(11,5) = \binom{11}{5}$ \fi
+\fi
+without using a calculator.
+\end{problem}
+\vfill
+
+
+\newpage
+
+\begin{problem}
+\ifversionCD
+\ifversionA
+$\Prob(A) = 0.3$,
+$\Prob(B) = 0.5$,
+$\Prob(A \cap B) = 0.2$.
+\else
+$\Prob(A) = 0.4$,
+$\Prob(B) = 0.5$,
+$\Prob(A \cap B) = 0.15$.
+\fi
+\else
+\ifversionA
+$\Prob(A) = 0.5$,
+$\Prob(B) = 0.3$,
+$\Prob(A \cap B) = 0.15$.
+\else
+$\Prob(A) = 0.5$,
+$\Prob(B) = 0.4$,
+$\Prob(A \cap B) = 0.2$.
+\fi
+\fi
+Use this to answer the following questions.  Be sure to show your work.
+
+\begin{enumerate}
+\item
+What is $\Prob(A \cup B)$?
+\vfill
+\item
+What is $\Prob(A \mid B)$?
+\vfill
+\item
+Are $A$ and $B$ mutually exclusive? (Explain your answer.)
+\vfill
+\item
+Are $A$ and $B$ independent? (Explain your answer.)
+\vfill
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+\textsc{Coins and Cards.}
+\begin{enumerate}
+\item
+If I flip a coin 6 times, what is the probability of getting the same
+result each of the six times?
+\vfill
+% \item
+% If I flip a coin 6 times, what is the probability of getting exactly three heads?
+% \vfill
+\item
+If I deal six cards from a standard 52 card deck, what is the probability
+that they will all be the same color? (The deck has 26 red cards and 26 black
+cards.)
+\vfill
+\end{enumerate}
+\end{problem}
+
+
+\newpage
+
+\begin{problem}
+\textsc{4's on Four 4-Sided Dice.}
+Let $X$ be the number of 4's when rolling four 4-sided dice.
+\begin{enumerate}
+\item
+What is $\Prob(X = 0)$?
+\vfill
+\item
+What is $\Prob(X = 2)$?
+\vfill
+\item
+What is the expected value of $X$?  (This is denoted $\E(X)$.)
+\vfill
+\vfill
+\end{enumerate}
+\end{problem}
+\newpage
+
+
+\begin{problem}
+Sam collects commemorative stamps.  Among his favorites
+are Maria Goeppert Mayer stamps
+\includegraphics[height=.4in]{../images/MariaGoeppertMayer}
+and the new cowaphant stamps.
+\fbox{\includegraphics[height=.35in]{../images/cowaphant-with-hat}}
+
+\bigskip
+
+On Sam's desk are four envelopes with stamps in them.  The table below
+shows how many of each kind of stamp are in each envelope.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+&
+\includegraphics[height=.4in]{../images/MariaGoeppertMayer}
+&
+\fbox{\includegraphics[height=.30in]{../images/cowaphant-with-hat}}
+\\
+envelope & Maria Goeppert Mayer & cowaphant
+\\
+\hline \hline
+A & 1 & 4 \\
+\hline
+B & 3 & 7 \\
+\hline
+C & 10 & 10 \\
+\hline
+D & 18 & 2 \\
+\hline
+
+\end{tabular}
+\end{center}
+Sam randomly selects an envelope (each envelope equally likely)
+and then randomly selects a stamp from within that envelope (each
+stamp in the envelope equally likely).
+\begin{enumerate}
+\item
+What is the probability that Sam chooses a cowaphant stamp?
+\vfill
+\item
+If Sam chooses a cowaphant stamp, what is the probability that
+the envelope was envelope A?
+\vfill
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+<<>>=
+sum(.25 * c(4/5, 7/10, 1/2, 1/10))
+sum(.25 * c(4/5, 7/10, 1/2, 1/10)) %>% fractions()
+.25 * c(4/5, 7/10, 1/2, 1/10) / sum(.25 * c(4/5, 7/10, 1/2, 1/10))
+.25 * c(4/5, 7/10, 1/2, 1/10) / sum(.25 * c(4/5, 7/10, 1/2, 1/10)) %>% fractions()
+@
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Dice.
+\begin{enumerate}
+\item
+If you roll three dice (each with six sides numbered 1, 2, 3, 4, 5, and 6),
+what is the probability that the three numbers rolled will all be the same?
+\vfill
+\item
+If you roll three dice (each with six sides numbered 1, 2, 3, 4, 5, and 6),
+what is the probability that the three numbers rolled will be distinct?
+(no repetitions)
+\vfill
+% \item
+% If you roll three dice (each with six sides numbered 1, 2, 3, 4, 5, and 6),
+% what is the probability that the there will be two of one number
+% and one of another number? (Example: two 2's and one 5.)
+% \vfill
+
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+What is the output of the following python code?
+
+\ifversionCD
+<<engine = "python", eval = FALSE>>=
+import re as re
+re.findall(r'b+a*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+@
+\else
+<<engine = "python", eval = FALSE>>=
+import re as re
+re.findall(r'a+b*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+@
+\fi
+\end{problem}
+\vfill
+
+\begin{solution}
+
+<<python>>=
+import re as re
+re.findall(r'a+b*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+re.findall(r'b+a*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+@
+
+\begin{alltt}
+import re as re
+re.findall(r'a+b*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+['abcd', 'abcddc', 'aabbccddcc', 'aa']
+
+re.findall(r'b+a*[cd]*', 'abcdabcddcbaabbccddccbbaa')
+['bcd', 'bcddc', 'baa', 'bbccddcc', 'bbaa']
+\end{alltt}
+\end{solution}
+
+
+\newpage
+
+
+\begin{problem}
+Let $L$ be the langauge consisting of all binary strings
+that end with at least two 0's followed by at least one 1.
+Examples: $10011 \in L$, $0010 \not\in L$, $01011 \not\in L$.
+
+\begin{enumerate}
+\item
+Write a \textbf{regular expression} for $L$.
+\vfill
+\item
+Construct a \textbf{DFA} that recognizes $L$.
+\vfill
+\vfill
+\vfill
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Answer \textbf{ONE} of the following (your choice):
+\begin{enumerate}
+\item Give an example of a language that is \textbf{not regular},
+and explain how you know the language is not regular.
+\item
+Give an example of a language that is \textbf{not Turing computable}
+and explain how you know the language is not Turing computable.
+\end{enumerate}
+\end{problem}
+
+\vfill
+\vfill
+\vfill
+
+\newpage
+
+
+
+\begin{problem}
+Below is the state diagram for an \textbf{NFA} $N$.
+
+\begin{center}
+\small
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick,scale=.9]
+  \tikzstyle{every state}=[fill=white,draw=black,text=black]
+
+  \node[state]             (B) {$B$};
+  \node[initial,state]     (A) [below left of=B] {$A$};
+  \node[accepting,state]   (C) [below right of=B] {$C$};
+
+  \path (A) edge              node {1} (B)
+            edge              node {0} (C)
+        (B) edge [loop above] node {0} (B)
+            edge              node {0} (C)
+        (C) edge [loop right] node {1} (C)
+            edge [bend left]  node {1} (A);
+\end{tikzpicture}
+
+\end{center}
+
+\medskip
+
+\begin{enumerate}
+\item
+	Which of the following strings are accepted by $N$?
+	(Simply write ``accept'' or ``reject'' after each.)
+
+	\medskip
+	\begin{multicols}{3}
+	\begin{itemize}
+\item 101
+	\medskip
+\item 0011
+	\medskip
+\item 0100
+	\medskip
+\item 1001
+	\medskip
+\item 0101
+	\medskip
+\item 01100
+	\medskip
+	\end{itemize}
+	\end{multicols}
+
+\item
+Design a \textbf{DFA} that accepts the same language as $N$ using
+a general method that works for all NFAs.
+\vfill
+\vfill
+\vfill
+\item
+Construct a \textbf{regular grammar} for this language using
+a \textbf{general method} that works for all NFAs.
+\vfill
+\vfill
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\verb!(01 | 10*01*1)* 10*01*!
+\end{solution}
+
+\newpage
+
+
+\begin{problem}
+Below is the instruction set for a Turing machine $M$ with start state \texttt{s0}
+and final state (i.e., accepting state) \texttt{s4}.  In each row, the columns
+are in the order state, symbol, symbol, direction, state.
+
+\bigskip
+
+\qquad
+\ifversionCD
+\begin{minipage}{.9\textwidth}
+\begin{alltt}
+s0  0   X   R   s2
+s0  1   X   R   s1
+s1  0   Y   R   s2
+s1  1   Y   R   s3
+s2  0   Z   L   s4
+s2  1   Z   R   s3
+s3  0   0   R   s3
+s3  1   1   L   s4
+\end{alltt}
+\end{minipage}
+\else
+\begin{minipage}{.9\textwidth}
+\begin{alltt}
+s0  0   X   R   s1
+s0  1   1   R   s1
+s1  0   0   R   s1
+s1  1   1   R   s2
+s2  1   1   R   s1
+s2  0   Y   L   s3
+s3  0   0   R   s4
+s3  1   Y   R   s4
+\end{alltt}
+\end{minipage}
+\fi
+
+\bigskip
+
+\noindent
+	Fill out the table below:
+
+\begin{center}
+\large
+\begin{tabular}{|l||c|c|c|}
+	\hline
+	input & Does $M$ accept? & tape contents upon halting & last state\\
+	string & (Y or N) & (or DNH for does not halt) & (or DNH for does not halt)\\
+	\hline
+	\hline
+	0011 & & & \\[4mm]
+	\hline
+	1101 & & & \\[4mm]
+	\hline
+	0100 & & & \\[4mm]
+	\hline
+\end{tabular}
+\end{center}
+
+\end{problem}
+
+\newpage
+
+\centerline{\bf This space available for extra work, cowaphant art, etc.}
+\newpage
+
+\shipoutSolutions
+
+\end{document}
+
+\begin{problem}
+\textsc{Ordering permutations.}
+\begin{enumerate}
+\item
+Put the following permutations in increasing lexicographical order:
+\medskip
+
+\centerline{
+A. 263541 \qquad  B. 261435 \qquad C. 263415 \qquad D. 165432}
+
+\bigskip
+\centerline{
+List letters in order: \ \
+\rule{.4in}{.5pt}, \ \
+\rule{.4in}{.5pt}, \ \
+\rule{.4in}{.5pt}, \ \
+\rule{.4in}{.5pt}
+}
+\medskip
+%\sol{D,B,C,A}
+
+\item
+	List the next {\bf four} permutations that follow 58327641 in lexicographical order.
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+{\sc ABC-123 Lottery.}
+Consider the following lottery type game:
+A player selects (in order)
+three {\em distinct} letters from A to Z and
+three {\em distinct} digits from 0 to 9.
+(Examples: one lottery ticket would be AZD-924, another would be ADZ-492.
+On the other hand,
+ABA-012 is not a legal ticket because A is repeated
+and 123-ABC is not a legal ticket because the numbers come first.)
+Later, the lottery commission draws three distinct letters and three distinct
+digits at random and in order.
+\begin{itemize}
+\item
+If all the numbers and letters match in order,
+then the player wins \$1,000,000.
+\item
+If all the numbers and letters match but are not in the correct order,
+then the player wins \$100,000.
+\item
+If the all the letters match (not necessarily in order), but the numbers
+do not, then the player wins \$1,000;
+\item
+If the all the numbers match (not necessarily in order), but the letters
+do not, then the player wins a prize of \$10;
+\item
+In all other cases, the player wins nothing.
+\end{itemize}
+
+\begin{enumerate}
+\item
+Fill in the following table.  Show your work in the space below.
+% [I will give values for selected
+% cells if you are stuck, or can't get all of them.]
+
+\begingroup
+\Large
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+amount won & 1,000,000 & 100,000 & 1000 & 10 & 0 \\
+\hline
+\hline
+probability &
+\phantom{XXXXXXX} &
+\phantom{XXXXXXX} &
+\phantom{XXXXX} &
+\phantom{XXXXX} &
+\phantom{XXXXX} \\
+\hline
+\end{tabular}
+\endgroup
+
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+
+\iffalse
+\item
+What is $P(W=100)$?
+(That is, what is the probability of winning \$100?)
+\item
+What is $P(W=5)$?
+\item
+What is $P(W=2)$
+\item
+What is $P(W=0)$?
+\item
+What is $P(W>0)$?
+\fi
+\item
+Determine the {\bf expected value} of the amount won from one lottery ticket.
+[This will be graded based on your
+answers to the questions above, even if they are incorrect, so be
+sure to show your work.]
+
+\vfill
+\vfill
+\item
+How much must the lottery charge per play to avoid losing money at
+this game?
+\vfill
+\item
+%(Extra credit.)
+For which kind of prize should the lottery commission
+expect to pay out the most money?  Explain.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+<<>>=
+vals <- c(1000000, 100000, 1000, 10, 0)
+plays <- (26*25*24*10*9*8); plays
+probs <- 1/plays * c(
+  1,                             # perfect match (in order)
+  3 * 2 * 1 * 3 * 2 * 1 - 1,     # correct but in wrong order
+  3 * 2 * 1 * (10 * 9 * 8 - 3 * 2 * 1),   # letters correct, numbers not
+  3 * 2 * 1 * (26 * 25 * 24 - 3 * 2 * 1)  # numbers correct, letters not
+)
+probs <- c(probs, 1 - sum(probs)); probs
+probs * plays
+sum(probs * vals)
+probs * vals
+
+1/probs
+
+1 /
+  c(11232000,
+    (choose(26, 3) - 1 ) * (choose(10, 3) - 1),
+    (choose(26, 3) - 1) * choose(10, 3) / (choose(10, 3) - 1),
+    (choose(10, 3) - 1) * choose(26, 3) / (choose(26, 3) - 1),
+    1) /
+  probs
+
+@
+\end{solution}
+
+\begin{problem}
+Is the graph below bipartite?  Explain.
+\medskip
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x:2) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x+90:1) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:2) node{} -- (\x+90:2) node{} };
+  \draw \foreach \x in {5,6, ..., 8} { (180-\x*90:2.4) node[fill=none, draw = none]{\x} };
+  \draw \foreach \x in {1,2, ..., 4} { (180-\x*90:0.6) node[fill=none, draw = none]{\x} };
+
+\end{tikzpicture}
+
+\end{problem}
+
+\vfill
+
+\end{document}

@@ -1,0 +1,611 @@
+
+\documentclass[10pt]{article}
+\usepackage{problems}
+\usepackage{eepic}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+\usepackage{probstat}
+\usepackage{fancyhdr}
+%\input myabbrev
+%\input mysym
+
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+
+\newif\ifversionA
+\versionAfalse
+\versionAtrue
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 252/S18: Test 3 \ifversionA A \else B \fi}
+\rhead{\sf \thepage}
+\cfoot{}
+
+\begin{document}
+\noindent {\sf Math 252}
+
+\noindent {\sf Spring 2018 \hfill Name \rule{2.5in}{.5pt} }
+
+\bigskip
+\centerline{\sf \Large Test 3}
+
+
+\bigskip
+
+
+
+\begin{problem}
+Below is a the state diagram for an NFA $N$.
+
+\begin{center}
+
+\ifversionA
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [right of=B] {$c$};
+
+  \path (A) edge              node {0,1} (B);
+  \path (B) edge              node {1} (C);
+  \path (A) edge [bend left] node {1} (C);
+  \path (B) edge [loop below] node {1} (B);
+  \path (C) edge [loop below] node {0} (C);
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [right of=B] {$c$};
+
+  \path (A) edge              node {0,1} (B);
+  \path (B) edge              node {1} (C);
+  \path (A) edge [bend left] node {1} (C);
+  \path (A) edge [loop below] node {0} (A);
+  \path (C) edge [loop below] node {0} (C);
+\end{tikzpicture}
+\fi
+\end{center}
+
+
+
+\begin{enumerate}
+\item
+For each string in the table below, indicate whether $N$ accepts the string.
+For accepted strings, list (in order) a sequence of states the
+NFA goes through to accept the string.  No other explanation needed.
+
+\begin{center}
+  \Large
+\begin{tabular}{|c|c|c|}
+  \hline
+  string & accept? (Y or N) & sequence of states (for accepted strings)
+  \\
+  \hline\hline
+  01 & & \\[4mm] \hline
+  001 & & \\[4mm] \hline
+  101 & & \\[4mm] \hline
+  0101 & & \\[4mm] \hline
+  0110 & & \\[4mm] \hline
+\end{tabular}
+\end{center}
+
+
+%\item
+%Draw the state diagram for an equivalent NFA that is
+%$\varepsilon$-free (i.e., has no $\varepsilon$-transitions).
+\item
+Draw the state diagram for a DFA that accepts the same language
+using an algorithm that can convert any NFA into an equivalent DFA.
+(You need not show unreachable states.)
+\vfill
+%\item
+%Describe the language accepted by $N$ with a regular expression.
+\vfill
+\end{enumerate}
+
+
+\end{problem}
+
+
+\newpage
+
+\begin{problem}
+  Let $L$ be the language that contains all and only binary
+  strings that
+\ifversionA
+contain a 1 and end with three or more consecutive 0's.
+  (So $01000 \in L$ and $110000 \in L$, but $0100 \not\in L$ and $000 \not\in L$.)
+\else
+contain a 0 and end with three or more consecutive 1's.
+  (So $10111 \in L$ and $001111 \in L$, but $1011 \not\in L$ and $111 \not\in L$.)
+\fi
+
+  \begin{enumerate}
+    \item
+      Design a DFA that accepts the langauge $L$.
+      \vfill
+      \vfill
+    \item
+      Construct a regular expression for $L$.  (You do not have to use
+      the algorithm that converts any DFA into a regular expression.)
+      \vfill
+      \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+The productions rules for a grammar $G$ with start symbol $S$,
+terminals $a$, $b$, and $c$ and
+non-terminals $X$, $Y$, and $Z$ is given below:
+\[
+\begin{array}{rcl}
+G: \qquad
+S & \rightarrow & XY  \\
+X & \rightarrow & a \mid YZ \\
+Y & \rightarrow & b\mid ZX \\
+Z & \rightarrow & c\mid XY \\
+\end{array}
+\]
+\begin{enumerate}
+\item
+%S -> XY -> aY -> aZX -> aZYZ -> aZYXY -> acbab
+%S -> XY -> YZY -> YXYY -> YXZXY -> bacab
+%S -> XY -> YZY -> ZXZY -> XYXZY -> abacb
+\ifversionA
+\def\target{bacab}
+\else
+\def\target{abacb}
+\fi
+Give either a derivation or a derivation tree (also called a parse tree)
+that shows that $G$ generates $\target$ (i.e., that $S \stackrel*{\Rightarrow} \target$).
+\vfill
+\vfill
+\vfill
+%\item
+%Give a left-most derivation that shows that
+%$G \stackrel*{\Rightarrow} babb$.
+%\item
+%Show that $G$ is an ambiguous grammar.
+%\item
+%Use a systematic method to construct a PDA that recognizes the
+%language that $G$ generates.
+\item
+Is $G$ a regular grammar?  Explain.
+\vfill
+\vfill
+\item
+Is $G$ a context free grammar?  Explain.
+\vfill
+\vfill
+\end{enumerate}
+
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Explain how we know that $\{0^n1^n \mid n = 0, 1, 2, \dots \}$ is not
+a regular language.
+\end{problem}
+
+\vfill
+\vfill
+
+\begin{problem}
+Show that if $A$ is a regular language,
+then $\overline{A} = \{x \mid x\not \in A\}$ is also regular.
+\end{problem}
+
+\vfill
+\vfill
+
+\newpage
+
+\begin{problem}
+We learned an algorithm for converting any DFA into a regular expression.
+This problem asks you a few questions about that algorithm.
+
+\begin{enumerate}
+\item In the first phase of the algorithm,
+we must modify the automaton to make sure it
+has two properties.  What are those two properties?
+\vfill
+\item Demonstrate how to do the first phase using the DFA below.
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick,scale=0.8]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial,accepting]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [below of=B] {$c$};
+
+  \path (A) edge              node {1} (B);
+  \path (B) edge              node {1} (C);
+  \path (C) edge              node {1} (A);
+  \path (B) edge [loop above] node {0} (B);
+  \path (C) edge [loop below] node {0} (C);
+  \path (A) edge [loop above] node {0} (A);
+\end{tikzpicture}
+
+
+\vfill
+\vfill
+\item In the second phase, states are ``ripped out" of a GNFA until
+only two states remain.  Using that process, show what happens
+when state $a$ is ripped out of the GNFA shown below.  (You don't have to complete
+the process, just do this one step.)
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick,scale=0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale=0.7]
+
+  \node[]  (X) {};
+  \node[state,initial]    (S) [left of=X]  {$s$};
+  \node[state]            (A) [above of=X] {$a$};
+  \node[state]            (C) [below of=X] {$c$};
+  \node[state,accepting]  (T) [right of=X] {$t$};
+
+  \path (A) edge [bend left]  node {$\bm{\lambda}$} (T);
+  \path (C) edge [bend right] node {$\bm{\lambda}$} (T);
+  \path (S) edge [bend left]  node {$\bm{\lambda}$} (A);
+  \path (A) edge [bend left]  node {$\bm{10}^*\bm{1}$} (C);
+  \path (C) edge [bend left]  node {$\bm{1}$} (A);
+  \path (C) edge [loop below] node {$\bm{0}$} (C);
+  \path (A) edge [loop above] node {$\bm{0}$} (A);
+\end{tikzpicture}
+
+\vfill
+\vfill
+
+\end{enumerate}
+\end{problem}
+
+
+
+\newpage
+
+\section*{Unused problems}
+
+\begin{problem}
+Answer the following questions about the graph below.
+
+\medskip
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+\begin{tikzpicture}[thick,scale=0.7]%
+  \draw (90:2)     node{} -- (90+180:2) node{};
+  \draw (90-60:2)  node{} -- (90-120:2) node{};
+  \draw (90:2)     node{} -- (90+60:2)  node{};
+  \draw (90+60:2)  node{} -- (90+120:2) node{};
+  \draw (90+60:2)  node{} -- (90-60:2)  node{};
+  \draw (90+120:2) node{} -- (90-120:2) node{};
+  \draw (90-60:2)  node{} -- (90+180:2) node{};
+  \draw \foreach \x in {1,2,...,6} { (90 - \x * 60:2.4) node[fill=none,draw=none]{\x} };
+\end{tikzpicture}
+
+  \begin{enumerate}
+    \item
+  Does the graph have an Euler circuit?  How do you know?
+  \vfill
+\item
+  Does the graph have a Hamilton circuit?  How do you know?
+  \vfill
+  \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Draw a graph with 6 vertices, each of which has degree 3.
+\vfill
+\end{problem}
+
+\begin{problem}
+  Explain why it is impossible to draw a graph with 5 vertices, each of degree 3.
+\vfill
+\end{problem}
+
+\newpage
+\begin{problem}
+Is the graph below bipartite?  Explain.
+\medskip
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x:2) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x+90:1) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:2) node{} -- (\x+90:2) node{} };
+  \draw \foreach \x in {5,6, ..., 8} { (180-\x*90:2.4) node[fill=none, draw = none]{\x} };
+  \draw \foreach \x in {1,2, ..., 4} { (180-\x*90:0.6) node[fill=none, draw = none]{\x} };
+
+\end{tikzpicture}
+
+\end{problem}
+
+\vfill
+
+
+\begin{problem}
+{\bf How many isomorphisms} are there between the following two graphs?
+{\bf Explain.}
+\medskip
+
+(If you do not know exactly how many there are, tell me
+as much as you know about how many there are.
+Examples: There are at least 3; there are at most 2, etc.)
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=6pt]
+
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw (90+ 0:2) node{} -- (90+ 50:2) node{};
+  \draw (90+ 0:2) node{} -- (90- 50:2) node{};
+  \draw (90+50:2) node{} -- (90+100:2) node{};
+  \draw (90-50:2) node{} -- (90-100:2) node{};
+  \draw (90:2)    node{} -- (90+150:2) node{};
+  \draw (90:2)    node{} -- (90-150:2) node{};
+  \draw (90-100:2) node{} -- (90+100:2) node{};
+  \draw (90-50:2) node{} -- (90+150:2) node{};
+  \draw (90+50:2) node{} -- (90-150:2) node{};
+  \draw (90:2.4) node[draw=none, fill=none]{a};
+  \draw (90-50:2.4) node[draw=none, fill=none]{b};
+  \draw (90-100:2.4) node[draw=none, fill=none]{c};
+  \draw (90-150:2.4) node[draw=none, fill=none]{d};
+  \draw (90+150:2.4) node[draw=none, fill=none]{e};
+  \draw (90+100:2.4) node[draw=none, fill=none]{f};
+  \draw (90+50:2.4) node[draw=none, fill=none]{g};
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw (90+ 0:2) node{} -- (90+ 50:2) node{};
+  \draw (90+ 0:2) node{} -- (90- 50:2) node{};
+  \draw (90+50:2) node{} -- (90+100:2) node{};
+  \draw (90-50:2) node{} -- (90-100:2) node{};
+  \draw (90+100:2)node{} -- (90+150:2) node{};
+  \draw (90-100:2)node{} -- (90-150:2) node{};
+  \draw (90:2)    node{} -- (90+100:2) node{};
+  \draw (90:2)    node{} -- (90-100:2) node{};
+  \draw (90+150:2)node{} -- (90-150:2) node{};
+  \draw (90:2.4) node[draw=none, fill=none]{1};
+  \draw (90-50:2.4) node[draw=none, fill=none]{2};
+  \draw (90-100:2.4) node[draw=none, fill=none]{3};
+  \draw (90-150:2.4) node[draw=none, fill=none]{4};
+  \draw (90+150:2.4) node[draw=none, fill=none]{5};
+  \draw (90+100:2.4) node[draw=none, fill=none]{6};
+  \draw (90+50:2.4) node[draw=none, fill=none]{7};
+\end{tikzpicture}
+
+\vfill
+\vfill
+\end{problem}
+
+
+
+\begin{problem}
+Below is the transition table (in the style
+of our TM simulator) for a Turing machine $M$.
+
+\bigskip
+\bigskip
+
+%\hspace*{.5in}
+\begin{minipage}{4.0in}
+\begin{enumerate}
+%\item
+%Note that one arrow in the state diagram is unlabeled and one
+%row of the transition table is incomplete.  Put the correct
+%values in.
+\item
+For each of the following inputs strings, trace the computation of
+$M$ on the input and list the first 7  ``snapshots'' of the computation
+(fewer if it halts before 7 steps have been completed).
+Each snapshot should include (i) tape contents, (ii) the current state,
+and (iii) the location of the tape head.
+
+
+\bigskip
+
+Here are the strings: \medskip
+
+\centerline{\Large 101, 010, 0001, 000010}
+
+\bigskip
+
+
+\item
+Circle the strings below that are accepted by $M$.
+(These are the same four strings as above.
+
+\medskip
+
+\begin{center}
+\Large 101\qquad 010\qquad %001,
+0001\qquad 000010
+
+%000001, 000000
+\end{center}
+
+\bigskip
+
+%\item
+%What language does $M$ accept?  (If you cannot tell fairly quickly, say what
+%you know about the language and move on.  Come back to this later if you
+%have time.)
+\end{enumerate}
+\end{minipage}
+%
+\qquad
+\begin{minipage}[c]{2.5in}
+\begin{verbatim}
+ATM
+SMALL: a small TM
+0 1     // input alphabet
+X 0 1 B // tape alphabet
+1   // number of tapes
+1   // number of tracks on tape 0
+1   // tape 0 is 1-way infinite
+a   // initial state
+e   // final state (accepting state)
+a   0   b   1   R
+a   X   a   X   R
+b   0   c   0   R
+b   1   d   1   L
+b   X   b   X   R
+c   0   b   X   R
+c   1   e   1   L
+d   0   d   0   L
+d   X   d   X   L
+d   1   a   1   R
+end
+\end{verbatim}
+\end{minipage}
+
+\iffalse
+\begin{minipage}[t]{3in}
+% missing line: c   X   c   X   R
+%
+\setlength{\unitlength}{3mm}
+\begin{picture}(25,15)(-5,-5)
+\put(0,10){\ellipse{3}{3}}
+\put(0,10){\makebox(0,0){a}}
+\put(10,10){\ellipse{3}{3}}
+\put(10,10){\makebox(0,0){b}}
+\put(20,10){\ellipse{3}{3}}
+\put(20,10){\makebox(0,0){c}}
+\put(10,0){\ellipse{3}{3}}
+\put(10,0){\makebox(0,0){d}}
+\put(20,0){\ellipse{3}{3}}
+\put(20,0){\ellipse{4}{4}}
+\put(20,0){\makebox(0,0){e}}
+\end{picture}
+\end{minipage}
+\fi
+
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Let $f(n)$ be the number of multiplications and subtractions
+(added together) used in the
+following algorithm.
+%(It only depends on $n$, not on $a$.)
+
+\begin{verbatim}
+    int mystery(int n) {
+        if (n <= 1) { return 2; }
+
+        m = mystery( round(n/3) );   // round() rounds to nearest integer
+        m = m*m*m;
+
+        for(i = 1; i <= n; i++) {
+            m = m - i;
+        }
+        return m;
+    }
+\end{verbatim}
+
+\begin{enumerate}
+\item
+Give a recurrence relation and initial conditions for $f$.
+\vfill
+
+%\item
+%What are $f(1)$, $f(3)$ and $f(9)$.
+
+%\vfill
+
+%\item
+%Solve the recurrence to find an exact formula for $f$ when $n$ is a
+%power of 3.
+%\vfill
+%\vfill
+%\vfill
+
+\item
+What is {\tt mystery(3)}?
+%What is {\tt mystery(9)}?
+\vfill
+%What does this algorithm do?
+%\item
+%Give a big $\Theta$  estimate for $f(n)$ that holds for all $n$.
+%
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+Let $t(n)$ satisfy the recurrence
+$t(n) = t(n-1) + 2\, t(n-2)$ with initial conditions $t(0) = 0$ and
+$t(1) = 1$.
+\begin{enumerate}
+\item
+Compute the values of $t(2)$, $t(3)$, $t(4)$ and $t(5)$.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{cccc}
+$t(2) = \rule[-5pt]{2cm}{.5pt}$
+&
+$t(3) = \rule[-5pt]{2cm}{.5pt}$
+&
+$t(4) = \rule[-5pt]{2cm}{.5pt}$
+&
+$t(5) = \rule[-5pt]{2cm}{.5pt}$
+\end{tabular}
+\end{center}
+
+\vfill
+\item
+Find an exact formula for $t(n)$.
+\vfill
+\vfill
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Let $g$ be an increasing function that satisfies the recurrence
+$g(n) = 4 g(n/3) + n + 1$ when $n$ is a power of 3 and for which
+$g(1) = 2$.
+\begin{enumerate}
+\item
+Use unraveling to find an \emph{exact} formula for $g(n)$ when $n$ is a
+power of 3.
+\vfill
+\item
+Give a good big-O representation of $g(n)$.
+[Note: there are ways to do this even if you can't do part (a).]
+\vfill
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+What is the Halting Problem and why is it important?
+\vfill
+\end{problem}
+
+
+\end{document}

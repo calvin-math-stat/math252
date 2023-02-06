@@ -1,0 +1,797 @@
+
+\documentclass[10pt]{article}
+\usepackage{problems}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+\usepackage{probstat}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+%\input myabbrev
+%\input mysym
+
+<<include = FALSE>>=
+require(mosaic)
+require(dplyr)
+test_version <- 1
+test_letter <- LETTERS[test_version]
+@
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 252/S18: Test 1 (\Sexpr{test_letter})}
+\rhead{\sf \thepage}
+\cfoot{}
+
+\begin{document}
+
+\noindent {\sf Math 252}
+
+
+\noindent {\sf Spring 2018 \hfill Name \rule{2.5in}{.5pt} }
+
+\bigskip
+\centerline{\sf \Large Test 1}
+
+
+\bigskip
+
+<<include = FALSE>>=
+n <- c(12, 9, 9, 12)[1 + test_version %% 4]
+k <- c(3, 4, 3, 4)[1 + test_version %% 4]
+BC <- tibble(
+  n = c(12, 9, 9, 12),
+  k = c(3, 4, 3, 4),
+  answer = choose(n,k)
+)
+BC
+@
+
+\begin{problem}
+% Binomial coeffcients.
+\begin{enumerate}
+\item
+  Show how to calculate $C(\Sexpr{n}, \Sexpr{k}) = {\Sexpr{n} \choose \Sexpr{k}}$
+  \textbf{without a calculator. Show your work.}
+\vfill
+\item
+Write a counting problem for which $\Sexpr{n} \choose \Sexpr{k}$ gives the anwer.
+(Keep your problem simple, do not use donuts.)
+\vfill
+\end{enumerate}
+\end{problem}
+
+
+<<include = FALSE>>=
+S <- tibble(
+  friends = c(8,9,10,11),
+  ways    = 3 * choose(friends, 2) * 2
+)
+@
+\begin{problem}
+A sub shop is having a special: Three subs (one Italian, one veggie, and one meatball)
+for \$3. Alice can't resist and buys the three subs.  Then it occurs to her that she
+is only hungry enough to eat one, so she decides to give away 2 of the 3 subs to
+some friends.  Alice is meeting \Sexpr{S$friends[test_version]} friends to study.
+How many ways can she give two of the subs
+to two different of these friends (since they don't want more than one either)?
+
+Note: Giving
+Bob the Italian sub and Claire the veggie sub is considered different from giving
+Claire the Italian sub and Bob the veggie sub.
+\vfill
+\end{problem}
+
+
+\newpage
+
+
+\begin{problem}
+Bitstrings
+\begin{enumerate}
+\item
+  How many bitstrings of length 7 are there?
+  \vfill
+\item
+  How many bitstrings of length 7 have \emph{exactly} 4 1's?
+	\vfill
+\item
+  How many bitstrings of length 7 have \emph{at least} 4 1's?
+	\vfill
+\item
+	How many bitstrings of length 7 have at least 4 {\em consecutive} 1's?
+	\vfill
+\end{enumerate}
+\end{problem}
+
+\vfill
+
+\newpage
+
+\begin{problem}
+Below is an adjacency matrix representation of a graph $G$.
+
+\medskip
+
+$
+\displaystyle
+A =
+\left[
+\begin{array}{ccccc}
+0 & 0 & 0 & 1 & \Sexpr{test_version %% 2} \\
+1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+1 & 0 & 1 & 1 & 0 \\
+0 & \Sexpr{(test_version + 1) %% 2} & 1 & 0 & 0 \\
+\end{array}
+\right]
+$
+
+\begin{enumerate}
+\item
+Is $G$ directed or undirected?  How can you tell?
+
+\vfill
+
+\item
+How many vertices does $G$ have?  How can you tell?
+
+\vfill
+
+\item
+How many edges does $G$ have?  How can you tell?
+
+\vfill
+
+\item
+Does $G$ have any self-loops?  How can you tell?
+
+\vfill
+
+% \item
+% Does $G$ have any multi-edges?  How can you tell?
+%
+% \vfill
+
+% \item
+% Draw the graph $G$ (with dots and lines) in the space next to the matrix.
+% \vfill
+
+% M =
+% \left[
+% \begin{array}{ccccc}
+% 1 & 1 & 1 & 0 & 1 \\
+% 1 & 1 & 0 & 0 & 0 \\
+% 1 & 0 & 1 & 1 & 0 \\
+% 0 & 0 & 1 & 1 & 0 \\
+% 1 & 0 & 0 & 0 & 1 \\
+% \end{array}
+% \right]
+
+
+%\item
+%Sketch a digraph representation of $R$ next to the matrix above.
+%Choose reasonable names for the vertices.
+%\vfill
+
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Answer the following questions about the graph below.
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+<<echo = FALSE, results = "asis">>=
+graph <- function(base) {
+  skafold <- "
+\\begin{tikzpicture}[thick,scale=0.7]%
+  \\draw (<<b>>:2)      node{} -- (<<b>>-120:2) node{};
+  \\draw (<<b>>:2)      node{} -- (<<b>>+60:2)  node{};
+  \\draw (<<b>>-60:2)   node{} -- (<<b>>+60:2)  node{};
+  \\draw (<<b>>-60:2)   node{} -- (<<b>>+120:2) node{};
+  \\draw (<<b>>-60:2)   node{} -- (<<b>>-120:2) node{};
+  \\draw (<<b>>-120:2)  node{} -- (<<b>>+120:2) node{};
+  \\draw (<<b>>+180:2)  node{} -- (<<b>>+60:2)  node{};
+  \\draw (<<b>>+180:2)  node{} -- (<<b>>+120:2) node{};
+  \\draw \\foreach \\x in {1,2,...,6} { (150 - \\x * 60:2.4) node[fill=none,draw=none]{\\x} };
+\\end{tikzpicture}
+"
+  glue::glue(skafold, b = base, .open = "<<", .close = ">>")
+}
+graph(base = seq(30, 30 + 60 * 4, by = 60)[1 + test_version %% 4])
+@
+
+
+\medskip
+
+
+%
+% \begin{tikzpicture}[thick,scale=0.7]%
+%   \draw (90:2)     node{} -- (90+180:2) node{};
+%   \draw (90-60:2)  node{} -- (90-120:2) node{};
+%   \draw (90:2)     node{} -- (90+60:2)  node{};
+%   \draw (90+60:2)  node{} -- (90+120:2) node{};
+%   \draw (90+60:2)  node{} -- (90-120:2) node{};
+%   \draw (90+60:2)  node{} -- (90-60:2)  node{};
+%   \draw (90+120:2) node{} -- (90-120:2) node{};
+%   \draw (90-60:2)  node{} -- (90+180:2) node{};
+%   \draw \foreach \x in {1,2,...,6} { (150 - \x * 60:2.4) node[fill=none,draw=none]{\x} };
+% \end{tikzpicture}
+
+  \begin{enumerate}
+    \item
+  What is an Euler circuit?  Does this graph have an Euler circuit?  How do you know?
+  \vfill
+    \item
+  Does the graph have an Euler path that is not a circuit?  How do you know?
+  \vfill
+% \item
+%   What is a Hamilton circuit? Does this graph have a Hamilton circuit?  How do you know?
+%   \vfill
+
+  \item
+  What is a bipartite graph? Is this graph bipartite?  How do you know?
+  \vfill
+
+  \item
+  What is a planar graph? Is this graph planar?  How do you know?
+
+  \vfill
+
+  \end{enumerate}
+\end{problem}
+
+
+\newpage
+
+\begin{problem}
+For \textbf{one} of $K_5$ or $K_{3,3}$ (your choice),
+\begin{enumerate}
+\item
+  Draw the graph.
+  \vfill
+\item
+  Explain how we know that the graph cannot be drawn in the plane with no edge crossings.
+  Do not use Kuratowski's Theorem.
+  \vfill
+\end{enumerate}
+\end{problem}
+
+% \begin{problem}
+% Explain why these results about the non-planarity of $K_5$ and $K_{3,3}$ are important.
+% \vfill
+% \end{problem}
+
+% \newpage
+
+\begin{problem}
+Draw a graph with 6 vertices, each of which has degree 3.
+\vfill
+\end{problem}
+
+\begin{problem}
+  Explain why it is impossible to draw a graph with 7 vertices, all of which are degree 3.
+\vfill
+\end{problem}
+
+\newpage
+
+\begin{problem}
+{\bf How many isomorphisms} are there between the following two graphs?
+{\bf Explain.}
+\medskip
+
+(If you do not know exactly how many there are, tell me
+as much as you know about how many there are.
+Examples: There are at least 3; there are at most 2, etc.)
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+<<echo = FALSE, results = "asis">>=
+graphs2 <- function(version) {
+  skafold <- "
+\\begin{tikzpicture}[thick,scale=0.9]%
+  \\draw (90+ 0:2) node{} -- (90+ <<degree3>>:2) node{};
+  \\draw (90+ 0:2) node{} -- (90- <<degree3>>:2) node{};
+  \\draw (90+<<degree3>>:2) node{} -- (90+<<fourfive>>:2) node{};
+  \\draw (90-<<degree3>>:2) node{} -- (90-<<fourfive>>:2) node{};
+  \\draw (90:2)    node{} -- (90<<pm>><<other>>:2) node{};
+  \\draw (90:2)    node{} -- (90<<mp>><<other>>:2) node{};
+  \\draw (90-<<fourfive>>:2) node{} -- (90+<<fourfive>>:2) node{};
+  \\draw (90-<<degree3>>:2) node{} -- (90<<pm>><<other>>:2) node{};
+  \\draw (90+<<degree3>>:2) node{} -- (90<<mp>><<other>>:2) node{};
+  \\draw (90:2.4) node[draw=none, fill=none]{a};
+  \\draw (90-50:2.4) node[draw=none, fill=none]{b};
+  \\draw (90-100:2.4) node[draw=none, fill=none]{c};
+  \\draw (90-150:2.4) node[draw=none, fill=none]{d};
+  \\draw (90+150:2.4) node[draw=none, fill=none]{e};
+  \\draw (90+100:2.4) node[draw=none, fill=none]{f};
+  \\draw (90+50:2.4) node[draw=none, fill=none]{g};
+\\end{tikzpicture}
+\\hfill
+\\begin{tikzpicture}[thick,scale=0.9]%
+  \\draw (-90+ 0:2) node{} -- (-90+ 50:2) node{};
+  \\draw (-90+ 0:2) node{} -- (-90- 50:2) node{};
+  \\draw (-90+50:2) node{} -- (-90+100:2) node{};
+  \\draw (-90-50:2) node{} -- (-90-100:2) node{};
+  \\draw (-90+100:2)node{} -- (-90+150:2) node{};
+  \\draw (-90-100:2)node{} -- (-90-150:2) node{};
+  \\draw (-90:2)    node{} -- (-90+100:2) node{};
+  \\draw (-90:2)    node{} -- (-90-100:2) node{};
+  \\draw (-90+150:2)node{} -- (-90-150:2) node{};
+  \\draw (-90:2.4) node[draw=none, fill=none]{4};
+  \\draw (-90-50:2.4) node[draw=none, fill=none]{5};
+  \\draw (-90-100:2.4) node[draw=none, fill=none]{6};
+  \\draw (-90-150:2.4) node[draw=none, fill=none]{7};
+  \\draw (-90+150:2.4) node[draw=none, fill=none]{1};
+  \\draw (-90+100:2.4) node[draw=none, fill=none]{2};
+  \\draw (-90+50:2.4) node[draw=none, fill=none]{3};
+\\end{tikzpicture}
+"
+
+  # which are at angle 50; which at angle 100; which at 150?
+  degree3  <- c( 50,  50, 150, 100)[1 + version %% 4]
+  fourfive <- c(100, 100, 100,  50)[1 + version %% 4]
+  other    <- c(150, 150,  50, 150)[1 + version %% 4]
+  one_side <- c("-", "+", "-", "-")[1 + version %% 4]
+  other_side <- ifelse(one_side == "+", "-", "+")
+
+  glue::glue(
+    skafold,
+    pm = one_side,
+    mp  = other_side,
+    degree3 = degree3,
+    fourfive = fourfive,
+    other = other,
+    .open = "<<", .close = ">>")
+}
+graphs2(version = test_version)
+@
+
+\vfill
+\vfill
+\vfill
+\end{problem}
+
+
+
+\newpage
+
+\centerline{\textbf{Space for additional work.}}
+
+
+\end{document}
+
+
+
+\newpage
+
+\section*{Unused Problems}
+
+<<include = FALSE>>=
+D <- tibble(
+  kinds = c(6,5,5,6),
+  order_size = c(9, 10, 8, 10),
+  orders = choose(order_size + kinds - 1, order_size)
+)
+@
+
+\begin{problem}
+A bagel shop has \Sexpr{D$kinds[1 + test_version %% 4]}  types of bagels.
+You decide to buy
+\Sexpr{D$order_size[1 + test_version %% 4]} bagels every day, but a
+different set of bagels each day.
+How many ways are there to do this?
+\vfill
+
+\end{problem}
+
+\begin{problem}
+Is the graph below bipartite?  Explain.
+\medskip
+
+\tikzstyle{every node}=[circle, draw, fill=black!50,
+                        inner sep=0pt, minimum width=4pt]
+
+\begin{tikzpicture}[thick,scale=0.9]%
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x:2) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:1) node{} -- (\x+90:1) node{} };
+  \draw \foreach \x in {0,90, ..., 270} { (\x:2) node{} -- (\x+90:2) node{} };
+  \draw \foreach \x in {5,6, ..., 8} { (180-\x*90:2.4) node[fill=none, draw = none]{\x} };
+  \draw \foreach \x in {1,2, ..., 4} { (180-\x*90:0.6) node[fill=none, draw = none]{\x} };
+
+\end{tikzpicture}
+
+\end{problem}
+
+\vfill
+
+
+
+\begin{problem}
+A standard deck of cards has 52 cards (4 suits of 13 kinds each).
+In poker, a full house is 3 of one kind of card and 2 of another kind
+(e.g., 5 $\heartsuit$, $5\diamondsuit$, $5 \clubsuit$, $8 \spadesuit$,
+$8 \heartsuit$).
+How many different full house hands are there?
+\end{problem}
+\vfill
+\vfill
+
+\begin{problem}
+This problem is about permutations of the 6-element set $A = \set{1,2,3,4,5,6}$
+\begin{enumerate}
+\item
+Put the following permutations in lexicographical order:
+135246, 124536, 145326, 145362.
+\vfill
+\item
+	List the next {\bf FOUR} permutations in lexicographical order after 124653.
+\vfill
+\end{enumerate}
+\iffalse
+	Now let's do a lexicographical ordering of 4-combinations from the 6-element set
+	$A = \set{1,2,3,4,5,6}$.  Assume the same coding scheme that we discussed in class.
+\begin{enumerate}
+\item
+	List the next {\bf FOUR} combinations in lexicographical order
+	after 1245.
+	\vfill
+\item
+	What is the {\bf last} combination is lexicographical order.
+	\vfill
+\end{enumerate}
+\fi
+\end{problem}
+
+
+
+\begin{problem}
+Sums.
+\begin{enumerate}
+%\item
+%\label{part:geometric}
+%Give a formula that allows for easy computation of
+%$\sum_{i=0}^{n} r^i = 1 + r + r^2 + \cdots + r^n$.
+%\vfill
+\item
+Express the following sum using $\sum$ notation:
+\[
+5 + 7 + 9 + 11 + 13 + \cdots 5005
+\]
+\item
+Express the following sum using $\sum$-notation:
+$$
+s(n) = 3 + 6 + 12 + \cdots + 3 \cdot 2^n
+$$
+\vfill
+
+\item
+Express the value of $s(n)$ without using $\cdots$ or
+$\sum$-notation.
+\vfill
+
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+A standard deck of cards has 52 cards (4 suits of 13 kinds each).
+In 5-card poker, two pairs is 2 of one kind of card, 2 of another kind, and
+1 of a third kind (so that it doesn't become a full house).
+(e.g.
+$5\heartsuit$,
+$5\clubsuit$,
+$8\diamondsuit$,
+$8\spadesuit$,
+$2\spadesuit$)
+What is the probability of being dealt 2 pairs?
+\end{problem}
+\vfill
+\vfill
+
+
+
+\begin{problem}
+Each of these problems deals with probabilities when
+four 4-sided dice are rolled.
+\begin{enumerate}
+\item
+What is the probability that the four numbers rolled will all be the same?
+% (This is like a mini-Yachtzee.)
+\vfill
+\item
+What is the probability that the four numbers rolled will be distinct?
+(no repetitions)
+\vfill
+\item
+What is the probability that at least one 1 and at least one 2 are rolled?
+\vfill
+\item
+Given that at least one 1 and at least one 2 are rolled, what is the probability that
+all four numbers will be distinct?
+\vfill
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}
+
+\documentclass[10pt]{article}
+\usepackage{problems}
+\usepackage{eepic}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+\usepackage{probstat}
+\usepackage{fancyhdr}
+%\input myabbrev
+%\input mysym
+
+
+\usepackage[latin1]{inputenc}
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 156/F16: Test 3}
+\rhead{\sf \thepage}
+\cfoot{}
+
+\begin{document}
+\noindent {\sf Math 156}
+
+\noindent {\sf Fall 2016 \hfill Name \rule{2.5in}{.5pt} }
+
+\bigskip
+\centerline{\sf \Large Test 3}
+
+
+\bigskip
+
+
+
+\begin{problem}
+Below is a the state diagram for an NFA $N$.
+
+\begin{center}
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[state,initial]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [right of=B] {$c$};
+
+  \path (A) edge              node {0,1} (B);
+  \path (B) edge              node {1} (C);
+  \path (B) edge [loop above] node {1} (B);
+  \path (C) edge [loop above] node {0} (C);
+  \path (A) edge [loop above] node {0} (A);
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{enumerate}
+\item
+For each string in the table below, indicate whether $N$ accepts the string.
+For accepted strings, list (in order) a sequence of states the
+NFA goes through to accept the string.  No other explanation needed.
+
+\begin{center}
+  \Large
+\begin{tabular}{|c|c|c|}
+  \hline
+  string & accept? (Y or N) & sequence of states (for accepted strings)
+  \\
+  \hline\hline
+  01 & & \\[4mm] \hline
+  001 & & \\[4mm] \hline
+  101 & & \\[4mm] \hline
+  0101 & & \\[4mm] \hline
+  0110 & & \\[4mm] \hline
+\end{tabular}
+\end{center}
+
+
+%\item
+%Draw the state diagram for an equivalent NFA that is
+%$\varepsilon$-free (i.e., has no $\varepsilon$-transitions).
+\item
+Draw the state diagram for a DFA that accepts the same language
+using an algorithm that can convert any NFA into an equivalent DFA.
+(You need not show unreachable states.)
+\vfill
+%\item
+%Describe the language accepted by $N$ with a regular expression.
+\vfill
+\end{enumerate}
+
+
+\end{problem}
+
+
+\newpage
+
+\begin{problem}
+  Let $L$ be the language that contains all and only strings that
+  end with three or more consecutive 0's.
+  (So $01000 \in L$ and $010000 \in L$, but $0100 \not\in L$.)
+
+  \begin{enumerate}
+    \item
+      Design a DFA that accepts the langauge $L$.
+
+      \vfill
+      \vfill
+    \item
+      Construct a regular expression for $L$.
+      \vfill
+      \vfill
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+The grammar $G$ with start symbol $S$, terminals $a$, $b$, and $c$ and
+non-terminals $X$, $Y$, and $Z$ is given below:
+\[
+\begin{array}{rcl}
+G: \qquad
+S & \rightarrow & XY  \\
+X & \rightarrow & a \mid YZ \\
+Y & \rightarrow & b\mid ZX \\
+Z & \rightarrow & c\mid XY \\
+\end{array}
+\]
+\begin{enumerate}
+\item
+Give either a derivation or a derivation tree (also called a parse tree)
+that shows that $G$ generates $babb$ (i.e., that $S \stackrel*{\Rightarrow} babb$).
+\vfill
+\vfill
+\vfill
+%\item
+%Give a left-most derivation that shows that
+%$G \stackrel*{\Rightarrow} babb$.
+%\item
+%Show that $G$ is an ambiguous grammar.
+%\item
+%Use a systematic method to construct a PDA that recognizes the
+%language that $G$ generates.
+\item
+Is $G$ a regular grammar?  Explain.
+\vfill
+\item
+Is $G$ a context free grammar?  Explain.
+\vfill
+\end{enumerate}
+
+\end{problem}
+
+\newpage
+
+\end{document}
+
+\newpage
+
+\section*{Unused problems}
+\begin{problem}
+Below is the transition table (in the style
+of our TM simulator) for a Turing machine $M$.
+
+\bigskip
+\bigskip
+
+%\hspace*{.5in}
+\begin{minipage}{4.0in}
+\begin{enumerate}
+%\item
+%Note that one arrow in the state diagram is unlabeled and one
+%row of the transition table is incomplete.  Put the correct
+%values in.
+\item
+For each of the following inputs strings, trace the computation of
+$M$ on the input and list the first 7  ``snapshots'' of the computation
+(fewer if it halts before 7 steps have been completed).
+Each snapshot should include (i) tape contents, (ii) the current state,
+and (iii) the location of the tape head.
+
+
+\bigskip
+
+Here are the strings: \medskip
+
+\centerline{\Large 101, 010, 0001, 000010}
+
+\bigskip
+
+
+\item
+Circle the strings below that are accepted by $M$.
+(These are the same four strings as above.
+
+\medskip
+
+\begin{center}
+\Large 101\qquad 010\qquad %001,
+0001\qquad 000010
+
+%000001, 000000
+\end{center}
+
+\bigskip
+
+%\item
+%What language does $M$ accept?  (If you cannot tell fairly quickly, say what
+%you know about the language and move on.  Come back to this later if you
+%have time.)
+\end{enumerate}
+\end{minipage}
+%
+\qquad
+\begin{minipage}[c]{2.5in}
+\begin{verbatim}
+ATM
+SMALL: a small TM
+0 1     // input alphabet
+X 0 1 B // tape alphabet
+1   // number of tapes
+1   // number of tracks on tape 0
+1   // tape 0 is 1-way infinite
+a   // initial state
+e   // final state (accepting state)
+a   0   b   1   R
+a   X   a   X   R
+b   0   c   0   R
+b   1   d   1   L
+b   X   b   X   R
+c   0   b   X   R
+c   1   e   1   L
+d   0   d   0   L
+d   X   d   X   L
+d   1   a   1   R
+end
+\end{verbatim}
+\end{minipage}
+
+\iffalse
+\begin{minipage}[t]{3in}
+% missing line: c   X   c   X   R
+%
+\setlength{\unitlength}{3mm}
+\begin{picture}(25,15)(-5,-5)
+\put(0,10){\ellipse{3}{3}}
+\put(0,10){\makebox(0,0){a}}
+\put(10,10){\ellipse{3}{3}}
+\put(10,10){\makebox(0,0){b}}
+\put(20,10){\ellipse{3}{3}}
+\put(20,10){\makebox(0,0){c}}
+\put(10,0){\ellipse{3}{3}}
+\put(10,0){\makebox(0,0){d}}
+\put(20,0){\ellipse{3}{3}}
+\put(20,0){\ellipse{4}{4}}
+\put(20,0){\makebox(0,0){e}}
+\end{picture}
+\end{minipage}
+\fi
+
+\end{problem}
+
+
+\end{document}

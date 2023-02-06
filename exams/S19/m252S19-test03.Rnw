@@ -1,0 +1,513 @@
+
+\documentclass[10pt]{article}
+\usepackage{problems}
+\usepackage{eepic}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+\usepackage{probstat}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+%\input myabbrev
+%\input mysym
+
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+
+\newif\ifversionA
+\versionAtrue
+\versionAfalse
+
+\pagestyle{fancy}
+\thispagestyle{empty}
+\lhead{\sf Math 252/S19: Test 3 \ifversionA A \else B \fi}
+\rhead{\sf \thepage}
+\cfoot{}
+
+\begin{document}
+\noindent {\sf Math 252}
+
+\noindent {\sf Spring 2019 \hfill Name \rule{2.5in}{.5pt} \ Section: A \ \ B}
+
+\bigskip
+\centerline{\sf \Large Test 3}
+
+
+\bigskip
+
+\begin{problem}
+Below are state diagrams for two automata, $M_1$ and $M_2$.
+Let $A = L(M_1)$ and $B = L(M_2)$ be the languages recognized by
+these machines.
+
+\begin{multicols}{2}
+\begin{center}
+
+\ifversionA
+$M_1$
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$A$};
+  \node[state, accepting] (B) [right of=A] {$B$};
+  \node[state,accepting]  (C) [right of=B] {$C$};
+
+  \path (A) edge              node {0} (B);
+  \path (B) edge              node {0,1} (C);
+  \path (A) edge [bend left]  node {1} (C);
+  \path (C) edge [bend left]  node {1} (A);
+  % \path (B) edge [loop below] node {0,1} (B);
+  \path (C) edge [loop below] node {0} (C);
+\end{tikzpicture}
+\newpage
+$M_2$
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$X$};
+  \node[state]            (B) [right of=A] {$Y$};
+  \node[state,accepting]  (C) [right of=B] {$Z$};
+
+  \path (A) edge              node {0} (B);
+  \path (B) edge              node {1} (C);
+  \path (A) edge [bend left] node {0,1} (C);
+  \path (B) edge [bend left] node {0} (A);
+  \path (C) edge [bend left] node {1} (B);
+\end{tikzpicture}
+\else
+$M_1$
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$A$};
+  \node[state,accepting]  (C) [above right of=A] {$C$};
+  \node[state,accepting]  (B) [below right of=C] {$B$};
+
+  \path (A) edge [bend right] node {0} (B);
+  \path (B) edge [bend right] node {0} (C);
+  \path (B) edge [bend right] node {1} (A);
+  \path (C) edge [bend right]  node {1} (A);
+  \path (C) edge [loop above] node {1} (C);
+\end{tikzpicture}
+\newpage
+$M_2$
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$X$};
+  \node[state, accepting] (B) [right of=A] {$Y$};
+  \node[state]            (C) [right of=B] {$Z$};
+
+  \path (A) edge              node {0} (B);
+  \path (B) edge              node {0,1} (C);
+  \path (A) edge [bend left]  node {1} (C);
+  \path (C) edge [bend left]  node {1} (A);
+  % \path (B) edge [loop below] node {0,1} (B);
+  \path (C) edge [loop above] node {0} (C);
+\end{tikzpicture}
+\fi
+\end{center}
+\end{multicols}
+
+\begin{enumerate}
+\item For each machine, circle DFA or NFA to indicate which type of machine it is.
+
+
+\begin{center}
+$M_1$:  \ DFA  \ \ \ NFA   \hspace*{1in} $M_2$:  \ DFA  \ \ \ NFA
+\end{center}
+
+\item
+Complete the following table.
+\begin{center}
+  \large
+\begin{tabular}{|c|c|c|}
+  \hline
+  $x$ & $x \in A$? (Y or N) & $x \in B$? (Y or N)
+  \\
+  \hline\hline
+  01 & & \\[3mm] \hline
+  001 & & \\[3mm] \hline
+  101 & & \\[3mm] \hline
+  0101 & & \\[3mm] \hline
+  0010 & & \\[3mm] \hline
+\end{tabular}
+\end{center}
+
+\item
+Create a new automaton for the language $AB$ using a
+\underline{general method} that works for
+the concatenation of any two languages.
+
+\vfill
+\vfill
+
+% \item
+% Whis is part c important?  (Hint: it is part of something larger.)
+% \vfill
+
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+
+\begin{problem}
+Below is a the state diagram for an NFA $N$.
+
+\begin{center}
+
+\ifversionA
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial,accepting]    (A)              {$a$};
+  \node[state]            (B) [above right of=A] {$b$};
+  \node[state]  (C) [below right of=B] {$c$};
+
+  \path (A) edge [bend left] node {0} (B);
+  \path (B) edge [bend left] node {0} (C);
+  \path (C) edge [bend left]  node {0} (A);
+  \path (B) edge [loop above] node {0} (B);
+  \path (B) edge [bend left]  node {1} (A);
+  \path (B) edge [bend right]  node {1} (C);
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial,accepting]    (A)              {$a$};
+  \node[state]            (B) [above right of=A] {$b$};
+  \node[state]  (C) [below right of=B] {$c$};
+
+  \path (A) edge [bend left] node {0} (B);
+  \path (B) edge [bend left] node {0} (C);
+  \path (C) edge [bend left]  node {0} (A);
+  % \path (B) edge [loop above] node {1} (B);
+  \path (B) edge [bend left]  node {1} (A);
+  \path (B) edge [bend right]  node {1} (C);
+\end{tikzpicture}
+\fi
+\end{center}
+
+
+
+% \begin{enumerate}
+% \item
+% For each string in the table below, indicate whether $N$ accepts the string.
+% For accepted strings, list (in order) a sequence of states the
+% NFA goes through to accept the string.  No other explanation needed.
+%
+% \begin{center}
+%   \Large
+% \begin{tabular}{|c|c|c|}
+%   \hline
+%   string & accept? (Y or N) & sequence of states (for accepted strings)
+%   \\
+%   \hline\hline
+%   01 & & \\[4mm] \hline
+%   001 & & \\[4mm] \hline
+%   101 & & \\[4mm] \hline
+%   0101 & & \\[4mm] \hline
+%   0110 & & \\[4mm] \hline
+% \end{tabular}
+% \end{center}
+%
+
+%\item
+%Draw the state diagram for an equivalent NFA that is
+%$\varepsilon$-free (i.e., has no $\varepsilon$-transitions).
+% \item
+Draw the state diagram for a DFA that accepts the same language
+using an algorithm that can convert any NFA into an equivalent DFA.
+(You need not show unreachable states.)
+\vfill
+\vfill
+\vfill
+% \item
+% Describe the language accepted by $N$ with a regular expression.
+% \vfill
+% \end{enumerate}
+
+
+\end{problem}
+
+\newpage
+
+\begin{problem}
+The production rules for a grammar $G$ with start symbol $S$,
+terminals $a$, $b$, and $c$ and
+non-terminals $X$, $Y$, and $Z$ is given below:
+\[
+\begin{array}{rcl}
+G: \qquad
+S & \rightarrow & XY  \\
+X & \rightarrow & a \mid YZ \\
+Y & \rightarrow & b\mid ZX \\
+Z & \rightarrow & c\mid XY \\
+\end{array}
+\]
+% \begin{enumerate}
+% \item
+%S -> XY -> aY -> aZX -> aZYZ -> aZYXY -> acbab
+%S -> XY -> YZY -> YXYY -> YXZXY -> bacab
+%S -> XY -> YZY -> ZXZY -> XYXZY -> abacb
+\ifversionA
+\def\target{bacab}
+\else
+\def\target{abacb}
+\fi
+\begin{enumerate}
+\item
+Give either a derivation or a derivation tree
+that shows that $G$ generates $\target$
+(i.e., that $S \stackrel*{\Rightarrow} \target$).
+\vfill
+\vfill
+\vfill
+%\item
+%Give a left-most derivation that shows that
+%$G \stackrel*{\Rightarrow} babb$.
+%\item
+%Show that $G$ is an ambiguous grammar.
+%\item
+%Use a systematic method to construct a PDA that recognizes the
+%language that $G$ generates.
+\item
+ Is $G$ a regular grammar?  Explain.
+\vfill
+\vfill
+% % \item
+% % Is $G$ a context free grammar?  Explain.
+% % \vfill
+% % \vfill
+\end{enumerate}
+
+\end{problem}
+
+\newpage
+
+\begin{problem}
+  Let $L$ be the language that contains all and only binary
+  strings that
+\ifversionA
+\begin{itemize}\item
+contain at least two 1s, and
+\item end with three or more consecutive 0's.
+\end{itemize}
+  (So $101000 \in L$ and $110000 \in L$, but $10100 \not\in L$ and $1000 \not\in L$.)
+\else
+\begin{itemize}\item
+contain at least three 0s, and
+\item end with two or more consecutive 1's.
+\end{itemize}
+  (So $00011 \in L$ and $1010011 \in L$, but $01001 \not\in L$ and $0011 \not\in L$.)
+\fi
+
+  \begin{enumerate}
+    \item
+      Design a DFA that accepts the language $L$.
+      \vfill
+      \vfill
+    \item
+      Construct a regular expression for $L$.  (You \underline{do not} have to use
+      the algorithm that converts any DFA into a regular expression. Just
+      come up with some correct regular expression.)
+      \vfill
+      \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\newpage
+
+\begin{problem}
+Explain how we know that $\{0^n1^n \mid n = 0, 1, 2, \dots \}$ is not
+a regular language.
+\end{problem}
+
+\vfill
+\vfill
+
+\begin{problem}
+Show that if $A$ is a regular language,
+then $\overline{A} = \{x \mid x\not \in A\}$ is also regular.
+\end{problem}
+
+\vfill
+\vfill
+
+\newpage
+
+\begin{center}
+\rule{2in}{.5pt} Space for additional work. \rule{2in}{.5pt}
+\end{center}
+
+\newpage
+
+\section*{Unused problems}
+
+\begin{problem}
+We learned an algorithm for converting any DFA into a regular expression.
+This problem asks you a few questions about that algorithm.
+
+\begin{enumerate}
+\item In the first phase of the algorithm,
+we must modify the automaton to make sure it
+satisfies some properties that are necessary for the algorithm to work correctly.
+What are those properties?
+\vfill
+\vfill
+\item Demonstrate how to do the first phase using the DFA below.
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick,scale=0.8]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial,accepting]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [below of=B] {$c$};
+
+  \path (A) edge              node {0} (B);
+  \path (B) edge              node {0} (C);
+  \path (C) edge              node {1} (A);
+  \path (B) edge [loop above] node {1} (B);
+  \path (C) edge [loop below] node {0} (C);
+  \path (A) edge [loop above] node {0} (A);
+\end{tikzpicture}
+
+
+\vfill
+\vfill
+\item In the second phase, states are ``ripped out" of a GNFA until
+only two states remain.  Using that process, show what happens
+when state $a$ is ripped out of the GNFA shown below.  (You don't have to complete
+the process, just do this one step.)
+
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick,scale=0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale=0.7]
+
+  \node[]  (X) {};
+  \node[state,initial]    (S) [left of=X]  {$s$};
+  \node[state]            (A) [above of=X] {$a$};
+  \node[state]            (C) [below of=X] {$c$};
+  \node[state,accepting]  (T) [right of=X] {$t$};
+
+  \path (A) edge [bend left]  node {$\bm{\lambda}$} (T);
+  \path (C) edge [bend right] node {$\bm{\lambda}$} (T);
+  \path (S) edge [bend left]  node {$\bm{\lambda}$} (A);
+  \path (A) edge [bend left]  node {$\bm{01}^*\bm{0}$} (C);
+  \path (C) edge [bend left]  node {$\bm{1}$} (A);
+  \path (C) edge [loop below] node {$\bm{0}$} (C);
+  \path (A) edge [loop above] node {$\bm{0}$} (A);
+\end{tikzpicture}
+
+\vfill
+\vfill
+
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+What is the Halting Problem and why is it important?
+\vfill
+\end{problem}
+
+\begin{problem}
+Below is a the state diagram for an NFA $N$.
+
+\begin{center}
+
+\ifversionA
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [right of=B] {$c$};
+
+  \path (A) edge              node {0,1} (B);
+  \path (B) edge              node {1} (C);
+  \path (A) edge [bend left]  node {1} (C);
+  \path (B) edge [loop below] node {1} (B);
+  \path (C) edge [loop below] node {0} (C);
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick, scale = 0.7]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \tikzstyle{every node}=[scale = 0.7]
+
+  \node[state,initial]    (A)              {$a$};
+  \node[state]            (B) [right of=A] {$b$};
+  \node[state,accepting]  (C) [right of=B] {$c$};
+
+  \path (A) edge              node {0,1} (B);
+  \path (B) edge              node {1} (C);
+  \path (A) edge [bend left] node {1} (C);
+  \path (A) edge [loop below] node {0} (A);
+  \path (C) edge [loop below] node {0} (C);
+\end{tikzpicture}
+\fi
+\end{center}
+
+
+
+\begin{enumerate}
+\item
+For each string in the table below, indicate whether $N$ accepts the string.
+For accepted strings, list (in order) a sequence of states the
+NFA goes through to accept the string.  No other explanation needed.
+
+\begin{center}
+  \Large
+\begin{tabular}{|c|c|c|}
+  \hline
+  string & accept? (Y or N) & sequence of states (for accepted strings)
+  \\
+  \hline\hline
+  01 & & \\[4mm] \hline
+  001 & & \\[4mm] \hline
+  101 & & \\[4mm] \hline
+  0101 & & \\[4mm] \hline
+  0110 & & \\[4mm] \hline
+\end{tabular}
+\end{center}
+
+
+%\item
+%Draw the state diagram for an equivalent NFA that is
+%$\varepsilon$-free (i.e., has no $\varepsilon$-transitions).
+\item
+Draw the state diagram for a DFA that accepts the same language
+using an algorithm that can convert any NFA into an equivalent DFA.
+(You need not show unreachable states.)
+\vfill
+%\item
+%Describe the language accepted by $N$ with a regular expression.
+\vfill
+\end{enumerate}
+\end{problem}
+
+\end{document}
