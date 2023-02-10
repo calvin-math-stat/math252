@@ -12,7 +12,7 @@
 %\usepackage{mathpple}
 %\usepackage{fullpage}
 \usepackage{alltt}
-\usepackage{sfsect}
+% \usepackage{sfsect}
 \usepackage{longtable}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
@@ -106,19 +106,18 @@ Additional assignments will be filled in over time.
 
 \bigskip
 
-
 \begin{longtable}{|c|c|c|p{4.3in}|}
   \hline
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-	 Wed 2/16 & \WW{06} & Rosen 7 & Probability
+	 Wed 2/15 & \WW{06} & Rosen 7 & Probability
 	 \\
 	   \hline
-	 Fri 2/18 & \WW{07} & Rosen 7 & Probability
+	 Fri 2/17 & \WW{07} & Rosen 7 & Probability
 	 \\
 	   \hline
-	 Mon 2/21 & \WW{08} & Rosen 7 & Probability
+	 Mon 2/20 & \WW{08} & Rosen 7 & Probability
 
 	 Note: $A^c = \overline A$ denotes the complement of $A$.  For events, you
 	 can also write this as ``not A".
@@ -148,6 +147,11 @@ Additional assignments will be filled in over time.
 	 \extra[birth day]{20}
 	 \\
 	   \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
 	 Wed 2/23 &  PS 9 & Rosen 7.2 &
 	 \mand[odd one out]{29}
 	 \\

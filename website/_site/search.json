@@ -14,48 +14,6 @@
     "text": "Information about tests will be posted here shortly before each test."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Math 252",
-    "section": "",
-    "text": "Randall Pruim\noffice: North Hall 284\nphone: (616) 526-7113 (but email is better)\nE-mail: rpruim@calvin.edu"
-  },
-  {
-    "objectID": "index.html#course-objectives",
-    "href": "index.html#course-objectives",
-    "title": "Math 252",
-    "section": "Course Objectives",
-    "text": "Course Objectives\nThe student who successfully completes this class should be able to\n\nDescribe and analyze algorithms that use graphs.\nApply counting techniques to determine the size of finite sets and to compute probabilities (including conditional probabilities) of events.\nCompute and interpret the mean and variance of a discrete random variable.\nIdentify problems that can and cannot be solved with various models of computation."
-  },
-  {
-    "objectID": "index.html#internet-resources",
-    "href": "index.html#internet-resources",
-    "title": "Math 252",
-    "section": "Internet Resources",
-    "text": "Internet Resources\n\nEmail\nI will maintain an email list of all students registered in this class and will occasionally use it to distribute information and reminders of various things pertaining to this course. If you prefer to read your email from an account other than your Calvin student account and do not have it set up to forward automatically, send me email with the email address you prefer.\nYou are responsible for any information communicated via email.\nIt is very helpful if you include 252 in the subject line of any email you send me. That helps me locate email from this course in a sometimes overflowing email inbox.\n\n\nMS Teams\nI’ve set up a Microsoft Team for our class. If we need to move online, we’ll use that Team for our class sessions. Students in quarantine or isolation can meet in Teams to work through the class worksheet together, if they like.\nI’ll usually send class announcements to both our email list and to the general channel of our Team.\n\n\nWeb Pages\nIn addition to this home page, I will also maintain a list of web resources pertaining to this course. You are responsible for any information appearing on the course web pages. Items I have prepared and maintain online include\n\na calendar of daily topics, exams, etc.\na list of homework assignments and due dates.\ninformation about tests and exams (appearing shortly before each test date).\n\nFor quick access to these and other resources, see the navigation bar at the top of this page."
-  },
-  {
-    "objectID": "index.html#other-important-information",
-    "href": "index.html#other-important-information",
-    "title": "Math 252",
-    "section": "Other Important Information",
-    "text": "Other Important Information\n\nSee me\nIf you are having difficulty with any portion of the course, do not hesitate to see me. Do this as soon as possible, certainly well in advance of any deadlines (like tests) so that we can work to fix the problem.\n\n\nTextbook\nThe required text for this course is Discrete Mathematics and Its Applications (7th edition) by Ken Rosen.\n\n\nGrading\nGrading will be based on the following approximate weighting:\n\nHomework, etc: 15%\nTests (3): 60%\nFinal Exam: 25%\n\n\nTests\nTests should be taken when they are scheduled. I do not generally offer make-up, alternate or late tests. Instead, if you miss one test (for any reason) or if your final exam score is better than your worst test, then your final exam score will be substituted for that test.\n\n\n\nSpecial Circumstances\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a disability coordinator in the Center for Student Success (located in Spoelhof University Center 360). If you have an accommodation memo, please come talk to me in the first two weeks of class.\nOccasionally there are special circumstances that require that the rules and guidelines above be adjusted for a particular student. In such cases, it is the responsibility of the student to inform me of the situation as soon as possible, so that the appropriate arrangements can be made. This includes, but is not limited to, students with documented disabilities."
-  },
-  {
-    "objectID": "hw.html",
-    "href": "hw.html",
-    "title": "Math 252 - S23",
-    "section": "",
-    "text": "Information about problem sets will be posted here as it become available.\n\nProblem Sets due before Test 1\nProblem Sets due between Test 1 and Test 2\nProblem Sets due after Test 2\n\n\n\n\nAssignments will typically be due at 11:59 pm on the date they are due.\n\n\n\nWebWorK assignments are completed online and auto-graded. Problems can be attempted multiple times. This gives you a chance to get some immediate feedback.\n\n\n\nYou should already have received an invitation to Gradescope. Gradescope (https://www.gradescope.com/) is a system for submitting homework. Basically you scan your hand-written work to a PDF or upload PDFs that you create some other way (Word, RStudio, etc.) Gradescope provides a nice grading interface and has the potential to give you better feedback than most other systems I have seen.\nSome instructions/tutorials\n\nHow to submit a PDF to Gradescope\nNote: Please take two important steps to make grading work as smoothly as possible.\n\nSubmit your work as a single PDF. Gradescope allows you to submit other types of files, but they are harder to work with for the grader. If you work in RStudio or Word, simply save your work as a PDF. Hand-written work can be converted to PDF using one of many online tools or an MFD on campus. Here are a couple examples of ways to create PDFs.\n\nUsing Evernote Scannable\nUsing OneDrive\nIf you have multiple PDFs, please combine them into one PDF before submitting. There are several ways to do this. Here is an online tool that can combine files of various types, including PDFs:\n\nhttps://combinepdf.com/\n\n\n\nIdentify which pages of your submission have work for each problem. This way, it is much easier to grade one problem at a time without spending lots of time trying to locate your work.\nYou probably want to keep your work in order, but that isn’t technically necessary, provided you identify the pages associated with each problem. In particular, if you do some work in R and some with pencil-and-paper, you just need to idenfify what is where."
-  },
-  {
-    "objectID": "calendar.html",
-    "href": "calendar.html",
-    "title": "Math 252 - S23",
-    "section": "",
-    "text": "Mon\n\n\nTue\n\n\nWed\n\n\nThu\n\n\nFri\n\n\n\n\n\n\n\n\n1/9Course IntroGraphs and ModelsRosen 10.1-10.2\n\n\n1/10\n\n\n1/11GraphsRosen 10.1-10.2\n\n\n1/12\n\n\n1/13Graph RepresentationsRosen 10.3\n\n\n\n\n1/16Graph IsomorphismsGraph InvariantsRosen 10.3\n\n\n1/17\n\n\n1/18Paths in GraphsRosen 10.4-5\n\n\n1/19\n\n\n1/20Euler Paths and CyclesEuler’s FormulaConnected ComponentsRosen 10.4-5\n\n\n\n\n1/23Bipartite GraphsRosen 10.2\n\n\n1/24\n\n\n1/25Planar and Non-planar GraphsRosen 10.7\n\n\n1/26\n\n\n1/27Graphs Wrap-Up\n\n\n\n\n1/30Basic CountingRosen 6.1\n\n\n1/31\n\n\n2/1Basic CountingPigeonhole PrincipleRosen 6.1Rosen 6.2\n\n\n2/2\n\n\n2/3Division PrinciplePermutations and CombinationsRosen 6.3\n\n\n\n\n2/6Counting Wrap-UpDonut problems\n\n\n2/7\n\n\n2/8Test 1\n\n\n2/9\n\n\n2/10Intro to ProbabilityRosen 7.1, 7.2\n\n\n\n\n2/13More ProbabilityRosen 7.1, 7.2\n\n\n2/14\n\n\n2/15Conditional ProbabilityRosen 7.2\n\n\n2/16\n\n\n2/17“Bayes Rule”Rosen 7.3\n\n\n\n\n2/20Random VariablesBinomial Distributions\n\n\n2/21\n\n\n2/22Expected ValueRosen 7.4\n\n\n2/23\n\n\n2/24E is LinearRosen 6-7\n\n\n\n\n2/27Spring Break\n\n\n2/28Spring Break\n\n\n3/1Spring Break\n\n\n3/2Spring Break\n\n\n3/3Spring Break\n\n\n\n\n3/6Probability Wrap-Up\n\n\n3/7\n\n\n3/8\n\n\n3/9\n\n\n3/10\n\n\n\n\n3/13\n\n\n3/14\n\n\n3/15\n\n\n3/16\n\n\n3/17\n\n\n\n\n3/20\n\n\n3/21Advising Day\n\n\n3/22Advising Day\n\n\n3/23\n\n\n3/24\n\n\n\n\n3/27\n\n\n3/28\n\n\n3/29\n\n\n3/30\n\n\n3/31\n\n\n\n\n4/3\n\n\n4/4\n\n\n4/5\n\n\n4/6\n\n\n4/7Good FridayNo Classes\n\n\n\n\n4/10Easter MondayNo Classes\n\n\n4/11\n\n\n4/12\n\n\n4/13\n\n\n4/14\n\n\n\n\n4/17\n\n\n4/18\n\n\n4/19\n\n\n4/20Friday Class Schedule\n\n\n4/21Study Day\n\n\n\n\n4/24\n\n\n4/25\n\n\n4/26Final Exam1:30 (Section B)\n\n\n4/27Final Exam9:00 (Section A)"
-  },
-  {
     "objectID": "test-info.html#black-out-date-requests",
     "href": "test-info.html#black-out-date-requests",
     "title": "Test Information",
@@ -96,5 +54,47 @@
     "title": "Test Information",
     "section": "Final Exam",
     "text": "Final Exam\nDate/Time: 1:30 pm on Wednesday, April 26 or 9 am on Thursday, April 27.\n\nAs long as there is enough space in our classroom, I’ll allow you to pick between to the two times. We’ll deal with those logistics in the last week or two of the semester."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 252",
+    "section": "",
+    "text": "Randall Pruim\noffice: North Hall 284\nphone: (616) 526-7113 (but email is better)\nE-mail: rpruim@calvin.edu"
+  },
+  {
+    "objectID": "index.html#course-objectives",
+    "href": "index.html#course-objectives",
+    "title": "Math 252",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nThe student who successfully completes this class should be able to\n\nDescribe and analyze algorithms that use graphs.\nApply counting techniques to determine the size of finite sets and to compute probabilities (including conditional probabilities) of events.\nCompute and interpret the mean and variance of a discrete random variable.\nIdentify problems that can and cannot be solved with various models of computation."
+  },
+  {
+    "objectID": "index.html#internet-resources",
+    "href": "index.html#internet-resources",
+    "title": "Math 252",
+    "section": "Internet Resources",
+    "text": "Internet Resources\n\nEmail\nI will maintain an email list of all students registered in this class and will occasionally use it to distribute information and reminders of various things pertaining to this course. If you prefer to read your email from an account other than your Calvin student account and do not have it set up to forward automatically, send me email with the email address you prefer.\nYou are responsible for any information communicated via email.\nIt is very helpful if you include 252 in the subject line of any email you send me. That helps me locate email from this course in a sometimes overflowing email inbox.\n\n\nMS Teams\nI’ve set up a Microsoft Team for our class. If we need to move online, we’ll use that Team for our class sessions. Students in quarantine or isolation can meet in Teams to work through the class worksheet together, if they like.\nI’ll usually send class announcements to both our email list and to the general channel of our Team.\n\n\nWeb Pages\nIn addition to this home page, I will also maintain a list of web resources pertaining to this course. You are responsible for any information appearing on the course web pages. Items I have prepared and maintain online include\n\na calendar of daily topics, exams, etc.\na list of homework assignments and due dates.\ninformation about tests and exams (appearing shortly before each test date).\n\nFor quick access to these and other resources, see the navigation bar at the top of this page."
+  },
+  {
+    "objectID": "index.html#other-important-information",
+    "href": "index.html#other-important-information",
+    "title": "Math 252",
+    "section": "Other Important Information",
+    "text": "Other Important Information\n\nSee me\nIf you are having difficulty with any portion of the course, do not hesitate to see me. Do this as soon as possible, certainly well in advance of any deadlines (like tests) so that we can work to fix the problem.\n\n\nTextbook\nThe required text for this course is Discrete Mathematics and Its Applications (7th edition) by Ken Rosen.\n\n\nGrading\nGrading will be based on the following approximate weighting:\n\nHomework, etc: 15%\nTests (3): 60%\nFinal Exam: 25%\n\n\nTests\nTests should be taken when they are scheduled. I do not generally offer make-up, alternate or late tests. Instead, if you miss one test (for any reason) or if your final exam score is better than your worst test, then your final exam score will be substituted for that test.\n\n\n\nSpecial Circumstances\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a disability coordinator in the Center for Student Success (located in Spoelhof University Center 360). If you have an accommodation memo, please come talk to me in the first two weeks of class.\nOccasionally there are special circumstances that require that the rules and guidelines above be adjusted for a particular student. In such cases, it is the responsibility of the student to inform me of the situation as soon as possible, so that the appropriate arrangements can be made. This includes, but is not limited to, students with documented disabilities."
+  },
+  {
+    "objectID": "hw.html",
+    "href": "hw.html",
+    "title": "Math 252 - S23",
+    "section": "",
+    "text": "Information about problem sets will be posted here as it become available.\n\nProblem Sets due before Test 1\nProblem Sets due between Test 1 and Test 2\nProblem Sets due after Test 2\n\n\n\n\nAssignments will typically be due at 11:59 pm on the date they are due.\n\n\n\nWebWorK assignments are completed online and auto-graded. Problems can be attempted multiple times. This gives you a chance to get some immediate feedback.\n\n\n\nYou should already have received an invitation to Gradescope. Gradescope (https://www.gradescope.com/) is a system for submitting homework. Basically you scan your hand-written work to a PDF or upload PDFs that you create some other way (Word, RStudio, etc.) Gradescope provides a nice grading interface and has the potential to give you better feedback than most other systems I have seen.\nSome instructions/tutorials\n\nHow to submit a PDF to Gradescope\nNote: Please take two important steps to make grading work as smoothly as possible.\n\nSubmit your work as a single PDF. Gradescope allows you to submit other types of files, but they are harder to work with for the grader. If you work in RStudio or Word, simply save your work as a PDF. Hand-written work can be converted to PDF using one of many online tools or an MFD on campus. Here are a couple examples of ways to create PDFs.\n\nUsing Evernote Scannable\nUsing OneDrive\nIf you have multiple PDFs, please combine them into one PDF before submitting. There are several ways to do this. Here is an online tool that can combine files of various types, including PDFs:\n\nhttps://combinepdf.com/\n\n\n\nIdentify which pages of your submission have work for each problem. This way, it is much easier to grade one problem at a time without spending lots of time trying to locate your work.\nYou probably want to keep your work in order, but that isn’t technically necessary, provided you identify the pages associated with each problem. In particular, if you do some work in R and some with pencil-and-paper, you just need to idenfify what is where."
+  },
+  {
+    "objectID": "calendar.html",
+    "href": "calendar.html",
+    "title": "Math 252 - S23",
+    "section": "",
+    "text": "Mon\n\n\nTue\n\n\nWed\n\n\nThu\n\n\nFri\n\n\n\n\n\n\n\n\n1/9Course IntroGraphs and ModelsRosen 10.1-10.2\n\n\n1/10\n\n\n1/11GraphsRosen 10.1-10.2\n\n\n1/12\n\n\n1/13Graph RepresentationsRosen 10.3\n\n\n\n\n1/16Graph IsomorphismsGraph InvariantsRosen 10.3\n\n\n1/17\n\n\n1/18Paths in GraphsRosen 10.4-5\n\n\n1/19\n\n\n1/20Euler Paths and CyclesEuler’s FormulaConnected ComponentsRosen 10.4-5\n\n\n\n\n1/23Bipartite GraphsRosen 10.2\n\n\n1/24\n\n\n1/25Planar and Non-planar GraphsRosen 10.7\n\n\n1/26\n\n\n1/27Graphs Wrap-Up\n\n\n\n\n1/30Basic CountingRosen 6.1\n\n\n1/31\n\n\n2/1Basic CountingPigeonhole PrincipleRosen 6.1Rosen 6.2\n\n\n2/2\n\n\n2/3Division PrinciplePermutations and CombinationsRosen 6.3\n\n\n\n\n2/6Counting Wrap-UpDonut problems\n\n\n2/7\n\n\n2/8Test 1\n\n\n2/9\n\n\n2/10Intro to ProbabilityRosen 7.1, 7.2\n\n\n\n\n2/13More ProbabilityRosen 7.1, 7.2\n\n\n2/14\n\n\n2/15Conditional ProbabilityRosen 7.2\n\n\n2/16\n\n\n2/17“Bayes Rule”Rosen 7.3\n\n\n\n\n2/20Random VariablesBinomial Distributions\n\n\n2/21\n\n\n2/22Expected ValueRosen 7.4\n\n\n2/23\n\n\n2/24E is LinearRosen 6-7\n\n\n\n\n2/27Spring Break\n\n\n2/28Spring Break\n\n\n3/1Spring Break\n\n\n3/2Spring Break\n\n\n3/3Spring Break\n\n\n\n\n3/6Probability Wrap-Up\n\n\n3/7\n\n\n3/8\n\n\n3/9\n\n\n3/10\n\n\n\n\n3/13\n\n\n3/14\n\n\n3/15\n\n\n3/16\n\n\n3/17\n\n\n\n\n3/20\n\n\n3/21Advising Day\n\n\n3/22Advising Day\n\n\n3/23\n\n\n3/24\n\n\n\n\n3/27\n\n\n3/28\n\n\n3/29\n\n\n3/30\n\n\n3/31\n\n\n\n\n4/3\n\n\n4/4\n\n\n4/5\n\n\n4/6\n\n\n4/7Good FridayNo Classes\n\n\n\n\n4/10Easter MondayNo Classes\n\n\n4/11\n\n\n4/12\n\n\n4/13\n\n\n4/14\n\n\n\n\n4/17\n\n\n4/18\n\n\n4/19\n\n\n4/20Friday Class Schedule\n\n\n4/21Study Day\n\n\n\n\n4/24\n\n\n4/25\n\n\n4/26Final Exam1:30 (Section B)\n\n\n4/27Final Exam9:00 (Section A)"
   }
 ]
