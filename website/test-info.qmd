@@ -1,4 +1,6 @@
 ---
+title: Test Information
+title-block-banner: true
 ---
 
 ```{r setup, include=FALSE}
@@ -8,7 +10,7 @@ require(tidyr)
 require(kable)
 require(kableExtra)
 require(scales)
-t1bks <- c(17, 33, 42, 51, 60, 67) |> rev() # 67 was max possible; 65 max obtained
+t1bks <- c(16, 32, 41, 50, 59, 68) |> rev() # 68 was max possible; 66 max obtained
 t2bks <- c(18, 36, 50, 62, 74, 84) |> rev() # 84 was max possibl; 81 was obtained
 t3bks <- c(15, 30, 40, 50, 61, 72) |> rev()
 fbks  <- c(25, 67, 88, 108, 128, 146)  |> rev() # max acheived 144; max possible 146
@@ -20,15 +22,14 @@ fbks  <- c(25, 65, 86, 106, 126, 144) %>% rev()
 GS <- 
   tibble(
     Grade = LETTERS[1:4],
-    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4),
-    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
-    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
-    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
+    `test 1` = head(paste(lead(t1bks), "-", (t1bks)), 4)
+#    `test 2` = head(paste(lead(t2bks), "-", (t2bks)), 4),
+#    `test 3` = head(paste(lead(t3bks), "-", (t3bks)), 4),
+#    `final`  = head(paste(lead(fbks),  "-", (fbks)), 4)
   ) %>% 
   arrange(Grade)
 ```
 
-# Test Information
 
 Information about tests will be posted here shortly before each test.
 
@@ -38,15 +39,14 @@ You can request that we not have a test on a particular day by filling out
 [**this form**](https://docs.google.com/forms/d/e/1FAIpQLScn4hhG5uequ42Hk-t464z1sjl0Y4eMRLNV_1qnuaQUvVlyaA/viewform?usp=sf_link)
 I can't promise to satisfy all requests, but I'll do what I can to work with the data.
 
-<!-- ### Grading -->
+## Grading
 
-<!-- Here are the grading scales used for each of our tests and the final. These -->
-<!-- scales will give some idea how you are doing, but the actual test scores are -->
-<!-- used to compute grades at the end of the term. -->
+Here are the grading scales used for each of our tests and the final. These
+scales will give some idea how you are doing, but the actual test scores are
+used to compute grades at the end of the term. Your scores can be found in Gradescope.
 
 ```{r }
-#| include: false
-#| eval: false
+#| echo: false
 kable(GS) %>%
   kable_styling(bootstrap_options = "striped", full_width = F) %>%
   row_spec(1, bold = F, color = "gray20", background = alpha("steelblue", 0.3)) %>%
@@ -57,9 +57,11 @@ kable(GS) %>%
 
 <!-- Final exam *scores* can be found in Gradescope, but the final exams themselves are not available. -->
 
-<!-- Remember, at the end of the term, if your final exam is better than your worst test, then your final -->
-<!-- exam score will replace your worst test score (making the final exam worth a test + the final). -->
+Remember, at the end of the term, if your final exam is better than your worst test, then your final
+exam score will replace your worst test score (making the final exam worth a test + the final).
 
+I will also drop the lowest 2 problem sets and the lowest 2 webwork assignments. That gives
+everyone a chance to be busy, sick, forgetful, etc. a few times without penalty.
 
 ## Test 1
 

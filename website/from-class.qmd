@@ -36,7 +36,7 @@ electronic format for some reason, you can get it here as well.
 <!--   [PDF](counting-and-probability/Counting-and-Probability.pdf) -->
 <!--   [HTML](counting-and-probability/) -->
 
-:::{.callout-note collapse="false"}
+:::{.callout-note collapse="true"}
 ### Before Test 1
 
 ::::{.callout-note collapse="true"}
@@ -182,7 +182,7 @@ Mon 2/06 | Donuts                | [PDF](/from-class/11-counting.pdf)
 :::
 
 
-:::{.callout-note collapse="true"}
+:::{.callout-note collapse="false"}
 ### Between Test 1 and Test 2
 
 ::::{.callout-note collapse="true"}

@@ -2,6 +2,7 @@
 # Probability
 
 
+
 <!-- Put your work below here.  Put text in text chunks, code in R chunks. -->
 
 ## Notation Note

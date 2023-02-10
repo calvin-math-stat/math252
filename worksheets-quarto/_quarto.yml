@@ -42,7 +42,9 @@ format:
     documentclass: scrreprt
     fontsize: 10pt
     include-before-body: before_body.tex
-    include-in-header: preample.tex
+    include-in-header:
+      - preample.tex
+      - macros.tex
     toc-depth: 2
     fig-pos: 'h'
     geometry:
@@ -51,3 +53,4 @@ format:
       - "bottom = 0.9in"
   html:
     theme: cosmo
+    include-before-body: macros.tex

@@ -9,9 +9,9 @@
   {
     "objectID": "test-info.html",
     "href": "test-info.html",
-    "title": "Math 252 - S23",
+    "title": "Test Information",
     "section": "",
-    "text": "Information about tests will be posted here shortly before each test.\n\n\nYou can request that we not have a test on a particular day by filling out this form I can’t promise to satisfy all requests, but I’ll do what I can to work with the data.\n\n\n\nDate: 8 Feb\nMaterial Covered: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.3). This corresponds to worksheets 1 – 11.\n\n\nThe test will be administered in our classroom (NH 259). You will have 50 minutes for the test (we need to clear the room for the next class). If you are unable to take the test in the classroom, contact me and we will make other arrangements.\n\n\n\nGraphs: modeling with graphs (what do edges and vertices represent?); types of graphs(directed, undirected, self-loops, etc., etc.); graph terminology (examples: vertex, edge, adjacent, degree, bipartite, path, connected, connected component); graph representations (adjacency matrix, incidence matrix, edge list, adjacency list); graph isomorphism; graph invariants; Euler paths and circuits; Hamilton paths and circuits; planar graphs; Euler’s formula; Kuratowski’s Theorem; homeomorphic graphs and subdivisions; proving a graph is not planar without using Kuratowski’s Theorem (like we did for \\(K_{5}\\) and \\(K_{3,3,}\\))1; proving a graph is not planar using Kuratowski’s Theorem.\nCounting: bijection principle (no double counting, no skipping); multiplication principle; addition principle; subtraction principle; inclusion-exclusion; division principle; pigeonhole principle; permutations and combinations; binomial coefficients; the “donut problems”.\n\n\n\n\n\nDate: TBD \n\n\n\nDate: TBD\n\n\n\nDate/Time: 1:30 pm on Wednesday, April 26 or 9 am on Thursday, April 27.\n\nAs long as there is enough space in our classroom, I’ll allow you to pick between to the two times. We’ll deal with those logistics in the last week or two of the semester."
+    "text": "Information about tests will be posted here shortly before each test."
   },
   {
     "objectID": "index.html",
@@ -54,5 +54,47 @@
     "title": "Math 252 - S23",
     "section": "",
     "text": "Mon\n\n\nTue\n\n\nWed\n\n\nThu\n\n\nFri\n\n\n\n\n\n\n\n\n1/9Course IntroGraphs and ModelsRosen 10.1-10.2\n\n\n1/10\n\n\n1/11GraphsRosen 10.1-10.2\n\n\n1/12\n\n\n1/13Graph RepresentationsRosen 10.3\n\n\n\n\n1/16Graph IsomorphismsGraph InvariantsRosen 10.3\n\n\n1/17\n\n\n1/18Paths in GraphsRosen 10.4-5\n\n\n1/19\n\n\n1/20Euler Paths and CyclesEuler’s FormulaConnected ComponentsRosen 10.4-5\n\n\n\n\n1/23Bipartite GraphsRosen 10.2\n\n\n1/24\n\n\n1/25Planar and Non-planar GraphsRosen 10.7\n\n\n1/26\n\n\n1/27Graphs Wrap-Up\n\n\n\n\n1/30Basic CountingRosen 6.1\n\n\n1/31\n\n\n2/1Basic CountingPigeonhole PrincipleRosen 6.1Rosen 6.2\n\n\n2/2\n\n\n2/3Division PrinciplePermutations and CombinationsRosen 6.3\n\n\n\n\n2/6Counting Wrap-UpDonut problems\n\n\n2/7\n\n\n2/8Test 1\n\n\n2/9\n\n\n2/10Intro to ProbabilityRosen 7.1, 7.2\n\n\n\n\n2/13More ProbabilityRosen 7.1, 7.2\n\n\n2/14\n\n\n2/15Conditional ProbabilityRosen 7.2\n\n\n2/16\n\n\n2/17“Bayes Rule”Rosen 7.3\n\n\n\n\n2/20Random VariablesBinomial Distributions\n\n\n2/21\n\n\n2/22Expected ValueRosen 7.4\n\n\n2/23\n\n\n2/24E is LinearRosen 6-7\n\n\n\n\n2/27Spring Break\n\n\n2/28Spring Break\n\n\n3/1Spring Break\n\n\n3/2Spring Break\n\n\n3/3Spring Break\n\n\n\n\n3/6Probability Wrap-Up\n\n\n3/7\n\n\n3/8\n\n\n3/9\n\n\n3/10\n\n\n\n\n3/13\n\n\n3/14\n\n\n3/15\n\n\n3/16\n\n\n3/17\n\n\n\n\n3/20\n\n\n3/21Advising Day\n\n\n3/22Advising Day\n\n\n3/23\n\n\n3/24\n\n\n\n\n3/27\n\n\n3/28\n\n\n3/29\n\n\n3/30\n\n\n3/31\n\n\n\n\n4/3\n\n\n4/4\n\n\n4/5\n\n\n4/6\n\n\n4/7Good FridayNo Classes\n\n\n\n\n4/10Easter MondayNo Classes\n\n\n4/11\n\n\n4/12\n\n\n4/13\n\n\n4/14\n\n\n\n\n4/17\n\n\n4/18\n\n\n4/19\n\n\n4/20Friday Class Schedule\n\n\n4/21Study Day\n\n\n\n\n4/24\n\n\n4/25\n\n\n4/26Final Exam1:30 (Section B)\n\n\n4/27Final Exam9:00 (Section A)"
+  },
+  {
+    "objectID": "test-info.html#black-out-date-requests",
+    "href": "test-info.html#black-out-date-requests",
+    "title": "Test Information",
+    "section": "Black out date requests",
+    "text": "Black out date requests\nYou can request that we not have a test on a particular day by filling out this form I can’t promise to satisfy all requests, but I’ll do what I can to work with the data."
+  },
+  {
+    "objectID": "test-info.html#grading",
+    "href": "test-info.html#grading",
+    "title": "Test Information",
+    "section": "Grading",
+    "text": "Grading\nHere are the grading scales used for each of our tests and the final. These scales will give some idea how you are doing, but the actual test scores are used to compute grades at the end of the term. Your scores can be found in Gradescope.\n\n\n\n\n \n  \n    Grade \n    test 1 \n  \n \n\n  \n    A \n    59 - 68 \n  \n  \n    B \n    50 - 59 \n  \n  \n    C \n    41 - 50 \n  \n  \n    D \n    32 - 41 \n  \n\n\n\n\n\nRemember, at the end of the term, if your final exam is better than your worst test, then your final exam score will replace your worst test score (making the final exam worth a test + the final).\nI will also drop the lowest 2 problem sets and the lowest 2 webwork assignments. That gives everyone a chance to be busy, sick, forgetful, etc. a few times without penalty."
+  },
+  {
+    "objectID": "test-info.html#test-1",
+    "href": "test-info.html#test-1",
+    "title": "Test Information",
+    "section": "Test 1",
+    "text": "Test 1\nDate: 8 Feb\nMaterial Covered: Graphs (Rosen 10.1-10.5, 10.7) and Counting (Rosen 6.1-6.3). This corresponds to worksheets 1 – 11.\n\nLogistics\nThe test will be administered in our classroom (NH 259). You will have 50 minutes for the test (we need to clear the room for the next class). If you are unable to take the test in the classroom, contact me and we will make other arrangements.\n\n\nTopics\nGraphs: modeling with graphs (what do edges and vertices represent?); types of graphs(directed, undirected, self-loops, etc., etc.); graph terminology (examples: vertex, edge, adjacent, degree, bipartite, path, connected, connected component); graph representations (adjacency matrix, incidence matrix, edge list, adjacency list); graph isomorphism; graph invariants; Euler paths and circuits; Hamilton paths and circuits; planar graphs; Euler’s formula; Kuratowski’s Theorem; homeomorphic graphs and subdivisions; proving a graph is not planar without using Kuratowski’s Theorem (like we did for \\(K_{5}\\) and \\(K_{3,3,}\\))1; proving a graph is not planar using Kuratowski’s Theorem.\nCounting: bijection principle (no double counting, no skipping); multiplication principle; addition principle; subtraction principle; inclusion-exclusion; division principle; pigeonhole principle; permutations and combinations; binomial coefficients; the “donut problems”."
+  },
+  {
+    "objectID": "test-info.html#test-2",
+    "href": "test-info.html#test-2",
+    "title": "Test Information",
+    "section": "Test 2",
+    "text": "Test 2\nDate: TBD"
+  },
+  {
+    "objectID": "test-info.html#test-3",
+    "href": "test-info.html#test-3",
+    "title": "Test Information",
+    "section": "Test 3",
+    "text": "Test 3\nDate: TBD"
+  },
+  {
+    "objectID": "test-info.html#final-exam",
+    "href": "test-info.html#final-exam",
+    "title": "Test Information",
+    "section": "Final Exam",
+    "text": "Final Exam\nDate/Time: 1:30 pm on Wednesday, April 26 or 9 am on Thursday, April 27.\n\nAs long as there is enough space in our classroom, I’ll allow you to pick between to the two times. We’ll deal with those logistics in the last week or two of the semester."
   }
 ]
