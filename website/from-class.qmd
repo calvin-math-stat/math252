@@ -210,9 +210,11 @@ for(g in sort(unique(R$group))) {
 #| include: true
 ### Counting and Probability
 
-date     |  Topic                | link(s)
--------- | --------------------- | ------------------------------------------
-Fri 2/10 | Intro to Probability. | [PDF](/from-class/12-probability.pdf)
+date     |  Topic                  | link(s)
+-------- | ----------------------- | ------------------------------------------
+Fri 2/10 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
+Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
+Wed 2/15 | Conditional Probability | [PDF](/from-class/13-probability.pdf)
 ```
 
 :::
