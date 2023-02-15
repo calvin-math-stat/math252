@@ -213,7 +213,7 @@ for(g in sort(unique(R$group))) {
 date     |  Topic                  | link(s)
 -------- | ----------------------- | ------------------------------------------
 Fri 2/10 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
-Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
+Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf) [solutions](/from-class/12-probability-sols.pdf)
 Wed 2/15 | Conditional Probability | [PDF](/from-class/13-probability.pdf)
 ```
 
