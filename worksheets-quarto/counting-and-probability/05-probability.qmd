@@ -120,5 +120,58 @@ be rolled as any other number.
     b. none of the 6 match.
     
 
-\newpage 
+{{< pagebreak >}}
+
+### Solutions
+
+```{r}
+#| include: false
+ans4 <- choose(5,2) * choose(3,2) / choose(8,2)
+```
+
+
+4. $\frac{\binom{5}{2} \binom{3}{2} }{ \binom{8}{2} } =$ `r ans4` 
+
+5. $4/36 = 1/9$ `r 4/36`
+
+6. $4 / 16 = 1/4$
+
+7. $\frac{6}{36} + \frac{5}{36} - \frac{1}{36}$
+
+8a. $\Prob(\mbox{large}) = \frac{1}{1000}$; $\Prob(\mbox{small}) = \frac{6}{1000} - \frac{1}{1000} = \frac{5}{1000}$
+
+8b. $\Prob(\mbox{large}) = \frac{1}{1000}$; $\Prob(\mbox{small}) = \frac{3}{1000} - \frac{1}{1000} = \frac{2}{1000}$
+
+8c. $\Prob(\mbox{large}) = \frac{1}{1000}$; $\Prob(\mbox{small}) = \frac{0}{1000}$
+
+```{r}
+#| include: false
+ans9 <- choose(1,2) * choose(13,5) / choose(52, 2)
+```
+
+9. $\frac{\binom{4}{1} \binom{13}{5}}{\binom{52}{5}}$ = `r ans9`
+
+```{r}
+#| include: false
+ans10 <- choose(13,1) * choose(4,4) * choose(12,1) * choose(4,1) / choose(52, 2)
+```
+
+10. $\frac{\binom{13}{1} \binom{4}{4} \binom{12}{1} \binom{4}{1}}{\binom{52}{5}}$ = `r ans10`
  
+11. $1 - \frac{1}{2^8} =$ `r 2^(-8)`
+
+```{r}
+#include: false
+ans12a <- 1/6^4
+ans12b <- 1 - (6 * 5 * 4 * 3 * 2 / 6^5)
+```
+
+12a. $\frac{6}{6^5} = \frac{1}{6^4} =$ `r ans12a`
+
+12b. $1 - \frac{6 \cdot 5 \cdot 4 \cdot 3 \cdot 2}{6^5} =$ `r ans12b`
+
+13a. $\frac{2}{7} =$ `r `2/7`
+
+13b. $\frac{9}{49} =$ `r 9/49`
+
+13c. $\frac{6}{36} = \frac{1}{6} =$ `r 1/6`

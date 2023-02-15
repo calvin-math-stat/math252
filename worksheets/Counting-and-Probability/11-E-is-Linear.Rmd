@@ -129,10 +129,10 @@ Then each person pull one name out.  Let $X$ be the number of people who draw th
 What is $\E(X)$?  How would the answer change if 10 people put their names into the hat?
 20?  1? [Hint: How can you write $X$ as a sum?]
 
-12. Let $X \sim {\sf Binom}(1, p)$.  What is $\E(X)$?  What is $\E(X^2)$? [Hint: Make a 
+12. Let $X \sim \Binom(1, p)$.  What is $\E(X)$?  What is $\E(X^2)$? [Hint: Make a 
 probability table.  What are the possible values of $X$?]
 
-13. Let $X \sim {\sf Binom}(n, p)$.  What is $\E(X)$?  [Hint: Use the previous
+13. Let $X \sim \Binom(n, p)$.  What is $\E(X)$?  [Hint: Use the previous
 problem and the Linearity Theorem.  How can you write $X$ as a sum?]
 
 14. What is the expected number of diamonds in a 5-card hand dealt from a standard deck?
