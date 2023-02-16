@@ -126,11 +126,11 @@ be rolled as any other number.
 
 ```{r}
 #| include: false
-ans4 <- choose(5,2) * choose(3,2) / choose(8,2)
+ans4 <- (choose(5,2) + choose(3,2)) / choose(8,2)
 ```
 
 
-4. $\frac{\binom{5}{2} \binom{3}{2} }{ \binom{8}{2} } =$ `r ans4` 
+4. $\frac{\binom{5}{2} + \binom{3}{2} }{\binom{8}{2} } =$ `r ans4` 
 
 5. $4/36 = 1/9$ `r 4/36`
 
@@ -170,7 +170,7 @@ ans12b <- 1 - (6 * 5 * 4 * 3 * 2 / 6^5)
 
 12b. $1 - \frac{6 \cdot 5 \cdot 4 \cdot 3 \cdot 2}{6^5} =$ `r ans12b`
 
-13a. $\frac{2}{7} =$ `r `2/7`
+13a. $\frac{2}{7} =$ `r 2/7`
 
 13b. $\frac{9}{49} =$ `r 9/49`
 
