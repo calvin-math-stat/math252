@@ -161,7 +161,7 @@ ans10 <- choose(13,1) * choose(4,4) * choose(12,1) * choose(4,1) / choose(52, 2)
 11. $1 - \frac{1}{2^8} =$ `r 2^(-8)`
 
 ```{r}
-#include: false
+#| include: false
 ans12a <- 1/6^4
 ans12b <- 1 - (6 * 5 * 4 * 3 * 2 / 6^5)
 ```
