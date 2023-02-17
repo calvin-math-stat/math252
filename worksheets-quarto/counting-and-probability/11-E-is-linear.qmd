@@ -1,6 +1,4 @@
 
-\newpage
-
 # More Expected Value
 
 ## Transformations and Sums
@@ -66,7 +64,7 @@ probability  |  0.7   |  0.3
 \vfill
 
 
-\newpage
+{{< pagebreak >}}
 
 ### Sums
 
@@ -99,7 +97,7 @@ Use the table above to answer the following questions.
 
 7. Now compute $\E(X)$, $\E(Y)$, and $\E(X + Y)$.    
 
-\newpage
+{{< pagebreak >}}
 
 ## Linearity of Expected Value
 

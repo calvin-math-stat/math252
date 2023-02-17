@@ -56,7 +56,7 @@ For conditional probabilities, compute the probabilities two different ways.
 \vfill
 9. $\Prob(\overline{G} \mid R)$
 
-\newpage
+{{< pagebreak >}}
 
 ## Product Rule 
 

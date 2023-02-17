@@ -29,7 +29,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggformula)
 ```
 
-\newpage
 
 # Preface {-}
 
@@ -47,6 +46,4 @@ at Calvin University.
 \newcommand{\SD}{\operatorname{SD}}
 \newcommand{\Binom}{\textsf{Binom}}
 
-
-\newpage
 

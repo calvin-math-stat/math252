@@ -64,7 +64,7 @@ carefully.
 4. At the 2014 Winter Olympics, Norway won 11 gold medals.  Does that fact
  alone guarantee that a country won no gold medals?
 
-\newpage
+{{< pagebreak >}}
 
 5. Joe has 21 white socks and 15 black socks.  (Don't ask what happened to the
  missing socks, no one knows where they go.)
@@ -165,4 +165,4 @@ connections at a time.
 <!-- Counter-example for 19: 10 6 2 4 9 5 4 3 8 7 1 10 6 -->
 
  
-\newpage
+{{< pagebreak >}}

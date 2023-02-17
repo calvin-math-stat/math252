@@ -1,5 +1,4 @@
 
-\newpage
 
 # Random Variables
  
@@ -67,7 +66,7 @@ Create a probability table for $X$.  (What are the possible values?)
     
     b. What is the most likely number of diamonds in such a hand?
 
-\newpage
+{{< pagebreak >}}
 
 ## Probability Functions
 
@@ -126,5 +125,3 @@ We will denote this $X \sim \Binom(n,p)$.
 12. Create a probability table for a $\Binom(2, 0.2)$ random variable.  
 
 13. Create a probability table for a $\Binom(3, 1/4)$ random variable.
-
-\newpage

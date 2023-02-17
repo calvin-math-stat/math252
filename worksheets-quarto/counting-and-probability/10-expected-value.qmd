@@ -58,7 +58,7 @@ $$
 
 \vfill
 
-\newpage
+{{< newpage >}}
 
 9. A raffle has 1000 tickets. Holders of 4 of the tickets get a prize.  The other 996 are worth nothing.  The four prizes are worth $500, $200, $50, and $50.  Let $V$ be the value of a random
 raffle ticket.

@@ -1,20 +1,23 @@
 
-\newpage
 
 # Probability Trees and Bayes
 
 
 ## Bob's Beautiful Boxes
 
-Bob has two beautiful boxes of balls.  Box A contains 2 green balls and 7 red balls.
-Box B contains 4 green balls and 3 red balls.  Bob flips a coin to randomly select
-a box.  Then he randomly selects one ball from that box.  If the selected ball is red, what
-is the probability that it was chosen from Box A?
+Bob has two beautiful boxes of balls.  Box A contains balls numbered 1 -- 10.
+Balls 1 and 2 are green, the other eight are red. Box B contains balls numbered
+11 -- 16.  Balls 11, 12, 13, and 14 are green. The other two are red.
+
+Bob flips a coin to randomly select a box.  Then he randomly selects one ball
+from that box.  If the selected ball is red, what is the probability that it was
+chosen from Box A?
 
 Let's build up to this step by step.
 
 a. These balls are not equally likely to be selected. Why not? 
-Which are more likely and which less likely?
+Fill in the blanks to give an example: Ball ____ is more likely to be selected than
+ball ____.
 
 b. Let's define some events.
 
@@ -82,7 +85,7 @@ Hint: Use the inventory method.  Useful events include
 * $+$: test is positive (indicates disease)
 * $-$: test is negative (indicates healthy)
 
-\newpage 
+{{< pagebreak >}}
 
 ## Random Primality Testing  
 
@@ -92,7 +95,7 @@ Miller's test for primality of a number $n$ uses arithmetic
  test is conclusive and correct for at least 3/4 of the possible values of $b$. For a prime
  number, the test is always inconclusive. This leads to an interesting randomized test:
 
-```{Rcpp, eval = FALSE}
+```{r eval = FALSE}
  string PrimeTest(n, attempts) {
    for (i = 0; i < attempts; i++) {
      select b at random with 1 < b < n

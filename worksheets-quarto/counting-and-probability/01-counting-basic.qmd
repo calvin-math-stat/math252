@@ -86,7 +86,6 @@ of Valentine hearts he picked up cheap on February 15.
     
     b. If you are one of the 30 students, how many of those ways include you getting a prize?
   
-\newpage
 
 <!-- 13. Below is a description of IPv4 addresses. -->
 

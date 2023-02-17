@@ -147,12 +147,7 @@ Additional assignments will be filled in over time.
 	 \extra[birth day]{20}
 	 \\
 	   \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Wed 2/23 &  PS 9 & Rosen 7.2 &
+	 Wed 2/22 &  PS 9 & Rosen 7.2 &
 	 \mand[odd one out]{29}
 	 \\
 	 & & Rosen 7.3 &
@@ -171,9 +166,14 @@ Additional assignments will be filled in over time.
 	 \extra[Monty Hall]{15}
 	 \\
 	   \hline
-	 Fri 2/25 & \WW{09} & Rosen 7 & Probability
+	 Fri 2/24 & \WW{09} & Rosen 7 & Probability
 	 \\
 	 \hline
+\end{longtable}
+\end{center}
+\label{end}
+\end{document}
+
 	 Wed 3/9 & PS 10 & Rosen 7.4 &
 	 \helper{1}
 	 \mand[rolling 6s]{3}
