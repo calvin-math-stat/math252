@@ -169,12 +169,10 @@ Additional assignments will be filled in over time.
 	 Fri 2/24 & \WW{09} & Rosen 7 & Probability
 	 \\
 	 \hline
-\end{longtable}
-\end{center}
-\label{end}
-\end{document}
-
-	 Wed 3/9 & PS 10 & Rosen 7.4 &
+	 Wed 3/9
+	 & \WW{10} & Rosen 6--7 & Probability
+	 \\
+	 & PS 10 & Rosen 7.4 &
 	 \helper{1}
 	 \mand[rolling 6s]{3}
 	 \mand[biased coin]{4}
@@ -189,8 +187,6 @@ Additional assignments will be filled in over time.
 	 \mand{24}
 	 \\
 	 \hline
-	 Fri 3/11 & \WW{10} & Rosen 6--7 & Probability
-	 \\
 	   Review & --  & Rosen 6.RQ & \extra{1--2, 5, 8} % --12}
 	 \\
 	  &  & Rosen 6.SE & \extra{1--7} % , 24, 29, 32}
@@ -205,7 +201,7 @@ Additional assignments will be filled in over time.
 \label{end}
 \end{document}
 	   \hline
-	 Wed 3/9 & \WW{10} & Rosen 7 & probability review
+	 Wed 3/8 & \WW{10} & Rosen 7 & probability review
 	 \\
 	 \hline
 

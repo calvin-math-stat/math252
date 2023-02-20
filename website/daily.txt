@@ -1154,7 +1154,6 @@ Lottery
 ===03/06/2023
 Topic:: Probability Wrap-Up
 
-===endofcal
 ===
 Topic:: Grammars and Languages
 
@@ -1226,10 +1225,11 @@ BNF
 	examples on page 855
 	web page showing complete BNF description of java
 
-===endofcal
 
-===03/14/2022
+===03/13/2023
 Topic:: Test 2
+
+===endofcal
 
 ===
 Topic:: Automata

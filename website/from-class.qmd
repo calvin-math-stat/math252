@@ -237,9 +237,7 @@ Fri 2/10 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
 Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf) [solutions](/from-class/12-probability-sols.pdf)
 Wed 2/15 | Conditional Probability | [PDF](/from-class/13-probability.pdf)
 Fri 2/17 | More Conditional Probability | [PDF](/from-class/14-probability.pdf)
-Mon 2/20 | Random Variables.       | [PDF](/from-class/15-probability.pdf)
+Mon 2/20 | Random Variables        | [PDF](/from-class/15-probability.pdf)
 ```
-
-:::
 
 :::
