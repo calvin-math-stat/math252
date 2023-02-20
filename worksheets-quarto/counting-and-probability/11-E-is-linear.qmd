@@ -92,6 +92,8 @@ Use the table above to answer the following questions.
 
 5. What is $\Prob(X = Y)$?  What is $\Prob(X > Y)$?
 
+--------
+
 6. Create three probability tables, one for 
    $X$, one for $Y$, and one for $X + Y$.  [Hint: Start by determining the possible values.]
 

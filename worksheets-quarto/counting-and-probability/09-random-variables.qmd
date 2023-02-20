@@ -28,7 +28,7 @@ A **random variable** is a random process that produces a number.
   
 ## Probability Tables
 
-### First example {-}
+<!-- ### First example {-} -->
 
 When studying random variables, we typically want to now the answers to two questions:
 
@@ -50,7 +50,9 @@ probability | 0.4  |  0.3  | 0.2  | 0.1
 
 4. What is $\Prob(X \mbox{ is even})$?
 
-### Creating a probability table {-}
+<!-- ### Creating a probability table {-} -->
+
+---
 
 5. Create a probability table for the random variable $H$, where $H$ is the number 
 of heads observed when flipping 4 fair coins.  Start by determining all the possible values.
@@ -66,7 +68,6 @@ Create a probability table for $X$.  (What are the possible values?)
     
     b. What is the most likely number of diamonds in such a hand?
 
-{{< pagebreak >}}
 
 ## Probability Functions
 
