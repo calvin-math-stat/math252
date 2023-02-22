@@ -1063,6 +1063,11 @@ Topic:: Random Variables
 Topic:: Binomial Distributions
 
 ===
+
+Note:: Ice Day
+Note:: No Class
+
+===
 Topic:: Expected Value
 Read:: Rosen 7.4
 
@@ -1080,7 +1085,7 @@ Coin Flipping Example
 Daily 4 grand prize
   E(X) and Var(X)
 
-===
+===03/06/2023
 Topic:: E is Linear
 Read:: Rosen 6-7
 
@@ -1151,7 +1156,7 @@ Lottery
 	Daily 3 / Daily 4
 
 
-===03/06/2023
+===
 Topic:: Probability Wrap-Up
 
 ===
@@ -1174,6 +1179,9 @@ Components of a (phrase-structure) Grammar
 		u -> v where u, v in V* and u includes at least one non-terminal
 
 Examples
+
+===03/13/2023
+Topic:: Test 2
 
 ===
 Topic:: Types of Grammars
@@ -1225,9 +1233,6 @@ BNF
 	examples on page 855
 	web page showing complete BNF description of java
 
-
-===03/13/2023
-Topic:: Test 2
 
 ===endofcal
 
