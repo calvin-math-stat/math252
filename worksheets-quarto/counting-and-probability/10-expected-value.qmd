@@ -70,6 +70,8 @@ raffle ticket.
   
 \vfill
 
+{{< pagebreak >}}
+
 10. Let $D$ be the absolute value of the difference (i.e., higher minus lower)
 between the values of **two 4-sided dice**.
 
