@@ -39,7 +39,7 @@
     "href": "test-info.html#test-2",
     "title": "Test Information",
     "section": "Test 2",
-    "text": "Test 2\nDate: TBD"
+    "text": "Test 2\nDate: Monday, March 13\nMaterial Covered: Counting and Probability (Rosen 6 and 7)\n\nTopics\nCounting: Bijection principle (no double counting, no skipping); multiplication principle; addition principle; division principle; inclusion-exclusion; (permutations and combinations)2; binomial coefficients; “donut” problems.\nProbability: Definition of finite probability and applications involving counting problems; empirical vs theoretical probability; 3 probability axioms; complement rule; equally likely rule; union rule; conditional probability; multiplication rule; independence; Bayes probability (e.g., false positives and false negatives); probability trees (optional); random variables; expected value of a random variable; linearity of expected value; Binomial distributions."
   },
   {
     "objectID": "test-info.html#test-3",

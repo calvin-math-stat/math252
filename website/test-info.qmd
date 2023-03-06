@@ -107,44 +107,46 @@ the "donut problems".
 
 ## Test 2
 
-**Date:** TBD
-<!-- **Date:** Monday, March 14 -->
+**Date:** Monday, March 13
 
-<!-- **Material Covered**: -->
-<!-- Counting and Probability (Rosen 6 and 7) -->
+**Material Covered**:
+Counting and Probability (Rosen 6 and 7)
 
+#### Topics
 
+**Counting:**
+Bijection principle (no double counting, no skipping);
+multiplication principle;
+addition principle;  division principle;
+inclusion-exclusion;
+(permutations and combinations)[^perm-comb];
+binomial coefficients;
+"donut" problems.
 
-<!-- #### Topics -->
+[^perm-comb]: I don't emphasize the words *permutation* and *combination* because I find that students often
+get them confused. But the key ideas of the multiplication principle, the division principle, and the
+"does order matter?" question are the way we have talked about this. (See also the donut problems.) You are 
+welcome to use the words *combination* and *permutation* (if you use them correctly), but I won't ask questions
+that require you to know those words. That's why I put these in parentheses.
 
-<!-- **Counting:** -->
-<!-- Bijection principle (no double counting, no skipping); -->
-<!-- multiplication principle; -->
-<!-- addition principle;  division principle; -->
-<!-- inclusion-exclusion; -->
-<!-- (permutations and combinations);  -->
-<!-- binomial coefficients; -->
-<!-- "donut" problems. -->
+**Probability:**
+Definition of finite probability and applications involving counting problems;
+empirical vs theoretical probability;
+3 probability axioms;
+complement rule;
+equally likely rule;
+union rule;
+conditional probability;
+multiplication rule;
+independence;
+Bayes probability (e.g., false positives and false negatives);
+probability trees (optional);
+random variables;
+expected value of a random variable;
+linearity of expected value;
+Binomial distributions.
 
-<!-- **Probability:** -->
-<!-- Definition of finite probability and applications involving counting problems; -->
-<!-- empirical vs theoretical probability; -->
-<!-- 3 probability axioms; -->
-<!-- complement rule; -->
-<!-- equally likely rule; -->
-<!-- union rule; -->
-<!-- conditional probability; -->
-<!-- multiplication rule; -->
-<!-- independence; -->
-<!-- Bayes probability (e.g., false positives and false negatives); -->
-<!-- probability trees (optional); -->
-<!-- random variables; -->
-<!-- expected value of a random variable; -->
-<!-- linearity of expected value; -->
-<!-- Binomial distributions. -->
-
-
-<!-- --- -->
+---
 
 ## Test 3
 
