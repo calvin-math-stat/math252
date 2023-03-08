@@ -36,6 +36,7 @@ book:
         - counting-and-probability/10-expected-value.qmd
         - counting-and-probability/11-E-is-linear.qmd
         # - counting-and-probability/12-variance.qmd
+        - counting-and-probability/13-probability-review.qmd
 
 format:
   pdf:

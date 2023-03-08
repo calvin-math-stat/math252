@@ -261,6 +261,7 @@ Fri 2/17 | More Conditional Probability | [PDF](/from-class/14-probability.pdf)
 Mon 2/20 | Random Variables        | [PDF](/from-class/15-probability.pdf)
 Mon 2/24 | Expected Value          | [PDF](/from-class/16-probability.pdf)
 Mon 3/6  | Expected Value          | [PDF](/from-class/17-probability.pdf)
+Wed 3/8  | Probability Review      | [PDF](/from-class/18-probability.pdf)
 ```
 
 :::
