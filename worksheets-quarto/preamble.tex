@@ -1,3 +1,24 @@
+
+%\def\mysolution{\list{}{\leftmargin1.5cm}\item[]}
+%\let\endmysolution=\endlist
+
+\newenvironment{mysolution}{%
+
+\begin{minipage}[c]{0.15\textwidth}\ \end{minipage}
+\begin{minipage}[c]{0.8\textwidth}
+\centerlien{\rule{4in}{0.5pt}}
+\small
+
+\textbf{\emph{Solution.}}
+
+}{%
+\centerlien{\rule{4in}{0.5pt}}
+
+\end{minipage}
+\end{framebox}
+}
+
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 

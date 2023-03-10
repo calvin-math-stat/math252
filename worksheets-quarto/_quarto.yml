@@ -37,9 +37,15 @@ book:
         - counting-and-probability/11-E-is-linear.qmd
         # - counting-and-probability/12-variance.qmd
         - counting-and-probability/13-probability-review.qmd
+        - models-of-computation/01-grammars.qmd
+
+filters:
+   - latex-environment
+environments: [solution, mysolution]
 
 format:
   pdf:
+    keep-tex: true
     documentclass: scrreprt
     fontsize: 10pt
     include-before-body: before_body.tex
