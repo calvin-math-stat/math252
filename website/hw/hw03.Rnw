@@ -12,7 +12,7 @@
 %\usepackage{mathpple}
 %\usepackage{fullpage}
 \usepackage{alltt}
-\usepackage{sfsect}
+% \usepackage{sfsect}
 \usepackage{longtable}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
@@ -112,7 +112,7 @@ Additional assignments will be filled in over time.
   Due & Task & Source & Problems \\
   \hline\hline
   \endhead
-	 Fri 3/18 & PS 11 & Rosen 13.1 &
+	 Fri 3/17 & PS 11 & Rosen 13.1 &
    \mand[sentences]{1ad}
 	 \extra{2}
 	 \helper{3}
@@ -129,6 +129,10 @@ Additional assignments will be filled in over time.
 	 Be sure to provide an explanation for problem 19.
 	 \\
 	 \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
 	 Mon 3/21 & PS 12 & Rosen 13.1 &
 	    \mand[palindromes]{20}
 	    \mand[union]{21a}

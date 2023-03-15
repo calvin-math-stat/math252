@@ -1,0 +1,331 @@
+
+<style>
+.solution::before, .mysolution::before {
+  content: "Solution";
+  font-weight: bold;
+  font-style: italic;
+}
+.solution, .mysolution {
+  border-radius: 5px;
+  border-color: navy;
+  border-style: solid;
+  background-color: aliceblue;
+  margin-left: 50px;
+}
+</style>
+
+<!-- \newenvironment{mysolution}{% -->
+
+<!-- \begin{minipage}[c]{0.15\textwidth}\ \end{minipage} -->
+<!-- \begin{minipage}[c]{0.8\textwidth} -->
+<!-- \centerlien{\rule{4in}{0.5pt}} -->
+<!-- \small -->
+
+<!-- \textbf{\emph{Solution.}} -->
+
+<!-- }{% -->
+<!-- \centerlien{\rule{4in}{0.5pt}} -->
+
+<!-- \end{minipage} -->
+<!-- \end{framebox} -->
+<!-- } -->
+
+
+# Review Problems
+
+1. **Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned.
+List them by name and using good probability notation.
+
+1.  **Mutually exclusive vs independent.**
+
+    a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation.
+    a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation.
+    a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where
+this happens or explain why it cannot happen.
+    a. Give an example of a probability rule that only holds if events are mutually exclusive.
+    a. Give an example of a probability rule that only holds if events are independent.
+
+1. 
+
+    a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$? 
+    b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$.
+    c. Give a different example where $\Prob(A\mid B) \neq \Prob(B \mid A)$.
+    c. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain
+    why this is always true or give an example where it is false.)
+
+1.  **Binomial distributions**
+
+    a. For random variable to be a binomial random variable, what 5 things must be true? 
+    b. Give an example of a situation that is $\Binom(20, 0.25)$.
+
+1.  Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$?
+    
+
+1. Suppose at a certain college 60% of students are female, 10% of female students are from international students, 
+and 12% of male students are international.  What percentage of the international students are female?
+
+    a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain.
+    a. Express the three numbers in this problem and the number asked for in the question using good
+    probability notation.
+    b. Answer the answer numerically.
+    
+    ```{r}
+    #| include: false 
+    0.6 * 0.1 / (0.6 * 0.1 + 0.4 * 0.12)
+    ```
+
+1. Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times.
+
+    a. Is this a binomial situation?  Explain.
+    b. What is the expected number of times we flip the coin?
+
+```{r}
+#| include: false
+vals <- 1:6
+probs <- 2^(-(1:6))
+probs[6] <- 2^(-15)
+rbind(
+  vals = vals,
+  probs = probs,
+  prods = vals * probs)
+
+sum(vals*probs)
+```
+
+1. Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
+
+    a. Is this a binomial situation? Explain.
+    b. What is the expected number of times we flip the coin?
+
+1. A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
+
+    a. What is the probability that you get one of each color?
+    b. What is the probability that they are all brown?
+    b. What is the probability that they are all red?
+    b. What is the probability that they are all the same color?
+    b. If they are all the same color, what is the probability that they are all brown?
+    b. What is the probability that you get 2 browns and one blue?
+    c. What is the probability that you get two of one color and one of a different color?
+    d. What is the expected number of brown candies you select?
+
+
+{{< pagebreak >}}
+
+## Answers/Solutions
+
+1. **Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned.
+List them by name and using good probability notation.
+
+::: {.mysolution}
+You can find these on past sheets.  Here's an example: 
+
+Sum Rule: The probability of the union of mutually exclusive events is the sum of their
+individual probabilities.
+
+* $\Prob(A \union B) = \Prob(A) + \Prob(B)$, provided $\Prob(A \intersect B) = 0$.
+
+:::
+
+2.  **Mutually exclusive vs independent.**
+
+    a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation.
+    a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation.
+    a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where
+this happens or explain why it cannot happen.
+    a. Give an example of a probability rule that only holds if events are mutually exclusive.
+    a. Give an example of a probability rule that only holds if events are independent.
+
+:::{.mysolution}
+
+a. Events $A$ and $B$ are **mutually exclusive** if they cannot both happen at the same "time" (i.e., on
+the same repetition of the random process).  $\Prob(A \intersect B) = 0$.
+
+b. Events $A$ and $B$ are **independent** if knowing whether one of them ocurred does
+not change the probability of the other:  $\Prob(A \mid B) = \Prob(A)$.
+
+c. If $A$ and $B$ are mutually exclusive and independent, then
+$\Prob(A) = \Prob(A \mid B) = 0 = \Prob(B \mid A) = \Prob(B)$.  But if $\Prob(A) = \Prob(B) = 0$, then the conditional probabilities are not even defined. So two events cannot be both
+independent and mutually exclusive.
+
+d. The sum rule above requires mutually exclusive events.  (There is a generalized version that
+holds for any events and has a subtracted term.)
+
+e. If $A$ and $B$ are independent, then $\Prob(A \operatorname{and} B) = \Prob(A) \cdot \Prob(B)$.
+
+:::
+
+3. 
+
+    a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$? 
+    b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$.
+    c. Give a different example where $\Prob(A\mid B) \neq \Prob(B \mid A)$.
+    d. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain
+    why this is always true or give an example where it is false.)
+    
+:::{.mysolution}
+
+a. $\Prob(A \mid B)$ asks what fraction of the time that $B$ occurs will $A$ also occur.
+$\Prob(B \mid A)$ asks what fraction of the time that $A$ occurs will $B$ also occur.
+
+b. Flip two coins. Let $A$ be the event that the first is heads.  Let $B$ be the event that
+the second is heads.  Then $\Prob(A \mid B) = \Prob(B \mid A) = \frac{1}{2}$.
+
+c. Flip a coin and roll a die.  Let $A$ be the event that the coin is heads. Let 
+$B$ be the event that the die produces a 6.  $\Prob(A \ mid B) = \Prob(A) = \frac{1}{2}$.
+$\Prob(B \mid A) = \frac{1}{6}$.
+
+d. False.  See the example in part c.  Those events are independent.
+:::
+
+4.  **Binomial distributions**
+
+    a. For random variable to be a binomial random variable, what 5 things must be true? 
+    b. Give an example of a situation that is $\Binom(20, 0.25)$.
+
+::: {.mysolution}
+a. These five things are listed on worksheet 15.
+
+b. Roll a four-sided die 20 times and count the number of 3's that are rolled.
+:::
+
+5.  Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$?
+    
+::: {.mysolution}
+
+a. $\Prob(X = 4) = \binom{20}{4} (0.25)^4 (0.75)^{16} = `r dbinom(4, 20, 0.25)`$ 
+
+b. $\E(X) = 20 \cdot 0.25 = 5$?
+:::
+
+6. Suppose at a certain college 60% of students are female, 10% of female students are from international students, 
+and 12% of male students are international.  What percentage of the international students are female?
+
+    a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain.
+    a. Express the three numbers in this problem and the number asked for in the question using good
+    probability notation.
+    b. Answer the answer numerically.
+
+::: {.mysolution}    
+Let $F$ be the event that a student is female.
+Let $I$ be the event that a student is international.
+
+$0.6 =  \Prob(F)$. $0.10 = \Prob(I \mid F)$. $0.12 = \Prob(I \mid F^c)$.
+We are asked to compute $\Prob(W \mid I)$.
+
+```{r}
+0.6 * 0.1 / (0.6 * 0.1 + 0.4 * 0.12)
+```
+:::
+
+7. Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times.
+
+    a. Is this a binomial situation?  Explain.
+    b. What is the expected number of times we flip the coin?
+
+::: {.mysolution}
+
+This is not binomial. We don't know the number of trials in advance.
+
+```{r}
+#| include: false
+vals <- 2:6
+probs <- dnbinom((1:4), size = 2, prob = 0.25)
+probs[5] <- 1 - sum(probs[1:4])
+```
+
+```{r}
+#| echo: false
+M <-
+  rbind(
+  vals = vals,
+  probs = probs,
+  prods = vals * probs) 
+
+colnames(M) <- rep("", ncol(M))
+
+M
+
+E <- sum(vals*probs)
+
+```
+
+Expected value is `r E`.
+:::
+
+8. Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
+
+    a. Is this a binomial situation? Explain.
+    b. What is the expected number of times we flip the coin?
+    
+:::{.mysolution}
+Still not binomial (we still don't know the number of trials in advance).
+
+Part b is challenging.  If $X$ is our random variable, we can split it up into 
+two parts $X = X_1 + X_2$ where $X_1$ is the number of flips until we get the first tail
+and $X_2$ is the number of flips after the first tail until we get the second.
+It is pretty easy to see that $\E(X_1) = \E(X_2)$. 
+But to work out the value you need to make some clever use of 
+geometric series or some calculus.  In the end $\E(X_i) = \frac{1}{.25} = 4$, so 
+$\E(X) = 8$.
+:::
+
+9. A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
+
+    a. What is the probability that you get one of each color?
+    b. What is the probability that they are all brown?
+    c. What is the probability that they are all red?
+    d. What is the probability that they are all the same color?
+    e. If they are all the same color, what is the probability that they are all brown?
+    b. What is the probability that you get 2 browns and one blue?
+    c. What is the probability that you get two of one color and one of a different color?
+    d. What is the expected number of brown candies you select?
+ 
+::: {.mysolution}
+
+```{r}
+#| echo: false
+
+dplyr::tribble(
+  ~ part, ~ answer,
+  "a", 3 * 5 * 8 / choose(16, 3),
+  "b", choose(8, 3) / choose(16,3),
+  "c", choose(3, 3) / choose(16,3),
+  "d", (choose(3,3) + choose(5,3) + choose(8, 3)) / choose(16,3),
+  "e", choose(8,3) / (choose(3,3) + choose(5,3) + choose(8,3)),
+  "f", choose(8,2) * choose(5,1) / choose(16,3),
+  "g", sum(choose(c(8,8, 5,5, 3,3), 2) * choose(c(5,3, 8,3, 8,5), 1)) / choose(16,3),
+  "h", 1.5
+) |> gt::gt()
+        
+```
+
+For part a) $\frac{\binom{8}{1} \binom{5}{1} \binom{3}{1}}{\binom{16}{3}}$.
+
+In h) split the variable into three parts $X = X_1 + X_2 + X_3$ where $X_i$ is 1
+if candy $i$ is brown, else it is 0. Then $E(X_i) = 0.5$ and the sum is $1.5$.
+
+:::
+
+
+### From some previous worksheets {.unnumbered}
+
+:::{#exr-groups}
+A class of 20 gets into groups of 4 to work on some problems. 
+  
+a. How many such groups of 4 are there?
+  
+b. You get to work with 3 other people. How many such groups of 3 are there?
+    
+c. How many different ways can the class be put into 5 groups of 4? How does this question
+differ from part a?
+:::
+
+:::{.mysolution}
+
+a.  $\binom{20}{4} = `r choose(20, 4)`$
+b.  $\binom{19}{3} = `r choose(19, 3)`$
+c.  $\frac{\binom{20}{4} \binom{16}{4} \binom{12}{4} \binom{8}{4} \binom{4}{4}}{5!} = `r format(choose(20,4) * choose(16,4) * choose(12, 4) * choose(8, 4) * choose(4,4) / factorial(5), big.mark = ",")`$
+
+    The division handles the overcounting since the the five groups can be arranged in $5!$ different
+ways.
+:::
