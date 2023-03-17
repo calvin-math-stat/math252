@@ -1234,8 +1234,6 @@ BNF
 	web page showing complete BNF description of java
 
 
-===endofcal
-
 ===
 Topic:: Automata
 
@@ -1243,10 +1241,10 @@ Topic:: Automata
 Topic:: Nondeterminsim
 
 ===
-Topic:: Nondeterminsim
+advising
 
 ===
-advising
+Topic:: Nondeterminsim
 
 ===
 Topic:: DFA vs NFA
@@ -1263,6 +1261,8 @@ Topic:: Regular Grammars and Automata
 
 ===
 Topic:: DFA -> regex
+
+===endofcal
 
 ===
 
@@ -1548,6 +1548,7 @@ Topic:: Turing Machines
 
 ===
 Topic:: A language that isn't regular
+
 
 ===4/13/2022
 
