@@ -129,11 +129,7 @@ Additional assignments will be filled in over time.
 	 Be sure to provide an explanation for problem 19.
 	 \\
 	 \hline
-	 \end{longtable}
-    \end{center}
-    \label{end}
-    \end{document}
-	 Mon 3/21 & PS 12 & Rosen 13.1 &
+	 Mon 3/20 & PS 12 & Rosen 13.1 &
 	    \mand[palindromes]{20}
 	    \mand[union]{21a}
 	    \mand[derivation trees]{24ab}
@@ -145,6 +141,10 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA]{25--26}
 	   \\
 	   \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
 	 Fri 3/25 & PS 13 & Rosen 13.3 &
 	   \mand[what langauge?]{19--20}
 	   \extra[create DFA]{32}
