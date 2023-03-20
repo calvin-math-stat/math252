@@ -141,11 +141,7 @@ Additional assignments will be filled in over time.
 	   \mand[create DFA]{25--26}
 	   \\
 	   \hline
-	 \end{longtable}
-    \end{center}
-    \label{end}
-    \end{document}
-	 Fri 3/25 & PS 13 & Rosen 13.3 &
+	 Fri 3/24 & PS 13 & Rosen 13.3 &
 	   \mand[what langauge?]{19--20}
 	   \extra[create DFA]{32}
 	   \mand[create DFA]{34}
@@ -157,6 +153,10 @@ Additional assignments will be filled in over time.
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
    \\
    \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
 	   Wed 3/30 & PS 14 & Rosen 13.3 &
 	   \mand[NFA to DFA]{52--54}
 	   \\

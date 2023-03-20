@@ -249,6 +249,7 @@ for(g in sort(unique(R$group))) {
 ::::
 
 ::::{.callout-note collapse="true"}
+
 #### Groups starting 15 March
 
 ```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
@@ -268,6 +269,29 @@ for(g in sort(unique(R$group))) {
 }
 ```
 ::::
+
+::::{.callout-note collapse="true"}
+
+#### Groups starting 24 March
+
+```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
+set.seed(324)
+n_groups <- function(x) {
+  ifelse(x > 18, (x+3) %/% 4, x %/% 3)
+}  
+
+R <- 
+  mosaic::shuffle(Roster) |>
+  group_by(section) |>
+  mutate(group = rep(1:(n_groups(n())), length.out = n())) |>
+  mutate(group = paste0(section, group)) 
+         
+for(g in sort(unique(R$group))) {
+  cat(paste0('  * Group ', g, ": ", paste(R %>% filter(group == g) %>% pull(short_name), collapse = ", "), "\n"))
+}
+```
+
+::::
 ```{block}
 #| include: true
 ### Counting and Probability
@@ -286,6 +310,8 @@ Fri 3/10 | Probability Review Solutions  | [PDF](/from-class/18-probability-sols
 Fri 3/10 | Grammars                | [PDF](/from-class/19-grammars.pdf)
 Wed 3/15 | Types of Grammars       | [PDF](/from-class/20-grammars.pdf)
 Fri 3/17 | Automata                | [PDF](/from-class/21-dfa.pdf)
+Mon 3/22 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
+Wed 3/24 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
 ```
 
 :::

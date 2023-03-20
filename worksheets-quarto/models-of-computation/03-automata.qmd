@@ -135,6 +135,7 @@ Are the two automata represented below equivalent?  Explain.
 knitr::include_graphics("images/DFA-Fig-12-3-5.png")
 ```
 
+{{< pagebreak >}}
 
 ## Nondeterministic Automata
 
@@ -240,6 +241,8 @@ Given an NFA $N$, is it always possible to create a DFA $M$ that recognizes
 the same language?  If so, explain how.  If not, provide an example $N$ and
 explain why $L(N)$ cannot be recognized by a DFA.
 :::
+
+{{< pagebreak >}}
 
 ## The Equivalence of DFA and NFA.
 
