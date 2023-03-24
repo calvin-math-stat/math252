@@ -153,11 +153,7 @@ Additional assignments will be filled in over time.
 	   \textbf{Note: Please do 55 and 56 in this order: 55a, 56a, 55b, 56b, 55c, 56c.}
    \\
    \hline
-	 \end{longtable}
-    \end{center}
-    \label{end}
-    \end{document}
-	   Wed 3/30 & PS 14 & Rosen 13.3 &
+	   Wed 3/29 & PS 14 & Rosen 13.3 &
 	   \mand[NFA to DFA]{52--54}
 	   \\
 	   & & Rosen 13.4 &
@@ -169,6 +165,10 @@ Additional assignments will be filled in over time.
 	   \extra[regex]{7}
 	   \\
 	   \hline
+	 \end{longtable}
+    \end{center}
+    \label{end}
+    \end{document}
 	   Fri 3/31 & PS 15 & Rosen 13.4 &
 	   \mand[grammar to NFA]{14abc}
 	   \\
