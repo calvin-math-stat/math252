@@ -90,7 +90,7 @@ knitr::include_graphics('images/NFA2DFA-example1sol.png')
 :::
 
 :::{.callout-note collapse=true}
-#### Exercise 21.22 -- converting NFA to DFA
+#### Exercise 21.22 -- Converting NFA to DFA
 
 It isn't important where you put the states, but it is important that the edges and labels
 match.
