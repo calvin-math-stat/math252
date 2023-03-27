@@ -182,7 +182,7 @@ Mon 2/06 | Donuts                | [PDF](/from-class/11-counting.pdf)
 :::
 
 
-:::{.callout-note collapse="false"}
+:::{.callout-note collapse="true"}
 ### Between Test 1 and Test 2
 
 ::::{.callout-note collapse="true"}
@@ -248,8 +248,32 @@ for(g in sort(unique(R$group))) {
 ```
 ::::
 
-::::{.callout-note collapse="true"}
+```{block}
+#| include: true
+### Counting and Probability
 
+date     |  Topic                  | link(s)
+-------- | ----------------------- | ------------------------------------------
+Fri 2/10 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
+Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf) [solutions](/from-class/12-probability-sols.pdf)
+Wed 2/15 | Conditional Probability | [PDF](/from-class/13-probability.pdf)
+Fri 2/17 | More Conditional Probability | [PDF](/from-class/14-probability.pdf)
+Mon 2/20 | Random Variables        | [PDF](/from-class/15-probability.pdf)
+Mon 2/24 | Expected Value          | [PDF](/from-class/16-probability.pdf)
+Mon 3/6  | Expected Value          | [PDF](/from-class/17-probability.pdf)
+Wed 3/8  | Probability Review      | [PDF](/from-class/18-probability.pdf)
+Fri 3/10 | Probability Review Solutions  | [PDF](/from-class/18-probability-sols.pdf)
+Fri 3/10 | Grammars                | [PDF](/from-class/19-grammars.pdf)
+```
+
+:::
+
+
+:::{.callout-note collapse="false"}
+
+### After Test 2 
+
+::::{.callout-note collapse="true"}
 #### Groups starting 15 March
 
 ```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
@@ -272,7 +296,7 @@ for(g in sort(unique(R$group))) {
 
 ::::{.callout-note collapse="true"}
 
-#### Groups starting 24 March
+#### Groups starting 27 March
 
 ```{r echo = FALSE, results = "asis", include = TRUE, message = FALSE}
 set.seed(324)
@@ -298,20 +322,13 @@ for(g in sort(unique(R$group))) {
 
 date     |  Topic                  | link(s)
 -------- | ----------------------- | ------------------------------------------
-Fri 2/10 | Intro to Probability    | [PDF](/from-class/12-probability.pdf)
-Mon 2/13 | Intro to Probability    | [PDF](/from-class/12-probability.pdf) [solutions](/from-class/12-probability-sols.pdf)
-Wed 2/15 | Conditional Probability | [PDF](/from-class/13-probability.pdf)
-Fri 2/17 | More Conditional Probability | [PDF](/from-class/14-probability.pdf)
-Mon 2/20 | Random Variables        | [PDF](/from-class/15-probability.pdf)
-Mon 2/24 | Expected Value          | [PDF](/from-class/16-probability.pdf)
-Mon 3/6  | Expected Value          | [PDF](/from-class/17-probability.pdf)
-Wed 3/8  | Probability Review      | [PDF](/from-class/18-probability.pdf)
-Fri 3/10 | Probability Review Solutions  | [PDF](/from-class/18-probability-sols.pdf)
 Fri 3/10 | Grammars                | [PDF](/from-class/19-grammars.pdf)
 Wed 3/15 | Types of Grammars       | [PDF](/from-class/20-grammars.pdf)
 Fri 3/17 | Automata                | [PDF](/from-class/21-dfa.pdf)
-Mon 3/22 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
-Wed 3/24 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
+Mon 3/20 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
+Fri 3/24 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
+Mon 3/27 | Regular Expressions     | [PDF](/from-class/22a-regex.pdf)
+Wed 3/29 | Regular Expressions     | [PDF](/from-class/22b-regex.pdf)
 ```
 
 :::

@@ -42,6 +42,7 @@ book:
         - models-of-computation/01-grammars.qmd
         - models-of-computation/02-grammars-types.qmd
         - models-of-computation/03-automata.qmd
+        - models-of-computation/04-regex.qmd
 
 filters:
    - latex-environment
@@ -50,11 +51,12 @@ environments: [solution, mysolution]
 format:
   pdf:
     keep-tex: true
+    pdf-engine: pdflatex
     documentclass: scrreprt
     fontsize: 10pt
     include-before-body: before_body.tex
     include-in-header:
-      - preample.tex
+      - preamble.tex
       - macros.tex
     toc-depth: 2
     fig-pos: 'h'
