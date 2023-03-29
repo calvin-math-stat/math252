@@ -155,6 +155,13 @@ That is, describe how to convert any NFA into an equivalent NFA with
 a lonely start state.
 :::
 
+:::{#exr-nfa-specification}
+To specify an NFA, what five things must you provide?
+
+In the next four exercises, be sure to specify all five things. 
+Feel free to draw pictures, but also describe these five things in words.
+:::
+
 :::{#exr-concat-nfa}
 Show that if $A$ and $B$ are each recognized by an NFA, then $AB$ is, too.
 
@@ -188,8 +195,16 @@ language is recognized by an NFA.
 Explain how we can know that every regular language is recognized by a DFA.
 :::
 
+:::{#exr-compliment-nfa}
+Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^c$) 
+is too.
+
+[Hint: There is an easy way and a hard way -- use the easy way.]
+:::
+
 :::{#exr-inefficient-nfa}
-The method just outlined is automatic (you could fairly easily write a
+The method outlined above to convert a regular expression into an equivalent
+NFA is automatic (you could fairly easily write a
 computer program to do the translation from regular expression to NFA), and it
 provides a proof that all regular languages can be recognized by an NFA. But it
 might produce an NFA with more states than is minimally required. Create an NFA
@@ -198,13 +213,6 @@ that recognizes $\mybold{1}^* \cup \mybold{01}$.  Do this two ways:
 a. Following the steps outlined in 1--6.
 b. Any way you like, but using fewer states than in part a.
 c. What is the smallest (fewest states) NFA you can find that recognizes $\mybold{1}^* \cup \mybold{01}$?
-:::
-
-:::{exr-compliment-nfa}
-Show that if $A$ is recognized by an NFA, then the complement of $A$ ($\overline{A} = A^c$) 
-is too.
-
-[Hint: There is an easy way and a hard way -- use the easy way.]
 :::
 
 <!-- \begin{center} -->
@@ -261,5 +269,6 @@ is too.
 
 <!-- epsilon NFA to DFA -->
 
+<!-- Note: The DFA produced here is missing the {} state. -->
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/taClnxU-nao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 

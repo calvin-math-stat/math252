@@ -7,6 +7,16 @@ css: styles/calendar.css
 library(daily)
 ```
 
+```{r, results = 'asis', echo = FALSE}
+daily2html(
+  "daily.txt", 
+  start = lubridate::mdy("01/10/2023"), 
+  end   = lubridate::mdy("03/01/2023"), 
+  days = c(2,4,6),
+  show = 1:7, 
+  items = c("Topic", "Read", "R", "Due", "Note")) |>
+  cat()
+```
 
 ```{r, results = 'asis', echo = FALSE}
 daily2html(
