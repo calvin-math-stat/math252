@@ -1251,20 +1251,23 @@ Topic:: DFA vs NFA
 Topic:: Regular Expressions and Languages
 
 ===
-Topic:: Regular Expression -> NFA
+Topic:: Regex -> NFA
 
 ===
+Topic:: Regex -> NFA
 Topic:: Regular Grammars and Automata
 
 ===
 Topic:: Regular Grammars and Automata
+Topic:: DFA -> regex
 
 ===
 Topic:: DFA -> regex
+# Topic:: Pumping Lemma
+Topic:: A language that isn't regular
 
-===endofcal
 
-===
+===04/12/2023
 
 Topic:: Turing Machines
 
@@ -1541,22 +1544,16 @@ sketch of 2-way tapes equivalent to 1-way
 
 sketch of 2 tapes equiv to 1 tape
 
-
-
 ===
 Topic:: Turing Machines
 
-===
-Topic:: A language that isn't regular
 
-
-===4/13/2022
+===4/17/2023
 
 Topic:: Test 3
 
-===4/20/2022
+===
 Topic:: Python Regular expressions
-
 
 ===endofcal
 

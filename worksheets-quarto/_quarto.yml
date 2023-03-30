@@ -43,6 +43,10 @@ book:
         - models-of-computation/02-grammars-types.qmd
         - models-of-computation/03-automata.qmd
         - models-of-computation/04-regex.qmd
+        - models-of-computation/05-regular-grammars.qmd
+        - models-of-computation/06-dfa-to-regex.qmd
+        - models-of-computation/07-nonregular-language.qmd
+        - models-of-computation/10-turing-machines.qmd
 
 filters:
    - latex-environment

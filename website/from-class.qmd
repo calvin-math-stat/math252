@@ -331,6 +331,7 @@ Mon 3/20 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
 Fri 3/24 | Non-determinism         | [PDF](/from-class/21a-nfa.pdf)
 Mon 3/27 | Regular Expressions     | [PDF](/from-class/22a-regex.pdf)
 Wed 3/29 | Regular Expressions     | [PDF](/from-class/22b-regex.pdf)
+Fri 3/31 | Regular Grammars        | [PDF](/from-class/23-grammars-and-nfas.pdf)
 ```
 
 * [Some comments, hints, and solutions](from-class/models-of-computation-sols.qmd)
