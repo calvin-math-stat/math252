@@ -150,7 +150,7 @@ Binomial distributions.
 
 ## Test 3
 
-**Date:** Monday, April 17 (or Wed, April 12)
+**Date:** Wed, April 12
 
 <!-- **Date:** Wed, April 13 -->
 
@@ -191,13 +191,13 @@ $$
 $$
 
 
-**Turing Machines:**
-Definition of Turing machine, tracing Turing machines,
-designing Turing machines, Turing computable languages, all regular languages
-are Turing computable.
+<!-- **Turing Machines:** -->
+<!-- Definition of Turing machine, tracing Turing machines, -->
+<!-- designing Turing machines, Turing computable languages, all regular languages -->
+<!-- are Turing computable. -->
 
-**Showing languages are not regular (Pumping Lemma)**
-Halting Problem.
+<!-- **Showing languages are not regular (Pumping Lemma)** -->
+<!-- Halting Problem. -->
 
 
 Note:
