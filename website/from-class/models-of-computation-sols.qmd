@@ -318,272 +318,239 @@ out of the subset.  Now you use your counting rules.
 <!-- </div> -->
 <!-- <br> -->
 
-<!-- ### Wed 4/14 -->
 
-<!-- * No Class: Advising Day -->
-<!-- * PS 14 due at 11:59pm -->
+\def\emptystring{\lambda}
+\def\set#1{\{#1\}}
 
-<!-- ### Fri 4/16 -->
+:::{.callout-note collapse=true}
+### Exercise 23.1 Regular grammar to NFA
 
-<!-- * Test 3 on Friday, 4/30 -->
+Start state: $S$;
+Accepting states: $S$ and $X$
 
-<!-- * No PS due today  -->
+state     |   0          |   1
+--------: | :----------: | :--------:
+$S$       |  $\set{X}$   | $\set{A}$
+$A$       |  $\set{A}$   | $\set{A}$
+$X$       |  $\set{}$    | $\set{X}$
 
+```{r echo = FALSE, fig.align = 'center'}
+knitr::include_graphics('images/grammar-to-nfa-01.png')
+```
 
-<!-- <div class = "explain" label = "Comments/Hints/Solutions"> -->
+It's a good idea to check your work on a few strings to make sure
+the grammar and the NFA agree.  You might try some of these:
 
-<!-- \def\emptystring{\lambda} -->
-<!-- \def\set#1{\{#1\}} -->
+* $\lambda$
+* $0$
+* $1$
+* $01$
+* $101$
+:::
 
-<!-- <div class = "foldable" label = "Exercise 5.1.1"> -->
 
-<!-- Start state: $S$; -->
-<!-- Accepting states: $S$ and $X$ -->
+:::{.callout-note collapse=true}
+### Exercise 23.2 -- Regular gramar to NFA
 
-<!-- state     |   0          |   1 -->
-<!-- --------: | :----------: | :--------: -->
-<!-- $S$       |  $\set{X}$   | $\set{A}$ -->
-<!-- $A$       |  $\set{A}$   | $\set{A}$ -->
-<!-- $X$       |  $\set{}$    | $\set{X}$ -->
+Start state: $S$;
+Accepting state: $X$
 
-<!-- ```{r echo = FALSE, fig.align = 'center'} -->
-<!-- knitr::include_graphics('images/grammar-to-nfa-01.png') -->
-<!-- ``` -->
+state     |   0           |   1
+--------: | :-----------: | :-----------:
+$S$       |  $\set{X}$    | $\set{A}$
+$A$       |  $\set{B}$    | $\set{A, X}$
+$B$       |  $\set{A, X}$ | $\set{B}$
+$X$       |  $\set{}$     | $\set{}$
 
-<!-- It's a good idea to check your work on a few strings to make sure -->
-<!-- the grammar and the NFA agree.  You might try some of these: -->
+```{r echo = FALSE, fig.align = 'center'}
+knitr::include_graphics('images/grammar-to-nfa-02.png')
+```
 
-<!-- * $\lambda$ -->
-<!-- * $0$ -->
-<!-- * $1$ -->
-<!-- * $01$ -->
-<!-- * $101$ -->
+It's a good idea to check your work on a few strings to make sure
+the grammar and the NFA agree.  You might try some of these:
 
-<!-- </div> -->
+* $\lambda$
+* $110$
+* $011$
+* $11001$
+* $11100$
+:::
 
-<!-- <div class = "foldable" label = "Exercise 5.1.2"> -->
-<!-- Start state: $S$; -->
-<!-- Accepting state: $X$ -->
+:::{.callout-note collapse=true}
 
-<!-- state     |   0           |   1 -->
-<!-- --------: | :-----------: | :-----------: -->
-<!-- $S$       |  $\set{X}$    | $\set{A}$ -->
-<!-- $A$       |  $\set{B}$    | $\set{A, X}$ -->
-<!-- $B$       |  $\set{A, X}$ | $\set{B}$ -->
-<!-- $X$       |  $\set{}$     | $\set{}$ -->
+### Exercise 23.3 -- Regular grammar to NFA (general method)
 
-<!-- ```{r echo = FALSE, fig.align = 'center'} -->
-<!-- knitr::include_graphics('images/grammar-to-nfa-02.png') -->
-<!-- ``` -->
+Three types of rules $S\to\lambda$, $A \to x B$, $A \to x$ where $S$ is the start state, capitals are
+non-terminals and lower case are terminals.
 
-<!-- It's a good idea to check your work on a few strings to make sure -->
-<!-- the grammar and the NFA agree.  You might try some of these: -->
+States of $N$: one for each non-terminal in the grammar and one more (let's call is $X$ for extra).
 
-<!-- * $\lambda$ -->
-<!-- * $110$ -->
-<!-- * $011$ -->
-<!-- * $11001$ -->
-<!-- * $11100$ -->
+Start state = start symbol
 
-<!-- </div> -->
+$X$ is an accepting state; the only other state that might be accepting is start state.
 
+Convert rules to transitions:
 
-<!-- <div class = "foldable" label = "Exercise 5.1.3"> -->
+* $S \to \lambda$ makes the start state accepting.
+* $A \to xB$ adds a transition $A \stackrel{x}{\to} B$.  (This is a self-loop if $A = B$.)
+* $A \to x$ adds a transition $A \stackrel{x}\to X$.
+* Note: there will be not transitions out of state $X$.
 
-<!-- Three types of rules $S\to\lambda$, $A \to x B$, $A \to x$ where $S$ is the start state, capitals are  -->
-<!-- non-terminals and lower case are terminals. -->
+:::
 
-<!-- States of $N$: one for each non-terminal in the grammar and one more (let's call is $X$ for extra). -->
+:::{.callout-note collapse=true}
+### Exercise 23.6 -- NFA to regular grammar
 
-<!-- Start state = start symbol -->
+* $S_0 \to \lambda$
+* $S_0 \to 0S_1$
+* $S_0 \to 1S_2$
+* $S_0 \to 1$
+* $S_1 \to 0S_1$
+* $S_1 \to 1S_2$
+* $S_1 \to 1$
+* $S_2 \to 0S_1$
+* $S_2 \to 1S_2$
+* $S_2 \to 1$
+:::
 
-<!-- $X$ is an accepting state; the only other state that might be accepting is start state. -->
 
-<!-- Convert rules to transitions: -->
+:::{.callout-note collapse=true}
+### Exercise 23.7 -- DFA to regular grammar
 
-<!-- * $S \to \lambda$ makes the start state accepting. -->
-<!-- * $A \to xB$ adds a transition $A \stackrel{x}{\to} B$.  (This is a self-loop if $A = B$.) -->
-<!-- * $A \to x$ adds a transition $A \stackrel{x}\to X$. -->
-<!-- * Note: there will be not transitions out of state $X$. -->
+$S$ is new lonely start state.
 
-<!-- </div> -->
-
-
-<!-- <div class = "foldable" label = "Exercise 5.2.6"> -->
-
-<!-- * $S_0 \to \lambda$ -->
-<!-- * $S_0 \to 0S_1$ -->
-<!-- * $S_0 \to 1S_2$ -->
-<!-- * $S_0 \to 1$ -->
-<!-- * $S_1 \to 0S_1$ -->
-<!-- * $S_1 \to 1S_2$ -->
-<!-- * $S_1 \to 1$ -->
-<!-- * $S_2 \to 0S_1$ -->
-<!-- * $S_2 \to 1S_2$ -->
-<!-- * $S_2 \to 1$ -->
-<!-- </div> -->
-
-
-<!-- <div class = "foldable" label = "Exercise 5.2.7"> -->
-
-<!-- $S$ is new lonely start state. -->
-
-<!-- * $S \to 0S_0$ -->
-<!-- * $S \to 1S_1$ -->
-<!-- * $S \to 1$ -->
-<!-- * $S_0 \to 0S_0$ -->
-<!-- * $S_0 \to 1S_1$ -->
-<!-- * $S_0 \to 1$ -->
-<!-- * $S_1 \to 0S_2$ -->
-<!-- * $S_1 \to 1S_1$ -->
-<!-- * $S_1 \to 1$ -->
-<!-- * $S_2 \to 0S_2$ -->
-<!-- * $S_2 \to 1S_2$ -->
-<!-- </div> -->
-
-
-<!-- <div class = "foldable" label = "Exercise 5.2.8"> -->
-
-<!-- $S$ is new lonely start state. -->
-
-<!-- * $S \to \lambda$ -->
-<!-- * $S \to 1S_1$ -->
-<!-- * $S \to 1$ -->
-<!-- * $S_0 \to 1S_1$ -->
-<!-- * $S_0 \to 1$ -->
-<!-- * $S_0 \to 0S_0$ -->
-<!-- * $S_1 \to 0S_2$ -->
-<!-- * $S_2 \to 0S_0$ -->
-<!-- * $S_2 \to 1S_0$ -->
-<!-- * $S_2 \to 0$ -->
-<!-- * $S_2 \to 1$ -->
-<!-- </div> -->
-<!-- <div class = "foldable" label = "Exercise 5.2.9"> -->
-
-<!-- * terminals = input alphabet -->
-<!-- * non-terminals = states (after adding lonely start state) -->
-<!-- * start symbol = lonely start state -->
-<!-- * Add $S \to \lambda$ if start state is accepting. -->
-<!-- * Add $A \to xB$ if $A \stackrel{x}{\to} B$ is a transition. -->
-<!-- * Add $A \to x$ if $A \stackrel{x}{\to} B$ and $B$ is accepting. -->
-<!-- * Lonely start state avoids having rules with start state on the right side (which is not allowed for regular grammars). -->
-
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <br><br>     -->
-
-<!-- ## Week 12  -->
-
-<!-- ### Mon 4/19 -->
-
-<!-- * Today we add the last arrow to this chart: DFA $\to$ regular expression. -->
-
-<!--     $$ -->
-<!--     \Large -->
-<!--     \begin{array}{ccc} -->
-<!--     \mathrm{DFA} & \stackrel{\longrightarrow}\longleftarrow & \mathrm{NFA} \\ -->
-<!--     \downarrow& \nearrow & \downarrow \uparrow \\ -->
-<!--     \mathrm{regular}& & \mathrm{regular} \\ -->
-<!--     \mathrm{expression}& & \mathrm{grammar}  -->
-<!--     \end{array} -->
-<!--     $$ -->
-
-<!--     This shows that all four of our representations (DFA, NFA, regular grammar, regular expression) -->
-<!-- are equivalent.  The languages recognized/generated/expressed -->
-<!-- by DFAs/NFAs/regular grammars/regular expressions are called **regular langauges**. -->
-
-<!-- * **Note;** Rosen does not cover this topic. -->
-
-<!--   * This means there are also no texbook problems on this topic. -->
-<!--   * But **it will be covered on test**. -->
-<!--   * You can easily practice using any DFA (or NFA) we have seen.  (You probably want -->
-<!--   to choose ones that don't have too many states.) -->
-
-<!-- * Worksheet: Section 6 today -->
-
-<!--   * [HTML](models-of-computation/regular-langauges.html) -->
-<!--   * [PDF](models-of-computation/Models-of-Computation.pdf) -->
-
-
-<!-- <div class = "indent"> -->
-<!-- <div class = "explain" label = "Comments/Hints/Solutions"> -->
-
-<!-- \def\emptystring{\lambda} -->
-<!-- \def\union{\cup} -->
-
-<!-- <div class = "foldable" label = "Exercise 6.2.1"> -->
-
-<!-- ```{r echo = FALSE, fig.align = 'center'} -->
-<!-- # path <- glue::glue('../images/DFA2regex1/frame_0000{i}.png', i = 1:9) -->
-<!-- path <- dir('images/DFA2regex1', full.names = TRUE) -->
-<!-- knitr::include_graphics(path) -->
-<!-- ``` -->
-
-<!-- </div> -->
-
-<!-- <div class = "foldable" label = "Exercise 6.2.2"> -->
-
-<!-- ```{r echo = FALSE, fig.align = 'center'} -->
-<!-- path <- dir('images/DFA2regex2', full.names = TRUE) -->
-<!-- knitr::include_graphics(path) -->
-<!-- ``` -->
-
-<!-- </div> -->
-<!-- <div class = "foldable" label = "Exercise 6.2.3"> -->
-
-
-<!-- ```{r echo = FALSE, fig.align = 'center'} -->
-<!-- path <- dir('images/DFA2regex3', full.names = TRUE) -->
-<!-- knitr::include_graphics(path) -->
-<!-- ``` -->
-
-<!-- </div> -->
-
-<!-- <div class = "foldable" label = "Exercise 6.2.4-5"> -->
-<!-- The algorithm works just the same if you start from an NFA or a GNFA. -->
-
-<!-- As a side note, this implies that GNFAs are equivalent to NFAs.  In particular, -->
-<!-- $\lambda$-NFAs (NFAs that allow transitions labeled $\lambda$ that can be used -->
-<!-- without processing any input symbols) are equivalent.  So our diagram looks like -->
-<!-- this -->
-
-<!-- $$ -->
-<!-- \Large -->
-<!-- \begin{array}{ccccccc} -->
-<!-- \mathrm{DFA} & \longleftrightarrow & \mathrm{NFA} & \longrightarrow & \lambda\mathrm{-NFA} & \longrightarrow & \mathrm{GNFA} \\ -->
-<!-- && \downarrow \uparrow & \nwarrow  &  & \swarrow  \\ -->
-<!-- & & \mathrm{regular}& & \mathrm{regular} \\ -->
-<!-- & & \mathrm{grammar}& & \mathrm{expression}  -->
-<!-- \end{array} -->
-<!-- $$ -->
-<!-- Some books and online resources will demonstrate the conversion  -->
-
-<!-- $$ -->
-<!-- \mbox{regular expression} \longrightarrow \lambda\mathrm{-NFA} -->
-<!-- $$ -->
-<!-- since this is slightly easier than  -->
-<!-- $$ -->
-<!-- \mbox{regular expression} \longrightarrow \mathrm{NFA} -->
-<!-- $$ -->
-<!-- But then we would need an additional conversion -->
-<!-- $$ -->
-<!-- \lambda\mathrm{-NFA} \longrightarrow  \mathrm{NFA} \;. -->
-<!-- $$ -->
-<!-- This doable, but isn't really any easier than building it into the  -->
-<!-- the conversion from regular expressions to NFAs, the way we did it. -->
-
-<!-- You should know how to perform all of the conversions illustrated in the diagram -->
-<!-- above. -->
-<!-- </div> -->
-
-<!-- <div class = "foldable" label = "Exercise 6.3.1"> -->
-<!-- Compare your descriptions to the descriptions below.  Did you leave out  -->
+* $S \to 0S_0$
+* $S \to 1S_1$
+* $S \to 1$
+* $S_0 \to 0S_0$
+* $S_0 \to 1S_1$
+* $S_0 \to 1$
+* $S_1 \to 0S_2$
+* $S_1 \to 1S_1$
+* $S_1 \to 1$
+* $S_2 \to 0S_2$
+* $S_2 \to 1S_2$
+:::
+
+
+:::{.callout-note collapse=true}
+### Exercise 23.8 -- NFA to regular grammar
+
+$S$ is new lonely start state.
+
+* $S \to \lambda$
+* $S \to 1S_1$
+* $S \to 1$
+* $S_0 \to 1S_1$
+* $S_0 \to 1$
+* $S_0 \to 0S_0$
+* $S_1 \to 0S_2$
+* $S_2 \to 0S_0$
+* $S_2 \to 1S_0$
+* $S_2 \to 0$
+* $S_2 \to 1$
+
+:::
+
+:::{.callout-note collapse=true}
+### Exercise 23.9 -- DFA/NFA to regular grammar (general method)
+
+* terminals = input alphabet
+* non-terminals = states (after adding lonely start state)
+* start symbol = lonely start state
+* Add $S \to \lambda$ if start state is accepting.
+* Add $A \to xB$ if $A \stackrel{x}{\to} B$ is a transition.
+* Add $A \to x$ if $A \stackrel{x}{\to} B$ and $B$ is accepting.
+* Lonely start state avoids having rules with start state on the right side (which is not allowed for regular grammars).
+
+:::
+
+
+\def\emptystring{\lambda}
+\def\union{\cup}
+
+:::{.callout-note collapse=true}
+### Exercise 24.1 -- DFA to regex
+
+```{r echo = FALSE, fig.align = 'center'}
+# path <- glue::glue('../images/DFA2regex1/frame_0000{i}.png', i = 1:9)
+path <- dir('images/DFA2regex1', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+:::
+
+:::{.callout-note collapse=true}
+### Exercise 24.2 -- DFA to regex
+
+```{r echo = FALSE, fig.align = 'center'}
+path <- dir('images/DFA2regex2', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+:::
+
+:::{.callout-note collapse=true}
+### Exercise 24.3 -- DFA to regex
+
+
+```{r echo = FALSE, fig.align = 'center'}
+path <- dir('images/DFA2regex3', full.names = TRUE)
+knitr::include_graphics(path)
+```
+
+:::
+
+:::{.callout-note collapse=true}
+### Exercises 24.4-5 -- Can we start from NFA or GNFA?
+
+The algorithm works just the same if you start from an NFA or a GNFA.
+
+As a side note, this implies that GNFAs are equivalent to NFAs.  In particular,
+$\lambda$-NFAs (NFAs that allow transitions labeled $\lambda$ that can be used
+without processing any input symbols) are equivalent.  So our diagram looks like
+this
+
+$$
+\Large
+\begin{array}{ccccccc}
+\mathrm{DFA} & \longleftrightarrow & \mathrm{NFA} & \longrightarrow & \lambda\mathrm{-NFA} & \longrightarrow & \mathrm{GNFA} \\
+&& \downarrow \uparrow & \nwarrow  &  & \swarrow  \\
+& & \mathrm{regular}& & \mathrm{regular} \\
+& & \mathrm{grammar}& & \mathrm{expression}
+\end{array}
+$$
+Some books and online resources will demonstrate the conversion
+
+$$
+\mbox{regular expression} \longrightarrow \lambda\mathrm{-NFA}
+$$
+since this is slightly easier than
+$$
+\mbox{regular expression} \longrightarrow \mathrm{NFA}
+$$
+But then we would need an additional conversion
+$$
+\lambda\mathrm{-NFA} \longrightarrow  \mathrm{NFA} \;.
+$$
+This doable, but isn't really any easier than building it into the
+the conversion from regular expressions to NFAs, the way we did it.
+
+You should know how to perform all of the conversions illustrated in the diagram
+above.
+:::
+
+:::{.callout-note collapse=true}
+### Exercise 24.6 -- Outlining all the conversions
+
+Coming soon.
+
+<!-- Compare your descriptions to the descriptions below.  Did you leave out -->
 <!-- anything important?  Do the solutions below leave out anything important? -->
 
-<!-- 1a. regex $\to$ NFA:  -->
+<!-- 1a. regex $\to$ NFA: -->
 
-<!-- * 6 parts:  -->
+<!-- * 6 parts: -->
 <!--     * 3 base cases -- pretty easy -->
 <!--     * 3 that show union, concatenation and Kleene star -- these are the "interesting" part -->
 
@@ -591,8 +558,8 @@ out of the subset.  Now you use your counting rules.
 
 <!--     * keep all states and transitions from $N_1$ and $N_2$ -->
 
-<!--     * add one new start state $S$; $S$ is final if either  -->
-<!--       start state of $N_1$ or start state of $N_2$ is final -->
+<!--     * add one new start state $S$; $S$ is accepting if either -->
+<!--       start state of $N_1$ or start state of $N_2$ is accepting -->
 
 <!--     * add some additional transitions -->
 <!--         * if $S_1 \stackrel{x}{\to} A$, add $S \stackrel{x}{\to} A$ -->
@@ -601,23 +568,23 @@ out of the subset.  Now you use your counting rules.
 <!-- * concatenation: $AB$ where $A = L(N_1)$ and $B = L(N_2)$. -->
 
 <!--     * keep all states and transitions from $N_1$ and $N_2$ -->
-<!--     * start state from $N_1$ is the start state  -->
-<!--     * only final states from $N_2$ are final -->
+<!--     * start state from $N_1$ is the start state -->
+<!--     * only accepting states from $N_2$ are accepting -->
 <!--     * add some additional transitions -->
-<!--         * if $A \stackrel{x}{\to} F$ (a final state in $N_1$), then add -->
+<!--         * if $A \stackrel{x}{\to} F$ (an accepting state in $N_1$), then add -->
 <!--           add $A \stackrel{x}{\to} S_2$ (start state in $N_2$) -->
 
 <!-- * Kleene star: $A = L(N_1)$ -->
 
-<!--     * keep all states and transitions from $N_1$  -->
-<!--     * add a new start state that is a final state (because $\lambda \in A^*$) -->
+<!--     * keep all states and transitions from $N_1$ -->
+<!--     * add a new start state that is a accepting state (because $\lambda \in A^*$) -->
 <!--     * add new transitions from new start state ($S$) -->
 
 <!--         * if $S_1 \stackrel{x}{\to} A$, add $S \stackrel{x}{\to} A$ (includes case where $A = S_1$) -->
 
 <!--     * add new transitions to old start state ($S_1$) -->
 
-<!--         * if $A \stackrel{x}{\to} F$, where F is final, add $A \stackrel{x}{\to} S_1$ -->
+<!--         * if $A \stackrel{x}{\to} F$, where F is accepting, add $A \stackrel{x}{\to} S_1$ -->
 <!--         * If we are at the end of a string in $L(N_1)$, this lets us "restart" -->
 
 
@@ -629,68 +596,50 @@ out of the subset.  Now you use your counting rules.
 
 <!-- * DFA states are **subsets of NFA states** (think: magnets on white board) -->
 
-<!-- * A is final in DFA if A contains a final state of NFA  -->
+<!-- * A is accepting in DFA if A contains a accepting state of NFA -->
 
 <!-- * Remember that $\{ \}$ may be needed as one of the states in the DFA -->
 
 <!-- 1d. DFA (or NFA) $\to$ reg grammar -->
 
-<!-- * $A \stackrel{x}{\to} B$ becomes  -->
+<!-- * $A \stackrel{x}{\to} B$ becomes -->
 
 <!--     * $A \to xB$ -->
 
-<!--     * also $A \to x$  if B is final state -->
+<!--     * also $A \to x$  if B is accepting state -->
 
-<!-- * If S is final in NFA/DFA, then add $S \to \lambda$ -->
+<!-- * If S is accepting in NFA/DFA, then add $S \to \lambda$ -->
 
-<!-- * Number of rules = number of transitions + number of transitions to final states + -->
-<!--     1 more if the start state is final -->
+<!-- * Number of rules = number of transitions + number of transitions to accepting states + -->
+<!--     1 more if the start state is accepting -->
 
 <!-- 1e. reg grammar $\to$ NFA -->
 
-<!-- * states: non-terminals of grammar +  -->
-<!-- one additional state $F$ (a final state) -->
+<!-- * states: non-terminals of grammar + -->
+<!-- one additional state $F$ (an accepting state) -->
 <!--     * Start symbol is also start state -->
-<!--     * If $S \to \lambda$ is a rule, then $S$ is a final state -->
+<!--     * If $S \to \lambda$ is a rule, then $S$ is an accepting state -->
 
 <!-- * production rules become transitions in NFA -->
 
 <!--     * $A \to xB$ becomes $A \stackrel{x}{\to} B$ -->
-<!--     * $A \to x$  becomes $A \stackrel{x}{\to} F$ (the added final state) -->
+<!--     * $A \to x$  becomes $A \stackrel{x}{\to} F$ (the added accepting state) -->
 
 <!-- 1f. DFA $\to$ regular expression -->
 
-<!-- * Big idea: Make GNFAs with fewer and fewer states until we have a GNFA with two states  -->
+<!-- * Big idea: Make GNFAs with fewer and fewer states until we have a GNFA with two states -->
 <!-- (one the start state and the other the accepting state) and one transition between them, labeled -->
 <!-- with a regular expression. -->
 
 <!-- * If necessary, make two addjustments to the DFA before beginning -->
-<!--     * Make sure there is a lonely start state  -->
+<!--     * Make sure there is a lonely start state -->
 <!--     * Make sure there is a single accepting state with no exiting transitions. -->
 <!--     * $\lambda$-transitions are allowed for this step, so we might not have a DFA anymore after these adjustments. -->
 
 <!-- * Pick any internal state $R$ (not the start or accepting state) and "rip it out". -->
 <!--     * create or update transitions $A \to B$ when there was $A \to R \to B$. -->
-<!-- </div> -->
-<!-- </div> -->
+:::
 
-<!-- <br> -->
-
-<!-- ### Wed 4/21 -->
-
-<!-- * Read directions carefully for today's assignment. -->
-
-<!-- * Test 3 next Friday. -->
-
-<!-- **Topic of the Day:** Languages that are not regular -->
-
-<!-- * Worksheet: Section 7 today -->
-
-<!--   * [HTML](models-of-computation/a-language-that-is-not-regular.html) -->
-<!--   * [PDF](models-of-computation/Models-of-Computation.pdf) -->
-
-<!-- <div class = "indent"> -->
-<!-- <div class = "explain" label = "Comments/Hints/Solutions"> -->
 
 <!-- <div class = "foldable" label = "A language that is not regular">  -->
 

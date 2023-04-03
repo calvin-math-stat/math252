@@ -265,6 +265,526 @@ Exercise 21.23 – How many states in the DFA created from NFA?
 </div>
 </div>
 </div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.1 Regular grammar to NFA
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Start state: <span class="math inline">\(S\)</span>; Accepting states: <span class="math inline">\(S\)</span> and <span class="math inline">\(X\)</span></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">state</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(S\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{X\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A\}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{X\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/grammar-to-nfa-01.png" class="img-fluid figure-img" width="418"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It’s a good idea to check your work on a few strings to make sure the grammar and the NFA agree. You might try some of these:</p>
+<ul>
+<li><span class="math inline">\(\lambda\)</span></li>
+<li><span class="math inline">\(0\)</span></li>
+<li><span class="math inline">\(1\)</span></li>
+<li><span class="math inline">\(01\)</span></li>
+<li><span class="math inline">\(101\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.2 – Regular gramar to NFA
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Start state: <span class="math inline">\(S\)</span>; Accepting state: <span class="math inline">\(X\)</span></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">state</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(S\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{X\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{B\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A, X\}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{A, X\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{B\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(X\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/grammar-to-nfa-02.png" class="img-fluid figure-img" width="479"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It’s a good idea to check your work on a few strings to make sure the grammar and the NFA agree. You might try some of these:</p>
+<ul>
+<li><span class="math inline">\(\lambda\)</span></li>
+<li><span class="math inline">\(110\)</span></li>
+<li><span class="math inline">\(011\)</span></li>
+<li><span class="math inline">\(11001\)</span></li>
+<li><span class="math inline">\(11100\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.3 – Regular grammar to NFA (general method)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Three types of rules <span class="math inline">\(S\to\lambda\)</span>, <span class="math inline">\(A \to x B\)</span>, <span class="math inline">\(A \to x\)</span> where <span class="math inline">\(S\)</span> is the start state, capitals are non-terminals and lower case are terminals.</p>
+<p>States of <span class="math inline">\(N\)</span>: one for each non-terminal in the grammar and one more (let’s call is <span class="math inline">\(X\)</span> for extra).</p>
+<p>Start state = start symbol</p>
+<p><span class="math inline">\(X\)</span> is an accepting state; the only other state that might be accepting is start state.</p>
+<p>Convert rules to transitions:</p>
+<ul>
+<li><span class="math inline">\(S \to \lambda\)</span> makes the start state accepting.</li>
+<li><span class="math inline">\(A \to xB\)</span> adds a transition <span class="math inline">\(A \stackrel{x}{\to} B\)</span>. (This is a self-loop if <span class="math inline">\(A = B\)</span>.)</li>
+<li><span class="math inline">\(A \to x\)</span> adds a transition <span class="math inline">\(A \stackrel{x}\to X\)</span>.</li>
+<li>Note: there will be not transitions out of state <span class="math inline">\(X\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.6 – NFA to regular grammar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(S_0 \to \lambda\)</span></li>
+<li><span class="math inline">\(S_0 \to 0S_1\)</span></li>
+<li><span class="math inline">\(S_0 \to 1S_2\)</span></li>
+<li><span class="math inline">\(S_0 \to 1\)</span></li>
+<li><span class="math inline">\(S_1 \to 0S_1\)</span></li>
+<li><span class="math inline">\(S_1 \to 1S_2\)</span></li>
+<li><span class="math inline">\(S_1 \to 1\)</span></li>
+<li><span class="math inline">\(S_2 \to 0S_1\)</span></li>
+<li><span class="math inline">\(S_2 \to 1S_2\)</span></li>
+<li><span class="math inline">\(S_2 \to 1\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.7 – DFA to regular grammar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(S\)</span> is new lonely start state.</p>
+<ul>
+<li><span class="math inline">\(S \to 0S_0\)</span></li>
+<li><span class="math inline">\(S \to 1S_1\)</span></li>
+<li><span class="math inline">\(S \to 1\)</span></li>
+<li><span class="math inline">\(S_0 \to 0S_0\)</span></li>
+<li><span class="math inline">\(S_0 \to 1S_1\)</span></li>
+<li><span class="math inline">\(S_0 \to 1\)</span></li>
+<li><span class="math inline">\(S_1 \to 0S_2\)</span></li>
+<li><span class="math inline">\(S_1 \to 1S_1\)</span></li>
+<li><span class="math inline">\(S_1 \to 1\)</span></li>
+<li><span class="math inline">\(S_2 \to 0S_2\)</span></li>
+<li><span class="math inline">\(S_2 \to 1S_2\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.8 – NFA to regular grammar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(S\)</span> is new lonely start state.</p>
+<ul>
+<li><span class="math inline">\(S \to \lambda\)</span></li>
+<li><span class="math inline">\(S \to 1S_1\)</span></li>
+<li><span class="math inline">\(S \to 1\)</span></li>
+<li><span class="math inline">\(S_0 \to 1S_1\)</span></li>
+<li><span class="math inline">\(S_0 \to 1\)</span></li>
+<li><span class="math inline">\(S_0 \to 0S_0\)</span></li>
+<li><span class="math inline">\(S_1 \to 0S_2\)</span></li>
+<li><span class="math inline">\(S_2 \to 0S_0\)</span></li>
+<li><span class="math inline">\(S_2 \to 1S_0\)</span></li>
+<li><span class="math inline">\(S_2 \to 0\)</span></li>
+<li><span class="math inline">\(S_2 \to 1\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 23.9 – DFA/NFA to regular grammar (general method)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>terminals = input alphabet</li>
+<li>non-terminals = states (after adding lonely start state)</li>
+<li>start symbol = lonely start state</li>
+<li>Add <span class="math inline">\(S \to \lambda\)</span> if start state is accepting.</li>
+<li>Add <span class="math inline">\(A \to xB\)</span> if <span class="math inline">\(A \stackrel{x}{\to} B\)</span> is a transition.</li>
+<li>Add <span class="math inline">\(A \to x\)</span> if <span class="math inline">\(A \stackrel{x}{\to} B\)</span> and <span class="math inline">\(B\)</span> is accepting.</li>
+<li>Lonely start state avoids having rules with start state on the right side (which is not allowed for regular grammars).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 24.1 – DFA to regex
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00001.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00002.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00003.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00004.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00005.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00006.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00007.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00008.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex1/frame_00009.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 24.2 – DFA to regex
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00001.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00002.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00003.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00004.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00005.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00006.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00007.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex2/frame_00008.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 24.3 – DFA to regex
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00001.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00002.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00003.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00004.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00005.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/DFA2regex3/frame_00006.png" class="img-fluid figure-img" width="640"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercises 24.4-5 – Can we start from NFA or GNFA?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The algorithm works just the same if you start from an NFA or a GNFA.</p>
+<p>As a side note, this implies that GNFAs are equivalent to NFAs. In particular, <span class="math inline">\(\lambda\)</span>-NFAs (NFAs that allow transitions labeled <span class="math inline">\(\lambda\)</span> that can be used without processing any input symbols) are equivalent. So our diagram looks like this</p>
+<p><span class="math display">\[
+\Large
+\begin{array}{ccccccc}
+\mathrm{DFA} &amp; \longleftrightarrow &amp; \mathrm{NFA} &amp; \longrightarrow &amp; \lambda\mathrm{-NFA} &amp; \longrightarrow &amp; \mathrm{GNFA} \\
+&amp;&amp; \downarrow \uparrow &amp; \nwarrow  &amp;  &amp; \swarrow  \\
+&amp; &amp; \mathrm{regular}&amp; &amp; \mathrm{regular} \\
+&amp; &amp; \mathrm{grammar}&amp; &amp; \mathrm{expression}
+\end{array}
+\]</span> Some books and online resources will demonstrate the conversion</p>
+<p><span class="math display">\[
+\mbox{regular expression} \longrightarrow \lambda\mathrm{-NFA}
+\]</span> since this is slightly easier than <span class="math display">\[
+\mbox{regular expression} \longrightarrow \mathrm{NFA}
+\]</span> But then we would need an additional conversion <span class="math display">\[
+\lambda\mathrm{-NFA} \longrightarrow  \mathrm{NFA} \;.
+\]</span> This doable, but isn’t really any easier than building it into the the conversion from regular expressions to NFAs, the way we did it.</p>
+<p>You should know how to perform all of the conversions illustrated in the diagram above.</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 24.6 – Outlining all the conversions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Coming soon.</p>
+</div>
+</div>
+</div>
 
 
 
