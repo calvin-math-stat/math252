@@ -44,13 +44,16 @@ the **blank symbol**.
 These can further be divided into accepting states and rejecting states.
 
 * **program**: A list of **instructions**. Each instruction has 5 parts:
-    * `<current tape symbol>`: any tape symbol
-    * `<current state>`: any non-halting state
-    * `<new tape symbol>`: any tape symbol
-    * `<new state>`: any state
-    * `<direction>`: left, right, or stay 
-      *  Some flavors of Turing machine do not allow stay.
+    * input
+        * `<current state>`: any non-halting state
+        * `<current tape symbol>`: any tape symbol
+    * output
+        * `<new state>`: any state
+        * `<new tape symbol>`: any tape symbol
+        * `<direction>`: left, right, or stay  (Some flavors of Turing machine do not allow stay.)
    
+
+{{< pagebreak >}}
 
 ## Execution of a Turing Machine program (Semantics)
 
@@ -86,7 +89,7 @@ Otherwise it runs forever.
 
 ## ASCII Representations of Turing Machines
 
-There are several websites that provide Turing machine simulators. Here are two:
+There are several websites that provide Turing machine simulators. Here are three:
 
 <!-- * <http://www.6by9.net/z/projects/turingMachine/turingMachineApplet/>  -->
 
@@ -94,7 +97,7 @@ There are several websites that provide Turing machine simulators. Here are two:
 <!-- but no longer usable since it was written in java by Calvin student Eliot Eschelman -->
 <!-- back when java applets were still a thing. -->
 
-* <https://https://kmh67calvin.github.io/>
+* <https://calvin-turing.netlify.app/>
 
     * Hackathon 2023 project by **Kenny Howes**
     
@@ -105,33 +108,32 @@ There are several websites that provide Turing machine simulators. Here are two:
     
 * <https://turingmachinesimulator.com/> 
 
-    * nice looking and more flexible,  but each instruction takes up 3 lines
+    * nice looking and more flexible, but each instruction takes up 3 lines
     (current state and tape symbol on one line; new state, direction, and new
     symbol on the next line; then a blank line)
 
 Each uses a slightly different ASCII representation of a Turing Machine.
 They are all pretty similar but differ in
 
-* How the input alphabet, tape alphabet, start state and accepting states are described
+* How the input alphabet, tape alphabet, start state and accepting states are described.
 * How they represent the blank tape symbol.  (Often there is a fixed symbol for this like
-`b`, `B` or `_`.)
+`b`, `B` or `_`.).
 * Whether they are case sensitive, disallow certain characters, observe white space, etc.
-* How left/right/stay are denoted
-* The order in which the 5 parts of an instruction are given
+* How left/right/stay are denoted.
+* The order in which the 5 parts of an instruction are given.
 * Which of various variations on the Turing machine theme they support (and how you tell the simulator which flavor to use).
-
 
 
 ### Example 1 (13.5.1 in Rosen 7)
 
 <!-- Example 12.5.1 from Rosen6 -->
 
-In style of <https://https://kmh67calvin.github.io/>:
+In style of <https://calvin-turing.netlify.app/>
 ```
 ATM       // A Turing Machine
 Example 1 // A name for the machine
 0 1       // Input alphabet
-0 1       // Tape alphabet -- also get _ for blank
+0 1 _     // Tape alphabet -- don't forget _ for blank
 1         // Number of tapes
 1         // Number of tracks on first tape
 2         // 2-way infinite tape
@@ -170,10 +172,38 @@ Do this by hand, then check your work using the simulator.
 \hfill a. $\lambda$ \hfill  b. 01 \hfill  c. 0101 \hfill  d. 010110  \hfill  e. 001 \hfill
 :::
 
+{{< pagebreak >}}
 
 ### Example 2
 
+In style of <https://calvin-turing.netlify.app/>:
 ```
+ATM
+Example 2 // Machine Name
+0 1 // Input Alphabet
+0 1 B // Tape Alphabet, blank is B
+1 // Number of Tapes
+1 // Numbers of Tracks on Tape 0
+2 // Tape 0 is 2-way infinite
+[init]   // Initial State
+[accept] // Accepting State(s)
+[init] 0 [10] 0 r 
+[init] 1 [01] 0 r 
+[init] B [accept] B s 
+[00] 0 [10] 0 r 
+[00] 1 [01] 1 r 
+[00] B [accept] B s 
+[01] 0 [11] 0 r 
+[01] 1 [00] 1 r 
+[01] B [01] B r 
+[10] 0 [00] 0 r 
+[10] 1 [11] 1 r 
+[11] 0 [01] 0 r 
+[11] 1 [10] 1 r 
+END
+```
+
+```{block include = FALSE}
 ; in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
 0 * * * [init]          ; [init] is "initial state"
@@ -221,8 +251,9 @@ q0	     | (q0, a, R)	| (q1, b, R)	  | (qrej, blank, L)
 q1	     | (q1, a, R)	| (qacc, b, L)	| (qrej, blank, L)
 
 into an ASCII representation for use in our Turing Machine simulator.
+:::
 
-<<{ pagebreak >}}
+{{< pagebreak >}}
 
 ## The language recognized by a Turing Machine
 
@@ -258,7 +289,7 @@ b. Is every regular language recognized by a Turing machine?  How do you know?
 
 <!-- This is Example 13.5.2 in Rosen 7 -->
 
-```{r include = FALSE, eval = FALSE}
+```{block include = FALSE}
 ; in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
 ; s0 is initial state in Rosen
@@ -272,7 +303,7 @@ s0 _ 0 r s2
 s1 _ 0 r s2
 ```
 
-```{r include = FALSE, eval = FALSE}
+```{block include = FALSE}
 ; in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
 0      * * * start
@@ -329,8 +360,8 @@ noR     ( ( r halt-reject  ; extra (
 noR     * * l noR
 ```
 
-```{r include = FALSE, eval = FALSE}
-; in style of <http://morphett.info/turing/turing.html>
+```{block include = FALSE}
+// in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
 0 _ Y r halt
 0 ( { r 1
@@ -346,7 +377,22 @@ noR     * * l noR
 1 / \ r 1
 ```
 
+```{block include = FALSE}
+// In style of <https://calvin-turing.netlify.app/>:
+searchR ) searchL ] l 
+searchR _ noR _ l 
+searchR * noR * r 
+searchL ( searchR [ r 
+searchL _ reject _ r  //  no ( for some )
+searchL * searchL * l 
+noR     _ accept _ r // no ( either
+noR     ( reject ( r // extra (
+noR     * noR * l 
+```
+
 :::
+
+{{< pagebreak >}}
 
 ## Computing functions with a Turing machine
 
@@ -566,8 +612,9 @@ Suppose $H(\enc{K}\#\enc{K})$ accepts.
     a. What does this tell us about $K$ because of how $H$ is defined?
     b. What does this tell us about $K$ because of how we defined $K$?
     
-        <!-- * $K$ on input $\enc{K}$ should halt, but -->
-        <!-- * $K$ on input $\enc{K}$ runs for ever because of 3.b.i. -->
+<!-- * $K$ on input $\enc{K}$ should halt, but -->
+<!-- * $K$ on input $\enc{K}$ runs for ever because of 3.b.i. -->
+
 :::
 
 :::{#exr-halting-prob-q2}

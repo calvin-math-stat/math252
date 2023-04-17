@@ -1,0 +1,36 @@
+
+\documentclass[10pt]{article}
+
+
+\usepackage{problems}
+% % \usepackage{eepic}
+\usepackage[margin=.7in,bottom=.4in,top=.4in,includefoot,includehead]{geometry}
+% \usepackage{probstat}
+% \usepackage{fancyhdr}
+% \usepackage{multicol}
+% %\input myabbrev
+% %\input mysym
+%
+%
+% \usepackage{pgf}
+% \usepackage{tikz}
+% \usetikzlibrary{arrows,automata}
+% % \usepackage[latin1]{inputenc}
+%
+% \def\mybold#1{\boldsymbol{#1}}
+%
+% \newif\ifversionA
+% \versionAtrue
+% \versionAfalse
+%
+% \pagestyle{fancy}
+% \thispagestyle{empty}
+% \lhead{\sf Math 252/S22: Test 3 \ifversionA A \else B \fi}
+% \rhead{\sf \thepage}
+% \cfoot{}
+
+\begin{document}
+
+Test.
+
+\end{document}

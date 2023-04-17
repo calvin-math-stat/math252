@@ -1266,8 +1266,11 @@ Topic:: DFA -> regex
 # Topic:: Pumping Lemma
 Topic:: A language that isn't regular
 
+===4/12/2023
 
-===04/12/2023
+Topic:: Test 3
+
+===
 
 Topic:: Turing Machines
 
@@ -1544,13 +1547,22 @@ sketch of 2-way tapes equivalent to 1-way
 
 sketch of 2 tapes equiv to 1 tape
 
+
 ===
 Topic:: Turing Machines
+Topic:: Pumping Lemma
 
+Using TMs to decide languages and compute functions
 
-===4/17/2023
+  * x in L iff M(x) halts in accepting state
+  * f(x) is what's on the tape when the machine halts
 
-Topic:: Test 3
+Define computable and computably enumerable
+  * mention halting problem (and that it isn't computable)
+
+Show every regular language is Turing computable
+
+Show { 0^n 1^n : n } is Turing computable, but not regular
 
 ===
 Topic:: Python Regular expressions

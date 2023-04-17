@@ -13,7 +13,7 @@ daily2html(
   start = lubridate::mdy("01/10/2023"), 
   end   = lubridate::mdy("03/01/2023"), 
   days = c(2,4,6),
-  show = 1:7, 
+  show = 2:6, 
   items = c("Topic", "Read", "R", "Due", "Note")) |>
   cat()
 ```

@@ -181,20 +181,7 @@ Additional assignments will be filled in over time.
 	   in the book!)
 	   \\
 	   \hline
-	 \end{longtable}
-    \end{center}
-    \label{end}
-    \end{document}
-	   Wed 4/6 & PS 17 & Rosen 13.4 &
-	   \\
-	   & & DFA/NFA $\to$ regex &
-	   Convert the following DFAs or NFAs into equivalent regular expressions
-	   using our algorithm for doing so. Show the intermediate steps:
-	   \mand{13.3.43} \mand{13.3.45} (Note: these are not the instructions
-	   in the book!)
-	   \\
-	   \hline
-	  Mon 4/11 & PS 18 & Rosen 13.5 &
+	  Wed 4/19 & PS 17 & Rosen 13.5 &
 	  \mand[trace TM]{2}
 	  \mand[trace TM]{5}
 	  \extra[trace TM]{1}
@@ -210,6 +197,17 @@ Additional assignments will be filled in over time.
 	  online simulator into a file to save your work.)
    \\
    \hline
+	   Fri 4/22 & PS 19 & Rosen 13.4 &
+	   \extra[pumping lemma]{23, 25}
+
+	   Python regular expressions: Be sure to use the online tools suggested in
+	   class to get familiar with how regular expressions work in Python. (They work
+	   very similarly in other programming languages -- we are just picking Python
+	   to have one concrete example.)
+
+	   Be sure to write up the pumping lemma problems carefully.
+	   \\
+	   \hline
 never & Review & Rosen 13.RQ &
    \extra{1--2}
    \extra{3}
@@ -230,18 +228,6 @@ never & Review & Rosen 13.RQ &
    \extra{26--27}
 \\
 \hline
-   \hline
-	   Fri 4/22 & PS 19 & Rosen 13.4 &
-	   \extra[pumping lemma]{23, 25}
-
-	   Python regular expressions: Be sure to use the online tools suggested in
-	   class to get familiar with how regular expressions work in Python. (They work
-	   very similarly in other programming languages -- we are just picking Python
-	   to have one concrete example.)
-
-	   Be sure to write up the pumping lemma problems carefully.
-	   \\
-	   \hline
 	 \end{longtable}
     \end{center}
     \label{end}
