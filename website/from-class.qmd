@@ -340,6 +340,9 @@ Mon 3/27 | Regular Expressions     | [PDF](/from-class/22a-regex.pdf)
 Wed 3/29 | Regular Expressions     | [PDF](/from-class/22b-regex.pdf)
 Fri 3/31 | Regular Grammars        | [PDF](/from-class/23-grammars-and-nfas.pdf)
 Mon 4/3  | NFA -> Regex            | [PDF](/from-class/24-nfa-to-regex.pdf)
+Fri 4/14 | Turing Machines         | [PDF](/from-class/26-TM.pdf)
+Mon 4/17 | More Turing Machines.   | [PDF](/from-class/27-TM.pdf)
+Mon 4/17 | A Language that isn't regular | [PDF](/from-class/25-no-regular.pdf)
 ```
 
 * [Some comments, hints, and solutions](from-class/models-of-computation-sols.qmd)

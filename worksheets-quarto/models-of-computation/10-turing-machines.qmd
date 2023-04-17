@@ -133,7 +133,7 @@ In style of <https://calvin-turing.netlify.app/>
 ATM       // A Turing Machine
 Example 1 // A name for the machine
 0 1       // Input alphabet
-0 1 _     // Tape alphabet -- don't forget _ for blank
+0 1 B     // Tape alphabet -- use B for blnk
 1         // Number of tapes
 1         // Number of tracks on first tape
 2         // 2-way infinite tape
@@ -141,10 +141,10 @@ s0        // Initial state
 s1        // Accepting states
 s0 0 s0 0 R 
 s0 1 s1 1 R 
-s0 _ halt _ R
+s0 B halt B R
 s1 0 s0 0 R 
 s1 1 s2 1 L 
-s1 _ halt _ R 
+s1 B halt B R 
 s2 1 halt 0 R 
 END             // End of program
 ```
@@ -257,8 +257,8 @@ into an ASCII representation for use in our Turing Machine simulator.
 
 ## The language recognized by a Turing Machine
 
-We will say that a Turing machine $M$ accepts a string $x$ (by state) if 
-on input $x$ it halts in an accepting state. 
+We will say that a Turing machine $M$ accepts (or recognizes) a string $x$ (by state) 
+if on input $x$ it halts in an accepting state. 
 The language recognized by such a Turing machine is 
 
 $$
@@ -280,12 +280,53 @@ For each of the following, design a Turing machine that always
 halts and use one of the simulators to run your program on some 
 test strings. Explain in words what each of your states is for.
 
-:::{#exr-design-tm-for-regular-language}
+:::{#exr-design-tm-for-a-regular-language}
 
-a. Design a Turing machine that recognizes 
+Design a Turing machine that recognizes 
 $(\mybold{0} \cup \mybold{1})\mybold{1}(\mybold{0} \cup \mybold{1})^*$.
+:::
 
-b. Is every regular language recognized by a Turing machine?  How do you know?
+:::{#exr-design-tm-for-non-regular-language}
+
+Design a Turing machine that recognizes
+$\{0^n1^n \mid n \ge 0\}$.  
+<!-- This shows that Turing machines can recognize languages that are not regular. -->
+
+<!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
+<!-- modified to also accept empty string -->
+<!-- ``` -->
+
+```{block include = FALSE}
+ATM
+Example Turing Machine
+0 1 // input alphabet, note such comments are permitted at the end of the line
+0 1 X Y B // tape alphabet, blank is B
+1 // number of tapes
+1 // number of tracks on tape 0
+2 // tape 0 is 2-way infinite
+q0 // the initial state
+q4 // final state
+q0 B q4 B S
+q0 0 q1 X R
+q0 Y q3 Y R
+q1 0 q1 0 R
+q1 1 q2 Y L
+q1 Y q1 Y R
+q2 0 q2 0 L
+q2 X q0 X R
+q2 Y q2 Y L
+q3 Y q3 Y R
+q3 B q4 B R
+end // required
+```
+:::
+
+:::{#exr-design-tm-for-palindromes}
+Design a Turing machine that recognizes palindromes.  (A palindrome is a string
+that reads the same forwards and backwards.  Examples: 010, 1001, 110010011.)
+:::
+
+<!-- b. Is every regular language recognized by a Turing machine?  How do you know? -->
 
 <!-- This is Example 13.5.2 in Rosen 7 -->
 
@@ -316,24 +357,6 @@ start  _ _ r halt-reject
 
 :::
 
-:::{#exr-design-tm-for-non-regular-language}
-
-Design a Turing machine that recognizes
-$\{0^n1^n \mid n \ge 0\}$.  
-<!-- This shows that Turing machines can recognize languages that are not regular. -->
-
-```{r include = FALSE, eval = FALSE}
-; in style of <http://morphett.info/turing/turing.html>
-; state symbol symbol direction state
-0      * * * start
-start  * * r second 
-second 1 1 r halt-accept
-second 0 0 r halt-reject
-second _ _ l halt-reject   
-start  _ _ r halt-reject
-```
-:::
-
 :::{#exr-design-tm-3}
 Design a Turing machine that has input
 alphabet $\{$ `(`, `)`, `0`, `1`, `+` $\}$ 
@@ -345,7 +368,7 @@ you like).  The intent here is just to do the parenthesis matching part.
     
 * Bonus: See how few states you can use.
 
-```{r include = FALSE, eval = FALSE}
+```{blcok include = FALSE}
 ; in style of <http://morphett.info/turing/turing.html>
 ; state symbol symbol direction state
 0      * * * searchR
@@ -358,6 +381,28 @@ searchL * * l searchL
 noR     _ _ r halt-accept  ; no ( either
 noR     ( ( r halt-reject  ; extra (
 noR     * * l noR
+```
+
+```{block include = FALSE}
+ATM
+Example Turing Machine
+0 1 + ( ) // input alphabet, note such comments are permitted at the end of the line
+0 1 + ( ) [ ] B // tape alphabet, blank is B
+1 // number of tapes
+1 // number of tracks on tape 0
+2 // tape 0 is 2-way infinite
+searchR // the initial state
+accept // final state
+searchR ) searchL ] l 
+searchR B noR B l 
+searchR * searchR * r 
+searchL ( searchR [ r 
+searchL B reject B r    // no ( for some )
+searchL * searchL * l 
+noR     B accept B r    // no ( either
+noR     ( reject ( r    // extra (
+noR     * noR * l 
+end
 ```
 
 ```{block include = FALSE}
@@ -377,18 +422,6 @@ noR     * * l noR
 1 / \ r 1
 ```
 
-```{block include = FALSE}
-// In style of <https://calvin-turing.netlify.app/>:
-searchR ) searchL ] l 
-searchR _ noR _ l 
-searchR * noR * r 
-searchL ( searchR [ r 
-searchL _ reject _ r  //  no ( for some )
-searchL * searchL * l 
-noR     _ accept _ r // no ( either
-noR     ( reject ( r // extra (
-noR     * noR * l 
-```
 
 :::
 
@@ -421,7 +454,7 @@ advantage of neatly computing Turing machines?
 :::
 
 :::{#exr-neat-computation-2}
-11. Write a Turing machine that neatly computes the function $f(x) = 2x$ in
+Write a Turing machine that neatly computes the function $f(x) = 2x$ in
 unary.
 :::
 
@@ -512,7 +545,6 @@ machine into a 1-tape machine.
 <!--     c. For an extra challenge, try doing it with a one-tape machine -->
 <!--     with tape alphabet $\{(, ), *, \# \}$ -->
 
-{{< pagebreak >}}
 
 ## The Halting Problem
 
@@ -550,7 +582,7 @@ is used as long as it is systematic.[^TM-1]
 [^TM-1]: The coding scheme can affect the efficiency of a Turing machine computation. Generally
 it is required that the encoding be reasonably efficient and not bloated or wasteful of space.
 
-An entire book [@Garey:1979] of such problems (and whether or not they were NP-complete) was produced in
+An entire book @Garey:1979 of such problems (and whether or not they were NP-complete) was produced in
 the 1970's by Garey and Johnson and popularized this description. So you will see languages
 referred to as problems throughout the CS literature.
 
@@ -596,21 +628,20 @@ to build a new machine $K$ that works as follows.
         i. change all accepting states to the state LOOP and and add the instruction
         
             ```
-            LOOP * * r *   ; this will cause the machine to move right forever.
+            LOOP * LOOP * r  // this will cause the machine to move right forever.
             ```
     
         ii. Change all rejecting states into accepting states.
 
 So that's our high level description of the Turing machine $K$.  How does this help us?
-Let's consider $H(\enc{K}\#\enc{K}$). (We're going to show the $H$ gets the wrong answer.)
+Let's consider $H(\enc{K}\#\enc{K}$). (We're going to show that $H$ gets the wrong answer.)
 
-#### Exercises {-}
 
 :::{#exr-halting-prob-q1}
 Suppose $H(\enc{K}\#\enc{K})$ accepts. 
 
-    a. What does this tell us about $K$ because of how $H$ is defined?
-    b. What does this tell us about $K$ because of how we defined $K$?
+a. What does this tell us about $K$ because of how $H$ is defined?
+b. What does this tell us about $K$ because of how we defined $K$?
     
 <!-- * $K$ on input $\enc{K}$ should halt, but -->
 <!-- * $K$ on input $\enc{K}$ runs for ever because of 3.b.i. -->
@@ -618,15 +649,14 @@ Suppose $H(\enc{K}\#\enc{K})$ accepts.
 :::
 
 :::{#exr-halting-prob-q2}
-
 Suppose $H(\enc{K}\#\enc{K})$ rejects. 
 
 a. What does this tell us about $K$ because of how $H$ is defined?
 b. What does this tell us about $K$ because of how we defined $K$?
+:::
 
 <!-- * $K$ on input $\enc{K}$ must never halt, but -->
 <!-- * $K$ on input $\enc{K}$ will halt and accept because of 3.a. -->
-:::
 
 :::{#exr-halting-prob-q3}
 Combine these results to explain why the Halting Problem is not 
@@ -659,46 +689,8 @@ all languages that can be recognized by a non-deterministic
 Turing machine in polynomial time.
 
 The "$P$ vs. $NP$ question" is whether $P$ and $NP$ are the same
-or different.  To date, this question is unresolved. [^TM-2]
+or different.  To date, this question is unresolved.[^TM-2]
 
 [^TM-2]: Solving this could make you both rich and famous.
 
-<!-- Hopcroft & Ullman’s TM for {0^n 1^n : n > 0} (file name tm1.txt) -->
-<!-- modified to also accept empty string -->
-<!-- ``` -->
-<!-- ATM -->
-<!-- Example Turing Machine -->
-<!-- 0 1 // input alphabet, note such comments are permitted at the end of the line -->
-<!-- 0 1 X Y B // tape alphabet -->
-<!-- 1 // number of tapes -->
-<!-- 1 // number of tracks on tape 0 -->
-<!-- 2 // tape 0 is 2-way infinite -->
-<!-- q0 // the initial state -->
-<!-- q4 // final state -->
-<!-- q0 B q4 B S -->
-<!-- q0 0 q1 X R -->
-<!-- q0 Y q3 Y R -->
-<!-- q1 0 q1 0 R -->
-<!-- q1 1 q2 Y L -->
-<!-- q1 Y q1 Y R -->
-<!-- q2 0 q2 0 L -->
-<!-- q2 X q0 X R -->
-<!-- q2 Y q2 Y L -->
-<!-- q3 Y q3 Y R -->
-<!-- q3 B q4 B R -->
-<!-- end // required -->
-<!-- ``` -->
 
-<!-- TM for {0^n1^n} -->
-<!-- 0 * * * q0 -->
-<!-- q0 _ _ * halt-accept -->
-<!-- q0 0 X r q1 -->
-<!-- q0 Y Y r q3 -->
-<!-- q1 0 0 r q1 -->
-<!-- q1 1 Y l q2 -->
-<!-- q1 Y Y r q1 -->
-<!-- q2 0 0 l q2 -->
-<!-- q2 X X r q0 -->
-<!-- q2 Y Y l q2 -->
-<!-- q3 Y Y r q3 -->
-<!-- q3 _ _ r halt-accept -->
