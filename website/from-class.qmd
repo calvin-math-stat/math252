@@ -342,8 +342,38 @@ Fri 3/31 | Regular Grammars        | [PDF](/from-class/23-grammars-and-nfas.pdf)
 Mon 4/3  | NFA -> Regex            | [PDF](/from-class/24-nfa-to-regex.pdf)
 Fri 4/14 | Turing Machines         | [PDF](/from-class/26-TM.pdf)
 Mon 4/17 | More Turing Machines.   | [PDF](/from-class/27-TM.pdf)
-Mon 4/17 | A Language that isn't regular | [PDF](/from-class/25-no-regular.pdf)
+Mon 4/17 | A Language that isn't regular | [PDF](/from-class/25-pumping.pdf)
+Wed 4/19 | Python Regular Expressions | [slides](https://docs.google.com/presentation/d/1bjzMKrH8LeGmHC23fcX6z-gx3zW958VHTkjYyF1-Pdg/edit?usp=sharing)
 ```
+
+::::{.callout-note collapse=true}
+
+#### Regex games, puzzles, etc.
+
+Note: You don't have to turn in any homework for Python regular expressions, but you should 
+work through some of these games and tutorials to hone your skills. 
+*This topic will be  included on the final exam.*
+
+* [The regular expression game](http://play.inginf.units.it/#/)
+    * Construct regular expressions to match the indicated portions of a page of text.
+    * These tasks seem to mimic the kinds of things you might really do (finding authors
+    in a bibilography, finding MAC addresses in some text, etc.)
+    
+
+* [regex 101](https://regex101.com/) 
+
+    * [regex 101 quiz](https://regex101.com/quiz)
+
+* [Regex crossword game](https://regexcrossword.com/)
+    * Fill in the crossword with text that matches regex clues.
+    * This forces you to work backwards, the regular expression are given
+    
+* [Regular expression golf](https://alf.nu/RegexGolf)
+    * Find a short regex that matches everything in one column but doesn't match
+    any portion of anything in the other column.
+    * Some of the hard ones here get pretty hard and not very "natural"
+    * Least useful of the three for learning regex.
+::::
 
 * [Some comments, hints, and solutions](from-class/models-of-computation-sols.qmd)
 
