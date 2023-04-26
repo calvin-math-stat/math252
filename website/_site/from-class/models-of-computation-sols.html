@@ -874,6 +874,202 @@ Exercise 24.6 – Outlining all the conversions
 </div>
 </div>
 </div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+A language that is not regular
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In addition to the in class discussion, you might like to look at page 885 of the text.</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The Pumping Lemma
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Ideas behind the Pumping Lemma
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The basic idea used to show that <span class="math inline">\(\{0^n1^n \mid n = 0, 1, 2, ... \}\)</span> is not regular can be turned into a lemma that doesn’t mention DFAs at all.</p>
+<p>Suppose <span class="math inline">\(L\)</span> is a regular language. Then there must be a DFA <span class="math inline">\(M\)</span> that recognizes <span class="math inline">\(L\)</span>. This machine has some number of states, let’s call that number <span class="math inline">\(N\)</span>.</p>
+<p>Now suppose we have a long string <span class="math inline">\(x\)</span> with more symbols than <span class="math inline">\(N\)</span>. (We will write this <span class="math inline">\(l(x) &gt; N\)</span>. We can break our string into three parts:</p>
+<ul>
+<li>before the loop: <span class="math inline">\(u\)</span>
+<ul>
+<li>What can we say about the length of <span class="math inline">\(u\)</span>?</li>
+</ul></li>
+<li>in the loop: <span class="math inline">\(v\)</span>
+<ul>
+<li>What can we say about the length of <span class="math inline">\(v\)</span>?</li>
+</ul></li>
+<li>after the loop: <span class="math inline">\(w\)</span>.</li>
+</ul>
+<p>Explain why each of these strings is in <span class="math inline">\(L\)</span> if and only if <span class="math inline">\(x \in L\)</span>.</p>
+<ul>
+<li><span class="math inline">\(uvw\)</span></li>
+<li><span class="math inline">\(uw\)</span></li>
+<li><span class="math inline">\(uvvw\)</span></li>
+<li><span class="math inline">\(uv^kw\)</span></li>
+</ul>
+<p>Putting this all together gives us the <strong>Pumping Lemma</strong>:</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The Pumping Lemma – Statement
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(L\)</span> is a regular language, then there is a number <span class="math inline">\(N\)</span> such that for any string <span class="math inline">\(x\)</span> with <span class="math inline">\(l(x) &gt; N\)</span>, we can write <span class="math inline">\(x\)</span> as</p>
+<p><span class="math display">\[
+x = uvw
+\]</span></p>
+<p>such that</p>
+<ul>
+<li><span class="math inline">\(l(uv) \le N\)</span>,</li>
+<li><span class="math inline">\(l(v) &gt; 0\)</span>,</li>
+<li><span class="math inline">\(x \in L\)</span> if and only if <span class="math inline">\(uv^kw \in L\)</span> for every natural number <span class="math inline">\(k\)</span>.</li>
+</ul>
+<p>Important things to note:</p>
+<ul>
+<li><p>The Pumping Lemma says something about <em>long</em> strings. There is some length beyond which the <span class="math inline">\(x = uvw\)</span> splitting is guaranteed. It may or may not work for shorter strings.</p></li>
+<li><p>You do not get to choose <span class="math inline">\(u\)</span>, <span class="math inline">\(v\)</span>, and <span class="math inline">\(w\)</span>. The Pumping Lemma tells you that there is a way to split up <span class="math inline">\(x\)</span>, not that every way of splitting up <span class="math inline">\(x\)</span> will work.</p></li>
+<li><p>The length constraints on <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are often important in applications. In particular, <span class="math inline">\(l(uv) \le N\)</span>.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Pumping Lemma – Example Application
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let’s try using the Pumping Lemma to show that <span class="math inline">\(\{0^n1^n \mid n = 0, 1, \dots \}\)</span> is not regular.</p>
+<p>Suppose <span class="math inline">\(L\)</span> were regular. Let <span class="math inline">\(N\)</span> be the number given by the Pumping Lemma. Consider <span class="math inline">\(x = 0^N1^N\)</span>.</p>
+<ul>
+<li>There is some way to split up <span class="math inline">\(x\)</span> as <span class="math inline">\(x = uvw\)</span> (because <span class="math inline">\(x\)</span> is long enough), and</li>
+<li><span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> consist entirely of 0’s, since <span class="math inline">\(l(uw) \le N\)</span>.</li>
+</ul>
+<p>Now consider the string <span class="math inline">\(uw\)</span>. <span class="math inline">\(uw\)</span> must be in <span class="math inline">\(L\)</span>, but <span class="math inline">\(uw\)</span> has fewer 0’s than 1’s, so it can’t be in <span class="math inline">\(L\)</span>. This means our assumption that <span class="math inline">\(L\)</span> was regular must be false.</p>
+<p><strong>Note 1:</strong> Anything you can prove using the Pumping Lemma, you can also prove by going back to the underlying argument about repeated states (pigeon hole principle), loops, etc. So you can think of the Pumping Lemma as an (optional) alternative way to think about these problems. I don’t care which approach you take, as long as you do it correctly. Any problem that says “by the Pumping Lemma” may also be done from the underlying argument.</p>
+<p><strong>Note 2:</strong> Using <span class="math inline">\(x = 0^N1^N\)</span> is sufficient since we read more more state than we have read sybmols. (After reading the first symbol, we have seen the start state and a next state.) But if you prefer to use <span class="math inline">\(x=0^{N+1}1^{N+1}\)</span> just to make the arguement easier, that’s fine too.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 26.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(x\not\in L(M)\)</span>, <span class="math inline">\(M\)</span> on input <span class="math inline">\(x\)</span> might halt in a state that is not accepting or it might never halt.</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 26.4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The language consisting of all strings that have an even number of 0’s and an even number of 1’s.</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Exercise 26.6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here are the instructions for a 1-tape Turing machine that recognizes <span class="math inline">\(\{ 0^n 1^n \mid n \ge 0\}\)</span>.</p>
+<pre><code>ATM
+Example Turing Machine
+0 1 // input alphabet, note such comments are permitted at the end of the line
+0 1 X Y B // tape alphabet, blank is B
+1 // number of tapes
+1 // number of tracks on tape 0
+2 // tape 0 is 2-way infinite
+[start] // the initial state
+[accept] // accepting state
+[start] B [accept] B S
+[start] 0 [find_1] X R
+[start] 1 [too_many_1s] 1 S
+[start] Y [out_of_zeros] Y R
+[find_1] 0 [find_1] 0 R
+[find_1] 1 [reset] Y L
+[find_1] Y [find_1] Y R
+[find_1] B [too_few_1s] B S
+[reset] 0 [reset] 0 L
+[reset] X [start] X R
+[reset] Y [reset] Y L
+[out_of_zeros] Y [out_of_zeros] Y R
+[out_of_zeros] 0 [0_after_1s] 0 S
+[out_of_zeros] 1 [too_many_1s] Y R
+[out_of_zeros] B [accept] B R       // because also out of 1s
+end // required</code></pre>
+</div>
+</div>
+</div>
 
 
 

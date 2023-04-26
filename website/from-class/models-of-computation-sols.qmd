@@ -640,122 +640,155 @@ with a regular expression.
 :::
 
 
-<!-- <div class = "foldable" label = "A language that is not regular">  -->
+:::{.callout-note collapse=true}
+### A language that is not regular
 
-<!-- In addition to the in class discussion, you might like to look at page 885 of the text. -->
-<!-- </div> -->
+In addition to the in class discussion, you might like to look at page 885 of the text.
 
-<!-- <div class = "foldable" label = "The Pumping Lemma">  -->
+:::
 
-<!-- <div class = "foldable" label = "Ideas behind the Pumping Lemma">  -->
+:::{.callout-note collapse=true}
+### The Pumping Lemma
 
-<!-- The basic idea used to show that $\{0^n1^n \mid n = 0, 1, 2, ... \}$ is not regular -->
-<!-- can be turned into a lemma that doesn't mention DFAs at all.   -->
+::::{.callout-note collapse=true}
+#### Ideas behind the Pumping Lemma
 
-<!-- Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recognizes -->
-<!-- $L$.  This machine has some number of states, let's call that number $N$. -->
+The basic idea used to show that $\{0^n1^n \mid n = 0, 1, 2, ... \}$ is not regular
+can be turned into a lemma that doesn't mention DFAs at all.
 
-<!-- Now suppose we have a long string $x$ with more symbols than $N$.  (We will write this  -->
-<!-- $l(x) > N$.  We can break our string into three parts: -->
+Suppose $L$ is a regular language.  Then there must be a DFA $M$ that recognizes
+$L$.  This machine has some number of states, let's call that number $N$.
 
-<!-- * before the loop: $u$ -->
-<!--     * What can we say about the length of $u$? -->
+Now suppose we have a long string $x$ with more symbols than $N$.  (We will
+write this $l(x) > N$.  We can break our string into three parts:
 
-<!-- * in the loop: $v$ -->
-<!--     * What can we say about the length of $v$? -->
+* before the loop: $u$
+    * What can we say about the length of $u$?
 
-<!-- * after the loop: $w$. -->
+* in the loop: $v$
+    * What can we say about the length of $v$?
 
-<!-- Explain why each of these strings is in $L$ if and only if $x \in L$. -->
+* after the loop: $w$.
 
-<!-- * $uvw$ -->
-<!-- * $uw$ -->
-<!-- * $uvvw$ -->
-<!-- * $uv^kw$ -->
+Explain why each of these strings is in $L$ if and only if $x \in L$.
 
-<!-- Putting this all together gives us the **Pumping Lemma**:  -->
-<!-- </div> -->
+* $uvw$
+* $uw$
+* $uvvw$
+* $uv^kw$
 
-<!-- <div class = "foldable" label = "The Pumping Lemma -- Statement">  -->
-<!-- If $L$ is a regular language, then there is a number $N$ such that for any -->
-<!-- string $x$ with $l(x) > N$, we can write $x$ as -->
+Putting this all together gives us the **Pumping Lemma**:
+::::
 
-<!-- $$  -->
-<!-- x = uvw -->
-<!-- $$ -->
+::::{.callout-note collapse=true}
+#### The Pumping Lemma -- Statement
 
-<!-- such that -->
+If $L$ is a regular language, then there is a number $N$ such that for any
+string $x$ with $l(x) > N$, we can write $x$ as
 
-<!-- * $l(uv) \le N$, -->
-<!-- * $l(v) > 0$, -->
-<!-- * $x \in L$ if and only if $uv^kw \in L$ for every natural number $k$. -->
+$$
+x = uvw
+$$
 
-<!-- Important things to note: -->
+such that
 
-<!-- * The Pumping Lemma says something about *long* strings.  There is some length -->
-<!-- beyond which the $x = uvw$ splitting is guaranteed. It may or may not work for shorter -->
-<!-- strings. -->
+* $l(uv) \le N$,
+* $l(v) > 0$,
+* $x \in L$ if and only if $uv^kw \in L$ for every natural number $k$.
 
-<!-- * You do not get to choose $u$, $v$, and $w$.  The Pumping Lemma tells you that -->
-<!-- there is a way to split up $x$, not that every way of splitting up $x$ will work. -->
+Important things to note:
 
-<!-- * The length constraints on $u$ and $v$ are often important in applications. -->
-<!-- In particular, $l(uv) \le N$. -->
+* The Pumping Lemma says something about *long* strings.  There is some length
+beyond which the $x = uvw$ splitting is guaranteed. It may or may not work for shorter
+strings.
 
+* You do not get to choose $u$, $v$, and $w$.  The Pumping Lemma tells you that
+there is a way to split up $x$, not that every way of splitting up $x$ will work.
 
-<!-- </div> -->
+* The length constraints on $u$ and $v$ are often important in applications.
+In particular, $l(uv) \le N$.
 
-<!-- <div class = "foldable" label = "Pumping Lemma -- Example Application">  -->
+::::
 
-<!-- Let's try using the Pumping Lemma to show that $\{0^n1^n \mid n = 0, 1, \dots \}$ is not -->
-<!-- regular. -->
+::::{.callout-note collapse=true}
+#### Pumping Lemma -- Example Application
 
-<!-- Suppose $L$ were regular. -->
-<!-- Let $N$ be the number given by the Pumping Lemma.  Consider $x = 0^N1^N$.  -->
+Let's try using the Pumping Lemma to show that 
+$\{0^n1^n \mid n = 0, 1, \dots \}$ is not regular.
 
-<!-- * There is some way to split up $x$ as $x = uvw$ (because $x$ is long enough), and  -->
-<!-- * $u$ and $v$ consist entirely of 0's, since $l(uw) \le N$. -->
+Suppose $L$ were regular.
+Let $N$ be the number given by the Pumping Lemma.  Consider $x = 0^N1^N$.
 
-<!-- Now consider the string $uw$.  $uw$ must be in $L$, but $uw$ has fewer 0's than 1's, so -->
-<!-- it can't be in $L$.  This means our assumption that $L$ was regular must be false. -->
+* There is some way to split up $x$ as $x = uvw$ (because $x$ is long enough), and
+* $u$ and $v$ consist entirely of 0's, since $l(uw) \le N$.
 
-<!-- **Note 1:** Anything you can prove using the Pumping Lemma, you can also prove by going -->
-<!-- back to the underlying argument about repeated states (pigeon hole principle), loops, -->
-<!-- etc.  So you can think of the Pumping Lemma as an (optional) alternative way to think -->
-<!-- about these problems.  I don't care which approach you take, as long as you do it correctly. -->
-<!-- Any problem that says "by the Pumping Lemma" may also be done from the underlying argument. -->
+Now consider the string $uw$.  $uw$ must be in $L$, but $uw$ has fewer 0's than 1's, so
+it can't be in $L$.  This means our assumption that $L$ was regular must be false.
 
-<!-- **Note 2:** Using $x = 0^N1^N$ is sufficient since we read more more state than we  -->
-<!-- have read sybmols.  (After reading the first symbol, we have seen the start state and a next -->
-<!-- state.)  But if you prefer to use $x=0^{N+1}1^{N+1}$ just to make the arguement easier, -->
-<!-- that's fine too.  -->
+**Note 1:** Anything you can prove using the Pumping Lemma, you can also prove by going
+back to the underlying argument about repeated states (pigeon hole principle), loops,
+etc.  So you can think of the Pumping Lemma as an (optional) alternative way to think
+about these problems.  I don't care which approach you take, as long as you do it correctly.
+Any problem that says "by the Pumping Lemma" may also be done from the underlying argument.
 
-<!-- doubly commented below -->
-<!-- <!-- (I switched from $N$ to $N + 1$ when doing it in class to save us a little --> 
-<!-- <!-- time.) --> 
+**Note 2:** Using $x = 0^N1^N$ is sufficient since we read more more state than we
+have read sybmols.  (After reading the first symbol, we have seen the start state and a next
+state.)  But if you prefer to use $x=0^{N+1}1^{N+1}$ just to make the arguement easier,
+that's fine too.
+::::
+:::
 
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-
-
-<!-- <div class = "foldable" label = "Exercises in 9.4">  -->
+<!-- <div class = "foldable" label = "Exercises in 9.4"> -->
 <!-- You can check these using the simulator at -->
 <!-- <http://morphett.info/turing/turing.html>. -->
 <!-- </div> -->
 
-<!-- <div class = "foldable" label = "Exercise 4">  -->
-<!-- If $x\not\in L(M)$, $M$ on input $x$ might halt in a rejecting state or it might -->
-<!-- never halt. -->
-<!-- </div> -->
+:::{.callout-note collapse=true}
+### Exercise 26.3
+If $x\not\in L(M)$, $M$ on input $x$ might halt in a state that is not accepting
+or it might never halt.
+:::
 
-<!-- <div class = "foldable" label = "Exercise 5">  -->
+:::{.callout-note collapse=true}
+### Exercise 26.4
 
-<!-- The language consisting of all strings that have an even number of 0's  -->
-<!-- and an even number of 1's. -->
+The language consisting of all strings that have an even number of 0's
+and an even number of 1's.
 
-<!-- </div> -->
-<!-- </div> -->
+:::
 
+:::{.callout-note collapse=true}
+### Exercise 26.6
+
+Here are the instructions for a 1-tape Turing machine that recognizes 
+$\{ 0^n 1^n \mid n \ge 0\}$.
+
+```
+ATM
+Example Turing Machine
+0 1 // input alphabet, note such comments are permitted at the end of the line
+0 1 X Y B // tape alphabet, blank is B
+1 // number of tapes
+1 // number of tracks on tape 0
+2 // tape 0 is 2-way infinite
+[start] // the initial state
+[accept] // accepting state
+[start] B [accept] B S
+[start] 0 [find_1] X R
+[start] 1 [too_many_1s] 1 S
+[start] Y [out_of_zeros] Y R
+[find_1] 0 [find_1] 0 R
+[find_1] 1 [reset] Y L
+[find_1] Y [find_1] Y R
+[find_1] B [too_few_1s] B S
+[reset] 0 [reset] 0 L
+[reset] X [start] X R
+[reset] Y [reset] Y L
+[out_of_zeros] Y [out_of_zeros] Y R
+[out_of_zeros] 0 [0_after_1s] 0 S
+[out_of_zeros] 1 [too_many_1s] Y R
+[out_of_zeros] B [accept] B R       // because also out of 1s
+end // required
+```
+
+:::
