@@ -85,7 +85,6 @@ Hint: Use the inventory method.  Useful events include
 * $+$: test is positive (indicates disease)
 * $-$: test is negative (indicates healthy)
 
-{{< pagebreak >}}
 
 ## Random Primality Testing  
 
@@ -125,6 +124,7 @@ and decoding a message.  If a composite number sneaks through the randomized tes
 decoding won't work and we can try again with a different pair of probably prime
 numbers.
 
+{{< pagebreak >}}
 
 ## Hashing 
 

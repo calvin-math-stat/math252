@@ -10,23 +10,34 @@ knitr::opts_chunk$set(echo = TRUE)
 1. Suppose 100 cookies are distributed equally to a group of kids.
 Each kid receives 4 cookies. How many kids are there?
  
-## The Division Principle
+## Division and other Principles
 
-The reasoning used to solve the previous problem is called the division principle:
-If you count each item the same number of times, you can divide the count by the 
+The reasoning used to solve the previous problem is called the **division principle**:
+
+> If you count each item the same number of times, you can divide the total count by the 
 number of times each item is counted to get the number of items.  
 
-We have actually seen this before:
+<!-- We have actually seen this before: -->
 
-2. If the total degree of a graph is 58, how many edges does it have?
-  
-When we count the degrees, we count each edge twice, so there are $\frac{58}{2} = 29$ 
-edges in the graph.
+<!-- 2. If the total degree of a graph is 58, how many edges does it have? -->
+
+<!-- When we count the degrees, we count each edge twice, so there are $\frac{58}{2} = 29$  -->
+<!-- edges in the graph. -->
+
+2. Express similar principles for addition, subtraction, and multiplication.
+
+<!-- Multiplication: -->
+<!-- If a task can be broken up into two consecutive steps. If  -->
+<!-- step 1 can be performed in $m$ ways,  -->
+<!-- and for each of these, step 2 can be performed in $n$ ways,  -->
+<!-- then the task itself can be performed in $m n$ ways. -->
+
 
 ## More Counting Problems
 
 Here are some additional problems that involve our counting principles, including the 
-division principle.
+division principle. As you work through them, identify where you are using which principle.
+
 
 3. An NBA basketball team has 12 players.  
   
@@ -40,13 +51,15 @@ division principle.
     coach select one of the centers, two of the forwards, and two of the guards? 
     
 4. How many 5-card poker hands can be dealt from a standard 52-card deck?
+
+5. How many 5-card poker hands include at least one card from each suit?  (There are 4 suits: clubs, diamonds, hearts, and spades.  Each suit has 13 cards.)
   
 6. How many bit strings of length 8 have exactly three 1's?
   
 7. How many "words" can you make with the letters in MISSISSIPPI?  (The "words" 
   do not need to be real words -- just sequences of letters.)
   
-5. A class of 20 gets into groups of 4 to work on some problems. 
+8. A class of 20 gets into groups of 4 to work on some problems. 
   
     a. How many such groups of 4 are there?
   
@@ -54,8 +67,12 @@ division principle.
     
     c. How many different ways can the class be put into 5 groups of 4? How does this question
     differ from part a?
- 
-  
+
+9. How many bit strings of length 10 contain either five consecutive 0s 
+or five consecutive 1s?
+
+<!-- 9. How many bit strings of length eight contain either three consecutive  -->
+<!-- 0s or four consecutive 1s?  -->
   
   
  

@@ -18,13 +18,12 @@
 
 <!-- \begin{minipage}[c]{0.15\textwidth}\ \end{minipage} -->
 <!-- \begin{minipage}[c]{0.8\textwidth} -->
-<!-- \centerlien{\rule{4in}{0.5pt}} -->
 <!-- \small -->
 
 <!-- \textbf{\emph{Solution.}} -->
 
 <!-- }{% -->
-<!-- \centerlien{\rule{4in}{0.5pt}} -->
+<!-- \centerline{\rule{4in}{0.5pt}} -->
 
 <!-- \end{minipage} -->
 <!-- \end{framebox} -->
@@ -33,51 +32,69 @@
 
 # Review Problems
 
-1. **Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned.
+:::{#exr-rules-axioms}
+**Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned.
 List them by name and using good probability notation.
+\vfill
+:::
 
-1.  **Mutually exclusive vs independent.**
+:::{#exr-disjoint-independent}
+**Mutually exclusive vs independent.**
 
-    a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation.
-    a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation.
-    a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where
+a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation.
+a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation.
+a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where
 this happens or explain why it cannot happen.
-    a. Give an example of a probability rule that only holds if events are mutually exclusive.
-    a. Give an example of a probability rule that only holds if events are independent.
+a. Give an example of a probability rule that only holds if events are mutually exclusive.
+a. Give an example of a probability rule that only holds if events are independent.
 
-1. 
+:::
 
-    a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$? 
-    b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$.
-    c. Give a different example where $\Prob(A\mid B) \neq \Prob(B \mid A)$.
-    c. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain
-    why this is always true or give an example where it is false.)
+:::{#exr-conditional} 
 
-1.  **Binomial distributions**
+a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$? 
+b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$.
+c. Give a different example where $\Prob(A \mid B) \neq \Prob(B \mid A)$.
+c. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain why this is always true or give an example where it is false.)
+\vfill
+:::
 
-    a. For random variable to be a binomial random variable, what 5 things must be true? 
-    b. Give an example of a situation that is $\Binom(20, 0.25)$.
+:::{#exr-binomial}
+**Binomial distributions**
 
-1.  Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$?
-    
+a. For random variable to be a binomial random variable, what 5 things must be true? 
+b. Give an example of a situation that is $\Binom(20, 0.25)$.
+\vfill
+:::
 
-1. Suppose at a certain college 60% of students are female, 10% of female students are from international students, 
+:::{#exr-binomial-2}
+Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$?
+\vfill
+:::
+
+:::{#exr-international}
+Suppose at a certain college 60% of students are female, 10% of female students are from international students, 
 and 12% of male students are international.  What percentage of the international students are female?
 
-    a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain.
-    a. Express the three numbers in this problem and the number asked for in the question using good
-    probability notation.
-    b. Answer the answer numerically.
+a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain.
+a. Express the three numbers in this problem and the number asked for in the question using good
+probability notation.
+b. Answer the answer numerically.
     
-    ```{r}
-    #| include: false 
-    0.6 * 0.1 / (0.6 * 0.1 + 0.4 * 0.12)
-    ```
+```{r}
+#| include: false 
+0.6 * 0.1 / (0.6 * 0.1 + 0.4 * 0.12)
+```
+\vfill
+:::
 
-1. Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times.
+{{< pagebreak >}}
 
-    a. Is this a binomial situation?  Explain.
-    b. What is the expected number of times we flip the coin?
+:::{#exr-coins-geometric}
+Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times.
+
+a. Is this a binomial situation?  Explain.
+b. What is the expected number of times we flip the coin?
 
 ```{r}
 #| include: false
@@ -91,30 +108,38 @@ rbind(
 
 sum(vals*probs)
 ```
+\vfill
+:::
 
-1. Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
+:::{#exr-coins-two-tails}
+Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
 
-    a. Is this a binomial situation? Explain.
-    b. What is the expected number of times we flip the coin?
+a. Is this a binomial situation? Explain.
+b. What is the expected number of times we flip the coin?
+\vfill
+:::
 
-1. A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
+:::{#exr-MM}
+A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
 
-    a. What is the probability that you get one of each color?
-    b. What is the probability that they are all brown?
-    b. What is the probability that they are all red?
-    b. What is the probability that they are all the same color?
-    b. If they are all the same color, what is the probability that they are all brown?
-    b. What is the probability that you get 2 browns and one blue?
-    c. What is the probability that you get two of one color and one of a different color?
-    d. What is the expected number of brown candies you select?
-
+a. What is the probability that you get one of each color?
+b. What is the probability that they are all brown?
+b. What is the probability that they are all red?
+b. What is the probability that they are all the same color?
+b. If they are all the same color, what is the probability that they are all brown?
+b. What is the probability that you get 2 browns and one blue?
+c. What is the probability that you get two of one color and one of a different color?
+d. What is the expected number of brown candies you select?
+\vfill
+:::
 
 {{< pagebreak >}}
 
 ## Answers/Solutions
 
-1. **Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned.
-List them by name and using good probability notation.
+@exr-rules-axioms
+<!-- 1. **Probability Rules and Axioms.** Make a list of all the probability rules and axioms we have learned. -->
+<!-- List them by name and using good probability notation. -->
 
 ::: {.mysolution}
 You can find these on past sheets.  Here's an example: 
@@ -126,14 +151,16 @@ individual probabilities.
 
 :::
 
-2.  **Mutually exclusive vs independent.**
+@exr-disjoint-independent
 
-    a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation.
-    a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation.
-    a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where
-this happens or explain why it cannot happen.
-    a. Give an example of a probability rule that only holds if events are mutually exclusive.
-    a. Give an example of a probability rule that only holds if events are independent.
+<!-- 2.  **Mutually exclusive vs independent.** -->
+
+<!--     a. What does it mean for events $A$ and $B$ to be **mutually exclusive**?  Express this in words an in probility notation. -->
+<!--     a. What does it mean for events $A$ and $B$ to be **independent**?  Express this in words an in probility notation. -->
+<!--     a. Is it possible for events $A$ and $B$ to be mutually exclusive and independent? Give an example where -->
+<!-- this happens or explain why it cannot happen. -->
+<!--     a. Give an example of a probability rule that only holds if events are mutually exclusive. -->
+<!--     a. Give an example of a probability rule that only holds if events are independent. -->
 
 :::{.mysolution}
 
@@ -154,14 +181,16 @@ e. If $A$ and $B$ are independent, then $\Prob(A \operatorname{and} B) = \Prob(A
 
 :::
 
-3. 
+@exr-conditional
 
-    a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$? 
-    b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$.
-    c. Give a different example where $\Prob(A\mid B) \neq \Prob(B \mid A)$.
-    d. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain
-    why this is always true or give an example where it is false.)
-    
+<!-- 3.  -->
+
+<!--     a. What is the difference between $\Prob(A \mid B)$ and $\Prob(B \mid A)$?  -->
+<!--     b. Give an example where these are $\Prob(A \mid B) = \Prob(B \mid A)$. -->
+<!--     c. Give a different example where $\Prob(A \mid B) \neq \Prob(B \mid A)$. -->
+<!--     d. True or False: If $A$ and $B$ are independent, then $\Prob(A \mid B) = \Prob(B \mid A)$? (Either explain -->
+<!--     why this is always true or give an example where it is false.) -->
+
 :::{.mysolution}
 
 a. $\Prob(A \mid B)$ asks what fraction of the time that $B$ occurs will $A$ also occur.
@@ -171,16 +200,18 @@ b. Flip two coins. Let $A$ be the event that the first is heads.  Let $B$ be the
 the second is heads.  Then $\Prob(A \mid B) = \Prob(B \mid A) = \frac{1}{2}$.
 
 c. Flip a coin and roll a die.  Let $A$ be the event that the coin is heads. Let 
-$B$ be the event that the die produces a 6.  $\Prob(A \ mid B) = \Prob(A) = \frac{1}{2}$.
+$B$ be the event that the die produces a 6.  $\Prob(A \mid B) = \Prob(A) = \frac{1}{2}$.
 $\Prob(B \mid A) = \frac{1}{6}$.
 
 d. False.  See the example in part c.  Those events are independent.
 :::
 
-4.  **Binomial distributions**
+@exr-binomial
 
-    a. For random variable to be a binomial random variable, what 5 things must be true? 
-    b. Give an example of a situation that is $\Binom(20, 0.25)$.
+<!-- 4.  **Binomial distributions** -->
+
+<!--     a. For random variable to be a binomial random variable, what 5 things must be true?  -->
+<!--     b. Give an example of a situation that is $\Binom(20, 0.25)$. -->
 
 ::: {.mysolution}
 a. These five things are listed on worksheet 15.
@@ -188,8 +219,10 @@ a. These five things are listed on worksheet 15.
 b. Roll a four-sided die 20 times and count the number of 3's that are rolled.
 :::
 
-5.  Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$?
-    
+@exr-binomial-2
+
+<!-- 5.  Suppose $X \sim \Binom(20, 0.25)$. (a) What is $\Prob(X = 4)$? (b) What is $\E(X)$? -->
+
 ::: {.mysolution}
 
 a. $\Prob(X = 4) = \binom{20}{4} (0.25)^4 (0.75)^{16} = `r dbinom(4, 20, 0.25)`$ 
@@ -197,13 +230,15 @@ a. $\Prob(X = 4) = \binom{20}{4} (0.25)^4 (0.75)^{16} = `r dbinom(4, 20, 0.25)`$
 b. $\E(X) = 20 \cdot 0.25 = 5$?
 :::
 
-6. Suppose at a certain college 60% of students are female, 10% of female students are from international students, 
-and 12% of male students are international.  What percentage of the international students are female?
+@exr-international
 
-    a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain.
-    a. Express the three numbers in this problem and the number asked for in the question using good
-    probability notation.
-    b. Answer the answer numerically.
+<!-- 6. Suppose at a certain college 60% of students are female, 10% of female students are from international students,  -->
+<!-- and 12% of male students are international.  What percentage of the international students are female? -->
+
+<!--     a. Do you expect the answer to be less than 12%, between 12% and 60%, or over 60%?  Explain. -->
+<!--     a. Express the three numbers in this problem and the number asked for in the question using good -->
+<!--     probability notation. -->
+<!--     b. Answer the answer numerically. -->
 
 ::: {.mysolution}    
 Let $F$ be the event that a student is female.
@@ -217,10 +252,12 @@ We are asked to compute $\Prob(W \mid I)$.
 ```
 :::
 
-7. Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times.
+#exr-coins-geometric
 
-    a. Is this a binomial situation?  Explain.
-    b. What is the expected number of times we flip the coin?
+<!-- 7. Suppose that we flip a fair coin until either it comes up tails twice or we have flipped it six times. -->
+
+<!--     a. Is this a binomial situation?  Explain. -->
+<!--     b. What is the expected number of times we flip the coin? -->
 
 ::: {.mysolution}
 
@@ -252,10 +289,12 @@ E <- sum(vals*probs)
 Expected value is `r E`.
 :::
 
-8. Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
+@exr-coins-two-tails
+
+<!--8. Suppose that we flip a fair coin until it comes up tails twice, no matter how many tries that takes.
 
     a. Is this a binomial situation? Explain.
-    b. What is the expected number of times we flip the coin?
+    b. What is the expected number of times we flip the coin?-->
     
 :::{.mysolution}
 Still not binomial (we still don't know the number of trials in advance).
@@ -269,7 +308,9 @@ geometric series or some calculus.  In the end $\E(X_i) = \frac{1}{.25} = 4$, so
 $\E(X) = 8$.
 :::
 
-9. A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
+@exr-MM
+
+<!--9. A bowl of M&M's is almost empty.  There are 3 reds, 5 blues, and 8 browns. You randomly select three.
 
     a. What is the probability that you get one of each color?
     b. What is the probability that they are all brown?
@@ -279,6 +320,7 @@ $\E(X) = 8$.
     b. What is the probability that you get 2 browns and one blue?
     c. What is the probability that you get two of one color and one of a different color?
     d. What is the expected number of brown candies you select?
+ -->
  
 ::: {.mysolution}
 

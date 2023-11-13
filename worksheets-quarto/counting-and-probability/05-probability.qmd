@@ -2,8 +2,15 @@
 # Probability
 
 
+## Some Vocabulary
 
-<!-- Put your work below here.  Put text in text chunks, code in R chunks. -->
+* **outcome**
+
+* **sample space**
+
+* **event**
+
+* **probability**
 
 ## Notation Note
 
@@ -64,8 +71,8 @@ of the dice is 5?
  
 6. **Smaller Dice.** If you role two 4-sided dice, what is the probability that the sum of the dice is 5?
  
-7. **6 or doubles.** If you roll two standard dice, what is the probability that
-you get either doubles or a sum equal to 6?
+7. **6 or doubles.** If you roll two standard dice, what is the probability of getting
+doubles or a sum equal to 6?
  
 8. **Lotto.** Many lotteries offer a game that works like this: The player
 selects three digits (0--9). Later the lottery selects three digits.  If the
@@ -103,7 +110,7 @@ be rolled as any other number.
     b. What is the probability of rolling doubles with two such dice? (Doubles means two matching numbers.)
     c. What is the probability of rolling doubles with two standard dice?
    
-14. **Boys and Girls.** A family has two children.  One of them is a boy.  What is the probability that the other is a girl?
+14. **Boys and Girls.** A family has two children.  One is a boy.  What is the probability that the other is a girl?
  
 15. **More Lottery.** In a lottery game, players select 6 distinct numbers from the numbers 1 -- 40.
  (The order in which they are chosen doesn't matter -- often you select the numbers by punching out
@@ -132,7 +139,7 @@ ans4 <- (choose(5,2) + choose(3,2)) / choose(8,2)
 
 4. $\frac{\binom{5}{2} + \binom{3}{2} }{\binom{8}{2} } =$ `r ans4` 
 
-5. $4/36 = 1/9$ `r 4/36`
+5. $4/36 = 1/9 =$ `r 4/36`
 
 6. $4 / 16 = 1/4$
 

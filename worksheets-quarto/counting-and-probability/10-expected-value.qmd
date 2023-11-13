@@ -6,22 +6,31 @@
 Question: If a student receives 5 A's, 4 B's, and 1 C, what is the student's GPA?
 (Assume all courses are equally weighted and that an A is worth 4, a B with 3, and a C worth 2.)
 
-1. Explain why $\frac{4 + 3 + 2}{3}$ is *not* the correct answer.
- 
-2. Show how to correctly calculate the GPA by listing the 10 scores individually.
- 
-3. Factor your expression into the following form (fill in the missing numerators):  
+:::{#exr-gpa-wrong-answer}
+Explain why $\frac{4 + 3 + 2}{3}$ is *not* the correct answer.
+:::
+
+:::{#exr-gpa-calcualte} 
+Show how to correctly calculate the GPA by listing the 10 scores individually.
+:::
+
+:::{#exr-gpa-factor} 
+Factor your expression into the following form (fill in the missing numerators):  
 
 $$
 \mbox{GPA} = 4 \cdot \frac{\phantom{5}}{10} + 3 \cdot \frac{\phantom{4}}{10} + 2 \cdot \frac{\phantom{1}}{10}
 $$
- 
+::: 
 
-4. Let $X$ be the random variable that results from randomly selecting a course and recording 
+:::{#exr-gpa-probability-table}
+Let $X$ be the random variable that results from randomly selecting a course and recording 
 its grade (on a 4 point scale).  Create a probability table for $X$.
+:::
 
-5. How are the numbers in your expression for GPA in #3 related to the numbers in your 
-probability table?
+:::{#exr-gpa-relate}
+How are the numbers in your expression for GPA in @exr-gpa-factor related to the 
+numbers in your probability table in @exr-gpa-probability-table?
+:::
 
 ## Generalizing
 
@@ -32,71 +41,84 @@ The Greek letter $\mu$ (read "mu") is the Greek version of the letter $m$ for me
 We will use whichever is handier in the moment.
 
 
-6. Let $X$ be defined by the probability table below.  Compute $\E(X)$.
+:::{#exr-e-from-prob-table}
+Let $X$ be defined by the probability table below.  Compute $\E(X)$.
 
 
 value of $X$ |   0   |   1   |   2   |   3     
 -------------| :---: | :---: | :---: | :---: 
 probability  |  0.2  |  0.3  |  0.4  |  0.1
 
-
 \vfill
+:::
 
-7. Let $H$ be the number of heads in 3 tosses of a fair coin.
+:::{#exr-3-coins}
+Let $H$ be the number of heads in 3 tosses of a fair coin.
 
-    a. Create a probability table for $H$
-    b. Compute $E(H)$.
+a. Create a probability table for $H$
+b. Compute $E(H)$.
 
  
 \vfill
+:::
 
-8. Use good mathematical notation to write down the definition:
+:::{#exr-definition}
+Use good mathematical notation to write down the definition:
 
 $$
 \E(X) =  \phantom{\sum k \Prob(X = k)}
 $$
 
 \vfill
-
-{{< newpage >}}
-
-9. A raffle has 1000 tickets. Holders of 4 of the tickets get a prize.  The other 996 are worth nothing.  The four prizes are worth $500, $200, $50, and $50.  Let $V$ be the value of a random
-raffle ticket.
-
-    a. Create a probabilty table for $V$.
-    b. Compute $\E(V)$.
-    c. What does $\E(V)$ tell us about the raffle tickets?
-
-  
-\vfill
+:::
 
 {{< pagebreak >}}
 
-10. Let $D$ be the absolute value of the difference (i.e., higher minus lower)
+:::{#exr-raffle}
+A raffle has 1000 tickets. Holders of 4 of the tickets get a prize.  The other 996 are worth nothing.  The four prizes are worth $500, $200, $50, and $50.  Let $V$ be the value of a random
+raffle ticket.
+
+a. Create a probabilty table for $V$.
+b. Compute $\E(V)$.
+c. What does $\E(V)$ tell us about the raffle tickets?
+  
+\vfill
+:::
+
+:::{#exr-4-sided-dice}
+Let $D$ be the absolute value of the difference (i.e., higher minus lower)
 between the values of **two 4-sided dice**.
 
-    a. Create a probability table for $D$.
-    b. Compute $\E(D)$.
-    c. What is $\Prob(D = \E(D))$?
-    d. What is $\Prob(D < \E(D))$?
-    e. What is $\Prob(D > \E(D))$?
+a. Create a probability table for $D$.
+b. Compute $\E(D)$.
+c. What is $\Prob(D = \E(D))$?
+d. What is $\Prob(D < \E(D))$?
+e. What is $\Prob(D > \E(D))$?
 
 \vfill
+:::
 
 We can do these already now, but there are easier ways that take advantage
 of properties of expected value that we haven't learned yet.
 
-11. In a hand of 5 cards from a standard deck, what is the expected number of diamonds?
+:::{#exr-diamonds}
+In a hand of 5 cards from a standard deck, what is the expected number of diamonds?
+:::
 
-12. If you roll 5 standard dice, what is the expected number of 6's?
+:::{#exr-dice}
+If you roll 5 standard dice, what is the expected number of 6's?
 
 \vfill
+:::
 
 These two are a bit more challenging, but still doable.
 
-13. In a hand of 5 cards from a standard deck, what is the expected number of suits?
+:::{#exr-suits}
+In a hand of 5 cards from a standard deck, what is the expected number of suits?
+:::
 
-14. If you roll 5 standard dice, what is the expected number of unique numbers rolled?
+:::{#exr-unique-numbers-on-dice}
+If you roll 5 standard dice, what is the expected number of unique numbers rolled?
 
 \vfill
-
+:::
