@@ -13,19 +13,10 @@ book:
   date-format: YYYY/mm/dd HH:mm
   chapters:
     - index.qmd
-    - part: "Graphs"
-      chapters:
-        - graphs/01-Graphs-Intro.qmd
-        - graphs/02-Graphs02.qmd
-        - graphs/03-Graphs-Representations.qmd
-        - graphs/04-Graph-Isomorphism.qmd
-        - graphs/05-Graphs-Paths.qmd
-        - graphs/06-Graphs-Bipartite-Planar.qmd
-#        - graphs/07-Graphs-Euler.qmd
     - part: "Counting and Probability"
       chapters:
         - counting-and-probability/01-counting-basic.qmd
-        - counting-and-probability/02-counting-pigeonhole.qmd
+        # - counting-and-probability/02-counting-pigeonhole.qmd
         - counting-and-probability/03-counting-division.qmd
         - counting-and-probability/04-counting-donuts.qmd
         - counting-and-probability/05-probability.qmd
@@ -37,16 +28,10 @@ book:
         - counting-and-probability/11-E-is-linear.qmd
         # - counting-and-probability/12-variance.qmd
         - counting-and-probability/13-probability-review.qmd
-    - part: "Models of Computation"
+    - part: "Linear Algebra"
       chapters:
-        - models-of-computation/01-grammars.qmd
-        - models-of-computation/02-grammars-types.qmd
-        - models-of-computation/03-automata.qmd
-        - models-of-computation/04-regex.qmd
-        - models-of-computation/05-regular-grammars.qmd
-        - models-of-computation/06-dfa-to-regex.qmd
-        - models-of-computation/07-nonregular-language.qmd
-        - models-of-computation/10-turing-machines.qmd
+        - linear-algebra/01-LA-vectors.qmd
+        - linear-algebra/02-LA-matrices.qmd
 
 filters:
    - latex-environment
@@ -66,8 +51,8 @@ format:
     fig-pos: 'h'
     geometry:
       - "margin = 0.7in"
-      - "top = 0.7in"
-      - "bottom = 0.7in"
+      - "top = 0.5in"
+      - "bottom = 0.9in"
   html:
     theme: cosmo
     include-before-body: macros.tex
