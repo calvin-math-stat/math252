@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup-basic, include=FALSE}
@@ -41,15 +41,24 @@ Give an upper bound on the number of seats in the auditorium.
 three letters followed by three numbers.  How many 
 such plates are there?
 
-7. A graph isomorphism is a 1-1 and onto function from the vertices in one graph to the vertices in another (that additionally preserves edges).  You decide to write a little program that will check each 1-1 and onto function to see if it an isomorphism.
+7. In a version of the computer language BASIC, the name of a variable is a
+string of one or two alphanumeric characters, where uppercase and lowercase
+letters are not distinguished. (An alphanumeric character is either one of the
+26 English letters or one of the 10 digits.) Moreover, a variable name must
+begin with a letter and must be different from the five strings of two
+characters that are reserved for programming use. How many different variable
+names are there in this version of BASIC?
 
-    If your graphs have $n$ vertices, how many such functions must you check?
-    
-8. Now you modify your graph isomorphism algorithm so that it only tries
-bijections (1-1 and onto functions) that respect the degrees of the vertices. If
-the degree sequences of two graphs are both $(5, 5, 4, 4, 4, 3, 3, 2)$, how many
-functions must you check?  How much better is this than your previous algorithm
-(on these two graphs)?
+
+<!-- 7. A graph isomorphism is a 1-1 and onto function from the vertices in one graph to the vertices in another (that additionally preserves edges).  You decide to write a little program that will check each 1-1 and onto function to see if it an isomorphism. -->
+
+<!--     If your graphs have $n$ vertices, how many such functions must you check? -->
+
+<!-- 8. Now you modify your graph isomorphism algorithm so that it only tries -->
+<!-- bijections (1-1 and onto functions) that respect the degrees of the vertices. If -->
+<!-- the degree sequences of two graphs are both $(5, 5, 4, 4, 4, 3, 3, 2)$, how many -->
+<!-- functions must you check?  How much better is this than your previous algorithm -->
+<!-- (on these two graphs)? -->
 
 9. Let's use the following coding scheme to describe
 possible telephone numbers.
@@ -90,7 +99,10 @@ of Valentine hearts he picked up cheap on February 15.
     a. How many different ways can the prizes be distributed?
     
     b. If you are one of the 30 students, how many of those ways include you getting a prize?
-  
+
+13. Take a look at the first 19 examples of Section 6.1 of our text book.
+    Which of those examples are on this worksheet?
+    
 \newpage
 
 <!-- 13. Below is a description of IPv4 addresses. -->
@@ -128,18 +140,20 @@ of Valentine hearts he picked up cheap on February 15.
     
 6. $10^3 \cdot 26^3 =$ `r 10^3 * 26^3`
  
-7. $n!$
- 
-8. $2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1$ = `r 2 * 1 * 3 * 2 * 1 * 2 * 1 * 1`. ($8!$ = `r factorial(8)`, so that's a pretty big speed up.)
+<!-- 7. $n!$ -->
 
-9. See book.
+<!-- 8. $2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 2 \cdot 1 \cdot 1$ = `r 2 * 1 * 3 * 2 * 1 * 2 * 1 * 1`. ($8!$ = `r factorial(8)`, so that's a pretty big speed up.) -->
+
+7.  $26 + (26 \cdot 36 - 5) = 957$
+
+8. See book.
  
-10.  $36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =$ `r 36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8` 
+9.  $36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8 =$ `r 36^6 - 26^6 + 36^7 - 26^7 + 36^8 - 26^8` 
  
-11.  `26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` =
+10.  `26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` =
  `r 26 * (36^5 - 26^5) + 26 * (36^6 - 26^6) + 26 * (36^7 - 26^7)` 
  
-12. 
+11. 
     a. `30 * 29 * 28` = `r 30 * 29 * 28`
     b. `1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1` = `30 * 29 * 28 - 29 * 28 * 27`
     = `r 1 * 29 * 28 + 29 * 1 * 28 + 29 * 28 * 1`
