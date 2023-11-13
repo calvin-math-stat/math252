@@ -14,7 +14,8 @@ t1bks <- c(16, 32, 41, 50, 59, 68) |> rev() # 68 was max possible; 66 max obtain
 t2bks <- c(18, 36, 50, 62, 74, 84) |> rev() # 84 was max possible; 79 was obtained
 t3bks <- c(15, 28, 38, 48, 57, 66) |> rev() # 66 was max possible; 63 was abtained
 
-fbks  <- c(25, 67, 88, 108, 128, 146)  |> rev() # max acheived 144; max possible 146
+# fbks  <- c(25, 67, 88, 108, 128, 146)  |> rev() # max acheived 144; max possible 146
+fbks  <- c(25, 70, 92, 114, 135, 154)  |> rev() # max acheived 151; max possible 154
 
 c(25, 74, 96, 118, 140, 165) / 165 * 144
 fbks  <- c(25, 65, 86, 106, 126, 144) %>% rev()
