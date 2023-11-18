@@ -51,8 +51,8 @@ format:
     fig-pos: 'h'
     geometry:
       - "margin = 0.7in"
-      - "top = 0.5in"
-      - "bottom = 0.9in"
+      - "top = 0.6in"
+      - "bottom = 0.8in"
   html:
     theme: cosmo
     include-before-body: macros.tex
