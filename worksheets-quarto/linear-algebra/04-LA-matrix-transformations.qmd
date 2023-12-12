@@ -1,0 +1,192 @@
+
+# Matrix Transformations
+
+## Getting Started
+
+The **matrix transformation** $T: \real^m \to \real^n$ associated with a matrix $A$ is a function that 
+
+* takes a vector from $\real^m$ as input, 
+* returns  a vector from $\real^n$ as output, and
+* is defined by matrix multiplication: 
+
+$$T(\xvec) = A \xvec$$
+$\real^m$ is called the **domain** of the transformation and $\real^n$ is called 
+the **codomain**.
+
+
+:::{#exr-04-LA-first-examples}
+Let $T$ be the matrix transformation associated with the matrix 
+$A = \begin{bmatrix} 1 & 2 \\ -2 & 1 \end{bmatrix}$.
+
+Compute the following: 
+(a) $T\left(\twovec 11\right)$; 
+(b) $T\left(\twovec 1{-1}\right)$; 
+(c) $T\left(\twovec 1{0}\right)$; 
+(d) $T\left(\twovec 0{1}\right)$.
+
+\vfill
+:::
+
+:::{#exr-04-LA-dimensions}
+a. If $T$ is a matrix transformation associated with an $r \by c$ matrix $A$,
+what are the shapes of the input and output vectors?
+
+b. If a matrix transformation $T:\real^7 \to \real^4$, 
+what is the shape of the matrix associated with $T$?
+
+\vfill
+:::
+
+:::{#exr-04-LA-elementary-vectors}
+Suppose $T$ is a matrix transformation, 
+$T\left( \twovec 10 \right) = \twovec 11$,
+$T\left( \twovec 01 \right) = \twovec {-1}2$.
+
+a. What is the associated matrix $A$?
+
+b. This is an example of a general fact about matrix transformations.  State that fact.
+
+c. Explain how we know this fact must be true for *every* matrix transformation.  (Hint: Express the matrix multiplication as a linear combination of columns of $A$.)
+
+\vfill
+:::
+
+:::{#exr-04-LA-linearity}
+Matrix transformations satisfy several important **linearity properties**. 
+For each property below, figure out what goes on the right side and explain 
+why the property is true.
+Be sure to identify which letters stand for scalars and which for vectors.
+
+a. $T(\zerovec) =$
+b. $T(\xvec + \yvec) =$
+c. $T(k \xvec) =$
+
+Now show that any transformation that satisfies these properties is a 
+matrix transformation. (Hint: Write the input vector as a linear combination
+of elementary vectors.^[elementary vectors are all zeros except for one entry which is a 1.])
+
+For this reason, matrix transformations are also called **linear transformations**.
+
+\vfill
+:::
+
+{{< pagebreak >}}
+
+:::{#exr-04-LA-using-linearity}
+Suppose $U$ is a matrix transformation, 
+$U\left(\twovec 12\right) = \twovec13$, and 
+$U\left(\twovec 2{-1}\right) = \twovec13$.  Compute the following.
+
+$$
+U\left(\twovec 31 \right) \quad  
+U\left(\twovec 1{-3} \right) \quad 
+U\left(\twovec 50 \right) \quad
+U\left(\twovec 10 \right) \quad
+U\left(\twovec 0{-4} \right)\quad
+U\left(\twovec 0{1} \right)
+$$ 
+
+What is the matrix $A$ associated with $U$?
+
+\vfill
+:::
+
+:::{#exr-04-LA-composition}
+Show that if $U$ and $V$ are matrix transformations, then $T(\xvec) = V (U(\xvec))$ is also
+a matrix transformation.  How can you find the matrix associated with $T$ if you know the
+matrices associated with $U$ and $V$?
+
+Note: Another notation for $T$ is $T = V \circ U$.
+
+\vfill
+:::
+
+## Geometry
+
+We can also think about matrix transformations as transforming the space the vectors 
+live in.  This is especially convenient when working in $\real^2$ and $\real^3$ where 
+it is easy to visualize what is happening.
+
+The 
+[3Blue1Brown video on Matrix Transformations](https://www.3blue1brown.com/lessons/linear-transformations) includes
+some nice animations of the geometric way of thinking about matrix transformations.
+
+:::{#exr-rotation}
+Consider the transformation $R: \real^2 \to \real^2$ that rotates vectors
+counter clockwise by 90 degrees.
+
+a. Explain how we know this is a linear transformation.
+(Hints: What properties must it have? Think geometrically.)
+a. What is $R(\twovec 10)$?
+a. What is $R(\twovec 01)$?
+a. What is the matrix associated with this rotation?
+
+Note: If you know a little trigonometry (sines and cosines) it is not much harder to find 
+the matrix associated to a rotation by any angle.
+:::
+
+:::{#exr-reflection}
+Consider the transformation $M: \real^2 \to \real^2$ that reflects (mirrors) vectors
+across the $x$-axis.
+
+a. Explain how we know this is a linear transformation.
+(Hints: What properties must it have? Think geometrically.)
+a. What is $M(\twovec 10)$?
+a. What is $M(\twovec 01)$?
+a. What is the matrix associated with this reflection?
+:::
+
+
+:::{#exr-reflection}
+What are $M \circ R$  and $R \circ M$? Compute the matrices associated to each.
+Are they the same? Should they be?
+:::
+## Inverse Transformations
+
+For some matrix transformations $T: \real^n \to \real^m$ there is an 
+**inverse transformation** $T^{-1}$ satisfying 
+
+* $T(\xvec) = \yvec \Leftrightarrow T^{-1}(\yvec) = \xvec$.
+
+That is, a transformation and its inverse "undo" each other.
+A matrix transformation with an inverse is called **invertible**.
+
+:::{#exr-04-LA-inverses}
+a. If $T$ and $T^{-1}$ are inverses, what are $T \circ T^{-1}$ and $T^{-1} \circ T$?
+
+b. Suppose $T$ is an invertible matrix transformation and $T(\twovec 12) = \twovec34$.
+What is $T^{-1}(\twovec 34)$?
+
+c. Suppose $T: \real^2 \to \real^2$ is an invertible matrix transformation, 
+$T(\twovec02) = \twovec12$, and $T(\twovec 13) = \twovec30$.
+Find the matrices associated with 
+$T$ and $T^{-1}$.
+
+d. Let $A$ be the matrix associated with $T$. Compute `numpy.linalg.inv(A)`. How does
+this relate to your answer in part c? 
+
+e. Let $B$ be the matrix associated with $T^{-1}$. Compute `numpy.linalg.inv(B)`. 
+How does this relate to your answer in part c? 
+
+f. Compute $AB$ and $BA$.  Why do you get those results?
+:::
+
+
+:::{#exr-no-inverse}
+Find a matrix transformation $T: \real^2 \to \real^2$ such that $T(\twovec11) = \twovec11$,
+but $T$ is NOT invertible.  How do you know it is not invertible?
+:::
+
+:::{#exr-goemetric-inverses}
+Let $R: \real^2 \to \real^2$ be the 90-degree counter-clockwise rotation. 
+What is its inverse?
+Compute the matrix for $R$ and for its inverse and compute the product of
+these two matrices.
+:::
+
+:::{#exr-goemetric-inverses}
+Let $M: \real^2 \to \real^2$ be reflection across the $x$-axis. 
+What is its inverse?
+Compute the matrix for $M$ and for its inverse and compute the product of
+these two matrices.
+:::

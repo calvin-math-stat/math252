@@ -1,0 +1,311 @@
+
+# Vectors and Matrices in NumPy
+
+## What is NumPy?
+
+Accoring to [numpy.org](https://numpy.org/):
+
+> NumPy is an open source project that enables numerical computing with Python.
+
+> NumPy offers comprehensive mathematical functions, random number generators, linear algebra routines, Fourier transforms, and more.
+
+> Fast and versatile, the NumPy vectorization, indexing, and broadcasting concepts are the de-facto standards of array computing today.
+
+NumPy ndarrays ($n$-dimenional arrays) include vectors, matrices, and higher dimensional array, sometimes called **tensors**.
+
+You can give NumPy a try in any Python environment where it has been installed. 
+This includes: 
+
+* The [Sage Cell Server](https://sagecell.sagemath.org/)
+
+* Sage Cells embedded in [*Understanding Linear Algebra: Data Science edition*](https://ula-ds.netlify.app) and in MyOpenMath.
+
+* At [Google Colab](https://colab.research.google.com/)
+
+
+## Vectors in NumPy
+
+To use NumPy, we first need to import it. 
+
+```{python}
+import numpy as np
+```
+
+Vectors can be created from Python lists and tuples using `np.array()`.
+
+
+```{python}
+v = np.array([1, 2, 3])
+print(v)
+```
+```{python}
+print(type(v))
+```
+```{python}
+print(v.shape)
+```
+
+Notice that although we have been thinking of vectors as columns, NumPy is
+agnostic about this. Vectors have only one "dimension" (NumPy refers to this as
+an **axis**). 
+Vectors print horizontally, but they will behave like our column vectors when doing 
+linear algebra.^[If you want to know more about just how this works, Google "numpy broadcasting" or see <https://numpy.org/doc/stable/user/basics.broadcasting.html>.]
+
+Vector sums, differences, and scalar products can be computed using `+`, `-`, and `*`:
+
+```{python}
+w = np.array([4, 5, 6])
+print(v + w)
+```
+
+```{python}
+print(v - w)
+```
+
+```{python}
+print(3 * v)
+```
+
+:::{#exr-vector-non-product}
+What happens if you multiply two vectors using `*`?  
+
+a. Try some examples and see. Will this work for any two vectors? If not, when does it work.
+
+b. Note: This is *not* a linear algebra operation on vectors, but it can be useful in some
+other situations -- for example, to compute an expected value. From the table below,
+create two vectors, `values` and `probabilities`. 
+Then use `np.sum(values * probabilities)` to compute the expected value.
+
+value of $X$ |   0   |   1   |   2   |   3     
+-------------| :---: | :---: | :---: | :---: 
+probability  |  0.4  |  0.3  |  0.2  |  0.1
+
+c. Now try `values @ probabilities`.  What do you notice?
+
+:::
+
+The product just introduced (`values @ probabilities`) is called 
+the **dot product** of two vectors and it has many applications.
+But notice that the dot product of two vectors is a *scalar*, not a vector. For 
+this reason, it is sometimes called the **scalar product**. Because it doesn't 
+produce a vector, it is a different sort of thing from vector addition and vector 
+subtraction.
+
+We denote the dot product of vectors $\avec$ and $\bvec$ as $\avec \cdot \bvec$.
+
+:::{#exr-dot-product}
+#### Dot products and vector length
+
+a. Show how to compute the length (magnitude) of a vector using `@`.
+Compute the magnitude of the following vectors.
+$$
+\avec = \twovec6{-8}, \quad \bvec = \threevec123, \quad \cvec = \fourvec1{-1}1{-1} 
+$$
+
+b. You can also compute the length (magnitude) of a vector using `np.linalg.norm()`.
+Try it and confirm that you get the same results as above.
+  
+    Yes: there is a third name for this -- **norm**.  Actually, the kind of length
+    we have been computing is called the **Euclidean norm** or the **$L^2$ norm**.
+    There are other types of norms as well, but the default and most common is the 
+    Euclidean norm.
+    
+:::
+
+:::{.callout-note}
+### Notation note
+
+The Euclidean norm of a vector $x$ is denoted $|\xvec|$.  (Some authors use $||\xvec||$.)
+You shouldn't get this confused with absolute value if you know whether it is being
+applied to a vector or a scalar.
+:::
+
+:::{#exr-dot-products-in-matrix-mult}
+Explain how we can use a dot product to compute one entry of a matrix product.
+Demonstrate with the following example.
+
+$$
+\begin{bmatrix}
+1 & 2 \\
+-1 & 0 \\
+3 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+4 & 3 & 0 \\
+1 & -2 & -1 \\
+\end{bmatrix}
+$$
+:::
+
+:::{#exr-unit-vectors}
+#### Unit vectors
+
+A **unit vector** is a vector with magnitude 1.
+
+a. How can we tell if  two vectors point in the same direction.
+
+
+b. For each of the following vectors, find a unit vector that points in the same 
+direction.
+$$
+\avec = \twovec6{-8}, \quad \bvec = \threevec123, \quad \cvec = \fourvec1{-1}1{-1} 
+$$
+
+c. For any vector $\xvec$, how can we easily compute the unit vector that points
+in the same direction as $\xvec$? Express this using good notation.
+
+d. If $\xvec$ and $\yvec$ are vectors in $\real^n$, how does $\xvec \cdot \yvec$ compare 
+with $\xvec \cdot (3 \yvec)$?  What is the general statement here?  Express it using good notation and explain why it is true.
+
+e. If $\uvec$ and $\vvec$ are unit vectors in the same direction as $\xvec$ and $\yvec$, respectively, how are $\uvec \cdot \vvec$ and $\xvec \cdot \yvec$ related?
+(Try a few examples to confirm.) Express this using good notation.
+:::
+
+
+## Matrices in NumPy
+
+There are several ways to create matrices in NumPy.
+Matrices can be created from Python lists of lists. Notice that NumPy treats this as a 
+list of *rows* of the matrix.
+
+```{python}
+A = np.array([[1, 2, 3], [4, 5, 6]])
+print(A)
+```
+
+```{python}
+print(A.shape)
+```
+
+Because we will often have a column-centric view, `np.column_stack()` is also useful.
+
+```{python}
+B = np.column_stack([[5, 4, 3], [2, 1, 0]])
+print(B)
+```
+
+We can also use previously created vectors:
+
+```{python}
+C = np.column_stack([v, w])
+print(C)
+```
+
+We can access individual entries of a matrix using square brackets:
+
+```{python}
+print(C[2, 1])
+```
+
+We can access rows and columns of a matrix using **slices**:
+
+```{python}
+print(C[1, :])
+print(C[:, 1])
+print(C[:, (1,)])
+```
+Notice the difference between the last two operations. The first returns a 1-dimnensional vector.  The second returns a 2-dimensional matrix (with one column).
+
+:::{.callout-warning}
+
+NumPy indexing is 0-based.  Most mathematical treatments of linear algebra are 1-based.
+So you need to watch out for off-by-one errors when shifting perspectives.
+:::
+
+Matrix-vector and matrix-matrix multiplication are computed using `@`:
+
+```{python}
+print(A @ v)
+```
+
+```{python}
+print(A @ B)
+```
+
+```{python}
+print(B @ A)
+```
+
+
+## More Exercises
+
+
+:::{#exr-matrix-vector}
+
+Let 
+$$
+A = \begin{bmatrix} 1 & 2 & -1 \\ 2 & 0 & 1 \\ 3 & 1 & 0 \end{bmatrix}, 
+\quad
+\xvec = \threevec254 \;.
+$$
+Compute $A\xvec$ two ways.
+
+a) Define the matrix and vector and use `A @ x`.
+
+b) Express $A \xvec$ as a linear combination of columns of $A$ and let Python compute
+that linear combination for you.
+
+:::
+
+
+:::{#exr-np-linalg-solve}
+a. Express the following system of equations in the form $A \xvec = \bvec$.
+
+$$
+\begin{array}{rcrcrcr}
+3x &+& 4y &+& 2z &=& 5 \\
+2x &-& y &+& 2z &=& -1 \\
+x &+& 2y &-& z &=& 3 \\
+\end{array}
+$$
+
+b. Use `np.linalg.solve()` to solve this system.  The inputs are the matrix $A$ and the 
+vector $\bvec$.  
+
+c. Verify that the the solution NumPy produces is indeed a solution by performing
+the matrix-vector multiplication $A \xvec$. Do this with Python and *also by hand*.
+:::
+
+```{python}
+#| include: false
+A = np.column_stack([(3,2,1), (4,-1,2), (2,2,-1)])
+b = np.array((5, -1, 3))
+x = np.linalg.solve(A, b)
+print(x)
+print(A @ x)
+```
+
+:::{#exr-np-linal-solve-no-sols}
+
+Now try solving 
+$$
+\begin{array}{rcrcrcr}
+3x &+& y &-&  z &=& 5 \\
+2x &-& y &+& 3z &=& -1 \\
+7x &-& y &-& 5z &=& 4 \\
+\end{array}
+$$
+
+```{python}
+#| include: false
+A = np.column_stack([(3,2,7), (1,-1,-1), (-1,3,5)])
+b = np.array((5, -1, 4))
+x = np.linalg.solve(A, b)
+print(x)
+print(A @ x)
+```
+
+What's happening here? (Be sure to check the solution by computing $A \xvec$.)
+
+:::
+
+:::{#exr-wrong-op}
+What happens if you accidentally use `*` instead of `@` when doing matrix multiplciation?
+:::
+
+:::{#exr-redo-old}
+#### Redo with Python
+
+Redo @exr-paths and @exr-matrix-matrix-mult - @exr-matrix-prod-equals-zero using NumPy.
+
+:::

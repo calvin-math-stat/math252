@@ -1,0 +1,132 @@
+# Markov Chains
+
+
+:::{#exr-04-LA-cars}
+Suppose that we work for a car rental company that has two
+locations, $P$ and $Q$.  When a customer rents a car
+at one location, they have the option to return it to either
+location at the end of the day.  After doing some market
+research, we determine:
+
+* 80% of the cars rented at location $P$ are
+	returned to $P$ and 20% are returned to
+	$Q$. 
+
+* 40% of the cars rented at location $Q$ are
+	returned to $Q$ and 60% are returned to
+	$P$. 
+	
+a. Suppose that there are 1000 cars at location $P$
+and no cars at location $Q$ on Monday morning.  How many
+cars are there are locations $P$ and $Q$ at the end
+of the day on Monday?
+
+b. How many are at locations $P$ and $Q$ at end
+of the day on Tuesday? 
+
+c. Let $P_t$ and $Q_t$ be the number of
+	cars at locations $P$ and $Q$, respectively, at the
+	end of day $t$. Write a system of equations 
+	that shows how to compute $P_{t+1}$  and $Q_{t+1}$ 
+	from $P_t$ and $Q_t$.
+<!-- $$ -->
+<!-- 	  \begin{aligned} -->
+<!-- 	  P_{k+1}\amp {}={} 0.8P_k + 0.6Q_k \\ -->
+<!-- 	  Q_{k+1}\amp {}={} 0.2P_k + 0.4Q_k\text{.} \\ -->
+<!-- 	  \end{aligned} -->
+<!-- $$ -->
+
+d. Let $\xvec_t = \twovec{P_t}{Q_t}$. Rexpress your answer to part c as a
+matrix-vector equation of the form 
+$$\xvec_{t+1} = A \xvec_{t} \;. $$
+<!-- $$ -->
+<!-- 	  \xvec_{t+1} = -->
+<!-- 	  \left[\begin{array}{rr} -->
+<!-- 	  0.8 \amp 0.6 \\ -->
+<!-- 	  0.2 \amp 0.4 \\ -->
+<!-- 	  \end{array}\right] -->
+<!-- 	  \xvec_t -->
+<!-- $$ -->
+<!-- or $\xvec_{k+1} = A\xvec_k$ -->
+<!-- where  -->
+<!-- $A=\left[\begin{array}{rr}0.8 \amp 0.6 \\ 0.2 \amp 0.4 \end{array}\right]$. -->
+
+e. Use your matrix-vector equation and Python to compute the number of cars at each
+location each day for a week.
+
+f. Write a matrix-vector equation that can be used to compute the number of cars
+at each location after 8 days (next Monday night). 
+What is the matrix in this equation? 
+How can you compute it in Python?^[Note: You may find `np.matrix_power()` to be a useful
+function.]
+
+g. Write a for loop to display $\xvec_1, \xvec_2, \xvec_3, \dots \xvec_{50}$.
+What do you notice about this sequence?
+
+\vfill
+:::
+
+:::{#exr-04-LA-cars-probs}
+
+In @exr-04-LA-cars, we worked with the *number* of cars at each location.
+Re-express this in terms of the *proportion* of cars at each location.
+That is, find the matrix $A$ such that 
+$$
+\yvec_{t+1} = B \yvec_t
+$$
+where the elements of $\yvec$ are the proportions of cars at locations $P$ and $Q$. 
+How does the matrix $B$ compare to the matrix you found in @exr-04-LA-cars?
+
+\vfill
+:::
+
+<!-- Suppose that -->
+<!-- $$ -->
+<!-- 	\vvec_1 = \twovec{3}{1}, -->
+<!-- 	\qquad -->
+<!-- 	\vvec_2 = \twovec{-1}{1} \;. -->
+<!-- $$ -->
+<!-- Compute $A\vvec_1$ and $A\vvec_2$ to demonstrate that -->
+<!-- $\vvec_1$ and $\vvec_2$ are eigenvectors of $A$. -->
+<!-- What are the associated eigenvalues $\lambda_1$ and -->
+<!-- $\lambda_2$?  -->
+
+<!-- We said that 1000 cars are initially at location -->
+<!-- $P$ and none at location $Q$.  This means that the -->
+<!-- initial vector describing the number of cars is $\xvec_0 = -->
+<!-- \ctwovec{1000}{0}$.  Write $\xvec_0$ as a linear -->
+<!-- combination of $\vvec_1$ and $\vvec_2$.  -->
+
+<!-- Remember that $\vvec_1$ and $\vvec_2$ -->
+<!-- are eigenvectors of $A$.  Use the linearity of matrix -->
+<!-- multiplication to write the vector $\xvec_1 = -->
+<!-- A\xvec_0$, describing the number of cars at the two locations -->
+<!-- at the end of the first day, as a linear combination of -->
+<!-- $\vvec_1$ and $\vvec_2$. -->
+
+<!-- Write the vector $\xvec_2 = A\xvec_1$ as a linear -->
+<!-- combination of $\vvec_1$ and $\vvec_2$.  Then write -->
+<!-- the next few vectors as linear combinations of $\vvec_1$ -->
+<!-- and $\vvec_2$: -->
+
+<!-- 1. $\xvec_3 = A\xvec_2$.  -->
+<!-- 2. $\xvec_4 = A\xvec_3$. -->
+<!-- 3. $\xvec_5 = A\xvec_4$.  -->
+<!-- 4. $\xvec_6 = A\xvec_5$.  -->
+<!-- 5. What will happen to the number of cars at the two -->
+<!-- locations after a very long time?  Explain how writing -->
+<!-- $\xvec_0$ as a linear combination of eigenvectors helps you -->
+<!-- determine the long-term behavior. -->
+<!-- ::: -->
+
+
+
+A linear dynamical system defines a sequence of vectors $\xvec_0, \xvec_1, \xvec_2, \dots$ by
+$$
+\xvec_{t+1} = T(\xvec_t) + \bvec
+$$
+for some matrix transformation $T$ and some vector $\bvec$.
+
+:::{#exr-04-LA-dynamical-with-matrix}
+Re-express the definition of linear dynamical system using matrix multiplication.
+:::

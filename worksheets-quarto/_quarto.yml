@@ -32,6 +32,10 @@ book:
       chapters:
         - linear-algebra/01-LA-vectors.qmd
         - linear-algebra/02-LA-matrices.qmd
+        - linear-algebra/03-LA-numpy.qmd
+        - linear-algebra/04-LA-matrix-transformations.qmd
+        - linear-algebra/05-LA-dot-products.qmd
+        - linear-algebra/06-LA-Markov-chains.qmd
 
 filters:
    - latex-environment

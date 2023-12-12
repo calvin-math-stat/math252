@@ -1,0 +1,221 @@
+
+# Angles, Projections, and Dot Products
+
+## Finding the angle between two vectors
+
+If we think of vectors as arrows with length and direction, it is natural to ask
+what that angle between two vectors is.  If that angle is 0, the two fectors point in the 
+same direction.  If it is 180 degrees, they point in opposite directions.  If it is
+90 degrees, then they are perpendicular.  (In linear algebra, we will use the term
+**orthogonal** instead of prependicular.)
+
+But how can we determine the angle between two vectors?
+
+![What is that angle between $\xvec$ and $\yvec$?](images/projection-line-1.pdf){width=40%}
+
+To make life a little easier, let's try to compute $\cos \theta$ instead of $\theta$.
+Once we have $\cos \theta$, we can use a computer or calculator to convert this into 
+the angle $\theta$ if we like. But often it is sufficient -- sometimes better -- 
+to know the cosine of the angle.
+
+:::{.callout-note}
+In data science applications, 
+the cosine of the angle between two vectors is often called the **cosine similarity**.
+It has many applications in machine learning algorithms.
+:::
+
+You probably recall that if $\theta$ is an angle in a *right triangle*,
+then the cosine of an angle is defined by 
+
+$$
+\cos \theta 
+= \frac{\mbox{adjacent}}{\mbox{hypotenuse}}
+= \frac{\mbox{length of the adjacent side}}{\mbox{length of the hypotenuse}}
+$$
+
+So our first step is to get a right triangle involving our angle $\theta$.
+
+
+{{< pagebreak >}}
+
+## Projections
+
+:::{#def-projection}
+The **projection** of a vector $\yvec$ in the direction of a vector $\xvec$, 
+which we will denote as $\proj{\yvec}{\xvec}$, 
+is the scalar multiple $k \xvec$ of $\xvec$ that makes $\yvec$ and $k\xvec$ 
+the hypotenuse and side of a right triangle.
+:::
+
+
+![The projection vector $k\xvec$ forms a right triangle.](images/projection-line-10.pdf){width=20%}
+
+
+Let's work out a formula for $\proj{\yvec}{\xvec}$ using the definition of cosine.
+
+:::{#exr-projection-def}
+
+a. Fill in the missing numerator and denominator.
+$$ 
+\Large \cos \theta = \frac{\mbox{adjacent}}{\mbox{hypotenuse}} =
+$$
+b. Solve for $k$.
+
+c. Use the fact that $\proj{\yvec}{\xvec} = k \xvec$ to obtain a formula for $\proj{\yvec}{\xvec}$.
+
+$$ 
+\Large 
+\proj{\yvec}{\xvec} = 
+$$
+
+\bigskip
+
+d. We can make this look a bit more symmetrical if we multiply numerator and denominator each by $|\xvec|$.
+
+
+$$ 
+\Large 
+\proj{\yvec}{\xvec} = 
+$$
+
+\bigskip
+
+:::
+
+\newcommand{\Num}{\textsf{Num}}
+
+:::{#exr-dot-numerator}
+It turns out that our numerator has some nice properties.
+Let's temporarily use the notation
+
+$$
+\Num(\xvec, \yvec) =  |\yvec| |\xvec| \cos \theta \;.
+$$ 
+
+Explain why a--c and e true. (Distributivity is a little trickier. Stay tuned.)
+
+a. **Commutativity**:  $\Num(\xvec, \yvec) = \Num(\yvec, \xvec)$
+
+b. **Scalar multiples**: $k \Num(\xvec, \yvec) = \Num(k \xvec, \yvec) = \Num(\xvec, k \yvec)$
+
+c. **Length**: $\Num(\xvec, \xvec) = \len{\xvec}^2$
+
+d. **Distributivity**: 
+$\Num(\xvec, \yvec + \zvec) = \Num(\xvec, \yvec) + \Num(\xvec, \zvec)$
+							
+e. **Linear Combinations**
+
+    *  $\Num(c_1 \xvec_1 + c_2 \xvec_2, \yvec) = 
+    \Num(c_1\xvec_1,\yvec) + 
+    \Num(c_2\xvec_2, \yvec)$
+
+    * $\Num(c_1 \xvec_1 + c_2 \xvec_2, d_1\yvec_1 +
+				d_2\yvec_2)
+				= c_1 d_1 \Num(\xvec_1, \yvec_1) 
+				+ c_1 d_2 \Num(\xvec_1, \yvec_2) 
+				+ c_2 d_1 \Num(\xvec_2, \yvec_1) 
+				+ c_2 d_2 \Num(\xvec_2, \yvec_2)$
+
+:::
+
+## A surprising connection
+
+:::{#exr-num-is-dot-product}
+We can use these properties to find an easy way to compute $\Num(\xvec,\yvec)$ from
+the list of numbers representations of $\xvec$ and $\yvec$ -- without needing to 
+know the cosine!
+
+Let's try an example. Let $\xvec = \threevec123$ and $\yvec = \threevec2{-1}{4}$.
+
+a. Write each vector as a linear combination of **elementary vectors**^[Remember, elementary
+vectors are all 0's except for one 1. Example: $\threevec100$.
+
+b. Now use the properties above to compute $\Num(\xvec, \yvec)$.
+
+c. We can use this same trick for any pair of vectors. What is the general rule here?
+
+$$
+\Num(\xvec, \yvec) = |\xvec| |\yvec| \cos \theta = 
+$$
+
+d. Solve this for $\cos \theta$.
+
+$$
+\cos \theta =
+$$
+
+e. Use what you have figured out here to rewrite our definition of $\proj{\yvec}{\xvec}$:
+
+$$
+\Large 
+\proj{\yvec}{\xvec} = \frac{|\xvec| |\yvec|\cos \theta}{|\xvec|^2}\xvec = 
+$$
+
+:::
+
+:::{#exr-05-LA-re-express}
+Re-express the properties in @exr-dot-numerator using dot product notation
+instead of $\Num()$.
+:::
+
+{{< pagebreak >}}
+
+## Practice
+
+:::{#exr-proj-practice}
+For each pair of vectors below, compute $\xvec \cdot \yvec$, $\proj{\xvec}{\yvec}$,
+$\proj{\yvec}{\xvec}$, and the cosine of the angle between the two vectors.
+For the examples in $\real^2$, illustrate with a figure like the ones above.
+
+a. $\xvec = \twovec 11$, $\yvec = \twovec 10$
+
+b. $\xvec = \twovec 34$, $\yvec = \twovec 11$
+
+c. $\xvec = \fourvec 1111$, $\yvec = \fourvec 1010$
+
+d. $\xvec = \fourvec 1111$, $\yvec = \fourvec 1{-1}1{-1}$
+
+:::
+
+
+
+:::{#exr-angles}
+
+a. If two vectors form a right angle, what is the cosine of the angle between
+them? What is the dot product of the two vectors?
+
+a. If two vectors point in the same direction, what is the cosine of the angle between
+them? What is the dot product of the two vectors?
+
+a. If two vectors point in opposite directions, what is the cosine of the angle between
+them? What is the dot product of the two vectors?
+
+:::
+
+## More ways to think about the dot product
+
+:::{#exr-dot-as-matrix-product}
+a. Show how the dot prduct $\threevec123 \cdot \threevec456$ can be computed
+using a matrix product.  What are the matrices?
+
+b. Explain how any dot product $\xvec \cdot \yvec$ can be expressed as a matrix product 
+of a  $1 \by n$ matrix with a an $n \by 1$ matrix.  How are the matrices related to
+the vectors $\xvec$ and $\yvec$?
+:::
+
+:::{#exr-dot-as-linear-trans}
+a. Let $T(\xvec) = \xvec \cdot \fourvec1111$. Show that we can think of $T$ as a 
+linear transformation. 
+What are the domain and codomain of this transformation?
+
+b. Of course, there is nothing special about $\fourvec 1111$.  We can do this with
+any vector.
+
+c. There is a nice 
+[3Blue1Brown video](https://www.3blue1brown.com/lessons/dot-products) 
+about dot prodcuts that
+includes illustrations of this connection between the dot prodcut and linear
+transformations. I recommend you watch it!
+:::
+
+
