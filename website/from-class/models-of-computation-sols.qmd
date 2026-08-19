@@ -84,7 +84,7 @@ Make sure you give this a good attempt before comparing your work to this soluti
 ::::{.explain}
 
 ```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
-knitr::include_graphics('images/NFA2DFA-example1sol.png')
+knitr::include_graphics('../../docs/images/NFA2DFA-example1sol.png')
 ```
 ::::
 :::
@@ -96,7 +96,7 @@ It isn't important where you put the states, but it is important that the edges 
 match.
 
 ```{r, echo = FALSE, out.width = "80%", fig.align = "center"}
-knitr::include_graphics('images/DFA-Fig7-13-3-8.png')
+knitr::include_graphics('../../docs/images/DFA-Fig7-13-3-8.png')
 ```
 
 :::
@@ -181,7 +181,7 @@ out of the subset.  Now you use your counting rules.
 <!-- Kleene Star, etc. -->
 
 <!-- ```{r, echo = FALSE, out.width = "80%", fig.align = "center"} -->
-<!-- knitr::include_graphics("images/NFA-Fig-12-4-3.png") -->
+<!-- knitr::include_graphics("../../docs/images/NFA-Fig-12-4-3.png") -->
 <!-- ``` -->
 
 <!-- </div> -->
@@ -335,7 +335,7 @@ $A$       |  $\set{A}$   | $\set{A}$
 $X$       |  $\set{}$    | $\set{X}$
 
 ```{r echo = FALSE, fig.align = 'center'}
-knitr::include_graphics('images/grammar-to-nfa-01.png')
+knitr::include_graphics('../../docs/images/grammar-to-nfa-01.png')
 ```
 
 It's a good idea to check your work on a few strings to make sure
@@ -363,7 +363,7 @@ $B$       |  $\set{A, X}$ | $\set{B}$
 $X$       |  $\set{}$     | $\set{}$
 
 ```{r echo = FALSE, fig.align = 'center'}
-knitr::include_graphics('images/grammar-to-nfa-02.png')
+knitr::include_graphics('../../docs/images/grammar-to-nfa-02.png')
 ```
 
 It's a good idea to check your work on a few strings to make sure
@@ -474,7 +474,7 @@ $S$ is new lonely start state.
 
 ```{r echo = FALSE, fig.align = 'center'}
 # path <- glue::glue('../images/DFA2regex1/frame_0000{i}.png', i = 1:9)
-path <- dir('images/DFA2regex1', full.names = TRUE)
+path <- dir('../../docs/images/DFA2regex1', full.names = TRUE)
 knitr::include_graphics(path)
 ```
 
@@ -484,7 +484,7 @@ knitr::include_graphics(path)
 ### Exercise 24.2 -- DFA to regex
 
 ```{r echo = FALSE, fig.align = 'center'}
-path <- dir('images/DFA2regex2', full.names = TRUE)
+path <- dir('../../docs/images/DFA2regex2', full.names = TRUE)
 knitr::include_graphics(path)
 ```
 
@@ -495,7 +495,7 @@ knitr::include_graphics(path)
 
 
 ```{r echo = FALSE, fig.align = 'center'}
-path <- dir('images/DFA2regex3', full.names = TRUE)
+path <- dir('../../docs/images/DFA2regex3', full.names = TRUE)
 knitr::include_graphics(path)
 ```
 
